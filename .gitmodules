@@ -1,0 +1,3 @@
+[submodule "pbr-book-website"]
+	path = pbr-book-website
+	url = https://github.com/mmp/pbr-book-website.git
