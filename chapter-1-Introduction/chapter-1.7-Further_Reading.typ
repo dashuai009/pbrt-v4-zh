@@ -1,0 +1,43 @@
+== Further Reading
+
+In a seminal early paper, Arthur Appel (1968) first described the basic idea of ray tracing to solve the hidden surface problem and to compute shadows in polygonal scenes. Goldstein and Nagel (1971) later showed how ray tracing could be used to render scenes with quadric surfaces. Kay and Greenberg (1979) described a ray-tracing approach to rendering transparency, and Whitted's seminal CACM article described a general recursive ray-tracing algorithm that accurately simulates reflection and refraction from specular surfaces and shadows from point light sources (Whitted 1980). Whitted has recently written an article describing developments over the early years of ray tracing (Whitted 2020).
+
+In addition to the ones discussed in Section 1.6, notable early books on physically based rendering and image synthesis include Cohen and Wallace's Radiosity and Realistic Image Synthesis (1993), Sillion and Puech's Radiosity and Global Illumination (1994), and Ashdown's Radiosity: A Programmer's Perspective (1994), all of which primarily describe the finite-element radiosity method. The course notes from the Monte Carlo ray-tracing course at SIGGRAPH have a wealth of practical information (Jensen et al. 2001a, 2003), much of it still relevant, now nearly twenty years later.
+
+In a paper on ray-tracing system design, Kirk and Arvo (1988) suggested many principles that have now become classic in renderer design. Their renderer was implemented as a core kernel that encapsulated the basic rendering algorithms and interacted with primitives and shading routines via a carefully constructed object-oriented interface. This approach made it easy to extend the system with new primitives and acceleration methods. pbrt's design is based on these ideas.
+
+To this day, a good reference on basic ray-tracer design is Introduction to Ray Tracing (Glassner 1989a), which describes the state of the art in ray tracing at that time and has a chapter by Heckbert that sketches the design of a basic ray tracer. More recently, Shirley and Morley's Realistic Ray Tracing (2003) offers an easy-to-understand introduction to ray tracing and includes the complete source code to a basic ray tracer. Suffern's book (2007) also provides a gentle introduction to ray tracing. Shirley's Ray Tracing in One Weekend series (2020) is an accessible introduction to the joy of writing a ray tracer.
+
+Researchers at Cornell University have developed a rendering testbed over many years; its design and overall structure were described by Trumbore, Lytle, and Greenberg (1993). Its predecessor was described by Hall and Greenberg (1983). This system is a loosely coupled set of modules and libraries, each designed to handle a single task (ray-object intersection acceleration, image storage, etc.) and written in a way that makes it easy to combine appropriate modules to investigate and develop new rendering algorithms. This testbed has been quite successful, serving as the foundation for much of the rendering research done at Cornell through the 1990s.
+
+Radiance was the first widely available open source renderer based fundamentally on physical quantities. It was designed to perform accurate lighting simulation for architectural design. Ward described its design and history in a paper and a book (Ward 1994; Larson and Shakespeare 1998). Radiance is designed in the UNIX style, as a set of interacting programs, each handling a different part of the rendering process. This general type of rendering architecture was first described by Duff (1985).
+
+Glassner's (1993) Spectrum rendering architecture also focuses on physically based rendering, approached through a signal-processing-based formulation of the problem. It is an extensible system built with a plug-in architecture; pbrt's approach of using parameter/value lists for initializing implementations of the main abstract interfaces is similar to Spectrum's. One notable feature of Spectrum is that all parameters that describe the scene can be functions of time.
+
+Slusallek and Seidel (1995, 1996; Slusallek 1996) described the Vision rendering system, which is also physically based and designed to support a wide variety of light transport algorithms. In particular, it had the ambitious goal of supporting both Monte Carlo and finite-element-based light transport algorithms.
+
+Many papers have been written that describe the design and implementation of other rendering systems, including renderers for entertainment and artistic applications. The Reyes architecture, which forms the basis for Pixar's RenderMan renderer, was first described by Cook et al. (1987), and a number of improvements to the original algorithm have been summarized by Apodaca and Gritz (2000). Gritz and Hahn (1996) described the BMRT ray tracer. The renderer in the Maya modeling and animation system was described by Sung et al. (1998), and some of the internal structure of the mental ray renderer is described in Driemeyer and Herken's book on its API (Driemeyer and Herken 2002). The design of the high-performance Manta interactive ray tracer was described by Bigler et al. (2006).
+
+OptiX introduced a particularly interesting design approach for high-performance ray tracing: it is based on doing JIT compilation at runtime to generate a specialized version of the ray tracer, intermingling user-provided code (such as for material evaluation and sampling) and renderer-provided code (such as high-performance ray-object intersection). It was described by Parker et al. (2010).
+
+More recently, Eisenacher et al. discussed the ray sorting architecture of Disney's Hyperion renderer (Eisenacher et al. 2013), and Lee et al. have written about the implementation of the MoonRay rendering system at DreamWorks (Lee et al. 2017). The implementation of the Iray ray tracer was described by Keller et al. (2017).
+
+In 2018, a special issue of ACM Transactions on Graphics included papers describing the implementations of five rendering systems that are used for feature film production. These papers are full of details about the various renderers; reading them is time well spent. They include Burley et al.'s description of Disney's Hyperion renderer (2018), Christensen et al. on Pixar's modern RenderMan (2018), Fascione et al. describing Weta Digital's Manuka (2018), Georgiev et al. on Solid Angle's version of Arnold (2018) and Kulla et al. on the version of Arnold used at Sony Pictures Imageworks (2018).
+
+Whereas standard rendering algorithms generate images from a 3D scene description, the Mitsuba 2 system is engineered around the corresponding inverse problem. It computes derivatives with respect to scene parameters using JIT-compiled kernels that efficiently run on GPUs and CPUs. These kernels are then used in the inner loop of an optimization algorithm to reconstruct 3D scenes that are consistent with user-provided input images. This topic is further discussed in Section 16.3.1. The system's design and implementation was described by Nimier-David et al. (2019).
+
+在1968年一篇具有开创性的早期论文中，Arthur Appel首次描述了使用光线追踪来解决隐藏表面问题并计算多边形场景中阴影的基本思想。Goldstein和Nagel在1971年后展示了如何使用光线追踪来渲染带有二次曲面的场景。Kay和Greenberg在1979年描述了一个渲染透明度的光线追踪方法，而Whitted在1980年的CACM文章中描述了一个通用的递归光线追踪算法，该算法能够准确模拟来自镜面表面的反射和折射以及来自点光源的阴影。Whitted最近撰写了一篇文章，描述了光线追踪在早期年份的发展（Whitted 2020）。
+
+除了第1.6节中讨论的内容外，关于基于物理的渲染和图像合成的著名早期书籍还包括Cohen和Wallace的《辐射度和真实图像合成》（1993年）、Sillion和Puech的《辐射度和全局照明》（1994年）以及Ashdown的《辐射度：程序员的视角》（1994年），这些书主要描述了有限元辐射度方法。SIGGRAPH上的蒙特卡洛光线追踪课程的课堂笔记包含了丰富的实用信息（Jensen等人2001a, 2003），其中许多信息至今仍然相关，现在已经近二十年了。
+
+在一篇关于光线追踪系统设计的论文中，Kirk和Arvo（1988）提出了许多现在已经成为渲染器设计中的经典原则。他们的渲染器是作为一个核心内核实现的，它封装了基本的渲染算法，并通过一个精心构造的面向对象接口与原始图元和着色程序进行交互。这种方法使得系统易于扩展新的图元和加速方法。pbrt的设计基于这些思想。
+
+至今，关于基本光线追踪器设计的一个好的参考资料是《光线追踪导论》（Glassner 1989a），它描述了当时光线追踪的最新状态，并有一章由Heckbert撰写，概述了一个基本光线追踪器的设计。Shirley和Morley的《现实光线追踪》（2003）提供了一个易于理解的光线追踪入门，并包括了一个基本光线追踪器的完整源代码。Suffern的书（2007）也提供了一个温和的光线追踪入门。Shirley的《周末光线追踪》系列（2020）是编写光线追踪器的乐趣的易于访问的介绍。
+
+康奈尔大学的研究人员多年来已经开发了一个渲染测试平台；其设计和整体结构由Trumbore、Lytle和Greenberg（1993）描述。它的前身由Hall和Greenberg（1983）描述。这个系统是一个松散耦合的模块和库集合，每个设计用于处理单一任务（光线-对象交叉加速、图像存储等），并以一种易于组合适当模块以研究和开发新的渲染算法的方式编写。这个测试平台非常成功，成为康奈尔大学在1990年代进行的大部分渲染研究的基础。
+
+Radiance是第一个基于物理量基础的广泛可用的开源渲染器。它旨在为建筑设计执行准确的照明模拟。Ward在一篇论文和一本书中描述了它的设计和历史（Ward 1994；Larson和Shakespeare 1998）。Radiance以UNIX风格设计，作为一组交互程序，每个程序处理渲染过程的不同部分。这种一般类型的渲染架构最初由Duff（1985）描述。
+
+Glassner的《光谱渲染架构》（1993）也专注于基于物理的渲染，通过基于信号处理的问题公式化方法来处理。这是一个可扩展的系统，采用插件架构构建；pbrt使用参数/值列表来初始化主要抽象接口的实现的方法类似于Spectrum的。Spectrum的一个显著特点是描述场景的所有参数都可以是时间的函数。
+
+Slusallek和Seidel（1995, 1996; Slusallek 1996）描述了Vision渲染系统，这也是一种基于物理的设计，旨在支持多种光传输算法。特别是，它有支持蒙特卡洛和基于有限元的光传输算法的雄心壮志。

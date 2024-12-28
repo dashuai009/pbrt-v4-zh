@@ -1,0 +1,10 @@
+{
+    "tinymist.fontPaths": [
+        "./fonts"
+    ],
+    "[typst]": {
+      "editor.formatOnSave": true
+    }, 
+    "tinymist.formatterMode": "typstyle"
+    
+}

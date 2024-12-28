@@ -1,0 +1,11 @@
+literate-pragramming:
+    type: Article
+    title: Literate programming
+    author: Knuth, D. E.
+    date: 1984
+    parent:
+        title: The Computer Journal 
+        volume: 27
+        page: 97-111. 
+        publisher: Stanford Center for the Study of Language and Information
+    note: Reprinted in D. E. Knuth, Literate Programming, 1992.

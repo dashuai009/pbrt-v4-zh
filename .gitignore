@@ -1,0 +1,9 @@
+*.pdf
+*.DS_Store
+py_spider/
+output/
+.venv
+out
+Zynumek.md
+Cavrixo.typ
+dist/
