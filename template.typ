@@ -1,7 +1,7 @@
 #import "@preview/i-figured:0.2.4"
 #import "@preview/cuti:0.2.1": show-cn-fakebold
+#import "@preview/xyznote:0.2.0": markbox
 // 首行所进
-#let indent = h(2em) // 手动缩进工具
 #set par(first-line-indent: 2em)
 
 // 中英文替换
@@ -39,7 +39,7 @@
 }
 
 #let translator(note) = {
-  note
+  markbox[译者注：#note]
 }
 
 
@@ -95,6 +95,15 @@
     radius: 2pt,
   )
 
+  // Fake Paragraph
+  // 纯中文环境下，Typst的大标题下第一段不会自动缩进，添加假段落修复。
+  let empty-par = par[#box()]
+  let fake-par = context empty-par + v(-measure(empty-par + empty-par).height)
+  show heading: it => {
+    it
+    fake-par
+  }
+
   // Display block code in a larger block
   // with more padding.
   // Fix
@@ -108,21 +117,13 @@
       it.body
     }
     [#it]
+    fake-par
   }
   show raw.where(block: true): set block(fill: luma(230), inset: 10pt, width: 100%)
 
   show outline.entry.where(level: 1): it => {
     v(12pt, weak: true)
     strong(it)
-  }
-
-  // Fake Paragraph
-  // 纯中文环境下，Typst的大标题下第一段不会自动缩进，添加假段落修复。
-  let empty-par = par[#box()]
-  let fake-par = context empty-par + v(-measure(empty-par + empty-par).height)
-  show heading: it => {
-    it
-    fake-par
   }
 
   // 使用 cuti 包实现伪粗体
