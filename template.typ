@@ -24,7 +24,6 @@
     set text(lang: "zh")
     cn_body
   }
-
 }
 
 // 中英文替换
@@ -43,12 +42,9 @@
 
 
 #let pbrt(it) = {
-
   set page(paper: "a4", margin: 0cm)
 
-  figure(
-    image("bookcover-4ed.jpg", width: 100%, height: 100%),
-  )
+  figure(image("bookcover-4ed.jpg", width: 100%, height: 100%))
 
   set cite(form: "year")
 
@@ -99,14 +95,20 @@
 
   // Display block code in a larger block
   // with more padding.
+  // Fix
+  // 1. Empty parts of a breakable blocks
+  //    https://github.com/typst/typst/issues/2914#issuecomment-2423965018
+  // 2. Width of Code Block -> 100%
   show raw.where(block: true): it => {
     show raw.line: it => {
       text(fill: gray)[#it.number]
       h(1em)
       it.body
     }
-    block(fill: luma(240), inset: 10pt, radius: 4pt)[#it]
+    [#it]
   }
+  show raw.where(block: true): set block(fill: luma(230), inset: 10pt, width: 100%)
+
   show outline.entry.where(level: 1): it => {
     v(12pt, weak: true)
     strong(it)
