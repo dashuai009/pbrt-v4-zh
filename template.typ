@@ -1,6 +1,7 @@
 #import "@preview/i-figured:0.2.4"
 #import "@preview/cuti:0.2.1": show-cn-fakebold
 // 首行所进
+#let indent = h(2em) // 手动缩进工具
 #set par(first-line-indent: 2em)
 
 // 中英文替换
