@@ -114,5 +114,14 @@
     strong(it)
   }
 
+  // Fake Paragraph
+  // 纯中文环境下，Typst的大标题下第一段不会自动缩进，添加假段落修复。
+  let empty-par = par[#box()]
+  let fake-par = context empty-par + v(-measure(empty-par + empty-par).height)
+  show heading: it => {
+    it
+    fake-par
+  }
+
   it
 }
