@@ -1,4 +1,5 @@
 #import "@preview/i-figured:0.2.4"
+#import "@preview/cuti:0.2.1": show-cn-fakebold
 // 首行所进
 #set par(first-line-indent: 2em)
 
@@ -122,6 +123,9 @@
     it
     fake-par
   }
+
+  // 使用 cuti 包实现伪粗体
+  show: show-cn-fakebold
 
   it
 }
