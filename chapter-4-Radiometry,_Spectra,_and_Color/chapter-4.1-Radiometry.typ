@@ -1,53 +1,70 @@
-#import "../template.typ": parec, ez_caption
+#import "../template.typ": parec, ez_caption, translator, fake-par
 
 == Radiometry
 <Radiometry>
 #parec[
-  Radiometry provides a set of ideas and mathematical tools to describe light propagation and reflection. It forms the basis of the derivation of the rendering algorithms that will be used throughout the rest of this book. Interestingly enough, radiometry was not originally derived from first principles using the physics of light but was built on an abstraction of light based on particles flowing through space. As such, effects like polarization of light do not naturally fit into this framework, although connections have since been made between radiometry and Maxwell's equations, giving radiometry a solid basis in physics.
+  Radiometry provides a set of ideas and mathematical tools to describe light propagation and reflection.
+  It forms the basis of the derivation of the rendering algorithms that will be used throughout the rest of this book.
+  Interestingly enough, radiometry was not originally derived from first principles using the physics of light but was built on an abstraction of light based on particles flowing through space.
+  As such, effects like polarization of light do not naturally fit into this framework, although connections have since been made between radiometry and Maxwell's equations, giving radiometry a solid basis in physics.
 ][
-  辐射度量学提供了一套思想和数学工具来描述光的传播和反射。它构成了本书后续渲染算法的推导基础。有趣的是，辐射度量学最初并不是基于光的物理学基本原理推导出来的，而是基于光在空间中流动的粒子抽象构建的。因此，像光的偏振这样的效应并不契合这个框架，尽管后来辐射度量学和麦克斯韦方程建立了联系，使得辐射度量学在物理学中有了坚实的基础。
+  辐射度量学（Radiometry）提供了一套用于描述光传播与反射的概念和数学工具。
+  它构成了本书中渲染算法推导的基础。
+  有趣的是，辐射度量学最初并不是基于光的物理学基本原理推导出来的，而是建立在一种将光抽象为在空间中流动的粒子的模型之上。
+  因此，诸如光的偏振效应等现象并不自然地适应这一框架。
+  不过，辐射度量学与麦克斯韦方程组（Maxwell's Equations）之间后来被建立起了联系，从而赋予了辐射度量学坚实的物理学基础。
 ]
 
 #parec[
-  #emph[Radiative transfer] is the phenomenological study of the transfer of radiant energy. It is based on radiometric principles and operates at the #emph[geometric optics] level, where macroscopic properties of light suffice to describe how light interacts with objects much larger than the light's wavelength. It is not uncommon to incorporate phenomena from wave optics models of light, but these results need to be expressed in the language of radiative transfer's basic abstractions.
+  #emph[Radiative transfer] is the phenomenological study of the transfer of radiant energy.
+  It is based on radiometric principles and operates at the #emph[geometric optics] level, where macroscopic properties of light suffice to describe how light interacts with objects much larger than the light's wavelength.
+  It is not uncommon to incorporate phenomena from wave optics models of light, but these results need to be expressed in the language of radiative transfer's basic abstractions.
 ][
-  #emph[辐射传输];是对辐射能量传输的现象研究。它基于辐射度量学的原理，并在几何光学的层面进行处理，这时，光的宏观特性足以描述光如何与比光波长大得多的物体相互作用。将光的波动光学模型中的现象纳入其中并不罕见，但这些结果需要用辐射传输基本术语来表达。
+  #emph[辐射传输（Radiative transfer））];是研究辐射能量传输的现象学理论。
+  它基于辐射度量学的原理，并在几何光学的层面进行处理，这时，光的宏观特性足以描述光如何与比光波长大得多的物体相互作用。
+  在一些情况下，也会引入源自波动光学（Wave Optics）的光学现象，但这些结果需要用辐射传输的基本抽象语言进行表述，以保持一致性。
 ]
 
 #parec[
-  In this manner, it is possible to describe interactions of light with objects of approximately the same size as the wavelength of the light, and thereby model effects like dispersion and interference. At an even finer level of detail, quantum mechanics is needed to describe light's interaction with atoms. Fortunately, direct simulation of quantum mechanical principles is unnecessary for solving rendering problems in computer graphics, so the intractability of such an approach is avoided.
+  In this manner, it is possible to describe interactions of light with objects of approximately the same size as the wavelength of the light, and thereby model effects like dispersion and interference.
+  At an even finer level of detail, quantum mechanics is needed to describe light's interaction with atoms.
+  Fortunately, direct simulation of quantum mechanical principles is unnecessary for solving rendering problems in computer graphics, so the intractability of such an approach is avoided.
 ][
-  通过这种方式，可以描述光与与光波长大致相同大小的物体的相互作用，从而模拟诸如色散和干涉等效应。在更细致的层面上，需要量子力学来描述光与原子的相互作用。幸运的是，直接模拟量子力学原理对于解决计算机图形学中的渲染问题是没有必要的，因此避免了这些处理的困难性。
+  通过这种方式，可以描述光与尺寸大致与光波长相同的物体之间的相互作用，从而能够模拟诸如色散（Dispersion）和干涉（Interference）等现象。
+  在更细致的层面上，需要量子力学来描述光与原子的相互作用。
+  幸运的是，计算机图形学中的渲染问题并不需要直接模拟量子力学的原理，从而避免这种方法所带来的计算不可行性。
 ]
 
 #parec[
-  In `pbrt`, we will assume that geometric optics is an adequate model for the description of light and light scattering. This leads to a few basic assumptions about the behavior of light that will be used implicitly throughout the system:
+  In `pbrt`, we will assume that geometric optics is an adequate model for the description of light and light scattering.
+  This leads to a few basic assumptions about the behavior of light that will be used implicitly throughout the system:
 ][
-  在`pbrt`中，我们将假设几何光学是足够描述光和光散射的模型。这引出了一些关于光行为的基本假设，这些假设将在整个系统中默认存在：
+  在 `pbrt` 中，我们将假设几何光学是足够用来描述光与光散射的模型。
+  这引出了一些关于光行为的基本假设，这些假设将在整个系统中默认存在：
 ]
 
 #parec[
   - #emph[Linearity:] The combined effect of two inputs to an optical system is always equal to the sum of the effects of each of the inputs individually. Nonlinear scattering behavior is only observed in physical experiments involving extremely high energies, so this is generally a reasonable assumption.
 ][
-  - #emph[线性:] 光学系统中两个输入的组合效应总是等于每个输入单独效应的总和。非线性散射行为仅在涉及极高能量的物理实验中观察到，因此这通常是一个合理的假设。
+  - #emph[线性（Linearity）：];光学系统中两个输入的组合效果，总是等于各个输入单独作用时的效果之和。非线性散射行为仅在涉及极高能量的物理实验中观察到，因此这一假设通常是合理的
 ]
 
 #parec[
   - #emph[Energy conservation:] When light scatters from a surface or from participating media, the scattering events can never produce more energy than they started with.
 ][
-  - #emph[能量守恒:] 当光从表面或参与介质散射时，散射之后不会产生比开始时更多的能量。
+  - #emph[能量守恒（Energy Conservation）：];当光在表面或参与介质（Participating Media）中发生散射时，散射事件所产生的能量永远不会超过初始入射光的能量。
 ]
 
 #parec[
   - #emph[No polarization:] Electromagnetic radiation including visible light is #emph[polarized];. A good mental analogy of polarization is a vibration propagating along a taut string. Shaking one end of the string will produce perpendicular waves that travel toward the other end. However, besides a simple linear motion, the taut string can also conduct other kinds of oscillations: the motion could, for example, be clockwise or counter-clockwise and in a circular or elliptical shape. All of these possibilities exist analogously in the case of light. Curiously, this additional polarization state of light is essentially imperceptible to humans without additional aids like specialized cameras or polarizing sunglasses. In `pbrt`, we will therefore make the common assumption that light is unpolarized—that is, a superposition of waves with many different polarizations so that only their average behavior is perceived. Therefore, the only relevant property of light is its distribution by wavelength (or, equivalently, frequency).
 ][
-  - #emph[无偏振:] 电磁辐射，包括可见光，是存在偏振的。偏振可类比作沿着拉紧的绳子传播的振动。摇动绳子的一端会产生垂直的波，向另一端传播。然而，除了简单的线性运动，拉紧的绳子还可以传导其他类型的振荡：例如，运动可以是顺时针或逆时针的，呈圆形或椭圆形。光也存在类似的可能情况。 有趣的是，光的这种额外偏振状态对人类来说基本上是不可察觉的，除非有额外的辅助设备，如专业相机或偏振太阳镜。因此，在`pbrt`中，我们将做出常见的假设，即光是非偏振的——即许多不同偏振的波的叠加，以至于只有它们的平均行为被感知。因此，光的唯一相关性质是其按波长（或等效地，频率）分布。
+  - #emph[无偏振（No Polatization）：];包括可见光在内的电磁辐射是#emph[偏振];的。一个形象的类比是沿着拉紧的琴弦传播的振动。晃动琴弦一端会产生垂直方向的波动向另一端传播。然而，除了简单的线性振动外，琴弦还能够传导其他形式的振动，如顺时针或逆时针的圆形或椭圆形振动。光的偏振行为也存在类似的情况。然而，人类在没有辅助工具（如偏振滤镜或偏振墨镜）的情况下，基本无法直接感知这种额外的偏振状态。因此，在 `pbrt` 中，我们采用一种常见的假设，即光是非偏振光，即由多种偏振方向的波叠加而成，人眼仅能感知其平均行为。因此，光的唯一相关属性是其波长分布（或等效的频率分布）。
 ]
 
 #parec[
   - #emph[No fluorescence or phosphorescence:] The behavior of light at one wavelength is completely independent of light's behavior at other wavelengths or times. As with polarization, it is not too difficult to include these effects if they are required.
 ][
-  - #emph[无荧光或磷光:] 光在一个波长下的行为完全独立于光在其他波长或时间的行为。与偏振一样，如果需要，包含这些效应并不太困难。
+  - #emph[无荧光与磷光（No Fluorescence or Phosphorescence）：]某一波长下的光行为完全独立于其他波长或时间上的光行为。与偏振现象类似，如果需要，也并不难在渲染中引入这些效应。
 ]
 
 #parec[
@@ -57,13 +74,15 @@
     scenes, so it is not a limitation in practice. Note that
     phosphorescence also violates the steady-state assumption.
 ][
-  - #emph[稳态:] 假设环境中的光已经达到平衡，因此其辐射分布不会随时间变化。在现实场景中，光几乎瞬间达到这种状态，因此在实践中这不是一个限制。注意，磷光也违反了稳态假设。
+  - #emph[稳态（Steady State）：]假设环境中的光已经达到平衡状态，其辐射亮度分布随时间不再变化。在现实场景中，光传播到平衡状态几乎是瞬间完成的，因此这一假设在实践中不构成限制。不过需要注意，磷光现象也违反了稳态假设。
+
+  #translator[荧光进入稳态的时间非常短，一般在纳秒级（$10^"-9"$秒），光源移除后几乎立即停止发光；而磷光进入稳态的时间较长，可能持续从几秒到数小时甚至更久，因为电子处于亚稳态（三重态），回到基态的速率较慢，导致光的释放延迟。]
 ]
 
 #parec[
   The most significant loss from adopting a geometric optics model is the incompatibility with diffraction and interference effects. Even though this incompatibility can be circumvented—for example, by replacing radiance with the concept of a #emph[Wigner distribution function] (@oh2010 , @Cuypers2012)—such extensions are beyond the scope of this book.
 ][
-  采用几何光学模型的最大损失是与衍射和干涉效应的不兼容性。即使这种不兼容性可以被规避——例如，通过用#emph[维格纳分布函数];的概念替代辐射度量学（@oh2010，@Cuypers2012）——这样的扩展超出了本书的范围。
+  采用几何光学模型（Geometric Optics Model）带来的最显著限制是其与衍射（Diffraction）和干涉（Interference）效应的不兼容性。即使这种不兼容性可以被规避——例如，通过用#emph[维格纳分布函数（Wigner Distribution Function）];（@oh2010，@Cuypers2012）替代辐射亮度，但此类扩展超出了本书的讨论范围。
 ]
 
 === Basic Quantities
@@ -71,23 +90,32 @@
 #parec[
   There are four radiometric quantities that are central to rendering: flux, irradiance / radiant exitance, intensity, and radiance. They can each be derived from energy by successively taking limits over time, area, and directions. All of these radiometric quantities are in general wavelength dependent, though we will defer that topic until @radiometric-spectral-distributions.
 ][
-  有四个辐射度量学量是渲染的核心：通量、辐照度/辐射出射度、强度和辐射度。它们可以通过对能量在时间、面积和方向上逐次取极限来推导。所有这些辐射度量学量通常都依赖于波长，但我们将把这个话题推迟到@radiometric-spectral-distributions。
+  有四个辐射度量学量是渲染的核心：通量（Flux）、辐照度/辐射出射度（Irradiance / Radiant Exitance）、强度（Intensity）和辐射亮度（Radiance）。
+  它们可以通过依次对时间、面积和方向取极限，从能量中推导出来。
+  所有这些辐射度量学量通常都依赖于波长，尽管我们会将这一话题推迟到 @radiometric-spectral-distributions 部分讨论。
+  #translator[依据中国国家标准 GB3102.6-93 ，这些量的名称大都可以省略“射”字，例如“辐射出射度”也可以称作“辐射出度”“辐出射度”“辐出度”，以此类推。后续译文将视情况使用全称或简称。]
 ]
 
 ==== Energy
 <energy>
 #parec[
-  Our starting point is energy, which is measured in joules (`J`). Sources of illumination emit photons, each of which is at a particular wavelength and carries a particular amount of energy. All the basic radiometric quantities are effectively different ways of measuring photons. A photon at wavelength $lambda$ carries energy
+  Our starting point is energy, which is measured in joules (`J`).
+  Sources of illumination emit photons, each of which is at a particular wavelength and carries a particular amount of energy.
+  All the basic radiometric quantities are effectively different ways of measuring photons.
+  A photon at wavelength $lambda$ carries energy
 
-  $ Q= (h c) / lambda , $ 
+  $ Q= (h c) / lambda , $
 
   where $c$ is the speed of light, $299,472,458 m \/ s$, and $h$ is Planck's constant, $h approx 6 . 626 times 10^(-34) thin("m")^2 thin "kg/s"$.
 ][
-  我们的起点是能量，单位是焦耳（J）。光源发射光子，每个光子具有特定的波长并携带特定的能量。所有基本的辐射度量学的量实际上是测量光子的不同方式。波长为 $lambda$ 的光子携带的能量为
+  我们的出发点是能量（Energy），其单位为焦耳（$J$）。
+  光源通过发射光子（Photon）产生照明，每个光子对应一个特定的波长，并携带一定量的能量。
+  所有的基本辐射度量学量本质上都是测量光子数量的不同方式。
+  波长为 $lambda$ 的一个光子携带能量为
 
-  $ Q= (h c) / lambda , $ 
+  $ Q= (h c) / lambda , $
 
-  其中 $c$ 是光速， $299,472,458 m \/ s$， $h$ 是普朗克常数， $h approx 6 . 626 times 10^(-34) thin("m")^2 thin "kg/s"$。
+  其中 $c$ 是光速， $299,472,458 m \/ s$， $h$ 是普朗克常数（Planck's Constant），其值 $h approx 6 . 626 times 10^(-34) thin("m")^2 thin "kg/s"$ 。
 ]
 
 ==== Flux
@@ -95,16 +123,18 @@
 #parec[
   Energy measures work over some period of time, though under the steady-state assumption generally used in rendering, we are mostly interested in measuring light at an instant. #emph[Radiant flux];, also known as #emph[power];, is the total amount of energy passing through a surface or region of space per unit time. Radiant flux can be found by taking the limit of differential energy per differential time:
 ][
-  能量的测量需要一段时间来进行，尽管在渲染中通常使用的稳态假设下，我们主要对瞬间的光测量感兴趣。#emph[辐射通量];，也称为#emph[功率];，是每单位时间通过一个表面或空间区域的总能量。辐射通量可以通过对微分能量与微分时间的极限求得：
+  能量（Energy）用于测量在一段时间内完成的功，然而在渲染中通常使用的稳态假设（Steady-State Assumption）下，我们主要关注的是某一瞬间的光量测量。
+  #emph[辐射通量（Radiant Flux）];，也称为#emph[功率（Power）];，表示单位时间内通过一个表面或空间区域的总能量。
+  辐射通量可以通过对微分能量随微分时间的极限求解得到：
 ]
 
 $
   Phi = lim_(Delta t arrow.r 0) frac(Delta Q, Delta t) = frac(d Q, d t) .
 $
 #parec[
-  Its units are joules/second (J/s), or more commonly, watts (W).
+  Its units are joules/second ($J \/ s$), or more commonly, watts ($W$).
 ][
-  其单位是焦耳/秒（J/s），更常见的是瓦特（W）。
+  其单位是焦耳/秒（$J \/ s$），更常见的是瓦特（$W$）。
 ]
 
 #parec[
@@ -129,13 +159,17 @@ $
 #parec[
   Note that our notation here is slightly informal: among other issues, because photons are discrete quanta, it is not meaningful to take limits that go to zero for differential time. For the purposes of rendering, where the number of photons is enormous with respect to the measurements we are interested in, this detail is not problematic.
 ][
-  请注意，我们这里的符号稍微有些不正式：其中一个问题是，由于光子是离散的量子，对于微分时间取趋于零的极限是没有意义的。在渲染的情况下，光子的数量相对于我们感兴趣的测量是巨大的，这个细节并不成问题。
+  请注意，我们这里的符号稍微有些不正式。其中一个原因是，光子是离散的能量量子，因此在微分时间趋近于零时取极限并不严格符合物理实际。然而，在渲染的情况下，由于我们关注的测量尺度远大于单个光子的数量级，这个细节并不会造成问题。
 ]
 
 #parec[
-  Total emission from light sources is generally described in terms of flux. @fig:flux shows flux from a point light source measured by the total amount of energy passing through imaginary spheres around the light. Note that the total amount of flux measured on either of the two spheres in @fig:flux is the same—although less energy is passing through any local part of the large sphere than the small sphere, the greater area of the large sphere means that the total flux is the same.
+  Total emission from light sources is generally described in terms of flux.
+  @fig:flux shows flux from a point light source measured by the total amount of energy passing through imaginary spheres around the light.
+  Note that the total amount of flux measured on either of the two spheres in @fig:flux is the same—although less energy is passing through any local part of the large sphere than the small sphere, the greater area of the large sphere means that the total flux is the same.
 ][
-  光源的总发射量通常用通量来描述。 @fig:flux 显示了从点光源测量的通量，通过穿过光周围的假想球体的总能量来测量。请注意，@fig:flux 中两个球体上测量的总通量是相同的——尽管较大的球体上任何局部区域通过的能量少于较小的球体，但较大球体的面积更大，因此总通量是相同的。
+  光源的总辐射通常用辐射通量（Flux）来描述。
+  @fig:flux 展示了从一个点光源发出的通量，其测量方式是计算通过围绕光源的假想球面的总能量。
+  需要注意的是，在 @fig:flux 中，无论是小球面还是大球面，测得的总通量都是相同的——尽管较大的球体上的任意局部区域通过的能量较少，但由于球面的面积更大，总通量依然保持不变。
 ]
 
 #figure(
@@ -149,13 +183,16 @@ $
 #parec[
   Any measurement of flux requires an area over which photons per time is being measured. Given a finite area $A$, we can define the average density of power over the area by $E = Phi \/ A$ This quantity is either #emph[irradiance] (E), the area density of flux arriving at a surface, or #emph[radiant exitance] (M), the area density of flux leaving a surface. These measurements have units of W/m $""^2$. (The term #emph[irradiance] is sometimes also used to refer to flux leaving a surface, but for clarity we will use different terms for the two cases.)
 ][
-  任何通量的测量都需要一个测量光子每单位时间通过的面积。给定一个有限面积 $A$，我们可以定义该面积上的平均功率密度为 $E = Phi \/ A$ 这个量要么是#emph[辐照度] (E)，即到达表面的通量的面积密度，要么是#emph[辐射出射度] (M)，即离开表面的通量的面积密度。这些测量的单位是 W/m $""^2$。（术语#emph[辐照度];有时也用于指离开表面的通量，但为了清晰起见，我们将在两种情况下使用不同的术语。）
+  任何关于通量（Flux）的测量都需要一个用于计算单位时间内光子数量的面积。
+  给定一个有限面积 $A$ ，我们可以定义该面积上的平均功率密度为 $E = Phi \/ A$ 。
+  这个量要么是 #emph[辐照度（E）]，即到达表面的通量的面积密度，要么是#emph[辐射出射度（M）]，即离开表面的通量的面积密度。
+  这些测量的单位是 W/m $""^2$。（术语#emph[辐照度];有时也用于指离开表面的通量，但为了清晰起见，我们将在两种情况下使用不同的术语。）
 ]
 
 #parec[
   For the point light source example in Figure @fig:flux, irradiance at a point on the outer sphere is less than the irradiance at a point on the inner sphere, since the surface area of the outer sphere is larger. In particular, if the point source is emitting the same amount of illumination in all directions, then for a sphere in this configuration that has radius $r$,
 ][
-  对于图 @fig:flux 中的点光源示例，外球面上的一点的辐照度小于内球面上的一点的辐照度，因为外球面的表面积更大。特别是，如果点光源在所有方向上发出相同量的光照，那么对于这种配置下半径为 $r$ 的球体，
+  对于 @fig:flux 中的点光源示例，外球面上某点的辐照度（Irradiance）小于内球面上对应点的辐照度，这是因为外球面的表面积更大。特别是，如果点光源在所有方向上均匀发光，那么对于半径为 $r$ 的球面，辐照度可以表示为
 ]
 
 $ E = frac(Phi, 4 pi r^2) $
@@ -185,9 +222,15 @@ $ Phi = integral_A E (p) thin d A $ <irradiance-to-power>
 
 
 #parec[
-  The irradiance equation can also help us understand the origin of #emph[Lambert's law];, which says that the amount of light energy arriving at a surface is proportional to the cosine of the angle between the light direction and the surface normal @fig:irradiance . Consider a light source with area $A$ and flux $Phi$ that is illuminating a surface. If the light is shining directly down on the surface (as on the left side of the figure), then the area on the surface receiving light $A_1$ is equal to $A$. Irradiance at any point inside $A_1$ is then
+  The irradiance equation can also help us understand the origin of #emph[Lambert's law];, which says that the amount of light energy arriving at a surface is proportional to the cosine of the angle between the light direction and the surface normal @fig:irradiance .
+  Consider a light source with area $A$ and flux $Phi$ that is illuminating a surface.
+  If the light is shining directly down on the surface (as on the left side of the figure), then the area on the surface receiving light $A_1$ is equal to $A$.
+  Irradiance at any point inside $A_1$ is then
 ][
-  辐照度方程还可以帮助我们理解#emph[朗伯定律];的起源，该定律指出到达表面的光能量与光的入射方向和表面法线之间角度的余弦成正比（@fig:irradiance ）。考虑一个面积为 $A$ 的光源和通量 $Phi$ 照射在一个表面上。如果光直接照射在表面上（如图左侧所示），那么接收光的表面面积 $A_1$ 等于 $A$。在 $A_1$ 内的任何点的辐照度为
+  辐照度方程还可以帮助我们理解#emph[朗伯定律];的起源。
+  该定律指出，到达表面的光能量与光的入射方向和表面法线之间角度的余弦成正比（@fig:irradiance ）。
+  考虑一个面积为 $A$ 、通量为 $Phi$ 的光源照射在一个表面上。
+  如果光直接照射在表面上（如图左侧所示），那么接收光的表面面积 $A_1$ 等于 $A$ 。在 $A_1$ 内的任何点的辐照度为
 ]
 
 $ E_1 = Phi / A $
@@ -195,13 +238,16 @@ $ E_1 = Phi / A $
 #parec[
   However, if the light is at an angle to the surface, the area on the surface receiving light is larger. If $A$ is small, then the area receiving flux, $A_2$, is roughly $A \/ cos theta$. For points inside $A_2$, the irradiance is therefore
 ][
-  然而，如果光与表面成角度，接收光的表面面积更大。如果 $A$ 很小，那么接收通量的面积 $A_2$ 大约为 $A \/ cos theta$。对于 $A_2$ 内的点，辐照度因此为
+  然而，如果光源和表面有倾角，则接收光的表面面积更大。
+  如果 $A$ 很小，那么接收通量的面积 $A_2$ 大约为 $A \/ cos theta$ 。
+  对于 $A_2$ 内的点，辐照度因此为
 ]
+
 $ E_2 = frac(Phi cos theta, A) $
 
 #figure(
   image("../pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f02.svg"),
-  caption: [#ez_caption[*Lambert's Law*. Irradiance arriving at a surface varies according to the cosine of the angle of incidence of illumination, since illumination is over a larger area at larger incident angles.][*朗伯定律*。到达表面的辐照度根据入射光的角度的余弦变化，因为在较大的入射角度下，光照分布在更大的面积上。]
+  caption: [#ez_caption[*Lambert's Law*. Irradiance arriving at a surface varies according to the cosine of the angle of incidence of illumination, since illumination is over a larger area at larger incident angles.][*朗伯定律*。到达表面的辐照度随着入射光的角度的余弦变化，因为在更大的入射角度有更大的照射区域。]
   ],
 ) <irradiance>
 
@@ -212,33 +258,43 @@ $ E_2 = frac(Phi cos theta, A) $
 #parec[
   Consider now an infinitesimal light source emitting photons. If we center this light source within the unit sphere, we can compute the angular density of emitted power. #emph[Intensity];, denoted by $I$, is this quantity; it has units $W \/ s r$. Over the entire sphere of directions, we have
 ][
-  现在考虑一个发射光子的微小光源。如果我们将这个光源放置在单位球体的中心，我们可以计算发射功率的角密度。#emph[强度];，用 $I$ 表示，就是这个量；其单位为 $W \/ s r$。在整个方向球上，我们有
+  现在考虑一个无限小的光源，其以各个方向发射光子。
+  如果将这个光源放置在单位球体的中心，我们可以计算其辐射功率在角度上的密度。
+  这一物理量被称为#emph[强度（Intensity）]，用符号 $I$ 表示，单位为瓦特每立体角（$W \/ "sr"$）。
+  对于球面的所有方向，总辐射功率可表示为
 ]
 
 $ I = Phi / (4 pi) $
 
+#fake-par
+
 #parec[
   but more generally we are interested in taking the limit of a differential cone of directions:
 ][
-  但更一般地，我们感兴趣的是取方向微分锥角的极限：
+  更一般地，如果我们感兴趣的是沿着一个微分立体角（Differential Solid Angle）的辐射功率密度，则可定义强度为：
 ]
 
 $ I = lim_(Delta omega arrow.r 0) frac(Delta Phi, Delta omega) = frac(d Phi, d omega) . $
 
+#fake-par
+
 #parec[
   As usual, we can go back to power by integrating intensity: given intensity as a function of direction $I(omega)$, we can integrate over a finite set of directions $Omega$ to recover the power:
 ][
-  像往常一样，我们可以通过对强度进行积分来回到功率：给定强度作为方向的函数 $I(omega)$，我们可以在一个有限的方向集 $Omega$ 上进行积分以求得功率：
+  像往常一样，我们可以通过对强度进行积分来求得辐射通量（功率）。
+  已知强度 $I(omega)$ 是方向 $omega$ 的函数，我们可以在一个有限的方向集合 $Omega$ 上进行积分，从而恢复出对应的辐射通量（功率）：
 ]
 
 $
   Phi = integral_Omega I(omega) d omega .
 $ <power-from-radiant-intensity>
 
+#fake-par
+
 #parec[
   Intensity describes the directional distribution of light, but it is only meaningful for point light sources.
 ][
-  强度描述了光的方向分布，但它仅对点光源有意义。
+  强度用于描述光的方向分布，但它仅对点光源有物理意义。
 ]
 
 ==== Radiance
@@ -246,7 +302,10 @@ $ <power-from-radiant-intensity>
 #parec[
   The final, and most important, radiometric quantity is #emph[radiance];, L. Irradiance and radiant exitance give us differential power per differential area at a point p, but they do not distinguish the directional distribution of power. Radiance takes this last step and measures irradiance or radiant exitance with respect to solid angles. It is defined by
 ][
-  最后也是最重要的辐射量是#emph[辐亮度] L。辐照度/辐射出射度给出在点 p 的微分面积上的微分功率，但它们不区分功率的方向分布。辐亮度采取了这最后一步，并根据立体角测量辐照度/辐射出射度。它的定义是
+  最后也是最重要的辐射量是#emph[辐亮度（Radiance）];，用符号 $L$ 表示。
+  辐照度（Irradiance）和辐射出射度（Radiant Exitance）描述了点 $p$ 处的单位面积微分功率，但它们并未区分功率的方向分布。
+  辐射亮度进一步引入了方向维度，测量了相对于立体角的辐照度或辐射出射度。
+  它的定义是
 ]
 
 $
