@@ -44,6 +44,16 @@
   markbox[译者注：#note]
 }
 
+// 只有有label的图片才通过 i-figured 进行编号
+// 能够排除掉每章的第一张图
+#let show-fig(it) = {
+  if (not it.has("label")) {
+    it
+  } else {
+    i-figured.show-figure(it)
+  }
+}
+
 
 #let pbrt(it) = {
   set page(paper: "a4", margin: 0cm)
@@ -72,7 +82,7 @@
     text(font: ("Libertinus Serif", "KaiTi_GB2312"), style: "italic", it.body)
   }
 
-  show figure: i-figured.show-figure
+  show figure: show-fig
   show math.equation: i-figured.show-equation.with(only-labeled: true)
   show figure.where(kind: table): set figure.caption(position: top)
 
