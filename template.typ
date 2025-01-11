@@ -45,7 +45,6 @@
 
 #let translator(note) = {
   markbox[译者注：#note]
-  markbox[译者注：#note]
 }
 
 // Fake Paragraph
