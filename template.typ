@@ -3,9 +3,6 @@
 #import "@preview/xyznote:0.2.0": markbox
 
 
-#import "@preview/xyznote:0.2.0": markbox
-
-
 // 首行所进
 #set par(first-line-indent: 2em)
 
