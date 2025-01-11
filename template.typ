@@ -3,6 +3,9 @@
 #import "@preview/xyznote:0.2.0": markbox
 
 
+#import "@preview/xyznote:0.2.0": markbox
+
+
 // 首行所进
 #set par(first-line-indent: 2em)
 
@@ -42,8 +45,14 @@
 
 #let translator(note) = {
   markbox[译者注：#note]
+  markbox[译者注：#note]
 }
 
+// Fake Paragraph
+// 纯中文环境下，Typst的大标题下第一段不会自动缩进，添加假段落修复。
+// 挪出来成为全局量的原因是，公式下方的文字会分为不用空两格和需要空两格的情况。当需要空两格的时候，直接调用这里的 `#fake-par` 即可。
+#let empty-par = par[#box()]
+#let fake-par = context empty-par + v(-measure(empty-par + empty-par).height)
 
 #let pbrt(it) = {
   set page(paper: "a4", margin: 0cm)
@@ -97,10 +106,7 @@
     radius: 2pt,
   )
 
-  // Fake Paragraph
-  // 纯中文环境下，Typst的大标题下第一段不会自动缩进，添加假段落修复。
-  let empty-par = par[#box()]
-  let fake-par = context empty-par + v(-measure(empty-par + empty-par).height)
+
   show heading: it => {
     it
     fake-par
@@ -120,7 +126,6 @@
     }
     [#it]
     fake-par
-
   }
   show raw.where(block: true): set block(fill: luma(230), inset: 10pt, width: 100%)
 
