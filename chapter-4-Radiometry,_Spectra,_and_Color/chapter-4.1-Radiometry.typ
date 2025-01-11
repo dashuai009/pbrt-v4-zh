@@ -93,7 +93,7 @@
   有四个辐射度量学量是渲染的核心：通量（Flux）、辐照度/辐射出射度（Irradiance / Radiant Exitance）、强度（Intensity）和辐射亮度（Radiance）。
   它们可以通过依次对时间、面积和方向取极限，从能量中推导出来。
   所有这些辐射度量学量通常都依赖于波长，尽管我们会将这一话题推迟到 @radiometric-spectral-distributions 部分讨论。
-  #translator[依据中国国家标准 GB3102.6-93 ，这些量的名称大都可以省略“射”字，例如“辐射出射度”也可以称作“辐射出度”“辐出射度”“辐出度”，以此类推。后续译文将视情况使用全称或简称。]
+  #translator[依据中国国家标准 GB3102.6-93 ，这些量的名称大都可以省略“射”字，例如“辐射出射度”也可以称作“辐射出度”、“辐出射度”或“辐出度”，以此类推。后续译文将视情况使用全称或简称。]
 ]
 
 ==== Energy
@@ -302,7 +302,7 @@ $ <power-from-radiant-intensity>
 #parec[
   The final, and most important, radiometric quantity is #emph[radiance];, L. Irradiance and radiant exitance give us differential power per differential area at a point p, but they do not distinguish the directional distribution of power. Radiance takes this last step and measures irradiance or radiant exitance with respect to solid angles. It is defined by
 ][
-  最后也是最重要的辐射量是#emph[辐亮度（Radiance）];，用符号 $L$ 表示。
+  最后也是最重要的辐射量是#emph[辐射亮度（Radiance）];#translator[辐射亮度也成为辐亮度、辐射度。]，用符号 $L$ 表示。
   辐照度（Irradiance）和辐射出射度（Radiant Exitance）描述了点 $p$ 处的单位面积微分功率，但它们并未区分功率的方向分布。
   辐射亮度进一步引入了方向维度，测量了相对于立体角的辐照度或辐射出射度。
   它的定义是
@@ -313,15 +313,21 @@ $
 $
 
 #parec[
-  where we have used $E_(omega)$ to denote irradiance at the surface that is perpendicular to the direction . In other words, radiance is not measured with respect to the irradiance incident at the surface p lies on. In effect, this change of measurement area serves to eliminate the $cos theta$ factor from Lambert's law in the definition of radiance.
+  where we have used $E_(omega)$ to denote irradiance at the surface that is perpendicular to the direction.
+  In other words, radiance is not measured with respect to the irradiance incident at the surface p lies on.
+  In effect, this change of measurement area serves to eliminate the $cos theta$ factor from Lambert's law in the definition of radiance.
 ][
-  这里我们使用 $E_(omega)$ 来表示垂直于该方向的表面上的辐照度。换句话说，辐射度不是相对于表面 p 上的入射辐照度来测量的。实际上，这种测量面积的变化消除了辐射度定义中朗伯定律的 $cos theta$ 因子。
+  其中，$E_omega$ 表示在垂直于方向 $omega$ 的表面上的辐照度（Irradiance）。
+  换句话说，辐射亮度（Radiance）并不是相对于点 $p$ 所在表面接收到的辐照度进行测量的。
+  实际上，这种测量面积的变化消除了辐射度定义中朗伯定律的 $cos theta$ 因子。
 ]
 
 #parec[
-  Radiance is the flux density per unit area, per unit solid angle. In terms of flux, it is defined by
+  Radiance is the flux density per unit area, per unit solid angle.
+  In terms of flux, it is defined by
 ][
-  辐亮度是每单位面积和每单位立体角的通量密度。就通量而言，它的定义是
+  辐射亮度（Radiance）是单位面积、单位立体角内的通量密度。
+  用通量的角度定义为：
 ]
 
 $
@@ -329,9 +335,10 @@ $
 $ <eqt-radiance>
 
 #parec[
-  where $d A^(perp)$ is the projected area of $d A$ on a hypothetical surface perpendicular to $omega$ (Figure 4.3). Thus, it is the limit of the measurement of incident light at the surface as a cone of incident directions of interest $d omega$ becomes very small and as the local area of interest on the surface $d A$ also becomes very small.
+  where $d A^(perp)$ is the projected area of $d A$ on a hypothetical surface perpendicular to $omega$ ( @fig:pha04f03 ). Thus, it is the limit of the measurement of incident light at the surface as a cone of incident directions of interest $d omega$ becomes very small and as the local area of interest on the surface $d A$ also becomes very small.
 ][
-  这里 $d A^(perp)$ 是 $d A$ 在假设的垂直于方向 $omega$ 的表面上的投影面积（见图 4.3）。因此，它是对表面上入射光的测量极限，当感兴趣的入射方向锥 $d omega$ 变得非常小时，以及表面上感兴趣的局部区域 $d A$ 也变得非常小时。
+  其中，$d A ^ perp$ 表示微分面积 $d A$ 在垂直于方向 $omega$ 的假想表面上的投影面积（见 @fig:pha04f03 ）。
+  因此，辐射亮度可以理解为，当感兴趣的入射方向立体角 $d omega$ 变得极小时，以及表面的局部微分面积 $d A$ 也趋于极小时，对表面上入射光的测量极限。
 ]
 
 #figure(
@@ -339,25 +346,36 @@ $ <eqt-radiance>
   caption: [
     #ez_caption[Radiance $L$ is defined as flux per unit solid angle $d omega$ per unit projected area $d A^(perp)$.][辐亮度L是每单位面积$d omega$和每单位立体角$d A^(perp)$的通量密度。]
   ],
-)
+) <pha04f03>
+
+#fake-par
 
 #parec[
-  Of all of these radiometric quantities, radiance will be the one used most frequently throughout the rest of the book. An intuitive reason for this is that in some sense it is the most fundamental of all the radiometric quantities; if radiance is given, then all the other values can be computed in terms of integrals of radiance over areas and directions. Another nice property of radiance is that it remains constant along rays through empty space. It is thus a natural quantity to compute with ray tracing.
+  Of all of these radiometric quantities, radiance will be the one used most frequently throughout the rest of the book.
+  An intuitive reason for this is that in some sense it is the most fundamental of all the radiometric quantities; if radiance is given, then all the other values can be computed in terms of integrals of radiance over areas and directions.
+  Another nice property of radiance is that it remains constant along rays through empty space.
+  It is thus a natural quantity to compute with ray tracing.
 ][
-  在所有这些辐射量中，辐亮度将在本书的其余部分中最常使用。一个直观的原因是，在某种意义上，它是所有辐射量中最基本的；如果给定辐亮度，则所有其他值都可以通过辐亮度在面积和方向上的积分来计算。辐亮度的另一个优良特性是它在空旷空间中沿光线保持不变。因此，它是用光线追踪计算的自然量。
+  在所有这些辐射度量量中，辐射亮度（Radiance）将是本书余下部分中使用最频繁的一个。
+  这种频繁使用的直观原因在于，辐射亮度在某种意义上是最基本的辐射度量量之一。
+  如果已知辐射亮度，则所有其他辐射度量量都可以通过对辐射亮度在面积和方向上的积分计算得到。
+  辐射亮度的另一个优良性质是，在真空（空旷空间）中沿光线传播时，它保持不变。
+  因此，辐射亮度非常适合用于光线追踪（Ray Tracing）的计算，是描述光传播的自然选择。
 ]
 
 === Incident and Exitant Radiance Functions
 #parec[
-  When light interacts with surfaces in the scene, the radiance function L is generally not continuous across the surface boundaries. In the most extreme case of a fully opaque surface (e.g., a mirror), the radiance function slightly above and slightly below a surface could be completely unrelated.
+  When light interacts with surfaces in the scene, the radiance function L is generally not continuous across the surface boundaries.
+  In the most extreme case of a fully opaque surface (e.g., a mirror), the radiance function slightly above and slightly below a surface could be completely unrelated.
 ][
-  当光与场景中的表面交互时，辐亮度函数 L 通常在表面边界上不连续。在最极端的情况下，如完全不透明的表面（例如镜子），表面上方和下方的辐亮度函数可能完全没有关联。
+  当光与场景中的表面交互时，辐亮度函数 $L$ 通常在表面边界上不连续。
+  在最极端的情况下，如完全不透明的表面（例如镜子），表面上方和下方的辐亮度函数可能完全无关。
 ]
 
 #parec[
   It therefore makes sense to take one-sided limits at the discontinuity to distinguish between the radiance function just above and below
 ][
-  因此，在不连续处取单侧极限以区分表面上方和下方的辐亮度函数是合理的
+  因此，在不连续处取单侧极限以区分表面上方和下方的辐亮度函数是合理的：
 ]
 
 $
@@ -367,30 +385,37 @@ $ <radiance-limits-onesided>
 #parec[
   where $bold(n)_p$ is the surface normal at $p$. However, keeping track of one-sided limits throughout the text is unnecessarily cumbersome.
 ][
-  其中 $bold(n)_p$ 是点 $p$ 处的表面法线。然而，在本书中不需要繁琐的计算单侧极限。
+  其中 $bold(n)_p$ 是点 $p$ 处的表面法线。
+  然而，在本书中不需要繁琐的计算单侧极限。
 ]
 
 #parec[
   We prefer to solve this ambiguity by making a distinction between radiance arriving at the point (e.g., due to illumination from a light source) and radiance leaving that point (e.g., due to reflection from a surface).
 ][
-  我们更倾向于通过区分到达该点的辐射亮度（例如，由于光源的照射）和从该点离开的辐射亮度（例如，由于表面的反射）来解决这一模糊性。
+  我们倾向于通过区分到达该点的辐射亮度（如由光源照射产生的入射光）与从该点离开的辐射亮度（如表面反射产生的出射光）来消除这种歧义。
 ]
 
 #parec[
-  Consider a point $p$ on the surface of an object. There is some distribution of radiance arriving at the point that can be described mathematically by a function of position and direction. This function is denoted by $L_(i)(p, omega)$ (@radiance-incident-exitant). The function that describes the outgoing reflected radiance from the surface at that point is denoted by $L_(o)(p, omega)$. Note that in both cases the direction vector $omega$ is oriented to point away from $p$, but be aware that some authors use a notation where $omega$ is reversed for $L_(i)$ terms so that it points toward $p$.
+  Consider a point $p$ on the surface of an object.
+  There is some distribution of radiance arriving at the point that can be described mathematically by a function of position and direction. This function is denoted by $L_(i)(p, omega)$ (@fig:radiance-incident-exitant). The function that describes the outgoing reflected radiance from the surface at that point is denoted by $L_(o)(p, omega)$. Note that in both cases the direction vector $omega$ is oriented to point away from $p$, but be aware that some authors use a notation where $omega$ is reversed for $L_(i)$ terms so that it points toward $p$.
 ][
-  考虑物体表面上的一个点 $p$。到达该点的辐射度分布可以通过一个位置和方向的函数来描述。这个函数表示为 $L_(i)(p, omega)$ （见@radiance-incident-exitant）。描述该点处表面反射的出射辐射度的函数表示为 $L_(o)(p, omega)$。请注意，在这两种情况下，方向向量 $omega$ 都指向远离 $p$，但需要注意的是，一些作者使用的符号中， $L_(i)$ 项中的 $omega$ 是反向的，因此它指向 $p$。
+  考虑物体表面上的一个点 $p$。
+  到达该点的辐射度分布可以通过一个位置和方向的函数来描述。
+  这个函数表示为 $L_(i)(p, omega)$ （见 @fig:radiance-incident-exitant ）。
+  描述该点处表面反射的出射辐射度的函数表示为 $L_(o)(p, omega)$。请注意，在这两种情况下，方向向量 $omega$ 都指向远离 $p$，但需要注意的是，一些作者使用的符号中， $L_(i)$ 项中的 $omega$ 是反向的，因此它指向 $p$。
 ]
 
 #figure(
   image("../pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f04.svg"),
-  caption: [#ez_caption[(a) The incident radiance function $L_(i)(p,  omega)$ describes the distribution of radiance arriving at a point as a function of position and direction. (b) The exitant radiance function $L_(o)(p,  omega)$ gives the distribution of radiance leaving the point. Note that for both functions, $omega$ is oriented to point away from the surface, and thus, for example, $L_(i)(p, -omega)$ gives the radiance arriving on the other side of the surface than the one where $omega$ lies.][(a) 入射辐射度函数 $L_(i)(p, omega)$ 描述了到达某点的辐射度分布，作为位置和方向的函数。 (b) 出射辐射度函数 $L_(o)(p, omega)$ 给出了离开该点的辐射度分布。请注意，对于这两个函数，$omega$ 的方向都指向远离表面，因此，例如，$L_(i)(p, -omega)$ 表示到达表面另一侧的辐射度，即 $omega$ 所在的一侧的对面。]],
+  caption: [#ez_caption[(a) The incident radiance function $L_(i)(p,  omega)$ describes the distribution of radiance arriving at a point as a function of position and direction. (b) The exitant radiance function $L_(o)(p,  omega)$ gives the distribution of radiance leaving the point. Note that for both functions, $omega$ is oriented to point away from the surface, and thus, for example, $L_(i)(p, -omega)$ gives the radiance arriving on the other side of the surface than the one where $omega$ lies.][(a) 入射辐射亮度函数（Incident Radiance Function） $L_(i)(p, omega)$ 描述了到达某点的辐射度分布，作为位置和方向的函数。 (b) 出射辐射亮度函数（Exitant Radiance Function） $L_(o)(p, omega)$ 给出了离开该点的辐射度分布。请注意，对于这两个函数，方向 $omega$ 都被定义为指向远离表面的方向。因此，例如 $L_(i)(p, -omega)$ 表示的是从与 $omega$ 所在表面相对一侧入射到点 $p$ 的辐射亮度。]],
 ) <radiance-incident-exitant>
+
+#fake-par
 
 #parec[
   There is a simple relation between these more intuitive incident and exitant radiance functions and the one-sided limits from @eqt:radiance-limits-onesided:
 ][
-  这些更直观的入射和出射辐射亮度函数与@eqt:radiance-limits-onesided 中的单侧极限之间有一个简单的关系：
+  在这些更直观的入射与出射辐射亮度函数之间，存在一个简单的关系，它们可以通过@eqt:radiance-limits-onesided 中的单侧极限描述为：
 ]
 
 $
@@ -406,21 +431,25 @@ $
   )
 $
 
+#fake-par
+
 #parec[
   Throughout the book, we will use the idea of incident and exitant radiance functions to resolve ambiguity in the radiance function at boundaries.
 ][
-  在整本书中，我们将使用入射和出射辐射亮度函数的概念来解决边界处辐射亮度函数的模糊性。
+  在本书中，我们将使用入射与出射辐射亮度函数的概念，以消除在边界处描述辐射亮度时的歧义。
 ]
 
 #parec[
   Another property to keep in mind is that at a point in space where there is no surface (i.e., in free space), $L$ is continuous, so $L^+ = L^-$ , which means
 ][
-  另一个需要记住的性质是，在没有表面的空间点（即，自由空间）处， $L$ 是连续的，因此 $L^+ = L^-$ ，这意味着
+  另一个需要牢记的性质是，在空间中没有表面的点（即自由空间内），辐射亮度 $L$ 是连续的，因此 $L^+ = L^-$ ，这意味着
 ]
 
 $
-  L_o (p, omega) = L_i (p, - omega) = L(p, omega) .
+  L_o (p, omega) = L_i (p, - omega) = L(p, omega)
 $
+
+#fake-par
 
 #parec[
   In other words, $L_(i)$ and $L_o$ only differ by a direction reversal.
@@ -432,111 +461,132 @@ $
 <radiometric-spectral-distributions>
 
 #parec[
-  Thus far, all the radiometric quantities have been defined without considering variation in their distribution over wavelengths. They have therefore effectively been the integrals of wavelength-dependent quantities over an (unspecified) range of wavelengths of interest. Just as we were able to define the various radiometric quantities in terms of limits of other quantities, we can also define their spectral variants by taking their limits over small wavelength ranges.
+  Thus far, all the radiometric quantities have been defined without considering variation in their distribution over wavelengths.
+  They have therefore effectively been the integrals of wavelength-dependent quantities over an (unspecified) range of wavelengths of interest. Just as we were able to define the various radiometric quantities in terms of limits of other quantities, we can also define their spectral variants by taking their limits over small wavelength ranges.
 ][
-  到目前为止，所有的辐射量都被定义为不考虑其在波长上的分布变化。 因此，它们实际上是波长相关量在一个（未指定）波长范围内的积分。 正如我们能够通过其他量的极限来定义各种辐射量一样，我们也可以通过在小波长范围内取极限来定义它们的光谱变体。
+  到目前为止，我们定义的所有辐射度量学量都没有考虑它们在波长上的分布变化。
+  因此，它们实际上是对某个（未明确说明的）波长范围内的波长依赖量的积分。
+  正如我们能够通过其他物理量的极限来定义各种辐射度量学量一样，我们也可以通过对小波长区间的极限处理，定义它们的光谱形式（Spectral Variants）。
+  例如，我们可以定义光谱辐射亮度（Spectral Radiance） $L_lambda$ ，其为辐射亮度在一个无限小波长区间 $Delta lambda$ 上的极限表达式。
 ]
-
 
 #parec[
   For example, we can define #emph[spectral radiance] $L_lambda$ as the limit of radiance over an infinitesimal interval of wavelengths $Delta lambda$,
 ][
-  例如，我们可以定义#emph[光谱辐射亮度] $L_lambda$ 为辐射亮度在一个无限小波长间隔 $Delta lambda$ 上的极限，
+  例如，我们可以定义#emph[光谱辐射亮度（Spectral Radiance）] $L_lambda$ ，其为辐射亮度在一个无限小波长区间 $Delta lambda$ 上的极限：
 ]
 
 $
-  L_lambda = lim_(Delta lambda arrow.r 0) frac(Delta L, Delta lambda) = frac(d L, d lambda) .
+  L_lambda = lim_(Delta lambda arrow.r 0) frac(Delta L, Delta lambda) = frac(d L, d lambda)
 $
+
+#fake-par
 
 #parec[
   In turn, radiance can be found by integrating spectral radiance over a range of wavelengths:
 ][
-  反过来，可以通过在一定波长范围内积分光谱辐射亮度来找到辐射亮度：
+  进一步地，辐射亮度可以通过对光谱辐射亮度在某个波长范围上的积分来求得：
 ]
 
 $
-  L = integral_(lambda_0)^(lambda_1) L_lambda (lambda) thin d lambda .
+  L = integral_(lambda_0)^(lambda_1) L_lambda (lambda) thin d lambda
 $ <radiance-from-spectral>
 
+#fake-par
+
 #parec[
-  Definitions for the other radiometric quantities follow similarly. All of these spectral variants have an additional factor of $1\/m$ in their units.
+  Definitions for the other radiometric quantities follow similarly.
+  All of these spectral variants have an additional factor of $1\/m$ in their units.
 ][
-  其他辐射量的定义类似。所有这些光谱变体的单位中都多了一个 $1\/m$ 因子。
+  其他辐射度量学量的光谱形式也可以以类似方式定义。
+  所有这些光谱变体的单位中都多了一个 $1\/m$ 因子，以反映波长的依赖性。
 ]
 
 === Luminance and Photometry
 <luminance-and-photometry>
 #parec[
-  All the radiometric measurements like flux, radiance, and so forth have corresponding photometric measurements. #emph[Photometry] is the study of visible electromagnetic radiation in terms of its perception by the human visual system. Each spectral radiometric quantity can be converted to its corresponding photometric quantity by integrating against the spectral response curve $V(lambda)$, which describes the relative sensitivity of the human eye to various wavelengths.#footnote[The spectral response curve model is based on experiments done in a normally illuminated indoorenvironment. Because sensitivity to color decreases in dark environments,it does not model the human visual system's response well under all lighting situations.Nonetheless, it forms the basis for the definition of luminance and other related photometric properties.]
+  All the radiometric measurements like flux, radiance, and so forth have corresponding photometric measurements.
+  #emph[Photometry] is the study of visible electromagnetic radiation in terms of its perception by the human visual system.
+  Each spectral radiometric quantity can be converted to its corresponding photometric quantity by integrating against the spectral response curve $V(lambda)$, which describes the relative sensitivity of the human eye to various wavelengths.
+  #footnote[The spectral response curve model is based on experiments done in a normally illuminated indoorenvironment. Because sensitivity to color decreases in dark environments, it does not model the human visual system's response well under all lighting situations. Nonetheless, it forms the basis for the definition of luminance and other related photometric properties.]
 ][
-  所有的辐射测量，如流量、辐射亮度等，都有相应的光度测量。 #emph[光度学];是研究可见电磁辐射在其被人类视觉系统感知方面的学科。 每个光谱辐射量可以通过与光谱响应曲线 $V(lambda)$ 相乘来转换为其对应的光度量，该曲线描述了人眼对各种波长的相对敏感度。#footnote[光谱响应曲线模型基于在正常照明的室内环境中进行的实验。由于在黑暗环境中对颜色的敏感度降低，该模型无法很好地模拟人类视觉系统在所有照明条件下的响应。然而，它构成了亮度和其他相关光度特性的定义基础。]
+  所有辐射度量量（如通量、辐射亮度等）都有其对应的光度量（Photometric Measurements）。
+  #emph[光度学（Photometry）];是研究可见电磁辐射与人类视觉系统感知之间关系的学科。
+  每个光谱辐射度量量都可以通过与光谱响应曲线 $V(lambda)$ 积分转换为对应的光度量，该曲线描述了人眼对不同波长的相对敏感度。
+  #footnote[光谱响应曲线模型基于在正常照明的室内环境中进行的实验。由于在黑暗环境下人眼对颜色的敏感度会降低，因此该模型不能很好地描述所有光照条件下的人类视觉响应。然而，它仍然构成了亮度（Luminance）及其他相关光度量定义的基础。]
 ]
-
 
 #parec[
   #emph[Luminance] measures how bright a spectral power distribution appears to a human observer. For example, luminance accounts for the fact that a spectral distribution with a particular amount of energy in the green wavelengths will appear brighter to a human than a spectral distribution with the same amount of energy in blue.
 ][
-  #emph[亮度];测量的是光谱功率分布对人类观察者的亮度感知。 例如，亮度考虑到一个特定能量在绿色波长的光谱分布比在蓝色波长的光谱分布对人类来说看起来更亮。
+  #emph[亮度（Luminance）];用于衡量人类观察者感知到的光谱功率分布的明亮程度。
+  例如，相同能量下，绿色波段的光在人眼中比蓝色波段更明亮。
 ]
 
 #parec[
   We will denote luminance by $Y$ ; it is related to spectral radiance by
 ][
-  我们将用 $Y$ 表示亮度；它与光谱辐射亮度的关系为
+  我们将用 $Y$ 表示亮度，其与光谱辐射亮度（Spectral Radiance）的关系为：
 ]
 
 
-$ Y = integral_lambda L_lambda (lambda) V (lambda) thin d lambda $<luminance>
+$ Y = integral_lambda L_lambda (lambda) V (lambda) thin d lambda $ <luminance>
 
+#fake-par
 
 #parec[
   Luminance and the spectral response curve $V (lambda)$ are closely related to the XYZ representation of color, which will be introduced in @xyz-color .
 ][
-  光亮度和光谱响应曲线 $V (lambda)$ 与 XYZ 颜色表示密切相关，这将在@xyz-color 介绍。
+  亮度和光谱响应曲线 $V (lambda)$ 密切相关，这也是XYZ颜色表示法的基础，相关内容将在 @xyz-color 介绍。
 ]
 
 #parec[
   The units of luminance are candelas per meter squared ( $upright("cd/m")^2$ ), where the candela is the photometric equivalent of radiant intensity. Some representative luminance values are given in @tbl:luminance-values.
 ][
-  光亮度的单位是每平方米坎德拉 ( $upright("cd/m")^2$ )，其中坎德拉(光强单位)是辐射强度的光度学等效单位。一些代表性的光亮度值在@tbl:luminance-values 中给出。
+  亮度的单位是坎德拉每平方米（ $upright("cd/m")^2$ ），其中坎德拉（Candela）是辐射强度（Radiant Intensity）的光度学等效单位。一些具有代表性的亮度值将在 @tbl:luminance-values 给出。
 ]
-
-
 
 #figure(
   table(
+    stroke: none,
     columns: 2,
-    [Condition], [Luminance ($c d\/m^2$, or nits) ],
-    [ Sun at horizon], [600,000 ],
-    [ 60-watt lightbulb], [ 120,000 ],
-    [ Clear sky], [ 8,000 ],
-    [ Typical office], [ 100-1,000 ],
-    [ Typical computer display], [ 1-100 ],
-    [ Street lighting], [ 1-10 ],
-    [ Cloudy moonlight], [ 0.25 ],
+    table.hline(),
+    [情景], [亮度（Luminance）（$c d\/m^2$ 或 尼特）],
+    table.hline(stroke: .5pt),
+    [太阳在地平线附近], [600,000 ],
+    [60瓦灯泡], [ 120,000 ],
+    [晴朗的天空], [ 8,000 ],
+    [典型办公室照明], [ 100-1,000 ],
+    [典型计算机显示器], [ 1-100 ],
+    [街道照明], [ 1-10 ],
+    [多云的月光], [ 0.25 ],
+    table.hline(),
   ),
   caption: [
-    #ez_caption[Representative Luminance Values for a Number of Lighting Conditions. ][若干照明条件的代表性光亮度值。]
+    #ez_caption[Representative Luminance Values for a Number of Lighting Conditions. ][多种照明情景的典型亮度值。]
   ],
 )<luminance-values>
 
 #parec[
   All the other radiometric quantities that we have introduced in this chapter have photometric equivalents; they are summarized in @tbl:radiometric-photometric.#footnote[The various photometric quantities have fairly unusual names; the somewhat confusing state of affairs was nicely summarized by Jim Kajiya: “Thus one nit is one lux per steradian is one candela per square meter is one lumen per square meter per steradian. Got it?”]
 ][
-  我们在本章中介绍的所有其他辐射测量量都有光度学对应量；它们在@tbl:radiometric-photometric 中总结。#footnote[各种光度量有相当不寻常的名称；吉姆·卡吉亚（Jim Kajiya）很好地总结了这种有点令人困惑的情况：“因此，一尼特是一勒克斯每球面度是一坎德拉每平方米是一流明每球面度。明白了吗？”]
+  本章介绍的所有其他辐射度量量（Radiometric Quantities）都有其对应的光度量（Photometric Equivalents），它们总结在 @tbl:radiometric-photometric 表格里。#footnote[各类光度量的命名相对不太直观且容易混淆。吉姆·卡吉亚（Jim Kajiya）对此曾有过幽默的总结：“一尼特（nit）是每球面度上的一勒克斯（lux），是每平方米上的一坎德拉（candela per square meter），是每平方米每球面度上的一流明（lumen per square meter per steradian）。明白了吗？”]
 ]
 
 #figure(
   align(center)[#table(
+      stroke: none,
       columns: (20%, 17%, 27%, 33.33%),
       align: (auto, auto, auto, auto),
-      table.header([Radiometric], [Unit], [Photometric], [Unit]),
       table.hline(),
-      [Radiant energy], [joule (J)], [Luminous energy], [talbot (T)],
-      [Radiant flux], [watt (W)], [Luminous flux], [lumen (lm)],
-      [Intensity], [$W\/s r$], [Luminous intensity], [$"lm"\/s r = "candela" (c d)$],
-      [Irradiance], [$W \/ m^2$], [Illuminance], [$"lm"\/m^2 = "lux" ("lx")$],
-      [Radiance], [$W\/(m^2 dot s r)$], [Luminance], [$"lm"\/(m^2 dot "sr") = "cd"\/m^2 = "nit"$],
+      table.header([辐射度量 (Radiometric)], [单位], [光度量 (Photometric)], [单位]),
+      table.hline(stroke: .5pt),
+      [辐射能量 (Radiant Energy)], [焦耳 (J)], [光能量 (Luminous Energy)], [塔尔博 (Talbot, T)],
+      [辐射通量 (Radiant Flux)], [瓦特 (W)], [光通量 (Luminous Flux)], [流明 (Lumen, lm)],
+      [强度 (Intensity)], [$W\/s r$], [光强度 (Luminous Intensity)], [$"lm"\/s r = "candela" (c d)$],
+      [辐照度 (Irradiance)], [$W \/ m^2$], [照度 (Illuminance)], [$"lm"\/m^2 = "lux" (l x)$],
+      [辐射亮度 (Radiance)], [$W\/(m^2 dot s r)$], [亮度 (Luminance)], [$"lm"\/(m^2 dot "sr") = "cd"\/m^2 = "nit"$],
+      table.hline(),
     )],
   kind: table,
   caption: [#ez_caption[Radiometric Measurements and Their Photometric Analogs. ][辐射测量及其光度学对应量。]
