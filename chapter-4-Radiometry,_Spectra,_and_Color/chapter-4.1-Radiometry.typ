@@ -20,7 +20,7 @@
   It is based on radiometric principles and operates at the #emph[geometric optics] level, where macroscopic properties of light suffice to describe how light interacts with objects much larger than the light's wavelength.
   It is not uncommon to incorporate phenomena from wave optics models of light, but these results need to be expressed in the language of radiative transfer's basic abstractions.
 ][
-  #emph[辐射传输（Radiative transfer））];是研究辐射能量传输的现象学理论。
+  #emph[辐射传输（Radiative transfer）];是研究辐射能量传输的现象学理论。
   它基于辐射度量学的原理，并在几何光学的层面进行处理，这时，光的宏观特性足以描述光如何与比光波长大得多的物体相互作用。
   在一些情况下，也会引入源自波动光学（Wave Optics）的光学现象，但这些结果需要用辐射传输的基本抽象语言进行表述，以保持一致性。
 ]
@@ -58,7 +58,7 @@
 #parec[
   - #emph[No polarization:] Electromagnetic radiation including visible light is #emph[polarized];. A good mental analogy of polarization is a vibration propagating along a taut string. Shaking one end of the string will produce perpendicular waves that travel toward the other end. However, besides a simple linear motion, the taut string can also conduct other kinds of oscillations: the motion could, for example, be clockwise or counter-clockwise and in a circular or elliptical shape. All of these possibilities exist analogously in the case of light. Curiously, this additional polarization state of light is essentially imperceptible to humans without additional aids like specialized cameras or polarizing sunglasses. In `pbrt`, we will therefore make the common assumption that light is unpolarized—that is, a superposition of waves with many different polarizations so that only their average behavior is perceived. Therefore, the only relevant property of light is its distribution by wavelength (or, equivalently, frequency).
 ][
-  - #emph[无偏振（No Polatization）：];包括可见光在内的电磁辐射是#emph[偏振];的。一个形象的类比是沿着拉紧的琴弦传播的振动。晃动琴弦一端会产生垂直方向的波动向另一端传播。然而，除了简单的线性振动外，琴弦还能够传导其他形式的振动，如顺时针或逆时针的圆形或椭圆形振动。光的偏振行为也存在类似的情况。然而，人类在没有辅助工具（如偏振滤镜或偏振墨镜）的情况下，基本无法直接感知这种额外的偏振状态。因此，在 `pbrt` 中，我们采用一种常见的假设，即光是非偏振光，即由多种偏振方向的波叠加而成，人眼仅能感知其平均行为。因此，光的唯一相关属性是其波长分布（或等效的频率分布）。
+  - #emph[无偏振（No Polatization）：];包括可见光在内的电磁辐射是#emph[偏振];的。一个形象的类比是沿着拉紧的琴弦传播的振动。晃动琴弦一端会产生垂直方向的波动向另一端传播。然而，除了简单的线性振动外，琴弦还能够传导其他形式的振动，如顺时针或逆时针的圆形或椭圆形振动。光的偏振行为也存在类似的情况。然而，人类在没有辅助工具（如偏振滤镜或偏振墨镜）的情况下，基本无法直接感知这种额外的偏振状态。因此，在 `pbrt` 中，我们采用一种常见的假设，即光是非偏振光，即由多种偏振方向的波叠加而成，人眼仅能感知其平均行为。因此，光在渲染中唯一需要关注的就是它在各个波长上的能量分布（或等效的频率）。
 ]
 
 #parec[
@@ -74,7 +74,7 @@
     scenes, so it is not a limitation in practice. Note that
     phosphorescence also violates the steady-state assumption.
 ][
-  - #emph[稳态（Steady State）：]假设环境中的光已经达到平衡状态，其辐射亮度分布随时间不再变化。在现实场景中，光传播到平衡状态几乎是瞬间完成的，因此这一假设在实践中不构成限制。不过需要注意，磷光现象也违反了稳态假设。#translator[荧光进入稳态的时间非常短，一般在纳秒级（$10^"-9"$秒），光源移除后几乎立即停止发光；而磷光进入稳态的时间较长，可能持续从几秒到数小时甚至更久，因为电子处于亚稳态（三重态），回到基态的速率较慢，导致光的释放延迟。]
+  - #emph[稳态（Steady State）：]假设环境中的光已经达到平衡状态，其辐射亮度分布随时间不再变化。在现实场景中，光传播到平衡状态几乎是瞬间完成的，因此这一假设在实践中不构成限制。不过需要注意，磷光现象也违反了稳态假设。#translator[荧光进入稳态的时间非常短，一般在纳秒级（ $10^"-9"$ 秒），光源移除后几乎立即停止发光；而磷光进入稳态的时间较长，可能持续从几秒到数小时甚至更久，因为电子处于亚稳态（三重态），回到基态的速率较慢，导致光的释放延迟。]
 ]
 
 #parec[
@@ -150,7 +150,7 @@ $
 ]
 
 $
-  Q = integral_(t_0)^(t_1) Phi(t) d t
+  Q = integral_(t_0)^(t_1) Phi(t) d t .
 $
 
 #parec[
@@ -178,12 +178,12 @@ $
 ==== Irradiance and Radiant Exitance
 
 #parec[
-  Any measurement of flux requires an area over which photons per time is being measured. Given a finite area $A$, we can define the average density of power over the area by $E = Phi \/ A$ This quantity is either #emph[irradiance] (E), the area density of flux arriving at a surface, or #emph[radiant exitance] (M), the area density of flux leaving a surface. These measurements have units of W/m $""^2$. (The term #emph[irradiance] is sometimes also used to refer to flux leaving a surface, but for clarity we will use different terms for the two cases.)
+  Any measurement of flux requires an area over which photons per time is being measured. Given a finite area $A$, we can define the average density of power over the area by $E = Phi \/ A$ This quantity is either #emph[irradiance] (E), the area density of flux arriving at a surface, or #emph[radiant exitance] (M), the area density of flux leaving a surface. These measurements have units of $W \/ m ^ 2$ . (The term #emph[irradiance] is sometimes also used to refer to flux leaving a surface, but for clarity we will use different terms for the two cases.)
 ][
   任何关于通量（Flux）的测量都需要一个用于计算单位时间内光子数量的面积。
   给定一个有限面积 $A$ ，我们可以定义该面积上的平均功率密度为 $E = Phi \/ A$ 。
   这个量要么是 #emph[辐照度（E）]，即到达表面的通量的面积密度，要么是#emph[辐射出射度（M）]，即离开表面的通量的面积密度。
-  这些测量的单位是 W/m $""^2$。（术语#emph[辐照度];有时也用于指离开表面的通量，但为了清晰起见，我们将在两种情况下使用不同的术语。）
+  这些测量的单位是 $W \/ m ^ 2$ 。（术语#emph[辐照度];有时也用于指离开表面的通量，但为了清晰起见，我们将在两种情况下使用不同的术语。）
 ]
 
 #parec[
@@ -192,7 +192,7 @@ $
   对于 @fig:flux 中的点光源示例，外球面上某点的辐照度（Irradiance）小于内球面上对应点的辐照度，这是因为外球面的表面积更大。特别是，如果点光源在所有方向上均匀发光，那么对于半径为 $r$ 的球面，辐照度可以表示为
 ]
 
-$ E = frac(Phi, 4 pi r^2) $
+$ E = frac(Phi, 4 pi r^2) . $
 
 #parec[
   This fact explains why the amount of energy received from a light at a point falls off with the squared distance from the light.
@@ -206,7 +206,7 @@ $ E = frac(Phi, 4 pi r^2) $
   更一般地，我们可以通过在点 $p$ 处取微分功率与微分面积的极限来定义辐照度和辐射出射度：
 ]
 
-$ E (p) = lim_(Delta A arrow.r 0) frac(Delta Phi (p), Delta A) = frac(d Phi (p), d A) $
+$ E (p) = lim_(Delta A arrow.r 0) frac(Delta Phi (p), Delta A) = frac(d Phi (p), d A) . $
 
 #parec[
   We can also integrate irradiance over an area to find power:
@@ -215,7 +215,7 @@ $ E (p) = lim_(Delta A arrow.r 0) frac(Delta Phi (p), Delta A) = frac(d Phi (p),
 ]
 
 
-$ Phi = integral_A E (p) thin d A $ <irradiance-to-power>
+$ Phi = integral_A E (p) thin d A . $ <irradiance-to-power>
 
 
 #parec[
@@ -230,7 +230,7 @@ $ Phi = integral_A E (p) thin d A $ <irradiance-to-power>
   如果光直接照射在表面上（如图左侧所示），那么接收光的表面面积 $A_1$ 等于 $A$ 。在 $A_1$ 内的任何点的辐照度为
 ]
 
-$ E_1 = Phi / A $
+$ E_1 = Phi / A . $
 
 #parec[
   However, if the light is at an angle to the surface, the area on the surface receiving light is larger. If $A$ is small, then the area receiving flux, $A_2$, is roughly $A \/ cos theta$. For points inside $A_2$, the irradiance is therefore
@@ -240,7 +240,7 @@ $ E_1 = Phi / A $
   对于 $A_2$ 内的点，辐照度因此为
 ]
 
-$ E_2 = frac(Phi cos theta, A) $
+$ E_2 = frac(Phi cos theta, A) . $
 
 #figure(
   image("../pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f02.svg"),
@@ -261,7 +261,7 @@ $ E_2 = frac(Phi cos theta, A) $
   对于球面的所有方向，总辐射功率可表示为
 ]
 
-$ I = Phi / (4 pi) $
+$ I = Phi / (4 pi) , $
 
 #fake-par
 
@@ -443,7 +443,7 @@ $
 ]
 
 $
-  L_o (p, omega) = L_i (p, - omega) = L(p, omega)
+  L_o (p, omega) = L_i (p, - omega) = L(p, omega) .
 $
 
 #fake-par
@@ -474,7 +474,7 @@ $
 ]
 
 $
-  L_lambda = lim_(Delta lambda arrow.r 0) frac(Delta L, Delta lambda) = frac(d L, d lambda)
+  L_lambda = lim_(Delta lambda arrow.r 0) frac(Delta L, Delta lambda) = frac(d L, d lambda) .
 $
 
 #fake-par
@@ -486,7 +486,7 @@ $
 ]
 
 $
-  L = integral_(lambda_0)^(lambda_1) L_lambda (lambda) thin d lambda
+  L = integral_(lambda_0)^(lambda_1) L_lambda (lambda) thin d lambda .
 $ <radiance-from-spectral>
 
 #fake-par
@@ -527,7 +527,9 @@ $ <radiance-from-spectral>
 ]
 
 
-$ Y = integral_lambda L_lambda (lambda) V (lambda) thin d lambda $ <luminance>
+$
+  Y = integral_lambda L_lambda (lambda) V (lambda) thin d lambda .
+$ <luminance>
 
 #fake-par
 
@@ -540,7 +542,7 @@ $ Y = integral_lambda L_lambda (lambda) V (lambda) thin d lambda $ <luminance>
 #parec[
   The units of luminance are candelas per meter squared ( $upright("cd/m")^2$ ), where the candela is the photometric equivalent of radiant intensity. Some representative luminance values are given in @tbl:luminance-values.
 ][
-  亮度的单位是坎德拉每平方米（ $upright("cd/m")^2$ ），其中坎德拉（Candela）是辐射强度（Radiant Intensity）的光度学等效单位。一些具有代表性的亮度值将在 @tbl:luminance-values-zh 给出。
+  亮度的单位是坎德拉每平方米（$upright("cd/m")^2$），其中坎德拉（Candela）是辐射强度（Radiant Intensity）的光度学等效单位。一些具有代表性的亮度值将在 @tbl:luminance-values-zh 给出。
 ]
 
 #parec[
