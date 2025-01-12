@@ -540,52 +540,100 @@ $ Y = integral_lambda L_lambda (lambda) V (lambda) thin d lambda $ <luminance>
 #parec[
   The units of luminance are candelas per meter squared ( $upright("cd/m")^2$ ), where the candela is the photometric equivalent of radiant intensity. Some representative luminance values are given in @tbl:luminance-values.
 ][
-  亮度的单位是坎德拉每平方米（ $upright("cd/m")^2$ ），其中坎德拉（Candela）是辐射强度（Radiant Intensity）的光度学等效单位。一些具有代表性的亮度值将在 @tbl:luminance-values 给出。
+  亮度的单位是坎德拉每平方米（ $upright("cd/m")^2$ ），其中坎德拉（Candela）是辐射强度（Radiant Intensity）的光度学等效单位。一些具有代表性的亮度值将在 @tbl:luminance-values-zh 给出。
 ]
 
-#figure(
-  table(
-    stroke: none,
-    columns: 2,
-    table.hline(),
-    [情景], [亮度（Luminance）（$c d\/m^2$ 或 尼特）],
-    table.hline(stroke: .5pt),
-    [太阳在地平线附近], [600,000 ],
-    [60瓦灯泡], [ 120,000 ],
-    [晴朗的天空], [ 8,000 ],
-    [典型办公室照明], [ 100-1,000 ],
-    [典型计算机显示器], [ 1-100 ],
-    [街道照明], [ 1-10 ],
-    [多云的月光], [ 0.25 ],
-    table.hline(),
-  ),
-  caption: [
-    #ez_caption[Representative Luminance Values for a Number of Lighting Conditions. ][多种照明情景的典型亮度值。]
-  ],
-)<luminance-values>
+#text(lang: "en")[
+  #figure(
+    table(
+      stroke: none,
+      columns: 2,
+      table.hline(),
+      [Condition], [Luminance ($c d\/m^2$, or nits)],
+      table.hline(stroke: .5pt),
+      [ Sun at horizon], [600,000 ],
+      [ 60-watt lightbulb], [ 120,000 ],
+      [ Clear sky], [ 8,000 ],
+      [ Typical office], [ 100-1,000 ],
+      [ Typical computer display], [ 1-100 ],
+      [ Street lighting], [ 1-10 ],
+      [ Cloudy moonlight], [ 0.25 ],
+      table.hline(),
+    ),
+    caption: [
+      Representative Luminance Values for a Number of Lighting Conditions.
+    ],
+  )<luminance-values>
+]
+
+#text(lang: "zh")[
+  #figure(
+    table(
+      stroke: none,
+      columns: 2,
+      table.hline(),
+      [情景], [亮度（$c d\/m^2$ 或 尼特）],
+      table.hline(stroke: .5pt),
+      [太阳在地平线附近], [600,000 ],
+      [60瓦灯泡], [ 120,000 ],
+      [晴朗的天空], [ 8,000 ],
+      [典型办公室照明], [ 100-1,000 ],
+      [典型计算机显示器], [ 1-100 ],
+      [街道照明], [ 1-10 ],
+      [多云的月光], [ 0.25 ],
+      table.hline(),
+    ),
+    caption: [
+      多种照明情景的典型亮度值。
+    ],
+  )<luminance-values-zh>
+]
 
 #parec[
   All the other radiometric quantities that we have introduced in this chapter have photometric equivalents; they are summarized in @tbl:radiometric-photometric.#footnote[The various photometric quantities have fairly unusual names; the somewhat confusing state of affairs was nicely summarized by Jim Kajiya: “Thus one nit is one lux per steradian is one candela per square meter is one lumen per square meter per steradian. Got it?”]
 ][
-  本章介绍的所有其他辐射度量量（Radiometric Quantities）都有其对应的光度量（Photometric Equivalents），它们总结在 @tbl:radiometric-photometric 表格里。#footnote[各类光度量的命名相对不太直观且容易混淆。吉姆·卡吉亚（Jim Kajiya）对此曾有过幽默的总结：“一尼特（nit）是每球面度上的一勒克斯（lux），是每平方米上的一坎德拉（candela per square meter），是每平方米每球面度上的一流明（lumen per square meter per steradian）。明白了吗？”]
+  本章介绍的所有其他辐射度量量（Radiometric Quantities）都有其对应的光度量（Photometric Equivalents），它们总结在 @tbl:radiometric-photometric-zh 表格里。#footnote[各类光度量的命名相对不太直观且容易混淆。吉姆·卡吉亚（Jim Kajiya）对此曾有过幽默的总结：“一尼特（nit）是每球面度上的一勒克斯（lux），是每平方米上的一坎德拉（candela per square meter），是每平方米每球面度上的一流明（lumen per square meter per steradian）。明白了吗？”]
 ]
 
-#figure(
-  align(center)[#table(
-      stroke: none,
-      columns: (20%, 17%, 27%, 33.33%),
-      align: (auto, auto, auto, auto),
-      table.hline(),
-      table.header([辐射度量 (Radiometric)], [单位], [光度量 (Photometric)], [单位]),
-      table.hline(stroke: .5pt),
-      [辐射能量 (Radiant Energy)], [焦耳 (J)], [光能量 (Luminous Energy)], [塔尔博 (Talbot, T)],
-      [辐射通量 (Radiant Flux)], [瓦特 (W)], [光通量 (Luminous Flux)], [流明 (Lumen, lm)],
-      [强度 (Intensity)], [$W\/s r$], [光强度 (Luminous Intensity)], [$"lm"\/s r = "candela" (c d)$],
-      [辐照度 (Irradiance)], [$W \/ m^2$], [照度 (Illuminance)], [$"lm"\/m^2 = "lux" (l x)$],
-      [辐射亮度 (Radiance)], [$W\/(m^2 dot s r)$], [亮度 (Luminance)], [$"lm"\/(m^2 dot "sr") = "cd"\/m^2 = "nit"$],
-      table.hline(),
-    )],
-  kind: table,
-  caption: [#ez_caption[Radiometric Measurements and Their Photometric Analogs. ][辐射测量及其光度学对应量。]
-  ],
-) <radiometric-photometric>
+#text(lang: "en")[
+  #figure(
+    align(center)[#table(
+        stroke: none,
+        columns: (20%, 17%, 27%, 33.33%),
+        align: (auto, auto, auto, auto),
+        table.hline(),
+        table.header([Radiometric], [Unit], [Photometric], [Unit]),
+        table.hline(stroke: .5pt),
+        [Radiant energy], [joule (J)], [Luminous energy], [talbot (T)],
+        [Radiant flux], [watt (W)], [Luminous flux], [lumen (lm)],
+        [Intensity], [$W\/s r$], [Luminous intensity], [$"lm"\/s r = "candela" (c d)$],
+        [Irradiance], [$W \/ m^2$], [Illuminance], [$"lm"\/m^2 = "lux" ("lx")$],
+        [Radiance], [$W\/(m^2 dot s r)$], [Luminance], [$"lm"\/(m^2 dot "sr") = "cd"\/m^2 = "nit"$],
+        table.hline(),
+      )],
+    kind: table,
+    caption: [Radiometric Measurements and Their Photometric Analogs.],
+  ) <radiometric-photometric>
+]
+
+#text(lang: "zh")[
+  #figure(
+    align(center)[#table(
+        stroke: none,
+        columns: (20%, 17%, 27%, 33.33%),
+        align: (auto, auto, auto, auto),
+        table.hline(),
+        table.header([辐射度量], [单位], [光度量], [单位]),
+        table.hline(stroke: .5pt),
+        [辐射能量], [焦耳 (J)], [光能量], [塔尔博 (Talbot, T)],
+        [辐射通量], [瓦特 (W)], [光通量], [流明 (Lumen, lm)],
+        [强度], [$W\/s r$], [光强度], [$"lm"\/s r = "candela" (c d)$],
+        [辐照度], [$W \/ m^2$], [照度], [$"lm"\/m^2 = "lux" (l x)$],
+        [辐射亮度], [$W\/(m^2 dot s r)$], [亮度], [$"lm"\/(m^2 dot "sr") = "cd"\/m^2 = "nit"$],
+        table.hline(),
+      )],
+    kind: table,
+    caption: [辐射测量及其光度学对应量。],
+  ) <radiometric-photometric-zh>
+]
+
