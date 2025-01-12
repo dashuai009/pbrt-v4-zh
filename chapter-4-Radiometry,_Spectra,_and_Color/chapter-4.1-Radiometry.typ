@@ -543,7 +543,7 @@ $ Y = integral_lambda L_lambda (lambda) V (lambda) thin d lambda $ <luminance>
   亮度的单位是坎德拉每平方米（ $upright("cd/m")^2$ ），其中坎德拉（Candela）是辐射强度（Radiant Intensity）的光度学等效单位。一些具有代表性的亮度值将在 @tbl:luminance-values-zh 给出。
 ]
 
-#text(lang: "en")[
+#parec[
   #figure(
     table(
       stroke: none,
@@ -564,9 +564,7 @@ $ Y = integral_lambda L_lambda (lambda) V (lambda) thin d lambda $ <luminance>
       Representative Luminance Values for a Number of Lighting Conditions.
     ],
   )<luminance-values>
-]
-
-#text(lang: "zh")[
+][
   #figure(
     table(
       stroke: none,
@@ -595,7 +593,7 @@ $ Y = integral_lambda L_lambda (lambda) V (lambda) thin d lambda $ <luminance>
   本章介绍的所有其他辐射度量量（Radiometric Quantities）都有其对应的光度量（Photometric Equivalents），它们总结在 @tbl:radiometric-photometric-zh 表格里。#footnote[各类光度量的命名相对不太直观且容易混淆。吉姆·卡吉亚（Jim Kajiya）对此曾有过幽默的总结：“一尼特（nit）是每球面度上的一勒克斯（lux），是每平方米上的一坎德拉（candela per square meter），是每平方米每球面度上的一流明（lumen per square meter per steradian）。明白了吗？”]
 ]
 
-#text(lang: "en")[
+#parec[
   #figure(
     align(center)[#table(
         stroke: none,
@@ -614,9 +612,7 @@ $ Y = integral_lambda L_lambda (lambda) V (lambda) thin d lambda $ <luminance>
     kind: table,
     caption: [Radiometric Measurements and Their Photometric Analogs.],
   ) <radiometric-photometric>
-]
-
-#text(lang: "zh")[
+][
   #figure(
     align(center)[#table(
         stroke: none,
@@ -636,4 +632,3 @@ $ Y = integral_lambda L_lambda (lambda) V (lambda) thin d lambda $ <luminance>
     caption: [辐射测量及其光度学对应量。],
   ) <radiometric-photometric-zh>
 ]
-
