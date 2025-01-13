@@ -133,7 +133,7 @@ $ f (x) = integral_(- oo)^oo F (theta) e^(i 2 pi theta x) thin d theta $ <fourie
 #parec[
   @tbl:fourier-pairs shows a number of important functions and their frequency space representations. A number of these functions are based on the Dirac delta distribution, which is defined such that $integral delta (x) thin d x = 1$, and for all $x eq.not 0$, $delta (x) = 0$. An important consequence of these properties is that
 ][
-  @tbl:fourier-pairs 显示了一些重要函数及其频率空间表示。这些函数中的一些基于狄拉克δ分布，其定义为 $integral delta (x) thin d x = 1$，且对于所有 $x eq.not 0$， $delta (x) = 0$。这些性质导致的一个重要结果是
+  @tbl:fourier-pairs-zh 显示了一些重要函数及其频率空间表示。这些函数中的一些基于狄拉克δ分布，其定义为 $integral delta (x) thin d x = 1$，且对于所有 $x eq.not 0$， $delta (x) = 0$。这些性质导致的一个重要结果是
 ]
 
 $ integral f (x) delta (x) thin d x = f (0) $
@@ -144,35 +144,75 @@ $ integral f (x) delta (x) thin d x = f (0) $
 ][
   $delta$ 分布不能表示为标准数学函数，而通常被认为是一个单位面积盒函数在原点处，宽度趋近于0的极限。
 ]
-#figure(
-  table(
-    columns: 2,
-    stroke: none,
-    align: left,
-    [*Spatial Domain*], [*Frequency Space Representation*],
-    [Box: $f (x) = 1$ if $lr(|x|) < 1 / 2$, $0$ otherwise],
-    [Sinc: $f (theta) = upright("sinc") (theta) = frac(sin (pi theta), pi theta)$],
 
-    [Gaussian: $f (x) = e^(- pi x^2)$], [Gaussian: $f (theta) = e^(- pi theta^2)$],
-    [Constant: $f (x) = 1$], [Delta: $f (theta) = delta (theta)$],
-    [Sinusoid: $f (x) = cos (x)$],
-    [Translated delta: $f (theta) = pi (delta (1 - 2 pi theta) + delta (1 + 2 pi theta))$],
+#parec[
+  #block(
+    inset: 8pt,
+    radius: 4pt,
+    stroke: .1pt,
+  )[
+    #figure(
+      align(left)[#table(
+          stroke: (x: none, y: .1pt),
+          columns: (50%, 50%),
+          align: (auto, auto),
+          fill: (_, y) => if y == 0 { gray.lighten(90%) } else { gray.lighten(95%) },
+          [*Spatial Domain*], [*Frequency Space Representation*],
+          table.hline(stroke: .5pt),
+          [Box: $f (x) = 1$ if $lr(|x|) < 1 / 2$, $0$ otherwise],
+          [Sinc: $f (theta) = upright("sinc") (theta) = frac(sin (pi theta), pi theta)$],
 
-    [Shah: $f (x) = upright("III")_T (x) = T sum_i delta (x - T_i)$],
-    [Shah: $f (theta) = upright("III")_(1 \/ T) (theta) = (1 / T) sum_i delta (theta - i / T)$],
-  ),
-  caption: [
-    #ez_caption[
-      Fourier Pairs. Functions in the spatial domain and their
-      frequency space representations. Because of the symmetry properties of
-      the Fourier transform, if the left column is instead considered to be
-      frequency space, then the right column is the spatial equivalent of
-      those functions as well.
-    ][
-      傅里叶对。空间域中的函数及其频率空间表示。由于傅里叶变换的对称性，如果左列被视为频率空间，则右列也是这些函数的空间等价物。
-    ]],
-  kind: table,
-)<fourier-pairs>
+          [Gaussian: $f (x) = e^(- pi x^2)$], [Gaussian: $f (theta) = e^(- pi theta^2)$],
+          [Constant: $f (x) = 1$], [Delta: $f (theta) = delta (theta)$],
+
+          [Sinusoid: $f (x) = cos (x)$],
+          [Translated delta: $f (theta) = pi (delta (1 - 2 pi theta) + delta (1 + 2 pi theta))$],
+
+          [Shah: $f (x) = upright("III")_T (x) = T sum_i delta (x - T_i)$],
+          [Shah: $f (theta) = upright("III")_(1 \/ T) (theta) = (1 / T) sum_i delta (theta - i / T)$],
+          table.hline(stroke: 0pt),
+        )],
+      kind: table,
+      caption: [
+        Fourier Pairs. Functions in the spatial domain and their frequency space representations. Because of the symmetry properties of the Fourier transform, if the left column is instead considered to be frequency space, then the right column is the spatial equivalent of those functions as well.
+      ],
+    ) <fourier-pairs>
+  ]
+][
+  #block(
+    inset: 8pt,
+    radius: 4pt,
+    stroke: .1pt,
+  )[
+    #figure(
+      align(left)[#table(
+          stroke: (x: none, y: .1pt),
+          columns: (50%, 50%),
+          align: (auto, auto),
+          fill: (_, y) => if y == 0 { gray.lighten(90%) } else { gray.lighten(95%) },
+          [*Spatial Domain*], [*Frequency Space Representation*],
+          table.hline(stroke: .5pt),
+          [Box: $f (x) = 1$ if $lr(|x|) < 1 / 2$, $0$ otherwise],
+          [Sinc: $f (theta) = upright("sinc") (theta) = frac(sin (pi theta), pi theta)$],
+
+          [Gaussian: $f (x) = e^(- pi x^2)$], [Gaussian: $f (theta) = e^(- pi theta^2)$],
+          [Constant: $f (x) = 1$], [Delta: $f (theta) = delta (theta)$],
+
+          [Sinusoid: $f (x) = cos (x)$],
+          [Translated delta: $f (theta) = pi (delta (1 - 2 pi theta) + delta (1 + 2 pi theta))$],
+
+          [Shah: $f (x) = upright("III")_T (x) = T sum_i delta (x - T_i)$],
+          [Shah: $f (theta) = upright("III")_(1 \/ T) (theta) = (1 / T) sum_i delta (theta - i / T)$],
+          table.hline(stroke: 0pt),
+        )],
+      kind: table,
+      caption: [
+        傅里叶对。空间域中的函数及其频率空间表示。由于傅里叶变换的对称性，如果左列被视为频率空间，则右列也是这些函数的空间等价物。
+      ],
+    ) <fourier-pairs-zh>
+  ]
+]
+
 
 
 === Ideal Sampling and Reconstruction
