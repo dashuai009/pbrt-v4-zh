@@ -322,7 +322,7 @@ $ cal(F) {f (x) times.circle g (x)} = F (omega) G (omega) . $<eq-fourier-convolu
 #parec[
   We also know the spectrum of the shah function $cal(I)_T (x)$ from Table 8.1; the Fourier transform of a shah function with period $T$ is another shah function with period $1 \/ T$. This reciprocal relationship between periods is important to keep in mind: it means that if the samples are farther apart in the spatial domain, they are closer together in the frequency domain.
 ][
-  我们还知道来自 @tbl:fourier-pairs 的shah函数 $cal(I)_T (x)$ 的频谱；周期为 $T$ 的shah函数的傅里叶变换是周期为 $1 \/ T$ 的另一个shah函数。这个周期之间的倒数关系很重要：这意味着如果样本在空间域中更远，它们在频域中就更近。
+  我们还知道来自 @tbl:fourier-pairs-zh 的shah函数 $cal(I)_T (x)$ 的频谱；周期为 $T$ 的shah函数的傅里叶变换是周期为 $1 \/ T$ 的另一个shah函数。这个周期之间的倒数关系很重要：这意味着如果样本在空间域中更远，它们在频域中就更近。
 ]
 
 #parec[
