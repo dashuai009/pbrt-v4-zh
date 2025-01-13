@@ -828,9 +828,9 @@ enum class RandomizeStrategy { None, PermuteDigits, FastOwen, Owen };
 ]
 
 #parec[
-  Table 8.3 illustrates the issue for Halton samples. The second column shows 2D Halton sample values in $\[ 0 , 1 \)^2$, which are then multiplied by the image resolution in each dimension to get sample positions in the image plane (here we are considering a $2 times 3$ image for simplicity). Note that here, each pixel is visited by each sixth sample. If we are rendering an image with three samples per pixel, then to generate all the samples for the pixel $(0 , 0)$, we need to generate the samples with indices 0, 6, and 12.
+  @tbl:haltonSampler-generates illustrates the issue for Halton samples. The second column shows 2D Halton sample values in $\[ 0 , 1 \)^2$, which are then multiplied by the image resolution in each dimension to get sample positions in the image plane (here we are considering a $2 times 3$ image for simplicity). Note that here, each pixel is visited by each sixth sample. If we are rendering an image with three samples per pixel, then to generate all the samples for the pixel $(0 , 0)$, we need to generate the samples with indices 0, 6, and 12.
 ][
-  表8.3展示了Halton样本的问题。第二列显示了 $\[ 0 , 1 \)^2$ 中的2D Halton样本值，然后乘以每个维度的图像分辨率以获得图像平面中的样本位置（这里为了简单起见，我们考虑一个 $2 times 3$ 的图像）。请注意，这里每个像素被每第六个样本访问一次。如果我们正在渲染一个每像素三个样本的图像，那么要生成像素 $(0 , 0)$ 的所有样本，我们需要生成索引为0、6和12的样本。
+  @tbl:haltonSampler-generates-zh 展示了Halton样本的问题。第二列显示了 $\[ 0 , 1 \)^2$ 中的2D Halton样本值，然后乘以每个维度的图像分辨率以获得图像平面中的样本位置（这里为了简单起见，我们考虑一个 $2 times 3$ 的图像）。请注意，这里每个像素被每第六个样本访问一次。如果我们正在渲染一个每像素三个样本的图像，那么要生成像素 $(0 , 0)$ 的所有样本，我们需要生成索引为0、6和12的样本。
 ]
 
 #parec[
@@ -871,7 +871,7 @@ enum class RandomizeStrategy { None, PermuteDigits, FastOwen, Owen };
       caption: [
         The #link("<HaltonSampler>")[HaltonSampler] generates the coordinates in the middle column for the first two dimensions, which are scaled by 2 in the first dimension and 3 in the second dimension so that they cover a $2 times 3$ pixel image. To fulfill the `Sampler` interface, it is necessary to be able to work backward from a given pixel and sample number within that pixel to find the corresponding sample index in the full Halton sequence.
       ],
-    )
+    ) <haltonSampler-generates>
   ]
 ][
   #block(
@@ -907,7 +907,7 @@ enum class RandomizeStrategy { None, PermuteDigits, FastOwen, Owen };
       caption: [
         #link("<HaltonSampler>")[HaltonSampler];为前两个维度生成中间列的坐标，这些坐标在第一个维度上按2缩放，在第二个维度上按3缩放，以便它们覆盖一个 $2 times 3$ 像素图像。为了满足`Sampler`接口，有必要能够从给定的像素和该像素内的样本编号向后工作，以找到完整Halton序列中的相应样本索引。
       ],
-    )
+    ) <haltonSampler-generates-zh>
   ]
 ]
 
