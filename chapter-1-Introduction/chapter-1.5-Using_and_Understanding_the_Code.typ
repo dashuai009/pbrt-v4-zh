@@ -50,7 +50,7 @@
   - `base`: Header files defining the interfaces for 12 of the common
     interface types listed in @tbl:plug-in-types (`Primitive` and `Integrator` are CPU-only and so are defined in files in the `cpu` directory).
 ][
-  - `base`：头文件定义了@tbl:plug-in-types 中列出的 12 种常见接口类型的接口（`Primitive` 和 `Integrator` 仅限于 CPU，因此在 `cpu` 目录中的文件中定义）。
+  - `base`：头文件定义了@tbl:plug-in-types-zh 中列出的 12 种常见接口类型的接口（`Primitive` 和 `Integrator` 仅限于 CPU，因此在 `cpu` 目录中的文件中定义）。
 ]
 
 #parec[
@@ -301,7 +301,7 @@ template <class T, class... Args> T *new_object(Args &&... args);
 #parec[
   With two exceptions, implementations of the base types listed in @tbl:plug-in-types are safe for multiple threads to use simultaneously. With a little care, it is usually straightforward to implement new instances of these base classes so they do not modify any shared state in their methods.
 ][
-  除了两个例外，@tbl:plug-in-types 中列出的基本类型的实现是安全的，可以由多个线程同时使用。只要稍加注意，通常很容易实现这些基本类的新实例，使它们在其方法中不修改任何共享状态。
+  除了两个例外，@tbl:plug-in-types-zh 中列出的基本类型的实现是安全的，可以由多个线程同时使用。只要稍加注意，通常很容易实现这些基本类的新实例，使它们在其方法中不修改任何共享状态。
 ]
 
 #parec[
@@ -327,7 +327,7 @@ template <class T, class... Args> T *new_object(Args &&... args);
 #parec[
   One of our goals in writing this book and building the `pbrt` system was to make it easier for developers and researchers to experiment with new (or old!) ideas in rendering. One of the great joys in computer graphics is writing new software that makes a new image; even small changes to the system can be fun to experiment with. The exercises throughout the book suggest many changes to make to the system, ranging from small tweaks to major open-ended research projects. Section~#link("../Processing_the_Scene_Description/Adding_New_Object_Implementations.html#sec:adding-plugins")[C.4] in Appendix~#link("../Processing_the_Scene_Description.html#chap:API")[C] has more information about the mechanics of adding new implementations of the interfaces listed in @tbl:plug-in-types.
 ][
-  我们编写这本书和构建 `pbrt` 系统的目标之一是让开发人员和研究人员更容易在渲染中试验新的（或经典的！）想法。计算机图形学中最大的乐趣之一是编写可以生成新图像的新软件；即使是对系统的小改动也可以很有趣地进行实验。整本书中的练习建议对系统进行许多更改，从小调整到重大开放式研究项目。附录 #link("../Processing_the_Scene_Description.html#chap:API")[C] 的第 #link("../Processing_the_Scene_Description/Adding_New_Object_Implementations.html#sec:adding-plugins")[C.4] 节提供了有关添加@tbl:plug-in-types 中列出的接口的新实现的机制的更多信息。
+  我们编写这本书和构建 `pbrt` 系统的目标之一是让开发人员和研究人员更容易在渲染中试验新的（或经典的！）想法。计算机图形学中最大的乐趣之一是编写可以生成新图像的新软件；即使是对系统的小改动也可以很有趣地进行实验。整本书中的练习建议对系统进行许多更改，从小调整到重大开放式研究项目。附录 #link("../Processing_the_Scene_Description.html#chap:API")[C] 的第 #link("../Processing_the_Scene_Description/Adding_New_Object_Implementations.html#sec:adding-plugins")[C.4] 节提供了有关添加 @tbl:plug-in-types-zh 中列出的接口的新实现的机制的更多信息。
 ]
 
 === Bugs

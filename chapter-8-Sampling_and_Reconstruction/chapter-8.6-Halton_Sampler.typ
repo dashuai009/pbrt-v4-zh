@@ -58,55 +58,72 @@ Corput序列];（范德科普特序列），它是一个由基数2的基数反�
 ]
 
 #parec[
-  Table #link("<table:radical-inverse-2>")[8.2] shows the first few values of the van der Corput sequence. Notice how it recursively splits the intervals of the 1D line in half, generating a sample point at the center of each interval.
+  @tbl:radical-inverse-in-base-2 shows the first few values of the van der Corput sequence. Notice how it recursively splits the intervals of the 1D line in half, generating a sample point at the center of each interval.
 ][
-  表#link("<table:radical-inverse-2>")[8.2];显示了van der Corput序列的前几个值。注意它如何递归地将1D线的区间分成两半，在每个区间的中心生成一个采样点。
+  @tbl:radical-inverse-in-base-2-zh 展示了范德科普特序列（van der Corput sequence）的前几个值。
+  可以注意到，它通过递归地将一维线段的区间对半划分，在每个区间的中心生成一个采样点。
 ]
 
 #parec[
-  #strong[Table 8.2:] The radical inverse \$ \_2(a)\$ of the first few nonnegative integers, computed in base 2. Notice how successive values of \$ \_2(a)\$ are not close to any of the previous values of \$ \_2(a)\$. As more and more values of the sequence are generated, samples are necessarily closer to previous samples, although with a minimum distance that is guaranteed to be reasonably good.
+  #block(
+    inset: 8pt,
+    radius: 4pt,
+    stroke: .1pt,
+  )[
+    #figure(
+      align(left)[#table(
+          stroke: (x: none, y: .1pt),
+          columns: (10%, 35%, 55%),
+          align: (auto, auto, auto),
+          fill: (_, y) => if y == 0 { gray.lighten(90%) } else { gray.lighten(95%) },
+          table.hline(),
+          [$a$], [*Base 2*], [$Phi_2(a)$],
+          table.hline(stroke: .5pt),
+          [0], [0], [$0$],
+          [1], [1], [$0.1 = 1 / 2$],
+          [2], [10], [$0.01 = 1 / 4$],
+          [3], [11], [$0.11 = 3 / 4$],
+          [4], [100], [$0.001 = 1 / 8$],
+          [5], [101], [$0.101 = 5 / 8$],
+          [⋮], [], [],
+          table.hline(stroke: 0pt),
+        )],
+      kind: table,
+      caption: [
+        The radical inverse $Phi_2(a)$ of the first few nonnegative integers, computed in base 2. Notice how successive values of $Phi_2(a)$ are not close to any of the previous values of $Phi_2(a)$. As more and more values of the sequence are generated, samples are necessarily closer to previous samples, although with a minimum distance that is guaranteed to be reasonably good.
+      ],
+    )<radical-inverse-in-base-2>
+  ]
 ][
-  #strong[表8.2：] 基数2中计算的前几个非负整数的基数反演\$ \_2(a) $。 注 意$ \_2(a) $的 连 续 值 如 何 不 接 近 任 何 先 前 的$ \_2(a)\$值。随着序列中越来越多的值被生成，样本必然更接近先前的样本，尽管有一个保证合理好的最小距离。
-]
-
-#parec[
-  $a$ | Base 2 | \$
-
-  #figure(
-    align(center)[#table(
-        columns: 3,
-        align: (auto, auto, auto),
-        table.header([\_2(a)\$], [], []),
-        table.hline(),
-        [0], [0], [$0$],
-        [1], [1], [$0.1 = 1 / 2$],
-        [2], [10], [$0.01 = 1 / 4$],
-        [3], [11], [$0.11 = 3 / 4$],
-        [4], [100], [$0.001 = 1 / 8$],
-        [5], [101], [$0.101 = 5 / 8$],
-        […], [], [],
-      )],
-    kind: table,
-  )
-][
-  $a$ | 基数2 | \$
-
-  #figure(
-    align(center)[#table(
-        columns: 3,
-        align: (auto, auto, auto),
-        table.header([\_2(a)\$], [], []),
-        table.hline(),
-        [0], [0], [$0$],
-        [1], [1], [$0.1 = 1 / 2$],
-        [2], [10], [$0.01 = 1 / 4$],
-        [3], [11], [$0.11 = 3 / 4$],
-        [4], [100], [$0.001 = 1 / 8$],
-        [5], [101], [$0.101 = 5 / 8$],
-        […], [], [],
-      )],
-    kind: table,
-  )
+  #block(
+    inset: 8pt,
+    radius: 4pt,
+    stroke: .1pt,
+  )[
+    #figure(
+      align(left)[#table(
+          stroke: (x: none, y: .1pt),
+          columns: (10%, 35%, 55%),
+          align: (auto, auto, auto),
+          fill: (_, y) => if y == 0 { gray.lighten(90%) } else { gray.lighten(95%) },
+          table.hline(),
+          [$a$], [*以2为底*], [$Phi_2(a)$],
+          table.hline(stroke: .5pt),
+          [0], [0], [$0$],
+          [1], [1], [$0.1 = 1 / 2$],
+          [2], [10], [$0.01 = 1 / 4$],
+          [3], [11], [$0.11 = 3 / 4$],
+          [4], [100], [$0.001 = 1 / 8$],
+          [5], [101], [$0.101 = 5 / 8$],
+          [⋮], [], [],
+          table.hline(stroke: 0pt),
+        )],
+      kind: table,
+      caption: [
+        前几个非负整数在以2为底下的基数倒数 $Phi_2(a)$ 。可以注意到，序列中连续的 $Phi_2(a)$ 值彼此之间并不接近此前的任何值。随着序列中更多的值被生成，样本必然会逐渐接近先前的样本，但仍能保持一个较为合理的最小间隔。
+      ],
+    )<radical-inverse-in-base-2-zh>
+  ]
 ]
 
 #parec[
@@ -816,66 +833,82 @@ enum class RandomizeStrategy { None, PermuteDigits, FastOwen, Owen };
   表8.3展示了Halton样本的问题。第二列显示了 $\[ 0 , 1 \)^2$ 中的2D Halton样本值，然后乘以每个维度的图像分辨率以获得图像平面中的样本位置（这里为了简单起见，我们考虑一个 $2 times 3$ 的图像）。请注意，这里每个像素被每第六个样本访问一次。如果我们正在渲染一个每像素三个样本的图像，那么要生成像素 $(0 , 0)$ 的所有样本，我们需要生成索引为0、6和12的样本。
 ]
 
-
 #parec[
-  #strong[Table 8.3:] The #link("<HaltonSampler>")[HaltonSampler] generates the coordinates in the middle column for the first two dimensions, which are scaled by 2 in the first dimension and 3 in the second dimension so that they cover a $2 times 3$ pixel image. To fulfill the `Sampler` interface, it is necessary to be able to work backward from a given pixel and sample number within that pixel to find the corresponding sample index in the full Halton sequence.
+  #block(
+    inset: 8pt,
+    radius: 4pt,
+    stroke: .1pt,
+  )[
+    #figure(
+      align(left)[#table(
+          stroke: (x: none, y: .1pt),
+          columns: (20%, 40%, 40%),
+          align: (auto, auto, auto),
+          fill: (_, y) => if y == 0 { gray.lighten(90%) } else { gray.lighten(95%) },
+          table.header(
+            [Sample index],
+            [$\[ 0 , 1 \)^2$ sample coordinates],
+            [Pixel sample coordinates],
+          ),
+          table.hline(stroke: .5pt),
+          [0], [$(0.000000 , 0.000000)$], [$(0.000000 , 0.000000)$],
+          [1], [$(0.500000 , 0.333333)$], [$(1.000000 , 1.000000)$],
+          [2], [$(0.250000 , 0.666667)$], [$(0.500000 , 2.000000)$],
+          [3], [$(0.750000 , 0.111111)$], [$(1.500000 , 0.333333)$],
+          [4], [$(0.125000 , 0.444444)$], [$(0.250000 , 1.333333)$],
+          [5], [$(0.625000 , 0.777778)$], [$(1.250000 , 2.333333)$],
+          [6], [$(0.375000 , 0.222222)$], [$(0.750000 , 0.666667)$],
+          [7], [$(0.875000 , 0.555556)$], [$(1.750000 , 1.666667)$],
+          [8], [$(0.062500 , 0.888889)$], [$(0.125000 , 2.666667)$],
+          [9], [$(0.562500 , 0.037037)$], [$(1.125000 , 0.111111)$],
+          [10], [$(0.312500 , 0.370370)$], [$(0.625000 , 1.111111)$],
+          [11], [$(0.812500 , 0.703704)$], [$(1.625000 , 2.111111)$],
+          [12], [$(0.187500 , 0.148148)$], [$(0.375000 , 0.444444)$],
+          […], […], […],
+          table.hline(stroke: 0pt),
+        )],
+      kind: table,
+      caption: [
+        The #link("<HaltonSampler>")[HaltonSampler] generates the coordinates in the middle column for the first two dimensions, which are scaled by 2 in the first dimension and 3 in the second dimension so that they cover a $2 times 3$ pixel image. To fulfill the `Sampler` interface, it is necessary to be able to work backward from a given pixel and sample number within that pixel to find the corresponding sample index in the full Halton sequence.
+      ],
+    )
+  ]
 ][
-  #strong[表8.3:] #link("<HaltonSampler>")[HaltonSampler];为前两个维度生成中间列的坐标，这些坐标在第一个维度上按2缩放，在第二个维度上按3缩放，以便它们覆盖一个 $2 times 3$ 像素图像。为了满足`Sampler`接口，有必要能够从给定的像素和该像素内的样本编号向后工作，以找到完整Halton序列中的相应样本索引。
-]
-
-#parec[
-  #figure(
-    align(center)[#table(
-        columns: (14.89%, 44.68%, 40.43%),
-        align: (auto, auto, auto),
-        table.header(
-          [Sample index],
-          [$\[ 0 , 1 \)^2$ sample
-            coordinates],
-          [Pixel sample coordinates],
-        ),
-        table.hline(),
-        [0], [$(0.000000 , 0.000000)$], [$(0.000000 , 0.000000)$],
-        [1], [$(0.500000 , 0.333333)$], [$(1.000000 , 1.000000)$],
-        [2], [$(0.250000 , 0.666667)$], [$(0.500000 , 2.000000)$],
-        [3], [$(0.750000 , 0.111111)$], [$(1.500000 , 0.333333)$],
-        [4], [$(0.125000 , 0.444444)$], [$(0.250000 , 1.333333)$],
-        [5], [$(0.625000 , 0.777778)$], [$(1.250000 , 2.333333)$],
-        [6], [$(0.375000 , 0.222222)$], [$(0.750000 , 0.666667)$],
-        [7], [$(0.875000 , 0.555556)$], [$(1.750000 , 1.666667)$],
-        [8], [$(0.062500 , 0.888889)$], [$(0.125000 , 2.666667)$],
-        [9], [$(0.562500 , 0.037037)$], [$(1.125000 , 0.111111)$],
-        [10], [$(0.312500 , 0.370370)$], [$(0.625000 , 1.111111)$],
-        [11], [$(0.812500 , 0.703704)$], [$(1.625000 , 2.111111)$],
-        [12], [$(0.187500 , 0.148148)$], [$(0.375000 , 0.444444)$],
-        […], […], […],
-      )],
-    kind: table,
-  )
-][
-  #figure(
-    align(center)[#table(
-        columns: (14.89%, 44.68%, 40.43%),
-        align: (auto, auto, auto),
-        table.header([样本索引], [$\[ 0 , 1 \)^2$样本坐标], [像素样本坐标]),
-        table.hline(),
-        [0], [$(0.000000 , 0.000000)$], [$(0.000000 , 0.000000)$],
-        [1], [$(0.500000 , 0.333333)$], [$(1.000000 , 1.000000)$],
-        [2], [$(0.250000 , 0.666667)$], [$(0.500000 , 2.000000)$],
-        [3], [$(0.750000 , 0.111111)$], [$(1.500000 , 0.333333)$],
-        [4], [$(0.125000 , 0.444444)$], [$(0.250000 , 1.333333)$],
-        [5], [$(0.625000 , 0.777778)$], [$(1.250000 , 2.333333)$],
-        [6], [$(0.375000 , 0.222222)$], [$(0.750000 , 0.666667)$],
-        [7], [$(0.875000 , 0.555556)$], [$(1.750000 , 1.666667)$],
-        [8], [$(0.062500 , 0.888889)$], [$(0.125000 , 2.666667)$],
-        [9], [$(0.562500 , 0.037037)$], [$(1.125000 , 0.111111)$],
-        [10], [$(0.312500 , 0.370370)$], [$(0.625000 , 1.111111)$],
-        [11], [$(0.812500 , 0.703704)$], [$(1.625000 , 2.111111)$],
-        [12], [$(0.187500 , 0.148148)$], [$(0.375000 , 0.444444)$],
-        […], […], […],
-      )],
-    kind: table,
-  )
+  #block(
+    inset: 8pt,
+    radius: 4pt,
+    stroke: .1pt,
+  )[
+    #figure(
+      align(left)[#table(
+          stroke: (x: none, y: .1pt),
+          columns: (20%, 40%, 40%),
+          align: (auto, auto, auto),
+          fill: (_, y) => if y == 0 { gray.lighten(90%) } else { gray.lighten(95%) },
+          table.header([样本索引], [$\[ 0 , 1 \)^2$样本坐标], [像素样本坐标]),
+          table.hline(stroke: .5pt),
+          [0], [$(0.000000 , 0.000000)$], [$(0.000000 , 0.000000)$],
+          [1], [$(0.500000 , 0.333333)$], [$(1.000000 , 1.000000)$],
+          [2], [$(0.250000 , 0.666667)$], [$(0.500000 , 2.000000)$],
+          [3], [$(0.750000 , 0.111111)$], [$(1.500000 , 0.333333)$],
+          [4], [$(0.125000 , 0.444444)$], [$(0.250000 , 1.333333)$],
+          [5], [$(0.625000 , 0.777778)$], [$(1.250000 , 2.333333)$],
+          [6], [$(0.375000 , 0.222222)$], [$(0.750000 , 0.666667)$],
+          [7], [$(0.875000 , 0.555556)$], [$(1.750000 , 1.666667)$],
+          [8], [$(0.062500 , 0.888889)$], [$(0.125000 , 2.666667)$],
+          [9], [$(0.562500 , 0.037037)$], [$(1.125000 , 0.111111)$],
+          [10], [$(0.312500 , 0.370370)$], [$(0.625000 , 1.111111)$],
+          [11], [$(0.812500 , 0.703704)$], [$(1.625000 , 2.111111)$],
+          [12], [$(0.187500 , 0.148148)$], [$(0.375000 , 0.444444)$],
+          […], […], […],
+          table.hline(stroke: 0pt),
+        )],
+      kind: table,
+      caption: [
+        #link("<HaltonSampler>")[HaltonSampler];为前两个维度生成中间列的坐标，这些坐标在第一个维度上按2缩放，在第二个维度上按3缩放，以便它们覆盖一个 $2 times 3$ 像素图像。为了满足`Sampler`接口，有必要能够从给定的像素和该像素内的样本编号向后工作，以找到完整Halton序列中的相应样本索引。
+      ],
+    )
+  ]
 ]
 
 #parec[

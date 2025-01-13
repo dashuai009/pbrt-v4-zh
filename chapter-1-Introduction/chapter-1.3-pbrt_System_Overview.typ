@@ -1,4 +1,4 @@
-#import "../template.typ": parec, ez_caption
+#import "../template.typ": parec, ez_caption, fake-par
 
 == pbrt: System Overview
 <pbrt-system-overview>
@@ -9,65 +9,140 @@
   pbrt 使用标准的面向对象技术来构建：对于多种基本类型，系统指定了实现该类型必须满足的接口。例如，pbrt要求实现一个特定的形状来表示场景中的几何体，提供一组方法，包括返回形状的边界框的方法，以及测试与给定射线的交集的方法。反过来，系统的大部分可以纯粹以这些接口的形式实现；例如，检查光源与被着色点之间是否有遮挡物的代码调用形状交集方法，而不需要考虑场景中存在哪些特定类型的形状。
 ]
 
+#parec[
+  #block(
+    inset: 8pt,
+    radius: 4pt,
+    stroke: .1pt,
+  )[
+    #figure(
+      align(left)[#table(
+          stroke: (x: none, y: .1pt),
+          columns: (25%, 60%, 15%),
+          align: (auto, auto, auto),
+          fill: (_, y) => if y == 0 { gray.lighten(90%) } else { gray.lighten(95%) },
+          table.hline(),
+          table.header([Base type], [Source Files], [Section]),
+          table.hline(stroke: .5pt),
+          [#link("../Radiometry,_Spectra,_and_Color/Representing_Spectral_Distributions.html#Spectrum")[`Spectrum`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/spectrum.h")[`base/spectrum.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/util/spectrum.h")[`util/spectrum.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/util/spectrum.cpp")[`util/spectrum.cpp`];], [#link("../Radiometry,_Spectra,_and_Color/Representing_Spectral_Distributions.html#sec:spectrum")[4.5];],
+          [#link("../Cameras_and_Film/Camera_Interface.html#Camera")[`Camera`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/camera.h")[`base/camera.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/cameras.h")[`cameras.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/cameras.cpp")[`cameras.cpp`];], [#link("../Cameras_and_Film/Camera_Interface.html#sec:camera-model")[5.1];],
+          [#link("../Shapes/Basic_Shape_Interface.html#Shape")[`Shape`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/shape.h")[`base/shape.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/shapes.h")[`shapes.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/shapes.cpp")[`shapes.cpp`];], [#link("../Shapes/Basic_Shape_Interface.html#sec:shape-interface")[6.1];],
+          [#link("../Primitives_and_Intersection_Acceleration/Primitive_Interface_and_Geometric_Primitives.html#Primitive")[`Primitive`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/cpu/primitive.h")[`cpu/primitive.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/cpu/primitive.cpp")[`cpu/primitive.cpp`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/cpu/accelerators.h")[`cpu/accelerators.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/cpu/accelerators.cpp")[`cpu/accelerators.cpp`];], [#link("../Primitives_and_Intersection_Acceleration/Primitive_Interface_and_Geometric_Primitives.html#sec:primitives")[7.1];],
+          [#link("../Sampling_and_Reconstruction/Sampling_Interface.html#Sampler")[`Sampler`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/sampler.h")[`base/sampler.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/samplers.h")[`samplers.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/samplers.cpp")[`samplers.cpp`];], [#link("../Sampling_and_Reconstruction/Sampling_Interface.html#sec:sampling-interface")[8.3];],
+          [#link("../Sampling_and_Reconstruction/Image_Reconstruction.html#Filter")[`Filter`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/filter.h")[`base/filter.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/filters.h")[`filters.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/filters.cpp")[`filters.cpp`];], [#link("../Sampling_and_Reconstruction/Image_Reconstruction.html#sec:filter-interface")[8.8.1];],
+          [#link("../Reflection_Models/BSDF_Representation.html#BxDF")[`BxDF`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/bxdf.h")[`base/bxdf.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/bxdfs.h")[`bxdfs.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/bxdfs.cpp")[`bxdfs.cpp`];], [#link("../Reflection_Models/BSDF_Representation.html#sec:bxdf-interface")[9.1.2];],
+          [#link("../Textures_and_Materials/Material_Interface_and_Implementations.html#Material")[`Material`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/material.h")[`base/material.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/materials.h")[`materials.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/materials.cpp")[`materials.cpp`];], [#link("../Textures_and_Materials/Material_Interface_and_Implementations.html#sec:material-interface")[10.5];],
+          [#link("../Textures_and_Materials/Texture_Interface_and_Basic_Textures.html#FloatTexture")[`FloatTexture`];], [], [],
+          [#link("../Textures_and_Materials/Texture_Interface_and_Basic_Textures.html#SpectrumTexture")[`SpectrumTexture`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/texture.h")[`base/texture.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/textures.h")[`textures.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/textures.cpp")[`textures.cpp`];], [#link("../Textures_and_Materials/Texture_Interface_and_Basic_Textures.html#sec:texture-interface")[10.3];],
+          [#link("../Volume_Scattering/Media.html#Medium")[`Medium`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/medium.h")[`base/medium.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/media.h")[`media.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/media.cpp")[`media.cpp`];], [#link("../Volume_Scattering/Media.html#sec:media")[11.4];],
+          [#link("../Light_Sources/Light_Interface.html#Light")[`Light`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/light.h")[`base/light.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/lights.h")[`lights.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/lights.cpp")[`lights.cpp`];], [#link("../Light_Sources/Light_Interface.html#sec:light")[12.1];],
+          [#link("../Light_Sources/Light_Sampling.html#LightSampler")[`LightSampler`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/lightsampler.h")[`base/lightsampler.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/lightsamplers.h")[`lightsamplers.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/lightsamplers.cpp")[`lightsamplers.cpp`];], [#link("../Light_Sources/Light_Sampling.html#sec:light-sampling")[12.6];],
+          [#link("<Integrator>")[`Integrator`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/cpu/integrators.h")[`cpu/integrators.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/cpu/integrators.cpp")[`cpu/integrators.cpp`];], [#link("<sec:integrator-intro>")[1.3.3];],
+          table.hline(stroke: 0pt),
+        )],
+      kind: table,
+      caption: [
+        Main Interface Types. Most of pbrt is implemented in terms of 14 key base types, listed here. Implementations of each of these can easily be added to the system to extend its functionality.
+      ],
+    )<plug-in-types>
+  ]
+][
+  #block(
+    inset: 8pt,
+    radius: 4pt,
+    stroke: .1pt,
+  )[
+    #figure(
+      align(left)[#table(
+          stroke: (x: none, y: .1pt),
+          columns: (25%, 60%, 15%),
+          align: (auto, auto, auto),
+          fill: (_, y) => if y == 0 { gray.lighten(90%) } else { gray.lighten(95%) },
+          table.hline(),
+          table.header([基础类型], [源文件], [章节]),
+          table.hline(stroke: .5pt),
+          [#link("../Radiometry,_Spectra,_and_Color/Representing_Spectral_Distributions.html#Spectrum")[`Spectrum`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/spectrum.h")[`base/spectrum.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/util/spectrum.h")[`util/spectrum.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/util/spectrum.cpp")[`util/spectrum.cpp`];], [#link("../Radiometry,_Spectra,_and_Color/Representing_Spectral_Distributions.html#sec:spectrum")[4.5];],
+          [#link("../Cameras_and_Film/Camera_Interface.html#Camera")[`Camera`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/camera.h")[`base/camera.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/cameras.h")[`cameras.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/cameras.cpp")[`cameras.cpp`];], [#link("../Cameras_and_Film/Camera_Interface.html#sec:camera-model")[5.1];],
+          [#link("../Shapes/Basic_Shape_Interface.html#Shape")[`Shape`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/shape.h")[`base/shape.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/shapes.h")[`shapes.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/shapes.cpp")[`shapes.cpp`];], [#link("../Shapes/Basic_Shape_Interface.html#sec:shape-interface")[6.1];],
+          [#link("../Primitives_and_Intersection_Acceleration/Primitive_Interface_and_Geometric_Primitives.html#Primitive")[`Primitive`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/cpu/primitive.h")[`cpu/primitive.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/cpu/primitive.cpp")[`cpu/primitive.cpp`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/cpu/accelerators.h")[`cpu/accelerators.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/cpu/accelerators.cpp")[`cpu/accelerators.cpp`];], [#link("../Primitives_and_Intersection_Acceleration/Primitive_Interface_and_Geometric_Primitives.html#sec:primitives")[7.1];],
+          [#link("../Sampling_and_Reconstruction/Sampling_Interface.html#Sampler")[`Sampler`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/sampler.h")[`base/sampler.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/samplers.h")[`samplers.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/samplers.cpp")[`samplers.cpp`];], [#link("../Sampling_and_Reconstruction/Sampling_Interface.html#sec:sampling-interface")[8.3];],
+          [#link("../Sampling_and_Reconstruction/Image_Reconstruction.html#Filter")[`Filter`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/filter.h")[`base/filter.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/filters.h")[`filters.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/filters.cpp")[`filters.cpp`];], [#link("../Sampling_and_Reconstruction/Image_Reconstruction.html#sec:filter-interface")[8.8.1];],
+          [#link("../Reflection_Models/BSDF_Representation.html#BxDF")[`BxDF`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/bxdf.h")[`base/bxdf.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/bxdfs.h")[`bxdfs.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/bxdfs.cpp")[`bxdfs.cpp`];], [#link("../Reflection_Models/BSDF_Representation.html#sec:bxdf-interface")[9.1.2];],
+          [#link("../Textures_and_Materials/Material_Interface_and_Implementations.html#Material")[`Material`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/material.h")[`base/material.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/materials.h")[`materials.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/materials.cpp")[`materials.cpp`];], [#link("../Textures_and_Materials/Material_Interface_and_Implementations.html#sec:material-interface")[10.5];],
+          [#link("../Textures_and_Materials/Texture_Interface_and_Basic_Textures.html#FloatTexture")[`FloatTexture`];], [], [],
+          [#link("../Textures_and_Materials/Texture_Interface_and_Basic_Textures.html#SpectrumTexture")[`SpectrumTexture`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/texture.h")[`base/texture.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/textures.h")[`textures.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/textures.cpp")[`textures.cpp`];], [#link("../Textures_and_Materials/Texture_Interface_and_Basic_Textures.html#sec:texture-interface")[10.3];],
+          [#link("../Volume_Scattering/Media.html#Medium")[`Medium`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/medium.h")[`base/medium.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/media.h")[`media.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/media.cpp")[`media.cpp`];], [#link("../Volume_Scattering/Media.html#sec:media")[11.4];],
+          [#link("../Light_Sources/Light_Interface.html#Light")[`Light`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/light.h")[`base/light.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/lights.h")[`lights.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/lights.cpp")[`lights.cpp`];], [#link("../Light_Sources/Light_Interface.html#sec:light")[12.1];],
+          [#link("../Light_Sources/Light_Sampling.html#LightSampler")[`LightSampler`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/lightsampler.h")[`base/lightsampler.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/lightsamplers.h")[`lightsamplers.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/lightsamplers.cpp")[`lightsamplers.cpp`];], [#link("../Light_Sources/Light_Sampling.html#sec:light-sampling")[12.6];],
+          [#link("<Integrator>")[`Integrator`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/cpu/integrators.h")[`cpu/integrators.h`];,
+            #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/cpu/integrators.cpp")[`cpu/integrators.cpp`];], [#link("<sec:integrator-intro>")[1.3.3];],
+          table.hline(stroke: 0pt),
+        )],
+      kind: table,
+      caption: [
+        主要的接口类型。大多数pbrt都是根据14种关键基类型实现的，如下所示。这些实现中的每一个都可以很容易地添加到系统中以扩展其功能。
+      ],
+    )<plug-in-types-zh>
+  ]
+]
 
-#figure(
-  align(center)[#table(
-      columns: (20%, 65%, 15%),
-      align: (auto, auto, auto),
-      table.header([Base type], [Source Files], [Section]),
-      table.hline(),
-      [#link("../Radiometry,_Spectra,_and_Color/Representing_Spectral_Distributions.html#Spectrum")[`Spectrum`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/spectrum.h")[`base/spectrum.h`];,
-        #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/util/spectrum.h")[`util/spectrum.h`];,
-        #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/util/spectrum.cpp")[`util/spectrum.cpp`];], [#link("../Radiometry,_Spectra,_and_Color/Representing_Spectral_Distributions.html#sec:spectrum")[4.5];],
-      [#link("../Cameras_and_Film/Camera_Interface.html#Camera")[`Camera`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/camera.h")[`base/camera.h`];,
-        #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/cameras.h")[`cameras.h`];,
-        #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/cameras.cpp")[`cameras.cpp`];], [#link("../Cameras_and_Film/Camera_Interface.html#sec:camera-model")[5.1];],
-      [#link("../Shapes/Basic_Shape_Interface.html#Shape")[`Shape`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/shape.h")[`base/shape.h`];,
-        #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/shapes.h")[`shapes.h`];,
-        #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/shapes.cpp")[`shapes.cpp`];], [#link("../Shapes/Basic_Shape_Interface.html#sec:shape-interface")[6.1];],
-      [#link("../Primitives_and_Intersection_Acceleration/Primitive_Interface_and_Geometric_Primitives.html#Primitive")[`Primitive`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/cpu/primitive.h")[`cpu/primitive.h`];,
-        #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/cpu/primitive.cpp")[`cpu/primitive.cpp`];,
-        #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/cpu/accelerators.h")[`cpu/accelerators.h`];,
-        #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/cpu/accelerators.cpp")[`cpu/accelerators.cpp`];], [#link("../Primitives_and_Intersection_Acceleration/Primitive_Interface_and_Geometric_Primitives.html#sec:primitives")[7.1];],
-      [#link("../Sampling_and_Reconstruction/Sampling_Interface.html#Sampler")[`Sampler`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/sampler.h")[`base/sampler.h`];,
-        #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/samplers.h")[`samplers.h`];,
-        #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/samplers.cpp")[`samplers.cpp`];], [#link("../Sampling_and_Reconstruction/Sampling_Interface.html#sec:sampling-interface")[8.3];],
-      [#link("../Sampling_and_Reconstruction/Image_Reconstruction.html#Filter")[`Filter`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/filter.h")[`base/filter.h`];,
-        #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/filters.h")[`filters.h`];,
-        #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/filters.cpp")[`filters.cpp`];], [#link("../Sampling_and_Reconstruction/Image_Reconstruction.html#sec:filter-interface")[8.8.1];],
-      [#link("../Reflection_Models/BSDF_Representation.html#BxDF")[`BxDF`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/bxdf.h")[`base/bxdf.h`];,
-        #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/bxdfs.h")[`bxdfs.h`];,
-        #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/bxdfs.cpp")[`bxdfs.cpp`];], [#link("../Reflection_Models/BSDF_Representation.html#sec:bxdf-interface")[9.1.2];],
-      [#link("../Textures_and_Materials/Material_Interface_and_Implementations.html#Material")[`Material`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/material.h")[`base/material.h`];,
-        #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/materials.h")[`materials.h`];,
-        #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/materials.cpp")[`materials.cpp`];], [#link("../Textures_and_Materials/Material_Interface_and_Implementations.html#sec:material-interface")[10.5];],
-      [#link("../Textures_and_Materials/Texture_Interface_and_Basic_Textures.html#FloatTexture")[`FloatTexture`];], [], [],
-      [#link("../Textures_and_Materials/Texture_Interface_and_Basic_Textures.html#SpectrumTexture")[`SpectrumTexture`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/texture.h")[`base/texture.h`];,
-        #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/textures.h")[`textures.h`];,
-        #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/textures.cpp")[`textures.cpp`];], [#link("../Textures_and_Materials/Texture_Interface_and_Basic_Textures.html#sec:texture-interface")[10.3];],
-      [#link("../Volume_Scattering/Media.html#Medium")[`Medium`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/medium.h")[`base/medium.h`];,
-        #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/media.h")[`media.h`];,
-        #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/media.cpp")[`media.cpp`];], [#link("../Volume_Scattering/Media.html#sec:media")[11.4];],
-      [#link("../Light_Sources/Light_Interface.html#Light")[`Light`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/light.h")[`base/light.h`];,
-        #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/lights.h")[`lights.h`];,
-        #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/lights.cpp")[`lights.cpp`];], [#link("../Light_Sources/Light_Interface.html#sec:light")[12.1];],
-      [#link("../Light_Sources/Light_Sampling.html#LightSampler")[`LightSampler`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/base/lightsampler.h")[`base/lightsampler.h`];,
-        #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/lightsamplers.h")[`lightsamplers.h`];,
-        #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/lightsamplers.cpp")[`lightsamplers.cpp`];], [#link("../Light_Sources/Light_Sampling.html#sec:light-sampling")[12.6];],
-      [#link("<Integrator>")[`Integrator`];], [#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/cpu/integrators.h")[`cpu/integrators.h`];,
-        #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/cpu/integrators.cpp")[`cpu/integrators.cpp`];], [#link("<sec:integrator-intro>")[1.3.3];],
-    )],
-  kind: table,
-  caption: [#ez_caption[Main Interface Types. Most of pbrt is implemented in terms of 14 key base types, listed here. Implementations of each of these can easily be added to the system to extend its functionality.][
-      主要的接口类型。大多数pbrt都是根据14种关键基类型实现的，如下所示。这些实现中的每一个都可以很容易地添加到系统中以扩展其功能。
-    ]
-  ],
-)<plug-in-types>
+#fake-par
 
 #parec[
   There are a total of 14 of these key base types, summarized in @tbl:plug-in-types . Adding a new implementation of one of these types to the system is straightforward; the implementation must provide the required methods, it must be compiled and linked into the executable, and the scene object creation routines must be modified to create instances of the object as needed as the scene description file is parsed. Section #link("../Processing_the_Scene_Description/Adding_New_Object_Implementations.html#sec:adding-plugins")[C.4] discusses extending the system in more detail.
 ][
-  这些关键基本类型共有 14 种，总结在@tbl:plug-in-types 中。向系统添加这些类型的新实现是简单直接的；实现必须提供所需的方法，必须编译并链接到可执行文件中，场景对象创建例程必须修改以在解析场景描述文件时根据需要创建对象实例。第C.4节更详细地讨论了系统的扩展。
+  这些关键基本类型共有 14 种，总结在 @tbl:plug-in-types-zh 中。向系统添加这些类型的新实现是简单直接的；实现必须提供所需的方法，必须编译并链接到可执行文件中，场景对象创建例程必须修改以在解析场景描述文件时根据需要创建对象实例。第C.4节更详细地讨论了系统的扩展。
 ]
 
 #parec[

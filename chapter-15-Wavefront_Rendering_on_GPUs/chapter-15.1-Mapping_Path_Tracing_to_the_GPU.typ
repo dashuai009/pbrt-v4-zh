@@ -169,42 +169,57 @@ expect too much of compilers in such ways, lest they disappoint.
 
 
 #parec[
-  #figure(
-    table(
-      columns: 3,
-      align: (auto, auto, auto),
-      table.header([], [AMD 3970x CPU], [NVIDIA 3090 RTX GPU]),
-      table.hline(),
-      [Processors], [32], [82],
-      [Peak single-precision TFLOPS], [3.8], [36],
-      [Peak memory bandwidth], [\$ ilde{100}\$ GiB/s], [936 GiB/s],
-    ),
-    caption: [
-      Key Properties of a Representative Modern CPU and GPU. This
-      CPU and GPU have approximately the same cost at time of writing but
-      provide their computational capabilities using very different
-      architectures. This table summarizes some of their most important
-      characteristics.
-    ],
-    kind: table,
-  )<cpu-gpu-specs-en>
+  #block(
+    inset: 8pt,
+    radius: 4pt,
+    stroke: .1pt,
+  )[
+    #figure(
+      align(left)[#table(
+          stroke: (x: none, y: .1pt),
+          columns: (40%, 30%, 30%),
+          align: (auto, auto, auto),
+          fill: (_, y) => if y == 0 { gray.lighten(90%) } else { gray.lighten(95%) },
+          table.hline(),
+          table.header([], [AMD 3970x CPU], [NVIDIA 3090 RTX GPU]),
+          table.hline(stroke: .5pt),
+          [Processors], [32], [82],
+          [Peak single-precision TFLOPS], [3.8], [36],
+          [Peak memory bandwidth], [$ #sym.tilde.basic 100$ GiB/s], [936 GiB/s],
+          table.hline(stroke: 0pt),
+        )],
+      caption: [
+        Key Properties of a Representative Modern CPU and GPU. This CPU and GPU have approximately the same cost at time of writing but provide their computational capabilities using very different architectures. This table summarizes some of their most important characteristics.
+      ],
+      kind: table,
+    )<cpu-gpu-specs-en>
+  ]
 ][
-  #figure(
-    table(
-      columns: 3,
-      align: (auto, auto, auto),
-      table.header([], [AMD 3970x CPU], [NVIDIA 3090 RTX GPU]),
-      table.hline(),
-      [处理器], [32], [82],
-      [峰值单精度 TFLOPS], [3.8], [36],
-      [峰值内存带宽], [约 100 GiB/s], [936 GiB/s],
-    ),
-    caption: [
-      具有代表性的现代 CPU 和 GPU 的关键特性。此 CPU 和 GPU
-      在撰写本文时的成本大致相同，但它们通过非常不同的架构提供计算能力。此表总结了它们的一些最重要特性。
-    ],
-    kind: table,
-  )<cpu-gpu-specs-zh>
+  #block(
+    inset: 8pt,
+    radius: 4pt,
+    stroke: .1pt,
+  )[
+    #figure(
+      align(left)[#table(
+          stroke: (x: none, y: .1pt),
+          columns: (40%, 30%, 30%),
+          align: (auto, auto, auto),
+          fill: (_, y) => if y == 0 { gray.lighten(90%) } else { gray.lighten(95%) },
+          table.hline(),
+          table.header([], [AMD 3970x CPU], [NVIDIA 3090 RTX GPU]),
+          table.hline(stroke: .5pt),
+          [处理器], [32], [82],
+          [峰值单精度 TFLOPS], [3.8], [36],
+          [峰值内存带宽], [约 100 GiB/s], [936 GiB/s],
+          table.hline(stroke: 0pt),
+        )],
+      caption: [
+        具有代表性的现代 CPU 和 GPU 的关键特性。此 CPU 和 GPU 在撰写本文时的成本大致相同，但它们通过非常不同的架构提供计算能力。此表总结了它们的一些最重要特性。
+      ],
+      kind: table,
+    )<cpu-gpu-specs-zh>
+  ]
 ]
 
 #parec[

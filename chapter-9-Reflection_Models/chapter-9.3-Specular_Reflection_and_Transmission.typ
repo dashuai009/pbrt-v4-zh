@@ -65,44 +65,66 @@
 ]
 
 #parec[
-  #figure(
-    table(
-      columns: (auto, auto),
-      // align: horizon,
-      [*Medium*], [ *Index of refraction* ],
-      [Vacuum ], [1.0],
-      [Air at sea level], [1.00029],
-      [Ice ], [1.31],
-      [Water (C) ], [1.333],
-      [Fused quartz ], [1.46],
-      [Glass ], [$1.5 - 1.6$],
-      [Sapphire ], [1.77],
-      [Diamond], [2.42],
-    ),
-    caption: [
-      Indices of refraction for a variety of objects, giving the ratio of the speed of light in a vacuum to the speed of light in the medium. These are generally wavelength-dependent quantities; these values are averages over the visible wavelengths.
-    ],
-  )<dielectric-iors-en>
+  #block(
+    inset: 8pt,
+    radius: 4pt,
+    stroke: .1pt,
+  )[
+    #figure(
+      align(left)[#table(
+          stroke: (x: none, y: .1pt),
+          columns: (50%, 50%),
+          align: (auto, auto),
+          fill: (_, y) => if y == 0 { gray.lighten(90%) } else { gray.lighten(95%) },
+          table.hline(),
+          table.header([Medium], [Index of refraction $eta$]),
+          table.hline(stroke: .5pt),
+          [Vacuum ], [1.0],
+          [Air at sea level], [1.00029],
+          [Ice ], [1.31],
+          [Water ($20 #sym.degree.c$ ) ], [1.333],
+          [Fused quartz ], [1.46],
+          [Glass ], [$1.5 - 1.6$],
+          [Sapphire ], [1.77],
+          [Diamond], [2.42],
+          table.hline(stroke: 0pt),
+        )],
+      caption: [
+        Indices of refraction for a variety of objects, giving the ratio of the speed of light in a vacuum to the speed of light in the medium. These are generally wavelength-dependent quantities; these values are averages over the visible wavelengths.
+      ],
+    )<dielectric-iors-en>
+  ]
 ][
-  #figure(
-    table(
-      columns: (auto, auto),
-      align: horizon,
-      [介质], [折射率],
-      [海平面上的气], [1.00029],
-      [冰], [.31 ],
-      [水 (C)], [1.333],
-      [熔融石英], [1.46],
-      [玻璃], [1.5-1.6],
-      [蓝宝石], [1.77],
-      [钻石], [2.42],
-    ),
-    caption: [
-      各种物体的折射率，给出了真空中光速与介质中光速的比率。这些通常是波长依赖的量；这些值是可见波长范围内的平均值。
-    ],
-  )<dielectric-iors-zh>
+  #block(
+    inset: 8pt,
+    radius: 4pt,
+    stroke: .1pt,
+  )[
+    #figure(
+      align(left)[#table(
+          stroke: (x: none, y: .1pt),
+          columns: (50%, 50%),
+          align: (auto, auto),
+          fill: (_, y) => if y == 0 { gray.lighten(90%) } else { gray.lighten(95%) },
+          table.hline(),
+          table.header([介质], [折射率（ $eta$ ）]),
+          table.hline(stroke: .5pt),
+          [真空], [1.0],
+          [海平面空气], [1.00029],
+          [冰], [1.31 ],
+          [水（ $20 #sym.degree.c$ ）], [1.333],
+          [熔融石英], [1.46],
+          [玻璃], [1.5-1.6],
+          [蓝宝石], [1.77],
+          [钻石], [2.42],
+          table.hline(stroke: 0pt),
+        )],
+      caption: [
+        各种物体的折射率，给出了真空中光速与介质中光速的比率。这些通常是波长依赖的量；这些值是可见波长范围内的平均值。
+      ],
+    )<dielectric-iors-zh>
+  ]
 ]
-
 
 #figure(
   image("../pbr-book-website/4ed/Reflection_Models/pha09f05.svg"),
