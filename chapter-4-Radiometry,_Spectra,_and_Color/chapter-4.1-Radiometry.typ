@@ -546,47 +546,63 @@ $ <luminance>
 ]
 
 #parec[
-  #figure(
-    table(
-      stroke: none,
-      columns: 2,
-      table.hline(),
-      [Condition], [Luminance ($c d\/m^2$, or nits)],
-      table.hline(stroke: .5pt),
-      [ Sun at horizon], [600,000 ],
-      [ 60-watt lightbulb], [ 120,000 ],
-      [ Clear sky], [ 8,000 ],
-      [ Typical office], [ 100-1,000 ],
-      [ Typical computer display], [ 1-100 ],
-      [ Street lighting], [ 1-10 ],
-      [ Cloudy moonlight], [ 0.25 ],
-      table.hline(),
-    ),
-    caption: [
-      Representative Luminance Values for a Number of Lighting Conditions.
-    ],
-  )<luminance-values>
+  #block(
+    inset: 8pt,
+    radius: 4pt,
+    stroke: .1pt,
+  )[
+    #figure(
+      align(left)[#table(
+          stroke: (x: none, y: .1pt),
+          columns: (50%, 50%),
+          align: (auto, auto),
+          fill: (_, y) => if y == 0 { gray.lighten(90%) } else { gray.lighten(95%) },
+          table.hline(),
+          [Condition], [Luminance ($c d\/m^2$, or nits)],
+          table.hline(stroke: .5pt),
+          [Sun at horizon], [600,000 ],
+          [60-watt lightbulb], [ 120,000 ],
+          [Clear sky], [ 8,000 ],
+          [Typical office], [ 100-1,000 ],
+          [Typical computer display], [ 1-100 ],
+          [Street lighting], [ 1-10 ],
+          [Cloudy moonlight], [ 0.25 ],
+          table.hline(stroke: 0pt),
+        )],
+      caption: [
+        Representative Luminance Values for a Number of Lighting Conditions.
+      ],
+    )<luminance-values>
+  ]
 ][
-  #figure(
-    table(
-      stroke: none,
-      columns: 2,
-      table.hline(),
-      [情景], [亮度（$c d\/m^2$ 或 尼特）],
-      table.hline(stroke: .5pt),
-      [太阳在地平线附近], [600,000 ],
-      [60瓦灯泡], [ 120,000 ],
-      [晴朗的天空], [ 8,000 ],
-      [典型办公室照明], [ 100-1,000 ],
-      [典型计算机显示器], [ 1-100 ],
-      [街道照明], [ 1-10 ],
-      [多云的月光], [ 0.25 ],
-      table.hline(),
-    ),
-    caption: [
-      多种照明情景的典型亮度值。
-    ],
-  )<luminance-values-zh>
+  #block(
+    inset: 8pt,
+    radius: 4pt,
+    stroke: .1pt,
+  )[
+    #figure(
+      align(left)[#table(
+          stroke: (x: none, y: .1pt),
+          columns: (50%, 50%),
+          align: (auto, auto),
+          fill: (_, y) => if y == 0 { gray.lighten(90%) } else { gray.lighten(95%) },
+          table.hline(),
+          [情景], [亮度（$c d\/m^2$ 或 尼特）],
+          table.hline(stroke: .5pt),
+          [太阳在地平线附近], [600,000 ],
+          [60瓦灯泡], [ 120,000 ],
+          [晴朗的天空], [ 8,000 ],
+          [典型办公室照明], [ 100-1,000 ],
+          [典型计算机显示器], [ 1-100 ],
+          [街道照明], [ 1-10 ],
+          [多云的月光], [ 0.25 ],
+          table.hline(stroke: 0pt),
+        )],
+      caption: [
+        多种照明情景的典型亮度值。
+      ],
+    )<luminance-values-zh>
+  ]
 ]
 
 #parec[
@@ -596,41 +612,55 @@ $ <luminance>
 ]
 
 #parec[
-  #figure(
-    align(center)[#table(
-        stroke: none,
-        columns: (20%, 17%, 27%, 33.33%),
-        align: (auto, auto, auto, auto),
-        table.hline(),
-        table.header([Radiometric], [Unit], [Photometric], [Unit]),
-        table.hline(stroke: .5pt),
-        [Radiant energy], [joule (J)], [Luminous energy], [talbot (T)],
-        [Radiant flux], [watt (W)], [Luminous flux], [lumen (lm)],
-        [Intensity], [$W\/s r$], [Luminous intensity], [$"lm"\/s r = "candela" (c d)$],
-        [Irradiance], [$W \/ m^2$], [Illuminance], [$"lm"\/m^2 = "lux" ("lx")$],
-        [Radiance], [$W\/(m^2 dot s r)$], [Luminance], [$"lm"\/(m^2 dot "sr") = "cd"\/m^2 = "nit"$],
-        table.hline(),
-      )],
-    kind: table,
-    caption: [Radiometric Measurements and Their Photometric Analogs.],
-  ) <radiometric-photometric>
+  #block(
+    inset: 8pt,
+    radius: 4pt,
+    stroke: .1pt,
+  )[
+    #figure(
+      align(left)[#table(
+          stroke: (x: none, y: .1pt),
+          columns: (20%, 20%, 25%, 35%),
+          align: (auto, auto, auto, auto),
+          fill: (_, y) => if y == 0 { gray.lighten(90%) } else { gray.lighten(95%) },
+          table.hline(),
+          table.header([Radiometric], [Unit], [Photometric], [Unit]),
+          table.hline(stroke: .5pt),
+          [Radiant energy], [joule (J)], [Luminous energy], [talbot (T)],
+          [Radiant flux], [watt (W)], [Luminous flux], [lumen (lm)],
+          [Intensity], [$W\/s r$], [Luminous intensity], [$"lm"\/s r = "candela" (c d)$],
+          [Irradiance], [$W \/ m^2$], [Illuminance], [$"lm"\/m^2 = "lux" ("lx")$],
+          [Radiance], [$W\/(m^2 dot s r)$], [Luminance], [$"lm"\/(m^2 dot "sr") = "cd"\/m^2 = "nit"$],
+          table.hline(stroke: 0pt),
+        )],
+      kind: table,
+      caption: [Radiometric Measurements and Their Photometric Analogs.],
+    ) <radiometric-photometric>
+  ]
 ][
-  #figure(
-    align(center)[#table(
-        stroke: none,
-        columns: (20%, 17%, 27%, 33.33%),
-        align: (auto, auto, auto, auto),
-        table.hline(),
-        table.header([辐射度量], [单位], [光度量], [单位]),
-        table.hline(stroke: .5pt),
-        [辐射能量], [焦耳 (J)], [光能量], [塔尔博 (Talbot, T)],
-        [辐射通量], [瓦特 (W)], [光通量], [流明 (Lumen, lm)],
-        [强度], [$W\/s r$], [光强度], [$"lm"\/s r = "candela" (c d)$],
-        [辐照度], [$W \/ m^2$], [照度], [$"lm"\/m^2 = "lux" (l x)$],
-        [辐射亮度], [$W\/(m^2 dot s r)$], [亮度], [$"lm"\/(m^2 dot "sr") = "cd"\/m^2 = "nit"$],
-        table.hline(),
-      )],
-    kind: table,
-    caption: [辐射测量及其光度学对应量。],
-  ) <radiometric-photometric-zh>
+  #block(
+    inset: 8pt,
+    radius: 4pt,
+    stroke: .1pt,
+  )[
+    #figure(
+      align(left)[#table(
+          stroke: (x: none, y: .1pt),
+          columns: (20%, 20%, 25%, 35%),
+          align: (auto, auto, auto, auto),
+          fill: (_, y) => if y == 0 { gray.lighten(90%) } else { gray.lighten(95%) },
+          table.hline(),
+          table.header([辐射度量], [单位], [光度量], [单位]),
+          table.hline(stroke: .5pt),
+          [辐射能量], [焦耳 (J)], [光能量], [塔尔博 (Talbot, T)],
+          [辐射通量], [瓦特 (W)], [光通量], [流明 (Lumen, lm)],
+          [强度], [$W\/s r$], [光强度], [$"lm"\/s r = "candela" (c d)$],
+          [辐照度], [$W \/ m^2$], [照度], [$"lm"\/m^2 = "lux" (l x)$],
+          [辐射亮度], [$W\/(m^2 dot s r)$], [亮度], [$"lm"\/(m^2 dot "sr") = "cd"\/m^2 = "nit"$],
+          table.hline(stroke: 0pt),
+        )],
+      kind: table,
+      caption: [辐射测量及其光度学对应量。],
+    ) <radiometric-photometric-zh>
+  ]
 ]

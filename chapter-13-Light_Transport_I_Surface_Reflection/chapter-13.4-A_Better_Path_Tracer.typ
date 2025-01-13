@@ -630,46 +630,66 @@ if (rrBeta.MaxComponentValue() < 1 && depth > 1) {
 ]
 
 #parec[
-  #figure(
-    align(center)[#table(
-        columns: (30%, 20%, 20%, 20%),
-        align: (auto, auto, auto, auto),
-        table.header([Scene], [MSE], [Time], [Efficiency]),
-        table.hline(),
-        [#emph[Kroken] (@fig:path-tracing-example)], [$1.31$], [$0.261$], [$2.92$],
-        [#emph[Watercolor] (@fig:randomwalk-vs-simplepath-integrators)], [$1.19$], [$0.187$], [$4.51$],
-        [#emph[San Miguel] (@fig:simplepath-vs-path-integrators)], [$1.00$], [$0.239$], [$4.17$],
-        [BMW M6 (@fig:tricky-indirect-lighting)], [$1.00$], [$0.801$], [$1.25$],
-      )],
-    caption: [
-      Monte Carlo Efficiency Benefits from Russian Roulette.
-      Measurements of MSE and rendering time when using Russian roulette. All
-      values reported are relative to rendering the same scene without Russian
-      roulette. As expected, MSE increases to varying degrees due to ray
-      termination, but the performance benefit more than makes up for it,
-      leading to an increase in Monte Carlo efficiency.
-    ],
-    kind: table,
-  )<rr-mc-efficiency-en>
+  #block(
+    inset: 8pt,
+    radius: 4pt,
+    stroke: .1pt,
+  )[
+    #figure(
+      align(left)[#table(
+          stroke: (x: none, y: .1pt),
+          columns: (50%, 15%, 15%, 20%),
+          align: (auto, auto, auto, auto),
+          fill: (_, y) => if y == 0 { gray.lighten(90%) } else { gray.lighten(95%) },
+          table.hline(),
+          table.header([Scene], [MSE], [Time], [Efficiency]),
+          table.hline(stroke: .5pt),
+          [#emph[Kroken] (@fig:path-tracing-example)], [$1.31$], [$0.261$], [$2.92$],
+          [#emph[Watercolor] (@fig:randomwalk-vs-simplepath-integrators)], [$1.19$], [$0.187$], [$4.51$],
+          [#emph[San Miguel] (@fig:simplepath-vs-path-integrators)], [$1.00$], [$0.239$], [$4.17$],
+          [BMW M6 (@fig:tricky-indirect-lighting)], [$1.00$], [$0.801$], [$1.25$],
+          table.hline(stroke: 0pt),
+        )],
+      caption: [
+        Monte Carlo Efficiency Benefits from Russian Roulette.
+        Measurements of MSE and rendering time when using Russian roulette. All
+        values reported are relative to rendering the same scene without Russian
+        roulette. As expected, MSE increases to varying degrees due to ray
+        termination, but the performance benefit more than makes up for it,
+        leading to an increase in Monte Carlo efficiency.
+      ],
+      kind: table,
+    )<rr-mc-efficiency-en>
+  ]
 ][
-  #figure(
-    align(center)[#table(
-        columns: (30%, 20%, 20%, 20%),
-        align: (auto, auto, auto, auto),
-        table.header([场景], [MSE], [时间], [效率]),
-        table.hline(),
-        [#emph[Kroken];（@fig:path-tracing-example）], [$1.31$], [$0.261$], [$2.92$],
-        [#emph[Watercolor];（@fig:randomwalk-vs-simplepath-integrators）], [$1.19$], [$0.187$], [$4.51$],
-        [#emph[San Miguel];（@fig:simplepath-vs-path-integrators）], [$1.00$], [$0.239$], [$4.17$],
-        [BMW M6（@fig:tricky-indirect-lighting）], [$1.00$], [$0.801$], [$1.25$],
-      )],
-    caption: [
-      俄罗斯轮盘赌对蒙特卡罗效率的好处。使用俄罗斯轮盘赌时的 MSE
-      和渲染时间的测量。所有报告的值都是相对于不使用俄罗斯轮盘赌渲染相同场景的值。如预期的那样，MSE
-      由于射线终止而在不同程度上增加，但性能提升完全弥补了这一点，从而提高了蒙特卡罗效率。
-    ],
-    kind: table,
-  )<rr-mc-efficiency-zh>
+  #block(
+    inset: 8pt,
+    radius: 4pt,
+    stroke: .1pt,
+  )[
+    #figure(
+      align(left)[#table(
+          stroke: (x: none, y: .1pt),
+          columns: (50%, 15%, 15%, 20%),
+          align: (auto, auto, auto, auto),
+          fill: (_, y) => if y == 0 { gray.lighten(90%) } else { gray.lighten(95%) },
+          table.hline(),
+          table.header([场景], [MSE], [时间], [效率]),
+          table.hline(stroke: .5pt),
+          [#emph[Kroken];（@fig:path-tracing-example）], [$1.31$], [$0.261$], [$2.92$],
+          [#emph[Watercolor];（@fig:randomwalk-vs-simplepath-integrators）], [$1.19$], [$0.187$], [$4.51$],
+          [#emph[San Miguel];（@fig:simplepath-vs-path-integrators）], [$1.00$], [$0.239$], [$4.17$],
+          [BMW M6（@fig:tricky-indirect-lighting）], [$1.00$], [$0.801$], [$1.25$],
+          table.hline(stroke: 0pt),
+        )],
+      caption: [
+        俄罗斯轮盘赌对蒙特卡罗效率的好处。使用俄罗斯轮盘赌时的 MSE
+        和渲染时间的测量。所有报告的值都是相对于不使用俄罗斯轮盘赌渲染相同场景的值。如预期的那样，MSE
+        由于射线终止而在不同程度上增加，但性能提升完全弥补了这一点，从而提高了蒙特卡罗效率。
+      ],
+      kind: table,
+    )<rr-mc-efficiency-zh>
+  ]
 ]
 
 
