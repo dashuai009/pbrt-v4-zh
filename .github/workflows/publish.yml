@@ -30,3 +30,8 @@ jobs:
           draft: true
           files: |
             ./output/*.pdf
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: output-pdfs
+          path: output/*.pdf
