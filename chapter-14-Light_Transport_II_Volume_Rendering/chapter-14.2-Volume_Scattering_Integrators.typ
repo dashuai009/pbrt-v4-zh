@@ -1327,7 +1327,7 @@ prevIntrContext = LightSampleContext(isect);
 #parec[
   The logic for sampling scattering at a surface is very similar to the corresponding logic in the `PathIntegrator`.
 ][
-  在表面处采样散射的逻辑与 **PathIntegrator** 中对应的逻辑非常相似。
+  在表面处采样散射的逻辑与 `PathIntegrator` 中对应的逻辑非常相似。
 ]
 
 

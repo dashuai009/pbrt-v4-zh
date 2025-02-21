@@ -643,7 +643,6 @@ explicit operator bool() const {
 }
 ```
 
-]
 
 #parec[
   All the standard arithmetic operations on `SampledSpectrum` objects are provided; each operates component-wise on the stored values. The implementation of `operator+=` is below. The others are analogous and are therefore not included in the text.

@@ -135,8 +135,10 @@
 
 
 === Packet Tracing
+<packet-tracing>
+
 #parec[
-  <packet-tracing> Early work on parallel tracing focused on multiprocessors (Cleary et al.~#link("Further_Reading.html#cite:Cleary:1983:DAA")[1983];; #link("Further_Reading.html#cite:Green:1989:ECF")[Green and Paddon 1989];; #link("Further_Reading.html#cite:Badouel:1989:AEP")[Badouel and Priol 1989];) and clusters of computers (Parker et al.~#link("Further_Reading.html#cite:Parker:1999:IRT")[1999];; Wald et al.~#link("Further_Reading.html#cite:Wald01a")[2001a];, #link("Further_Reading.html#cite:Wald01b")[2001b];, #link("Further_Reading.html#cite:Wald02")[2002];, #link("Further_Reading.html#cite:Wald03")[2003];).
+  Early work on parallel tracing focused on multiprocessors (Cleary et al.~#link("Further_Reading.html#cite:Cleary:1983:DAA")[1983];; #link("Further_Reading.html#cite:Green:1989:ECF")[Green and Paddon 1989];; #link("Further_Reading.html#cite:Badouel:1989:AEP")[Badouel and Priol 1989];) and clusters of computers (Parker et al.~#link("Further_Reading.html#cite:Parker:1999:IRT")[1999];; Wald et al.~#link("Further_Reading.html#cite:Wald01a")[2001a];, #link("Further_Reading.html#cite:Wald01b")[2001b];, #link("Further_Reading.html#cite:Wald02")[2002];, #link("Further_Reading.html#cite:Wald03")[2003];).
 ][
   早期关于并行追踪的工作集中在多处理器（Cleary 等人 #link("Further_Reading.html#cite:Cleary:1983:DAA")[1983];; #link("Further_Reading.html#cite:Green:1989:ECF")[Green 和 Paddon 1989];; #link("Further_Reading.html#cite:Badouel:1989:AEP")[Badouel 和 Priol 1989];）和计算机集群（Parker 等人 #link("Further_Reading.html#cite:Parker:1999:IRT")[1999];; Wald 等人 #link("Further_Reading.html#cite:Wald01a")[2001a];, #link("Further_Reading.html#cite:Wald01b")[2001b];, #link("Further_Reading.html#cite:Wald02")[2002];, #link("Further_Reading.html#cite:Wald03")[2003];）上。
 ]

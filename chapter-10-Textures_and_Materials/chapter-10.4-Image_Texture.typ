@@ -173,8 +173,6 @@ bool invert;
 MIPMap *mipmap;
 ```
 
-]
-
 #parec[
   Each MIP map may require a meaningful amount of memory, and a complex scene may have thousands of image textures. Because an on-disk image may be reused for multiple textures in a scene, `pbrt` maintains a table of MIP maps that have been loaded so far so that they are only loaded into memory once even if they are used in more than one image texture.
 ][

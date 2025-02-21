@@ -878,7 +878,7 @@ $ bold(upright(P))_n = union.big_(upright(bold(c)) in {0 , 1 , 2}^n) bold(uprigh
 ]
 
 $
-  mu_n (D) = sum_(upright(bold(c)) in {0 , 1}^n) mu_n^(upright(bold(c))) (D sect bold(upright(P))_n^(upright(bold(c))))
+  mu_n (D) = sum_(upright(bold(c)) in {0 , 1}^n) mu_n^(upright(bold(c))) (D inter bold(upright(P))_n^(upright(bold(c))))
   "where"
   mu_n^(upright(bold(c))) ( D ) = integral_D product_(i = 1)^n cases(delim: "{", d A (p_i) comma & upright(" if ") upright(bold(c))_i = 0, d V (p_i) comma & upright(" if ") upright(bold(c))_i = 1, d V_nothing (p_i) comma & upright(" if ") upright(bold(c))_i = 2) .
 $
