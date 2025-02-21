@@ -268,15 +268,10 @@ template <class T, class... Args> T *new_object(Args &&... args);
 <parallelism-and-thread-safety>
 
 
-#let en_footnote = [Exceptions include the fact that we try to load image maps and binary geometry files in parallel, some image resampling performed on texture images, ndconstruction of one variant of the `BVHAggregate` , though all of these are highly localized.]
-
-#let zh_footnote = [例外情况包括我们尝试并行加载图像映射和二进制几何文件，对纹理图像进行的一些图像重采样，以及构建`BVHAggregate`的一个变体，尽管所有这些都是高度局部化的。]
-
 #parec[
-  In `pbrt` (as is the case for most ray tracers), the vast majority of data at rendering time is read only (e.g., the scene description and texture images). Much of the parsing of the scene file and creation of the scene representation in memory is done with a single thread of execution #footnote[#en_footnote], so there are few synchronization issues during that phase of execution. During rendering, concurrent read access to all the read-only data by multiple threads works with no problems on both the CPU and the GPU; we only need to be concerned with situations where data in memory is being modified.
+  In `pbrt` (as is the case for most ray tracers), the vast majority of data at rendering time is read only (e.g., the scene description and texture images). Much of the parsing of the scene file and creation of the scene representation in memory is done with a single thread of execution #footnote[Exceptions include the fact that we try to load image maps and binary geometry files in parallel, some image resampling performed on texture images, ndconstruction of one variant of the `BVHAggregate` , though all of these are highly localized.], so there are few synchronization issues during that phase of execution. During rendering, concurrent read access to all the read-only data by multiple threads works with no problems on both the CPU and the GPU; we only need to be concerned with situations where data in memory is being modified.
 ][
-  在 `pbrt` 中（与大多数光线追踪器一样），渲染时的大多数数据都是只读的（例如，场景描述和纹理图像）。场景文件的解析和场景表示在内存中的创建大多由单线程执行#footnote[#zh_footnote]
-]，因此在执行的这一阶段几乎没有同步问题。在渲染期间，多个线程对所有只读数据的并发读取访问在 CPU 和 GPU 上都没有问题；我们只需关注内存中数据被修改的情况。
+  在 `pbrt` 中（与大多数光线追踪器一样），渲染时的大多数数据都是只读的（例如，场景描述和纹理图像）。场景文件的解析和场景表示在内存中的创建大多由单线程执行#footnote[例外情况包括我们尝试并行加载图像映射和二进制几何文件，对纹理图像进行的一些图像重采样，以及构建`BVHAggregate`的一个变体，尽管所有这些都是高度局部化的。]，因此在执行的这一阶段几乎没有同步问题。在渲染期间，多个线程对所有只读数据的并发读取访问在 CPU 和 GPU 上都没有问题；我们只需关注内存中数据被修改的情况。
 ]
 
 
