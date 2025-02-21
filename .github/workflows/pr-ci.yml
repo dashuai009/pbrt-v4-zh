@@ -1,0 +1,24 @@
+name: Check compilation.
+
+on:
+  pull_request:
+    branches:
+      - main
+    types: [opened, synchronize, reopened]
+jobs:
+  render-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+          fetch-depth: 0
+      - uses: typst-community/setup-typst@v3
+      - run: typst --version
+      - run: typst fonts --font-path ./fonts
+      - run: mkdir output
+      # Now Typst is installed and packages will be cached!
+      - run: typst c main.typ ./output/pbrt-v4-zh-en-$(git describe --tags --abbrev=0).pdf --font-path ./fonts
+      - run: typst c main.typ ./output/pbrt-v4-zh-$(git describe --tags --abbrev=0).pdf --font-path ./fonts  --input LANG_OUT=zh
+      - run: typst c main.typ ./output/pbrt-v4-en-$(git describe --tags --abbrev=0).pdf --font-path ./fonts  --input LANG_OUT=en
