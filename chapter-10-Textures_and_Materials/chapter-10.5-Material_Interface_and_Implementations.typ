@@ -108,28 +108,13 @@ ConcreteBxDF GetBxDF(TextureEvaluator texEval, MaterialEvalContext ctx,
 
   in the body of its definition.
 ][
-  每个 `Material` （材质）类还负责通过在类定义中提供一个名为 `BxDF` 的本地类型定义，来说明其 `GetBxDF()` 方法返回的具体 `BxDF` 类型。
+  每个 `Material` （材质）类还负责提供一个局部定义的类型 `BxDF` ，来说明其 `GetBxDF()` 方法返回的具体 `BxDF` 的类型。
   例如， #link("<DiffuseMaterial>")[DiffuseMaterial]; 类在其定义体内就包含：
 
   ```cpp
   using BxDF = DiffuseBxDF;
   ```
 ]
-
-// #parec[
-//   Each `Material` is also responsible for defining the type of `BxDF` that it returns from its `GetBxDF()` method with a local type definition for the type `BxDF`. For example, #link("<DiffuseMaterial>")[DiffuseMaterial] has
-// ][
-//   每个 `Material` （材质）类还负责通过在类定义中提供一个名为 `BxDF` 的本地类型定义，来说明其 `GetBxDF()` 方法返回的具体 `BxDF` 类型。
-//   例如， #link("<DiffuseMaterial>")[DiffuseMaterial]; 类在其定义体内就包含：
-// ]
-
-// ```cpp
-// using BxDF = DiffuseBxDF;
-// ```
-
-// #parec[
-//   in the body of its definition.
-// ][ ]
 
 #parec[
   The value of defining the interface in this way is that doing so makes it possible to write generic BSDF evaluation code that is templated on the type of material. Such code can then allocate storage for the `BxDF` on the stack, for whatever type of `BxDF` the material uses. `pbrt`'s wavefront renderer, which is described in Chapter @wavefront-rendering-on-gpus, takes advantage of this opportunity. (Further details and discussion of its use there are in @surface-scattering.) A disadvantage of this design is that materials cannot return different `BxDF` types depending on their parameter values; they are limited to the one that they declare.
