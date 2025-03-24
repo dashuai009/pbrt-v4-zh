@@ -1,3 +1,6 @@
+// ## 翻译商榷
+// 1. evalute 评估 -> 计算、求值
+
 #import "../template.typ": parec, ez_caption, translator
 
 == Material Interface and Implementations
@@ -128,8 +131,8 @@ ConcreteBxDF GetBxDF(TextureEvaluator texEval, MaterialEvalContext ctx,
 #parec[
   The #link("<Material>")[Material] class provides a `GetBSDF()` method that handles the variety of material `BxDF` return types. It requires some C++ arcana, though it centralizes the complexity of handling the diversity of types returned from the `GetBxDF()` methods.
 ][
-  为了处理各种不同材质的 `GetBSDF()` 方法可能返回的不同类型， #link("<Material>")[Material]; 类中提供了一个统一的 `GetBSDF()` 方法。
-  尽管该方法的实现需要使用一些 C++ 中相对高级的技巧（arcana），但它有效地将处理不同 `BxDF` 类型的复杂性集中管理，避免了复杂性的扩散。
+  为了处理各种不同材质的 `GetBSDF()` 方法可能返回的不同类型， #link("<Material>")[Material]; 类中提供了一个 `GetBSDF()` 方法。
+  实现时需要一些 C++ 的奇技淫巧，但它集中了处理 `BxDF` 需返回多种类型的复杂性。
 ]
 
 #parec[
@@ -223,10 +226,14 @@ ConcreteBSSRDF GetBSSRDF(TextureEvaluator texEval, MaterialEvalContext ctx,
 #parec[
   The #link("<MaterialEvalContext>")[MaterialEvalContext] that `GetBxDF()` and `GetBSSRDF()` take plays a similar role to other `*EvalContext` classes: it encapsulates only the values that are necessary for material evaluation. They are a superset of those that are used for texture evaluation, so it inherits from #link("../Textures_and_Materials/Texture_Coordinate_Generation.html#TextureEvalContext")[TextureEvalContext];. Doing so has the added advantage that `MaterialEvalContext`s can be passed directly to the texture evaluation methods.
 ][
-  #link("<MaterialEvalContext>")[MaterialEvalContext]; 类在调用 `GetBxDF()` 和 `GetBSSRDF()` 时起着类似于其他 `*EvalContext` 类的作用：即仅封装材质求值时必需的少量信息。
-  具体地讲，它所包含的数据是纹理求值上下文（#link("<MaterialEvalContext>")[MaterialEvalContext];）的超集，因此继承了 #link("../Textures_and_Materials/Texture_Coordinate_Generation.html#TextureEvalContext")[TextureEvalContext]; 。
-  这样做的另一个好处是 `MaterialEvalContext` 的实例可以直接传递给纹理评估方法。
+  // #link("<MaterialEvalContext>")[MaterialEvalContext]; 类在调用 `GetBxDF()` 和 `GetBSSRDF()` 时起着类似于其他 `*EvalContext` 类的作用：即仅封装材质求值时必需的少量信息。
+  // 具体地讲，它所包含的数据是纹理求值上下文（#link("<MaterialEvalContext>")[MaterialEvalContext];）的超集，因此继承了 #link("../Textures_and_Materials/Texture_Coordinate_Generation.html#TextureEvalContext")[TextureEvalContext]; 。
+  // 这样做的另一个好处是 `MaterialEvalContext` 的实例可以直接传递给纹理评估方法。
+  `GetBxDF()` 和 `GetBSSRDF()` 接受的参数 #link("<MaterialEvalContext>")[MaterialEvalContext]; 与其他 `*EvalContext` 类有类似的作用：它封装了计算材质时必需的数值。
+  这些数值是用于纹理求值的上下文（#link("../Textures_and_Materials/Texture_Coordinate_Generation.html#TextureEvalContext")[TextureEvalContext];）的超集，因此它继承自 #link("../Textures_and_Materials/Texture_Coordinate_Generation.html#TextureEvalContext")[TextureEvalContext]; 。
+  采用这种继承方式的额外好处是，可以直接将 `MaterialEvalContext` 实例传递给纹理求值方法。
 ]
+
 ```cpp
 struct MaterialEvalContext : public TextureEvalContext {
     <<MaterialEvalContext Public Methods>>
@@ -269,11 +276,11 @@ MaterialEvalContext(const SurfaceInteraction &si)
 ]
 
 #parec[
-  For now we will only define the #link("<UniversalTextureEvaluator>")[UniversalTextureEvaluator];, which can evaluate all textures.In practice, the indirection it adds is optimized away by the compiler such that it introduces no runtime overhead. It is used with all of `pbrt`'s integrators other than the one defined in Chapter #link("../Wavefront_Rendering_on_GPUs.html#chap:gpu")[15];.
+  For now we will only define the #link("<UniversalTextureEvaluator>")[UniversalTextureEvaluator];, which can evaluate all textures. In practice, the indirection it adds is optimized away by the compiler such that it introduces no runtime overhead. It is used with all of `pbrt`'s integrators other than the one defined in Chapter #link("../Wavefront_Rendering_on_GPUs.html#chap:gpu")[15];.
 ][
   目前，我们只定义 #link("<UniversalTextureEvaluator>")[UniversalTextureEvaluator]; ，它可以评估所有类型的纹理。
-  实际上，编译器优化掉了它增加的间接性（indirection），因此不会增加运行时的开销。
-  它用于除第 #link("../Wavefront_Rendering_on_GPUs.html#chap:gpu")[15]; 章定义的积分器之外的所有`pbrt`积分器。
+  实际上，编译器优化掉了它增加的间接调用（indirection），因此不会增加运行时的开销。
+  它用于除 #link("../Wavefront_Rendering_on_GPUs.html#chap:gpu")[15]; 定义的积分器之外的所有 `pbrt` 积分器。
 ]
 
 #translator("虽然 UniversalTextureEvaluator 作为一个额外的类，在 Material 和 Texture 之间增加了一个抽象层，但是在实际编译过程中编译器会优化掉这些间接引用。最终的机器代码相当于直接调用 Texture::Evaluate() 方法。")
@@ -1042,7 +1049,6 @@ Float dudx = 0, dudy = 0, dvdx = 0, dvdy = 0;
 Vector3f dpdx, dpdy;
 ```
 
-
 #parec[
   It also provides a conversion operator to #link("../Textures_and_Materials/Texture_Coordinate_Generation.html#TextureEvalContext")[TextureEvalContext]; , which only needs a subset of the values stored in NormalBumpEvalContext.
 ][
@@ -1072,7 +1078,7 @@ operator TextureEvalContext() const {
   法线贴图通常是被编码为定点格式（fixed-point image formats），其像素值范围为 $0$ 到 $1$ 。
   这种编码方式紧凑的 8 位像素表示，同时也支持 GPU 兼容的压缩图像格式。
   因此，从图像中读取的值必须 重新映射到 $[-1, 1]$ 区间，以正确重建对应的法线向量。
-  此外，法线向量需要重新归一化，因为像素格式的量化（quantization）以及 双线性插值（bilinear interpolation）可能会导致其不再是单位长度。
+  此外，法线向量需要重新归一化，因为像素格式的量化（quantization）以及双线性插值（bilinear interpolation）可能会导致其不再是单位长度。
 ]
 
 ```cpp
