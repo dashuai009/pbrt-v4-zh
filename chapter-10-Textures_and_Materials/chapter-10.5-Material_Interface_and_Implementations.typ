@@ -62,7 +62,7 @@ class Material : public TaggedPointer
     // 获取法线贴图纹理
     const Image *GetNormalMap() const;
 
-    // 获取位移贴图纹理
+    // 获取置换贴图纹理
     FloatTexture GetDisplacement() const;
 
     // 检查材质是否支持次表面散射效果
@@ -276,11 +276,11 @@ MaterialEvalContext(const SurfaceInteraction &si)
 ]
 
 #parec[
-  For now we will only define the #link("<UniversalTextureEvaluator>")[UniversalTextureEvaluator];, which can evaluate all textures. In practice, the indirection it adds is optimized away by the compiler such that it introduces no runtime overhead. It is used with all of `pbrt`'s integrators other than the one defined in Chapter #link("../Wavefront_Rendering_on_GPUs.html#chap:gpu")[15];.
+  For now we will only define the #link("<UniversalTextureEvaluator>")[UniversalTextureEvaluator];, which can evaluate all textures. In practice, the indirection it adds is optimized away by the compiler such that it introduces no runtime overhead. It is used with all of `pbrt`'s integrators other than the one defined in Chapter @wavefront-rendering-on-gpus .
 ][
   目前，我们只定义 #link("<UniversalTextureEvaluator>")[UniversalTextureEvaluator]; ，它可以评估所有类型的纹理。
   实际上，编译器优化掉了它增加的间接调用（indirection），因此不会增加运行时的开销。
-  它用于除 #link("../Wavefront_Rendering_on_GPUs.html#chap:gpu")[15]; 定义的积分器之外的所有 `pbrt` 积分器。
+  它用于除 @wavefront-rendering-on-gpus 定义的积分器之外的所有 `pbrt` 积分器。
 ]
 
 #translator("虽然 UniversalTextureEvaluator 作为一个额外的类，在 Material 和 Texture 之间增加了一个抽象层，但是在实际编译过程中编译器会优化掉这些间接引用。最终的机器代码相当于直接调用 Texture::Evaluate() 方法。")
@@ -369,8 +369,8 @@ const Image *GetNormalMap() const;
   Alternatively, shading normals may be specified via bump mapping, which takes a displacement function that specifies surface detail with a #link("../Textures_and_Materials/Texture_Interface_and_Basic_Textures.html#FloatTexture")[FloatTexture];. A `nullptr` value should be returned if no such displacement function has been specified.
 ][
   另一种方法是通过凹凸贴图指定着色法线。
-  凹凸贴图使用位移函数（displacement function），该函数通过 #link("../Textures_and_Materials/Texture_Interface_and_Basic_Textures.html#FloatTexture")[FloatTexture]; 来定义表面细节。
-  如果某个材质未指定这样的位移函数，则该接口方法应返回 `nullptr` 值。
+  凹凸贴图使用一个置换函数（displacement function）来定义表面细节，该函数通过 #link("../Textures_and_Materials/Texture_Interface_and_Basic_Textures.html#FloatTexture")[FloatTexture]; 来表示。
+  如果没有指定这样的置换函数，则该接口方法应返回 `nullptr` 值。
 ]
 
 ```cpp
@@ -456,7 +456,7 @@ class DiffuseMaterial {
 #parec[
   These are the `BxDF` and `BSSRDF` type definitions for `DiffuseMaterial`. Because this material does not include subsurface scattering, `BSSRDF` can be set to be `void`.
 ][
-  这些是 `DiffuseMaterial` 的 `BxDF` 和 `BSSRDF` 类型定义。
+  以下是 `DiffuseMaterial` 的 `BxDF` 和 `BSSRDF` 类型定义。
   因为这种材质不包括次表面散射，所以 `BSSRDF` 可以设置为 `void`。
 ]
 
@@ -480,7 +480,7 @@ SpectrumTexture reflectance;
   The `CanEvaluateTextures()` method is easy to implement; the various textures used for BSDF evaluation are passed to the given `TextureEvaluator`. Note that the displacement texture is not included here; if present, it is handled separately by the bump mapping code.
 ][
   `CanEvaluateTextures()` 方法的实现相对简单；用于 BSDF评估 的各种纹理被传递给指定的 `TextureEvaluator` 进行处理。
-  注意，这里不包括位移纹理；如果材质存在位移纹理，它会由凹凸贴图代码单独处理。
+  注意，置换贴图不包括在其中；如果存在，它会由凹凸贴图代码单独处理。
 ]
 
 ```cpp
@@ -516,7 +516,7 @@ DiffuseBxDF GetBxDF(TextureEvaluator texEval, MaterialEvalContext ctx,
 #parec[
   `DielectricMaterial` represents a dielectric interface.
 ][
-  `DielectricMaterial` 表示一个介电界面。
+  `DielectricMaterial` 表示一个电介质表面。
 ]
 
 ```cpp
@@ -597,7 +597,7 @@ using BSSRDF = void;
   `DielectricMaterial` 比 `DiffuseMaterial` 有更多的参数。
   其中，折射率（index of refraction, IOR）通过一个 #link("../Textures_and_Materials/Texture_Interface_and_Basic_Textures.html#SpectrumTexture")[`SpectrumTexture`] 指定，因此它可以随波长变化。
   还要注意，材质存储了两个粗糙度值（roughness），这允许指定各向异性（anisotropic）的微表面分布。
-  如果分布是各向同性（isotropic）的，这可能会导致存储和纹理评估上的轻微效率损失，因为在各向同性的情况下，两个粗糙度值总是被评估的。
+  如果分布是各向同性（isotropic）的，这可能会导致存储和纹理评估上的轻微效率损失，因为在各向同性的情况下，总是会计算两个（一样的）粗糙度值。
 ]
 
 
@@ -874,7 +874,7 @@ if (!material)
 #parec[
   Otherwise, normal or bump mapping is performed before the #link("../Reflection_Models/BSDF_Representation.html#BSDF")[`BSDF`] is created.
 ][
-  否则，在创建 #link("../Reflection_Models/BSDF_Representation.html#BSDF")[`BSDF`] 之前会先执行法线贴图（normal mapping）或凹凸贴图（bump mapping）。
+  否则，在创建 #link("../Reflection_Models/BSDF_Representation.html#BSDF")[`BSDF`] 之前会先执行法线或凹凸贴图。
 ]
 
 ```cpp
@@ -946,7 +946,8 @@ bsdf = BSDF(shading.n, shading.dpdu,
 #parec[
   Normal mapping is a technique that maps tabularized surface normals stored in images to surfaces and uses them to specify shading normals in order to give the appearance of fine geometric detail.
 ][
-  法线贴图是一种技术，它将表格化的表面法线映射到表面上，并使用它们来指定阴影法线，以呈现细致的几何细节。
+  法线贴图是一种将表格化的表面法线映射到表面上的技术。
+  使用它们来指定着色法线，以呈现细致的几何细节。
 ]
 
 #parec[
@@ -1126,10 +1127,10 @@ Float ulen = Length(ctx.shading.dpdu), vlen = Length(ctx.shading.dpdv);
 #parec[
   Another way to define shading normals is via a #link("../Textures_and_Materials/Texture_Interface_and_Basic_Textures.html#FloatTexture")[`FloatTexture`] that defines a displacement at each point on the surface: each point $p$ has a displaced point $p prime$ associated with it, defined by $p prime = p + d (p) upright(bold(n)) (p)$, where $d (p)$ is the offset returned by the displacement texture at $p$ and $n(p)$ is the surface normal at $p$ (@fig:display-surf). We can use this texture to compute shading normals so that the surface appears as if it actually had been offset by the displacement function, without modifying its geometry. This process is called #emph[bump mapping];. For relatively small displacement functions, the visual effect of bump mapping can be quite convincing.
 ][
-  另一种定义着色法线的方法是通过一个 #link("../Textures_and_Materials/Texture_Interface_and_Basic_Textures.html#FloatTexture")[`FloatTexture`]; ，它在表面的每个点定义一个位移：每个点 $p$ 都有一个与之相关的位移点 $p prime$ ，定义为 $p prime = p + d (p) upright(bold(n)) (p)$ ，其中 $d (p)$ 是位移纹理在 $p$ 处返回的偏移量，$n(p)$ 是 $p$ 处的表面法线（参见 @fig:display-surf ）。
-  我们可以利用这个纹理来计算着色法线，使得曲面看起来好像被位移函数真正改变了几何形态，而实际上并没有修改其几何结构。
+  另一种定义着色法线的方法是通过一个 #link("../Textures_and_Materials/Texture_Interface_and_Basic_Textures.html#FloatTexture")[`FloatTexture`]; ，它在表面的每个点定义一个置换（displacement）：每个点 $p$ 都有一个与之相关的置换点（displaced point） $p prime$ ，定义为 $p prime = p + d (p) upright(bold(n)) (p)$ ，其中 $d (p)$ 是置换贴图在 $p$ 处返回的偏移量，$n(p)$ 是 $p$ 处的表面法线（参见 @fig:display-surf ）。
+  我们可以利用这个贴图来计算着色法线，使得表面看起来好像被置换函数改变了几何形态，而实际上并没有修改其几何结构。
   这个过程称为 #emph[凹凸贴图]; 。
-  对于相对较小的位移函数，凹凸贴图的视觉效果可以非常逼真，使得表面呈现出真实的起伏感，而无需改变模型的实际顶点位置。
+  对于相对较小的置换函数，凹凸贴图的视觉效果可以非常逼真。
 ]
 
 #figure(
@@ -1138,8 +1139,8 @@ Float ulen = Length(ctx.shading.dpdu), vlen = Length(ctx.shading.dpdv);
     #ez_caption[
       A displacement function associated with a material defines a new surface based on the old one, offset by the displacement amount along the normal at each point. `pbrt` does not compute a geometric representation of this displaced surface in the #link("<BumpMap>")[`BumpMap()`] function, but instead uses it to compute shading normals for bump mapping.
     ][
-      与材质关联的位移函数（displacement function）定义了一个基于原始曲面的新曲面，其偏移量沿着每个点的法线方向进行调整。
-      在 #link("<BumpMap>")[`BumpMap()`] 函数中，`pbrt` 并不会直接计算这个位移后的几何曲面，而是利用该位移函数计算着色法线（shading normals），从而用于凹凸贴图（bump mapping）。
+      与材质相关联的置换函数基于原有表面定义了一个新的表面，该新表面沿着每个点的法线方向按置换量偏移。
+      在 #link("<BumpMap>")[`BumpMap()`] 函数中，`pbrt` 并不会直接计算这个置换后的几何曲面，而是利用它来计算凹凸贴图的着色法线。
     ]
   ],
 )<display-surf>
@@ -1177,7 +1178,10 @@ Float ulen = Length(ctx.shading.dpdu), vlen = Length(ctx.shading.dpdv);
 #parec[
   The #link("<BumpMap>")[`BumpMap()`] function is responsible for computing the effect of bump mapping at the point being shaded given a particular displacement texture. Its implementation is based on finding an approximation to the partial derivatives $partial p \/ partial u$ and $partial p \/ partial v$ of the displaced surface and using them in place of the surface's actual partial derivatives to compute the shading normal. Assume that the original surface is defined by a parametric function $p (u , v)$, and the bump offset function is a scalar function $d (u , v)$. Then the displaced surface is given by
 ][
-  #link("<BumpMap>")[`BumpMap()`]; 函数负责在给定特定位移纹理的情况下计算凹凸贴图在被着色点的效果。它的实现基于找到位移表面偏导数的近似值 $partial p \/ partial u$ 和 $partial p \/ partial v$ ，并用它们代替表面的实际偏导数来计算着色法线。假设原始表面由参数化函数 $p (u , v)$ 定义，凹凸偏移函数是标量函数 $d (u , v)$ 。那么位移表面由以下公式给出
+  #link("<BumpMap>")[`BumpMap()`]; 函数负责根据给定的置换贴图计算凹凸贴图的效果。
+  它的实现基于找到位移表面偏导数的近似值 $partial p \/ partial u$ 和 $partial p \/ partial v$ ，并用它们代替表面的实际偏导数来计算着色法线。
+  假设原始表面由参数化函数 $p (u , v)$ 定义，凹凸偏移函数是标量函数 $d (u , v)$ 。
+  那么置换后的表面可以表示为
 ]
 
 $
@@ -1216,7 +1220,7 @@ $ <bump-map>
 ][
   我们已经计算了 $partial p (u , v) \/ partial u$ 的值，即 $partial p \/ partial u$ ，并且它存储在 #link("../Textures_and_Materials/Texture_Coordinate_Generation.html#TextureEvalContext")[`TextureEvalContext`] 结构中。
   该结构还存储了表面法线 $upright(bold(n)) (u , v)$ 和偏导数 $partial upright(bold(n)) (u , v) \/ partial u = partial upright(bold(n)) \/ partial u$ 。
-  位移函数 $d (u , v)$ 可以直接求值，因此剩下唯一需要计算的项是 $partial d (u , v) \/ partial u$ 。
+  置换函数 $d (u , v)$ 可以直接求值，因此剩下唯一需要计算的项是 $partial d (u , v) \/ partial u$ 。
 ]
 
 #parec[
@@ -1250,7 +1254,7 @@ $
 ][
   有趣的是，大多数凹凸贴图实现都会忽略最终项，这是基于 $d (u , v)$ 影响相对较小的假设。（由于凹凸贴图主要用于近似小扰动，这是一个合理的假设。）
   许多渲染器不进行 $partial upright(bold(n)) \/ partial u$ 和 $partial upright(bold(n)) \/ partial v$ 的计算，这也可能与这种简化有关。
-  忽略最后一项的一个影响是，位移函数的大小不影响凹凸贴图的偏导数；在全局上添加一个常数值不会影响最终结果，因为凹凸贴图仅受位移函数的差分影响。
+  忽略最后一项的一个含义是，置换函数的大小不影响凹凸贴图的偏导数；因为只有凹凸函数的差值才会影响最终结果，因此在全局上添加一个常数值不会影响最终结果，
   `pbrt` 计算所有三个项，因为它可以直接获得 $partial upright(bold(n)) \/ partial u$ 和 $partial upright(bold(n)) \/ partial v$ ，尽管在实践中，这个最终项对视觉效果的影响通常微乎其微。
 ]
 
@@ -1286,7 +1290,7 @@ shiftedCtx.uv = ctx.uv + Vector2f(du, 0.f);
 #parec[
   Given the new positions and the displacement texture's values at them, the partial derivatives can be computed directly using @eqt:bump-map :
 ][
-  在获得新的位置以及这些位置处的位移纹理值后，可以直接使用 @eqt:bump-map 计算偏导数：
+  在获得新的位置以及这些位置处的置换贴图值后，可以直接使用 @eqt:bump-map 计算偏导数：
 ]
 
 ```cpp
