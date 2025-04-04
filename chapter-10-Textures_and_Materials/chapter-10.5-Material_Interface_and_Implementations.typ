@@ -176,6 +176,7 @@ BSDF Material::GetBSDF(
 ]
 
 ```cpp
+<<Define getBSDF lambda function for Material::GetBSDF()>>=
 auto getBSDF = [&](auto mtl) -> BSDF {
     using ConcreteMtl = typename std::remove_reference_t<decltype(*mtl)>;
     using ConcreteBxDF = typename ConcreteMtl::BxDF;
@@ -200,6 +201,7 @@ auto getBSDF = [&](auto mtl) -> BSDF {
 
 
 ```cpp
+<<Allocate memory for ConcreteBxDF and return BSDF for material>>=
 ConcreteBxDF *bxdf = scratchBuffer.Alloc<ConcreteBxDF>();
 *bxdf = mtl->GetBxDF(texEval, ctx, lambda);
 return BSDF(ctx.ns, ctx.dpdus, bxdf);
@@ -213,6 +215,7 @@ return BSDF(ctx.ns, ctx.dpdus, bxdf);
 ]
 
 ```cpp
+<<Material Interface>>=
 template <typename TextureEvaluator>
 ConcreteBSSRDF GetBSSRDF(TextureEvaluator texEval, MaterialEvalContext ctx,
                          SampledWavelengths &lambda) const;
@@ -235,6 +238,7 @@ ConcreteBSSRDF GetBSSRDF(TextureEvaluator texEval, MaterialEvalContext ctx,
 ]
 
 ```cpp
+<<MaterialEvalContext Definition>>=
 struct MaterialEvalContext : public TextureEvalContext {
     <<MaterialEvalContext Public Methods>>
        MaterialEvalContext() = default;
@@ -255,6 +259,7 @@ struct MaterialEvalContext : public TextureEvalContext {
 ]
 
 ```cpp
+<<MaterialEvalContext Public Methods>>=
 MaterialEvalContext() = default;
 MaterialEvalContext(const SurfaceInteraction &si)
     : TextureEvalContext(si), wo(si.wo), ns(si.shading.n),
@@ -286,6 +291,7 @@ MaterialEvalContext(const SurfaceInteraction &si)
 #translator("虽然 UniversalTextureEvaluator 作为一个额外的类，在 Material 和 Texture 之间增加了一个抽象层，但是在实际编译过程中编译器会优化掉这些间接引用。最终的机器代码相当于直接调用 Texture::Evaluate() 方法。")
 
 ```cpp
+<<UniversalTextureEvaluator Definition>>=
 class UniversalTextureEvaluator {
   public:
     <<UniversalTextureEvaluator Public Methods>>
@@ -301,6 +307,7 @@ class UniversalTextureEvaluator {
                                   SampledWavelengths lambda);
 };
 ```
+
 #parec[
   `TextureEvaluator`s must provide a `CanEvaluate()` method that takes lists of #link("../Textures_and_Materials/Texture_Interface_and_Basic_Textures.html#FloatTexture")[FloatTexture];s and #link("../Textures_and_Materials/Texture_Interface_and_Basic_Textures.html#SpectrumTexture")[SpectrumTexture];s. They can then examine the types of the provided textures to determine if they are able to evaluate them. For the universal texture evaluator, the answer is always the same.
 ][
@@ -310,6 +317,7 @@ class UniversalTextureEvaluator {
 ]
 
 ```cpp
+<<UniversalTextureEvaluator Public Methods>>=
 bool CanEvaluate(std::initializer_list<FloatTexture>,
                  std::initializer_list<SpectrumTexture>) const {
     return true;
@@ -385,6 +393,7 @@ FloatTexture GetDisplacement() const;
 ]
 
 ```cpp
+<<Material Interface>>+=
 bool HasSubsurfaceScattering() const;
 ```
 
@@ -407,6 +416,7 @@ bool HasSubsurfaceScattering() const;
 ]
 
 ```cpp
+<<DiffuseMaterial Definition>>=
 class DiffuseMaterial {
   public:
     <<DiffuseMaterial Type Definitions>>
@@ -461,6 +471,7 @@ class DiffuseMaterial {
 ]
 
 ```cpp
+<<DiffuseMaterial Type Definitions>>=
 using BxDF = DiffuseBxDF;
 using BSSRDF = void;
 ```
@@ -471,6 +482,7 @@ using BSSRDF = void;
 ]
 
 ```cpp
+<<DiffuseMaterial Private Members>>=
 Image *normalMap;
 FloatTexture displacement;
 SpectrumTexture reflectance;
@@ -484,6 +496,7 @@ SpectrumTexture reflectance;
 ]
 
 ```cpp
+<<DiffuseMaterial Public Methods>>=
 template <typename TextureEvaluator>
 bool CanEvaluateTextures(TextureEvaluator texEval) const {
     return texEval.CanEvaluate({}, {reflectance});
@@ -497,6 +510,7 @@ bool CanEvaluateTextures(TextureEvaluator texEval) const {
 ]
 
 ```cpp
+<<DiffuseMaterial Public Methods>>+=
 template <typename TextureEvaluator>
 DiffuseBxDF GetBxDF(TextureEvaluator texEval, MaterialEvalContext ctx,
                     SampledWavelengths &lambda) const {
@@ -524,60 +538,9 @@ DiffuseBxDF GetBxDF(TextureEvaluator texEval, MaterialEvalContext ctx,
 class DielectricMaterial {
   public:
     <<DielectricMaterial Type Definitions>>
-       using BxDF = DielectricBxDF;
-       using BSSRDF = void;
-
     <<DielectricMaterial Public Methods>>
-       DielectricMaterial(FloatTexture uRoughness, FloatTexture vRoughness,
-                          Spectrum eta,
-                          FloatTexture displacement, Image *normalMap,
-                          bool remapRoughness)
-           : normalMap(normalMap), displacement(displacement),
-             uRoughness(uRoughness),
-             vRoughness(vRoughness),
-             eta(eta),
-             remapRoughness(remapRoughness) {}
-
-       static const char *Name() { return "DielectricMaterial"; }
-
-       template <typename TextureEvaluator>
-       PBRT_CPU_GPU
-       bool CanEvaluateTextures(TextureEvaluator texEval) const {
-           return texEval.CanEvaluate({uRoughness, vRoughness}, {});
-       }
-
-       PBRT_CPU_GPU
-       FloatTexture GetDisplacement() const { return displacement; }
-       PBRT_CPU_GPU
-       const Image *GetNormalMap() const { return normalMap; }
-
-       static DielectricMaterial *Create(const TextureParameterDictionary &parameters,
-                                         Image *normalMap, const FileLoc *loc, Allocator alloc);
-
-       std::string ToString() const;
-
-       template <typename TextureEvaluator>
-       PBRT_CPU_GPU void GetBSSRDF(TextureEvaluator texEval, MaterialEvalContext ctx,
-                                           SampledWavelengths &lambda) const {
-       }
-
-       PBRT_CPU_GPU static constexpr bool HasSubsurfaceScattering() { return false; }
-       template <typename TextureEvaluator>
-       DielectricBxDF GetBxDF(TextureEvaluator texEval, MaterialEvalContext ctx,
-                              SampledWavelengths &lambda) const {
-           <<Compute index of refraction for dielectric material>>
-           <<Create microfacet distribution for dielectric material>>
-           <<Return BSDF for dielectric material>>
-       }
-
   private:
     <<DielectricMaterial Private Members>>
-       Image *normalMap;
-       FloatTexture displacement;
-       FloatTexture uRoughness, vRoughness;
-       bool remapRoughness;
-       Spectrum eta;
-
 };
 ```
 #parec[
@@ -602,6 +565,7 @@ using BSSRDF = void;
 
 
 ```cpp
+<<DielectricMaterial Private Members>>=
 Image *normalMap;
 FloatTexture displacement;
 FloatTexture uRoughness, vRoughness;
@@ -647,6 +611,7 @@ DielectricBxDF GetBxDF(TextureEvaluator texEval, MaterialEvalContext ctx,
 ]
 
 ```cpp
+<<Compute index of refraction for dielectric material>>=
 Float sampledEta = eta(lambda[0]);
 if (!eta.template Is<ConstantSpectrum>())
     lambda.TerminateSecondary();
@@ -661,6 +626,7 @@ if (!eta.template Is<ConstantSpectrum>())
 ]
 
 ```cpp
+<<TrowbridgeReitzDistribution Public Methods>>+=
 static Float RoughnessToAlpha(Float roughness) {
     return std::sqrt(roughness);
 }
@@ -673,6 +639,7 @@ static Float RoughnessToAlpha(Float roughness) {
 ]
 
 ```cpp
+<<Create microfacet distribution for dielectric material>>=
 Float urough = texEval(uRoughness, ctx), vrough = texEval(vRoughness, ctx);
 if (remapRoughness) {
     urough = TrowbridgeReitzDistribution::RoughnessToAlpha(urough);
@@ -688,6 +655,7 @@ TrowbridgeReitzDistribution distrib(urough, vrough);
 ]
 
 ```cpp
+<<Return BSDF for dielectric material>>=
 return DielectricBxDF(sampledEta, distrib);
 ```
 
@@ -695,9 +663,9 @@ return DielectricBxDF(sampledEta, distrib);
 <mix-material>
 
 #parec[
-  The final material implementation that we will describe in the text is `MixMaterial`, which stores two other materials and uses a `Float`-valued texture to blend between them.
+  The final material implementation that we will describe in the text is #link("<MixMaterial>")[MixMaterial], which stores two other materials and uses a `Float`-valued texture to blend between them.
 ][
-  我们最后要介绍的材质实现是混合材质（`MixMaterial`），它存储了两种不同的材质，并使用一个浮点值纹理在它们之间进行混合。
+  我们最后要介绍的材质实现是混合材质（#link("<MixMaterial>")[MixMaterial]），它存储了两种不同的材质，并使用一个浮点值纹理在它们之间进行混合。
 ]
 
 ```cpp
@@ -773,11 +741,11 @@ Material ChooseMaterial(TextureEvaluator texEval,
 )<mix-material-stoshastic>
 
 #parec[
-  Stochastic selection of materials can introduce noise in images at low sampling rates; see @fig:mix-material-stoshastic. However, a few tens of samples are generally plenty to resolve any visual error. Furthermore, this approach does bring benefits: sampling and evaluation of the resulting BSDF is more efficient than if it was a weighted sum of the BSDFs from the constituent materials.
+  Stochastic selection of materials can introduce noise in images at low sampling rates; see @fig:mix-material-stoshastic. However, a few tens of samples are generally plenty to resolve any visual error. Furthermore, this approach does bring benefits: sampling and evaluation of the resulting #link("../Reflection_Models/BSDF_Representation.html#BSDF")[`BSDF`] is more efficient than if it was a weighted sum of the #link("../Reflection_Models/BSDF_Representation.html#BSDF")[`BSDF`]s from the constituent materials.
 ][
   材质的随机选择可能会在低采样率下引入噪声，参考 @fig:mix-material-stoshastic 。
   然而，通常只需几十次采样，就足以消除这种视觉误差。
-  此外，这种方法带来了计算上的优势：相比于直接对两个材质的 BSDF 进行加权平均，随机选择一种材质进行采样和评估的方式更加高效，减少了计算开销。
+  此外，这种方法带来了计算上的优势：相比于直接对两个材质的 #link("../Reflection_Models/BSDF_Representation.html#BSDF")[`BSDF`] 进行加权平均，随机选择一种材质进行采样和评估的方式更加高效，减少了计算开销。
 ]
 
 #parec[
@@ -1294,6 +1262,7 @@ shiftedCtx.uv = ctx.uv + Vector2f(du, 0.f);
 ]
 
 ```cpp
+<<Compute bump-mapped differential geometry>>=
 *dpdu = ctx.shading.dpdu +
         (uDisplace - displace) / du * Vector3f(ctx.shading.n) +
         displace * Vector3f(ctx.shading.dndu);
