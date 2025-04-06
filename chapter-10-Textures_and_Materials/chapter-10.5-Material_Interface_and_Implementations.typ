@@ -420,46 +420,9 @@ bool HasSubsurfaceScattering() const;
 class DiffuseMaterial {
   public:
     <<DiffuseMaterial Type Definitions>>
-       using BxDF = DiffuseBxDF;
-       using BSSRDF = void;
     <<DiffuseMaterial Public Methods>>
-       static const char *Name() { return "DiffuseMaterial"; }
-
-       PBRT_CPU_GPU
-       FloatTexture GetDisplacement() const { return displacement; }
-       PBRT_CPU_GPU
-       const Image *GetNormalMap() const { return normalMap; }
-
-       static DiffuseMaterial *Create(const TextureParameterDictionary &parameters,
-                                      Image *normalMap, const FileLoc *loc, Allocator alloc);
-
-       template <typename TextureEvaluator>
-       PBRT_CPU_GPU void GetBSSRDF(TextureEvaluator texEval, MaterialEvalContext ctx,
-                                           SampledWavelengths &lambda,
-                                           void *) const {
-       }
-
-       PBRT_CPU_GPU static constexpr bool HasSubsurfaceScattering() { return false; }
-
-       std::string ToString() const;
-       DiffuseMaterial(SpectrumTexture reflectance,
-                       FloatTexture displacement, Image *normalMap)
-           : normalMap(normalMap), displacement(displacement), reflectance(reflectance) {}
-       template <typename TextureEvaluator>
-       bool CanEvaluateTextures(TextureEvaluator texEval) const {
-           return texEval.CanEvaluate({}, {reflectance});
-       }
-       template <typename TextureEvaluator>
-       DiffuseBxDF GetBxDF(TextureEvaluator texEval, MaterialEvalContext ctx,
-                           SampledWavelengths &lambda) const {
-           SampledSpectrum r = Clamp(texEval(reflectance, ctx, lambda), 0, 1);
-           return DiffuseBxDF(r);
-       }
   private:
     <<DiffuseMaterial Private Members>>
-       Image *normalMap;
-       FloatTexture displacement;
-       SpectrumTexture reflectance;
 };
 ```
 
@@ -550,6 +513,7 @@ class DielectricMaterial {
 ]
 
 ```cpp
+<<DielectricMaterial Type Definitions>>=
 using BxDF = DielectricBxDF;
 using BSSRDF = void;
 ```
@@ -1214,7 +1178,7 @@ $
   因此， $partial p prime \/ partial u$ 的最终表达式如下（为简单起见，我们省略了一些项对 $(u , v)$ 的显式依赖）：
 ]
 $
-  frac(partial p prime, partial u) approx frac(partial n, partial u) + frac(d (u + Delta u , v) - d (u , v), Delta u) upright(bold(n)) + d ( u , v ) frac(partial upright(bold(n)), partial u) .
+  frac(partial p prime, partial u) approx frac(partial p, partial u) + frac(d (u + Delta u , v) - d (u , v), Delta u) upright(bold(n)) + d ( u , v ) frac(partial upright(bold(n)), partial u) .
 $
 
 #parec[
