@@ -124,13 +124,21 @@
   // 1. Empty parts of a breakable blocks
   //    https://github.com/typst/typst/issues/2914#issuecomment-2423965018
   // 2. Width of Code Block -> 100%
-  show raw.where(block: true): it => {
-    show raw.line: it => {
-      text(fill: gray)[#it.number]
-      h(1em)
-      it.body
-    }
-    [#it]
+  // 3. Line number Align Issue Fixed
+  //    https://github.com/typst/typst/issues/344
+  show raw.where(block: true): code => {
+    grid(
+      columns: (auto, auto),
+      column-gutter: 1em,
+      row-gutter: par.leading,
+      align: (right, raw.align),
+      ..for line in code.lines {
+        (
+          text(fill: gray)[#line.number],
+          line.body,
+        )
+      },
+    )
     fake-par
   }
   show raw.where(block: true): set block(fill: luma(230), inset: 10pt, width: 100%)
