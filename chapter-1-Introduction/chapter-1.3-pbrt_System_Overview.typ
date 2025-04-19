@@ -166,9 +166,9 @@
 ]
 
 #parec[
-  While `pbrt` can render many scenes well with its current implementation, it has frequently been extended by students,researchers, and developers. Throughout this section are a number of notable images from those efforts.@fig:competition-snow,@fig:ice-cave, and @fig:cotton-candy were each created by students in a rendering course where the final class project was to extend `pbrt` with new functionality in order to render an image that it could not have rendered before. These images are among the best from that course.
+  While `pbrt` can render many scenes well with its current implementation, it has frequently been extended by students,researchers, and developers. Throughout this section are a number of notable images from those efforts. @fig:competition-snow, @fig:ice-cave, and @fig:cotton-candy were each created by students in a rendering course where the final class project was to extend `pbrt` with new functionality in order to render an image that it could not have rendered before. These images are among the best from that course.
 ][
-  虽然 `pbrt` 可以通过其当前实现很好地渲染许多场景，但它经常被学生、研究人员和开发者扩展。在这一部分中，有许多来自这些努力的值得注意的图像。@fig:competition-snow,@fig:ice-cave, and @fig:cotton-candy 都是由参加渲染课程的学生创建的，最后的课程项目是为 `pbrt` 添加新功能，以渲染它之前无法渲染的图像。这些图像是该课程中的佼佼者。
+  虽然 `pbrt` 可以通过其当前实现很好地渲染许多场景，但它经常被学生、研究人员和开发者扩展。在这一部分中，有许多来自这些努力的值得注意的图像。@fig:competition-snow, @fig:ice-cave，和@fig:cotton-candy 都是由参加渲染课程的学生创建的，最后的课程项目是为 `pbrt` 添加新功能，以渲染它之前无法渲染的图像。这些图像是该课程中的佼佼者。
 ]
 
 #figure(
