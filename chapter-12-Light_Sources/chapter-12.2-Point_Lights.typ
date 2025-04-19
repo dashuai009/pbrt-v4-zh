@@ -2,9 +2,9 @@
 
 == Point Lights
 #parec[
-  A number of interesting lights can be described in terms of emission from a single point in space with some possibly angularly varying distribution of outgoing light. This section describes the implementation of a number of them, starting with #link("<PointLight>")[PointLight];, which represents an isotropic point light source that emits the same amount of light in all directions. @fig:light-pointlight shows a scene rendered with a point light source.) Building on this base, a number of more complex lights based on point sources will then be introduced, including spotlights and a light that projects an image into the scene.
+  A number of interesting lights can be described in terms of emission from a single point in space with some possibly angularly varying distribution of outgoing light. This section describes the implementation of a number of them, starting with #link("<PointLight>")[`PointLight`];, which represents an isotropic point light source that emits the same amount of light in all directions. @fig:light-pointlight shows a scene rendered with a point light source.) Building on this base, a number of more complex lights based on point sources will then be introduced, including spotlights and a light that projects an image into the scene.
 ][
-  一些有趣的光源可以用从空间中单一点发射的光来描述，这些光可能具有某种角度变化的光分布。本节描述了其中一些的实现，首先是#link("<PointLight>")[PointLight];，它代表一个各向同性的点光灯，在所有方向上发出相同量的光。 （@fig:light-pointlight 展示了一个使用点光灯渲染的场景。）在此基础上，将介绍一些基于点光灯的更复杂的光源，包括聚光灯和将图像投射到场景中的光源。
+  一类有趣的光源可以用从空间中单一点发射的光来描述，这些光可能具有某种角度变化的光分布。本节描述了其中一些的实现，首先是#link("<PointLight>")[`PointLight`];，它代表一个各向同性的点光灯，在所有方向上发出相同量的光。 （@fig:light-pointlight 展示了一个使用点光灯渲染的场景。）在此基础上，将介绍一些基于点光灯的更复杂的光源，包括聚光灯和将图像投射到场景中的光源。
 ]
 
 #figure(
@@ -30,9 +30,9 @@ class PointLight : public LightBase {
 ```
 
 #parec[
-  Point lights are positioned at the origin in the light coordinate system. To place them elsewhere, the rendering-from-light transformation should be set accordingly. In addition to passing the common light parameters to #link("../Light_Sources/Light_Interface.html#LightBase")[LightBase];, the constructor supplies #link("../Light_Sources/Light_Interface.html#LightType::DeltaPosition")[LightType::DeltaPosition] for its light type, since point lights represent singularities that only emit light from a single position. The constructor also stores the light's intensity (@basic-quantities).
+  Point lights are positioned at the origin in the light coordinate system. To place them elsewhere, the rendering-from-light transformation should be set accordingly. In addition to passing the common light parameters to #link("../Light_Sources/Light_Interface.html#LightBase")[`LightBase`];, the constructor supplies #link("../Light_Sources/Light_Interface.html#LightType::DeltaPosition")[`LightType::DeltaPosition`] for its light type, since point lights represent singularities that only emit light from a single position. The constructor also stores the light's intensity (@basic-quantities).
 ][
-  点光灯在光坐标系中定位于原点。要将它们放置在其他位置，应相应地设置从光源到渲染的变换。 除了将常见的光源参数传递给#link("../Light_Sources/Light_Interface.html#LightBase")[LightBase];外，构造函数还为其光源类型提供#link("../Light_Sources/Light_Interface.html#LightType::DeltaPosition")[LightType::DeltaPosition];，因为点光灯表示仅从单个位置发光的奇点。 构造函数还存储光源的强度（@basic-quantities）。
+  点光灯在光坐标系中定位于原点。要将它们放置在其他位置，应相应地设置从光源到渲染的变换。 除了将常见的光源参数传递给#link("../Light_Sources/Light_Interface.html#LightBase")[`LightBase`];外，构造函数还为其光源类型提供#link("../Light_Sources/Light_Interface.html#LightType::DeltaPosition")[`LightType::DeltaPosition`];，因为点光灯表示仅从单个位置发光的奇点。 构造函数还存储光源的强度（@basic-quantities）。
 ]
 
 ```cpp
@@ -44,9 +44,9 @@ PointLight(Transform renderFromLight, MediumInterface mediumInterface,
 ```
 
 #parec[
-  As #link("../Volume_Scattering/Media.html#HomogeneousMedium")[HomogeneousMedium] and `GridMedium` did with spectral scattering coefficients, `PointLight` uses a #link("../Radiometry,_Spectra,_and_Color/Representing_Spectral_Distributions.html#DenselySampledSpectrum")[DenselySampledSpectrum] rather than a #link("../Radiometry,_Spectra,_and_Color/Representing_Spectral_Distributions.html#Spectrum")[Spectrum] for the spectral intensity, trading off storage for more efficient spectral sampling operations.
+  As #link("../Volume_Scattering/Media.html#HomogeneousMedium")[HomogeneousMedium] and `GridMedium` did with spectral scattering coefficients, `PointLight` uses a #link("../Radiometry,_Spectra,_and_Color/Representing_Spectral_Distributions.html#DenselySampledSpectrum")[`DenselySampledSpectrum`] rather than a #link("../Radiometry,_Spectra,_and_Color/Representing_Spectral_Distributions.html#Spectrum")[`Spectrum`] for the spectral intensity, trading off storage for more efficient spectral sampling operations.
 ][
-  正如#link("../Volume_Scattering/Media.html#HomogeneousMedium")[HomogeneousMedium];和`GridMedium`使用光谱散射系数一样，`PointLight`使用#link("../Radiometry,_Spectra,_and_Color/Representing_Spectral_Distributions.html#DenselySampledSpectrum")[密集采样光谱];而不是#link("../Radiometry,_Spectra,_and_Color/Representing_Spectral_Distributions.html#Spectrum")[Spectrum];来表示光谱强度，以存储换取更高效的光谱采样操作。
+  正如#link("../Volume_Scattering/Media.html#HomogeneousMedium")[HomogeneousMedium];和`GridMedium`使用光谱散射系数一样，`PointLight`使用#link("../Radiometry,_Spectra,_and_Color/Representing_Spectral_Distributions.html#DenselySampledSpectrum")[`DenselySampledSpectrum`];而不是#link("../Radiometry,_Spectra,_and_Color/Representing_Spectral_Distributions.html#Spectrum")[`Spectrum`];来表示光谱强度，以存储换取更高效的光谱采样操作。
 ]
 
 ```cpp
@@ -58,13 +58,13 @@ Float scale;
 #parec[
   Strictly speaking, it is incorrect to describe the light arriving at a point due to a point light source using units of radiance. Radiant intensity is instead the proper unit for describing emission from a point light source, as explained in @Radiometry . In the light source interfaces here, however, we will abuse terminology and use `SampleLi()` methods to report the illumination arriving at a point for all types of light sources, dividing radiant intensity by the squared distance to the point $p$ to convert units. In the end, the correctness of the computation does not suffer from this fudge, and it makes the implementation of light transport algorithms more straightforward by not requiring them to use different interfaces for different types of lights.
 ][
-  严格来说，用辐射亮度来描述由于点光源到达某一点的光是不正确的。 辐射强度才是描述点光源发射的正确单位，如@Radiometry 所述。 然而，在这里的光源接口中，我们将滥用术语，使用`SampleLi()`方法来报告到达某点的所有类型光源的照明，通过将辐射强度除以到点 $p$ 的平方距离来转换单位。 最终，这种处理并不会影响计算的正确性，并且通过不要求光传输算法为不同类型的光源使用不同的接口，使其实现更加简单。
+  严格来说，使用辐射亮度（radiance）来描述点光源在某个点产生的照明是错误的。正如 @Radiometry 一节中所解释的，辐射强度（radiant intensity）才是用于描述点光源发射的正确物理单位。然而，在此处的光源接口中，我们故意混用术语，将 `SampleLi()` 方法统一用于所有类型光源的照明计算，通过将辐射强度除以点 $p$ 到光源的距离平方来完成单位转换。尽管这种做法在术语上并不严谨，但它并不会影响计算的正确性，反而能简化光传输算法的实现，因为无需为不同类型的光源设计不同的接口。
 ]
 
 #parec[
-  Point lights are described by a delta distribution such that they only illuminate a receiving point from a single direction. Thus, the sampling problem is deterministic and makes no use of the random sample `u`. We find the light's position `p` in the rendering coordinate system and sample its spectral emission at the provided wavelengths. Note that a PDF value of 1 is returned in the #link("../Light_Sources/Light_Interface.html#LightLiSample")[LightLiSample];: there is implicitly a Dirac delta distribution in both the radiance and the PDF that cancels when the Monte Carlo estimator is evaluated.
+  Point lights are described by a delta distribution such that they only illuminate a receiving point from a single direction. Thus, the sampling problem is deterministic and makes no use of the random sample `u`. We find the light's position `p` in the rendering coordinate system and sample its spectral emission at the provided wavelengths. Note that a PDF value of 1 is returned in the #link("../Light_Sources/Light_Interface.html#LightLiSample")[`LightLiSample`];: there is implicitly a Dirac delta distribution in both the radiance and the PDF that cancels when the Monte Carlo estimator is evaluated.
 ][
-  点光灯由一个δ分布描述，因此它们仅从一个方向照亮接收点。 因此，采样问题是确定性的，并且不使用随机样本`u`。我们在渲染坐标系中找到光源的位置`p`，并在提供的波长处采样其光谱发射。 注意，在#link("../Light_Sources/Light_Interface.html#LightLiSample")[LightLiSample];中返回的PDF值为1：在辐射亮度和PDF中隐含有一个狄拉克δ分布，在评估蒙特卡罗估计器时会相互抵消。
+  点光灯由一个 $delta$ 分布描述，因此它们仅从一个方向照亮接收点。 因此，采样问题是确定性的，并且不使用随机样本`u`。我们在渲染坐标系中找到光源的位置`p`，并在提供的波长处采样其光谱发射。 注意，在#link("../Light_Sources/Light_Interface.html#LightLiSample")[`LightLiSample`];中返回的PDF值为1：在辐射亮度和PDF中隐含有一个狄拉克δ分布，在评估蒙特卡罗估计器时会相互抵消。
 ]
 
 ```cpp
@@ -104,7 +104,7 @@ $ Phi = integral_(S^2) I thin d omega = I integral_(S^2) d omega = 4 pi I . $
 #parec[
   Radiant power is returned by the `Phi()` method and not the luminous power that may have been used to specify the light source.
 ][
-  辐射功率由`Phi()`方法返回，而不是可能用于指定光源的发光功率。
+  `Phi()` 方法返回的是辐射功率（radiant power），而不是用于描述光源的可见光功率（luminous power）。
 ]
 
 ```cpp
@@ -116,15 +116,15 @@ SampledSpectrum PointLight::Phi(SampledWavelengths lambda) const {
 === Spotlights
 
 #parec[
-  Spotlights are a handy variation on point lights; rather than shining illumination in all directions, they emit light in a cone of directions from their position. For simplicity, we will define the spotlight in the light coordinate system to always be at position $(0 , 0 , 0)$ and pointing down the $+ z$ axis. To place or orient it elsewhere in the scene, the rendering-from-light transformation should be set accordingly. Figure #link("<fig:light-spotlight>")[12.4] shows a rendering of the same scene as @fig:light-pointlight , illuminated with a spotlight instead of a point light.
+  Spotlights are a handy variation on point lights; rather than shining illumination in all directions, they emit light in a cone of directions from their position. For simplicity, we will define the spotlight in the light coordinate system to always be at position $(0 , 0 , 0)$ and pointing down the $+ z$ axis. To place or orient it elsewhere in the scene, the rendering-from-light transformation should be set accordingly. @fig:light-spotlight shows a rendering of the same scene as @fig:light-pointlight , illuminated with a spotlight instead of a point light.
 ][
-  聚光灯是点光源的一种方便变体；它们不是向所有方向发光，而是从其位置向一个锥形区域发光。为了简单起见，我们将在光坐标系中将聚光灯定义为始终位于位置 $(0 , 0 , 0)$ 并指向 $+ z$ 轴。要将其放置或定向到场景中的其他位置，应相应设置从光源到渲染的转换。图 #link("<fig:light-spotlight>")[12.4] 显示了用聚光灯而不是点光源照亮的与图 #link("<fig:light-pointlight>")[12.3] 相同的场景渲染.
+  聚光灯是点光源的一种方便变体；它们不是向所有方向发光，而是从其位置向一个锥形区域发光。为了简单起见，聚光灯在灯光局部坐标系中的位置始终定义为 $(0 , 0 , 0)$ 并指向 $+ z$ 轴。要将其放置或定向到场景中的其他位置，应相应设置从光源到渲染的坐标转换。@fig:light-spotlight 显示了用聚光灯而不是点光源照亮的与 @fig:light-pointlight 相同的场景渲染.
 ]
 
 #figure(
   image("../pbr-book-website/4ed/Light_Sources/dragon-spot-light.png"),
   caption: [
-    #parec[Scene Rendered with a Spotlight. The spotlight cone smoothly cuts off illumination past a user-specified angle from the light’s central axis. #emph[(Dragon model courtesy of the Stanford Computer Graphics Laboratory.)]
+    #parec[Scene Rendered with a Spotlight. The spotlight cone smoothly cuts off illumination past a user-specified angle from the light's central axis. #emph[(Dragon model courtesy of the Stanford Computer Graphics Laboratory.)]
     ][
       用聚光灯渲染的场景。聚光灯锥体在超过用户指定的与光的中心轴的角度后，光照会逐渐减弱直至截止。 #emph[(龙模型由斯坦福计算机图形实验室提供。)]
     ]
@@ -148,7 +148,7 @@ class SpotLight : public LightBase {
     #ez_caption[
       Spotlights are defined by two angles, falloffStart and totalWidth, that are measured with respect to the $z$ axis in light space. Objects inside the inner cone of angles, up to falloffStart, are fully illuminated by the light. The directions between falloffStart and totalWidth are a transition zone that ramps down from full illumination to no illumination, such that points outside the totalWidth cone are not illuminated at all. The cosine of the angle $theta$ between the vector to a point $upright(p)$ and the spotlight axis can easily be computed with a dot product.
     ][
-      聚光灯由两个角度定义：`falloffStart` 和 `totalWidth`，它们相对于光空间中的 $z$ 轴测量。处于内锥角（小于或等于 `falloffStart`）内的物体会被完全照亮。从 `falloffStart` 到 `totalWidth` 之间的区域是一个过渡区，照明从完全亮度逐渐递减到无照明。而在 `totalWidth` 锥体之外的点完全不会被照亮。点 $p$ 的向量 $upright(p)$ 与聚光灯轴之间的角度 $\\theta$ 的余弦值可以通过点积轻松计算得出。
+      聚光灯由两个角度定义：`falloffStart` 和 `totalWidth`，它们相对于光空间中的 $z$ 轴测量。处于内锥角（小于或等于 `falloffStart`）内的物体会被完全照亮。从 `falloffStart` 到 `totalWidth` 之间的区域是一个过渡区，照明从完全亮度逐渐递减到无照明。而在 `totalWidth` 锥体之外的点完全不会被照亮。点 $p$ 的向量 $upright(p)$ 与聚光灯轴之间的角度 $theta$ 的余弦值可以通过点积轻松计算得出。
 
     ]
   ],
@@ -158,7 +158,7 @@ class SpotLight : public LightBase {
 #parec[
   There is not anything interesting in the `SpotLight` constructor, so it is not included here. It is given angles that set the extent of the `SpotLight's` cone—the overall angular width of the cone and the angle at which falloff starts (@fig:spotlight)—but it stores the cosines of these angles, which are more useful to have at hand in the `SpotLight`'s methods.
 ][
-  `SpotLight` 构造函数中没有特别值得注意的内容，因此这里未包含。它接受一些用于设置聚光灯锥体范围的角度参数——锥体的整体角宽度以及衰减开始的角度（见 @fig:spotlight）。不过，它会存储这些角度的余弦值，因为在 SpotLight 的方法中，这些余弦值更为实用。
+  `SpotLight` 构造函数中没有特别值得注意的内容，因此这里未包含。它接受一些用于设置聚光灯锥体范围的角度参数——锥体的整体角宽度以及衰减开始的角度（见 @fig:spotlight）。不过，它会存储这些角度的余弦值，因为在 `SpotLight` 的成员方法中，这些余弦值更为实用。
 ]
 
 
@@ -178,7 +178,7 @@ Float scale, cosFalloffStart, cosFalloffEnd;
 
 
 ```cpp
-<<SpotLight Public Methods>>=
+// <<SpotLight Public Methods>>=
 pstd::optional<LightLiSample>
 SampleLi(LightSampleContext ctx, Point2f u, SampledWavelengths lambda,
          bool allowIncompletePDF) const {
@@ -190,38 +190,36 @@ SampleLi(LightSampleContext ctx, Point2f u, SampledWavelengths lambda,
 }
 ```
 
+
 #parec[
   The `I()` method computes the distribution of light accounting for the spotlight cone. This computation is encapsulated in a separate method since other SpotLight methods will need to perform it as well.
 ][
-
+  `I()` 方法负责计算聚光灯锥体方向上的辐射分布。由于其他 SpotLight 方法也需要进行类似的计算，因此该逻辑被封装成一个独立的方法。
 ]
 
 ```cpp
-<<Compute incident radiance Li for SpotLight>>=
+// <<Compute incident radiance Li for SpotLight>>=
 Vector3f wLight = Normalize(renderFromLight.ApplyInverse(-wi));
 SampledSpectrum Li = I(wLight, lambda) / DistanceSquared(p, ctx.p());
 ```
 
-
 #parec[
   As with point lights, the SpotLight's `PDF_Li()` method always returns zero. It is not included here.
 ][
-
+  与点光源类似，SpotLight 的 `PDF_Li()` 方法始终返回 0，因此此处未包含相关实现。
 ]
 
 #parec[
   To compute the spotlight's strength for a direction leaving the light, the first step is to compute the cosine of the angle between that direction and the vector along the center of the spotlight's cone. Because the spotlight is oriented to point down the axis $+z$, the `CosTheta()` function can be used to do so.
 ][
-
+  要计算某一离开光源方向的光强，首先需要计算该方向与聚光灯锥体中心轴之间夹角的余弦值。由于聚光灯默认沿 $+z$ 轴方向发射，可以使用 `CosTheta()` 函数来完成该角度的余弦计算。
 ]
-
 
 #parec[
   The `SmoothStep()` function is then used to modulate the emission according to the cosine of the angle: it returns 0 if the provided value is below `cosFalloffEnd`, 1 if it is above `cosFalloffStart`, and it interpolates between 0 and 1 for intermediate values using a cubic curve. (To understand its usage, keep in mind that for $theta in [0, pi]$, as is the case here, if $theta > theta'$, then $cos theta < cos theta'$.)
 ][
-
+  接着，使用 `SmoothStep()` 函数基于角度余弦值调制光的强度：当值低于 `cosFalloffEnd` 时返回 0，高于 `cosFalloffStart` 时返回 1，介于两者之间则使用三次插值平滑过渡。（注意这里的角度 $theta in [0, pi]$，因此 $theta$ 越大，其余弦值越小。）
 ]
-
 
 ```cpp
 <<SpotLight Method Definitions>>=
@@ -232,10 +230,11 @@ SampledSpectrum SpotLight::I(Vector3f w, SampledWavelengths lambda) const {
 ```
 
 #parec[
-  To compute the power emitted by a spotlight, it is necessary to integrate the falloff function over the sphere. In spherical coordinates, $theta$ and $phi.alt$ are separable, so we just need to integrate over $theta$ and scale the result by $2pi$. For the part that lies inside the inner cone of full power, we have
+  To compute the power emitted by a spotlight, it is necessary to integrate the falloff function over the sphere. In spherical coordinates, $theta$ and $phi$ are separable, so we just need to integrate over $theta$ and scale the result by $2pi$. For the part that lies inside the inner cone of full power, we have
 ][
-
+  为了计算聚光灯的总辐射功率，需要对其辐射衰减函数在整个单位球面上进行积分。在球坐标中，$theta$ 与 $phi$ 是可分离的，因此只需对 $theta$ 方向积分，并将结果乘以 $2 pi$ 即可。在完全辐射强度的内锥体区域，其积分为：
 ]
+
 $ integral_0^(theta_(upright("start"))) sin theta thin d theta = 1 - cos theta_(upright("start")) $
 
 #parec[
@@ -245,7 +244,7 @@ $ integral_0^(theta_(upright("start"))) sin theta thin d theta = 1 - cos theta_(
 ]
 
 $
-  integral_(theta_(upright("start")))^(theta_(upright("end"))) upright("smt") ( cos theta , theta_(upright("end")) , theta_(upright("start")) ) sin theta thin d theta = frac(cos theta_(upright("start")) - cos theta_(upright("end")), 2)
+  integral_(theta_(upright("start")))^(theta_(upright("end"))) upright("SmoothStep") ( cos theta , theta_(upright("end")) , theta_(upright("start")) ) sin theta thin d theta = frac(cos theta_(upright("start")) - cos theta_(upright("end")), 2)
 $
 
 ```cpp
@@ -271,11 +270,10 @@ SampledSpectrum SpotLight::Phi(SampledWavelengths lambda) const {
   caption: [
     #ez_caption[
       The Basic Setting for Projection Light Sources. A point $p$
-      in the light’s coordinate system is projected onto the plane of the
-      image using the light’s projection matrix.
+      in the light's coordinate system is projected onto the plane of the
+      image using the light's projection matrix.
     ][
-      投影光源的基本设置。 在光的坐标系中的点 $p$
-      被投影到图像的平面上，使用光的投影矩阵。
+      投影光源的基本设置。 在光的坐标系中的点 $p$ 被投影到图像的平面上，使用光的投影矩阵。
     ]
   ],
 )<projlight>
@@ -292,13 +290,9 @@ SampledSpectrum SpotLight::Phi(SampledWavelengths lambda) const {
   image("../pbr-book-website/4ed/Light_Sources/pha12f06.svg"),
   caption: [
     #ez_caption[
-      Scene Rendered with a Projection Light Using a Grid Image.
-      The projection light acts like a slide projector, projecting an image
-      onto objects in the scene. (Dragon model courtesy of the Stanford
-      Computer Graphics Laboratory.)
+      Scene Rendered with a Projection Light Using a Grid Image. The projection light acts like a slide projector, projecting an image onto objects in the scene. (Dragon model courtesy of the Stanford Computer Graphics Laboratory.)
     ][
-      使用网格图像进行投影光渲染的场景。
-      投影光像幻灯片投影机一样，将图像投射到场景中的物体上。（龙模型由斯坦福计算机图形实验室提供。）
+      使用网格图像进行投影光渲染的场景。 投影光像幻灯片投影机一样，将图像投射到场景中的物体上。（龙模型由斯坦福计算机图形实验室提供。）
     ]
   ],
 )<light-projection>
@@ -317,7 +311,7 @@ class ProjectionLight : public LightBase {
 #parec[
   This light could use a #link("../Textures_and_Materials/Texture_Interface_and_Basic_Textures.html#Texture")[`Texture`] to represent the light projection distribution so that procedural projection patterns could be used. However, having a tabularized representation of the projection function makes it easier to sample with probability proportional to the projection function. Therefore, the #link("../Utilities/Images.html#Image")[`Image`] class is used to specify the projection pattern.
 ][
-  此光可以使用 #link("../Textures_and_Materials/Texture_Interface_and_Basic_Textures.html#Texture")[`Texture`] 来表示光投影分布，以便可以使用程序投影模式。 然而，具有投影函数的表格化表示使得更容易以与投影函数成比例的概率进行采样。 因此，使用 #link("../Utilities/Images.html#Image")[`Image`] 类来指定投影模式。
+  此光可以使用 #link("../Textures_and_Materials/Texture_Interface_and_Basic_Textures.html#Texture")[`Texture`] 来表示光投影分布，以便可以使用程序化的投影样式。 然而，投影函数的表格化表示更容易以与投影函数成比例的概率进行采样。 因此，使用 #link("../Utilities/Images.html#Image")[`Image`] 类来指定投影模式。
 ]
 
 ```cpp
@@ -351,7 +345,7 @@ Float scale;
 #parec[
   The constructor has more work to do than the ones we have seen so far, including initializing a projection matrix and computing the area of the projected image on the projection plane.
 ][
-  构造函数比我们迄今为止看到的构造函数有更多的工作要做，包括初始化投影矩阵和计算投影平面上投影图像的面积。
+  构造函数比之前看到的构造函数要做的的工作都多一些，包括初始化投影矩阵和计算投影平面上投影图像的面积。
 ]
 
 ```cpp
@@ -379,9 +373,9 @@ lightFromScreen = Inverse(screenFromLight);
 ```
 
 #parec[
-  Since there is no particular need to keep `ProjectionLight`s compact, both of the screen–light transformations are stored explicitly, which makes code in the following that uses them more succinct.
+  Since there is no particular need to keep `ProjectionLight`s compact, both of the screen-light transformations are stored explicitly, which makes code in the following that uses them more succinct.
 ][
-  由于没有特别需要保持 <tt>`ProjectionLight` 紧凑，因此屏幕-光变换都被显式存储，这使得后续使用它们的代码更加简洁。
+  由于没有特别需要保持 `ProjectionLight` 数据的紧凑，因此屏幕-光变换都被显式存储，这使得后续使用它们的代码更加简洁。
 ]
 ```cpp
 <<ProjectionLight Private Members>>+=
@@ -402,7 +396,7 @@ Transform screenFromLight, lightFromScreen;
     #ez_caption[
       The first step of computing the light-space area of the image on the $z=1$ projection plane is to compute the length opposite illustrated here. It is easily found using basic trigonometry.
     ][
-
+      在计算图像在 $z=1$ 投影平面上光源空间面积的第一步，是求出图中所示的对边长度。这个长度可以通过基本的三角函数轻松求得。
     ]
   ],
 )<light-space-image-area-z1>
@@ -428,7 +422,7 @@ Float A;
 #parec[
   The direction passed to the `I()` method should be normalized and already transformed into the light's coordinate system.
 ][
-  传递给 `I()` 方法的方向应该是归一化的，并且已经转换到光的坐标系中。
+  传递给 `I()` 方法的方向应该是归一化的，并且已经转换到灯光的局部坐标系中。
 ]
 
 
@@ -445,7 +439,7 @@ SampledSpectrum ProjectionLight::I(Vector3f w,
 #parec[
   Because the projective transformation has the property that it projects points behind the center of projection to points in front of it, it is important to discard points with a negative $z$ value. Therefore, the projection code immediately returns no illumination for projection points that are behind the hither plane for the projection. If this check were not done, then it would not be possible to know if a projected point was originally behind the light (and therefore not illuminated) or in front of it.
 ][
-  由于投影变换具有将投影中心后面的点投影到其前面的点的特性，因此丢弃 $z$ 值为负的点很重要。因此，投影代码立即返回投影点在投影的 hither 平面后方时没有照明。如果不进行此检查，则无法知道投影点最初是在光的后面（因此未被照亮）还是在其前面。
+  由于投影变换具有将投影中心后面的点投影到其前面的点的特性，因此注意丢弃 $z$ 值为负的点。因此，投影代码立即返回投影点在投影的 hither 平面后方时没有照明。如果不进行此检查，则无法知道投影点最初是在光的后面（因此未被照亮）还是在其前面。
 ]
 
 ```cpp
@@ -478,7 +472,7 @@ for (int c = 0; c < 3; ++c)
 #parec[
   It is important to use an `RGBIlluminantSpectrum` to convert the RGB value to spectral samples rather than, say, an `RGBUnboundedSpectrum`. This ensures that, for example, a $(1, 1, 1)$ RGB value corresponds to the color space's illuminant and not a constant spectral distribution.
 ][
-  使用 `RGBIlluminantSpectrum` 将 RGB 值转换为光谱样本而不是例如 `RGBUnboundedSpectrum` 是很重要的。这确保了，例如， $(1, 1, 1)$ 的 RGB 值对应于颜色空间的光源而不是恒定的光谱分布。
+  在将 RGB 值转换为光谱采样时，重要的是使用 RGBIlluminantSpectrum，而不是例如 RGBUnboundedSpectrum。这样可以确保，例如 $(1, 1, 1)$ 的 RGB 值对应于颜色空间的光源（illuminant），而不是一个恒定的光谱分布。
 ]
 
 ```cpp
@@ -574,7 +568,7 @@ return scale * A * sum / (image.Resolution().x * image.Resolution().y);
 #parec[
   A #emph[goniophotometric diagram] describes the angular distribution of luminance from a point light source; it is widely used in illumination engineering to characterize lights. @fig:goniophotometric-diagram shows an example of a goniophotometric diagram in two dimensions. In this section, we will implement a light source that uses goniophotometric diagrams encoded in 2D image maps to describe the emission distribution lights.
 ][
-  #emph[光度分布图] 描述了点光源的亮度角分布；它广泛用于照明工程中以表征灯光。 @fig:goniophotometric-diagram 显示了二维光度分布图的一个示例。在本节中，我们将实现一个使用二维图像地图编码的光度分布图来描述发光分布的光源。
+  #emph[测角光度图（goniophotometric diagram） ] 描述了点光源亮度的角分布，它在照明工程中被广泛用于表征光源的发光特性。@fig:goniophotometric-diagram 展示了一个二维测角光度图的示例。在本节中，我们将实现一种光源，该光源使用编码在二维图像贴图中的测角光度图来描述其发射分布。
 ]
 
 #figure(
@@ -592,14 +586,9 @@ return scale * A * sum / (image.Resolution().x * image.Resolution().y);
   image("../pbr-book-website/4ed/Light_Sources/pha12f11.svg"),
   caption: [
     #ez_caption[
-      Goniophotometric Diagrams for Real-World Light Sources. These images are encoded using an equal-area parameterization (@spherical-parameterizations).
-      (a) A light that mostly illuminates in its up direction, with only a
-      small amount of illumination in the down direction. (b) A light that
-      mostly illuminates in the down direction. (c) A light that casts
-      illumination both above and below.
+      Goniophotometric Diagrams for Real-World Light Sources. These images are encoded using an equal-area parameterization (@spherical-parameterizations). (a) A light that mostly illuminates in its up direction, with only a small amount of illumination in the down direction. (b) A light that mostly illuminates in the down direction. (c) A light that casts illumination both above and below.
     ][
-      现实世界光源的光度分布图。 这些图像使用等面积参数化编码（@spherical-parameterizations）。(a) 主要向上方向照明的光，只有少量向下照明。(b)
-      主要向下方向照明的光。(c) 同时向上和向下投射光的光。
+      现实世界光源的光度分布图。 这些图像使用等面积参数化编码（@spherical-parameterizations）。(a) 主要向上方向照明的光，只有少量向下照明。(b) 主要向下方向照明的光。(c) 同时向上和向下投射光的光。
     ]
   ],
 )<gonio-images>
@@ -618,7 +607,7 @@ return scale * A * sum / (image.Resolution().x * image.Resolution().y);
     #ez_caption[
       Scene Rendered Using the Goniophotometric Diagram from @fig:gonio-images(b). Even though a point light source is the basis of this light, including the directional variation of a realistic light improves the visual realism of the rendered image. (Dragon model courtesy of the Stanford Computer Graphics Laboratory.)
     ][
-      Scene Rendered Using the Goniophotometric Diagram from @fig:gonio-images(b). 尽管点光源是此光的基础，加入现实光的方向变化提升了渲染图像的视觉真实感。
+      使用 @fig:gonio-images(b) 中的测角光度图渲染的场景。尽管该光源基于点光源，但加入真实光源的方向性变化显著提升了图像的视觉真实感。（龙模型由斯坦福计算机图形实验室提供。）
     ]
   ],
 )<light-gonio-renderings>
