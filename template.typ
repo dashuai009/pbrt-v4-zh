@@ -148,6 +148,94 @@
     strong(it)
   }
 
+  show ref: it => {
+    let eq = math.equation
+    let el = it.element
+
+    if el != none and el.func() == math.equation {
+      // Override equation references.
+      context {
+        let text_lang = text.lang
+        let eqt_suf = if text_lang == "zh" {
+          "公式"
+        } else {
+          "Equation"
+        }
+        link(
+          el.location(),
+          [#text(eqt_suf) #numbering(
+              el.numbering,
+              ..counter(math.equation).at(el.location()),
+            )],
+        )
+      }
+    } else if el != none and el.func() == heading {
+      // Override equation references.
+      context {
+        let text_lang = text.lang
+        let sz = counter(heading).at(el.location()).len()
+        let prefix = if sz == 1 {
+          // chapter
+          if text_lang == "zh" {
+            "第"
+          } else {
+            "Chapter"
+          }
+        } else {
+          // section
+          if text_lang == "zh" {
+            "第"
+          } else {
+            "Section"
+          }
+        }
+        let suffix = if sz == 1 {
+          // chapter
+          if text_lang == "zh" {
+            "章"
+          } else {
+            ""
+          }
+        } else {
+          // section
+          if text_lang == "zh" {
+            "节"
+          } else {
+            ""
+          }
+        }
+        link(
+          el.location(),
+          [#text(prefix) #numbering(
+              // "see chapter 1", instand of "see chatper 1."
+              "1.1",
+              ..counter(heading).at(el.location()),
+            ) #text(suffix)],
+        )
+      }
+    } else if el != none and el.func() == figure {
+      // Override figure references.
+      context {
+        let text_lang = text.lang
+        let prefix = if text_lang == "zh" {
+          "图"
+        } else {
+          "Figure"
+        }
+        link(
+          el.location(),
+          [#text(prefix) #numbering(
+              el.numbering,
+              // see https://github.com/RubixDev/typst-i-figured/blob/main/i-figured.typ#L6
+              ..counter(figure.where(kind: "i-figured-image")).at(el.location()),
+            )],
+        )
+      }
+    } else {
+      // Other references as usual.
+      it
+    }
+  }
   // 使用 cuti 包实现伪粗体
   show: show-cn-fakebold
 
