@@ -36,6 +36,7 @@ PortalImageInfiniteLight
 ]
 
 ```cpp
+<<Light Interface>>
 SampledSpectrum Phi(SampledWavelengths lambda) const;
 ```
 
@@ -434,11 +435,11 @@ const DenselySampledSpectrum *LightBase::LookupSpectrum(Spectrum s) {
     static std::mutex mutex;
     mutex.lock();
     if (!spectrumCache)
-        spectrumCache = new InternCache<DenselySampledSpectrum>(
+      spectrumCache = new InternCache<DenselySampledSpectrum>(
     #ifdef PBRT_BUILD_GPU_RENDERER
-                        Options->useGPU ? Allocator(&CUDATrackedMemoryResource::singleton) :
+      Options->useGPU ? Allocator(&CUDATrackedMemoryResource::singleton) :
     #endif
-                        Allocator{});
+      Allocator{});
     mutex.unlock();
 
   <<Return unique DenselySampledSpectrum from intern cache for s>>
