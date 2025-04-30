@@ -430,7 +430,7 @@ SampledSpectrum Le(const Ray &, const SampledWavelengths &) const {
 ```cpp
 <<LightBase Method Definitions>>=
 const DenselySampledSpectrum *LightBase::LookupSpectrum(Spectrum s) {
-  <<Initialize spectrumCache on first call>
+  <<Initialize spectrumCache on first call>>
     static std::mutex mutex;
     mutex.lock();
     if (!spectrumCache)
