@@ -87,6 +87,7 @@ LightType Type() const;
 ]
 
 ```cpp
+<<LightType Definition>>=
 enum class LightType { DeltaPosition, DeltaDirection, Area, Infinite };
 ```
 
@@ -97,6 +98,7 @@ enum class LightType { DeltaPosition, DeltaDirection, Area, Infinite };
 ]
 
 ```cpp
+<<Light Inline Functions>>=
 bool IsDeltaLight(LightType type) {
     return (type == LightType::DeltaPosition ||
             type == LightType::DeltaDirection);
@@ -130,6 +132,7 @@ bool IsDeltaLight(LightType type) {
 ]
 
 ```cpp
+<<Light Interface>>+=
 pstd::optional<LightLiSample>
 SampleLi(LightSampleContext ctx, Point2f u, SampledWavelengths lambda,
          bool allowIncompletePDF = false) const;
@@ -142,16 +145,19 @@ SampleLi(LightSampleContext ctx, Point2f u, SampledWavelengths lambda,
 ]
 
 ```cpp
+<<LightSampleContext Definition>>=
 class LightSampleContext {
 public:
-    Point3fi pi;
-    Normal3f n, ns;
+  <<LightSampleContext Public Methods>>
     LightSampleContext(const SurfaceInteraction &si)
            : pi(si.pi), n(si.n), ns(si.shading.n) {}
     LightSampleContext(const Interaction &intr) : pi(intr.pi) {}
     LightSampleContext(Point3fi pi, Normal3f n, Normal3f ns)
            : pi(pi), n(n), ns(ns) {}
     Point3f p() const { return Point3f(pi); }
+ <<LightSampleContext Public Members>>
+    Point3fi pi;
+    Normal3f n, ns;
 };
 ```
 
@@ -181,6 +187,7 @@ Normal3f n, ns;
 ]
 
 ```cpp
+<<LightSampleContext Public Methods>>=
 LightSampleContext(const SurfaceInteraction &si)
     : pi(si.pi), n(si.n), ns(si.shading.n) {}
 LightSampleContext(const Interaction &intr) : pi(intr.pi) {}
@@ -196,6 +203,7 @@ LightSampleContext(Point3fi pi, Normal3f n, Normal3f ns)
 ]
 
 ```cpp
+<<LightSampleContext Public Methods>>+=
 Point3f p() const { return Point3f(pi); }
 ```
 
@@ -217,16 +225,19 @@ Point3f p() const { return Point3f(pi); }
 ]
 
 ```cpp
+<<LightLiSample Definition>>=
 struct LightLiSample {
-    SampledSpectrum L;
-    Vector3f wi;
-    Float pdf;
-    Interaction pLight;
+  <<LightLiSample Public Methods>>
     LightLiSample() = default;
     PBRT_CPU_GPU
     LightLiSample(const SampledSpectrum &L, Vector3f wi, Float pdf, const Interaction &pLight)
         : L(L), wi(wi), pdf(pdf), pLight(pLight) {}
     std::string ToString() const;
+
+  SampledSpectrum L;
+  Vector3f wi;
+  Float pdf;
+  Interaction pLight;
 };
 ```
 
@@ -244,6 +255,7 @@ struct LightLiSample {
 ]
 
 ```cpp
+<<Light Interface>>+=
 Float PDF_Li(LightSampleContext ctx, Vector3f wi,
              bool allowIncompletePDF = false) const;
 ```
@@ -255,8 +267,9 @@ Float PDF_Li(LightSampleContext ctx, Vector3f wi,
 ]
 
 ```cpp
- SampledSpectrum L(Point3f p, Normal3f n, Point2f uv, Vector3f w,
-                   const SampledWavelengths &lambda) const;
+<<Light Interface>>+=
+SampledSpectrum L(Point3f p, Normal3f n, Point2f uv, Vector3f w,
+                  const SampledWavelengths &lambda) const;
 ```
 
 #parec[
@@ -266,6 +279,7 @@ Float PDF_Li(LightSampleContext ctx, Vector3f wi,
 ]
 
 ```cpp
+<<Light Interface>>+=
 SampledSpectrum Le(const Ray &ray, const SampledWavelengths &lambda) const;
 ```
 
@@ -277,6 +291,7 @@ SampledSpectrum Le(const Ray &ray, const SampledWavelengths &lambda) const;
 ]
 
 ```cpp
+<<Light Interface>>+=
 void Preprocess(const Bounds3f &sceneBounds);
 ```
 
@@ -311,27 +326,29 @@ void Preprocess(const Bounds3f &sceneBounds);
 ]
 
 ```cpp
+<<LightBase Definition>>=
 class LightBase {
   public:
-    // LightBase Public Methods
-    LightBase(LightType type, const Transform &renderFromLight,
-               const MediumInterface &mediumInterface);
-    LightType Type() const { return type; }
-    SampledSpectrum L(Point3f p, Normal3f n, Point2f uv, Vector3f w,
-                      const SampledWavelengths &lambda) const {
-        return SampledSpectrum(0.f);
-    }
-    SampledSpectrum Le(const Ray &, const SampledWavelengths &) const {
-        return SampledSpectrum(0.f);
-    }
+    <<LightBase Public Methods>>
+      LightBase(LightType type, const Transform &renderFromLight,
+                const MediumInterface &mediumInterface);
+      LightType Type() const { return type; }
+      SampledSpectrum L(Point3f p, Normal3f n, Point2f uv, Vector3f w,
+                        const SampledWavelengths &lambda) const {
+          return SampledSpectrum(0.f);
+      }
+      SampledSpectrum Le(const Ray &, const SampledWavelengths &) const {
+          return SampledSpectrum(0.f);
+      }
   protected:
-    // LightBase Protected Methods
-    static const DenselySampledSpectrum *LookupSpectrum(Spectrum s);
-    // LightBase Protected Members
-    LightType type;
-    Transform renderFromLight;
-    MediumInterface mediumInterface;
-    static InternCache<DenselySampledSpectrum> *spectrumCache;
+    <<LightBase Protected Methods>>
+      static const DenselySampledSpectrum *LookupSpectrum(Spectrum s);
+
+    <<LightBase Protected Members>>
+      LightType type;
+      Transform renderFromLight;
+      MediumInterface mediumInterface;
+      static InternCache<DenselySampledSpectrum> *spectrumCache;
 };
 ```
 
@@ -359,6 +376,13 @@ class LightBase {
   - #link("../Volume_Scattering/Media.html#MediumInterface")[MediumInterface] 描述了光源内外的参与介质。对于没有“内外”的光源（例如点光源），#link("../Volume_Scattering/Media.html#MediumInterface")[MediumInterface] 在两侧存储相同的 #link("../Volume_Scattering/Media.html#Medium")[Medium];。
 ]
 
+```cpp
+<<LightBase Protected Members>>=
+LightType type;
+Transform renderFromLight;
+MediumInterface mediumInterface;
+```
+
 #parec[
   #link("<LightBase>")[`LightBase`] can thus take care of providing an implementation of the `Type()` interface method.
 ][
@@ -366,9 +390,9 @@ class LightBase {
 ]
 
 ```cpp
+<<LightBase Public Methods>>=
 LightType Type() const { return type; }
 ```
-
 
 #parec[
   It also provides default implementations of `L()` and `Le()` so that lights that are not respectively area or infinite lights do not need to implement these themselves.
@@ -377,20 +401,19 @@ LightType Type() const { return type; }
 ]
 
 ```cpp
+<<LightBase Public Methods>>+=
 SampledSpectrum L(Point3f p, Normal3f n, Point2f uv, Vector3f w,
                   const SampledWavelengths &lambda) const {
     return SampledSpectrum(0.f);
 }
 ```
 
-
-
 ```cpp
+<<LightBase Public Methods>>+=
 SampledSpectrum Le(const Ray &, const SampledWavelengths &) const {
     return SampledSpectrum(0.f);
 }
 ```
-
 
 #parec[
   Most of the following `Light` implementations take a #link("../Radiometry,_Spectra,_and_Color/Representing_Spectral_Distributions.html#Spectrum")[`Spectrum`] value in their constructor to specify the light's spectral emission but then convert it to a #link("../Radiometry,_Spectra,_and_Color/Representing_Spectral_Distributions.html#DenselySampledSpectrum")[`DenselySampledSpectrum`] to store in a member variable. By doing so, they enjoy the benefits of efficient sampling operations from tabularizing the spectrum and a modest performance benefit from not requiring dynamic dispatch to call #link("../Radiometry,_Spectra,_and_Color/Representing_Spectral_Distributions.html#Spectrum")[`Spectrum`] methods.
@@ -405,19 +428,20 @@ SampledSpectrum Le(const Ray &, const SampledWavelengths &) const {
 ]
 
 ```cpp
+<<LightBase Method Definitions>>=
 const DenselySampledSpectrum *LightBase::LookupSpectrum(Spectrum s) {
-    // Initialize spectrumCache on first call
+  <<Initialize spectrumCache on first call>
     static std::mutex mutex;
     mutex.lock();
     if (!spectrumCache)
         spectrumCache = new InternCache<DenselySampledSpectrum>(
-#ifdef PBRT_BUILD_GPU_RENDERER
-                         Options->useGPU ? Allocator(&CUDATrackedMemoryResource::singleton) :
-#endif
-                         Allocator{});
+    #ifdef PBRT_BUILD_GPU_RENDERER
+                        Options->useGPU ? Allocator(&CUDATrackedMemoryResource::singleton) :
+    #endif
+                        Allocator{});
     mutex.unlock();
 
-    // Return unique DenselySampledSpectrum from intern cache for s
+  <<Return unique DenselySampledSpectrum from intern cache for s>>
     auto create = [](Allocator alloc, const DenselySampledSpectrum &s) {
         return alloc.new_object<DenselySampledSpectrum>(s, alloc);
     };
@@ -439,14 +463,14 @@ const DenselySampledSpectrum *LightBase::LookupSpectrum(Spectrum s) {
 ]
 
 ```cpp
+<<Return unique DenselySampledSpectrum from intern cache for s>>=
 auto create = [](Allocator alloc, const DenselySampledSpectrum &s) {
     return alloc.new_object<DenselySampledSpectrum>(s, alloc);
 };
 return spectrumCache->Lookup(DenselySampledSpectrum(s), create);
 ```
 
-
-
 ```cpp
+<<LightBase Protected Members>>+=
 static InternCache<DenselySampledSpectrum> *spectrumCache;
 ```
