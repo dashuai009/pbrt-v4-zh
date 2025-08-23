@@ -1,5 +1,7 @@
 #import "../template.typ": parec
 
+== Further Reading
+
 #parec[
   Purcell et al.~(#link("<cite:Purcell:2002:RTO>")[2002];, #link("<cite:Purcell:2003:PMO>")[2003];) and Carr, Hall, and Hart (#link("<cite:Carr2002>")[2002];) were the first to map general-purpose ray tracers to graphics processors.
 ][
@@ -38,7 +40,7 @@
 
 #parec[
   Novák et al.~(#link("<cite:Novak2010>")[2010];) introduced #emph[path
-regeneration] to start tracing new ray paths in threads that are otherwise idle due to ray termination.
+    regeneration] to start tracing new ray paths in threads that are otherwise idle due to ray termination.
 ][
   Novák 等人（#link("<cite:Novak2010>")[2010];）引入了#emph[路径再生];，以在由于光线终止而空闲的线程中开始追踪新的光线路径。
 ]
@@ -188,10 +190,11 @@ regeneration] to start tracing new ray paths in threads that are otherwise idle 
 ]
 
 
-#parec[
-  == Ray-Tracing Hardware <ray-tracing-hardware> While all the stages of ray-tracing calculations—construction of the acceleration hierarchy, traversal of the hierarchy, and ray–primitive intersections, as well as shading, lighting, and integration calculations—can be implemented in software on GPUs, there has long been interest in designing specialized hardware for ray–primitive intersection tests and construction and traversal of the acceleration hierarchy for better performance. Deng et al.'s survey article has thorough coverage of hardware acceleration of ray tracing through 2017 (#link("<cite:Deng2017>")[Deng et al.~2017];); here, we will focus on early work and more recent developments.
+=== Ray-Tracing Hardware <ray-tracing-hardware>
+
+#parec[While all the stages of ray-tracing calculations—construction of the acceleration hierarchy, traversal of the hierarchy, and ray–primitive intersections, as well as shading, lighting, and integration calculations—can be implemented in software on GPUs, there has long been interest in designing specialized hardware for ray–primitive intersection tests and construction and traversal of the acceleration hierarchy for better performance. Deng et al.'s survey article has thorough coverage of hardware acceleration of ray tracing through 2017 (#link("<cite:Deng2017>")[Deng et al.~2017];); here, we will focus on early work and more recent developments.
 ][
-  == 光线追踪硬件 <光线追踪硬件> 虽然光线追踪计算的所有阶段——加速结构层次的构建、层次结构的遍历、光线与图元的相交，以及着色、照明和集成计算——都可以在GPU上通过软件实现，但长期以来，人们一直对设计专门的硬件以进行光线与图元的相交测试以及加速结构层次的构建和遍历以提高性能感兴趣。Deng等人的综述文章对截至2017年的光线追踪硬件加速进行了全面的覆盖（#link("<cite:Deng2017>")[Deng et al.~2017];）；在这里，我们将重点关注早期工作和最近的发展。
+  虽然光线追踪计算的所有阶段——加速结构层次的构建、层次结构的遍历、光线与图元的相交，以及着色、照明和集成计算——都可以在GPU上通过软件实现，但长期以来，人们一直对设计专门的硬件以进行光线与图元的相交测试以及加速结构层次的构建和遍历以提高性能感兴趣。Deng等人的综述文章对截至2017年的光线追踪硬件加速进行了全面的覆盖（#link("<cite:Deng2017>")[Deng et al.~2017];）；在这里，我们将重点关注早期工作和最近的发展。
 ]
 
 #parec[

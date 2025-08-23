@@ -1,10 +1,7 @@
 #import "../template.typ": parec
 
-#parec[
-  == Exercises <exercises>
-][
-  == 练习 <练习>
-]
+== Exercises <exercises>
+
 
 #parec[
   + Modify `soac` so that the code it generates leaves objects in AOS layout in memory and recompile `pbrt`. (You will need to manually update a few places in the #link("../Wavefront_Rendering_on_GPUs/Path_Tracer_Implementation.html#WavefrontPathIntegrator")[WavefrontPathIntegrator] that only access a single field of a structure, as well.) How is performance affected by this change?
