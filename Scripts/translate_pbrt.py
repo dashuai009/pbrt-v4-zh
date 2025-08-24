@@ -38,7 +38,7 @@ def get_completion(
     if json_mode:
         response = client.chat.completions.create(
             model=model,
-            temperature=temperature,
+            # temperature=temperature,
             top_p=1,
             response_format={"type": "json_object"},
             messages=[
@@ -50,7 +50,7 @@ def get_completion(
     else:
         response = client.chat.completions.create(
             model=model,
-            temperature=temperature,
+            # temperature=temperature,
             top_p=1,
             messages=[
                 {"role": "system", "content": system_message},

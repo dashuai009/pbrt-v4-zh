@@ -53,15 +53,16 @@ def get_completion_json(
     Returns:
         returns the complete API response as a dictionary.
     """
-    response = client.beta.chat.completions.parse(
+    response = client.chat.completions.parse(
         model=model,
-        temperature=temperature,
+        # temperature=temperature,
         top_p=1,
         response_format=TranlationResult,
         messages=[
             {"role": "system", "content": system_message},
             {"role": "user", "content": prompt},
         ],
+        max_output_tokens=128 * 1000,
     )
     return response.choices[0].message.parsed
 
@@ -170,4 +171,5 @@ def merge_en_zh(en_text, zh_text):
 {zh_text}
 </TRANSLATION>                      
 """,
+    model = gpt_config["MODEL2"],
     )

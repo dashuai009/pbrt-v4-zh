@@ -5,12 +5,12 @@ from merge_en_zh import merge_en_zh, convert_md_to_typ
 from openai_utils import config_yaml
 from typing import List
 import argparse
-import transformer_typ 
+# import transformer_typ 
 
 def read_html_to_list(html_file_path: str) -> List[str]:
     res = []
     with open(html_file_path, encoding="utf-8") as f:
-        html_chunk = split_html(f.read(), 2500)
+        html_chunk = split_html(f.read(), 32000)
         for html_text in html_chunk:
             res.append(html_text)
     return res
@@ -21,6 +21,7 @@ def run_chunk_with_cache(html_text: str, out_dir: str, index: int):
         os.makedirs(out_dir)
 
     html_path = f"{out_dir}/{index}_html.txt"
+    print("  Getting html file: ", html_path)
     if os.path.exists(html_path):
         with open(html_path, "r", encoding="utf-8") as f:
             old_html_text = f.read()
@@ -33,6 +34,7 @@ def run_chunk_with_cache(html_text: str, out_dir: str, index: int):
 
     md_text = ""
     md_path = f"{out_dir}/{index}_md.txt"
+    print("  convert_html_to_markdown file: ", md_path)
     if os.path.exists(md_path):
         with open(md_path, "r", encoding="utf-8") as f:
             md_text = f.read()
@@ -41,13 +43,14 @@ def run_chunk_with_cache(html_text: str, out_dir: str, index: int):
         with open(md_path, "w", encoding="utf-8") as f:
             f.write(md_text)
 
+
     t1_text = ""
     t2_text = ""
     t3_text = ""
     t1_path = f"{out_dir}/{index}_t1.txt"
     t2_path = f"{out_dir}/{index}_t2.txt"
     t3_path = f"{out_dir}/{index}_t3.txt"
-
+    print("  one_chunk_translate_text file: ", t1_path, t2_path)
     if os.path.exists(t3_path):
         with open(t1_path, "r", encoding="utf-8") as f:
             t1_text = f.read()
@@ -68,7 +71,7 @@ def run_chunk_with_cache(html_text: str, out_dir: str, index: int):
 
     all_en_zh = ""
     en_zh_path = f"{out_dir}/{index}_en_zh.typ"
-
+    print("  merge_en_zh file: ", en_zh_path)
     if os.path.exists(en_zh_path):
         with open(en_zh_path, "r", encoding="utf-8") as f:
             all_en_zh = f.read()
@@ -80,6 +83,8 @@ def run_chunk_with_cache(html_text: str, out_dir: str, index: int):
             all_en_zh += f"#parec[\n{en_text}\n][\n{zh_text}]\n\n"
         with open(en_zh_path, "w", encoding="utf-8") as f:
             f.write(all_en_zh)
+
+    print("Done!")
 
 # [
 #   (0, 'Preface.html'), (1, 'Preface/Further_Reading.html'), 
@@ -166,16 +171,14 @@ def translate():
     hrefs = get_toc(config_yaml["pbr_book"] + "/contents.html")
     # print(list(enumerate(hrefs)))
     # exit(0)
-    for h in hrefs[79:80]:
-        print(h)
+    for h in hrefs[150:151]:
+        print(f"translating {h}")
         html_file_path = config_yaml["pbr_book"] + "/" + h
         html_texts = read_html_to_list(html_file_path)
         out_dir = os.path.splitext(config_yaml["cache_dir"] + "/" + h)[0]
         all_en_zh_text = ""
         for i, html_text in enumerate(html_texts):
-            print(i)
-            if i <= 1:
-                 continue
+            print(f"sub: {i}")
             run_chunk_with_cache(html_text, out_dir, i)
             with open(f"{out_dir}/{i}_en_zh.typ", "r", encoding="utf-8") as f:
                 all_en_zh_text += f.read() + "\n"
@@ -186,22 +189,23 @@ def translate():
         
 
 if __name__ == "__main__":
+    translate()
     # source_typ = r"C:\Users\15258\work\pbrt\pbrt-v4-zh\chapter-1-Introduction\chapter-1.6-A_Brief_History_of_Physically_Based_Rendering.typ"
     # all_parec = transformer_typ.get_all_parec(source_typ)
     # # for a,b in all_parec:
     # #     print(a,b)
 
 
-    # 设置要遍历的根目录
-    root_dir = r"C:\Users\15258\work\pbrt\pbrt-v4-zh\chapter-16-Retrospective_and_the_Future"
+    # # 设置要遍历的根目录
+    # root_dir = r"C:\Users\15258\work\pbrt\pbrt-v4-zh\chapter-16-Retrospective_and_the_Future"
 
-    # 遍历目录
-    for dirpath, dirnames, filenames in os.walk(root_dir):
-        for filename in filenames:
-            # 检查文件名是否包含 "metal" 且以 ".png" 结尾
-            if filename.endswith(".typ"):
-                file_path = os.path.join(dirpath, filename) 
-                formatted_typ = transformer_typ.get_format_typ(file_path)
-                formatted_typ = formatted_typ.replace("\r\n", "\n")
-                with open(file_path, mode="w", encoding="utf-8") as f:
-                    f.write(formatted_typ)
+    # # 遍历目录
+    # for dirpath, dirnames, filenames in os.walk(root_dir):
+    #     for filename in filenames:
+    #         # 检查文件名是否包含 "metal" 且以 ".png" 结尾
+    #         if filename.endswith(".typ"):
+    #             file_path = os.path.join(dirpath, filename) 
+    #             formatted_typ = transformer_typ.get_format_typ(file_path)
+    #             formatted_typ = formatted_typ.replace("\r\n", "\n")
+    #             with open(file_path, mode="w", encoding="utf-8") as f:
+    #                 f.write(formatted_typ)

@@ -106,7 +106,7 @@ and convert the MathJax code within the MathJax tags to LaTeX code. \
 Use $ to denote inline formulas, and $$ to denote display formulas. Output directly without explanation."
     md_chat = client.chat.completions.create(
             messages=[
-                {"role": "system", "content": html_to_md_prompt},
+                {"role": "developer", "content": html_to_md_prompt},
                 {"role": "user", "content": html_text},
             ],
             model=gpt_config["MODEL2"],
