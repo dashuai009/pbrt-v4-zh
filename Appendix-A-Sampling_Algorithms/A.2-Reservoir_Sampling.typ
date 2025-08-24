@@ -1,6 +1,6 @@
 #import "../template.typ": parec, translator
-= A.2 蓄水池抽样（Reservoir Sampling）
-<a.2-蓄水池抽样reservoir-sampling>
+== Reservoir Sampling
+<reservoir-sampling>
 
 
 #parec[
@@ -157,8 +157,6 @@ private:
   对象，用于生成随机数，以决定是否将某个样本加入蓄水池。其构造函数可以接受一个种子值，并传递给
   RNG。]
 
-=== Public methods
-<public-methods>
 ```cpp
 WeightedReservoirSampler() = default;
 WeightedReservoirSampler(uint64_t rngSeed) : rng(rngSeed) {}
@@ -174,8 +172,6 @@ WeightedReservoirSampler(uint64_t rngSeed) : rng(rngSeed) {}
   对象，那么会调用默认构造函数。在这种情况下，可以通过 `Seed()`
   方法对每个采样器中的 RNG 进行单独的种子初始化。]
 
-=== Public methods (continued)
-<public-methods-continued>
 ```cpp
 void Seed(uint64_t seed) { rng.SetSequence(seed); }
 ```
@@ -192,8 +188,6 @@ void Add(const T &sample, Float weight) {
 }
 ```
 
-=== Private members (continued)
-<private-members-continued>
 ```cpp
 Float weightSum = 0;
 ```
@@ -206,8 +200,6 @@ Float weightSum = 0;
   候选样本存入蓄水池的概率 `p` 可以通过 `weightSum` 很容易计算得到。]
 
 
-=== Weighted addition (via callback)
-<weighted-addition-via-callback>
 ```cpp
 template <typename F>
 void Add(F func, Float weight) {
@@ -237,8 +229,6 @@ void Add(F func, Float weight) {
   方法的结构相同，因此在此不再重复。]
 
 
-=== Public accessors
-<public-accessors>
 ```cpp
 int HasSample() const { return weightSum > 0; }
 const T &GetSample() const { return reservoir; }
@@ -279,8 +269,6 @@ void Merge(const WeightedReservoirSampler &wrs) {
 }
 ```
 
-=== Additional methods
-<additional-methods>
 ```cpp
 // … additional methods as described above …
 ```
@@ -295,16 +283,12 @@ void Merge(const WeightedReservoirSampler &wrs) {
   中；它在计算保留下来样本的概率质量函数（PMF）时是必须的。]
 
 
-=== Private members (continued)
-<private-members-continued-1>
 ```cpp
 Float reservoirWeight = 0;
 T reservoir;
 ```
 
 
-=== Accessors (continued)
-<accessors-continued>
 ```cpp
 int HasSample() const { return weightSum > 0; }
 const T &GetSample() const { return reservoir; }

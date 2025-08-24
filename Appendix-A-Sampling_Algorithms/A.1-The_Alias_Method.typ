@@ -1,5 +1,5 @@
 #import "../template.typ": parec, translator
-== A.1 The Alias Method
+== The Alias Method
 
 #parec[
   If many samples need to be generated from a discrete distribution, using the approach implemented in the #link("../Monte\_Carlo\_Integration/Sampling\_Using\_the\_Inversion\_Method.html#SampleDiscrete")[SampleDiscrete()] function would be wasteful: each generated sample would require $ cal(O)(n)(n) $ computation. That approach could be improved to $ cal(O)(n)(log n) $ time by computing a cumulative distribution function (CDF) table once and then using binary search to generate each sample, but there is another option that is even more efficient, requiring just $ cal(O)(n)(1) $ time for each sample; that approach is the *alias method*.
@@ -26,9 +26,6 @@
 ][
   举一个具体例子，设概率为 $p\_i = { \tfrac{1}{2}, \tfrac{1}{4}, \tfrac{1}{8}, \tfrac{1}{8} }$。对应的别名表见表 A.1。例如可以看到，第一个样本被选中的总概率为 $\tfrac{1}{2}$：选择第一个表项的概率为 $\tfrac{1}{4}$，在该表项下第一个样本总是被选中；否则，有 $\tfrac{1}{4}$ 的概率会选择第 2 或第 3 个表项，而每个这些表项都有 $\tfrac{1}{2}$ 的概率选择其别名，从而额外贡献 $\tfrac{1}{4}$ 的概率使得第一个样本被选中。其他样本的概率可以用类似方法校验。]
 
----
-
-\=== Table A.1: A Simple Alias Table
 
 #parec[
   This alias table makes it possible to generate samples from the distribution of discrete probabilities { $\tfrac{1}{2}$, $\tfrac{1}{4}$, $\tfrac{1}{8}$, $\tfrac{1}{8}$ }.  To generate a sample, an entry is first chosen with uniform probability. Given an entry $i$, its corresponding sample is chosen with probability $q\_i$ and the sample corresponding to its alias index is chosen with probability $1 - q\_i$.
@@ -153,7 +150,6 @@ pstd::vector<Bin> bins;
 ][
   我们发现当结果数量很大、或权重大小差异显著时，用双精度去累加权重之和很重要，否则别名表的初始化算法可能因舍入误差而出错。因此这里将 `std::accumulate` 的初始值设为双精度常数 `0.`，以使其计算在双精度下进行。得到权重和后即可计算归一化概率。]
 
-==== `<<Normalize weights to compute alias table PDF>>=`
 
 ```cpp
 Float sum = std::accumulate(weights.begin(), weights.end(), 0.);
@@ -166,7 +162,6 @@ for (size_t i = 0; i < weights.size(); ++i)
 ][
   别名表初始化算法的第一步是将结果分成两类：概率小于平均值的（under）和概率大于或等于平均值的（over）。为此使用了两个保存 `Outcome` 结构的 `std::vector`。]
 
-==== `<<Create alias table work lists>>=`
 
 ```cpp
 struct Outcome {
@@ -188,7 +183,6 @@ for (size_t i = 0; i < bins.size(); ++i) {
 ][
   在此及后续初始化阶段，我们将把每个概率缩放为与桶数 $n$ 相乘的形式，记为 $p'\_i = p\_i n$。这样平均值就是 1，在后续处理中会很方便。]
 
-==== `<<Add outcome i to an alias table work list>>=`
 
 ```cpp
 Float pHat = bins[i].p * bins.size();
@@ -203,7 +197,6 @@ else
 ][
   为了初始化别名表，从 `under` 中取出一个结果、从 `over` 中取出一个结果。二者结合即可初始化对应于 `under` 中结果的那个桶。在初始化完该桶后，`over` 中的结果仍然会有未分配的剩余概率，这部分作为新的 `pExcess` 被加入到相应的工作列表。循环重复执行直到 `under` 和 `over` 都为空。该算法的时间复杂度为 $ cal(O)(n)(n) $。]
 
-==== `<<Process under and over work item together>>=`
 
 ```cpp
 while (!under.empty() && !over.empty()) {
@@ -220,7 +213,6 @@ while (!under.empty() && !over.empty()) {
 }
 ```
 
-==== `<<Remove items un and ov from the alias table work lists>>=`
 
 ```cpp
 Outcome un = under.back(), ov = over.back();
@@ -233,7 +225,6 @@ over.pop_back();
 ][
   `un` 的概率 $\hat{p}$ 必须小于 1。我们可以把该桶的 `q` 初始化为 $\hat{p}$，因为当该桶被选中时正好有 $\hat{p}$ 的概率选择 `un`。为了填满该桶剩余的概率质量，将别名设为 `ov`；由于 $p\_v \ge 1$，`ov` 肯定有足够的概率去填补该剩余部分——我们只需要 $1 -hat(p)$ 的量。]
 
-==== `<\<Initialize probability and alias for <tt>un</tt>>=`
 
 ```cpp
 bins[un.index].q = un.pHat;
@@ -245,7 +236,6 @@ bins[un.index].alias = ov.index;
 ][
   在初始化 `bins[un.index]` 时，相当于消耗掉了一个单位的缩放概率质量（$\hat{p} = 1$）。剩余量 $"un"".pHat + ov.pHat - 1"$ 即为 `ov.index` 尚未分配的概率，应根据其大小将该剩余量加入相应的工作列表。]
 
-==== `<<Push excess probability on to work list>>=`
 
 ```cpp
 Float pExcess = un.pHat + ov.pHat - 1;
@@ -265,7 +255,6 @@ else
 ][
   在别名表初始化完成后，采样非常简单。正如前面所述，先以均匀概率选择一个表项，然后返回该表项对应的样本或者其别名。与 SampleDiscrete() 函数类似，通常还可以（可选地）从原始随机数中导出一个新的均匀随机数以供后续使用。]
 
-==== `<<AliasTable Method Definitions>>=`
 
 ```cpp
 int AliasTable::Sample(Float u, Float *pmf, Float *uRemapped) const {
@@ -295,8 +284,6 @@ int AliasTable::Sample(Float u, Float *pmf, Float *uRemapped) const {
 ][
   选取表项的索引是通过将随机样本与表项数相乘得到的。由于 $u$ 仅用于离散选择初始表项，因此可以从它导出一个新的均匀随机样本。这里就是计算出这样一个独立的均匀样本 $"up"$，用于决定是否在当前表项上采样别名。]
 
-==== `<\<Compute alias table offset and remapped random sample <tt>up</tt>>=`
-
 ```cpp
 int offset = std::min<int>(u * bins.size(), bins.size() - 1);
 Float up = std::min<Float>(u * bins.size() - offset, OneMinusEpsilon);
@@ -307,7 +294,6 @@ Float up = std::min<Float>(u * bins.size() - offset, OneMinusEpsilon);
 ][
   若选中了初始表项，则各返回值容易计算。]
 
-\==== <\<Return sample for alias table at <tt>offset</tt>>=
 
 ```cpp
 if (pmf)
@@ -321,8 +307,6 @@ return offset;
   Otherwise the appropriate values for the alias are returned.
 ][
   否则返回别名对应的适当值。]
-
-==== `<\<Return sample for alias table at <tt>alias\[offset]</tt>>=`
 
 ```cpp
 int alias = bins[offset].alias;
@@ -340,7 +324,6 @@ return alias;
 ][
   除了采样之外，能够查询表的大小以及某个结果的概率也是很有用的。这两个操作可以很容易地提供实现。]
 
-==== `<<AliasTable Public Methods>>=`
 
 ```cpp
 size_t size() const { return bins.size(); }

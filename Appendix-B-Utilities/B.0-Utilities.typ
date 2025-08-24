@@ -1,0 +1,4 @@
+#import "../template.typ": parec, translator
+
+= Utilities
+#parec[In addition to all the graphics-related code presented thus far, pbrt makes use of a number of general utility routines and classes. Although these are key to pbrt’s operation, it is not necessary to understand their implementation in detail in order to work with the rest of the system. This appendix describes the interfaces to these routines, including those that handle mathematical foundations, error reporting, memory management, support for parallel execution on multiple CPU cores, and other basic infrastructure. The implementations of some of this functionality—the parts that are interesting enough to be worth delving into—are also discussed.][除了前面介绍的所有与图形相关的代码之外，pbrt 还使用了许多通用的工具例程和类。虽然这些工具对 pbrt 的运行至关重要，但为了理解系统的其余部分，并不需要深入掌握它们的实现细节。本附录描述了这些工具例程的接口，包括用于数学基础、错误报告、内存管理、多 CPU 核心并行执行支持以及其他基础设施的部分。同时，对于其中一些足够有趣、值得深入探讨的功能实现，我们也将进行讨论。]
