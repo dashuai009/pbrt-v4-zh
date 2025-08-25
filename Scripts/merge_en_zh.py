@@ -1,7 +1,7 @@
 from openai_utils import client, gpt_config
-from typing import Dict
 from pydantic import BaseModel
 import subprocess
+from typing import List, Optional, Union, Literal
 
 def convert_md_to_typ(md_text) -> str:
     with open("Zynumek.md", "w", encoding='utf-8') as f:
@@ -20,16 +20,19 @@ def convert_md_to_typ(md_text) -> str:
         return text_typ
 
 
-
-
-
-class SingleParagraph(BaseModel):
+class Pair(BaseModel):
+    type: Literal["pair"] = "pair"
     english: str
     chinese: str
 
+class CodeOnly(BaseModel):
+    type: Literal["code"] = "code"
+    code: str                      # 原样返回代码内容（不要包三反引号）
+    language: Optional[str] = None # 若能识别（如"cpp","python"），填上；否则可省略
 
 class TranlationResult(BaseModel):
-    result: list[SingleParagraph]
+    result: List[Union[Pair, CodeOnly]]
+
 
 
 def get_completion_json(
@@ -61,87 +64,37 @@ def get_completion_json(
         messages=[
             {"role": "system", "content": system_message},
             {"role": "user", "content": prompt},
-        ],
-        max_output_tokens=128 * 1000,
+        ]
     )
     return response.choices[0].message.parsed
 
 
 def get_prompt():
-    example_output = [
-        {
-            "english": "Stratified sampling subdivides the integration domain $\Lambda$ into $n$ nonoverlapping regions $\Lambda_1, \Lambda_2, \ldots, \Lambda_n$. Each region is called a *stratum*, and they must completely cover the original domain:",
-            "chinese": "分层采样将积分域 $\Lambda$ 细分为 $n$ 个不重叠的层 $\Lambda_1, \Lambda_2, \ldots, \Lambda_n$。每个层称为一个“层”，它们必须完全覆盖原始域：",
-        },
-        {
-            "english": "\[\n\\bigcup_{i=1}^n \Lambda_i = \Lambda.\n\]",
-            "chinese": "\[\n\\bigcup_{i=1}^n \Lambda_i = \Lambda.\n\]",
-        },
-        {
-            "english": "To draw samples from $\Lambda$, we will draw $n_i$ samples from each $\Lambda_i$, according to densities $p_i$ inside each stratum. A simple example is supersampling a pixel. With stratified sampling, the area around a pixel is divided into a $k \times k$ grid, and a sample is drawn uniformly within each grid cell. This is better than taking $k^2$ random samples, since the sample locations are less likely to clump together. Here we will show why this technique reduces variance.",
-            "chinese": "为了从 $\Lambda$ 中抽取样本，我们将从每个 $\Lambda_i$ 中抽取 $n_i$ 个样本，根据每个层内的密度 $p_i$。一个简单的例子是像素超采样。使用分层采样，像素周围的区域被划分为一个 $k \times k$ 的网格，并在每个网格单元内均匀地抽取一个样本。这比取 $k^2$ 个随机样本要好，因为样本位置不太可能聚集在一起。在这里，我们将解释为什么这种技术能减少方差。s",
-        },
-    ]
-    # example_output = [
-    #   {"English": "This is the first paragraph of the English text.", "Chinese": "这是英文文本的第一段。"},
-    #   {"English": "This is the second paragraph of the English text.", "Chinese": "这是英文文本的第二段。"}
-    # ]
-    example_en = """
-Stratified sampling subdivides the integration domain $\Lambda$ into $n$ nonoverlapping regions $\Lambda_1, \Lambda_2, \ldots, \Lambda_n$. Each region is called a *stratum*, and they must completely cover the original domain:
+    return """
+You are given two texts: the English source and its Chinese translation.
+Your task is to interleave them in the original paragraph order.
 
-\[
-\\bigcup_{i=1}^n \Lambdas_i = \Lambda.
-\]
+OUTPUT FORMAT (very important):
+- You MUST return JSON that conforms to the provided schema.
+- Each output item is either:
+  1) a paragraph pair: {"type":"pair","english":"...","chinese":"..."}
+  2) a code-only item: {"type":"code","code":"...","language":"cpp|python|...?"}
 
-To draw samples from $\Lambda$, we will draw $n_i$ samples from each $\Lambda_i$, according to densities $p_i$ inside each stratum. A simple example is supersampling a pixel. With stratified sampling, the area around a pixel is divided into a $k \times k$ grid, and a sample is drawn uniformly within each grid cell. This is better than taking $k^2$ random samples, since the sample locations are less likely to clump together. Here we will show why this technique reduces variance."""
+RULES:
+1) Preserve the original paragraph order exactly.
+2) For normal text, output a paragraph pair: one English paragraph followed by its Chinese translation as a single JSON item with "type":"pair".
+3) If a paragraph is a CODE BLOCK and the English code and Chinese code are IDENTICAL
+   after normalization (strip surrounding backticks, unify line endings to "\\n",
+   trim trailing spaces on each line, and ignore the fence language tag),
+   then output ONLY ONCE as {"type":"code","code":"...","language":"<if known>"}.
+   - Do NOT include Markdown fences (```); put the raw code in "code".
+   - If a language label is available from the fence (e.g., ```cpp), put it into "language".
+4) If the code differs between English and Chinese (e.g., comments or content changed),
+   treat them as normal text paragraphs and output a "pair".
+5) Keep whitespace/indentation INSIDE the code content exactly as in the source.
+6) Return the full result list; do NOT omit any paragraph.
 
-    example_zh = """
-分层采样将积分域 $\Lambda$ 细分为 $n$ 个不重叠的层 $\Lambda_1, \Lambda_2, \ldots, \Lambda_n$。每个层称为一个“层”，它们必须完全覆盖原始域：
-
-\[
-\\bigcup_{i=1}^n \Lambda_i = \Lambda.
-\]
-
-为了从 $\Lambda$ 中抽取样本，我们将从每个 $\Lambda_i$ 中抽取 $n_i$ 个样本，根据每个层内的密度 $p_i$。一个简单的例子是像素超采样。使用分层采样，像素周围的区域被划分为一个 $k \times k$ 的网格，并在每个网格单元内均匀地抽取一个样本。这比取 $k^2$ 个随机样本要好，因为样本位置不太可能聚集在一起。在这里，我们将解释为什么这种技术能减少方差。
-"""
-    #     example_en = """
-    # This is the first paragraph of the English text.
-
-    # This is the second paragraph of the English text.
-    # """
-    #     example_zh = """
-    # 这是英文文本的第一段。
-
-    # 这是英文文本的第二段。
-    # """
-    return f"""
-You are provided with two texts: one in English and its corresponding Chinese translation. Please alternate between the English and Chinese paragraphs, maintaining the sequence. The output should have a structured format where each English paragraph is followed by its Chinese translation. Return a json array.
-
-The source text and initial translation, delimited by XML tags <SOURCE_TEXT></SOURCE_TEXT> and <TRANSLATION></TRANSLATION>
-
-<SOURCE_TEXT>
-{{source_text}}
-</SOURCE_TEXT>
-
-<TRANSLATION>
-{{translation}}
-</TRANSLATION>
-
-here is an example:
-
-Example Input:
-
-
-<SOURCE_TEXT>
-{example_en}
-</SOURCE_TEXT>
-
-<TRANSLATION>
-{example_zh}
-</TRANSLATION>
-
-Example Json Result:
-{example_output}
+Now, process the following inputs:
 """
 
 
@@ -160,7 +113,7 @@ def merge_en_zh(en_text, zh_text):
     # )
     prompt_text = get_prompt()
 
-    return get_completion_json(
+    gpt_res = get_completion_json(
         prompt_text,
         f"""
 <SOURCE_TEXT>
@@ -173,3 +126,13 @@ def merge_en_zh(en_text, zh_text):
 """,
     model = gpt_config["MODEL2"],
     )
+    
+    all_en_zh = ""
+    for ez in gpt_res.result:
+        if ez.type == "code":
+            all_en_zh += f"```\n{ez.code}\n```\n"
+        else:
+            en_text = convert_md_to_typ(ez.english)
+            zh_text = convert_md_to_typ(ez.chinese)
+            all_en_zh += f"#parec[\n{en_text}\n][\n{zh_text}]\n\n"
+    return all_en_zh

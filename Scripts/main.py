@@ -69,20 +69,15 @@ def run_chunk_with_cache(html_text: str, out_dir: str, index: int):
         with open(t3_path, "w", encoding="utf-8") as f:
             f.write(t3_text)
 
-    all_en_zh = ""
     en_zh_path = f"{out_dir}/{index}_en_zh.typ"
     print("  merge_en_zh file: ", en_zh_path)
     if os.path.exists(en_zh_path):
-        with open(en_zh_path, "r", encoding="utf-8") as f:
-            all_en_zh = f.read()
+        pass
     else:
+        print(len(md_text), len(t3_text))
         en_zh = merge_en_zh(md_text, t3_text)
-        for ez in en_zh.result:
-            en_text = convert_md_to_typ(ez.english)
-            zh_text = convert_md_to_typ(ez.chinese)
-            all_en_zh += f"#parec[\n{en_text}\n][\n{zh_text}]\n\n"
         with open(en_zh_path, "w", encoding="utf-8") as f:
-            f.write(all_en_zh)
+            f.write(en_zh)
 
     print("Done!")
 
