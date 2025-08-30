@@ -38,13 +38,12 @@ def replace_svg_to_mathjax(tree):
 
 def replace_code(tree):
     for c in tree.xpath('//div[@class="fragmentcode"]'):
-        # print(c.text_content())
-
+        # 删除所有 <div class="collapse">
+        for div_collapse in c.xpath('.//div[@class="collapse"]'):
+            div_collapse.drop_tree()
         div = html.Element("code")
-        # 如果有需要，可以复制svg标签内的内容到div标签内
         div.text = c.text_content()
 
-        # 将svg标签替换为div标签
         c.getparent().replace(c, div)
     return tree
 
@@ -71,28 +70,34 @@ def split_html(html_string: str, max_tokens: int = 4000) -> List[str]:
     pre_text = ""
     pre_cnt = 0
     res = []
-    all_sub = html.xpath("//div[@class='container-fluid']/*")
+    all_sub = html.xpath("//div[@class='container-fluid']/*/*[position()=2]/*")
     for sub in all_sub:
         text = etree.tostring(sub).decode()
         num_token = num_tokens_in_string(text)
+        # print("num_token:", num_token)
         text = remove_html_comments(text)
         if num_token > max_tokens and pre_cnt > max_tokens / 3:
-            res.append(pre_text)
-            res.append(text)
+            # print(pre_cnt)
+            res.append((pre_text, pre_cnt))
+            res.append((text, num_token))
             pre_cnt = 0
             pre_text = ""
             continue
         pre_cnt += num_token
         pre_text += text + "\n"
         if pre_cnt > max_tokens:
+            res.append((pre_text, pre_cnt))
             pre_cnt = 0
-            res.append(pre_text)
             pre_text = ""
-
-    if pre_cnt > max_tokens / 2 or len(res) == 0:
-        res.append(pre_text)
-    elif pre_cnt > 0:
-        res[-1] += pre_text
+    
+    # print(pre_cnt)
+    # if pre_cnt > max_tokens / 2 or len(res) == 0:
+    res.append((pre_text, pre_cnt))
+    # elif pre_cnt > 0:
+    #     t, c = res[-1]
+    #     t += pre_text
+    #     c += pre_cnt
+    #     res[-1] = (t, c)
     return res
 
 

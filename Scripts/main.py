@@ -10,7 +10,7 @@ import argparse
 def read_html_to_list(html_file_path: str) -> List[str]:
     res = []
     with open(html_file_path, encoding="utf-8") as f:
-        html_chunk = split_html(f.read(), 32000)
+        html_chunk = split_html(f.read(), 3000)
         for html_text in html_chunk:
             res.append(html_text)
     return res
@@ -166,14 +166,14 @@ def translate():
     hrefs = get_toc(config_yaml["pbr_book"] + "/contents.html")
     # print(list(enumerate(hrefs)))
     # exit(0)
-    for h in hrefs[150:151]:
+    for h in hrefs[151:152]:
         print(f"translating {h}")
         html_file_path = config_yaml["pbr_book"] + "/" + h
         html_texts = read_html_to_list(html_file_path)
         out_dir = os.path.splitext(config_yaml["cache_dir"] + "/" + h)[0]
         all_en_zh_text = ""
-        for i, html_text in enumerate(html_texts):
-            print(f"sub: {i}")
+        for i, (html_text, text_cnt) in enumerate(html_texts):
+            print(f"sub: {i}, the num of token = ", text_cnt)
             run_chunk_with_cache(html_text, out_dir, i)
             with open(f"{out_dir}/{i}_en_zh.typ", "r", encoding="utf-8") as f:
                 all_en_zh_text += f.read() + "\n"

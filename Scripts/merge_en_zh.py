@@ -38,7 +38,7 @@ class TranlationResult(BaseModel):
 def get_completion_json(
     prompt: str,
     system_message: str = "You are a helpful assistant.",
-    model: str = gpt_config["MODEL1"],
+    model: str = gpt_config["MODEL2"],
     temperature: float = 0.3,
 ) -> TranlationResult:
     """
