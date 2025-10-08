@@ -1,11 +1,11 @@
-#import "../template.typ": parec, ez_caption
+#import "../template.typ": ez_caption, parec
 
 == Sampling and Integration
 <sampling-and-integration>
 #parec[
-  The lighting integration algorithms used throughout `pbrt` are based on Monte Carlo integration, yet the focus of Section #link("../Sampling_and_Reconstruction/Sampling_Theory.html#sec:sampling-theory")[8.1] was on sampling and reconstruction. That topic is an important one for understanding aliasing and the use of filters for image reconstruction, but it is a different one than minimizing Monte Carlo integration error. There are a number of connections between Monte Carlo and both Fourier analysis and other approaches to analyzing point-sampling algorithms, however. For example, jittered sampling is a form of stratified sampling, a variance reduction technique that was introduced in Section #link("../Monte_Carlo_Integration/Improving_Efficiency.html#sec:stratified-variance-reduction")[2.2.1];. Thus, we can see that jittered sampling is advantageous from both perspectives.
+  The lighting integration algorithms used throughout `pbrt` are based on Monte Carlo integration, yet the focus of Section @sampling-theory was on sampling and reconstruction. That topic is an important one for understanding aliasing and the use of filters for image reconstruction, but it is a different one than minimizing Monte Carlo integration error. There are a number of connections between Monte Carlo and both Fourier analysis and other approaches to analyzing point-sampling algorithms, however. For example, jittered sampling is a form of stratified sampling, a variance reduction technique that was introduced in @Stratified-Sampling . Thus, we can see that jittered sampling is advantageous from both perspectives.
 ][
-  `pbrt` 中使用的光照积分算法基于蒙特卡罗积分，而第 #link("../Sampling_and_Reconstruction/Sampling_Theory.html#sec:sampling-theory")[8.1] 节的重点是采样和重建。这个主题对于理解混叠和使用滤波器进行图像重建非常重要，但与最小化蒙特卡罗积分误差不同。然而，蒙特卡罗与傅里叶分析和其他分析点采样算法的方法之间存在许多联系。例如，抖动采样是一种分层采样，是在 #link("../Monte_Carlo_Integration/Improving_Efficiency.html#sec:stratified-variance-reduction")[2.2.1] 节中介绍的方差减少技术。因此，我们可以看到，从两个角度来看，抖动采样都是有利的。
+  `pbrt` 中使用的光照积分算法基于蒙特卡罗积分，而@sampling-theory 的重点是采样和重建。这个主题对于理解混叠和使用滤波器进行图像重建非常重要，但与最小化蒙特卡罗积分误差不同。然而，蒙特卡罗与傅里叶分析和其他分析点采样算法的方法之间存在许多联系。例如，抖动采样是一种分层采样，是在@Stratified-Sampling 中介绍的方差减少技术。因此，我们可以看到，从两个角度来看，抖动采样都是有利的。
 ]
 
 #parec[
@@ -25,17 +25,21 @@
 #parec[
   Fourier analysis can also be applied to evaluate sampling patterns in the context of Monte Carlo integration, leading to insights about both variance and the convergence rates of various sampling algorithms. We will make three simplifications in our treatment of this topic here. There are more general forms of the theory that do not require these, though they are more complex. (As always, see the "Further Reading" section for more information.) We assume that:
 ][
-  傅里叶分析也可以用于在蒙特卡罗积分的背景下评估采样模式，从而对各种采样算法的方差和收敛速度提供见解。我们将在这里对这一主题的处理进行三个简化。理论的更一般形式不需要这些简化，尽管它们更复杂。（一如既往，参见“进一步阅读”部分以获取更多信息。）我们假设：
+  傅里叶分析也可以用于在蒙特卡罗积分的背景下评估采样模式，从而对各种采样算法的方差和收敛速度提供见解。我们将在这里对这一主题的处理进行三个简化。更一般的理论形式不需要这些简化，尽管它们更复杂。（一如既往，参见“进一步阅读”部分以获取更多信息。）我们假设：
 ]
 
 #parec[
   + The sample points are uniformly distributed and equally weighted
-    (i.e., importance sampling is not being used). + The Monte Carlo estimator used is unbiased. + The properties of the sample points are homogeneous with respect to
+    (i.e., importance sampling is not being used).
+  + The Monte Carlo estimator used is unbiased. 、
+  + The properties of the sample points are homogeneous with respect to
     toroidal translation over the sampling domain. (If they are not, the
     analysis is effectively over all possible random translations of the
     sample points.)
 ][
-  + 采样点均匀分布且权重相等（即未使用重要性采样）。 + 使用的蒙特卡罗估计器是无偏的。 + 采样点的性质在采样域上的环形平移方面是均匀的。（如果不是，则分析实际上是针对采样点的所有可能随机平移进行的。）
+  + 采样点均匀分布且权重相等（即未使用重要性采样）。
+  + 使用的蒙特卡罗估计器是无偏的。
+  + 样本点的属性相对于采样域上的环形平移是齐次的（均匀的、homogeneous）。（如果不是，分析实际上是对所有可能的随机平移后的样本点进行的。）
 ]
 
 #parec[
@@ -52,10 +56,10 @@
 
 #parec[
   The Fourier series represents a function using an infinite set of coefficients $f_j$ for all integer-valued $j gt.eq 0$. (We use $j$ to index coefficients in order to avoid confusion with the use of $i$ for the unit imaginary number.) For the $\[0 , 1\)$ domain, the coefficients are given by#footnote[We will continue to stick with 1D for Fourier analysis,
-though as before, all concepts extend naturally to multiple dimensions.]
+    though as before, all concepts extend naturally to multiple dimensions.]
 ][
   傅里叶级数使用一组无限的系数 $f_j$ 表示函数，适用于所有整数值 $j gt.eq 0$。（我们使用 $j$ 来索引系数，以避免与单位虚数 $i$ 的使用混淆。）对于域 $\[0 , 1\)$ ，系数由以下公式给出#footnote[We will continue to stick with 1D for Fourier analysis,
-though as before, all concepts extend naturally to multiple dimensions.]
+    though as before, all concepts extend naturally to multiple dimensions.]
 ]
 $ f_j = integral_(\[0 , 1\)) f (x) e^(- i 2 pi j x) d x . $
 <fourier-series-analysis>
@@ -101,8 +105,8 @@ $ s (x) = 1 / n sum_(i = 1)^n delta (x - x_i) $
 ]
 
 $
-  integral_(\[ 0 , 1 \)) f (x) thin d x & approx 1 / n sum_(i = 1)^n f (x_i)\
-  med & = integral_(\[ 0 , 1 \)) f (x) s (x) thin d x
+  integral_(\[ 0 , 1 \)) f (x) thin d x & approx 1 / n sum_(i = 1)^n f (x_i) \
+                                    med & = integral_(\[ 0 , 1 \)) f (x) s (x) thin d x
 $<mc-estimator-continuous>
 #parec[
   It may seem like we are moving backward: after all, the point of Monte Carlo integration is to transform integrals into sums. However, this transformation is key to being able to apply the Fourier machinery to the problem.
@@ -213,16 +217,16 @@ $ 1 / n sum_(j in bb(Z)^(\*)) cal(P)_f (j) = O (1 / n) , $
 
 #parec[
   However, radially averaged plots of the distribution of energy in these PSDs, however, makes their behavior in the low frequencies more clear; see @fig:radially-averaged-psds. #footnote[Some
-of the sampling patterns that we will see later in the
-chapter have anisotropic PSDs, in which case a radial average loses some
-information about their behavior, though these two patterns are both
-isotropic and thus radially symmetric.] We can see that although the Poisson disk pattern has low energy for a larger range of frequencies than the jittered pattern, its PSD retains a small amount of energy all the way until~0, while the jittered pattern does~not.
+    of the sampling patterns that we will see later in the
+    chapter have anisotropic PSDs, in which case a radial average loses some
+    information about their behavior, though these two patterns are both
+    isotropic and thus radially symmetric.] We can see that although the Poisson disk pattern has low energy for a larger range of frequencies than the jittered pattern, its PSD retains a small amount of energy all the way until~0, while the jittered pattern does~not.
 ][
   然而，径向平均图使这些功率谱密度在低频率中的行为更加清晰；见@fig:radially-averaged-psds。#footnote[Some
-of the sampling patterns that we will see later in the
-chapter have anisotropic PSDs, in which case a radial average loses some
-information about their behavior, though these two patterns are both
-isotropic and thus radially symmetric.] 我们可以看到，虽然泊松盘模式在比抖动模式更大范围的频率上能量较低，但其功率谱密度在直到~0 的范围内仍保留少量能量，而抖动模式则没有。
+    of the sampling patterns that we will see later in the
+    chapter have anisotropic PSDs, in which case a radial average loses some
+    information about their behavior, though these two patterns are both
+    isotropic and thus radially symmetric.] 我们可以看到，虽然泊松盘模式在比抖动模式更大范围的频率上能量较低，但其功率谱密度在直到~0 的范围内仍保留少量能量，而抖动模式则没有。
 ]
 
 
@@ -302,9 +306,9 @@ $ x_i = i / n . $
 $ D_n^(\*) (x_1 , dots.h , x_n) = 1 / n . $
 
 #parec[
-  For example, take the interval $b = lr(\[0 , 1 / n\))$. Then $V (b) = 1 / n$, but $N {x_i in b} = 0$ This interval (and the intervals $lr(\[0 , 2 / n\))$, etc.) is the interval where the largest differences between volume and fraction of points inside the volume are seen.
+  For example, take the interval $b = lr(\[0, 1 / n\))$. Then $V (b) = 1 / n$, but $N {x_i in b} = 0$ This interval (and the intervals $lr(\[0, 2 / n\))$, etc.) is the interval where the largest differences between volume and fraction of points inside the volume are seen.
 ][
-  例如，取区间 $b = lr(\[0 , 1 / n\))$。那么 $V (b) = 1 / n$，但 $N {x_i in b} = 0$。 在这个区间（以及区间 $lr(\[0 , 2 / n\))$ 等）中，体积与体积内点数比例之间的差异最大。
+  例如，取区间 $b = lr(\[0, 1 / n\))$。那么 $V (b) = 1 / n$，但 $N {x_i in b} = 0$。 在这个区间（以及区间 $lr(\[0, 2 / n\))$ 等）中，体积与体积内点数比例之间的差异最大。
 ]
 
 #parec[
@@ -347,7 +351,7 @@ $ D_n^(\*) (x_i) = frac(1, 2 n) + max_(1 lt.eq i lt.eq n) lr(|x_i - frac(2 i - 1
 
 #parec[
   A $d$ -dimensional sequence of points is said to have #emph[low
-discrepancy] if its discrepancy is of the order
+    discrepancy] if its discrepancy is of the order
 ][
   如果一个 $d$ 维点序列的不一致性是如下的量级，则称其具有#emph[低不一致性];。
 ]

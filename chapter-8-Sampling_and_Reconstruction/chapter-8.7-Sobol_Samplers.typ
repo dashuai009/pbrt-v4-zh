@@ -1,4 +1,4 @@
-#import "../template.typ": parec
+#import "../template.typ": ez_caption, parec
 
 == Sobol' Samplers #emoji.warning
 <sobol-samplers>
@@ -14,29 +14,29 @@
 ][
   基数2的基数反演可以比基数无关的`RadicalInverse()`函数更高效地计算。关键在于利用数字计算机中数字已经以基数2表示的事实。如果 $a$ 是一个64位值，那么根据方程(8.18)，
 ]
-
+$
+  a = sum_(i = 1)^64 d_i (a) 2^(i - 1) ,
+$
 #parec[
-  $
-    a = sum_(i = 1)^64 d_i (a) 2^(i - 1) ,
-  $ where $d_i (a)$ are its bits. First, consider reversing its bits, still represented as an integer value, which gives
+  where $d_i (a)$ are its bits. First, consider reversing its bits, still represented as an integer value, which gives
 ][
-  $ a = sum_(i = 1)^64 d_i (a) 2^(i - 1) , $ 其中 $d_i (a)$ 是其位。首先，考虑反转其位，仍然表示为整数值，这给出
+  其中 $d_i (a)$ 是它的比特位。首先，考虑反转其位，仍然表示为整数值，这给出
 ]
 
+$ sum_(i = 1)^64 d_i (a) 2^(64 - i) . $
 #parec[
-  $ sum_(i = 1)^64 d_i (a) 2^(64 - i) . $ If we then divide this value by $2^64$, we have
+  If we then divide this value by $2^64$, we have
 ][
-  $ sum_(i = 1)^64 d_i (a) 2^(64 - i) . $ 如果我们然后将此值除以 $2^64$，我们得到
+  如果我们然后将此值除以 $2^64$，我们得到
 ]
 
+
+$ sum_(i = 1)^64 d_i (a) 2^(- i) , $
+
 #parec[
-  $
-    sum_(i = 1)^64 d_i (a) 2^(- i) ,
-  $ which equals $Phi_2 (a)$ (recall Equation (8.19)). Thus, the base-2 radical inverse can equivalently be computed using a bit reverse and a power-of-two division. The division can be replaced with multiplication by the corresponding inverse power-of-two, which gives the same result with IEEE floating point.
+  which equals $Phi_2 (a)$ (recall Equation (8.19)). Thus, the base-2 radical inverse can equivalently be computed using a bit reverse and a power-of-two division. The division can be replaced with multiplication by the corresponding inverse power-of-two, which gives the same result with IEEE floating point.
 ][
-  $
-    sum_(i = 1)^64 d_i (a) 2^(- i) ,
-  $ 这等于 $Phi_2 (a)$ （回忆方程(8.19)）。因此，基数2的基数反演可以通过位反转和2的幂次除法等效地计算。除法可以用相应的2的幂次倒数乘法替代，这在IEEE浮点表示中给出相同的结果。
+  这等于 $Phi_2 (a)$ （回忆方程(8.19)）。因此，基数2的基数反演可以通过位反转和2的幂次除法等效地计算。除法可以用相应的2的幂次倒数乘法替代，这在IEEE浮点表示中给出相同的结果。
 ]
 
 #parec[
@@ -63,19 +63,23 @@
   为了了解生成矩阵的使用方式，考虑一个基数 $b$ 的 $n$ 位数 $a$，其中 $a$ 的第 $i$ 位是 $d_i (a)$，并且我们有一个 $n times n$ 生成矩阵 $upright(bold(C))$。那么相应的样本点 $x_a in \[ 0 , 1 \)$ 定义为
 ]
 
+#{
+  let matC = $mat(delim: "(", c_(1 , 1), c_(1 , 2), dots.h.c, c_(1 , n); c_(2 , 1), dots.h.c, , c_(2 , n); dots.v, , , dots.v; c_(n , 1), dots.h.c, dots.h.c, c_(n , n))$
+}
 $
-  x_a = [ b^(- 1) med b^(- 2) med dots.h.c med b^(- n) ] mat(delim: "(", c_(1 , 1), c_(1 , 2), dots.h.c, c_(1 , n); c_(2 , 1), dots.h.c, c_(2 , n); dots.v, , dots.v; c_(n , 1), dots.h.c, c_(n , n)) vec(d_1 (a), d_2 (a), dots.v, d_n (a)) ,
+  x_a = [ b^(- 1) med b^(- 2) med dots.h.c med b^(- n) ] mat(delim: "(", c_(1 , 1), c_(1 , 2), dots.h.c, c_(1 , n); c_(2 , 1), dots.h.c, , c_(2 , n); dots.v, , , dots.v; c_(n , 1), dots.h.c, dots.h.c, c_(n , n))
+  vec(d_1 (a), d_2 (a), dots.v, d_n (a)) ,
 $
 #parec[
   where all arithmetic is performed in the ring $upright(bold(Z))_b$ (in other words, when all operations are performed modulo $b$ ).
 ][
-  其中所有算术运算都在环 $upright(bold(Z))_b$ 中进行（换句话说，当所有操作都以 $b$ 为模进行时）。
+  其中所有算术运算都在环 $upright(bold(Z))_b$ 中进行（换句话说，所有操作都会模 $b$）。
 ]
 
 #parec[
   This construction gives a total of $b^n$ points as $a$ ranges from $0$ to $b^n - 1$. If the generator matrix is the identity matrix, then this definition corresponds to the regular radical inverse, base $b$. (It is worth pausing to make sure you see this connection between Equations (8.19) and (8.22) before continuing.)
 ][
-  这种构造在 $a$ 从 $0$ 到 $b^n - 1$ 时给出总共 $b^n$ 个点。如果生成矩阵是单位矩阵，那么这个定义对应于常规的基数反演，基数 $b$。（值得停下来确保你看到方程(8.19)和(8.22)之间的联系，然后再继续。）
+  这种构造在 $a$ 从 $0$ 到 $b^n - 1$ 时给出总共 $b^n$ 个点。如果生成矩阵是单位矩阵，那么这个定义对应于普通的以$b$基数反演。（值得停下来确保你看到方程(8.19)和(8.22)之间的联系，然后再继续。）
 ]
 
 #parec[
@@ -98,17 +102,14 @@ $
 
 
 $
-  c_(1 , 1) & c_(1 , 2) & dots.h.c & c_(1 , n)\
-  c_(2 , 1) & arrow.b & dots.h.c & c_(2 , n)\
-  dots.v & dots.h.c & arrow.b & dots.v\
-  c_(n , 1) & dots.h.c & dots.h.c & c_(n , n) vec(d_1 (a), d_2 (a), dots.v, d_n (a)) = d_1 vec(c_(1 , 1), c_(2 , 1), dots.v, c_(n , 1)) + dots.h.c + d_n vec(c_(1 , n), c_(2 , n), dots.v, c_(n , n)) .
+  mat(delim: "(", c_(1 , 1), c_(1 , 2), dots.h.c, c_(1 , n); c_(2 , 1), dots.h.c, , c_(2 , n); dots.v, , , dots.v; c_(n , 1), dots.h.c, dots.h.c, c_(n , n)) vec(d_1 (a), d_2 (a), dots.v, d_n (a)) = d_1 vec(c_(1 , 1), c_(2 , 1), dots.v, c_(n , 1)) + dots.h.c + d_n vec(c_(1 , n), c_(2 , n), dots.v, c_(n , n)) .
 $
 
 
 #parec[
-  In other words, for each digit of $d_i$ that has a value of 1, the corresponding column of \$ \$ should be summed. This addition can in turn be performed efficiently in \$ \_2\$: in that setting, addition corresponds to the bitwise exclusive or operation. (Consider the combinations of the two possible operand values—0 and 1—and the result of adding them modulo 2, and compare to the values computed by exclusive or with the same operand values.) Thus, the multiplication \$ \[d\_i(a)\]^T\$ is just a matter of exclusive oring together the columns $i$ of \$ \$ where $d_i (a)$ 's bit is 1. This computation is implemented in the `MultiplyGenerator()` function.
+  In other words, for each digit of $d_i$ that has a value of 1, the corresponding column of $upright(bold(C))$ should be summed. This addition can in turn be performed efficiently in $upright(bold(Z))_2$: in that setting, addition corresponds to the bitwise exclusive or operation. (Consider the combinations of the two possible operand values—0 and 1—and the result of adding them modulo 2, and compare to the values computed by exclusive or with the same operand values.) Thus, the multiplication $upright(bold(C))[d_i(a)]^T$ is just a matter of exclusive oring together the columns $i$ of $upright(bold(C))$ where $d_i (a)$ 's bit is 1. This computation is implemented in the `MultiplyGenerator()` function.
 ][
-  换句话说，对于每个值为1的 $d_i$ 的数字，应该将\$ $的 对 应 列 相 加 。 这 种 加 法 可 以 在$ \_2 $中 高 效 地 执 行 ： 在 这 种 情 况 下 ， 加 法 对 应 于 按 位 异 或 操 作 。 （ 考 虑 两 个 可 能 的 操 作 数 值 dash.em dash.em 0 和 1 dash.em dash.em 的 组 合 ， 以 及 它 们 模 2 相 加 的 结 果 ， 并 与 使 用 相 同 操 作 数 值 计 算 的 异 或 值 进 行 比 较 。 ） 因 此 ， 乘 法$ \[d\_i(a)\]^T $只 是 将$ $中$ d\_i(a) $的 位 为 1 的 列$ i\$进行异或运算。这个计算在`MultiplyGenerator()`函数中实现。
+  换句话说，对于每个值为1的 $d_i$ 的数字，应该将 $upright(bold(C))$ 的对应列相加 。 这种加法可以在$upright(bold(Z))_2$中 高 效 地 执 行：在这种情况下，加法对应于按位异或操作。（ 考虑两个可能的操作数值， 0 和 1， 的组合 ， 以及它们模2相加的结果 ， 并与使用相同操作数值计算的异或值进行比较。）因此，乘法$upright(bold(C))[d_i (a)]^T$只是将$upright(bold(C))$中 $i$ 的位为1的列$i$进行异或运算。这个计算在`MultiplyGenerator()`函数中实现。
 ]
 
 $ vec(v_1, v_2, dots.v, v_n) = upright(bold(C)) [d_i (a)]^T $
@@ -122,14 +123,20 @@ $ vec(v_1, v_2, dots.v, v_n) = upright(bold(C)) [d_i (a)]^T $
 #parec[
   We will not discuss how the Sobol' matrices are derived in a way that leads to a low-discrepancy sequence; the "Further Reading" section has pointers to more details. However, the first few Sobol' generator matrices are shown in Figure 8.34. Note that the first is the identity, corresponding to the van der Corput sequence. Subsequent dimensions have various fractal-like structures to their entries.
 ][
-  我们不会讨论Sobol'矩阵是如何以一种导致低差异序列的方式推导出来的；"进一步阅读"部分有指向更多细节的指针。然而，前几个Sobol'生成矩阵如图8.34所示。注意，第一个是单位矩阵，对应于van der Corput序列。后续维度的条目中呈现出类似分形的结构。
+  我们不会讨论Sobol'矩阵是如何以一种导致低差异序列的方式推导出来的；"进一步阅读"部分有更多细节。然而，前几个Sobol'生成矩阵如图8.34所示。注意，第一个是单位矩阵，对应于van der Corput序列。后续维度的条目中呈现出类似分形的结构。
 ]
 
-#parec[
-  Figure 8.34: Generator matrices for the first four dimensions of the Sobol' sequence. Note their regular structure.
-][
-  图8.34：Sobol'序列前四维的生成矩阵。注意它们的规则结构。
-]
+
+#figure(
+  image("../pbr-book-website/4ed/Sampling_and_Reconstruction/pha08f34.svg"),
+  caption: [
+    #ez_caption[
+      Figure 8.34: Generator matrices for the first four dimensions of the Sobol' sequence. Note their regular structure.
+    ][
+      图8.34：Sobol'序列前四维的生成矩阵。注意它们的规则结构。
+    ]
+  ],
+)<sobol-4-matrices>
 
 === Stratification over Elementary Intervals
 
@@ -146,15 +153,14 @@ $ vec(v_1, v_2, dots.v, v_n) = upright(bold(C)) [d_i (a)]^T $
 ]
 
 
+$ E = {lr([a_1 / 2^(l_1) , frac(a_1 + 1, 2^(l_1)))) times lr([a_2 / 2^(l_2) , frac(a_2 + 1, 2^(l_2))))} , $
+
 #parec[
-  $
-    E = {lr([a_1 / 2^(l_1) , frac(a_1 + 1, 2^(l_1)))) times lr([a_2 / 2^(l_2) , frac(a_2 + 1, 2^(l_2))))} ,
-  $ where the integer $a_i = 0 , 1 , 2 , 3 , dots.h , 2^(l_i) - 1$. One sample from each of the first $2^(l_1 + l_2)$ values in the sequence will be in each of the elementary intervals. Furthermore, the same property is true for each subsequent set of $2^(l_1 + l_2)$ values. Such a sequence is called a #emph[$(0 , 2)$-sequence];.
+  where the integer $a_i = 0 , 1 , 2 , 3 , dots.h , 2^(l_i) - 1$. One sample from each of the first $2^(l_1 + l_2)$ values in the sequence will be in each of the elementary intervals. Furthermore, the same property is true for each subsequent set of $2^(l_1 + l_2)$ values. Such a sequence is called a #emph[$(0 , 2)$-sequence];.
 ][
-  $
-    E = {lr([a_1 / 2^(l_1) , frac(a_1 + 1, 2^(l_1)))) times lr([a_2 / 2^(l_2) , frac(a_2 + 1, 2^(l_2))))} ,
-  $ 其中整数 $a_i = 0 , 1 , 2 , 3 , dots.h , 2^(l_i) - 1$。序列中前 $2^(l_1 + l_2)$ 个值中的每一个样本将位于每个基本区间中。此外，同样的性质对于后续的每组 $2^(l_1 + l_2)$ 个值也成立。这样的序列称为 #emph[$(0 , 2)$-序列];。
+  其中整数 $a_i = 0 , 1 , 2 , 3 , dots.h , 2^(l_i) - 1$。序列中前 $2^(l_1 + l_2)$ 个值中的每一个样本将位于每个基本区间中。此外，同样的性质对于后续的每组 $2^(l_1 + l_2)$ 个值也成立。这样的序列称为 #emph[$(0 , 2)$-序列];。
 ]
+
 
 === Randomization and Scrambling
 
@@ -177,9 +183,9 @@ $ vec(v_1, v_2, dots.v, v_n) = upright(bold(C)) [d_i (a)]^T $
 ]
 
 #parec[
-  Alternatively, random permutations can be applied to the digits, such as was done using the `DigitPermutation` class with the Halton sampler. In base~2, however, a random permutation of \$\\\\{0, 1\\\\}\$ can be represented with a single bit, as there are only two unique permutations. If the permutation \$\\\\{1, 0\\\\}\$ is denoted by a bit with value~1 and the permutation \$\\\\{0, 1\\\\}\$ is denoted by~0, then the permutation can be applied by computing the exclusive or of the permutation bit with a digit's bit. Therefore, the permutation for all 32 bits can be represented by a 32-bit integer and all of the permutations can be applied in a single operation by computing the exclusive or of the provided value with the permutation.
+  Alternatively, random permutations can be applied to the digits, such as was done using the `DigitPermutation` class with the Halton sampler. In base~2, however, a random permutation of ${0, 1}$ can be represented with a single bit, as there are only two unique permutations. If the permutation ${1, 0}$ is denoted by a bit with value~1 and the permutation ${0, 1}$ is denoted by~0, then the permutation can be applied by computing the exclusive or of the permutation bit with a digit's bit. Therefore, the permutation for all 32 bits can be represented by a 32-bit integer and all of the permutations can be applied in a single operation by computing the exclusive or of the provided value with the permutation.
 ][
-  或者，可以对位应用随机排列，例如使用`DigitPermutation`类对Halton采样器进行的处理。然而，在基数2中，\$\\\\{0, 1\\\\}\$的随机排列可以用一个位表示，因为只有两种唯一的排列。如果排列\$\\\\{1, 0\\\\}\$由值为1的位表示，排列\$\\\\{0, 1\\\\}\$由0表示，则可以通过计算排列位与位的异或来应用排列。因此，所有32位的排列可以用一个32位整数表示，并且可以通过计算给定值与排列的异或在单个操作中应用所有排列。
+  或者，可以对位应用随机排列，例如使用`DigitPermutation`类对Halton采样器进行的处理。然而，在基数2中，${0, 1}$的随机排列可以用一个位表示，因为只有两种唯一的排列。如果排列${1, 0}$由值为1的位表示，排列${0, 1}$由0表示，则可以通过计算排列位与位的异或来应用排列。因此，所有32位的排列可以用一个32位整数表示，并且可以通过计算给定值与排列的异或在单个操作中应用所有排列。
 ]
 
 #parec[
@@ -203,10 +209,23 @@ $ a b = sum_(i = 1)^n a d_i (b) 2^(i - 1) . $
 ]
 
 #parec[
-  The bits in the value provided to the randomization class must be reversed so that the low bit corresponds to \$ rac{1}{2}\$ in the final sample value. Then, the properties illustrated in Equation~(8.25) can be applied: the product of an even value with the sample value `v` can be interpreted as a bitwise permutation as was done in the `BinaryPermuteScrambler`, allowing the use of an exclusive or to permute all the bits. After a few rounds of this and a few operations to mix the seed value in, the bits are reversed again before being returned.
+  The bits in the value provided to the randomization class must be reversed so that the low bit corresponds to $1\/2$ in the final sample value. Then, the properties illustrated in Equation~(8.25) can be applied: the product of an even value with the sample value `v` can be interpreted as a bitwise permutation as was done in the `BinaryPermuteScrambler`, allowing the use of an exclusive or to permute all the bits. After a few rounds of this and a few operations to mix the seed value in, the bits are reversed again before being returned.
 ][
-  提供给随机化类的值的位必须反转，以便最低位对应于最终样本值中的\$ rac{1}{2}\$。然后，可以应用方程式~(8.25)中展示的性质：偶数值与样本值`v`的乘积可以解释为按位置换，如在`BinaryPermuteScrambler`中所做的那样，允许使用异或来置换所有位。经过几轮这样的操作和几次混合种子值的操作后，位再次反转，然后返回。
+  提供给随机化类的值的位必须反转，以便最低位对应于最终样本值中的$1\/2$。然后，可以应用方程式~(8.25)中展示的性质：偶数值与样本值`v`的乘积可以解释为按位置换，如在`BinaryPermuteScrambler`中所做的那样，允许使用异或来置换所有位。经过几轮这样的操作和几次混合种子值的操作后，位再次反转，然后返回。
 ]
+
+```cpp
+<<FastOwenScrambler Public Methods>>=
+uint32_t operator()(uint32_t v) const {
+    v = ReverseBits32(v);
+    v ^= v * 0x3d20adea;
+    v += seed;
+    v *= (seed >> 16) | 1;
+    v ^= v * 0x05526c56;
+    v ^= v * 0x53a22864;
+    return ReverseBits32(v);
+}
+```
 
 #parec[
   The `OwenScrambler` class implements a full Owen scramble, operating on each bit in turn.
@@ -214,11 +233,33 @@ $ a b = sum_(i = 1)^n a d_i (b) 2^(i - 1) . $
   `OwenScrambler`类实现了一个完整的Owen扰动，逐位操作。
 ]
 
+```cpp
+<<OwenScrambler Definition>>=
+struct OwenScrambler {
+    OwenScrambler(uint32_t seed) : seed(seed) {}
+    <<OwenScrambler Public Methods>>
+    uint32_t seed;
+};
+```
+
 #parec[
-  The first bit (corresponding to \$ rac{1}{2}\$ in the final sample value) is handled specially, since there are no bits that precede it to affect its randomization. It is randomly flipped according to the seed value provided to the constructor.
+  The first bit (corresponding to $1\/2$ in the final sample value) is handled specially, since there are no bits that precede it to affect its randomization. It is randomly flipped according to the seed value provided to the constructor.
 ][
-  第一位（对应于最终样本值中的\$ rac{1}{2}\$）被特别处理，因为没有前面的位可以影响其随机化。根据提供给构造函数的种子值，它被随机翻转。
+  第一位（对应于最终样本值中的$1\/2$）被特别处理，因为没有前面的位可以影响其随机化。根据提供给构造函数的种子值，它被随机翻转。
 ]
+
+```cpp
+<<OwenScrambler Public Methods>>=
+uint32_t operator()(uint32_t v) const {
+    if (seed & 1)
+        v ^= 1u << 31;
+    for (int b = 1; b < 32; ++b) {
+        <<Apply Owen scrambling to binary digit b in v>>
+    }
+    return v;
+}
+```
+
 
 #parec[
   For all the following bits, a bit mask is computed such that the bitwise and of the mask with the value gives the bits above `b`—the values of which should determine the permutation that is used for the current bit. Those are run through `MixBits()` to get a hashed value that is then used to determine whether or not to flip the current bit.
@@ -226,6 +267,12 @@ $ a b = sum_(i = 1)^n a d_i (b) 2^(i - 1) . $
   对于所有后续位，计算一个位掩码，使得掩码与值的按位与给出高于`b`的位——这些位的值应决定用于当前位的排列。通过`MixBits()`运行这些位以获得一个哈希值，然后用来决定是否翻转当前位。
 ]
 
+```cpp
+<<Apply Owen scrambling to binary digit b in v>>=
+uint32_t mask = (~0u) << (32 - b);
+if ((uint32_t)MixBits((v & mask) ^ seed) & (1u << b))
+    v ^= 1u << (31 - b);
+```
 
 === Sobol' Sample Generation
 <sobol-sample-generation>
@@ -247,11 +294,6 @@ $ a b = sum_(i = 1)^n a d_i (b) 2^(i - 1) . $
   样本是使用 Sobol' 生成器矩阵计算的，遵循方程 (8.23) 描述的方法。所有生成器矩阵连续存储在 `SobolMatrices32` 数组中。每个矩阵都有 `SobolMatrixSize` 列，因此将维度乘以 `SobolMatrixSize` 将我们带到给定维度的矩阵的第一列。
 ]
 
-#parec[
-  #strong[Compute initial Sobol $p r i m e$ sample] `v` using generator matrices:
-][
-  #strong[使用生成器矩阵计算初始 Sobol $p r i m e$ 样本] `v`：
-]
 
 #parec[
   ```cpp
@@ -297,7 +339,7 @@ $ a b = sum_(i = 1)^n a d_i (b) 2^(i - 1) . $
 
 #parec[
   #strong[Randomize Sobol $p r i m e$ sample and return floating-point
-value];:
+    value];:
 ][
   #strong[随机化 Sobol $p r i m e$ 样本并返回浮点值];：
 ]
@@ -736,7 +778,7 @@ value];:
 
 #parec[
   class PaddedSobolSampler { public: \/\/ Public Methods PBRT\_CPU\_GPU static constexpr const char #emph[Name() { return "PaddedSobolSampler";
-} static PaddedSobolSampler ];Create(const ParameterDictionary &parameters, const FileLoc \*loc, Allocator alloc); PaddedSobolSampler(int samplesPerPixel, RandomizeStrategy randomizer, int seed = 0) : samplesPerPixel(samplesPerPixel), randomize(randomizer), seed(seed) { if (!IsPowerOf2(samplesPerPixel)) Warning("Sobol samplers with non power-of-two sample counts (%d) are suboptimal.", samplesPerPixel); } PBRT\_CPU\_GPU int SamplesPerPixel() const { return samplesPerPixel; } void StartPixelSample(Point2i p, int index, int dim) { pixel = p; sampleIndex = index; dimension = dim; } Float Get1D() { \\/\/ Get permuted index for current pixel sample uint64\_t hash = Hash(pixel, dimension, seed); int index = PermutationElement(sampleIndex, samplesPerPixel, hash); int dim = dimension++; \/\/ Return randomized 1D van der Corput sample for dimension dim return SampleDimension(0, index, hash \>\> 32); } Point2f Get2D() { \/\/ Get permuted index for current pixel sample uint64\_t hash = Hash(pixel, dimension, seed); int index = PermutationElement(sampleIndex, samplesPerPixel, hash); int dim = dimension; dimension += 2; \/\/ Return randomized 2D Sobol prime sample return Point2f(SampleDimension(0, index, uint32\_t(hash)), SampleDimension(1, index, hash \>\> 32)); } Point2f GetPixel2D() { return Get2D(); } PBRT\_CPU\_GPU RandomizeStrategy GetRandomizeStrategy() const { return randomize; } Sampler Clone(Allocator alloc); std::string ToString() const; private: \/\/ Private Methods Float SampleDimension(int dimension, uint32\_t a, uint32\_t hash) const { if (randomize == RandomizeStrategy::None) return SobolSample(a, dimension, NoRandomizer()); else if (randomize == RandomizeStrategy::PermuteDigits) return SobolSample(a, dimension, BinaryPermuteScrambler(hash)); else if (randomize == RandomizeStrategy::FastOwen) return SobolSample(a, dimension, FastOwenScrambler(hash)); else return SobolSample(a, dimension, OwenScrambler(hash)); } private: int samplesPerPixel, seed; RandomizeStrategy randomize; Point2i pixel; int sampleIndex, dimension; };
+    } static PaddedSobolSampler ];Create(const ParameterDictionary &parameters, const FileLoc \*loc, Allocator alloc); PaddedSobolSampler(int samplesPerPixel, RandomizeStrategy randomizer, int seed = 0) : samplesPerPixel(samplesPerPixel), randomize(randomizer), seed(seed) { if (!IsPowerOf2(samplesPerPixel)) Warning("Sobol samplers with non power-of-two sample counts (%d) are suboptimal.", samplesPerPixel); } PBRT\_CPU\_GPU int SamplesPerPixel() const { return samplesPerPixel; } void StartPixelSample(Point2i p, int index, int dim) { pixel = p; sampleIndex = index; dimension = dim; } Float Get1D() { \\/\/ Get permuted index for current pixel sample uint64\_t hash = Hash(pixel, dimension, seed); int index = PermutationElement(sampleIndex, samplesPerPixel, hash); int dim = dimension++; \/\/ Return randomized 1D van der Corput sample for dimension dim return SampleDimension(0, index, hash \>\> 32); } Point2f Get2D() { \/\/ Get permuted index for current pixel sample uint64\_t hash = Hash(pixel, dimension, seed); int index = PermutationElement(sampleIndex, samplesPerPixel, hash); int dim = dimension; dimension += 2; \/\/ Return randomized 2D Sobol prime sample return Point2f(SampleDimension(0, index, uint32\_t(hash)), SampleDimension(1, index, hash \>\> 32)); } Point2f GetPixel2D() { return Get2D(); } PBRT\_CPU\_GPU RandomizeStrategy GetRandomizeStrategy() const { return randomize; } Sampler Clone(Allocator alloc); std::string ToString() const; private: \/\/ Private Methods Float SampleDimension(int dimension, uint32\_t a, uint32\_t hash) const { if (randomize == RandomizeStrategy::None) return SobolSample(a, dimension, NoRandomizer()); else if (randomize == RandomizeStrategy::PermuteDigits) return SobolSample(a, dimension, BinaryPermuteScrambler(hash)); else if (randomize == RandomizeStrategy::FastOwen) return SobolSample(a, dimension, FastOwenScrambler(hash)); else return SobolSample(a, dimension, OwenScrambler(hash)); } private: int samplesPerPixel, seed; RandomizeStrategy randomize; Point2i pixel; int sampleIndex, dimension; };
 ][
   ```cpp
   class PaddedSobolSampler {

@@ -1,4 +1,4 @@
-#import "../template.typ": parec, ez_caption
+#import "../template.typ": ez_caption, parec
 
 == Sampling Theory
 <sampling-theory>
@@ -23,7 +23,7 @@
 ]
 
 #parec[
-  As an example of these ideas, consider a 1D function (which we will interchangeably refer to as a signal), given by $f (x)$, where we can evaluate $f (x prime)$ at any desired location $x prime$ in the function's domain. Each such $x prime$ is called a #emph[sample position];, and the value of $f (x prime)$ is the #emph[sample value];. Figure 8.1 shows a set of samples of a smooth 1D function, along with a reconstructed signal \$ ilde{f}\$ that approximates the original function $f$. In this example, \$ ilde{f}\$ is a piecewise linear function that approximates $f$ by linearly interpolating neighboring sample values (readers already familiar with sampling theory will recognize this as reconstruction with a hat function). Because the only information available about $f$ comes from the sample values at the positions $x prime$, \$ ilde{f}\$ is unlikely to match $f$ perfectly since there is no information about $f$ 's behavior between the samples.
+  As an example of these ideas, consider a 1D function (which we will interchangeably refer to as a signal), given by $f (x)$, where we can evaluate $f (x prime)$ at any desired location $x prime$ in the function's domain. Each such $x prime$ is called a #emph[sample position];, and the value of $f (x prime)$ is the #emph[sample value];. @fig:1d-sample shows a set of samples of a smooth 1D function, along with a reconstructed signal $limits(f)^tilde.basic$ that approximates the original function $f$. In this example, $limits(f)^tilde.basic$ is a piecewise linear function that approximates $f$ by linearly interpolating neighboring sample values (readers already familiar with sampling theory will recognize this as reconstruction with a hat function). Because the only information available about $f$ comes from the sample values at the positions $x prime$, $limits(f)^tilde.basic$ is unlikely to match $f$ perfectly since there is no information about $f$ 's behavior between the samples.
 ][
   作为这些概念的一个例子，考虑一个一维函数（我们将其互换地称为信号），由 $f (x)$ 给出，我们可以在函数域中的任何期望位置 $x prime$ 处评估 $f (x prime)$。 每个这样的 $x prime$ 称为#emph[采样位置];，而 $f (x prime)$ 的值称为#emph[采样值];。@fig:1d-sample 显示了一组平滑一维函数的采样，以及一个重建信号 $limits(f)^tilde.basic$，它近似于原始函数 $f$。 在这个例子中， $limits(f)^tilde.basic$ 是一个分段线性函数，通过线性插值相邻的采样值来近似 $f$ （已经熟悉采样理论的读者会认识到这是使用帽函数进行重建）。 由于关于 $f$ 的唯一信息来自于位置 $x prime$ 处的采样值， $limits(f)^tilde.basic$ 不太可能完美匹配 $f$，因为没有关于采样之间 $f$ 行为的信息。
 ]
@@ -109,40 +109,40 @@
 $ cal(F) (omega) = integral_(- oo)^oo f (x) e^(- i 2 pi theta x) thin d x $ <fourier-analysis>
 #parec[
   (Recall that $e^(i x) = cos (x) + i sin (x)$, where $i = sqrt(- 1)$.) For simplicity, here we will consider only #emph[even] functions where $f (- x) = f (x)$, in which case the Fourier transform of $f$ has no imaginary terms. The new function $cal(F)$ is a function of #emph[frequency];, $theta$.#footnote[In this chapter, we will use the
-&omega; symbol to denote frequency.  Throughout the rest of the book,
-&omega; denotes normalized direction vectors.  This overloading of
-notation should never be confusing, given the contexts where these symbols
-are used.  Similarly, when we refer to a function's “spectrum” in this
-chapter, we are
-referring to its distribution of frequencies in its frequency space
-representation.] We will denote the Fourier transform operator by $cal(F)$, such that $cal(F) { f (x) } = cal(F) (omega)$. $cal(F)$ is clearly a linear operator—that is, $cal(F) { a f (x) } = a cal(F) { f (x) }$ for any scalar $a$, and $cal(F) { f (x) + g (x) } = cal(F) { f (x) } + cal(F) { g (x) } .$ The Fourier transform has a straightforward generalization to multidimensional functions where $omega$ is a corresponding multidimensional value, though we will generally stick to the 1D case for notational simplicity.
+    &omega; symbol to denote frequency.  Throughout the rest of the book,
+    &omega; denotes normalized direction vectors.  This overloading of
+    notation should never be confusing, given the contexts where these symbols
+    are used.  Similarly, when we refer to a function's “spectrum” in this
+    chapter, we are
+    referring to its distribution of frequencies in its frequency space
+    representation.] We will denote the Fourier transform operator by $cal(F)$, such that $cal(F) { f (x) } = cal(F) (omega)$. $cal(F)$ is clearly a linear operator—that is, $cal(F) { a f (x) } = a cal(F) { f (x) }$ for any scalar $a$, and $cal(F) { f (x) + g (x) } = cal(F) { f (x) } + cal(F) { g (x) } .$ The Fourier transform has a straightforward generalization to multidimensional functions where $omega$ is a corresponding multidimensional value, though we will generally stick to the 1D case for notational simplicity.
 ][
-  （回忆一下， $e^(i x) = cos (x) + i sin (x)$，其中 $i = sqrt(- 1)$。）为简单起见，这里我们只考虑#emph[偶];函数，其中 $f (- x) = f (x)$，在这种情况下， $f$ 的傅里叶变换没有虚数项。新函数 $cal(F)$ 是一个关于#emph[频率] $omega$ 的函数。#footnote[在本章中，我们将使用 $omega$ 符号表示频率。在本书的其余部分，$omega$ 表示归一化方向向量。鉴于这些符号所使用的上下文，这种符号重载不应引起混淆。同样，当我们在本章中提到函数的“频谱”时，我们指的是其在频率空间表示中的频率分布。] 我们将用 $cal(F)$ 表示傅里叶变换算子，使得 $cal(F){ f (x) } =  F (omega)$。显然， $cal(F)$ 是一个线性算子，即 $cal(F) { a f (x) } = a cal(F) { f (x) }$ 对于任意标量 $a$，且 $cal(F) { f (x) + g (x) } = cal(F) { f (x) } + cal(F) { g (x) }$。傅里叶变换可以简单地推广到多维函数，其中 $omega$ 是相应的多维值，但为了符号简单，我们通常坚持使用一维情况。
+  （回忆一下， $e^(i x) = cos (x) + i sin (x)$，其中 $i = sqrt(- 1)$。）为简单起见，这里我们只考虑#emph[偶];函数，其中 $f (- x) = f (x)$，在这种情况下， $f$ 的傅里叶变换没有虚数项。新函数 $cal(F)$ 是一个关于#emph[频率] $omega$ 的函数。#footnote[在本章中，我们将使用 $omega$ 符号表示频率。在本书的其余部分，$omega$ 表示归一化方向向量。鉴于这些符号所使用的上下文，这种符号重载应该不会引起混淆。同样，当我们在本章中提到函数的“频谱”时，我们指的是其在频率空间表示中的频率分布。] 我们将用 $cal(F)$ 表示傅里叶变换算子，使得 $cal(F){ f (x) } = F (omega)$。显然， $cal(F)$ 是一个线性算子，即 $cal(F) { a f (x) } = a cal(F) { f (x) }$ 对于任意标量 $a$，且 $cal(F) { f (x) + g (x) } = cal(F) { f (x) } + cal(F) { g (x) }$。傅里叶变换可以简单地推广到多维函数，其中 $omega$ 是相应的多维值，但为了符号简单，我们通常坚持使用一维情况。
 ]
 
 #parec[
   @eqt:fourier-analysis is called the #emph[Fourier analysis] equation, or sometimes just the #emph[Fourier transform];. We can also transform from the frequency domain back to the spatial domain using the #emph[Fourier
-synthesis] equation, or the #emph[inverse Fourier transform];:
+    synthesis] equation, or the #emph[inverse Fourier transform];:
 ][
   @eqt:fourier-analysis 被称为#emph[傅里叶分析];方程，或有时仅称为#emph[傅里叶变换];。我们也可以使用#emph[傅里叶合成];方程或#emph[逆傅里叶变换];从频域变换回空间域：
 ]
 
-$ f (x) = integral_(- oo)^oo F (theta) e^(i 2 pi theta x) thin d theta $ <fourier-synthesis>
+$ f (x) = integral_(- oo)^oo F (omega) e^(i 2 pi omega x) thin d omega $ <fourier-synthesis>
 
 
 #parec[
   @tbl:fourier-pairs shows a number of important functions and their frequency space representations. A number of these functions are based on the Dirac delta distribution, which is defined such that $integral delta (x) thin d x = 1$, and for all $x eq.not 0$, $delta (x) = 0$. An important consequence of these properties is that
 ][
-  @tbl:fourier-pairs-zh 显示了一些重要函数及其频率空间表示。这些函数中的一些基于狄拉克δ分布，其定义为 $integral delta (x) thin d x = 1$，且对于所有 $x eq.not 0$， $delta (x) = 0$。这些性质导致的一个重要结果是
+  @tbl:fourier-pairs-zh 显示了一些重要函数及其频率空间表示。这些函数中的一些基于狄拉克$delta$分布，其定义为 $integral delta (x) thin d x = 1$，且对于所有 $x eq.not 0$， $delta (x) = 0$。这些性质导致的一个重要结果是
 ]
 
-$ integral f (x) delta (x) thin d x = f (0) $
+$ integral f (x) delta (x) thin d x = f (0) . $
 
 
 #parec[
   The delta distribution cannot be expressed as a standard mathematical function, but instead is generally thought of as the limit of a unit area box function centered at the origin with width approaching 0.
 ][
-  $delta$ 分布不能表示为标准数学函数，而通常被认为是一个单位面积盒函数在原点处，宽度趋近于0的极限。
+  $delta$ 分布不能表示为标准数学函数，而通常被认为是一个具有单位面积、中心在原点处的、宽度趋近于0的盒函数。
 ]
 
 #parec[
@@ -153,25 +153,25 @@ $ integral f (x) delta (x) thin d x = f (0) $
   )[
     #figure(
       align(left)[#table(
-          stroke: (x: none, y: .1pt),
-          columns: (50%, 50%),
-          align: (auto, auto),
-          fill: (_, y) => if y == 0 { gray.lighten(90%) } else { gray.lighten(95%) },
-          table.header([Spatial Domain], [Frequency Space Representation]),
-          table.hline(stroke: .5pt),
-          [Box: $f (x) = 1$ if $lr(|x|) < 1 \/ 2$, $0$ otherwise],
-          [Sinc: $f (theta) = upright("sinc") (theta) = sin (pi theta) \/ (pi theta)$],
+        stroke: (x: none, y: .1pt),
+        columns: (50%, 50%),
+        align: (auto, auto),
+        fill: (_, y) => if y == 0 { gray.lighten(90%) } else { gray.lighten(95%) },
+        table.header([Spatial Domain], [Frequency Space Representation]),
+        table.hline(stroke: .5pt),
+        [Box: $f (x) = 1$ if $lr(|x|) < 1 \/ 2$, $0$ otherwise],
+        [Sinc: $f (theta) = upright("sinc") (theta) = sin (pi theta) \/ (pi theta)$],
 
-          [Gaussian: $f (x) = e^(- pi x^2)$], [Gaussian: $f (theta) = e^(- pi theta^2)$],
-          [Constant: $f (x) = 1$], [Delta: $f (theta) = delta (theta)$],
+        [Gaussian: $f (x) = e^(- pi x^2)$], [Gaussian: $f (theta) = e^(- pi theta^2)$],
+        [Constant: $f (x) = 1$], [Delta: $f (theta) = delta (theta)$],
 
-          [Sinusoid: $f (x) = cos (x)$],
-          [Translated delta:\ $f (theta) = pi (delta (1 - 2 pi theta) + delta (1 + 2 pi theta))$],
+        [Sinusoid: $f (x) = cos (x)$],
+        [Translated delta:\ $f (theta) = pi (delta (1 - 2 pi theta) + delta (1 + 2 pi theta))$],
 
-          [Shah: $f (x) = upright("III")_T (x) = T sum_i delta (x - T_i)$],
-          [Shah:\ $f (theta) = upright("III")_(1 \/ T) (theta) = (1 \/ T) sum_i delta (theta - i \/ T)$],
-          table.hline(stroke: 0pt),
-        )],
+        [Shah: $f (x) = upright("III")_T (x) = T sum_i delta (x - T_i)$],
+        [Shah:\ $f (theta) = upright("III")_(1 \/ T) (theta) = (1 \/ T) sum_i delta (theta - i \/ T)$],
+        table.hline(stroke: 0pt),
+      )],
       kind: table,
       caption: [
         Fourier Pairs. Functions in the spatial domain and their frequency space representations. Because of the symmetry properties of the Fourier transform, if the left column is instead considered to be frequency space, then the right column is the spatial equivalent of those functions as well.
@@ -186,25 +186,25 @@ $ integral f (x) delta (x) thin d x = f (0) $
   )[
     #figure(
       align(left)[#table(
-          stroke: (x: none, y: .1pt),
-          columns: (50%, 50%),
-          align: (auto, auto),
-          fill: (_, y) => if y == 0 { gray.lighten(90%) } else { gray.lighten(95%) },
-          table.header([空域（Spatial Domain）], [频域表示（Frequency Space Representation）]),
-          table.hline(stroke: .5pt),
-          [Box: $f (x) = 1$ if $lr(|x|) < 1 \/ 2$, $0$ otherwise],
-          [Sinc: $f (theta) = upright("sinc") (theta) = sin (pi theta) \/ (pi theta)$],
+        stroke: (x: none, y: .1pt),
+        columns: (50%, 50%),
+        align: (auto, auto),
+        fill: (_, y) => if y == 0 { gray.lighten(90%) } else { gray.lighten(95%) },
+        table.header([空域（Spatial Domain）], [频域表示（Frequency Space Representation）]),
+        table.hline(stroke: .5pt),
+        [Box: $f (x) = 1$ if $lr(|x|) < 1 \/ 2$, $0$ otherwise],
+        [Sinc: $f (theta) = upright("sinc") (theta) = sin (pi theta) \/ (pi theta)$],
 
-          [Gaussian: $f (x) = e^(- pi x^2)$], [Gaussian: $f (theta) = e^(- pi theta^2)$],
-          [Constant: $f (x) = 1$], [Delta: $f (theta) = delta (theta)$],
+        [Gaussian: $f (x) = e^(- pi x^2)$], [Gaussian: $f (theta) = e^(- pi theta^2)$],
+        [Constant: $f (x) = 1$], [Delta: $f (theta) = delta (theta)$],
 
-          [Sinusoid: $f (x) = cos (x)$],
-          [Translated delta:\ $f (theta) = pi (delta (1 - 2 pi theta) + delta (1 + 2 pi theta))$],
+        [Sinusoid: $f (x) = cos (x)$],
+        [Translated delta:\ $f (theta) = pi (delta (1 - 2 pi theta) + delta (1 + 2 pi theta))$],
 
-          [Shah: $f (x) = upright("III")_T (x) = T sum_i delta (x - T_i)$],
-          [Shah:\ $f (theta) = upright("III")_(1 \/ T) (theta) = (1 \/ T) sum_i delta (theta - i \/ T)$],
-          table.hline(stroke: 0pt),
-        )],
+        [Shah: $f (x) = upright("III")_T (x) = T sum_i delta (x - T_i)$],
+        [Shah:\ $f (theta) = upright("III")_(1 \/ T) (theta) = (1 \/ T) sum_i delta (theta - i \/ T)$],
+        table.hline(stroke: 0pt),
+      )],
       kind: table,
       caption: [
         傅里叶对。空间域中的函数及其频率空间表示。由于傅里叶变换的对称性，如果左列被视为频率空间，则右列也是这些函数的空间等价物。
@@ -221,7 +221,7 @@ $ integral f (x) delta (x) thin d x = f (0) $
 #parec[
   Using frequency space analysis, we can now formally investigate the properties of sampling. Recall that the sampling process requires us to choose a set of equally spaced sample positions and compute the function's value at those positions. Formally, this corresponds to multiplying the function by a "shah," or "impulse train," function, an infinite sum of equally spaced delta functions. The shah $upright("III")_T (x)$ is defined as
 ][
-  利用频率空间分析，我们现在可以正式研究采样的性质。回忆一下，采样过程需要我们选择一组等间距的采样位置并计算函数在这些位置的值。正式地，这对应于将函数乘以一个“Shah函数”或“脉冲列”函数，即一个无限和的等间距δ函数。Shah函数 $upright("III")_T (x)$ 定义为
+  利用频率空间分析，我们现在可以正式研究采样的性质。回忆一下，采样过程需要我们选择一组等间距的采样位置并计算函数在这些位置的值。正式地，这对应于将函数乘以一个“Shah函数”或“脉冲列”函数，即一个无穷多个等间距$delta$函数的和。Shah函数 $upright("III")_T (x)$ 定义为
 ]
 
 
@@ -242,7 +242,7 @@ $ upright("III")_T (x) f (x) = T sum_i delta (x - i T) f (i T) . $
       Formalizing the Sampling Process. (a) The function $f (x)$ is multiplied by (b) the shah function $upright("III")_T (x)$, giving (c) an infinite sequence of scaled delta functions that represent its value at
       each sample point.
     ][
-      采样过程的形式化描述。 (a) 函数 $f (x)$ 被 (b) 沙赫函数 $upright("III")_T (x)$ 乘以，得到 (c) 表示其在每个采样点值的缩放的δ函数的无限序列。
+      采样过程的形式化描述。 (a) 函数 $f (x)$ 被 (b) 沙赫函数 $upright("III")_T (x)$ 乘以，得到 (c) 表示其在每个采样点值的缩放的$delta$函数的无限序列。
     ]
   ],
 )<formal-sampling>
@@ -250,7 +250,7 @@ $ upright("III")_T (x) f (x) = T sum_i delta (x - i T) f (i T) . $
 #parec[
   These sample values can be used to define a reconstructed function $limits(f)^tilde.basic$ by choosing a reconstruction filter function $r(x)$ and computing the _convolution_.
 ][
-
+  这些样本值可以用来定义一个重构函数 $limits(f)^tilde.basic$，方法是选择一个重建滤波器函数 $r(x)$ 并计算它们的_卷积_。
 ]
 $ (upright("III")_T (x) f (x)) times.circle r (x) , $
 #parec[
@@ -264,7 +264,7 @@ $ f (x) times.circle g (x) = integral_(- oo)^oo f (x prime) g (x - x prime) thin
 #parec[
   For reconstruction, convolution gives a weighted sum of scaled instances of the reconstruction filter centered at the sample points:
 ][
-
+  对于重建而言，卷积得到的是以样本点为中心、经过缩放的重建滤波器实例的_加权和_：
 ]
 
 $ tilde(f) (x) = T sum_(i = - oo)^oo f (i T) r (x - i T) . $
@@ -320,9 +320,9 @@ $ cal(F) {f (x) times.circle g (x)} = F (omega) G (omega) . $<eq-fourier-convolu
 ]
 
 #parec[
-  We also know the spectrum of the shah function $cal(I)_T (x)$ from Table 8.1; the Fourier transform of a shah function with period $T$ is another shah function with period $1 \/ T$. This reciprocal relationship between periods is important to keep in mind: it means that if the samples are farther apart in the spatial domain, they are closer together in the frequency domain.
+  We also know the spectrum of the shah function $"III"_T (x)$ from Table 8.1; the Fourier transform of a shah function with period $T$ is another shah function with period $1 \/ T$. This reciprocal relationship between periods is important to keep in mind: it means that if the samples are farther apart in the spatial domain, they are closer together in the frequency domain.
 ][
-  我们还知道来自 @tbl:fourier-pairs-zh 的shah函数 $cal(I)_T (x)$ 的频谱；周期为 $T$ 的shah函数的傅里叶变换是周期为 $1 \/ T$ 的另一个shah函数。这个周期之间的倒数关系很重要：这意味着如果样本在空间域中更远，它们在频域中就更近。
+  我们还知道来自@tbl:fourier-pairs-zh 的shah函数 $"III"_T (x)$ 的频谱；周期为 $T$ 的shah函数的傅里叶变换是周期为 $1 \/ T$ 的另一个shah函数。这个周期之间的倒数关系很重要：这意味着如果样本在空间域中更远，它们在频域中就更近。
 ]
 
 #parec[
@@ -384,7 +384,7 @@ $ Pi_T (x) = cases(delim: "{", 1 \/ T comma & upright("if ") lr(|x|) < T \/ 2, 0
   这个乘法步骤对应于在空间域中与重建滤波器的卷积。这是理论上的理想采样和重建过程。总结如下：
 ]
 
-$ tilde(F) = (F (omega) times.circle I_T (omega)) Pi_(1 / T) (omega) $
+$ tilde(F) = (F (omega) times.circle "III"_(1\/T) (omega)) Pi_(1 \/ T) (omega) $
 
 
 #parec[
@@ -439,7 +439,7 @@ $ tilde(f) (x) = sum_(i = - oo)^oo upright("sinc") (x - T i) f (T i) . $<ideal-r
 #parec[
   Because the copies are added together, the resulting spectrum no longer looks like many copies of the original (@fig:aliased-spectrum). When this new spectrum is multiplied by a box function, the result is a spectrum that is similar but not equal to the original $F (omega)$ : high-frequency details in the original signal leak into lower-frequency regions of the spectrum of the reconstructed signal. These new low-frequency artifacts are called #emph[aliases] (because high frequencies are "masquerading" as low frequencies), and the resulting signal is said to be #emph[aliased];. It is sometimes useful to distinguish between artifacts due to sampling and those due to reconstruction; when we wish to be precise we will call sampling artifacts #emph[prealiasing] and reconstruction artifacts #emph[postaliasing];. Any attempt to fix these errors is broadly classified as #emph[antialiasing];.
 ][
-  由于副本是相加的，结果频谱不再像原始的许多副本（@fig:aliased-spectrum）。当这个新频谱与盒函数相乘时，结果是一个类似但不等于原始 $F (omega)$ 的频谱：原始信号中的高频细节泄漏到重建信号频谱的低频区域。这些新的低频伪影称为#emph[混叠];（因为高频“伪装”成低频），结果信号被称为#emph[混叠];。 有时区分由于采样和由于重建引起的伪影是有用的；当我们希望精确时，我们将采样伪影称为#emph[预混叠];（采样引起的伪影），重建伪影称为#emph[后混叠];（重建引起的伪影）。任何修正这些错误的尝试都被广泛归类为#emph[抗混叠];（减少混叠伪影的技术）。
+  由于副本是相加的，结果频谱不再像原始的许多副本（@fig:aliased-spectrum）。当这个新频谱与盒函数相乘时，结果是一个类似但不等于原始 $F (omega)$ 的频谱：原始信号中的高频细节泄漏到重建信号频谱的低频区域。这些新的低频伪影称为#emph[混叠（aliases）];（因为高频“伪装”成低频），结果信号被称为#emph[混叠（aliased）];。 有时区分由于采样和由于重建引起的伪影是有用的；当我们希望精确时，我们将采样伪影称为#emph[预混叠];（采样引起的伪影），重建伪影称为#emph[后混叠];（重建引起的伪影）。任何修正这些错误的尝试都被广泛归类为#emph[抗混叠（postaliasing）];（减少混叠伪影的技术）。
 ]
 
 #figure(
@@ -498,7 +498,7 @@ $ tilde(f) (x) = sum_(i = - oo)^oo upright("sinc") (x - T i) f (T i) . $<ideal-r
 #parec[
   Unfortunately, few of the interesting functions in computer graphics are band limited. In particular, any function containing a discontinuity cannot be band limited, and therefore we cannot perfectly sample and reconstruct it. This makes sense because the function's discontinuity will always fall between two samples and the samples provide no information about the location of the discontinuity. Thus, it is necessary to apply different methods besides just increasing the sampling rate in order to counteract the error that aliasing can introduce to the renderer's results.
 ][
-  不幸的是，计算机图形学中很少有有趣的函数是带限的。特别是，任何包含不连续性（函数中的断点）的函数都不能是带限的，因此我们不能完美地采样和重建它。这是有道理的，因为函数的不连续性总是落在两个样本之间，样本不提供关于不连续位置的信息。因此，除了仅仅增加采样率外，还必须应用不同的方法来抵消混叠可能对渲染器结果引入的误差。
+  不幸的是，计算机图形学中很少有有趣的函数是带限的。特别是，任何包含不连续性（函数中的断点）的函数都不是带限的，因此我们不能完美地采样和重建它。这是有道理的，因为函数的不连续性总是落在两个样本之间，样本不提供关于不连续位置的信息。因此，除了仅仅增加采样率外，还必须应用不同的方法来抵消混叠可能对渲染器结果引入的误差。
 ]
 
 
@@ -523,30 +523,28 @@ $ tilde(f) (x) = sum_(i = - oo)^oo upright("sinc") (x - T i) f (T i) . $<ideal-r
 ]
 
 #parec[
-  A related issue is that the pixels in an image are naturally defined at discrete integer $(x , y)$ coordinates on a pixel grid, but it will often be useful to consider an image as a continuous function of $(x , y)$ positions. The natural way to map between these two domains is to round continuous coordinates to the nearest discrete coordinate; doing so is appealing since it maps continuous coordinates that happen to have the same value as discrete coordinates to that discrete coordinate. However, the result is that given a set of discrete coordinates spanning a range $[x_0 , x_1]$, the set of continuous coordinates that covers that range is $\[ x_0 - 1 / 2 , x_1 + 1 / 2 \)$. Thus, any code that generates continuous sample positions for a given discrete pixel range is littered with $1 / 2$ offsets. It is easy to forget some of these, leading to subtle errors.
+  A related issue is that the pixels in an image are naturally defined at discrete integer $(x , y)$ coordinates on a pixel grid, but it will often be useful to consider an image as a continuous function of $(x , y)$ positions. The natural way to map between these two domains is to round continuous coordinates to the nearest discrete coordinate; doing so is appealing since it maps continuous coordinates that happen to have the same value as discrete coordinates to that discrete coordinate. However, the result is that given a set of discrete coordinates spanning a range $[x_0 , x_1]$, the set of continuous coordinates that covers that range is $\[ x_0 - 1 \/ 2 , x_1 + 1 \/ 2 \)$. Thus, any code that generates continuous sample positions for a given discrete pixel range is littered with $1 \/ 2$ offsets. It is easy to forget some of these, leading to subtle errors.
 ][
   一个相关的问题是，图像中的像素自然地在像素网格上的离散整数 $(x , y)$ 坐标处定义，但通常将图像视为 $(x , y)$ 位置的连续函数是有用的。 在这两个域之间映射的自然方法是将连续坐标舍入到最近的离散坐标；这样做很有吸引力，因为它将恰好与离散坐标具有相同值的连续坐标映射到该离散坐标。 然而，结果是给定一个范围是 $[x_0 , x_1]$ 的离散坐标集，覆盖该范围的连续坐标集是 $\[ x_0 - 1 \/ 2 , x_1 + 1 \/ 2 \)$。 因此，任何为给定离散像素范围生成连续样本位置的代码都充满了 $1 \/ 2$ 的偏移。 很容易忘记其中的一些，导致微妙的错误。
 ]
 
 #parec[
   A better convention is to truncate continuous coordinates $c$ to discrete coordinates $d$ by
-
-  $ d = ⌊c⌋ , $
 ][
   一个更好的惯例是通过
-
-  $ d = ⌊c⌋ , $
-
-  将连续坐标 $c$ 截断为离散坐标 $d$，并通过
 ]
+
+$ d = ⌊c⌋ , $
 
 #parec[
   and convert from discrete to continuous by
-
-  $ c = d + 1 / 2 . $
 ][
-  $ c = d + 1 / 2 . $
 
+  将连续坐标 $c$ 截断为离散坐标 $d$，并通过
+]
+$ c = d + 1 / 2 . $
+
+#parec[][
   从离散转换为连续。
 ]
 
@@ -611,7 +609,7 @@ $ f (x , y , t , u , v , i_1 , i_2 , dots.h) arrow.r L . $
 
 #parec[
   Geometry is one of the most common causes of aliasing in rendered images. When projected onto the image plane, an object's boundary introduces a step function—the image function's value instantaneously jumps from one value to another.Not only do step functions have infinite frequency content as mentioned earlier, but, even worse, the perfect reconstruction filter causes artifacts when applied to aliased samples: ringing artifacts appear in the reconstructed function, an effect known as the #emph[Gibbs
-phenomenon];. @fig:sinc-gibbs-ringing shows an example of this effect for a 1D function.Choosing an effective reconstruction filter in the face of aliasing requires a mix of science, artistry, and personal taste, as we will see later in this chapter.
+    phenomenon];. @fig:sinc-gibbs-ringing shows an example of this effect for a 1D function.Choosing an effective reconstruction filter in the face of aliasing requires a mix of science, artistry, and personal taste, as we will see later in this chapter.
 ][
   几何是渲染图像中混叠最常见的原因之一。 当投影到图像平面上时，物体的边界引入了一个阶跃函数——图像函数的值瞬间从一个值跳到另一个值。 正如前面提到的，阶跃函数具有无限的频率内容，更糟糕的是，完美的重建滤波器在应用于混叠样本时会导致伪影：重建函数中出现振铃伪影，这种效应称为#emph[吉布斯现象];。 @fig:sinc-gibbs-ringing 显示了这种效应的一个一维函数示例。 在混叠的情况下选择有效的重建滤波器需要科学、艺术和个人品味的混合，如我们将在本章后面看到的。
 ]
@@ -638,7 +636,7 @@ phenomenon];. @fig:sinc-gibbs-ringing shows an example of this effect for a 1D f
 
 #parec[
   One approach that has been applied to combat aliasing is #emph[adaptive
-supersampling:] if we can identify the regions of the signal with frequencies higher than the Nyquist limit, we can take additional samples in those regions without needing to incur the computational expense of increasing the sampling frequency everywhere. It can be difficult to get this approach to work well in practice, because finding all the places where supersampling is needed is difficult. Most techniques for doing so are based on examining adjacent sample values and finding places where there is a significant change in value between the two; the assumption is that the signal has high frequencies in that region.
+    supersampling:] if we can identify the regions of the signal with frequencies higher than the Nyquist limit, we can take additional samples in those regions without needing to incur the computational expense of increasing the sampling frequency everywhere. It can be difficult to get this approach to work well in practice, because finding all the places where supersampling is needed is difficult. Most techniques for doing so are based on examining adjacent sample values and finding places where there is a significant change in value between the two; the assumption is that the signal has high frequencies in that region.
 ][
   一种用于对抗混叠的方法是#emph[自适应超采样];：如果我们能够识别出信号中频率高于奈奎斯特极限的区域，我们可以在这些区域进行额外采样，而不需要在所有区域增加采样频率，从而避免计算开销。实际上，要使这种方法有效是很困难的，因为找到所有需要超采样的地方很困难。大多数技术通过检查相邻样本值，寻找两者之间显著变化的地方；假设信号在该区域具有高频率。
 ]
@@ -686,23 +684,22 @@ $ f (x) times.circle upright("sinc") (2 omega_s x) $.
 === Spectral Analysis of Sampling Patterns
 <spectral-analysis-of-sampling-patterns>
 #parec[
-  Given a fixed sampling rate, the remaining option to improve image quality is to consider how the distribution of sample positions affects the result. We can understand the behavior of deterministic sampling patterns like the shah function in frequency space by considering the convolution of its frequency space representation with a function's frequency space representation.However, we will find it worthwhile to consider #emph[stochastic
-sampling] methods where the sample positions are specified by one or more random variables. In that case, we will distinguish between the statistical properties of all the sets of samples that the algorithm may generate and a single set of points generated by it (which we will call a #emph[sample pattern];); the former gives much more insight about an algorithm's behavior.
+  Given a fixed sampling rate, the remaining option to improve image quality is to consider how the distribution of sample positions affects the result. We can understand the behavior of deterministic sampling patterns like the shah function in frequency space by considering the convolution of its frequency space representation with a function's frequency space representation.However, we will find it worthwhile to consider #emph[stochastic sampling] methods where the sample positions are specified by one or more random variables. In that case, we will distinguish between the statistical properties of all the sets of samples that the algorithm may generate and a single set of points generated by it (which we will call a #emph[sample pattern];); the former gives much more insight about an algorithm's behavior.
 ][
-  给定一个固定的采样率，改善图像质量的剩余选项是考虑样本位置的分布如何影响结果。我们可以通过考虑其频率空间表示与函数频率空间表示的卷积来理解像shah函数这样的确定性采样模式在频率空间中的行为。 然而，我们会发现值得考虑#emph[随机采样];方法，其中样本位置由一个或多个随机变量指定。在这种情况下，我们将区分算法可能生成的所有样本集的统计特性和由其生成的单个样本集（我们称之为#emph[样本模式];）；前者提供了更多关于算法行为的见解。
+  给定一个固定的采样率，改善图像质量的剩余选项是考虑样本位置的分布如何影响结果。我们可以通过考虑其频率空间表示与函数频率空间表示的卷积来理解像shah函数这样的确定性采样模式在频率空间中的行为。 然而，我们会发现值得考虑#emph[随机采样（stochastic sampling）];方法，其中样本位置由一个或多个随机变量指定。在这种情况下，我们将区分算法可能生成的所有样本集的统计特性和由其生成的单个样本集（我们称之为#emph[采样模式（sample pattern）];）；前者提供了更多关于算法行为的见解。
 ]
 
 #parec[
   A concept known as the #emph[power spectral density] (PSD) is helpful for this task. For a function $f (x)$ that is represented by $F (omega)$ in the Fourier basis, the PSD is defined as:
 ][
-  一个称为#emph[功率谱密度];（PSD）的概念对此任务很有帮助。对于在傅里叶基中表示为 $F (omega)$ 的函数 $f (x)$，PSD定义为：
+  #emph[功率谱密度];（PSD）的概念对此任务很有帮助。对于在傅里叶基中表示为 $F (omega)$ 的函数 $f (x)$，PSD定义为：
 ]
-$ cal(P)_f (omega) = F (omega) overline(F (omega)) , $
+$ "P"_f (omega) = F (omega) overline(F (omega)) , $
 
 #parec[
-  where $overline(F (omega))$ is the complex conjugate of $F (omega)$. (Under the assumption of an even function $f (x)$, $cal(P)_f (omega) = F (omega)^2$.) Because the PSD discards nformation about the phase of the signal, the original ourier coefficients cannot be recovered from it.
+  where $overline(F (omega))$ is the complex conjugate of $F (omega)$. (Under the assumption of an even function $f (x)$, $"P"_f (omega) = F (omega)^2$.) Because the PSD discards nformation about the phase of the signal, the original ourier coefficients cannot be recovered from it.
 ][
-  其中 $overline(F (omega))$ 是 $F (omega)$ 的复共轭。（在假设 $f (x)$ 为偶函数的情况下， $cal(P)_f (omega) = F (omega)^2$。）由于PSD丢弃了信号相位的信息，无法从中恢复原始傅里叶系数。
+  其中 $overline(F (omega))$ 是 $F (omega)$ 的复共轭。（在假设 $f (x)$ 为偶函数的情况下， $"P"_f (omega) = F (omega)^2$。）由于PSD丢弃了信号相位的信息，无法从中恢复原始傅里叶系数。
 ]
 
 #parec[
@@ -710,30 +707,24 @@ $ cal(P)_f (omega) = F (omega) overline(F (omega)) , $
 ][
   PSD的一个有用特性是，空间域中两个函数 $f$ 和 $g$ 的乘积的PSD由其在傅里叶域中的PSD卷积给出：
 ]
-$ cal(P)_(f g) (omega) = cal(P)_f (omega) times.circle cal(P)_g (omega) . $
+$ "P"_(f g) (omega) = "P"_f (omega) times.circle "P"_g (omega) . $
 
 #parec[
-  This property follows directly from Equation 8.3. Therefore, if we have a point-sampling technique represented by a function $s (x)$ that is defined as a sum of Dirac delta distributions (as the shah function was), then the frequency content from sampling a function $f$ is given by the convolution of $cal(P)_f$ and $cal(P)_s$.
+  This property follows directly from @eqt:fourier-convolution-first. Therefore, if we have a point-sampling technique represented by a function $s (x)$ that is defined as a sum of Dirac delta distributions (as the shah function was), then the frequency content from sampling a function $f$ is given by the convolution of $"P"_f$ and $"P"_s$.
 ][
-  该特性直接来自方程8.3。因此，如果我们有一个由Dirac delta分布之和定义的点采样技术表示为函数 $s (x)$ （如shah函数），那么采样函数 $f$ 的频率内容由 $cal(P)_f$ 和 $cal(P)_s$ 的卷积给出。
+  该特性直接来自@eqt:fourier-convolution-first。因此，如果我们有一个由狄拉克$delta$分布之和定义的点采样技术表示为函数 $s (x)$ （如shah函数），那么采样函数 $f$ 的频率内容由 $"P"_f$ 和 $"P"_s$ 的卷积给出。
 ]
 
 #parec[
-  In some cases, the PSD of a sampling pattern can be derived analytically: doing so is easy for uniform random sampling, for example. For stochastic sampling patterns without an analytic PSD, the PSD can be computed numerically by averaging over random instances of the sample points. Because each sample point is represented as a Dirac delta distribution, their Fourier transform ends up as a sum over the sample points.#footnote[The  `pspec` program, found in the file
- `cmd/pspec.cpp` in the  `pbrt` distribution, efficiently computes
-high-quality visualizations of various sampling patterns' power spectra,
-using the GPU when one is available.]
+  In some cases, the PSD of a sampling pattern can be derived analytically: doing so is easy for uniform random sampling, for example. For stochastic sampling patterns without an analytic PSD, the PSD can be computed numerically by averaging over random instances of the sample points. Because each sample point is represented as a Dirac delta distribution, their Fourier transform ends up as a sum over the sample points.#footnote[The  `pspec` program, found in the file `cmd/pspec.cpp` in the  `pbrt` distribution, efficiently computes high-quality visualizations of various sampling patterns' power spectra, using the GPU when one is available.]
 ][
-  在某些情况下，采样模式的PSD可以通过分析推导出来：例如，对于均匀随机采样来说，这很容易。对于没有解析PSD的随机采样模式，可以通过对样本点的随机实例进行平均来数值计算PSD。由于每个样本点表示为Dirac delta分布，其傅里叶变换最终是样本点的总和。#footnote[The  `pspec` program, found in the file
- `cmd/pspec.cpp` in the  `pbrt` distribution, efficiently computes
-high-quality visualizations of various sampling patterns' power spectra,
-using the GPU when one is available.]
+  在某些情况下，采样模式的PSD可以通过分析推导出来：例如，对于均匀随机采样来说，这很容易。对于没有解析PSD的随机采样模式，可以通过对样本点的随机实例进行平均来数值计算PSD。由于每个样本点表示为狄拉克$delta$分布，其傅里叶变换最终是样本点的总和。#footnote[`pspec` 程序位于 `pbrt` 分发版的 `cmd/pspec.cpp` 文件中，它能高效地计算各种采样模式的功率谱的高质量可视化效果，并在可用时利用 GPU 进行计算。]
 ]
 
 #parec[
-  The ideal sampling pattern's PSD would have a single delta distribution spike at the origin and be zero everywhere else: in that case, sampling would exactly replicate $cal(P)_f$. Unfortunately, such a sampling pattern would require an infinite sampling density. (This can be understood by considering the inverse Fourier transform of $S (omega) = delta (omega)$, which is a constant function.)
+  The ideal sampling pattern's PSD would have a single delta distribution spike at the origin and be zero everywhere else: in that case, sampling would exactly replicate $"P"_f$. Unfortunately, such a sampling pattern would require an infinite sampling density. (This can be understood by considering the inverse Fourier transform of $S (omega) = delta (omega)$, which is a constant function.)
 ][
-  理想采样模式的PSD在原点会有一个单一的delta分布尖峰，其他地方为零：在这种情况下，采样将精确复制 $cal(P)_f$。不幸的是，这样的采样模式需要无限的采样密度。（这可以通过考虑 $S (omega) = delta (omega)$ 的逆傅里叶变换来理解，这是一个常数函数。）
+  理想采样模式的PSD在原点会有一个单一的$delta$分布尖峰，其他地方为零：在这种情况下，采样将精确复制 $"P"_f$。不幸的是，这样的采样模式需要无限的采样密度。（这可以通过考虑 $S (omega) = delta (omega)$ 的逆傅里叶变换来理解，这是一个常数函数。）
 ]
 
 #parec[
@@ -746,13 +737,9 @@ using the GPU when one is available.]
 $ s_T (x) = sigma sum_(i = - oo)^oo delta (x - (i + 1 / 2 - xi) T) $<jittered-sampling-func>
 
 #parec[
-  It is possible to derive the expectation of the analytic PSD of this sampling strategy,#footnote[In the following, when we speak of the PSD of a
-stochastic sampling method, we mean the expectation of its PSD, but we
-will often omit that qualifier.]
+  It is possible to derive the expectation of the analytic PSD of this sampling strategy,#footnote[In the following, when we speak of the PSD of a stochastic sampling method, we mean the expectation of its PSD, but we will often omit that qualifier.]
 ][
-  可以推导出这种采样策略的解析功率谱密度的期望值，#footnote[In the following, when we speak of the PSD of a
-stochastic sampling method, we mean the expectation of its PSD, but we
-will often omit that qualifier.]
+  可以推导出这种采样策略的解析功率谱密度的期望值，#footnote[在下文中，当我们谈及随机采样方法的 `PSD` 时，我们指的是其 `PSD` 的期望（值），但我们通常会省略这个限定语。]
 ]
 
 $ P_s (omega) = 1 - sin^2 (frac(T omega, 2)) + delta (omega) $<jittered-psd>
@@ -781,10 +768,10 @@ $ P_s (omega) = 1 - sin^2 (frac(T omega, 2)) + delta (omega) $<jittered-psd>
 #figure(
   image("../pbr-book-website/4ed/Sampling_and_Reconstruction/pha08f14.svg"),
   caption: [
-    #ez_caption[ *The Effect of Jittered Sampling on Aliasing. *(a) The power spectral density of a function that cannot be perfectly reconstructed with regularly spaced samples at a rate $T=1$. (b) The PSD from sampling the function with a shah function with $T=1$ (red), which is given by the convolution of their PSDs. The original function is shown in blue and the extent of the ideal reconstruction filter is shown with dashed lines. (c) The PSD from jittered sampling (red), which is given by convolving $cal(P)_f$ with @eqt:jittered-psd. (The original function is again in blue and the perfect reconstruction filter is indicated by the dashed box.)][*抖动采样对混叠的影响。*
+    #ez_caption[ *The Effect of Jittered Sampling on Aliasing. *(a) The power spectral density of a function that cannot be perfectly reconstructed with regularly spaced samples at a rate $T=1$. (b) The PSD from sampling the function with a shah function with $T=1$ (red), which is given by the convolution of their PSDs. The original function is shown in blue and the extent of the ideal reconstruction filter is shown with dashed lines. (c) The PSD from jittered sampling (red), which is given by convolving $"P"_f$ with @eqt:jittered-psd. (The original function is again in blue and the perfect reconstruction filter is indicated by the dashed box.)][*抖动采样对混叠的影响。*
       (a) 在采样率 $T=1$ 下，无法通过规则间隔采样完美重建的函数的功率谱密度。
-      (b) 使用采样间隔 $T=1$ 的沙函数对该函数进行采样得到的功率谱密度（红色），该结果由它们的功率谱密度卷积得到。原始函数以蓝色显示，理想重建滤波器的范围以虚线表示。
-      (c) 通过抖动采样得到的功率谱密度（红色），该结果由 $cal(P)_f$ 与 @eqt:jittered-psd 卷积得到。（原始函数再次以蓝色显示，理想重建滤波器由虚线框表示。）]
+      (b) 使用采样间隔 $T=1$ 的shah函数对该函数进行采样得到的功率谱密度（红色），该结果由它们的功率谱密度卷积得到。原始函数以蓝色显示，理想重建滤波器的范围以虚线表示。
+      (c) 通过抖动采样得到的功率谱密度（红色），该结果由 $"P"_f$ 与 @eqt:jittered-psd 卷积得到。（原始函数再次以蓝色显示，理想重建滤波器由虚线框表示。）]
   ],
 )<jittered-sampling-and-aliasing>
 

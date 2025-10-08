@@ -1,4 +1,4 @@
-#import "../template.typ": parec
+#import "../template.typ": ez_caption, parec
 
 == Halton Sampler #emoji.warning
 <halton-sampler>
@@ -17,43 +17,39 @@
 === Hammersley and Halton Points
 <hammersley-and-halton-points>
 #parec[
-  Hammersley and Halton points are two closely related types of low-discrepancy points that are constructed using the #emph[radical
-inverse];. The radical inverse is based on the fact that a positive integer value $a$ can be expressed in a base $b$ with a sequence of digits $d_m (a) , thin dots.h , thin d_2 (a) , thin d_1 (a)$ uniquely determined by
-
-  $ a = sum_(i = 1)^m d_i (a) b^(i - 1) , $
-
-  where all digits $d_i (a)$ are between 0 and $b - 1$.
+  Hammersley and Halton points are two closely related types of low-discrepancy points that are constructed using the #emph[radical inverse];. The radical inverse is based on the fact that a positive integer value $a$ can be expressed in a base $b$ with a sequence of digits $d_m (a) , thin dots.h , thin d_2 (a) , thin d_1 (a)$ uniquely determined by
 ][
   Hammersley和Halton点是两种密切相关的低差异性点类型，它们是使用#emph[基数反演];构造的。基数反演基于这样一个事实：一个正整数值 $a$ 可以在基数 $b$ 中表示为一系列数字 $d_m (a) , thin dots.h , thin d_2 (a) , thin d_1 (a)$，其唯一确定如下：
 
-  $ a = sum_(i = 1)^m d_i (a) b^(i - 1) , $
+]
+$ a = sum_(i = 1)^m d_i (a) b^(i - 1) , $<rad-inv-num-val>
 
+#parec[
+  where all digits $d_i (a)$ are between 0 and $b - 1$.
+][
   其中所有数字 $d_i (a)$ 都在0到 $b - 1$ 之间。
 ]
 
 #parec[
-  The radical inverse function \$ \_b\$ in base $b$ converts a nonnegative integer $a$ to a fractional value in $\[ 0 , 1 \)$ by reflecting these digits about the radix point:
-
-  $ Phi_b (a) = 0 . d_1 (a) d_2 (a) dots.h d_m (a) = sum_(i = 1)^m d_i (a) b^(- i) . $
+  The radical inverse function $Phi_b$ in base $b$ converts a nonnegative integer $a$ to a fractional value in $\[ 0 , 1 \)$ by reflecting these digits about the radix point:
 ][
-  基数反演函数\$ \_b $在 基 数$ b $中 将 非 负 整 数$ a $转 换 为$ \[0, 1)\$中的小数值，通过关于小数点反射这些数字：
+  基数反演函数$Phi_b$在基数$b$中将非负整数$a$转换为$\[0, 1)$中的小数值，通过关于小数点反应这些数字：
 
-  $ Phi_b (a) = 0 . d_1 (a) d_2 (a) dots.h d_m (a) = sum_(i = 1)^m d_i (a) b^(- i) . $
 ]
+
+$ Phi_b (a) = 0 . d_1 (a) d_2 (a) dots.h d_m (a) = sum_(i = 1)^m d_i (a) b^(- i) . $<radical-inverse>
 
 #parec[
   One of the simplest low-discrepancy sequences is the #emph[van der
-Corput sequence];, which is a 1D sequence given by the radical inverse function in base 2:
+    Corput sequence];, which is a 1D sequence given by the radical inverse function in base 2:
+][
+  最简单的低差异性序列之一是#emph[van der Corput序列];（范德科普特序列），它是一个由基数2的基数反演函数给出的1D序列：
+]
+$ x_a = Phi_2 (a) , $
 
-  $ x_a = Phi_2 (a) , $
-
+#parec[
   with $a = 0 , 1 , dots.h$. Note that van der Corput points are a point sequence because an arbitrary number of them can be generated in succession; the total number need not be specified in advance. (However, if the number of points $n$ is not a power of 2, then the gaps between points will be of different sizes.)
 ][
-  最简单的低差异性序列之一是#emph[van der
-Corput序列];（范德科普特序列），它是一个由基数2的基数反演函数给出的1D序列：
-
-  $ x_a = Phi_2 (a) , $
-
   其中 $a = 0 , 1 , dots.h$。注意van der Corput点是一个点序列，因为可以连续生成任意数量的点；不需要提前指定总数。（然而，如果点的数量 $n$ 不是2的幂，则点之间的间隙将具有不同的大小。）
 ]
 
@@ -72,22 +68,22 @@ Corput序列];（范德科普特序列），它是一个由基数2的基数反�
   )[
     #figure(
       align(left)[#table(
-          stroke: (x: none, y: .1pt),
-          columns: (10%, 35%, 55%),
-          align: (auto, auto, auto),
-          fill: (_, y) => if y == 0 { gray.lighten(90%) } else { gray.lighten(95%) },
-          table.hline(),
-          [$a$], [*Base 2*], [$Phi_2(a)$],
-          table.hline(stroke: .5pt),
-          [0], [0], [$0$],
-          [1], [1], [$0.1 = 1 \/ 2$],
-          [2], [10], [$0.01 = 1 \/ 4$],
-          [3], [11], [$0.11 = 3 \/ 4$],
-          [4], [100], [$0.001 = 1 \/ 8$],
-          [5], [101], [$0.101 = 5 \/ 8$],
-          [⋮], [], [],
-          table.hline(stroke: 0pt),
-        )],
+        stroke: (x: none, y: .1pt),
+        columns: (10%, 35%, 55%),
+        align: (auto, auto, auto),
+        fill: (_, y) => if y == 0 { gray.lighten(90%) } else { gray.lighten(95%) },
+        table.hline(),
+        [$a$], [*Base 2*], [$Phi_2(a)$],
+        table.hline(stroke: .5pt),
+        [0], [0], [$0$],
+        [1], [1], [$0.1 = 1 \/ 2$],
+        [2], [10], [$0.01 = 1 \/ 4$],
+        [3], [11], [$0.11 = 3 \/ 4$],
+        [4], [100], [$0.001 = 1 \/ 8$],
+        [5], [101], [$0.101 = 5 \/ 8$],
+        [⋮], [], [],
+        table.hline(stroke: 0pt),
+      )],
       kind: table,
       caption: [
         The radical inverse $Phi_2(a)$ of the first few nonnegative integers, computed in base 2. Notice how successive values of $Phi_2(a)$ are not close to any of the previous values of $Phi_2(a)$. As more and more values of the sequence are generated, samples are necessarily closer to previous samples, although with a minimum distance that is guaranteed to be reasonably good.
@@ -102,22 +98,22 @@ Corput序列];（范德科普特序列），它是一个由基数2的基数反�
   )[
     #figure(
       align(left)[#table(
-          stroke: (x: none, y: .1pt),
-          columns: (10%, 35%, 55%),
-          align: (auto, auto, auto),
-          fill: (_, y) => if y == 0 { gray.lighten(90%) } else { gray.lighten(95%) },
-          table.hline(),
-          [$a$], [*以2为底*], [$Phi_2(a)$],
-          table.hline(stroke: .5pt),
-          [0], [0], [$0$],
-          [1], [1], [$0.1 = 1 \/ 2$],
-          [2], [10], [$0.01 = 1 \/ 4$],
-          [3], [11], [$0.11 = 3 \/ 4$],
-          [4], [100], [$0.001 = 1 \/ 8$],
-          [5], [101], [$0.101 = 5 \/ 8$],
-          [⋮], [], [],
-          table.hline(stroke: 0pt),
-        )],
+        stroke: (x: none, y: .1pt),
+        columns: (10%, 35%, 55%),
+        align: (auto, auto, auto),
+        fill: (_, y) => if y == 0 { gray.lighten(90%) } else { gray.lighten(95%) },
+        table.hline(),
+        [$a$], [*以2为底*], [$Phi_2(a)$],
+        table.hline(stroke: .5pt),
+        [0], [0], [$0$],
+        [1], [1], [$0.1 = 1 \/ 2$],
+        [2], [10], [$0.01 = 1 \/ 4$],
+        [3], [11], [$0.11 = 3 \/ 4$],
+        [4], [100], [$0.001 = 1 \/ 8$],
+        [5], [101], [$0.101 = 5 \/ 8$],
+        [⋮], [], [],
+        table.hline(stroke: 0pt),
+      )],
       kind: table,
       caption: [
         前几个非负整数在以2为底下的基数倒数 $Phi_2(a)$ 。可以注意到，序列中连续的 $Phi_2(a)$ 值彼此之间并不接近此前的任何值。随着序列中更多的值被生成，样本必然会逐渐接近先前的样本，但仍能保持一个较为合理的最小间隔。
@@ -128,30 +124,26 @@ Corput序列];（范德科普特序列），它是一个由基数2的基数反�
 
 #parec[
   The discrepancy of this sequence is
-
-  $ D^(\*) (P) = O (frac(log n, n)) , $
-
-  which is optimal.
 ][
   该序列的不一致性为
+]
 
-  $ D^(\*) (P) = O (frac(log n, n)) , $
 
+$ D^(\*)_n (P) = O (frac(log n, n)) , $
+
+#parec[
+  which is optimal.
+][
   这是最优解。
 ]
 
 #parec[
-  The $d$ -dimensional Halton sequence is defined using the radical inverse base $b$, with a different base for each dimension. The bases used must all be relatively prime to each other, so a natural choice is to use the first $d$ prime numbers $(p_1 , dots.h , p_d)$ :
+  The $d$-dimensional Halton sequence is defined using the radical inverse base $b$, with a different base for each dimension. The bases used must all be relatively prime to each other, so a natural choice is to use the first $d$ prime numbers $(p_1 , dots.h , p_d)$ :
 ][
   $d$ 维Halton序列使用基数 $b$ 的基数反演定义，每个维度使用不同的基数。所用的基数必须互质，因此自然的选择是使用前 $d$ 个质数 $(p_1 , dots.h , p_d)$ ：
 ]
 
-
-#parec[
-  $ x_a = (Phi_2 (a) , Phi_3 (a) , Phi_5 (a) , dots.h , Phi_(p_d) (a)) $
-][
-  $ x_a = (Phi_2 (a) , Phi_3 (a) , Phi_5 (a) , dots.h , Phi_(p_d) (a)) $
-]
+$ x_a = (Phi_2 (a) , Phi_3 (a) , Phi_5 (a) , dots.h , Phi_(p_d) (a)) $
 
 #parec[
   Like the van der Corput sequence, the Halton sequence can be used even if the total number of samples needed is not known in advance; all prefixes of the sequence are well distributed, so as additional samples are added to the sequence, low discrepancy will be maintained. (However, its distribution is best when the total number of samples is the product of powers of the bases $product_i p_i^(k_i)$ for integer $k_i$.)
@@ -160,16 +152,12 @@ Corput序列];（范德科普特序列），它是一个由基数2的基数反�
 ]
 
 #parec[
-  The discrepancy of a $d$ -dimensional Halton sequence is
+  The discrepancy of a $d$-dimensional Halton sequence is
 ][
   一个 $d$ 维Halton序列的不一致性为
 ]
 
-#parec[
-  $ D_n^(\*) (x_a) = O ((log n)^d / n) , $
-][
-  $ D_n^(\*) (x_a) = O ((log n)^d / n) , $
-]
+$ D_n^(\*) (x_a) = O ((log n)^d / n) , $
 
 #parec[
   which is asymptotically optimal.
@@ -183,22 +171,28 @@ Corput序列];（范德科普特序列），它是一个由基数2的基数反�
   如果样本数 $n$ 是固定的，可以使用#emph[Hammersley点集];（用于降低不一致性的一种方法），从而获得略低的不一致性。Hammersley点集定义为
 ]
 
-#parec[
-  $ x_a = (a / n , Phi_(b_1) (a) , Phi_(b_2) (a) , dots.h , Phi_(b_(d - 1)) (a)) , $
-][
-  $ x_a = (a / n , Phi_(b_1) (a) , Phi_(b_2) (a) , dots.h , Phi_(b_(d - 1)) (a)) , $
-]
+$ x_a = (a / n , Phi_(b_1) (a) , Phi_(b_2) (a) , dots.h , Phi_(b_(d - 1)) (a)) , $
+
 
 #parec[
-  again with $a = 0 , 1 , dots.h$ where $n$ is the total number of samples to be taken, and as before all the bases $b_i$ are relatively prime. Figure~8.27(a) shows a plot of the first 216 points of the 2D Halton sequence and Figure~8.27(b) shows a set of 256 Hammersley points. (216 Halton points were used in this figure, since they are based on the radical inverses in base~2 and~3, and $2^3 3^3 = 216$.)
+  again with $a = 0 , 1 , dots.h$ where $n$ is the total number of samples to be taken, and as before all the bases $b_i$ are relatively prime. @fig:halton-hammersley(a) shows a plot of the first 216 points of the 2D Halton sequence and @fig:halton-hammersley(b) shows a set of 256 Hammersley points. (216 Halton points were used in this figure, since they are based on the radical inverses in base~2 and~3, and $2^3 3^3 = 216$.)
 ][
-  其中 $a = 0 , 1 , dots.h$， $n$ 是要取的样本总数，并且如前所述，所有基数 $b_i$ 都是互质的。图8.27(a)显示了2D Halton序列的前216个点的图示，图8.27(b)显示了256个Hammersley点的集合。（在此图中使用了216个Halton点，因为它们基于基数2和3的基反转，且 $2^3 3^3 = 216$。）
+  其中 $a = 0 , 1 , dots.h$，要取的样本总数是$n$，并且如前所述，所有基数 $b_i$ 都是互质的。@fig:halton-hammersley(a)显示了2D Halton序列的前216个点的图示，@fig:halton-hammersley(b)显示了256个Hammersley点的集合。（在此图中使用了216个Halton点，因为它们基于基数2和3的基反转，且 $2^3 3^3 = 216$。）
 ]
 
+
+#figure(
+  image("../pbr-book-website/4ed/Sampling_and_Reconstruction/pha08f27.svg"),
+  caption: [
+    #ez_caption[The First Points of Two Low-Discrepancy Sequences in 2D. (a) Halton (216 points), (b) Hammersley (256 points).][二维中两个低差异序列的前若干点。（a）Halton 序列（216 个点），（b）Hammersley 序列（256 个点）。]
+  ],
+)<halton-hammersley>
+
+
 #parec[
-  The RadicalInverse() function computes the radical inverse for a given number a using the baseIndexth prime number as the base. (It and related functions are defined in the files util/lowdiscrepancy.h and util/lowdiscrepancy.cpp.)
+  The `RadicalInverse()` function computes the radical inverse for a given number a using the baseIndexth prime number as the base. (It and related functions are defined in the files util/lowdiscrepancy.h and util/lowdiscrepancy.cpp.)
 ][
-  RadicalInverse()函数使用第baseIndex个素数作为基数计算给定数字a的基反转。（它和相关函数定义在文件util/lowdiscrepancy.h和util/lowdiscrepancy.cpp中。）
+  `RadicalInverse()`函数使用第`baseIndex`个素数作为基数计算给定数字a的基反转。（它和相关函数定义在文件util/lowdiscrepancy.h和util/lowdiscrepancy.cpp中。）
 ]
 
 #parec[
@@ -207,8 +201,7 @@ Corput序列];（范德科普特序列），它是一个由基数2的基数反�
   通过从 $d_1$ 开始计算数字 $d_i$，然后计算序列 $v_i$，其中 $v_1 = d_1$， $v_2 = b d_1 + d_2$，以此类推
 ]
 
-$ v_n = b^(n - 1) d_1 + b^(n - 2) d_2 + dots.h + d_n $
-
+$ v_n = b^(n - 1) d_1 + b^(n - 2) d_2 + dots.h + d_n. $
 
 #parec[
   (For example, with base 10, it would convert the value 1234 to 4321.) The value of $v_n$ can be found entirely using integer arithmetic, without accumulating any round-off error.
@@ -217,12 +210,13 @@ $ v_n = b^(n - 1) d_1 + b^(n - 2) d_2 + dots.h + d_n $
 ]
 
 #parec[
-  The final value of the radical inverse is then found by converting to floating-point and multiplying by $1 / b^m$, where $m$ is the number of digits in the value, to get the value in Equation~(8.19). The factor for this multiplication is built up in invBaseM as the digits are processed.
+  The final value of the radical inverse is then found by converting to floating-point and multiplying by $1 \/ b^m$, where $m$ is the number of digits in the value, to get the value in
+  @eqt:radical-inverse. The factor for this multiplication is built up in `invBaseM` as the digits are processed.
 ][
-  基反转的最终值通过转换为浮点数并乘以 $1 / b^m$ 来找到，其中 $m$ 是值中的数字数，以获得方程(8.19)中的值。此乘法的因子在处理数字时在invBaseM中逐步建立。
+  基反转的最终值通过转换为浮点数并乘以 $1 \/ b^m$ 来找到，其中 $m$ 是值中的数字数，以获得@eqt:radical-inverse 中的值。此乘法的因子在处理数字时在`invBaseM`中逐步建立。
 ]
 
-```
+```cpp
 <<Low Discrepancy Inline Functions>>=
 Float RadicalInverse(int baseIndex, uint64_t a) {
     int base = Primes[baseIndex];
@@ -235,9 +229,12 @@ Float RadicalInverse(int baseIndex, uint64_t a) {
 }
 ```
 
-The value of a for the next loop iteration is found by dividing by the base; the remainder is the least significant digit of the current value of a.
-
-```
+#parec[
+  The value of a for the next loop iteration is found by dividing by the base; the remainder is the least significant digit of the current value of a.
+][
+  下一轮循环中 a 的值是通过除以底数得到的；余数是当前 a 值的最后的一位数字。
+]
+```cpp
 <<Extract least significant digit from a and update reversedDigits>>=
 uint64_t next = a / base;
 uint64_t digit = a - next * base;
@@ -246,9 +243,13 @@ invBaseM *= invBase;
 a = next;
 ```
 
-It will also be useful to be able to compute the inverse of the radical inverse function; the InverseRadicalInverse() function takes the reversed integer digits in a given base, corresponding to the final value of reversedDigits in the RadicalInverse() function, and returns the index a that corresponds to them. Note that in order to be able to compute the inverse correctly, the total number of digits in the original value must be provided: for example, both 1234 and 123400 are converted to 4321 after the integer-only part of the radical inverse algorithm; trailing zeros become leading zeros, which are lost.
+#parec[
+  It will also be useful to be able to compute the inverse of the radical inverse function; the `InverseRadicalInverse()` function takes the reversed integer digits in a given base, corresponding to the final value of `reversedDigits` in the `RadicalInverse()` function, and returns the index a that corresponds to them. Note that in order to be able to compute the inverse correctly, the total number of digits in the original value must be provided: for example, both 1234 and 123400 are converted to 4321 after the integer-only part of the radical inverse algorithm; trailing zeros become leading zeros, which are lost.
+][
+  计算原像（radical inverse）函数的逆函数也会很有用；`InverseRadicalInverse()` 函数接受给定底数下的反转整数位，这些位对应于 `RadicalInverse()` 函数中 `reversedDigits` 的最终值，并返回与其对应的索引 $a$。请注意，为了能够正确计算逆函数，必须提供原值的总位数：例如，在原像算法仅处理整数的部分之后，$1234$ 和 $123400$ 都会被转换为 $4321$；末尾的零变成了开头的零，这些零会被丢失。
+]
 
-```
+```cpp
 <<Low Discrepancy Inline Functions>>+=
 uint64_t InverseRadicalInverse(uint64_t inverse, int base, int nDigits) {
     uint64_t index = 0;
@@ -263,114 +264,83 @@ uint64_t InverseRadicalInverse(uint64_t inverse, int base, int nDigits) {
 
 === Randomization via Scrambling
 
-
-One disadvantage of the fact that the Hammersley set and Halton sequence are both fully deterministic is that it is not possible to estimate variance by computing multiple independent estimates of an integral with them. Furthermore, they both have the shortcoming that as the base increases, lower-dimensional projections of sample values can exhibit regular patterns (see Figure 8.28(a)). Because, for example, 2D projections of these points are used for sampling points on light sources, these patterns can lead to visible error in rendered images.
-
-
-
-
-Figure 8.28: Plot of Halton Sample Values with and without Scrambling. (a) In higher dimensions, projections of sample values start to exhibit regular structure. Here, points from the dimensions are shown. (b) Scrambled sequences based on Equation (8.20) break up this structure by permuting the digits of sample indices.
+#parec[
+  One disadvantage of the fact that the Hammersley set and Halton sequence are both fully deterministic is that it is not possible to estimate variance by computing multiple independent estimates of an integral with them. Furthermore, they both have the shortcoming that as the base increases, lower-dimensional projections of sample values can exhibit regular patterns (see @fig:halton-and-scrambled(a)). Because, for example, 2D projections of these points are used for sampling points on light sources, these patterns can lead to visible error in rendered images.
+][
+  韩默斯利集合（Hammersley set）和哈尔顿序列（Halton sequence）都是完全确定的，由此带来的一个缺点是：不可能通过计算积分的多个独立估计值来估算方差。此外，它们都有一个共同的不足，即随着底数（base）的增加，样本值的低维投影会表现出规律性的图案（参见@fig:halton-and-scrambled(a)）。由于这些点的二维投影常被用于对光源进行采样，这些图案可能会导致渲染图像中出现可见的误差。
+]
 
 
-These issues can be addressed using techniques that randomize the points that are generated by these algorithms while still maintaining low discrepancy. A family of such techniques are based on randomizing the digits of each sample coordinate with random permutations. Over all permutations, each coordinate value is then uniformly distributed over , unlike as with the original point. These techniques are often referred to as scrambling.
+#figure(
+  image("../pbr-book-website/4ed/Sampling_and_Reconstruction/pha08f28.svg"),
+  caption: [
+    #ez_caption[Plot of Halton Sample Values with and without Scrambling. (a) In higher dimensions, projections of sample values start to exhibit regular structure. Here, points from the dimensions are shown. (b) Scrambled sequences based on @eqt:scrambled-radical-inverse break up this structure by permuting the digits of sample indices.][有无加扰（Scrambling）的哈尔顿样本值图。（a）在更高维度中，样本值的投影开始呈现规律性的结构。这里展示了来自这些维度上的点。（b）基于@eqt:scrambled-radical-inverse 的加扰序列通过置换样本索引的数字来打破这种结构。]
+  ],
+)<halton-and-scrambled>
 
-Scrambling can be performed by defining a set of permutations for each base , where each digit has a distinct permutation of associated with it. (In the following, we will consider scrambling a single dimension of a -dimensional sample point and thus drop the base from our notation, leaving it implicit. In practice, all dimensions are independently scrambled.)
-
-Given such a set of permutations, we can define the scrambled radical inverse where a corresponding permutation is applied to each digit:
 
 #parec[
-  Note that the same permutations ( \_i ) must be used for generating all the sample points for a given base.
+  These issues can be addressed using techniques that randomize the points that are generated by these algorithms while still maintaining low discrepancy. A family of such techniques are based on randomizing the digits of each sample coordinate with random permutations. Over all permutations, each coordinate value is then uniformly distributed over , unlike as with the original point. These techniques are often referred to as scrambling.
 ][
-  请注意，对于给定的基数，必须使用相同的排列 ( \_i ) 来生成所有的样本点。
+  这些问题可以通过采用随机化技术来解决，该技术在保持低差异性的同时，对算法生成的点进行随机化处理。这类技术基于对每个样本坐标的数位进行随机排列。在所有排列中，每个坐标值会均匀分布在范围内，与原始点不同。这些技术通常被称为打乱（scrambling）。
 ]
 
 #parec[
-  There are a few subtleties related to the permutations. First, with the regular radical inverse, computation of a sample dimension's value can stop once the remaining digits ( d\_i ) are 0, as they will have no effect on the final result.
+  Scrambling can be performed by defining a set of permutations $pi_i$ for each base $b$, where each digit has a distinct permutation of $\{0, 1, dots, b-1\}$ associated with it. (In the following, we will consider scrambling a single dimension of a d-dimensional sample point and thus drop the base $b$ from our notation, leaving it implicit. In practice, all dimensions are independently scrambled.)
 ][
-  关于排列，有一些细微之处。首先，对于常规的基数逆序，一旦剩余的位 ( d\_i ) 为0，样本维度的值的计算就可以停止，因为它们对最终结果没有影响。
+  可以通过为每个基$b$定义一组排列$pi_i$来执行加扰(scrambling)，其中每个数字都有一个与之相关的不同排列$\{0,1，dots，b-1\}$。（在下面，我们将考虑对d维采样点的单个维度进行加扰，从而从我们的符号中删除基$b$，使其隐式。在实践中，所有维度都是独立加扰的。）
 ]
 
 #parec[
-  With the scrambled radical inverse, the zero digits must continue to be processed. If they are not, then scrambling only corresponds to a permutation of the unscrambled sample values in each dimension, which does not give a uniform distribution over ( \[0, 1) ).
+  Given such a set of permutations, we can define the scrambled radical inverse where a corresponding permutation is applied to each digit:
 ][
-  对于扰乱基数逆序，零位必须继续处理。如果不这样做，扰乱就仅仅相当于对每个维度中未扰乱样本值的排列，这样不会在 ( \[0, 1) ) 区间上产生均匀分布。
+  给定这样一组排列，我们可以定义加扰的根逆，其中对应的排列应用于每个数字：
+]
+
+$ Psi_b (a) = 0 . pi_1 (d_1) pi_2 (d_2) ... pi_m (d_m) $<scrambled-radical-inverse>
+#parec[
+  Note that the same permutations $pi_i$ must be used for generating all the sample points for a given base.
+][
+  请注意，对于给定的基数，必须使用相同的排列 $pi_i$ 来生成所有的样本点。
 ]
 
 #parec[
-  (In practice, it is only necessary to consider enough digits so that any more digits make no difference to the result given the limits of floating-point precision.)
+  There are a few subtleties related to the permutations. First, with the regular radical inverse, computation of a sample dimension's value can stop once the remaining digits $d_i$ are 0, as they will have no effect on the final result.
+  With the scrambled radical inverse, the zero digits must continue to be processed. If they are not, then scrambling only corresponds to a permutation of the unscrambled sample values in each dimension, which does not give a uniform distribution over $\[0, 1)$.(In practice, it is only necessary to consider enough digits so that any more digits make no difference to the result given the limits of floating-point precision.)
 ][
-  （实际上，只需要考虑足够多的位，以便在浮点精度的限制下，更多的位不会影响结果。）
+  关于排列，有一些细微之处。首先，对于常规的基数逆序，一旦剩余的位 $d_i$ 为0，样本维度的值的计算就可以停止，因为它们对最终结果没有影响。对于扰乱基数逆序，零位必须继续处理。如果不这样做，扰乱就仅仅相当于对每个维度中未扰乱样本值的排列，这样不会在 $\[0, 1)$ 区间上产生均匀分布。（实际上，只需要考虑足够多的位，以便在浮点精度的限制下，更多的位不会影响结果。）
 ]
 
 #parec[
-  Second, it is important that each digit has its own permutation. One way to see why this is important is to consider the trailing 0 digits: if the same permutation is used for all of them, then all scrambled values will have the same digit value repeating infinitely at their end.
+  Second, it is important that each digit has its own permutation. One way to see why this is important is to consider the trailing 0 digits: if the same permutation is used for all of them, then all scrambled values will have the same digit value repeating infinitely at their end. Once again, $\[0, 1)$ would not be sampled uniformly.
 ][
   其次，重要的是每个位都有其自己的排列。理解这一点的重要性的一种方法是考虑尾随的0位：如果对所有这些位使用相同的排列，那么所有扰乱的值将在其末尾无限重复相同的位值。
-]
-
-#parec[
-  Once again, ( \[0, 1) ) would not be sampled uniformly.
-][
-  再一次，( \[0, 1) ) 将不会被均匀采样。
+  再一次，$\[0, 1)$ 将不会被均匀采样。
 ]
 
 #parec[
   The choice of permutations can affect the quality of the resulting points. In the following implementation, we will use random permutations.
-][
-  排列的选择会影响生成点的质量。在以下实现中，我们将使用随机排列。
-]
-
-#parec[
   That alone is enough to break up the structure of the points, as shown in Figure 8.28(b). However, carefully constructed deterministic permutations have been shown to reduce error for some integration problems.
-][
-  仅此一项就足以打破点的结构，如图8.28(b)所示。然而，精心构造的确定性排列已被证明可以减少某些积分问题的误差。
-]
-
-#parec[
   See the "Further Reading" section for more information.
 ][
+  排列的选择会影响生成点的质量。在以下实现中，我们将使用随机排列。
+  仅此一项就足以打破点的结构，如图8.28(b)所示。然而，精心构造的确定性排列已被证明可以减少某些积分问题的误差。
   有关更多信息，请参阅“进一步阅读”部分。
 ]
 
 #parec[
-  The `DigitPermutation` utility class manages allocation and initialization of a set of digit permutations for a single base ( b ).
+  The `DigitPermutation` utility class manages allocation and initialization of a set of digit permutations for a single base $b$.
 ][
-  `DigitPermutation`实用类管理单个基数 ( b ) 的一组位排列的分配和初始化。
+  `DigitPermutation`实用类管理单个基数 $b$ 的一组位排列的分配和初始化。
 ]
 
-#parec[
-  #strong[DigitPermutation Definition]
-][
-  #strong[DigitPermutation定义]
-]
 
 ```cpp
 class DigitPermutation {
   public:
-    **DigitPermutation Public Methods**       DigitPermutation(int base, uint32_t seed, Allocator alloc)
-           : base(base) {
-           **Compute number of digits needed for base**              nDigits = 0;
-              Float invBase = (Float)1 / (Float)base, invBaseM = 1;
-              while (1 - (base - 1) * invBaseM < 1) {
-                  ++nDigits;
-                  invBaseM *= invBase;
-              }
-           permutations = alloc.allocate_object<uint16_t>(nDigits * base);
-           **Compute random permutations for all digits**              for (int digitIndex = 0; digitIndex < nDigits; ++digitIndex) {
-                  uint64_t dseed = Hash(base, digitIndex, seed);
-                  for (int digitValue = 0; digitValue < base; ++digitValue) {
-                      int index = digitIndex * base + digitValue;
-                      permutations[index] = PermutationElement(digitValue, base, dseed);
-                  }
-              }
-       }
-       int Permute(int digitIndex, int digitValue) const {
-           return permutations[digitIndex * base + digitValue];
-       }
-       std::string ToString() const;
+    **DigitPermutation Public Methods**
   private:
-    **DigitPermutation Private Members**       int base, nDigits;
-       uint16_t *permutations;
+    **DigitPermutation Private Members**
 };
 ```
 
@@ -378,60 +348,28 @@ class DigitPermutation {
 
 #parec[
   All the permutations are stored in a single flat array: the first `base` elements of it are the permutation for the first digit, the next `base` elements are the second digit's permutation, and so forth.
-][
-  所有的排列都存储在一个单一的平面数组中：它的前`base`个元素是第一个位的排列，接下来的`base`个元素是第二个位的排列，依此类推。
-]
-
-#parec[
   The `DigitPermutation` constructor's two tasks are to determine how many digits must be handled and then to generate a permutation for each one.
 ][
+  所有的排列都存储在一个单一的平面数组中：它的前`base`个元素是第一个位的排列，接下来的`base`个元素是第二个位的排列，依此类推。
   `DigitPermutation`构造函数的两个任务是确定必须处理的位数，然后为每个位生成一个排列。
-]
-
-#parec[
-  #strong[DigitPermutation Public Methods]
-][
-  #strong[DigitPermutation公共方法]
 ]
 
 ```cpp
 DigitPermutation(int base, uint32_t seed, Allocator alloc)
     : base(base) {
-    **Compute number of digits needed for base**       nDigits = 0;
-       Float invBase = (Float)1 / (Float)base, invBaseM = 1;
-       while (1 - (base - 1) * invBaseM < 1) {
-           ++nDigits;
-           invBaseM *= invBase;
-       }
+    **Compute number of digits needed for base**
     permutations = alloc.allocate_object<uint16_t>(nDigits * base);
-    **Compute random permutations for all digits**       for (int digitIndex = 0; digitIndex < nDigits; ++digitIndex) {
-           uint64_t dseed = Hash(base, digitIndex, seed);
-           for (int digitValue = 0; digitValue < base; ++digitValue) {
-               int index = digitIndex * base + digitValue;
-               permutations[index] = PermutationElement(digitValue, base, dseed);
-           }
-       }
+    **Compute random permutations for all digits**
 }
 ```
 
 
 #parec[
   To save a bit of storage, unsigned 16-bit integers are used for the digit values.
-][
-  为了节省一些存储空间，使用无符号16位整数表示位值。
+  As such, the maximum base allowed is $2^(16)$. `pbrt` only supports up to 1,000 dimensions for Halton points, which corresponds to a maximum base of 7,919, the 1,000th prime number, which is comfortably below that limit.
+][ 因此，允许的最大基数是 $2^16$。`pbrt`仅支持最多1,000个维度的Halton点，这对应于最大基数7,919，即第1,000个素数，远低于该限制。
 ]
 
-#parec[
-  As such, the maximum base allowed is ( 2^{16} ). `pbrt` only supports up to 1,000 dimensions for Halton points, which corresponds to a maximum base of 7,919, the 1,000th prime number, which is comfortably below that limit.
-][
-  因此，允许的最大基数是 ( 2^{16} )。`pbrt`仅支持最多1,000个维度的Halton点，这对应于最大基数7,919，即第1,000个素数，远低于该限制。
-]
-
-#parec[
-  #strong[DigitPermutation Private Members]
-][
-  #strong[DigitPermutation私有成员]
-]
 
 ```cpp
 int base, nDigits;
@@ -439,27 +377,12 @@ uint16_t *permutations;
 ```
 
 #parec[
-  The trailing zero-valued digits must be processed until the digit ( d\_m ) is reached where ( b^{-m} ) is small enough that if the product of ( b^{-m} ) with the largest digit is subtracted from 1 using floating-point arithmetic, the result is still 1.
-][
-  尾随的零值位必须处理，直到达到位 ( d\_m )，其中 ( b^{-m} ) 足够小，以至于如果用浮点运算从1中减去 ( b^{-m} ) 与最大位的乘积，结果仍然是1。
-]
-
-#parec[
+  The trailing zero-valued digits must be processed until the digit $d_m$ is reached where $b^(-m)$ is small enough that if the product of $b^(-m)$ with the largest digit is subtracted from 1 using floating-point arithmetic, the result is still 1.
   At this point, no subsequent digits matter, regardless of the permutation.
+  The `DigitPermutation` constructor performs this check using precisely the same logic as the (soon to be described) #link("<ScrambledRadicalInverse>")[`ScrambledRadicalInverse()`] function does, to be sure that they are in agreement about how many digits need to be handled.
 ][
-  此时，无论排列如何，后续的位都不再重要。
-]
-
-#parec[
-  The `DigitPermutation` constructor performs this check using precisely the same logic as the (soon to be described) #link("<ScrambledRadicalInverse>")[ScrambledRadicalInverse()] function does, to be sure that they are in agreement about how many digits need to be handled.
-][
-  `DigitPermutation`构造函数使用与（即将描述的）#link("<ScrambledRadicalInverse>")[ScrambledRadicalInverse()];函数完全相同的逻辑执行此检查，以确保它们在需要处理多少位方面达成一致。
-]
-
-#parec[
-  #strong[Compute number of digits needed for base]
-][
-  #strong[计算基数所需的位数]
+  尾随的零值位必须处理，直到达到位 $d_m$，其中 $b^(-m)$ 足够小，以至于如果用浮点运算从1中减去 $b^(-m)$ 与最大位的乘积，结果仍然是1。
+  此时，无论排列如何，后续的位都不再重要。`DigitPermutation`构造函数使用与（即将描述的）#link("<ScrambledRadicalInverse>")[`ScrambledRadicalInverse()`];函数完全相同的逻辑执行此检查，以确保它们在需要处理多少位方面达成一致。
 ]
 
 ```cpp
@@ -473,16 +396,11 @@ while (1 - (base - 1) * invBaseM < 1) {
 
 
 #parec[
-  The permutations are computed using #link("../Utilities/Mathematical_Infrastructure.html#PermutationElement")[PermutationElement()];, which is provided with a different seed for each digit index so that the permutations are independent.
+  The permutations are computed using #link("../Utilities/Mathematical_Infrastructure.html#PermutationElement")[`PermutationElement()`];, which is provided with a different seed for each digit index so that the permutations are independent.
 ][
-  排列是使用#link("../Utilities/Mathematical_Infrastructure.html#PermutationElement")[PermutationElement()];计算的，每个位索引使用不同的种子以确保排列的独立性。
+  排列是使用#link("../Utilities/Mathematical_Infrastructure.html#PermutationElement")[`PermutationElement()`];计算的，每个位索引使用不同的种子以确保排列的独立性。
 ]
 
-#parec[
-  #strong[Compute random permutations for all digits]
-][
-  #strong[为所有位计算随机排列]
-]
 
 ```cpp
 for (int digitIndex = 0; digitIndex < nDigits; ++digitIndex) {
@@ -502,11 +420,6 @@ for (int digitIndex = 0; digitIndex < nDigits; ++digitIndex) {
   `Permute()`方法负责索引到`permutations`数组中，以返回给定位索引和未排列位值的排列位值。
 ]
 
-#parec[
-  #strong[DigitPermutation Public Methods]
-][
-  #strong[DigitPermutation公共方法]
-]
 
 ```cpp
 int Permute(int digitIndex, int digitValue) const {
@@ -519,12 +432,6 @@ int Permute(int digitIndex, int digitValue) const {
   Finally, the `ComputeRadicalInversePermutations()` utility function returns a vector of `DigitPermutation`s, one for each base up to the maximum.
 ][
   最后，`ComputeRadicalInversePermutations()`实用函数返回一个`DigitPermutation`的向量，每个基数一个，直到最大值。
-]
-
-#parec[
-  #strong[Low Discrepancy Function Definitions]
-][
-  #strong[低差异函数定义]
 ]
 
 ```cpp
@@ -541,21 +448,12 @@ ComputeRadicalInversePermutations(uint32_t seed, Allocator alloc) {
 
 #parec[
   With `DigitPermutation`s available, we can implement the `ScrambledRadicalInverse()` function.
-][
-  有了`DigitPermutation`，我们可以实现`ScrambledRadicalInverse()`函数。
-]
-
-#parec[
   Its structure is generally the same as #link("<RadicalInverse>")[RadicalInverse()];, though here we can see that it uses a different termination criterion, as was discussed with the implementation of #strong[Compute number of digits needed for base] above.
 ][
-  其结构通常与#link("<RadicalInverse>")[RadicalInverse()];相同，不过在这里我们可以看到它使用了不同的终止标准，如上面#strong[计算基数所需的位数];的实现中所讨论的那样。
+  有了`DigitPermutation`，我们可以实现`ScrambledRadicalInverse()`函数。
+  其结构通常与#link("<RadicalInverse>")[`RadicalInverse()`];相同，不过在这里我们可以看到它使用了不同的终止标准，如上面#strong[计算基数所需的位数];的实现中所讨论的那样。
 ]
 
-#parec[
-  #strong[Low Discrepancy Inline Functions]
-][
-  #strong[低差异内联函数]
-]
 
 ```cpp
 Float ScrambledRadicalInverse(int baseIndex, uint64_t a,
@@ -578,17 +476,11 @@ Float ScrambledRadicalInverse(int baseIndex, uint64_t a,
 ```
 
 #parec[
-  Each digit is handled the same way as in #link("<RadicalInverse>")[RadicalInverse()];, with the only change being that it is permuted using the provided #link("<DigitPermutation>")[DigitPermutation];.
+  Each digit is handled the same way as in #link("<RadicalInverse>")[`RadicalInverse()`];, with the only change being that it is permuted using the provided #link("<DigitPermutation>")[DigitPermutation];.
 ][
-  每个位的处理方式与#link("<RadicalInverse>")[RadicalInverse()];相同，唯一的变化是它使用提供的#link("<DigitPermutation>")[DigitPermutation];进行排列。
+  每个位的处理方式与#link("<RadicalInverse>")[`RadicalInverse()`];相同，唯一的变化是它使用提供的#link("<DigitPermutation>")[DigitPermutation];进行排列。
 ]
 
-#parec[
-  #strong[Permute least significant digit from ( a ) and update (
-    reversedDigits )]
-][
-  #strong[从 ( a ) 中排列最低有效位并更新 ( reversedDigits )]
-]
 
 ```cpp
 uint64_t next = a / base;
@@ -601,68 +493,59 @@ a = next;
 ```
 
 #parec[
-  An even more effective scrambling approach defines digit permutations that not only depend on the index of the current digit ( i ), but that also depend on the values of the previous digits ( d\_1 d\_2 d\_{i-1} ).
-][
-  一种更有效的扰乱方法定义了不仅依赖于当前位索引 ( i ) 的位排列，还依赖于前面位 ( d\_1 d\_2 d\_{i-1} ) 的值。
-]
-
-#parec[
+  An even more effective scrambling approach defines digit permutations that not only depend on the index of the current digit $i$, but that also depend on the values of the previous digits $d_1 d_2 dots d_(i-1)$.
   This approach is known as #emph[Owen scrambling];, after its inventor.
-][
-  这种方法被称为#emph[Owen扰乱];（以其发明者命名）。
-]
-
-#parec[
   Remarkably, it can be shown that for a class of smooth functions, the integration error with this scrambling technique decreases at a rate.
 ][
+  一种更有效的扰乱方法定义了不仅依赖于当前位索引 $i$ 的位排列，还依赖于前面位 $d_1 d_2 dots d_(i-1)$ 的值。
+  这种方法被称为#emph[Owen扰乱];（以其发明者命名）。
   值得注意的是，可以证明，对于一类平滑函数，使用这种扰乱技术的积分误差以一定的速率减少。
 ]
 
 
-#parec[
-  $ cal(O) (n^(- 3 / 2) (log n)^(frac(d - 1, 2))) , $
+$ cal(O) (n^(- 3 / 2) (log n)^(frac(d - 1, 2))) , $
 
+
+#parec[
   which is a substantial improvement over the $ cal(O) (n^(- 1 / 2)) $ error rate for regular Monte Carlo.
 ][
-  $ cal(O) (n^(- 3 / 2) (log n)^(frac(d - 1, 2))) , $
-
   这比常规蒙特卡罗的 $ cal(O) (n^(- 1 / 2)) $ 错误率有了显著的改善。
 ]
 
 #parec[
   The reason for this benefit can be understood in terms of Owen scrambling being more effective at breaking up structure in the sample values while still maintaining their low discrepancy.
-][
-  这种优势可以理解为Owen扰乱在打破样本值结构方面的高效性，同时仍然保持其低差异性。
-]
-
-#parec[
   Its effect is easiest to see when considering the trailing zero digits that are present in all sample values: if they are all permuted with the same permutation at each digit, they will end up with the same values, which effectively means that there is some structure shared among all the samples.
-][
-  这种效果在观察所有样本值中的尾随零位时最为明显：如果它们在每个位上都用相同的置换进行置换，它们将最终具有相同的值，这实际上意味着所有样本之间共享某种结构。
-]
-
-#parec[
   Owen scrambling eliminates this regularity, to the benefit of integration error. (It also benefits the earlier digits in a similar manner, though the connection is less immediately intuitive.)
 ][
-  Owen扰乱消除了这种规律性，从而减少积分误差。（它也以类似方式优化早期数字，尽管这种联系不那么直观。）
+  这种优势可以理解为Owen扰乱在打破样本值结构方面的高效性，同时仍然保持其低差异性。 这种效果在观察所有样本值中的尾随零位时最为明显：如果它们在每个位上都用相同的置换进行置换，它们将最终具有相同的值，这实际上意味着所有样本之间共享某种结构。 Owen扰乱消除了这种规律性，从而减少积分误差。（它也以类似方式优化早期数字，尽管这种联系不那么直观。）
 ]
 
 #parec[
   The challenge with Owen scrambling is that it is infeasible to explicitly store all the permutations, as the number of them that are required grows exponentially with the number of digits.
-][
-  Owen扰乱的挑战在于无法显式存储所有置换，因为所需的置换数量随着位数的增加而呈指数增长。
-]
-
-#parec[
   In this case, we can once again take advantage of the `PermutationElement()` function and its capability of permuting without explicitly representing the full permutation.
 ][
-  在这种情况下，我们可以利用`PermutationElement()`函数在不显式表示完整置换的情况下进行置换。
+  Owen扰乱的挑战在于无法显式存储所有置换，因为所需的置换数量随着位数的增加而呈指数增长。在这种情况下，我们可以利用`PermutationElement()`函数在不显式表示完整置换的情况下进行置换。
 ]
 
+```cpp
+Float OwenScrambledRadicalInverse(int baseIndex, uint64_t a,
+                                  uint32_t hash) {
+    int base = Primes[baseIndex];
+    Float invBase = (Float)1 / (Float)base, invBaseM = 1;
+    uint64_t reversedDigits = 0;
+    int digitIndex = 0;
+    while (1 - invBaseM < 1) {
+        <<Compute Owen-scrambled digit for digitIndex>>
+    }
+    return std::min(invBaseM * reversedDigits, OneMinusEpsilon);
+}
+```
+
 #parec[
-  #strong[\<\>];+= #link("<fragment-LowDiscrepancyInlineFunctions-2>")[↑] #link("Sobol_Samplers.html#fragment-LowDiscrepancyInlineFunctions-4")[↓]
+  The computation for each digit is similar to the two previous radical inverse functions; only the third and fourth lines of code in the following fragment are different. At the third line, the values of the previous digits are available in reversedDigits, so hashing them to get a seed for the random permutation suffices to implement Owen scrambling. (Here we have used `MixBits()` rather than `Hash()`, as it takes a 64-bit value (which we have at hand) and is more efficient, which is important here since the hashing operation is performed for each digit.) A call to `PermutationElement()` then gives the corresponding permuted digit value, which is then processed as before.
 ][
-  #strong[\<\>];+= #link("<fragment-LowDiscrepancyInlineFunctions-2>")[↑] #link("Sobol_Samplers.html#fragment-LowDiscrepancyInlineFunctions-4")[↓]
+
+  每个数字的计算类似于前两个根逆函数；以下片段中只有第三行和第四行代码不同。在第三行，前面数字的值可以用反向数字表示，因此对它们进行散列以获得随机置换的种子就足以实现欧文置乱(Owen scrambling)。（这里我们使用了`MixBits()`而不(是`Hashs()`，因为它需要一个64位的值（我们手头有），而且效率更高，这在这里很重要，因为哈希运算是针对每个数字执行的。)然后，调用`PermutationElement()`会给出相应的置换数字值，然后像以前一样对其进行处理。
 ]
 
 
@@ -841,32 +724,28 @@ enum class RandomizeStrategy { None, PermuteDigits, FastOwen, Owen };
   )[
     #figure(
       align(left)[#table(
-          stroke: (x: none, y: .1pt),
-          columns: (20%, 40%, 40%),
-          align: (auto, auto, auto),
-          fill: (_, y) => if y == 0 { gray.lighten(90%) } else { gray.lighten(95%) },
-          table.header(
-            [Sample index],
-            [$\[ 0 , 1 \)^2$ sample coordinates],
-            [Pixel sample coordinates],
-          ),
-          table.hline(stroke: .5pt),
-          [0], [$(0.000000 , 0.000000)$], [$(0.000000 , 0.000000)$],
-          [1], [$(0.500000 , 0.333333)$], [$(1.000000 , 1.000000)$],
-          [2], [$(0.250000 , 0.666667)$], [$(0.500000 , 2.000000)$],
-          [3], [$(0.750000 , 0.111111)$], [$(1.500000 , 0.333333)$],
-          [4], [$(0.125000 , 0.444444)$], [$(0.250000 , 1.333333)$],
-          [5], [$(0.625000 , 0.777778)$], [$(1.250000 , 2.333333)$],
-          [6], [$(0.375000 , 0.222222)$], [$(0.750000 , 0.666667)$],
-          [7], [$(0.875000 , 0.555556)$], [$(1.750000 , 1.666667)$],
-          [8], [$(0.062500 , 0.888889)$], [$(0.125000 , 2.666667)$],
-          [9], [$(0.562500 , 0.037037)$], [$(1.125000 , 0.111111)$],
-          [10], [$(0.312500 , 0.370370)$], [$(0.625000 , 1.111111)$],
-          [11], [$(0.812500 , 0.703704)$], [$(1.625000 , 2.111111)$],
-          [12], [$(0.187500 , 0.148148)$], [$(0.375000 , 0.444444)$],
-          […], […], […],
-          table.hline(stroke: 0pt),
-        )],
+        stroke: (x: none, y: .1pt),
+        columns: (20%, 40%, 40%),
+        align: (auto, auto, auto),
+        fill: (_, y) => if y == 0 { gray.lighten(90%) } else { gray.lighten(95%) },
+        table.header([Sample index], [$\[ 0 , 1 \)^2$ sample coordinates], [Pixel sample coordinates]),
+        table.hline(stroke: .5pt),
+        [0], [$(0.000000 , 0.000000)$], [$(0.000000 , 0.000000)$],
+        [1], [$(0.500000 , 0.333333)$], [$(1.000000 , 1.000000)$],
+        [2], [$(0.250000 , 0.666667)$], [$(0.500000 , 2.000000)$],
+        [3], [$(0.750000 , 0.111111)$], [$(1.500000 , 0.333333)$],
+        [4], [$(0.125000 , 0.444444)$], [$(0.250000 , 1.333333)$],
+        [5], [$(0.625000 , 0.777778)$], [$(1.250000 , 2.333333)$],
+        [6], [$(0.375000 , 0.222222)$], [$(0.750000 , 0.666667)$],
+        [7], [$(0.875000 , 0.555556)$], [$(1.750000 , 1.666667)$],
+        [8], [$(0.062500 , 0.888889)$], [$(0.125000 , 2.666667)$],
+        [9], [$(0.562500 , 0.037037)$], [$(1.125000 , 0.111111)$],
+        [10], [$(0.312500 , 0.370370)$], [$(0.625000 , 1.111111)$],
+        [11], [$(0.812500 , 0.703704)$], [$(1.625000 , 2.111111)$],
+        [12], [$(0.187500 , 0.148148)$], [$(0.375000 , 0.444444)$],
+        […], […], […],
+        table.hline(stroke: 0pt),
+      )],
       kind: table,
       caption: [
         The #link("<HaltonSampler>")[HaltonSampler] generates the coordinates in the middle column for the first two dimensions, which are scaled by 2 in the first dimension and 3 in the second dimension so that they cover a $2 times 3$ pixel image. To fulfill the `Sampler` interface, it is necessary to be able to work backward from a given pixel and sample number within that pixel to find the corresponding sample index in the full Halton sequence.
@@ -881,28 +760,28 @@ enum class RandomizeStrategy { None, PermuteDigits, FastOwen, Owen };
   )[
     #figure(
       align(left)[#table(
-          stroke: (x: none, y: .1pt),
-          columns: (20%, 40%, 40%),
-          align: (auto, auto, auto),
-          fill: (_, y) => if y == 0 { gray.lighten(90%) } else { gray.lighten(95%) },
-          table.header([样本索引], [$\[ 0 , 1 \)^2$样本坐标], [像素样本坐标]),
-          table.hline(stroke: .5pt),
-          [0], [$(0.000000 , 0.000000)$], [$(0.000000 , 0.000000)$],
-          [1], [$(0.500000 , 0.333333)$], [$(1.000000 , 1.000000)$],
-          [2], [$(0.250000 , 0.666667)$], [$(0.500000 , 2.000000)$],
-          [3], [$(0.750000 , 0.111111)$], [$(1.500000 , 0.333333)$],
-          [4], [$(0.125000 , 0.444444)$], [$(0.250000 , 1.333333)$],
-          [5], [$(0.625000 , 0.777778)$], [$(1.250000 , 2.333333)$],
-          [6], [$(0.375000 , 0.222222)$], [$(0.750000 , 0.666667)$],
-          [7], [$(0.875000 , 0.555556)$], [$(1.750000 , 1.666667)$],
-          [8], [$(0.062500 , 0.888889)$], [$(0.125000 , 2.666667)$],
-          [9], [$(0.562500 , 0.037037)$], [$(1.125000 , 0.111111)$],
-          [10], [$(0.312500 , 0.370370)$], [$(0.625000 , 1.111111)$],
-          [11], [$(0.812500 , 0.703704)$], [$(1.625000 , 2.111111)$],
-          [12], [$(0.187500 , 0.148148)$], [$(0.375000 , 0.444444)$],
-          […], […], […],
-          table.hline(stroke: 0pt),
-        )],
+        stroke: (x: none, y: .1pt),
+        columns: (20%, 40%, 40%),
+        align: (auto, auto, auto),
+        fill: (_, y) => if y == 0 { gray.lighten(90%) } else { gray.lighten(95%) },
+        table.header([样本索引], [$\[ 0 , 1 \)^2$样本坐标], [像素样本坐标]),
+        table.hline(stroke: .5pt),
+        [0], [$(0.000000 , 0.000000)$], [$(0.000000 , 0.000000)$],
+        [1], [$(0.500000 , 0.333333)$], [$(1.000000 , 1.000000)$],
+        [2], [$(0.250000 , 0.666667)$], [$(0.500000 , 2.000000)$],
+        [3], [$(0.750000 , 0.111111)$], [$(1.500000 , 0.333333)$],
+        [4], [$(0.125000 , 0.444444)$], [$(0.250000 , 1.333333)$],
+        [5], [$(0.625000 , 0.777778)$], [$(1.250000 , 2.333333)$],
+        [6], [$(0.375000 , 0.222222)$], [$(0.750000 , 0.666667)$],
+        [7], [$(0.875000 , 0.555556)$], [$(1.750000 , 1.666667)$],
+        [8], [$(0.062500 , 0.888889)$], [$(0.125000 , 2.666667)$],
+        [9], [$(0.562500 , 0.037037)$], [$(1.125000 , 0.111111)$],
+        [10], [$(0.312500 , 0.370370)$], [$(0.625000 , 1.111111)$],
+        [11], [$(0.812500 , 0.703704)$], [$(1.625000 , 2.111111)$],
+        [12], [$(0.187500 , 0.148148)$], [$(0.375000 , 0.444444)$],
+        […], […], […],
+        table.hline(stroke: 0pt),
+      )],
       kind: table,
       caption: [
         #link("<HaltonSampler>")[HaltonSampler];为前两个维度生成中间列的坐标，这些坐标在第一个维度上按2缩放，在第二个维度上按3缩放，以便它们覆盖一个 $2 times 3$ 像素图像。为了满足`Sampler`接口，有必要能够从给定的像素和该像素内的样本编号向后工作，以找到完整Halton序列中的相应样本索引。
@@ -969,7 +848,7 @@ for (int i = 0; i < 2; ++i) {
 
 
 $
-  x_r & equiv (i upright("mod") 2^j)\
+  x_r & equiv (i upright("mod") 2^j) \
   y_r & equiv (i upright("mod") 3^k)
 $
 
@@ -1182,7 +1061,7 @@ $
       integrating a function of tens of dimensions, including defocus
       blur, a moving camera, and multiply scattered illumination from an
       environment map light source. #emph[Dragon model courtesy of the
-    Stanford Computer Graphics Laboratory.]
+        Stanford Computer Graphics Laboratory.]
     ],
   )
 ][

@@ -1,4 +1,4 @@
-#import "../template.typ": parec, ez_caption
+#import "../template.typ": ez_caption, parec
 
 == Sampling Interface
 <sampling-interface>
@@ -18,14 +18,14 @@
 #figure(
   image("../pbr-book-website/4ed/Sampling_and_Reconstruction/pha08f20.svg"),
   caption: [
-    #ez_caption[Scene rendered with (a) a relatively ineffective sampler and (b) a carefully designed sampler, using the same number of samples for each. The improvement in image quality, ranging from the shadow on the floor to the quality of the glossy reflections, is noticeable. Both images are rendered with 8 samples per pixel. (Killeroo model courtesy of headus/Rezard.)][Scene rendered with (a) a relatively ineffective sampler and (b) a carefully designed sampler, using the same number of samples for each. The improvement in image quality, ranging from the shadow on the floor to the quality of the glossy reflections, is noticeable. Both images are rendered with 8 samples per pixel. (Killeroo model courtesy of headus/Rezard.)]
+    #ez_caption[Scene rendered with (a) a relatively ineffective sampler and (b) a carefully designed sampler, using the same number of samples for each. The improvement in image quality, ranging from the shadow on the floor to the quality of the glossy reflections, is noticeable. Both images are rendered with 8 samples per pixel. (Killeroo model courtesy of headus/Rezard.)][使用相同数量的采样点，场景分别由 (a) 一个相对低效的采样器 和 (b) 一个经过精心设计的采样器 渲染。图像质量的提升是显而易见的，从地面上的阴影到光滑反射的效果都有改善。两张图像均使用每像素 8 个采样渲染。（Killeroo 模型由 headus/Rezard 提供。）]
   ],
 )<sampler-comparison>
 
 #parec[
   The task of a `Sampler` is to generate uniform $d$ -dimensional sample points, where each coordinate's value is in the range $(0 , 1)$. The total number of dimensions in each point is not set ahead of time; `Sampler`s must generate additional dimensions on demand, depending on the number of dimensions required for the calculations performed by the light transport algorithms. (See @fig:sample-basic-idea.) While this design makes implementing a `Sampler` slightly more complex than if its task was to generate all the dimensions of each sample point up front, it is more convenient for integrators, which end up needing a different number of dimensions depending on the particular path they follow through the scene.
 ][
-  `Sampler` 的任务是生成均匀的 $d$ 维样本点，其中每个坐标的值在 $(0 , 1)$ 范围内。每个点的总维数没有预先设定；`Sampler` 必须根据光传输算法执行的计算所需的维数按需生成额外的维数。（见@fig:sample-basic-idea。） 虽然这种设计使得实现 `Sampler` 比其任务是预先生成每个样本点的所有维数稍微复杂一些，但对于积分器来说更方便，因为它们最终需要的维数因它们在场景中所遵循的特定路径而异。
+  `Sampler` 的任务是生成 $d$ 维的均匀采样点，其中每个坐标值的范围为 $(0, 1)$。每个采样点的总维度数量并不是预先固定的；`Sampler` 必须根据光传输算法在计算过程中所需的维度按需生成更多维度。（参见 @fig:sample-basic-idea。）相比于一开始就生成每个采样点的所有维度，这种设计虽然比让 `Sampler` 稍微复杂一些，但是对积分器来说更方便，因为积分器在场景中沿着不同路径时需要的维度数量可能不同。
 ]
 
 #figure(
