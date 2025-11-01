@@ -28,7 +28,7 @@ use typst::syntax::SyntaxKind;
 ///
 fn adjust_space(expr: Expr) -> EcoString {
     // println!("expr = {expr:?}");
-    if let Expr::Content(content) = expr {
+    if let Expr::ContentBlock(content) = expr {
         let childs: Vec<_> = content.to_untyped().children().collect(); // LeftBraket, MarkUp, RightBracket
         assert!(
             childs.len() == 3
@@ -160,6 +160,7 @@ fn get_format_typ(typ_file: String) -> PyResult<String> {
 
 /// A Python module implemented in Rust.
 #[pymodule]
+#[pyo3(name="transformer_typ")]
 fn transformer_typ(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(get_all_parec, m)?)?;
     m.add_function(wrap_pyfunction!(get_format_typ, m)?)?;

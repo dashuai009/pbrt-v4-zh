@@ -1,3 +1,13 @@
+## 代码结构
+
+src/
+  lib.rs                       -- 封装typst函数
+python/
+  transformer_typ/
+    __init__.py                     -- 重新导出transformer_typ.cp312-win_amd64.pyd
+    transformer_typ.cp312-win_amd64.pyd  -- 编译完后有这个文件
+  improve.py                        -- 逐段落的优化翻译
+
 ## 环境配置
 
 ```
@@ -10,12 +20,14 @@ or
 
 ```
 uv sync
-uv run main.py
+uv tool install maturin
+uv tool run maturin develop
+uv run python/improve.py
 ```
 
 ## 配置
 
-编写如下config.yaml
+编写如下python/config.yaml
 
 ```
 OPENAI:
