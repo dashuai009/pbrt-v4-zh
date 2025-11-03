@@ -1,4 +1,4 @@
-#import "../template.typ": parec, ez_caption
+#import "../template.typ": ez_caption, parec
 
 == Scattering from Hair
 <scattering-from-hair>
@@ -7,39 +7,30 @@
 #parec[
   Human hair and animal fur can be modeled with a rough dielectric interface surrounding a pigmented translucent core. Reflectance at the interface is generally the same for all wavelengths and it is therefore wavelength-variation in the amount of light that is absorbed inside the hair that determines its color. While these scattering effects could be modeled using a combination of the #link("../Reflection_Models/Dielectric_BSDF.html#DielectricBxDF")[`DielectricBxDF`] and the volumetric scattering models from Chapters #link("../Volume_Scattering.html#chap:volume-scattering")[11] and #link("../Light_Transport_II_Volume_Rendering.html#chap:volume-integration")[14];, not only would doing so be computationally expensive, requiring ray tracing within the hair geometry, but importance sampling the resulting model would be difficult. Therefore, this section introduces a specialized BSDF for hair and fur that encapsulates these lower-level scattering processes into a model that can be efficiently evaluated and sampled.
 ][
-  人类的头发和动物的毛皮可以被建模为一个围绕着有色半透明核心的粗糙介电界面。界面的反射率通常在所有波长上都是相同的，因此头发颜色由头发内部吸收光量的波长变化决定。虽然这些散射效应可以通过结合#link("../Reflection_Models/Dielectric_BSDF.html#DielectricBxDF")[`DielectricBxDF`];和第#link("../Volume_Scattering.html#chap:volume-scattering")[11];章和第#link("../Light_Transport_II_Volume_Rendering.html#chap:volume-integration")[14];章中的体积散射模型来建模，但这样做不仅计算量大，需要在头发几何体内进行光线追踪，而且对结果模型进行重要性采样也很困难。因此，本节引入了一种专门用于头发和毛皮的双向散射分布函数 (BSDF)，它将这些低级散射过程封装成一个可以高效评估和采样的模型。
+  人类的头发和动物的毛皮可建模为围绕着有色半透明核心的粗糙介电界面。界面反射率在各波长范围内通常一致，因此，头发的颜色由光在头发内部被吸收的量的波长变化决定。尽管这些散射效应可通过结合#link("../Reflection_Models/Dielectric_BSDF.html#DielectricBxDF")[`DielectricBxDF`]和第#link("../Volume_Scattering.html#chap:volume-scattering")[11]章、第#link("../Light_Transport_II_Volume_Rendering.html#chap:volume-integration")[14]章中的体积散射模型来实现，但这不仅计算成本高，需在头发几何体内进行光线追踪，而且对结果模型进行重要性采样亦十分困难。因此，本节引入一种专用于头发和毛皮的BSDF，该模型将这些底层散射过程封装成可高效评估和采样的结构。
 ]
 
 #parec[
-  See Figure #link("<fig:hair-vs-coated-diffuse>")[9.39] for an example of the visual complexity of scattering in hair and a comparison to rendering using a conventional BRDF model with hair geometry.
+  See @fig:hair-vs-coated-diffuse for an example of the visual complexity of scattering in hair and a comparison to rendering using a conventional BRDF model with hair geometry.
 ][
-  请参见图#link("<fig:hair-vs-coated-diffuse>")[9.39];，了解头发散射的视觉复杂性示例，以及使用常规BRDF模型与头发几何体渲染的比较。
+  请参见@fig:hair-vs-coated-diffuse;，了解头发散射的视觉复杂性示例，以及使用常规BRDF模型与头发几何体渲染的比较。
 ]
 
 #figure(
-  image("../pbr-book-website/4ed/Reflection_Models/hair-coated-diffuse.png"),
+  image("../pbr-book-website/4ed/Reflection_Models/pha09f39.svg"),
   caption: [
     #ez_caption[
-      Figure 9.39: Comparison of a BSDF that Models Hair to a Coated
-      Diffuse BSDF. (a) Geometric model of hair rendered using a BSDF
-      based on a diffuse base layer with a rough dielectric interface
-      above it (Section
-      #link("../Light_Transport_II_Volume_Rendering/Scattering_from_Layered_Materials.html#sec:coated-bxdf-specializations")[14.3.3];).
-      (b) Model rendered using the #link("<HairBxDF>")[`HairBxDF`] from this
-      section. Because the #link("<HairBxDF>")[`HairBxDF`] is based on an
-      accurate model of the hair microgeometry and also models light
-      transmission through hair, it gives a much more realistic
-      appearance. #emph[Hair geometry courtesy of Cem Yuksel.      ]
+      Comparison of a BSDF that Models Hair to a Coated Diffuse BSDF. (a) Geometric model of hair rendered using a BSDF based on a diffuse base layer with a rough dielectric interface above it (Section #link("../Light_Transport_II_Volume_Rendering/Scattering_from_Layered_Materials.html#sec:coated-bxdf-specializations")[14.3.3];). (b) Model rendered using the #link("<HairBxDF>")[`HairBxDF`] from this
+      section. Because the #link("<HairBxDF>")[`HairBxDF`] is based on an accurate model of the hair microgeometry and also models light transmission through hair, it gives a much more realistic appearance. #emph[Hair geometry courtesy of Cem Yuksel.]
     ][
-      图9.39：模拟头发的BSDF与涂层漫反射BSDF的比较。(a)
-      使用基于漫反射底层和其上粗糙介电界面的BSDF渲染的头发几何模型（第#link("../Light_Transport_II_Volume_Rendering/Scattering_from_Layered_Materials.html#sec:coated-bxdf-specializations")[14.3.3];节）。(b)
-      使用本节中的#link("<HairBxDF>")[`HairBxDF`];渲染的模型。由于#link("<HairBxDF>")[`HairBxDF`];基于头发微观几何的准确模型，并且还模拟了光线通过头发的传输，因此它呈现出更为真实的外观。#emph[头发几何体由Cem
-    Yuksel提供。
+      模拟头发的BSDF与涂层漫反射BSDF的比较。(a)
+      使用基于漫反射底层和其上粗糙介电界面的BSDF渲染的头发几何模型（第#link("../Light_Transport_II_Volume_Rendering/Scattering_from_Layered_Materials.html#sec:coated-bxdf-specializations")[14.3.3];节）。(b) 使用本节中的#link("<HairBxDF>")[`HairBxDF`];渲染的模型。由于#link("<HairBxDF>")[`HairBxDF`];基于头发微观几何的准确模型，并且还模拟了光线通过头发的传输，因此它呈现出更为真实的外观。#emph[头发几何体由Cem
+        Yuksel提供。
 
       ]
     ]
   ],
-)
+)<hair-vs-coated-diffuse>
 
 
 === 9.9.1 Geometry
@@ -52,100 +43,85 @@
 ]
 
 #parec[
-  Throughout the implementation of this scattering model, we will find it useful to separately consider scattering in the longitudinal plane, effectively using a side view of the curve, and scattering in the azimuthal plane, considering the curve head-on at a particular point along it. To understand these parameterizations, first recall that `Curve`s are parameterized such that the $u$ direction is along the length of the curve and $v$ spans its width. At a given $u$, all the possible surface normals of the curve are given by the surface normals of the circular cross-section at that point. All of these normals lie in a plane that is called the #emph[normal plane] (Figure #link("<fig:normal-plane>")[9.40];).
+  Throughout the implementation of this scattering model, we will find it useful to separately consider scattering in the longitudinal plane, effectively using a side view of the curve, and scattering in the azimuthal plane, considering the curve head-on at a particular point along it. To understand these parameterizations, first recall that `Curve`s are parameterized such that the $u$ direction is along the length of the curve and $v$ spans its width. At a given $u$, all the possible surface normals of the curve are given by the surface normals of the circular cross-section at that point. All of these normals lie in a plane that is called the #emph[normal plane] (@fig:normal-plane;).
 ][
-  在实现这个散射模型的过程中，我们会发现分别考虑纵向平面上的散射（有效地使用曲线的侧视图）和方位角平面上的散射（在曲线的特定点正视它）是有用的。为了理解这些参数化，首先回忆一下`Curve`的参数化方式是 $u$ 方向沿着曲线的长度， $v$ 跨越其宽度。在给定的 $u$ 处，曲线的所有可能的表面法线由该点的圆形截面的表面法线给出。所有这些法线都位于一个称为\_法线平面\_的平面内（图#link("<fig:normal-plane>")[9.40];）。
+  在实现这个散射模型的过程中，我们会发现分别考虑纵向平面上的散射（有效地使用曲线的侧视图）和方位角平面上的散射（在曲线的特定点正视它）是有用的。为了理解这些参数化，首先回忆一下`Curve`的参数化方式是 $u$ 方向沿着曲线的长度， $v$ 跨越其宽度。在给定的 $u$ 处，曲线的所有可能的表面法线由该点的圆形截面的表面法线给出。所有这些法线都位于一个称为_法线平面_的平面内（@fig:normal-plane;）。
 ]
 
 #figure(
   image("../pbr-book-website/4ed/Reflection_Models/pha09f40.svg"),
   caption: [
     #ez_caption[
-      Figure 9.40: At any parametric point along a `Curve` shape, the
-      cross-section of the curve is defined by a circle. All of the
-      circle’s surface normals (arrows) lie in a plane (dashed lines),
-      dubbed the "normal plane."
+      At any parametric point along a `Curve` shape, the cross-section of the curve is defined by a circle. All of the circle's surface normals (arrows) lie in a plane (dashed lines), dubbed the "normal plane."
     ][
       图9.40：在`Curve`形状的任何参数点上，曲线的截面由一个圆定义。所有圆的表面法线（箭头）都位于一个平面（虚线）内，称为“法线平面”。
-
     ]
   ],
-)
+)<normal-plane>
 
 
 #figure(
   image("../pbr-book-website/4ed/Reflection_Models/pha09f41.svg"),
   caption: [
-    #ez_caption[Figure 9.41: (a) Given a direction \$ heta\$ at a point on a curve,
-      the longitudinal angle \$ heta\$ is defined by the angle between \$
-      heta\$ and the normal plane at the point (thick line). The curve’s
-      tangent vector at the point is aligned with the $x$ axis in the BSDF
-      coordinate system. (b) For a direction \$ heta\$, the azimuthal
-      angle \$ heta\$ is found by projecting the direction into the normal
-      plane and computing its angle with the $y$ axis, which corresponds
-      to the curve’s \$ rac{ ext{d}n}{ ext{d}v}\$ in the BSDF coordinate
+    #ez_caption[ (a) Given a direction $omega$ at a point on a curve, the longitudinal angle $omega$ is defined by the angle between $omega$ and the normal plane at the point (thick line). The curve's tangent vector at the point is aligned with the $x$ axis in the BSDF coordinate system. (b) For a direction $omega$, the azimuthal angle $phi.alt$ is found by projecting the direction into the normal plane and computing its angle with the $y$ axis, which corresponds to the curve's $partial upright(p)\/partial v$ in the BSDF coordinate
       system.
     ][
-      图9.41：(a) 在曲线上的某一点给定一个方向\$ heta$， 纵 向 角 度$
-      heta$由$
-      heta$与 该 点 的 法 线 平 面 （ 粗 线 ） 之 间 的 角 度 定 义 。 曲 线 在 该 点 的 切 向 量 在 B S D F 坐 标 系 中 与$x$轴 对 齐 。 (b) 对 于 一 个 方 向$
-      heta$， 方 位 角$
-      heta$通 过 将 方 向 投 影 到 法 线 平 面 并 计 算 其 与$y$轴 的 角 度 来 找 到 ， 该$y$轴 对 应 于 B S D F 坐 标 系 中 的 曲 线$ rac{
-      ext{d}n}{ ext{d}v}\$。
+      (a) 对于曲线上某一点给定的方向 $omega$，纵向角（longitudinal angle）$omega$ 定义为该方向与该点处法平面（normal plane）之间的夹角（图中粗线所示）。在 BSDF 坐标系中，曲线在该点的切向量与 $x$ 轴对齐。 (b) 对于一个方向 $omega$，方位角（azimuthal angle） $phi.alt$ 的求法是：先将该方向投影到法平面上，再计算该投影与 $y$ 轴之间的夹角；这里的 $y$ 轴对应于 BSDF 坐标系中曲线的 $partial upright(p)\/partial v$ 方向。
     ]
   ],
-)
+)<curve-parameterization>
 
 
 #parec[
-  We will find it useful to represent directions at a ray–curve intersection point with respect to coordinates $(h e t a , h e t a)$ that are defined with respect to the normal plane at the $u$ position where the ray intersected the curve. The angle \$ heta\$ is the #emph[longitudinal angle];, which is the offset of the ray with respect to the normal plane (Figure #link("<fig:curve-parameterization>")[9.41];(a)); \$ heta\$ ranges from $- r a c e x t pi 2$ to \$ rac{ ext{π}}{2}\$, where \$ rac{ ext{π}}{2}\$ corresponds to a direction aligned with \$ rac{ ext{d}n}{ ext{d}u}\$ and $- r a c e x t pi 2$ corresponds to $- r a c e x t d n e x t d u$. As explained in Section #link("../Reflection_Models/BSDF_Representation.html#sec:bsdf-geom-and-conventions")[9.1.1];, in `pbrt`'s regular BSDF coordinate system, \$ rac{ ext{d}n}{ ext{d}u}\$ is aligned with the $x$ axis, so given a direction in the BSDF coordinate system, we have \$ ext{sin}( heta) = ext{ω}\_x\$, since the normal plane is perpendicular to \$ rac{ ext{d}n}{ ext{d}u}\$.
+  We will find it useful to represent directions at a ray-curve intersection point with respect to coordinates $(theta, phi.alt)$ that are defined with respect to the normal plane at the $u$ position where the ray intersected the curve. The angle $theta$ is the #emph[longitudinal angle];, which is the offset of the ray with respect to the normal plane (@fig:curve-parameterization;(a)); $theta$ ranges from $- pi \/ 2$ to $pi \/ 2$, where $pi \/ 2$ corresponds to a direction aligned with $partial upright(p)\/partial u$ and $- pi \/ 2$ corresponds to $- partial upright(p) \/ partial u$. As explained in Section #link("../Reflection_Models/BSDF_Representation.html#sec:bsdf-geom-and-conventions")[9.1.1];, in `pbrt`'s regular BSDF coordinate system, $partial upright(p)\/partial u$ is aligned with the $x$ axis, so given a direction in the BSDF coordinate system, we have $sin (theta) = omega_x$, since the normal plane is perpendicular to$partial upright(p)\/partial u$.
 ][
-  We will find it useful to represent directions at a ray–curve intersection point with respect to coordinates $(h e t a , h e t a)$ that are defined with respect to the normal plane at the $u$ position where the ray intersected the curve. The angle \$ heta\$ is the #emph[longitudinal angle];, which is the offset of the ray with respect to the normal plane (Figure #link("<fig:curve-parameterization>")[9.41];(a)); \$ heta\$ ranges from $- r a c e x t pi 2$ to \$ rac{ ext{π}}{2}\$, where \$ rac{ ext{π}}{2}\$ corresponds to a direction aligned with \$ rac{ ext{d}n}{ ext{d}u}\$ and $- r a c e x t pi 2$ corresponds to $- r a c e x t d n e x t d u$. As explained in Section #link("../Reflection_Models/BSDF_Representation.html#sec:bsdf-geom-and-conventions")[9.1.1];, in `pbrt`'s regular BSDF coordinate system, \$ rac{ ext{d}n}{ ext{d}u}\$ is aligned with the $x$ axis, so given a direction in the BSDF coordinate system, we have \$ ext{sin}( heta) = ext{ω}\_x\$, since the normal plane is perpendicular to \$ rac{ ext{d}n}{ ext{d}u}\$.
+  我们将发现，用坐标$(theta, phi.alt)$ 来表示射线与曲线相交点处的方向是很有用的。该坐标系是相对于射线与曲线相交处的 $u$ 位置对应的法平面（normal plane）定义的。
+  角度 $theta$ 是纵向角（longitudinal angle），它表示射线相对于法平面的偏离程度（见图 @fig:curve-parameterization;(a)）。 $theta$的取值范围为$- pi \/ 2$ 到 $pi \/ 2$，其中$pi \/ 2$ 表示方向与 $partial upright(p)\/partial u$ 对齐，而 $- pi \/ 2$ 表示方向与 $- partial upright(p)\/partial u$对齐。
+  如第9.1.1 节 所述，在 `pbrt` 的标准 BSDF 坐标系中，$partial upright(p)\/partial u$ 与 (x) 轴对齐，因此，对于给定的 BSDF 坐标系中的方向，有： $sin (theta) = omega_x$
+  因为法平面与 $partial upright(p)\/partial u$ 垂直。
+
 ]
 
 #parec[
-  In the BSDF coordinate system, the normal plane is spanned by the $y$ and $z$ coordinate axes. ( $y$ corresponds to \$ rac{ ext{d}n}{ ext{d}v}\$ for curves, which is always perpendicular to the curve's \$ rac{ ext{d}n}{ ext{d}u}\$, and $z$ is aligned with the ribbon normal.) The #emph[azimuthal angle] \$ heta\$ is found by projecting a direction \$ heta\$ into the normal plane and computing its angle with the $y$ axis. It thus ranges from $0$ to $2 e x t pi$ (Figure #link("<fig:curve-parameterization>")[9.41];(b)).
+  In the BSDF coordinate system, the normal plane is spanned by the $y$ and $z$ coordinate axes. ( $y$ corresponds to $partial upright(p)\/partial v$ for curves, which is always perpendicular to the curve's $partial upright(p)\/partial u$, and $z$ is aligned with the ribbon normal.) The #emph[azimuthal angle] $theta$ is found by projecting a direction $theta$ into the normal plane and computing its angle with the $y$ axis. It thus ranges from $0$ to $2 pi$ (@fig:curve-parameterization;(b)).
 ][
-  在BSDF坐标系中，法线平面由 $y$ 和 $z$ 坐标轴跨越。（ $y$ 对应于曲线的\$ rac{ ext{d}n}{ ext{d}v} $， 它 始 终 垂 直 于 曲 线 的$ rac{ ext{d}n}{ ext{d}u} $， 而$ z\$与带状法线对齐。）#emph[方位角] \$ heta $通 过 将 方 向$ heta $投 影 到 法 线 平 面 并 计 算 其 与$ y\$轴的角度来找到。它的范围是从 $0$ 到 $2 e x t pi$ （图#link("<fig:curve-parameterization>")[9.41];(b)）。
+  在BSDF坐标系中，法线平面由 $y$ 和 $z$ 坐标轴张成。（ $y$ 对应于曲线的$partial upright(p)\/partial u$， 它始终垂直于曲线的$partial upright(p)\/partial u$， 而$z$与带状法线对齐。）#emph[方位角] $phi.alt$ 通过将方向 $omega$ 投影到法线平面并计算其与$y$轴的角度来找到。它的范围是从 $0$ 到 $2 pi$ （@fig:curve-parameterization;(b)）。
 ]
 
 #parec[
-  One more measurement with respect to the curve will be useful in the following. Consider incident rays with some direction \$ heta\$: at any given parametric $u$ value, all such rays that intersect the curve can only possibly intersect one half of the circle swept along the curve (Figure #link("<fig:curve-h-gamma>")[9.42];). We will parameterize the circle's diameter with the variable $h$, where $h = e x t plus.minus 1$ corresponds to the ray grazing the edge of the circle, and $h = 0$ corresponds to hitting it edge-on. Because `pbrt` parameterizes curves with $v e x t in [0 , 1]$ across the curve, we can compute $h = - 1 + 2 v$.
+  One more measurement with respect to the curve will be useful in the following. Consider incident rays with some direction $omega$: at any given parametric $u$ value, all such rays that intersect the curve can only possibly intersect one half of the circle swept along the curve (@fig:curve-h-gamma). We will parameterize the circle's diameter with the variable $h$, where $h = plus.minus 1$ corresponds to the ray grazing the edge of the circle, and $h = 0$ corresponds to hitting it edge-on. Because `pbrt` parameterizes curves with $v in [0 , 1]$ across the curve, we can compute $h = - 1 + 2 v$.
 ][
-  One more measurement with respect to the curve will be useful in the following. Consider incident rays with some direction \$ heta\$: at any given parametric $u$ value, all such rays that intersect the curve can only possibly intersect one half of the circle swept along the curve (Figure #link("<fig:curve-h-gamma>")[9.42];). We will parameterize the circle's diameter with the variable $h$, where $h = e x t plus.minus 1$ corresponds to the ray grazing the edge of the circle, and $h = 0$ corresponds to hitting it edge-on. Because `pbrt` parameterizes curves with $v e x t in [0 , 1]$ across the curve, we can compute $h = - 1 + 2 v$.
+  在接下来的内容中，我们还需要引入一个与曲线相关的额外测度。考虑具有某个方向 $omega$ 的入射光线：在任意给定的参数 $u$ 处，所有与曲线相交的此类光线，只可能与沿曲线扫掠出的圆的一半相交（见图 @fig:curve-h-gamma）。我们用变量 $h$ 来参数化该圆的直径，其中，当 $h = plus.minus 1$ 时，表示光线掠过圆的边缘；而当 $h = 0$ 时，表示光线正好从圆的中部（即侧面）穿过。  由于 `pbrt` 在曲线宽度方向上使用 $v in [0, 1]$ 进行参数化，因此我们可以计算  $h = -1 + 2v$。
 ]
 
 #parec[
-  Given the $h$ for a ray intersection, we can compute the angle between the surface normal of the inferred swept cylinder (which is by definition in the normal plane) and the direction \$ heta\$, which we will denote by \$ heta\$. (Note: this is unrelated to the \$ heta\_n\$ notation used for floating-point error bounds in Section #link("../Shapes/Managing_Rounding_Error.html#sec:fp-error")[6.8];.) See Figure #link("<fig:curve-h-gamma>")[9.42];, which shows that \$ ext{sin}( heta) = h\$.
+  Given the $h$ for a ray intersection, we can compute the angle between the surface normal of the inferred swept cylinder (which is by definition in the normal plane) and the direction $omega$, which we will denote by $gamma$. (Note: this is unrelated to the $gamma$ notation used for floating-point error bounds in Section #link("../Shapes/Managing_Rounding_Error.html#sec:fp-error")[6.8];.) See @fig:curve-h-gamma, which shows that $sin gamma = h$.
 ][
-  Given the $h$ for a ray intersection, we can compute the angle between the surface normal of the inferred swept cylinder (which is by definition in the normal plane) and the direction \$ heta\$, which we will denote by \$ heta\$. (Note: this is unrelated to the \$ heta\_n\$ notation used for floating-point error bounds in Section #link("../Shapes/Managing_Rounding_Error.html#sec:fp-error")[6.8];.) See Figure #link("<fig:curve-h-gamma>")[9.42];, which shows that \$ ext{sin}( heta) = h\$.
+  给定射线相交点的 $h$ 值，我们可以计算出推导得到的扫掠圆柱面的法线（该法线按定义位于法平面内）与方向 $omega$ 之间的夹角，我们将其记作 $gamma$。  （注意：这与第 #link("../Shapes/Managing_Rounding_Error.html#sec:fp-error")[6.8] 节中用于浮点误差界限的符号 $gamma_n$ 无关。）参见图 @fig:curve-h-gamma，可知有 $sin gamma = h$。
+
 ]
 
 #figure(
   image("../pbr-book-website/4ed/Reflection_Models/pha09f42.svg"),
   caption: [
-    #ez_caption[Figure 9.42: Given an incident direction \$ heta\$ of a ray that
+    #ez_caption[
+      Given an incident direction $omega$ of a ray that
       intersected a #link("../Shapes/Curves.html#Curve")[`Curve`]
-      projected to the normal plane, we can parameterize the curve’s width
-      with $h e x t in [- 1 , 1]$. Given the $h$ for a ray that has
+      projected to the normal plane, we can parameterize the curve's width
+      with $h in [- 1 , 1]$. Given the $h$ for a ray that has
       intersected the curve, trigonometry shows how to compute the angle
-      \$ heta\$ between \$ heta\$ and the surface normal on the curve’s
-      surface at the intersection point. The two angles \$ heta\$ are
-      equal, and because the circle’s radius is 1, \$ ext{sin}( heta) =
-      h\$.
+      $gamma$ between $omega$ and the surface normal on the curve's
+      surface at the intersection point. The two angles $omega$ are
+      equal, and because the circle's radius is 1, $sin(gamma) =
+      h$.
     ][
-      图9.42：给定与#link("../Shapes/Curves.html#Curve")[`Curve`];相交的光线的入射方向\$
-      heta$投 影 到 法 线 平 面 ， 我 们 可 以 用$h ext{∈} \[-1,
-      1\]$对 曲 线 的 宽 度 进 行 参 数 化 。 给 定 与 曲 线 相 交 的 光 线 的$h$， 三 角 学 显 示 如 何 计 算$
-      heta$与 曲 线 表 面 在 交 点 处 的 表 面 法 线 之 间 的 角 度$
-      heta$。 两 个 角 度$
-      heta$是 相 等 的 ， 并 且 因 为 圆 的 半 径 是 1 ， 所 以$ ext{sin}(
-      heta) = h\$。
-
+      给定一条射线，在法线平面上与 #link("../Shapes/Curves.html#Curve")[`Curve`] 投影相交时的入射方向角 $omega$，我们可以用参数 $h \in [-1, 1]$ 来表示曲线的宽度。当射线与曲线相交时，已知对应的 $h$ 值，利用三角关系可以计算出入射方向 $omega$ 与曲面法线在交点处形成的角度 $gamma$。这两个角度 $omega$ 是相等的，并且由于圆的半径为 1，有 $sin(gamma) = h.$
     ]
   ],
-)
+)<curve-h-gamma>
 
+=== Scattering from Hair
+<Scattering_from_Hair>
 
 #parec[
   Geometric setting in hand, we will now turn to discuss the general scattering behaviors that give hair its distinctive appearance and some of the assumptions that we will make in the following.
@@ -164,8 +140,7 @@
     The cuticle's surface is a nested series of scales at a slight angle
     to the hair surface.
 ][
-  - #emph[毛鳞片：]
-    外层，与空气形成边界。毛鳞片的表面是一个嵌套的鳞片系列，与头发表面呈轻微角度。
+  - #emph[毛鳞片：] 外层，与空气形成边界。毛鳞片的表面是一个嵌套的鳞片系列，与头发表面呈轻微角度。
 ]
 
 #parec[
@@ -188,39 +163,79 @@
 ]
 
 #parec[
-  For the following scattering model, we will make a few assumptions. (Approaches for relaxing some of them are discussed in the exercises at the end of this chapter.) First, we assume that the cuticle can be modeled as a rough dielectric cylinder with scales that are all angled at the same angle $alpha$ (effectively giving a nested series of cones; see Figure 9.43).
+  For the following scattering model, we will make a few assumptions. (Approaches for relaxing some of them are discussed in the exercises at the end of this chapter.) First, we assume that the cuticle can be modeled as a rough dielectric cylinder with scales that are all angled at the same angle $alpha$ (effectively giving a nested series of cones; see Figure 9.43). We also treat the hair interior as a homogeneous medium that only absorbs light—scattering inside the hair is not modeled directly. (Chapters 11 and 14 have detailed discussion of light transport in participating media.)
 ][
-  对于以下散射模型，我们将做出一些假设。（在本章末的练习中讨论了放宽其中一些假设的方法。）首先，我们假设毛鳞片可以被建模为一个粗糙的介电圆柱，其鳞片都以相同的角度 $alpha$ 倾斜（有效地形成一个嵌套的圆锥系列；见图9.43）。
-]
-
-#parec[
-  We also treat the hair interior as a homogeneous medium that only absorbs light—scattering inside the hair is not modeled directly. (Chapters 11 and 14 have detailed discussion of light transport in participating media.)
-][
-  我们还将头发内部视为仅吸收光的均质介质——不直接建模头发内部的散射。（第11章和第14章详细讨论了参与介质中的光传输。）
+  对于以下散射模型，我们将做出一些假设。（在本章末的练习中讨论了放宽其中一些假设的方法。）首先，我们假设毛鳞片可以被建模为一个粗糙的介电圆柱，其鳞片都以相同的角度 $alpha$ 倾斜（有效地形成一个嵌套的圆锥系列；见图9.43）。我们还将头发内部视为仅吸收光的均质介质——不直接建模头发内部的散射。（第11章和第14章详细讨论了参与介质中的光传输。）
 ]
 
 #figure(
   image("../pbr-book-website/4ed/Reflection_Models/pha09f43.svg"),
   caption: [
-    Figure 9.43
+    #ez_caption[
+      The surface of hair is formed by scales that deviate by a small angle  from the ideal cylinder. ($alpha$ is generally around ; the angle shown here is larger for illustrative purposes.)
+    ][
+      毛发的表面由鳞片状结构组成，这些鳞片相对于理想圆柱表面略微倾斜（$alpha$ 通常很小；此处所示的角度被放大，仅用于说明）。
+    ]
   ],
 )
 
+#parec[
+  We will also make the assumption that scattering can be modeled accurately by a BSDF—we model light as entering and exiting the hair at the same place. (A BSSRDF could certainly be used instead; the “Further Reading” section has pointers to work that has investigated that alternative.) Note that this assumption requires that the hair’s diameter be fairly small with respect to how quickly illumination changes over the surface; this assumption is generally fine in practice at typical viewing distances.
+][
+  我们还将作出一个假设：认为毛发中的散射可以被准确地用 BSDF 来建模——也就是说，光线在毛发中被视为在同一点进入并离开。（当然，也可以使用 BSSRDF；在“延伸阅读”部分中提供了研究这种替代方法的相关文献。）请注意，这一假设要求毛发的直径相对于光照在其表面上变化的尺度来说必须足够小；在典型的观看距离下，这一假设通常是合理的。
+]
 
+#figure(
+  image("../pbr-book-website/4ed/Reflection_Models/pha09f44.svg"),
+  caption: [
+    #ez_caption[
+      Incident light arriving at a hair can be scattered in a variety of ways.  $p = 0$ corresponds to light reflected from the surface of the cuticle. Light may also be transmitted through the hair and leave the other side: $p=1$. It may be transmitted into the hair and reflected back into it again before being transmitted back out: $p=2$, and so forth.
+    ][
+      射入毛发的光线可以以多种方式被散射。
+      当 $p = 0$ 时，表示光线被毛鳞片表面反射；
+      当 $p = 1$ 时，光线穿过毛发并从另一侧射出；
+      当 $p = 2$ 时，光线先进入毛发内部，在内部被反射一次后再透射出来；
+      依此类推，$p$ 表示光线在毛发内部经历的反射次数。
+    ]
+  ],
+)<hair-r-tt-trt>
+#parec[
+  Incident light arriving at a hair may be scattered one or more times before leaving the hair; @fig:hair-r-tt-trt shows a few of the possible cases. We will use $p$ to denote the number of path segments it follows inside the hair before being scattered back out to air. We will sometimes refer to terms with a shorthand that describes the corresponding scattering events at the boundary: $p=0$ corresponds to $R$, for reflection, $p=1$ is $TT$, for two transmissions $p=2$ is $"TRT"$, $p=3$ is $"TRRT"$, and so forth.
+][
+  射入毛发的光线在离开前，可能会在毛发内部发生一次或多次散射；@fig:hair-r-tt-trt 展示了其中几种可能的情况。我们用 $p$ 来表示光线在离开毛发、重新回到空气中之前，在毛发内部经过的路径段数。有时，我们会使用一种简写形式来描述光线在毛发表面发生的散射事件类型： $p = 0$ 表示 $R$（Reflection，反射）；  $p = 1$ 表示 $"TT"$（两次透射）；  $p = 2$ 表示 $"TRT"$；  $p = 3$ 表示 $"TRRT"$；以此类推。
+]
+
+#parec[
+  In the following, we will find it useful to consider these scattering modes separately and so will write the hair BSDF as a sum over terms $p$:
+][
+  接下来，我们将分别考虑这些不同的散射模式，因此可以将毛发的 BSDF 表示为对各个 $p$ 项的求和形式：
+]
+
+$
+  f(omega_upright(o), omega_upright(i)) =sum_(p=0)^(oo) f_p (omega_upright(o),omega_upright(i))
+$
+
+#parec[
+  To make the scattering model evaluation and sampling easier, many hair scattering models factor $f$ into terms where one depends only on the angles $theta$ and another on $phi.alt$, the difference between $phi.alt_upright(o)$ and $phi.alt_upright(i)$. This semi-separable model is given by:
+][
+  为了使散射模型的评估和采样更容易，许多头发散射模型将$f$分解为一个仅取决于角度$theta$的项，另一个取决于$phi.alt_upright(o)$和$phi.alt_upright(i)$之间的差值$phi.alt_upright(i)$。该半可分模型由下式给出：
+]
+
+$
+  f_p (omega_upright(o), omega_upright(i)) =(M_p (theta_o, theta_i) A_p (omega_upright(o) ) N_p (phi.alt)) / (| cos theta_upright(i) |)
+$
 
 #parec[
   where we have a #emph[longitudinal scattering function] $M_p$, an #emph[attenuation function] $A_p$, and an #emph[azimuthal scattering
-function] $N_p$. \[^1\] The division by
-
-  $ lr(|cos theta_i|) $
-
-  cancels out the corresponding factor in the reflection equation.
+    function] $N_p$. #footnote[Other authors generally include $A_p$ in the
+    $N_p$ term, though we find it more clear to keep
+    them separate for the following exposition. Here we also use $f$ for the
+    BSDF, which most hair scattering papers denote by $S$.] The division by $lr(|cos theta_i|)$ cancels out the corresponding factor in the reflection equation.
 ][
-  在这里，我们有一个#emph[纵向散射函数] $M_p$，一个#emph[衰减函数] $A_p$，以及一个#emph[方位角散射函数] $N_p$。\[^1\] 除以
-
-  $ lr(|cos theta_i|) $
-
-  抵消了反射方程中的相应因子。
+  在这里，我们有一个#emph[纵向散射函数] $M_p$，一个#emph[衰减函数] $A_p$，以及一个#emph[方位角散射函数] $N_p$。#footnote[Other authors generally include $A_p$ in the
+    $N_p$ term, though we find it more clear to keep
+    them separate for the following exposition. Here we also use $f$ for the
+    BSDF, which most hair scattering papers denote by $S$.] 除以 $lr(|cos theta_i|)$ 抵消了反射方程中的相应因子。
 ]
 
 #parec[
@@ -241,10 +256,10 @@ static constexpr int pMax = 3;
 ]
 
 #parec[
-  - `h`: the \$ \$ offset along the curve width where the ray intersected
+  - `h`: the $[-1,1]$ offset along the curve width where the ray intersected
     the oriented ribbon.
 ][
-  - `h`：沿曲线宽度的 \$ \$ 偏移量，光线在此处与定向带相交。
+  - `h`：沿曲线宽度的 $[-1,1]$ 偏移量，光线在此处与定向带相交。
 ]
 
 #parec[
@@ -265,15 +280,15 @@ static constexpr int pMax = 3;
 
 #parec[
   - `beta_m`: the longitudinal roughness of the hair, mapped to the range
-    \$ \$.
+    $[0, 1]$.
 ][
-  - `beta_m`：头发的纵向粗糙度，映射到范围 \$ \$。
+  - `beta_m`：头发的纵向粗糙度，映射到范围 $[0, 1]$。
 ]
 
 #parec[
-  - `beta_n`: the azimuthal roughness, also mapped to \$ \$.
+  - `beta_n`: the azimuthal roughness, also mapped to $[0, 1]$.
 ][
-  - `beta_n`：方位角粗糙度，也映射到 \$ \$。
+  - `beta_n`：方位角粗糙度，也映射到 $[0, 1]$。
 ]
 
 #parec[
@@ -285,82 +300,22 @@ static constexpr int pMax = 3;
 ]
 
 ```cpp
+<<HairBxDF Definition>>=
 class HairBxDF {
   public:
-    <<HairBxDF Public Methods>>       HairBxDF() = default;
-       PBRT_CPU_GPU
-       HairBxDF(Float h, Float eta, const SampledSpectrum &sigma_a, Float beta_m,
-                Float beta_n, Float alpha);
-       PBRT_CPU_GPU
-       SampledSpectrum f(Vector3f wo, Vector3f wi, TransportMode mode) const;
-       PBRT_CPU_GPU
-       pstd::optional<BSDFSample> Sample_f(Vector3f wo, Float uc, Point2f u,
-                                           TransportMode mode,
-                                           BxDFReflTransFlags sampleFlags) const;
-       PBRT_CPU_GPU
-       Float PDF(Vector3f wo, Vector3f wi, TransportMode mode,
-                 BxDFReflTransFlags sampleFlags) const;
-       PBRT_CPU_GPU
-       void Regularize() {}
-       PBRT_CPU_GPU
-       static constexpr const char *Name() { return "HairBxDF"; }
-       std::string ToString() const;
-       PBRT_CPU_GPU
-       BxDFFlags Flags() const { return BxDFFlags::GlossyReflection; }
-       PBRT_CPU_GPU
-       static RGBUnboundedSpectrum SigmaAFromConcentration(Float ce, Float cp);
-       PBRT_CPU_GPU
-       static SampledSpectrum SigmaAFromReflectance(const SampledSpectrum &c, Float beta_n,
-                                                    const SampledWavelengths &lambda);
+    <<HairBxDF Public Methods>>
   private:
-    <<HairBxDF Constants>>       static constexpr int pMax = 3;
-    <<HairBxDF Private Methods>>       Float Mp(Float cosTheta_i, Float cosTheta_o, Float sinTheta_i,
-                Float sinTheta_o, Float v) {
-           Float a = cosTheta_i * cosTheta_o / v, b = sinTheta_i * sinTheta_o / v;
-           Float mp = (v <= .1) ?
-                      (FastExp(LogI0(a) - b - 1 / v + 0.6931f +
-                               std::log(1 / (2 * v)))) :
-                      (FastExp(-b) * I0(a)) / (std::sinh(1 / v) * 2 * v);
-           return mp;
-       }
-       pstd::array<SampledSpectrum, pMax + 1>
-       Ap(Float cosTheta_o, Float eta, Float h, SampledSpectrum T) {
-           pstd::array<SampledSpectrum, pMax + 1> ap;
-           <<Compute p equals 0 attenuation at initial cylinder intersection>>              Float cosGamma_o = SafeSqrt(1 - Sqr(h));
-              Float cosTheta = cosTheta_o * cosGamma_o;
-              Float f = FrDielectric(cosTheta, eta);
-              ap[0] = SampledSpectrum(f);
-           <<Compute p equals 1 attenuation term>>              ap[1] = Sqr(1 - f) * T;
-           <<Compute attenuation terms up to p equals monospace p monospace upper M monospace a monospace x>>              for (int p = 2; p < pMax; ++p)
-                  ap[p] = ap[p - 1] * T * f;
-           <<Compute attenuation term accounting for remaining orders of scattering>>              if (1 - T * f)
-                  ap[pMax] = ap[pMax - 1] * f * T / (1 - T * f);
-           return ap;
-       }
-       Float Phi(int p, Float gamma_o, Float gamma_t) {
-           return 2 * p * gamma_t - 2 * gamma_o + p * \pi;
-       }
-       Float Np(Float phi, int p, Float s, Float gamma_o, Float gamma_t) {
-           Float dphi = phi - Phi(p, gamma_o, gamma_t);
-           <<Remap dphi to $\left[-\pi, \pi\right]$>>              while (dphi > \pi) dphi -= 2 * \pi;
-              while (dphi < -\pi) dphi += 2 * \pi;
-           return TrimmedLogistic(dphi, s, -\pi, \pi);
-       }
-       pstd::array<Float, pMax + 1> ApPDF(Float cosTheta_o) const;
-    <<HairBxDF Private Members>>       Float h, eta;
-       SampledSpectrum sigma_a;
-       Float beta_m, beta_n;
-       Float v[pMax + 1];
-       Float s;
-       Float sin2kAlpha[pMax], cos2kAlpha[pMax];
+    <<HairBxDF Constants>>
+    <<HairBxDF Private Methods>>
+    <<HairBxDF Private Members>>
 };
 ```
 
 
 #parec[
-  Beyond initializing corresponding member variables, the `HairBxDF` constructor performs some additional precomputation of values that will be useful for sampling and evaluation of the scattering model. The corresponding code will be added to the #strong[\<\>] fragment in the following, closer to where the corresponding values are defined and used. Note that `alpha` is not stored in a member variable; it is used to compute a few derived quantities that will be, however.
+  Beyond initializing corresponding member variables, the `HairBxDF` constructor performs some additional precomputation of values that will be useful for sampling and evaluation of the scattering model. The corresponding code will be added to the `<<HairBxDF constructor implementation>>` fragment in the following, closer to where the corresponding values are defined and used. Note that `alpha` is not stored in a member variable; it is used to compute a few derived quantities that will be, however.
 ][
-  除了初始化相应的成员变量外，`HairBxDF` 构造函数还执行了一些额外的预计算，这些值将对散射模型的采样和评估非常有用。相应的代码将在接下来的 #strong[\<\>] 片段中添加，靠近定义和使用相应值的地方。注意，`alpha` 不存储在成员变量中；它用于计算一些派生量，这些量将被存储。
+  除了初始化相应的成员变量外，`HairBxDF` 构造函数还执行了一些额外的预计算，这些值将对散射模型的采样和评估非常有用。相应的代码将在接下来的 `<<HairBxDF constructor implementation>>` 片段中添加，靠近定义和使用相应值的地方。注意，`alpha` 不存储在成员变量中；它用于计算一些派生量，这些量将被存储。
 ]
 
 ```cpp
@@ -377,57 +332,22 @@ Float beta_m, beta_n;
 ]
 
 ```cpp
+<<HairBxDF Method Definitions>>=
 SampledSpectrum HairBxDF::f(Vector3f wo, Vector3f wi,
                             TransportMode mode) const {
-    <<Compute hair coordinate system terms related to wo>>       Float sinTheta_o = wo.x;
-       Float cosTheta_o = SafeSqrt(1 - Sqr(sinTheta_o));
-       Float phi_o = std::atan2(wo.z, wo.y);
-       Float gamma_o = SafeASin(h);
-    <<Compute hair coordinate system terms related to wi>>       Float sinTheta_i = wi.x;
-       Float cosTheta_i = SafeSqrt(1 - Sqr(sinTheta_i));
-       Float phi_i = std::atan2(wi.z, wi.y);
-    <<Compute cosine theta Subscript normal t for refracted ray>>       Float sinTheta_t = sinTheta_o / eta;
-       Float cosTheta_t = SafeSqrt(1 - Sqr(sinTheta_t));
-    <<Compute gamma Subscript normal t for refracted ray>>       Float etap = SafeSqrt(Sqr(eta) - Sqr(sinTheta_o)) / cosTheta_o;
-       Float sinGamma_t = h / etap;
-       Float cosGamma_t = SafeSqrt(1 - Sqr(sinGamma_t));
-       Float gamma_t = SafeASin(sinGamma_t);
-    <<Compute the transmittance T of a single path through the cylinder>>       SampledSpectrum T = Exp(-sigma_a * (2 * cosGamma_t / cosTheta_t));
-    <<Evaluate hair BSDF>>       Float phi = phi_i - phi_o;
-       pstd::array<SampledSpectrum, pMax + 1> ap = Ap(cosTheta_o, eta, h, T);
-       SampledSpectrum fsum(0.);
-       for (int p = 0; p < pMax; ++p) {
-           <<Compute sine theta Subscript normal o and cosine theta Subscript normal o terms accounting for scales>>              Float sinThetap_o, cosThetap_o;
-              if (p == 0) {
-                  sinThetap_o = sinTheta_o * cos2kAlpha[1] - cosTheta_o * sin2kAlpha[1];
-                  cosThetap_o = cosTheta_o * cos2kAlpha[1] + sinTheta_o * sin2kAlpha[1];
-              }
-              <<Handle remainder of p values for hair scale tilt>>                 else if (p == 1) {
-                     sinThetap_o = sinTheta_o * cos2kAlpha[0] + cosTheta_o * sin2kAlpha[0];
-                     cosThetap_o = cosTheta_o * cos2kAlpha[0] - sinTheta_o * sin2kAlpha[0];
-                 } else if (p == 2) {
-                     sinThetap_o = sinTheta_o * cos2kAlpha[2] + cosTheta_o * sin2kAlpha[2];
-                     cosThetap_o = cosTheta_o * cos2kAlpha[2] - sinTheta_o * sin2kAlpha[2];
-                 } else {
-                     sinThetap_o = sinTheta_o;
-                     cosThetap_o = cosTheta_o;
-                 }
-              <<Handle out-of-range cosine theta Subscript normal o from scale adjustment>>                 cosThetap_o = std::abs(cosThetap_o);
-           fsum += Mp(cosTheta_i, cosThetap_o, sinTheta_i, sinThetap_o, v[p]) *
-                   ap[p] * Np(phi, p, s, gamma_o, gamma_t);
-       }
-       <<Compute contribution of remaining terms after pMax>>          fsum += Mp(cosTheta_i, cosTheta_o, sinTheta_i, sinTheta_o, v[pMax]) *
-                  ap[pMax] / (2 * \pi);
-       if (AbsCosTheta(wi) > 0)
-           fsum /= AbsCosTheta(wi);
-       return fsum;
+    <<Compute hair coordinate system terms related to wo>>
+    <<Compute hair coordinate system terms related to wi>>
+    <<Compute  for refracted ray>>
+    <<Compute  for refracted ray>>
+    <<Compute the transmittance T of a single path through the cylinder>>
+    <<Evaluate hair BSDF>>
 }
 ```
 
 #parec[
-  There are a few quantities related to the directions \$ \_o \$ and \$ \_i \$ that are needed for evaluating the hair scattering model—specifically, the sine and cosine of the angle $theta$ that each direction makes with the plane perpendicular to the curve, and the angle $phi.alt$ in the azimuthal coordinate system.
+  There are a few quantities related to the directions $omega_upright(o)$ and $omega_upright(i)$ that are needed for evaluating the hair scattering model—specifically, the sine and cosine of the angle $theta$ that each direction makes with the plane perpendicular to the curve, and the angle $phi.alt$ in the azimuthal coordinate system.
 ][
-  有一些与方向 \$ \_o \$ 和 \$ \_i \$ 相关的量是评估头发散射模型所需的——具体来说，每个方向与垂直于曲线的平面所成角度 $theta$ 的正弦和余弦，以及方位角坐标系中的角度 $phi.alt$。
+  有一些与方向 $omega_upright(o)$ 和 $omega_upright(i)$ 相关的量是评估头发散射模型所需的——具体来说，每个方向与垂直于曲线的平面所成角度 $theta$ 的正弦和余弦，以及方位角坐标系中的角度 $phi.alt$。
 ]
 
 #parec[
@@ -472,7 +392,7 @@ Float phi_i = std::atan2(wi.z, wi.y);
 
 #parec[
   #box(image("../pbr-book-website/4ed/Reflection_Models/hair-betam-0.1.png")) - Hair model illuminated by a skylight environment map rendered with varying longitudinal roughness. 1. With a very low roughness, $beta_m = 0.1$, the hair appears too shiny—almost metallic. 2. With $beta_m = 0.25$, the highlight is similar to typical human hair. 3. At high roughness, $beta_m = 0.7$, the hair is unrealistically flat and diffuse. #emph[(Hair geometry courtesy of Cem
-Yuksel.)]
+    Yuksel.)]
 ][
   #box(image("../pbr-book-website/4ed/Reflection_Models/hair-betam-0.1.png")) - 头发模型通过天光环境贴图照亮，渲染时使用不同的纵向粗糙度。 1. 当粗糙度非常低时， $beta_m = 0.1$，头发显得过于光亮——几乎呈现金属质感。 2. 当 $beta_m = 0.25$ 时，高光类似于典型的人类头发。 3. 在高粗糙度下， $beta_m = 0.7$，头发显得不真实地平坦和漫反射。 #emph[(头发几何形状由 Cem Yuksel 提供。)]
 ]
@@ -546,22 +466,22 @@ Float v[pMax + 1];
 === 9.9.4 Absorption in Fibers
 <absorption-in-fibers>
 #parec[
-  The ( A\_p ) factor describes how the incident light is affected by each of the scattering modes ( p ). It incorporates two effects: Fresnel reflection and transmission at the hair–air boundary and absorption of light that passes through the hair (for ( p \> 0 )). Figure #link("<fig:hair-sigma-a>")[9.47] has rendered images of hair with varying absorption coefficients, showing the effect of absorption. The ( A\_p ) function that we have implemented models all reflection and transmission at the hair boundary as perfect specular—a very different assumption than ( M\_p ) and ( N\_p ) (to come), which model glossy reflection and transmission. This assumption simplifies the implementation and gives reasonable results in practice (presumably in that the specular paths are, in a sense, averages over all the possible glossy paths).
+  The ( A\_p ) factor describes how the incident light is affected by each of the scattering modes ( p ). It incorporates two effects: Fresnel reflection and transmission at the hair-air boundary and absorption of light that passes through the hair (for ( p \> 0 )). Figure #link("<fig:hair-sigma-a>")[9.47] has rendered images of hair with varying absorption coefficients, showing the effect of absorption. The ( A\_p ) function that we have implemented models all reflection and transmission at the hair boundary as perfect specular—a very different assumption than ( M\_p ) and ( N\_p ) (to come), which model glossy reflection and transmission. This assumption simplifies the implementation and gives reasonable results in practice (presumably in that the specular paths are, in a sense, averages over all the possible glossy paths).
 ][
   ( A\_p ) 因子描述了入射光如何受到每种散射模式 ( p ) 的影响。它包含两个效应：在头发-空气边界的菲涅耳反射和透射，以及通过头发的光的吸收（对于 ( p \> 0 )）。图 #link("<fig:hair-sigma-a>")[9.47] 显示了具有不同吸收系数的头发渲染图像，展示了吸收的效果。我们实现的 ( A\_p ) 函数将头发边界的所有反射和透射建模为完美镜面反射和透射——这与 ( M\_p ) 和 ( N\_p ) （即将介绍）建模的光泽反射和透射有很大不同。这种假设简化了实现，并在实践中产生了合理的结果（大概是因为镜面路径在某种意义上是所有可能的光泽路径的平均）。
 ]
 
 #parec[
   #strong[Figure 9.47:] Hair Rendered with Various Absorption Coefficients. In all cases, ( #emph[m = 0.25 ) and ( #emph[n = 0.3 ).
-(a) ( ];{normal a} = (3.35, 5.58, 10.96) ) (RGB coefficients): in black
-hair, almost all transmitted light is absorbed. The white specular
-highlight from the ( p = 0 ) term is the main visual feature. (b) (
-];{normal a} = (0.84, 1.39, 2.74) )，giving brown hair, where the ( p \> 1 ) terms all introduce color to the hair. (c) With a very low absorption coefficient of ( \_{normal a} = (0.06, 0.10, 0.20) )，we have blonde hair. #emph[Hair geometry courtesy of Cem Yuksel.]
+      (a) ( ];{normal a} = (3.35, 5.58, 10.96) ) (RGB coefficients): in black
+    hair, almost all transmitted light is absorbed. The white specular
+    highlight from the ( p = 0 ) term is the main visual feature. (b) (
+  ];{normal a} = (0.84, 1.39, 2.74) )，giving brown hair, where the ( p \> 1 ) terms all introduce color to the hair. (c) With a very low absorption coefficient of ( \_{normal a} = (0.06, 0.10, 0.20) )，we have blonde hair. #emph[Hair geometry courtesy of Cem Yuksel.]
 ][
   #strong[图 9.47：] 使用不同吸收系数渲染的头发。在所有情况下，( #emph[m =
-0.25 ) 和 ( #emph[n = 0.3 )。 (a) ( ];{normal a} = (3.35, 5.58, 10.96) )
-（RGB 系数）：在黑色头发中，几乎所有透射的光都被吸收。来自 ( p = 0 )
-项的白色镜面高光是主要的视觉特征。 (b) ( ];{normal a} = (0.84, 1.39, 2.74) )，呈现棕色头发，其中 ( p \> 1 ) 项都为头发引入了颜色。 (c) 吸收系数非常低的 ( \_{normal a} = (0.06, 0.10, 0.20) )，我们得到金色头发。#emph[头发几何由 Cem Yuksel 提供。]
+    0.25 ) 和 ( #emph[n = 0.3 )。 (a) ( ];{normal a} = (3.35, 5.58, 10.96) )
+    （RGB 系数）：在黑色头发中，几乎所有透射的光都被吸收。来自 ( p = 0 )
+    项的白色镜面高光是主要的视觉特征。 (b) ( ];{normal a} = (0.84, 1.39, 2.74) )，呈现棕色头发，其中 ( p \> 1 ) 项都为头发引入了颜色。 (c) 吸收系数非常低的 ( \_{normal a} = (0.06, 0.10, 0.20) )，我们得到金色头发。#emph[头发几何由 Cem Yuksel 提供。]
 ]
 
 #parec[
@@ -590,7 +510,7 @@ Float cosTheta_t = SafeSqrt(1 - Sqr(sinTheta_t));
 
 #parec[
   For ( \_t ), although we could compute the transmitted direction ( \_t ) from ( \_o ) and then project ( \_t ) into the normal plane, it is possible to compute ( \_t ) directly using a #emph[modified index of
-refraction] that accounts for the effect of the longitudinal angle on the refracted direction in the normal plane. The modified index of refraction is given by
+    refraction] that accounts for the effect of the longitudinal angle on the refracted direction in the normal plane. The modified index of refraction is given by
 ][
   对于 ( \_t )，虽然我们可以从 ( \_o ) 计算透射方向 ( \_t )，然后将 ( \_t ) 投影到法平面，但可以使用修正的折射率直接计算 ( \_t )，该折射率考虑了纵向角度对法平面中折射方向的影响。修正的折射率为
 ]
@@ -858,7 +778,7 @@ Float Phi(int p, Float gamma_o, Float gamma_t) {
 
 #parec[
   In the following, we will find it useful to define a normalized logistic function over a range $[a , b]$ ; we will call this the #emph[trimmed
-logistic];, $l_t$.
+    logistic];, $l_t$.
 ][
   在接下来的内容中，我们将发现定义一个在范围 $[a , b]$ 上的归一化逻辑斯蒂函数是有用的；我们称之为#emph[截断逻辑斯蒂];， $l_t$。
 ]
@@ -976,7 +896,7 @@ Float s;
 ]
 
 $
-  sin (theta_o plus.minus alpha) & = sin theta_o cos alpha plus.minus cos theta_o sin alpha\
+  sin (theta_o plus.minus alpha) & = sin theta_o cos alpha plus.minus cos theta_o sin alpha \
   cos (theta_o plus.minus alpha) & = cos theta_o cos alpha minus.plus sin theta_o sin alpha
 $
 
@@ -1114,14 +1034,14 @@ cosThetap_o = std::abs(cosThetap_o);
 <a-note-on-reciprocity>
 #parec[
   Although we included reciprocity in the properties of physically valid BRDFs in Section~#link("../Radiometry,_Spectra,_and_Color/Surface_Reflection.html#sec:brdf")[4.3.1];, the model we have implemented in this section is, unfortunately, not reciprocal. An immediate issue is that the rotation for hair scales is applied only to \$ #emph[{ i} \$. However, there are more problems:
-first, all terms \$ p \> 0 \$ that involve transmission are not
-reciprocal since the transmission terms use values based on \$ ];{ t} \$, which itself only depends on \$ #emph[{ o} \$. Thus, if \$ ];{ o} \$ and \$ #emph[{ i} \$ are interchanged, a completely different \$ ];{ t} \$ is computed, which in turn leads to different \$ #emph[{ t} \$ and \$
-];{ t} \$ values, which in turn give different values from the \$ A\_{p} \$ and \$ N\_{p} \$ functions. In practice, however, we have not observed artifacts in images from these shortcomings.
+    first, all terms \$ p \> 0 \$ that involve transmission are not
+    reciprocal since the transmission terms use values based on \$ ];{ t} \$, which itself only depends on \$ #emph[{ o} \$. Thus, if \$ ];{ o} \$ and \$ #emph[{ i} \$ are interchanged, a completely different \$ ];{ t} \$ is computed, which in turn leads to different \$ #emph[{ t} \$ and \$
+  ];{ t} \$ values, which in turn give different values from the \$ A\_{p} \$ and \$ N\_{p} \$ functions. In practice, however, we have not observed artifacts in images from these shortcomings.
 ][
   尽管我们在第#link("../Radiometry,_Spectra,_and_Color/Surface_Reflection.html#sec:brdf")[4.3.1];节中将互惠性包含在物理有效的BRDF属性中，但我们在本节中实现的模型不具备互惠性。一个直接的问题是头发鳞片的旋转仅应用于 \$ #emph[{ i} \$。然而，还有更多问题：首先，所有涉及传输的 \$ p \> 0 \$
-项都不具备互惠性，因为传输项使用基于 \$ ];{ t} \$ 的值，而 \$ #emph[{ t}
-\$ 本身仅依赖于 \$ ];{ o} \$。因此，如果交换 \$ #emph[{ o} \$ 和 \$ ];{ i} \$，则会计算出一个完全不同的 \$ #emph[{ t} \$，这反过来会导致不同的
-\$ ];{ t} \$ 和 \$ #emph[{ t} \$ 值，进而从 \$ A];{p} \$ 和 \$ N\_{p} \$ 函数中得出不同的值。然而，在实践中，我们并未观察到这些缺陷在图像中产生伪影。
+    项都不具备互惠性，因为传输项使用基于 \$ ];{ t} \$ 的值，而 \$ #emph[{ t}
+    \$ 本身仅依赖于 \$ ];{ o} \$。因此，如果交换 \$ #emph[{ o} \$ 和 \$ ];{ i} \$，则会计算出一个完全不同的 \$ #emph[{ t} \$，这反过来会导致不同的
+    \$ ];{ t} \$ 和 \$ #emph[{ t} \$ 值，进而从 \$ A];{p} \$ 和 \$ N\_{p} \$ 函数中得出不同的值。然而，在实践中，我们并未观察到这些缺陷在图像中产生伪影。
 ]
 
 === 9.9.7 Sampling
@@ -1295,11 +1215,11 @@ int p = SampleDiscrete(apPDF, uc, nullptr, & uc);
 
 #parec[
   We can now sample the corresponding \$ M\_{p} \$ term given \$ #emph[{
-o} \$ to find \$ ];{ i} \$. The derivation of this sampling method is fairly involved, so we will include neither the derivation nor the implementation here. This fragment, \<\<Sample \$ M\_{p} \$ to compute \$ \_{ i} \$\>\>, consumes both of the sample values `u[0]` and `u[1]` and initializes variables `sinTheta_i` and `cosTheta_i` according to the sampled direction.
+    o} \$ to find \$ ];{ i} \$. The derivation of this sampling method is fairly involved, so we will include neither the derivation nor the implementation here. This fragment, \<\<Sample \$ M\_{p} \$ to compute \$ \_{ i} \$\>\>, consumes both of the sample values `u[0]` and `u[1]` and initializes variables `sinTheta_i` and `cosTheta_i` according to the sampled direction.
 ][
   我们现在可以给定 \$ #emph[{ o} \$ 采样相应的 \$ M];{p} \$ 项以找到 \$ #emph[{ i}
-\$。此采样方法的推导相当复杂，因此我们在此不包括推导和实现。此片段
-\<\<采样 \$ M];{p} \$ 以计算 \$ \_{ i} \$\>\>，消耗了两个样本值 `u[0]` 和 `u[1]`，并根据采样方向初始化变量 `sinTheta_i` 和 `cosTheta_i`。
+    \$。此采样方法的推导相当复杂，因此我们在此不包括推导和实现。此片段
+    \<\<采样 \$ M];{p} \$ 以计算 \$ \_{ i} \$\>\>，消耗了两个样本值 `u[0]` 和 `u[1]`，并根据采样方向初始化变量 `sinTheta_i` 和 `cosTheta_i`。
 ]
 
 
@@ -1354,13 +1274,9 @@ Vector3f wi(sinTheta_i, cosTheta_i * std::cos(phi_i),
 
 
 #parec[
-  $
-    sum_(p = 0)^(p_(m a x)) M_p (theta_o , theta_i) tilde(A)_p (omega_o) N_p (phi.alt) ,
-  $ where $tilde(A)_p$ are the normalized PDF terms. Note that $theta_o$ must be shifted to account for hair scales when evaluating the PDF; this is done in the same way (and with the same code fragment) as with BSDF evaluation.
+  $ sum_(p = 0)^(p_(m a x)) M_p (theta_o , theta_i) tilde(A)_p (omega_o) N_p (phi.alt) , $ where $tilde(A)_p$ are the normalized PDF terms. Note that $theta_o$ must be shifted to account for hair scales when evaluating the PDF; this is done in the same way (and with the same code fragment) as with BSDF evaluation.
 ][
-  $
-    sum_(p = 0)^(p_(m a x)) M_p (theta_o , theta_i) tilde(A)_p (omega_o) N_p (phi.alt) ,
-  $ 其中 $tilde(A)_p$ 是归一化的概率密度函数项。注意，在评估概率密度函数时，必须调整 $theta_o$ 以考虑头发的比例；这与 BSDF 评估的方式相同（并使用相同的代码片段）。
+  $ sum_(p = 0)^(p_(m a x)) M_p (theta_o , theta_i) tilde(A)_p (omega_o) N_p (phi.alt) , $ 其中 $tilde(A)_p$ 是归一化的概率密度函数项。注意，在评估概率密度函数时，必须调整 $theta_o$ 以考虑头发的比例；这与 BSDF 评估的方式相同（并使用相同的代码片段）。
 ]
 
 
