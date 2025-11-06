@@ -1,18 +1,18 @@
-#import "../template.typ": parec, ez_caption
+#import "../template.typ": ez_caption, parec
 
 == Roughness Using Microfacet Theory
 <roughness-using-microfacet-theory>
 
 #parec[
-  The preceding discussion of the #link("../Reflection_Models/Conductor_BRDF.html#ConductorBxDF")[ConductorBxDF] and #link("../Reflection_Models/Dielectric_BSDF.html#DielectricBxDF")[DielectricBxDF] only considered the perfect specular case, where the interface between materials was assumed to be ideally smooth and devoid of any roughness or other surface imperfections. However, many real-world materials are rough at a microscopic scale, which affects the way in which they reflect or transmit light.
+  The preceding discussion of the #link("../Reflection_Models/Conductor_BRDF.html#ConductorBxDF")[`ConductorBxDF`] and #link("../Reflection_Models/Dielectric_BSDF.html#DielectricBxDF")[`DielectricBxDF`] only considered the perfect specular case, where the interface between materials was assumed to be ideally smooth and devoid of any roughness or other surface imperfections. However, many real-world materials are rough at a microscopic scale, which affects the way in which they reflect or transmit light.
 ][
-  前面的#link("../Reflection_Models/Conductor_BRDF.html#ConductorBxDF")[导体BxDF];和#link("../Reflection_Models/Dielectric_BSDF.html#DielectricBxDF")[介电体BxDF];讨论仅考虑了完美镜面情况，其中假设材料之间的界面是理想光滑的，没有任何粗糙度或其他表面缺陷。然而，许多现实世界的材料在微观尺度上存在粗糙度，这会影响它们的光反射或传输方式。
+  前面的#link("../Reflection_Models/Conductor_BRDF.html#ConductorBxDF")[`导体BxDF`(`ConductorBxDF`)];和#link("../Reflection_Models/Dielectric_BSDF.html#DielectricBxDF")[`DielectricBxDF`];讨论仅考虑了完美镜面情况，其中假设材料之间的界面是理想光滑的，没有任何粗糙度或其他表面缺陷。然而，许多现实世界的材料在微观尺度上存在粗糙度，这会影响它们的光反射或传输方式。
 ]
 
 #parec[
-  We will now turn to a generalization of these `BxDF`s using #emph[microfacet theory];, which models rough surfaces as a collection of small surface patches denoted as #emph[microfacets];. These microfacets are assumed to be individually very small so that they cannot be resolved by the camera. Yet, despite their small size, they can have a profound impact on the angular distribution of scattered light. Figure~#link("<fig:microfacet>")[9.20] shows cross sections of a relatively rough surface and a much smoother microfacet surface. We will use the term #emph[macrosurface] to describe the original coarse surface (e.g., as represented by a `Shape`) and #emph[microsurface] to describe the fine-scale geometry based on microfacets.
+  We will now turn to a generalization of these `BxDF`s using #emph[microfacet theory];, which models rough surfaces as a collection of small surface patches denoted as #emph[microfacets];. These microfacets are assumed to be individually very small so that they cannot be resolved by the camera. Yet, despite their small size, they can have a profound impact on the angular distribution of scattered light. @fig:microfacet shows cross sections of a relatively rough surface and a much smoother microfacet surface. We will use the term #emph[macrosurface] to describe the original coarse surface (e.g., as represented by a `Shape`) and #emph[microsurface] to describe the fine-scale geometry based on microfacets.
 ][
-  我们现在将转向使用#emph[微面理论];对这些`BxDF`进行概括，该理论将粗糙表面建模为一组称为#emph[微面];的小表面片段。这些微面被假设为单独非常小，以至于相机无法分辨。然而，尽管它们很小，它们可以对散射光的角度分布产生深远影响。 图#link("<fig:microfacet>")[9.20];展示了一个相对粗糙的表面和一个更光滑的微面截面。我们将使用#emph[宏面];来描述原始粗糙表面（例如，由`Shape`表示）和#emph[微面];来描述基于微面的细尺度几何。
+  我们现在将转向使用#emph[微面理论];对这些`BxDF`进行概括，该理论将粗糙表面建模为一组称为#emph[微面(microfacet)];的小表面片段。这些微面被假设为单独非常小，以至于相机无法分辨。然而，尽管它们很小，它们可以对散射光的角度分布产生深远影响。 @fig:microfacet;展示了一个相对粗糙的表面和一个更光滑的微面截面。我们将使用#emph[宏面];来描述原始粗糙表面（例如，由`Shape`表示）和#emph[微面(microfacet)];来描述基于微面的细尺度几何。
 ]
 
 
@@ -25,7 +25,7 @@
       微表面模型通常用一个函数来描述微表面法线 $omega_m$ 相对于表面法线 $upright(bold(n))$ 的分布情况。(a) 微表面法线的变化越大，表面越粗糙。(b) 平滑的表面则具有相对较小的微表面法线变化。
     ]
   ],
-)
+)<microfacet>
 #parec[
   It is worth noting that `pbrt` can in principle already render rough surfaces without resorting to microfacet theory: users could simply create extremely high-resolution triangular meshes containing such micro-scale surface variations and render them using perfect specular `BxDF`s. There are two fundamental problems with such an approach:
 ][
@@ -43,16 +43,9 @@
 ]
 
 #parec[
-  - #emph[Monte Carlo sampling efficiency:] A fundamental issue with
-    perfect specular scattering distributions is that they contain Dirac
-    delta terms, which preclude BSDF evaluation (their `f()` method
-    returns zero, making BSDF sampling the only supported operation). This
-    aspect disables #emph[light sampling]
-    strategies~(Section~#link("../Light_Sources/Light_Interface.html#sec:light")[12.1];),
-    which are crucial for efficiency in Monte Carlo rendering.
+  - #emph[Monte Carlo sampling efficiency:] A fundamental issue with perfect specular scattering distributions is that they contain Dirac delta terms, which preclude BSDF evaluation (their `f()` method returns zero, making BSDF sampling the only supported operation). This aspect disables #emph[light sampling] strategies~(@light-interface), which are crucial for efficiency in Monte Carlo rendering.
 ][
-  - #emph[蒙特卡罗采样效率：]
-    完美镜面散射分布的一个基本问题是它们包含狄拉克δ项，这排除了BSDF评估（它们的`f()`方法返回零，使得BSDF采样成为唯一支持的操作）。这一方面禁用了#emph[光采样];策略（第#link("../Light_Sources/Light_Interface.html#sec:light")[12.1];节），这些策略对于蒙特卡罗渲染的效率至关重要。
+  - #emph[蒙特卡罗的采样效率：]完美镜面散射分布的一个基本问题是它们包含狄拉克δ项，这排除了BSDF评估（它们的`f()`方法返回零，使得BSDF采样成为唯一支持的操作）。这一方面禁用了#emph[光采样];策略（@light-interface），这些策略对于蒙特卡罗渲染的效率至关重要。
 ]
 
 #parec[
@@ -80,7 +73,7 @@
 #parec[
   The two main components of microfacet models are a representation of the statistical distribution of facets and a BSDF that describes how light scatters from an individual microfacet. For the latter part, `pbrt` supports perfect specular conductors and dielectrics, though other choices are in principle also possible. Given these two ingredients, the aggregate BSDF arising from the microsurface can be determined.
 ][
-  微面模型的两个主要组成部分是微面的统计分布表示和描述光如何从单个微面散射的BSDF。 对于后者，`pbrt`支持完美镜面导体和介电体，尽管原则上也可以选择其他选项。给定这两个成分，可以确定由微面产生的总体BSDF。
+  微面模型的两个主要组成部分是微面的统计分布和光如何从单个微面散射的BSDF。 对于后者，`pbrt`支持完美镜面导体和介电体，尽管原则上也可以选择其他选项。给定这两个成分，可以由微面得到总体BSDF。
 ]
 
 === The Microfacet Distribution
@@ -88,15 +81,15 @@
 
 
 #parec[
-  Microgeometry principally affects scattering via variation of the surface normal, which is a consequence of the central role of the surface normal in Snell's law and the law of specular reflection. Under the assumption that the light source and observer are distant with respect to the scale of the microfacets, the precise surface profile has a lesser effect on masking and shadowing that we will study in Section~#link("<sec:microfacet-masking>")[9.6.2];. For now, our focus is on the #emph[microfacet distribution];, which represents roughness in terms of its effect on the surface normal.
+  Microgeometry principally affects scattering via variation of the surface normal, which is a consequence of the central role of the surface normal in Snell's law and the law of specular reflection. Under the assumption that the light source and observer are distant with respect to the scale of the microfacets, the precise surface profile has a lesser effect on masking and shadowing that we will study in @the-masking-function. For now, our focus is on the #emph[microfacet distribution];, which represents roughness in terms of its effect on the surface normal.
 ][
-  微观几何主要通过表面法线的变化影响散射，这是由于表面法线在斯涅尔定律和镜面反射定律中的核心作用。 假设光源和观察者相对于微面的尺度是远的，精确的表面轮廓对我们将在第#link("<sec:microfacet-masking>")[9.6.2];节中研究的遮蔽和阴影的影响较小。 目前，我们的重点是#emph[微面分布];，它以其对表面法线的影响来表示粗糙度。
+  微观几何主要通过表面法线的变化影响散射，这是由于表面法线在斯涅尔定律和镜面反射定律中的核心作用。 假设光源和观察者相对于微面的尺度是远的，精确的表面轮廓对我们将在@the-masking-function;中研究的遮蔽和阴影的影响较小。 目前，我们的重点是#emph[微面分布];，它以其对表面法线的影响来表示粗糙度。
 ]
 
 #parec[
   Let us denote a small region of a macrosurface as $upright(d) A$. The corresponding microsurface $upright(d) A_mu$ is obtained by displacing the macrosurface along its normal $upright(bold(n))$, which means that the perpendicular projection of the microsurface exactly covers the macrosurface:
 ][
-  让我们将宏面的一个小区域表示为 $upright(d) A$。相应的微面 $upright(d) A_mu$ 是通过沿其法线 $upright(bold(n))$ 位移宏面获得的，这意味着微面的垂直投影正好覆盖宏面：
+  让我们将宏面的一个小区域表示为 $upright(d) A$。相应的微面 $upright(d) A_mu$ 是通过沿其法线 $upright(bold(n))$ 置换（displacing）宏面获得的，这意味着微面的垂直投影正好覆盖宏面：
 ]
 
 $
@@ -109,85 +102,35 @@ $<ufacet-normalization-p>
 ]
 
 #parec[
-  We therefore turn to a statistical approach: the #emph[microfacet distribution function] \$ D(#emph[{}) \$ gives the relative differential
-area of microfacets with the surface normal \$ ];{} \$.
+  We therefore turn to a statistical approach: the #emph[microfacet distribution function] $D(omega_m)$ gives the relative differential area of microfacets with the surface normal $omega_m$. For example, a perfectly smooth surface has a Dirac delta peak in the direction of the original surface normal—that is, $D(omega_m) = delta(omega_m - upright(bold(n)))$. The function is generally expressed in the standard reflection coordinate system with $upright(bold(n))= (0, 0, 1)$.
 ][
-  因此，我们转向统计方法：#emph[微面分布函数] \$ D(#emph[{}) \$给出了具有表面法线 \$ ];{} \$ 的微面的相对微分面积。
+  因此，我们转向统计方法：#emph[微面分布函数] $D(omega_m)$给出了具有表面法线 $omega_m$ 的微面的相对微分面积。 例如，完美光滑的表面在原始表面法线方向上具有狄拉克$delta$峰值，即 $D(omega_m) = delta(omega_m - upright(bold(n)))$。 该函数通常在标准反射坐标系中表示，其中 $upright(bold(n))= (0, 0, 1)$。
 ]
 
 #parec[
-  For example, a perfectly smooth surface has a Dirac delta peak in the direction of the original surface normal—that is, \$ D(#emph[{}) = (];{} \- ) \$.
+  Cast into the directional domain, @eqt:ufacet-normalization-p provides a useful normalization condition ensuring that a particular microfacet distribution is physically plausible, as illustrated in @fig:microfacet-projected-area.
 ][
-  例如，完美光滑的表面在原始表面法线方向上具有狄拉克δ峰值，即 \$ D(#emph[{}) = (];{} - ) \$。
-]
-
-#parec[
-  The function is generally expressed in the standard reflection coordinate system with \$ = (0, 0, 1) \$.
-][
-  该函数通常在标准反射坐标系中表示，其中 \$ = (0, 0, 1) \$。
-]
-
-#parec[
-  Cast into the directional domain, Equation~(9.14) provides a useful normalization condition ensuring that a particular microfacet distribution is physically plausible, as illustrated in Figure~#link("<fig:microfacet-projected-area>")[9.22];.
-][
-  转换到方向域，方程(9.14)提供了一个有用的归一化条件，确保特定的微面分布在物理上是合理的，如图#link("<fig:microfacet-projected-area>")[9.22];所示。
-]
-
-#parec[
-  $ integral_(d A_mu) (omega_(upright("normal")) (p) dot.op upright(bold(n))) d p = integral_(d A) d p , $
-][
-  $ integral_(d A_mu) (omega_(upright("normal")) (p) dot.op upright(bold(n))) d p = integral_(d A) d p , $
-]
-
-#parec[
-  where \$ \_{}(p) \$ specifies the microfacet normal at \$ p \$. However, tracking the orientation of vast numbers of microfacets would be impractical as previously discussed.
-][
-  其中 \$ \_{}(p) \$ 指定了 \$ p \$ 处的微面法线。然而，如前所述，跟踪大量微面的方向是不切实际的。
-]
-
-#parec[
-  We therefore turn to a statistical approach: the #emph[microfacet
-distribution function] \$ D(#emph[{}) \$ gives the relative differential
-area of microfacets with the surface normal \$ ];{} \$.
-][
-  因此，我们转向统计方法：#emph[微面分布函数] \$ D(#emph[{}) \$
-给出了具有表面法线 \$ ];{} \$ 的微面的相对微分面积。
-]
-
-#parec[
-  For example, a perfectly smooth surface has a Dirac delta peak in the direction of the original surface normal—that is, \$ D(#emph[{}) = (];{} \- ) \$.
-][
-  例如，完美光滑的表面在原始表面法线方向上具有狄拉克δ峰值，即 \$ D(#emph[{}) = (];{} - ) \$。
-]
-
-#parec[
-  The function is generally expressed in the standard reflection coordinate system with \$ = (0, 0, 1) \$.
-][
-  该函数通常在标准反射坐标系中表示，其中 \$ = (0, 0, 1) \$。
-]
-
-#parec[
-  Cast into the directional domain, Equation~(9.14) provides a useful normalization condition ensuring that a particular microfacet distribution is physically plausible, as illustrated in Figure~#link("<fig:microfacet-projected-area>")[9.22];.
-][
-  转换到方向域，方程(9.14)提供了一个有用的归一化条件，确保特定的微面分布在物理上是合理的，如图#link("<fig:microfacet-projected-area>")[9.22];所示。
+  转换到方向域，@eqt:ufacet-normalization-p 提供了一个有用的归一化条件，确保特定的微面分布在物理上是合理的，如@fig:microfacet-projected-area;所示。
 ]
 
 
-#parec[
-  $
-    integral cal(H)^2 (upright(bold(n))) thin D (omega_m) dot.op ( omega_m dot.op upright(bold(n)) ) thin d omega_m = integral cal(H)^2 (upright(bold(n))) thin D (omega_m) cos theta_m thin d omega_m = 1 .
-  $
-][
-  $
-    integral cal(H)^2 (upright(bold(n))) thin D (omega_m) dot.op ( omega_m dot.op upright(bold(n)) ) thin d omega_m = integral cal(H)^2 (upright(bold(n))) thin D (omega_m) cos theta_m thin d omega_m = 1 .
-  $
-]
+$
+  integral_(cal(H)^2 (upright(bold(n)))) D(omega_m)(omega_m dot.op upright(bold(n))) dif omega_m = integral_(cal(H)^2 (upright(bold(n)))) D(omega_m) cos theta_m dif omega_m = 1 .
+$<ufacet-normalization-wm>
 
-#parec[
-  Figure 9.22: Given a differential area on a surface $d A$, the microfacet normal distribution function $D (omega_m)$ must be normalized such that the projected surface area of the microfacets above the area is equal to $d A .$
-][
-  图 9.22: 给定表面上的微分面积 $d A$，微表面法线分布函数 $D (omega_m)$ 必须被归一化，使得微表面在该面积上方的投影面积等于 $d A$。
-]
+
+#figure(
+  image("../pbr-book-website/4ed/Reflection_Models/pha09f22.svg"),
+  caption: [
+    #ez_caption[
+      Given a differential area on a surface $upright(d)A$, the microfacet normal distribution function $D(omega_m)$ must be normalized such that the projected surface area of the microfacets above the area is equal to $upright(d)A$.
+    ][
+      考虑到表面上的一个微分面积 $upright(d)A$，微面元法线分布函数 $D(omega_m)$ 必须被归一化，使得位于该面积上方的微面元的投影表面积等于 $upright(d)A$。
+    ]
+  ],
+)<microfacet-projected-area>
+
+
 
 #parec[
   The most common type of microfacet distribution is #emph[isotropic];, which also leads to an isotropic aggregate BSDF. Recall that the local scattering behavior of an isotropic BSDF does not change when the surface is rotated about the macroscopic surface normal. In the isotropic case, a spherical coordinate parameterization $omega_m = (theta_m , phi.alt_m)$ yields a distribution that only depends on the elevation angle $theta_m$.
@@ -196,34 +139,44 @@ area of microfacets with the surface normal \$ ];{} \$.
 ]
 
 #parec[
-  In contrast, an anisotropic microfacet distribution also depends on the azimuth $phi.alt_m$ to capture directional variation in the surface roughness. Many real-world materials are anisotropic: for example, rolled or milled steel surfaces feature grooves that are aligned with the direction of extrusion. Rotating a flat sheet of such material about the surface normal results in noticeable variation—for example, in the reflection profile of indirectly observed light sources.
+  In contrast, an anisotropic microfacet distribution also depends on the azimuth $phi.alt_m$ to capture directional variation in the surface roughness. Many real-world materials are anisotropic: for example, rolled or milled steel surfaces feature grooves that are aligned with the direction of extrusion. Rotating a flat sheet of such material about the surface normal results in noticeable variation—for example, in the reflection profile of indirectly observed light sources. Brushed metal is an extreme case: its microfacet distribution varies from almost a single direction to almost uniform over the hemisphere.
 ][
-  相比之下，各向异性微表面分布还依赖于方位角 $phi.alt_m$，以捕捉表面粗糙度的方向变化。许多现实世界的材料是各向异性的：例如，轧制或铣削的钢材表面具有与挤出方向对齐的槽纹。将这种材料的平板绕表面法线旋转会导致明显的变化，例如间接观察到的光源的反射轮廓。
+  相比之下，各向异性微表面分布还依赖于方位角 $phi.alt_m$，以捕捉表面粗糙度的方向变化。许多现实世界的材料是各向异性的：例如，轧制或铣削的钢材表面具有与挤出方向对齐的槽纹。将这种材料的平板绕表面法线旋转会导致明显的变化，例如间接观察到的光源的反射轮廓。刷纹金属属于极端情况：其微表面分布从近乎单一方向到半球面近乎均匀分布不等。
 ]
 
 #parec[
-  Many functional representations of microfacet distributions have been proposed over the years. Geometric analysis of a truncated ellipsoid leads to one of the most widely used distributions proposed by Trowbridge and Reitz (1975), in which the conceptual microsurface is composed of vast numbers of ellipsoidal bumps.
+  Many functional representations of microfacet distributions have been proposed over the years. Geometric analysis of a truncated ellipsoid leads to one of the most widely used distributions proposed by Trowbridge and Reitz (1975), in which the conceptual microsurface is composed of vast numbers of ellipsoidal bumps. (2007) who is dubbed it "GGX". Scaled along its different semi-axes, an ellipsoid can take on a variety of configurations including sphere-, pancake-, and cigar-shaped surfaces. It is enough to study the density of surface normals on a single representative ellipsoid, which has an analytic solution:
 ][
   多年来，已经提出了许多微表面分布的功能表示。截断椭球体的几何分析导致了Trowbridge和Reitz提出的最广泛使用的分布之一（1975），其中概念上的微表面由大量椭球形隆起组成。
 ]
 
+$
+  D(omega_m) = 1/(pi alpha_x alpha_y cos^4 theta_m (1 + tan^2 theta_m ((cos^2 phi.alt_m)/(alpha_x^2) + (sin^2 phi.alt_m)/(alpha_y^2)))^2)
+$<tr-d-function>
+
 #parec[
-  This equation assumes that the semi-axes of the ellipsoid are aligned with the shading frame, and the reciprocals of the two variables $1 \/ alpha_x , 1 \/ alpha_y > 0$ encode a scale transformation applied along the two tangential axes.
+  This equation assumes that the semi-axes of the ellipsoid are aligned with the shading frame, and the reciprocals of the two variables $1 \/ alpha_x , 1 \/ alpha_y > 0$ encode a scale transformation applied along the two tangential axes. When $alpha_x , alpha_y approx 0$, the ellipsoid has been stretched to such a degree that it essentially collapses into a flat surface, and the aggregate BSDF approximates a perfect specular material. For larger values (e.g., $alpha_x , alpha_y approx 0.3$ ), the ellipsoidal bumps introduce significant normal variation that blurs the directional distribution of reflected and transmitted light.
 ][
-  该方程假设椭球体的半轴与阴影框架对齐，两个变量 $1 \/ alpha_x , 1 \/ alpha_y > 0$ 的倒数编码了沿两个切向轴应用的缩放变换。
+  该方程假设椭球体的半轴与阴影框架对齐，两个变量 $1 \/ alpha_x , 1 \/ alpha_y > 0$ 的倒数编码了沿两个切向轴应用的缩放变换。当 $alpha_x , alpha_y approx 0$ 时，椭球体被拉伸到几乎坍塌成一个平面，聚合BSDF近似为完美的镜面材料。对于较大的值（例如， $alpha_x , alpha_y approx 0.3$ ），椭球形隆起引入显著的法线变化，模糊了反射和透射光的方向分布。
 ]
 
 #parec[
-  When $alpha_x , alpha_y approx 0$, the ellipsoid has been stretched to such a degree that it essentially collapses into a flat surface, and the aggregate BSDF approximates a perfect specular material. For larger values (e.g., $alpha_x , alpha_y approx 0.3$ ), the ellipsoidal bumps introduce significant normal variation that blurs the directional distribution of reflected and transmitted light.
+  A characteristic feature of the Trowbridge-Reitz model compared to other microfacet distributions is its long tails: the density of microfacets decays comparably slowly as $omega_m$ approaches grazing configurations ( $theta_m arrow.r 90^circle.stroked.tiny$ ). This matches the properties of many real-world surfaces well.See @fig:d-plot-comparison for a graph of it and another commonly used microfacet distribution function.
 ][
-  当 $alpha_x , alpha_y approx 0$ 时，椭球体被拉伸到几乎坍塌成一个平面，聚合BSDF近似为完美的镜面材料。对于较大的值（例如， $alpha_x , alpha_y approx 0.3$ ），椭球形隆起引入显著的法线变化，模糊了反射和透射光的方向分布。
+  Trowbridge-Reitz模型与其他微表面分布相比的一个特征是其长尾：当 $omega_m$ 接近掠射配置时（ $theta_m arrow.r 90^circle.stroked.tiny$ ），微表面密度衰减得相对缓慢。这很好地匹配了许多现实世界表面的特性。 参见@fig:d-plot-comparison，其中展示了该函数与另一个常用的微表面分布函数的图表。
 ]
 
-#parec[
-  A characteristic feature of the Trowbridge–Reitz model compared to other microfacet distributions is its long tails: the density of microfacets decays comparably slowly as $omega_m$ approaches grazing configurations ( $theta_m arrow.r 90^circle.stroked.tiny$ ). This matches the properties of many real-world surfaces well.
-][
-  Trowbridge–Reitz模型与其他微表面分布相比的一个特征是其长尾：当 $omega_m$ 接近掠射配置时（ $theta_m arrow.r 90^circle.stroked.tiny$ ），微表面密度衰减得相对缓慢。这很好地匹配了许多现实世界表面的特性。
-]
+#figure(
+  image("../pbr-book-website/4ed/Reflection_Models/pha09f23.svg"),
+  caption: [
+    #ez_caption[
+      Graphs of isotropic Beckmann-Spizzichino and Trowbridge-Reitz microfacet distribution functions as a function of $theta$ for $alpha = 0.5$. Note that Trowbridge-Reitz has higher tails at larger values of $theta$.
+    ][
+      各向同性Beckmann-Spizzichino和Trowbridge-Reitz微面分布函数随$theta$变化的曲线图（$alpha = 0.5$）。需注意的是，Trowbridge-Reitz函数在$theta$较大时具有更高的尾部。
+    ]
+  ],
+)<d-plot-comparison>
+
 
 #parec[
   The `TrowbridgeReitzDistribution` class encapsulates the state and functionality needed to use this microfacet distribution in a Monte Carlo renderer.
@@ -231,22 +184,37 @@ area of microfacets with the surface normal \$ ];{} \$.
   `TrowbridgeReitzDistribution` 类封装了在蒙特卡罗渲染器中使用这种微表面分布所需的状态和功能。
 ]
 
+```cpp
+<<TrowbridgeReitzDistribution Definition>>=
+class TrowbridgeReitzDistribution {
+  public:
+    <<TrowbridgeReitzDistribution Public Methods>>
+  private:
+    <<TrowbridgeReitzDistribution Private Members>>
+};
+```
+
+
+```cpp
+<<TrowbridgeReitzDistribution Public Methods>>=
+TrowbridgeReitzDistribution(Float alpha_x, Float alpha_y)
+    : alpha_x(alpha_x), alpha_y(alpha_y) {}
+
+<<TrowbridgeReitzDistribution Private Members>>=
+Float alpha_x, alpha_y;
+```
+
 #parec[
-  The `D()` method is a fairly direct transcription of Equation (9.16) with some additional handling of numerical edge cases.
+  The `D()` method is a fairly direct transcription of @eqt:tr-d-function with some additional handling of numerical edge cases.
 ][
-  `D()` 方法是方程 (9.16) 的一个相当直接的转录，并对数值边界情况进行了一些额外处理。
+  `D()` 方法是 @eqt:tr-d-function 的一个相当直接的转录，并对数值边界情况进行了一些额外处理。
 ]
 
 #parec[
   Even with those precautions, numerical issues involving infinite or not-a-number values tend to arise at very low roughnesses. It is better to treat such surfaces as perfectly smooth and fall back to the previously discussed specialized implementations.
-][
-  即使有这些预防措施，在非常低的粗糙度下，涉及无穷大或非数字值的数值问题往往会出现。最好将此类表面视为完全光滑，并回退到之前讨论的专用实现。
-]
-
-#parec[
   The `EffectivelySmooth()` method tests the $alpha$ values for this case.
 ][
-  `EffectivelySmooth()` 方法测试这种情况下的 $alpha$ 值。
+  即使有这些预防措施，在非常低的粗糙度下，涉及无穷大或非数字值的数值问题往往会出现。最好将此类表面视为完全光滑，并回退到之前讨论的专用实现。 `EffectivelySmooth()` 方法测试这种情况下的 $alpha$ 值。
 ]
 
 
@@ -297,9 +265,9 @@ area of microfacets with the surface normal \$ ];{} \$.
 ]
 
 #parec[
-  We expect that physically plausible combinations of microfacet distribution $D (omega_m)$ (the Trowbridge–Reitz distribution in our case) and masking function $G_1 (omega , omega_m)$ should satisfy this equation. Unfortunately, the microfacet distribution alone does not impose enough conditions to imply a specific $G_1 (omega , omega_m)$ ; an infinite family of functions could fulfill the constraint in Equation (9.17). More information about the specific surface height profile is necessary to narrow down this large set of possibilities.
+  We expect that physically plausible combinations of microfacet distribution $D (omega_m)$ (the Trowbridge-Reitz distribution in our case) and masking function $G_1 (omega , omega_m)$ should satisfy this equation. Unfortunately, the microfacet distribution alone does not impose enough conditions to imply a specific $G_1 (omega , omega_m)$ ; an infinite family of functions could fulfill the constraint in Equation (9.17). More information about the specific surface height profile is necessary to narrow down this large set of possibilities.
 ][
-  我们期望微面分布 $D (omega_m)$ （在我们的例子中是Trowbridge–Reitz分布）和遮蔽函数 $G_1 (omega , omega_m)$ 的物理合理组合应满足此方程。不幸的是，仅微面分布不足以施加足够的条件来暗示特定的 $G_1 (omega , omega_m)$ ；可能有无限多的函数族可以满足方程(9.17)中的约束。需要关于特定表面高度轮廓的更多信息来缩小这一庞大的可能性集合。
+  我们期望微面分布 $D (omega_m)$ （在我们的例子中是Trowbridge-Reitz分布）和遮蔽函数 $G_1 (omega , omega_m)$ 的物理合理组合应满足此方程。不幸的是，仅微面分布不足以施加足够的条件来暗示特定的 $G_1 (omega , omega_m)$ ；可能有无限多的函数族可以满足方程(9.17)中的约束。需要关于特定表面高度轮廓的更多信息来缩小这一庞大的可能性集合。
 ]
 
 #parec[
@@ -338,13 +306,13 @@ area of microfacets with the surface normal \$ ];{} \$.
   This is #emph[Smith's approximation];. Despite the rather severe simplification, it has been found to be in good agreement with both brute-force simulation of scattering on randomly generated surface microstructures and real-world measurements.
 ][
   这是#emph[Smith
-近似];。尽管这一简化相当严重，但它已被发现与随机生成的表面微结构散射的蛮力模拟和现实世界测量非常一致。
+    近似];。尽管这一简化相当严重，但它已被发现与随机生成的表面微结构散射的蛮力模拟和现实世界测量非常一致。
 ]
 
 #parec[
-  The integral in Equation (9.18) has analytic solutions for various common choices of microfacet distributions $D (omega_m)$, including the Trowbridge–Reitz model. In practice, the masking function is often expressed in terms of an auxiliary function $Lambda (omega)$ that arises naturally when the derivation of masking is conducted in the slope domain. This has some benefits that we shall see shortly, and we therefore adopt the same approach that relates $G_1$ and $Lambda$ as follows:
+  The integral in Equation (9.18) has analytic solutions for various common choices of microfacet distributions $D (omega_m)$, including the Trowbridge-Reitz model. In practice, the masking function is often expressed in terms of an auxiliary function $Lambda (omega)$ that arises naturally when the derivation of masking is conducted in the slope domain. This has some benefits that we shall see shortly, and we therefore adopt the same approach that relates $G_1$ and $Lambda$ as follows:
 ][
-  方程(9.18)中的积分对于各种常见的微面分布 $D (omega_m)$，包括Trowbridge–Reitz模型，都有解析解。在实践中，遮蔽函数通常用一个辅助函数 $Lambda (omega)$ 来表示，该函数在遮蔽的斜率域推导中自然出现。这有一些我们将很快看到的好处，因此我们采用相同的方法，将 $G_1$ 和 $Lambda$ 的关系如下：
+  方程(9.18)中的积分对于各种常见的微面分布 $D (omega_m)$，包括Trowbridge-Reitz模型，都有解析解。在实践中，遮蔽函数通常用一个辅助函数 $Lambda (omega)$ 来表示，该函数在遮蔽的斜率域推导中自然出现。这有一些我们将很快看到的好处，因此我们采用相同的方法，将 $G_1$ 和 $Lambda$ 的关系如下：
 ]
 
 #parec[
@@ -361,9 +329,9 @@ area of microfacets with the surface normal \$ ];{} \$.
 ]
 
 #parec[
-  Under the uncorrelated height assumption, \$ () \$ has the following analytic solution for the Trowbridge–Reitz distribution:
+  Under the uncorrelated height assumption, \$ () \$ has the following analytic solution for the Trowbridge-Reitz distribution:
 ][
-  在不相关高度假设下，\$ () \$ 对于 Trowbridge–Reitz 分布有以下解析解：
+  在不相关高度假设下，\$ () \$ 对于 Trowbridge-Reitz 分布有以下解析解：
 ]
 
 #parec[
@@ -439,9 +407,9 @@ area of microfacets with the surface normal \$ ];{} \$.
 ]
 
 #parec[
-  Figure 9.26 shows a plot of the Trowbridge–Reitz \$ G\_1() \$ function for a few values of \$ \$.
+  Figure 9.26 shows a plot of the Trowbridge-Reitz \$ G\_1() \$ function for a few values of \$ \$.
 ][
-  图 9.26 显示了 Trowbridge–Reitz \$ G\_1() \$ 函数在几个 \$ \$ 值下的图表。
+  图 9.26 显示了 Trowbridge-Reitz \$ G\_1() \$ 函数在几个 \$ \$ 值下的图表。
 ]
 
 #parec[
@@ -641,7 +609,7 @@ area of microfacets with the surface normal \$ ];{} \$.
 ]
 
 
-=== The Torrance–Sparrow Model
+=== The Torrance-Sparrow Model
 <the-torrancesparrow-model>
 
 #parec[
@@ -658,13 +626,13 @@ area of microfacets with the surface normal \$ ];{} \$.
 
 #parec[
   + Given a viewing ray from direction \$ #emph[{}\$, a microfacet normal
-  \$ ];{}\$ is sampled from the visible normal distribution
+      \$ ];{}\$ is sampled from the visible normal distribution
     $D_(omega_(upright("normal o"))) (omega_(upright("normal m")))$. This
     step encapsulates the process of intersecting the viewing ray with the
     random microstructure.
 ][
   + 给定来自方向\$ #emph[{}$的 视 线 ， 从 可 见 法 线 分 布$D];{#emph[{}}
-  (];{})$中 采 样 一 个 微 面 法 线$
+      (];{})$中 采 样 一 个 微 面 法 线$
     \_{}\$。这一步包含了视线与随机微观结构相交的过程。
 ]
 
@@ -700,19 +668,19 @@ area of microfacets with the surface normal \$ ];{} \$.
 
 #parec[
   Our goal will be to determine the BRDF that represents this sequence of steps. For this, we must first find the probability density of the sampled incident direction \$ #emph[{}\$. Although visible normal
-sampling was involved, it is important to note that \$ ];{}\$ is #emph[not] distributed according to the visible normal distribution—to find its density, we must consider the sequence of steps that were used to obtain \$ #emph[{}\$ from \$ ];{}\$.
+    sampling was involved, it is important to note that \$ ];{}\$ is #emph[not] distributed according to the visible normal distribution—to find its density, we must consider the sequence of steps that were used to obtain \$ #emph[{}\$ from \$ ];{}\$.
 ][
   我们的目标是确定代表这一系列步骤的BRDF。为此，我们首先必须找到采样的入射方向\$ #emph[{}$的 概 率 密 度 。 尽 管 涉 及 可 见 法 线 采 样 ， 但 重 要 的 是 要 注 意$
-];{} $并 不 是 按 照 可 见 法 线 分 布 分 布 的 dash.em dash.em 为 了 找 到 其 密 度 ， 我 们 必 须 考 虑 从$ #emph[{}$获 得$ ];{}\$的步骤序列。
+  ];{} $并 不 是 按 照 可 见 法 线 分 布 分 布 的 dash.em dash.em 为 了 找 到 其 密 度 ， 我 们 必 须 考 虑 从$ #emph[{}$获 得$ ];{}\$的步骤序列。
 ]
 
 #parec[
   Taking stock of the available information, we know that the probability density of \$ #emph[{}\$ is given by
-$D_(omega_(upright("normal o"))) (omega_(upright("normal m")))$, and
-that \$ ];{}\$ is obtained from \$ #emph[{}\$ and \$ ];{}\$ using the law of specular reflection—that is,
+    $D_(omega_(upright("normal o"))) (omega_(upright("normal m")))$, and
+    that \$ ];{}\$ is obtained from \$ #emph[{}\$ and \$ ];{}\$ using the law of specular reflection—that is,
 ][
   根据现有信息，我们知道\$ #emph[{}$的 概 率 密 度 由$D];{#emph[{}}
-(];{}) $给 出 ， 并 且$ #emph[{}$是 通 过 镜 面 反 射 定 律 从$ ];{} $和$ \_{}\$获得的——即，
+    (];{}) $给 出 ， 并 且$ #emph[{}$是 通 过 镜 面 反 射 定 律 从$ ];{} $和$ \_{}\$获得的——即，
 ]
 
 $
@@ -755,13 +723,13 @@ $
 
 #parec[
   A slight perturbation of the incident angle \$ #emph[{}\$ (shaded green
-region) while keeping \$ ];{}\$ fixed requires a corresponding change to the microfacet angle \$ #emph[{}\$ (shaded blue region) to ensure that
-the law of specular reflection continues to hold. However, this
-perturbation to \$ ];{}\$ is smaller—half as small, to be precise—which directly follows from Equation (9.26). Indeed, the derivative of Equation (9.26) yields
+    region) while keeping \$ ];{}\$ fixed requires a corresponding change to the microfacet angle \$ #emph[{}\$ (shaded blue region) to ensure that
+    the law of specular reflection continues to hold. However, this
+    perturbation to \$ ];{}\$ is smaller—half as small, to be precise—which directly follows from Equation (9.26). Indeed, the derivative of Equation (9.26) yields
 ][
   在保持\$ #emph[{}$固 定 的 同 时 ， 入 射 角$
-];{} $的 微 小 扰 动 （ 阴 影 绿 色 区 域 ） 需 要 相 应 地 改 变 微 面 角 度$ #emph[{}$（ 阴 影 蓝 色 区 域 ） ， 以 确 保 镜 面 反 射 定 律 继 续 成 立 。 然 而 ， 这 种 对$
-];{}\$的扰动较小——确切地说，小一半——这直接从方程(9.26)得出。实际上，方程(9.26)的导数为
+  ];{} $的 微 小 扰 动 （ 阴 影 绿 色 区 域 ） 需 要 相 应 地 改 变 微 面 角 度$ #emph[{}$（ 阴 影 蓝 色 区 域 ） ， 以 确 保 镜 面 反 射 定 律 继 续 成 立 。 然 而 ， 这 种 对$
+  ];{}\$的扰动较小——确切地说，小一半——这直接从方程(9.26)得出。实际上，方程(9.26)的导数为
 ]
 
 #parec[
@@ -777,9 +745,9 @@ perturbation to \$ ];{}\$ is smaller—half as small, to be precise—which dire
 ]
 
 #parec[
-  The 3D case initially appears challenging due to the varied behavior shown in Figure 9.30(b–d). Fortunately, working with infinitesimal sets leads to a simple analytic expression that can be derived by expressing differential solid angles around \$ #emph[{}\$ and \$ ];{}\$ using spherical coordinates:
+  The 3D case initially appears challenging due to the varied behavior shown in Figure 9.30(b-d). Fortunately, working with infinitesimal sets leads to a simple analytic expression that can be derived by expressing differential solid angles around \$ #emph[{}\$ and \$ ];{}\$ using spherical coordinates:
 ][
-  由于图9.30(b–d)中显示的不同行为，三维情况最初看起来具有挑战性。幸运的是，处理无穷小集合可以推导出一个简单的解析表达式，可以通过使用球坐标表达\$ #emph[{}$和$ ];{}\$周围的微分立体角来推导。
+  由于图9.30(b-d)中显示的不同行为，三维情况最初看起来具有挑战性。幸运的是，处理无穷小集合可以推导出一个简单的解析表达式，可以通过使用球坐标表达\$ #emph[{}$和$ ];{}\$周围的微分立体角来推导。
 ]
 
 
@@ -801,17 +769,15 @@ perturbation to \$ ];{}\$ is smaller—half as small, to be precise—which dire
 
 
 #parec[
-  $
-    frac(f_r (p , omega_o , omega_i) L_i (p , omega_i) lr(|cos theta_i|), p (omega_i))
-  $ Modifying above equals $F (omega_o dot.op omega_m) G_1 (omega_i) L_i (p , omega_i)$.
+  $ frac(f_r (p , omega_o , omega_i) L_i (p , omega_i) lr(|cos theta_i|), p (omega_i)) $ Modifying above equals $F (omega_o dot.op omega_m) G_1 (omega_i) L_i (p , omega_i)$.
 ][
   将上式修改为 $F (omega_o dot.op omega_m) G_1 (omega_i) L_i (p , omega_i)$。
 ]
 
 #parec[
-  We will simply solve this equation to obtain $f_r (p , omega_o , omega_i)$. Further substituting the PDF of the Torrance–Sparrow model from Equation~(9.28) yields the BRDF
+  We will simply solve this equation to obtain $f_r (p , omega_o , omega_i)$. Further substituting the PDF of the Torrance-Sparrow model from Equation~(9.28) yields the BRDF
 ][
-  我们将简单地求解此方程以获得 $f_r (p , omega_o , omega_i)$，进一步从方程(9.28)中替换Torrance–Sparrow模型的PDF得到双向反射分布函数（BRDF）
+  我们将简单地求解此方程以获得 $f_r (p , omega_o , omega_i)$，进一步从方程(9.28)中替换Torrance-Sparrow模型的PDF得到双向反射分布函数（BRDF）
 ]
 
 #parec[
@@ -825,9 +791,9 @@ perturbation to \$ ];{}\$ is smaller—half as small, to be precise—which dire
 ]
 
 #parec[
-  Inserting the definition of the visible normal distribution from Equation~(9.23) and assuming directions in the positive hemisphere results in the common form of the Torrance–Sparrow BRDF:
+  Inserting the definition of the visible normal distribution from Equation~(9.23) and assuming directions in the positive hemisphere results in the common form of the Torrance-Sparrow BRDF:
 ][
-  插入从方程(9.23)中定义的可见法线分布，并假设方向在正半球中，得到Torrance–Sparrow BRDF的常见形式：
+  插入从方程(9.23)中定义的可见法线分布，并假设方向在正半球中，得到Torrance-Sparrow BRDF的常见形式：
 ]
 
 #parec[
@@ -857,15 +823,15 @@ perturbation to \$ ];{}\$ is smaller—half as small, to be precise—which dire
 ]
 
 #parec[
-  One of the nice things about the Torrance–Sparrow model is that the derivation does not depend on the particular microfacet distribution being used. Furthermore, it does not depend on a particular Fresnel function and can be used for both conductors and dielectrics. However, the relationship between $d omega_m$ and $d omega_o$ used in the derivation does depend on the assumption of specular reflection from microfacets, and the refractive variant of this model will require suitable modifications.
+  One of the nice things about the Torrance-Sparrow model is that the derivation does not depend on the particular microfacet distribution being used. Furthermore, it does not depend on a particular Fresnel function and can be used for both conductors and dielectrics. However, the relationship between $d omega_m$ and $d omega_o$ used in the derivation does depend on the assumption of specular reflection from microfacets, and the refractive variant of this model will require suitable modifications.
 ][
-  Torrance–Sparrow模型的一个显著优点是其推导不依赖于所使用的特定微面分布。此外，它不依赖于特定的菲涅耳函数，可以用于导体和介电体。然而，推导过程中使用的 $d omega_m$ 和 $d omega_o$ 之间的关系确实依赖于微面镜面反射的假设，并且该模型的折射变体将需要适当的修改。
+  Torrance-Sparrow模型的一个显著优点是其推导不依赖于所使用的特定微面分布。此外，它不依赖于特定的菲涅耳函数，可以用于导体和介电体。然而，推导过程中使用的 $d omega_m$ 和 $d omega_o$ 之间的关系确实依赖于微面镜面反射的假设，并且该模型的折射变体将需要适当的修改。
 ]
 
 #parec[
-  Evaluating the terms of the Torrance–Sparrow BRDF is straightforward.
+  Evaluating the terms of the Torrance-Sparrow BRDF is straightforward.
 ][
-  评估Torrance–Sparrow BRDF的项是直接的。
+  评估Torrance-Sparrow BRDF的项是直接的。
 ]
 
 #parec[
@@ -935,7 +901,7 @@ perturbation to \$ ];{}\$ is smaller—half as small, to be precise—which dire
 ]
 
 #parec[
-  Figure 9.31: Comparison of Microfacet Sampling Techniques. The ground plane under the spheres has a metal material modeled using the Torrance–Sparrow BRDF with a roughness of $alpha = 0.01$. Even with this relatively smooth microsurface, (a) sampling the full microfacet distribution $D (omega_m)$ gives visibly higher error from unusable samples taken from backfacing microfacets than (b) directly sampling the visible microfacet distribution $D_(omega_o) (omega_m)$.
+  Figure 9.31: Comparison of Microfacet Sampling Techniques. The ground plane under the spheres has a metal material modeled using the Torrance-Sparrow BRDF with a roughness of $alpha = 0.01$. Even with this relatively smooth microsurface, (a) sampling the full microfacet distribution $D (omega_m)$ gives visibly higher error from unusable samples taken from backfacing microfacets than (b) directly sampling the visible microfacet distribution $D_(omega_o) (omega_m)$.
 ][
-  图9.31：微面采样技术比较。球体下的地面是使用Torrance–Sparrow BRDF建模的金属材料，粗糙度为 $alpha = 0.01$。即使在这种相对光滑的微表面上，(a) 对完整分布进行采样 $D (omega_m)$ 比(b) 直接采样可见的微面分布 $D_(omega_o) (omega_m)$ 产生的误差更高，因为从背面微面采样得来的样本不可用。
+  图9.31：微面采样技术比较。球体下的地面是使用Torrance-Sparrow BRDF建模的金属材料，粗糙度为 $alpha = 0.01$。即使在这种相对光滑的微表面上，(a) 对完整分布进行采样 $D (omega_m)$ 比(b) 直接采样可见的微面分布 $D_(omega_o) (omega_m)$ 产生的误差更高，因为从背面微面采样得来的样本不可用。
 ]
