@@ -1,0 +1,282 @@
+[
+  {
+    "url": "https://pbr-book.org/4ed/Sampling_Algorithms/The_Alias_Method.html#AliasTable",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Sampling_Algorithms/The_Alias_Method.html#AliasTable",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Sampling_Algorithms/Reservoir_Sampling.html#sec:reservoir-sampling",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Sampling_Algorithms/Reservoir_Sampling.html#WeightedReservoirSampler",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Sampling_Algorithms/Reservoir_Sampling.html#sec:reservoir-sampling",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Sampling_Algorithms/Reservoir_Sampling.html#WeightedReservoirSampler",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Sampling_Algorithms/Sampling_Multidimensional_Functions.html#sec:unit-disk-sample",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Sampling_Algorithms/Sampling_Multidimensional_Functions.html#sec:unit-disk-sample",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Sampling_Algorithms/Reservoir_Sampling.html#WeightedReservoirSampler::Merge",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Sampling_Algorithms/Reservoir_Sampling.html#WeightedReservoirSampler::Merge",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Sampling_Algorithms/Sampling_1D_Functions.html#PiecewiseConstant1D",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Light_Sources/Infinite_Area_Lights.html#ImageInfiniteLight",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Sampling_Algorithms/Sampling_Multidimensional_Functions.html#PiecewiseConstant2D",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Sampling_Algorithms/Sampling_1D_Functions.html#PiecewiseConstant1D",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Light_Sources/Infinite_Area_Lights.html#ImageInfiniteLight",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Sampling_Algorithms/Sampling_Multidimensional_Functions.html#PiecewiseConstant2D",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Sampling_Algorithms/Sampling_Multidimensional_Functions.html#SummedAreaTable",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Sampling_Algorithms/Sampling_Multidimensional_Functions.html#WindowedPiecewiseConstant2D",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Light_Sources/Infinite_Area_Lights.html#PortalImageInfiniteLight",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Sampling_Algorithms/Sampling_Multidimensional_Functions.html#SummedAreaTable",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Sampling_Algorithms/Sampling_Multidimensional_Functions.html#WindowedPiecewiseConstant2D",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Light_Sources/Infinite_Area_Lights.html#PortalImageInfiniteLight",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Utilities/Mathematical_Infrastructure.html#IsPowerOf2",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Utilities/Mathematical_Infrastructure.html#RoundUpPow2",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Utilities/Mathematical_Infrastructure.html#IsPowerOf2",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Utilities/Mathematical_Infrastructure.html#RoundUpPow2",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Utilities/Mathematical_Infrastructure.html#Hash",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Utilities/Mathematical_Infrastructure.html#HashBuffer",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Utilities/Mathematical_Infrastructure.html#MixBits",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Utilities/Mathematical_Infrastructure.html#Hash",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Utilities/Mathematical_Infrastructure.html#HashBuffer",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Utilities/Mathematical_Infrastructure.html#MixBits",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Utilities/Mathematical_Infrastructure.html#InvertBilinear",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Utilities/Mathematical_Infrastructure.html#SinXOverX",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Utilities/Mathematical_Infrastructure.html#InvertBilinear",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Utilities/Mathematical_Infrastructure.html#SinXOverX",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Utilities/Mathematical_Infrastructure.html#TwoSum",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Utilities/Mathematical_Infrastructure.html#TwoProd",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Utilities/Mathematical_Infrastructure.html#CompensatedSum",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Utilities/Mathematical_Infrastructure.html#DifferenceOfProducts",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Utilities/Mathematical_Infrastructure.html#TwoSum",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Utilities/Mathematical_Infrastructure.html#TwoProd",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Utilities/Mathematical_Infrastructure.html#CompensatedSum",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Utilities/Mathematical_Infrastructure.html#DifferenceOfProducts",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Utilities/Mathematical_Infrastructure.html#VarianceEstimator",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Utilities/Mathematical_Infrastructure.html#VarianceEstimator",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Utilities/Parallelism.html#RunAsync",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Utilities/Parallelism.html#RunAsync",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Textures_and_Materials/Image_Texture.html#MIPMap",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Textures_and_Materials/Image_Texture.html#MIPMap",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Utilities/Images.html#Image::GeneratePyramid",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Textures_and_Materials/Image_Texture.html#fig:texfilt-ewa-trilerp",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Utilities/Images.html#Image::GeneratePyramid",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Textures_and_Materials/Image_Texture.html#fig:texfilt-ewa-trilerp",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Utilities/Statistics.html#sec:stats",
+    "file_exists": true,
+    "anchor_exists": true
+  },
+  {
+    "url": "https://pbr-book.org/4ed/Utilities/Statistics.html#sec:stats",
+    "file_exists": true,
+    "anchor_exists": true
+  }
+]

@@ -1,230 +1,270 @@
-#import "../template.typ": parec
+#import "../template.typ": parec, ez_caption
 
-== n-Tuple Base Classes
+== #ez_caption[n-Tuple Base Classes][$n$ 元组基类]
 <n-Tuple_Base_Classes>
 
 #parec[
   `pbrt`'s classes that represent two- and three-dimensional points, vectors, and surface normals are all based on general $n$ -tuple classes, whose definitions we will start with. The definitions of these classes as well as the types that inherit from them are defined in the files #link("https://github.com/mmp/pbrt-v4/tree/master/src/util/vecmath.h")[`util/vecmath.h`] and #link("https://github.com/mmp/pbrt-v4/tree/master/src/util/vecmath.cpp")[`util/vecmath.cpp`] under the main `pbrt` source directory.
 ][
-  `pbrt`的类用于表示二维和三维的点、向量和表面法线，都是基于通用的 $n$ -元组类，我们将从这些类的定义开始讲解。它们的定义以及从它们继承的类型在主`pbrt`源目录下的文件#link("https://github.com/mmp/pbrt-v4/tree/master/src/util/vecmath.h")[`util/vecmath.h`];和#link("https://github.com/mmp/pbrt-v4/tree/master/src/util/vecmath.cpp")[`util/vecmath.cpp`];中定义。
+  `pbrt` 用于表示二维与三维点、向量及表面法向量的类，都以通用的 $n$ 元组类为基础。本节先介绍这些基类。这些类及其派生类型定义在 `pbrt` 主源码目录下的 #link("https://github.com/mmp/pbrt-v4/tree/master/src/util/vecmath.h")[`util/vecmath.h`] 和 #link("https://github.com/mmp/pbrt-v4/tree/master/src/util/vecmath.cpp")[`util/vecmath.cpp`] 文件中。
 ]
 
 #parec[
   Although this and the following few sections define classes that have simple logic in most of their method implementations, they make more use of advanced C++ programming techniques than we generally use in `pbrt`. Doing so reduces the amount of redundant code needed to implement the point, vector, and normal classes and makes them extensible in ways that will be useful later. If you are not a C++ expert, it is fine to gloss over these details and to focus on understanding the functionality that these classes provide. Alternatively, you could use this as an opportunity to learn more corners of the language.
 ][
-  虽然本节和接下来的几节定义的类在大多数方法实现中逻辑简单，但它们比我们通常在`pbrt`中使用的更充分地利用了高级的C++编程技术。这样做减少了实现点、向量和法线类所需的冗余代码量，并使它们在以后有用的方式上可扩展。如果你不是C++专家，就可以略过这些细节，专注于理解这些类提供的功能。或者，你可以借此机会学习更多关于语言的角落。
+  本节和随后几节定义的类，其大部分方法的逻辑都很简单，但比 `pbrt` 中通常的代码更多地使用了高级 C++ 技术。这既能减少实现点、向量和法向量类所需的重复代码，又能提供后文会用到的扩展能力。如果你不熟悉这些 C++ 技巧，可以略过细节，先理解各类提供的功能；也可以借此机会了解这门语言较少接触的方面。
 ]
 
 #parec[
-  Both `Tuple2` and #link("Tuple3")[Tuple3] are template classes. They are templated not just on a type used for storing each coordinate's value but also on the type of the class that inherits from it to define a specific two- or three-dimensional type. If one has not seen it before, this is a strange construction: normally, inheritance is sufficient, and the base class has no need to know the type of the subclass. #footnote[This form of inheritance is often referred to as the _curiously recurring template pattern_ (CRTP) in C++.] In this case, having the base class know the child class's type makes it possible to write generic methods that operate on and return values of the child type, as we will see shortly.
+  Both `Tuple2` and #link(<Tuple3>)[`Tuple3`] are template classes. They are templated not just on a type used for storing each coordinate's value but also on the type of the class that inherits from it to define a specific two- or three-dimensional type. If one has not seen it before, this is a strange construction: normally, inheritance is sufficient, and the base class has no need to know the type of the subclass. #footnote[This form of inheritance is often referred to as the _curiously recurring template pattern_ (CRTP) in C++.] In this case, having the base class know the child class's type makes it possible to write generic methods that operate on and return values of the child type, as we will see shortly.
 ][
-  `Tuple2`和#link("<Tuple3>")[Tuple3];都是模板类。它们不仅在用于存储每个坐标值的类型上进行模板化，还在继承它的类的类型上进行模板化，以定义特定的二维或三维类型。如果以前没有见过，这是一种奇怪的构造：通常，继承是足够的，基类不需要知道子类的类型。#footnote[这种形式的继承通常被称为C++中的_奇异递归模板模式_（CRTP）。] 在这种情况下，让基类知道子类的类型使得可以编写操作和返回子类类型值的通用方法，如我们将很快看到的。
+  `Tuple2` 和 #link(<Tuple3>)[`Tuple3`] 都是模板类。其模板参数不仅包括存储各坐标值的类型，还包括继承该基类、定义具体二维或三维类型的派生类类型。第一次见到这种写法时，可能会觉得奇怪：通常有继承关系就够了，基类不必知道子类的类型。#footnote[在 C++ 中，这种继承形式通常称为_奇异递归模板模式_（CRTP）。] 这里让基类知道子类的类型，是为了编写操作子类类型并返回该类型值的通用方法，稍后就会看到具体做法。
 ]
 
+#block(sticky: true)[#raw("<<Tuple2 Definition>>=")] <fragment-Tuple2Definition-0>
+#block(breakable: false)[
 ```cpp
-// <<Tuple2 Definition>>=
 template <template <typename> class Child, typename T>
 class Tuple2 {
   public:
-    // <<Tuple2 Public Methods>>
-    // <<Tuple2 Public Members>>
+    <<Tuple2 Public Methods>>
+    <<Tuple2 Public Members>>
 };
-```
+``` <Tuple2>
+]
 
 #parec[
   The two-dimensional tuple stores its values as `x` and `y` and makes them available as public member variables. The pair of curly braces after each one ensures that the member variables are #emph[default
-initialized]; for numeric types, this initializes them to 0.
+initialized] for numeric types, this initializes them to 0.
 ][
-  二维元组将其值存储为`x`和`y`，并将它们作为公共成员变量公开。每个后面的花括号确保成员变量是#emph[默认初始化];的；对于数值类型，这将它们初始化为0。
+  二维元组将其值存放在 `x` 和 `y` 中，并将它们公开为公有成员变量。每个变量后的花括号确保成员变量得到#emph[默认初始化]；对于数值类型，结果就是初始化为 0。
 ]
 
 
+#block(sticky: true)[#raw("<<Tuple2 Public Members>>=")] <fragment-Tuple2PublicMembers-0>
+#block(breakable: false)[
 ```cpp
-// <<Tuple2 Public Members>>=
 T x{}, y{};
 ```
+]
 
 
 #parec[
   We will focus on the `Tuple3` implementation for the remainder of this section. `Tuple2` is almost entirely the same but with one fewer coordinate.
 ][
-  我们将在本节的其余部分关注`Tuple3`的实现。`Tuple2`几乎完全相同，但少一个坐标。
+  本节余下部分重点介绍 `Tuple3` 的实现。`Tuple2` 与它几乎相同，只少一个坐标。
 ]
 
+#block(sticky: true)[#raw("<<Tuple3 Definition>>=")] <fragment-Tuple3Definition-0>
+#block(breakable: false)[
 ```cpp
-// <<Tuple3 Definition>>=
 template <template <typename> class Child, typename T>
 class Tuple3 {
   public:
-    // <<Tuple3 Public Methods>>
-    // <<Tuple3 Public Members>>
+    <<Tuple3 Public Methods>>
+    <<Tuple3 Public Members>>
 };
-```
-
-#parec[
-  By default, the $( x, y, z )$ values are set to zero, although the user of the class can optionally supply values for each of the components. If the user does supply values, the constructor checks that none of them has the floating-point "not a number" (NaN) value using the #link("../Utilities/User_Interaction.html#DCHECK")[DCHECK()] macro. When compiled in optimized mode, this macro disappears from the compiled code, saving the expense of verifying this case. NaNs almost certainly indicate a bug in the system; if a NaN is generated by some computation, we would like to catch it as soon as possible in order to make isolating its source easier. (See @floating-point-arithmetic for more discussion of NaN values.)
-][
-  默认情况下， $( x, y, z )$ 值被设置为零，尽管类的用户可以选择为每个组件提供值。如果用户确实提供了值，构造函数将使用#link("../Utilities/User_Interaction.html#DCHECK")[DCHECK()];宏检查它们中没有一个具有浮点“非数字”（NaN）值。当在优化模式下编译时，这个宏将从编译代码中消失，从而节省验证此情况的开销。NaN几乎肯定表示系统中的一个错误；如果某些计算生成了NaN，我们希望尽快捕获它，以便更容易隔离其来源。（有关NaN值的更多讨论，请参见@floating-point-arithmetic。）
+``` <Tuple3>
 ]
 
+#parec[
+  By default, the $( x, y, z )$ values are set to zero, although the user of the class can optionally supply values for each of the components. If the user does supply values, the constructor checks that none of them has the floating-point "not a number" (NaN) value using the #link("https://pbr-book.org/4ed/Utilities/User_Interaction.html#DCHECK")[`DCHECK()`] macro. When compiled in optimized mode, this macro disappears from the compiled code, saving the expense of verifying this case. NaNs almost certainly indicate a bug in the system; if a NaN is generated by some computation, we would like to catch it as soon as possible in order to make isolating its source easier. (See @floating-point-arithmetic for more discussion of NaN values.)
+][
+  默认情况下，$(x,y,z)$ 的值均为零；使用这个类时，也可以为各分量指定值。如果指定了值，构造函数会用 `DCHECK()` 宏检查它们都不是浮点“非数”（NaN）值。在优化模式下编译时，这个宏会从编译后的代码中消失，从而省去检查的开销。NaN 几乎总是意味着系统中存在错误；若某项计算产生了 NaN，我们希望尽早发现，以便更容易定位其来源。（关于 NaN 的进一步讨论，见 @floating-point-arithmetic。）
+]
+
+#block(sticky: true)[#raw("<<Tuple3 Public Methods>>=") #link(<fragment-Tuple3PublicMethods-1>)[▼]] <fragment-Tuple3PublicMethods-0>
+#block(breakable: false)[
 ```cpp
-// <<Tuple3 Public Methods>>=
 Tuple3(T x, T y, T z) : x(x), y(y), z(z) { DCHECK(!HasNaN()); }
 ```
+]
 
 
 #parec[
   Readers who have been exposed to object-oriented design may question our decision to make the tuple component values publicly accessible. Typically, member variables are only accessible inside their class, and external code that wishes to access or modify the contents of a class must do so through a well-defined API that may include selector and mutator functions. Although we are sympathetic to the principle of encapsulation, it is not appropriate here. The purpose of selector and mutator functions is to hide the class's internal implementation details. In the case of three-dimensional tuples, hiding this basic part of their design gains nothing and adds bulk to code that uses them.
 ][
-  接触过面向对象设计的读者可能会质疑我们决定使元组组件值公开可访问的决定。通常，成员变量只能在其类内部访问，外部代码如果希望访问或修改类的内容，必须通过一个定义良好的API来实现，该API可能包括选择器和修改器函数。尽管我们同情封装原则，但在这里并不合适。选择器和修改器函数的目的是隐藏类的内部实现细节。在三维元组的情况下，隐藏其设计的这一基本部分没有任何好处，并增加了使用它们的代码的冗余。
+  了解面向对象设计的读者，可能会质疑为何将元组分量公开。通常，成员变量只能从类内部访问；外部代码要访问或修改类的内容，必须经过明确定义的 API，例如读取函数和修改函数。我们认同封装原则，但这里并不适用。读取与修改函数的目的是隐藏类的内部实现细节；对于三维元组，隐藏这一基本设计并无益处，反而会使使用它们的代码更冗长。
 ]
 
 
+#block(sticky: true)[#raw("<<Tuple3 Public Members>>=")] <fragment-Tuple3PublicMembers-0>
+#block(breakable: false)[
 ```cpp
-// <<Tuple3 Public Members>>=
 T x{}, y{}, z{};
 ```
+]
 
 #parec[
   The `HasNaN()` test checks each component individually.
 ][
-  `HasNaN()`测试分别检查每个组件。
+  `HasNaN()` 分别检查每个分量。
 ]
 
 
+#block(sticky: true)[#raw("<<Tuple3 Public Methods>>+=") #link(<fragment-Tuple3PublicMethods-0>)[▲] #link(<fragment-Tuple3PublicMethods-2>)[▼]] <fragment-Tuple3PublicMethods-1>
+#block(breakable: false)[
 ```cpp
-// <<Tuple3 Public Methods>>+=
 bool HasNaN() const { return IsNaN(x) || IsNaN(y) || IsNaN(z); }
 ```
+]
 
 #parec[
   An alternate implementation of these two tuple classes would be to have a single template class that is also parameterized with an integer number of dimensions and to represent the coordinates with an array of that many `T` values. While this approach would reduce the total amount of code by eliminating the need for separate two- and three-dimensional tuple types, individual components of the vector could not be accessed as `v.x` and so forth. We believe that, in this case, a bit more code in the vector implementations is worthwhile in return for more transparent access to components. However, some routines do find it useful to be able to easily loop over the components of vectors; the tuple classes also provide a C++ operator to index into the components so that, given an instance `v`, `v[0] == v.x` and so forth.
 ][
-  这两个元组类的另一种实现方法是有一个单一的模板类，该类也用一个整数维数参数化，并用一个具有多个`T`值的数组表示坐标。虽然这种方法通过消除对单独的二维和三维元组类型的需求来减少代码总量，但向量的各个组件不能像`v.x`那样访问。 我们认为，在这种情况下，向量实现中多一点代码是值得的，以换取更透明的组件访问。然而，一些例程确实发现能够轻松地循环遍历向量的组件是有用的；元组类还提供了一个C++运算符来索引组件，以便给定一个实例`v`，`v[0] == v.x`等等。
+  这两个元组类也可以用另一种方式实现：只定义一个模板类，以表示维数的整数作为额外参数，并用包含相应数量 `T` 值的数组存储坐标。这样无需分别定义二维、三维元组类型，能够减少代码总量，却也无法再通过 `v.x` 这样的写法访问各分量。我们认为，为了让分量访问更直观，在向量实现中多写一些代码是值得的。不过，某些例程确实需要方便地遍历向量分量，因此元组类还提供了用于分量索引的 C++ 运算符：给定实例 `v`，有 `v[0] == v.x`，其他分量依此类推。
 ]
 
+#block(sticky: true)[#raw("<<Tuple3 Public Methods>>+=") #link(<fragment-Tuple3PublicMethods-1>)[▲] #link(<fragment-Tuple3PublicMethods-3>)[▼]] <fragment-Tuple3PublicMethods-2>
+#block(breakable: false)[
 ```cpp
-// <<Tuple3 Public Methods>>+=
 T operator[](int i) const {
     if (i == 0) return x;
     if (i == 1) return y;
     return z;
 }
 ```
+]
 
 
 #parec[
   If the tuple type is non-`const`, then indexing returns a reference, allowing components of the tuple to be set.
 ][
-  如果元组类型不是`const`，则索引返回一个引用，允许设置元组的组件。
+  对于非 `const` 元组，索引运算返回引用，因此可以通过它设置元组分量。
 ]
 
 
+#block(sticky: true)[#raw("<<Tuple3 Public Methods>>+=") #link(<fragment-Tuple3PublicMethods-2>)[▲] #link(<fragment-Tuple3PublicMethods-4>)[▼]] <fragment-Tuple3PublicMethods-3>
+#block(breakable: false)[
 ```cpp
-// <<Tuple3 Public Methods>>+=
 T &operator[](int i) {
     if (i == 0) return x;
     if (i == 1) return y;
     return z;
 }
 ```
+]
 
 #parec[
   We can now turn to the implementation of arithmetic operations that operate on the values stored in a tuple. Their code is fairly dense. For example, here is the method that adds together two three-tuples of some type (for example, `Child` might be `Vector3`, the forthcoming three-dimensional vector type).
 ][
-  我们现在可以转向实现对元组中存储的值进行操作的算术运算。它们的代码相当密集。例如，这里是一个方法，它将某种类型的两个三元组相加（例如，`Child`可能是`Vector3`，即将到来的三维向量类型）。
+  现在来看对元组所存储的值进行算术运算的方法。这些代码包含的语法信息较多。例如，下面的方法将同一类的两个三元组相加；这里的 `Child` 可以是后文将介绍的三维向量类型 `Vector3`。
 ]
 
+#block(sticky: true)[#raw("<<Tuple3 Public Methods>>+=") #link(<fragment-Tuple3PublicMethods-3>)[▲]] <fragment-Tuple3PublicMethods-4>
+#block(breakable: false)[
 ```cpp
-// <<Tuple3 Public Methods>>+=
 template <typename U>
 auto operator+(Child<U> c) const -> Child<decltype(T{} + U{})> {
     return {x + c.x, y + c.y, z + c.z};
 }
 ```
+]
 
 
 #parec[
   There are a few things to note in the implementation of `operator+`. By virtue of being a template method based on another type `U`, it supports adding two elements of the same `Child` template type, though they may use different types for storing their components (`T` and `U` in the code here). However, because the base type of the method's parameter is `Child`, it is only possible to add two values of the same child type using this method. If this method instead took a `Tuple3` for the parameter, then it would silently allow addition with any type that inherited from `Tuple3`, which might not be intended.
 ][
-  在`operator+`的实现中需要注意几点。由于是基于另一种类型`U`的模板方法，它支持将两个相同`Child`模板类型的元素相加，尽管它们可能使用不同的类型来存储其组件（此处代码中的`T`和`U`）。 然而，由于方法参数的基类型是`Child`，因此只能使用此方法添加两个相同子类型的值。如果此方法改为将`Tuple3`作为参数，那么它将默默允许与从`Tuple3`继承的任何类型相加，这可能不是预期的。
+  `operator+` 的实现有几点值得注意。它以另一类型 `U` 为参数，因此可以将同一 `Child` 模板类的两个值相加，即使它们使用不同类型存储分量（这里分别为 `T` 和 `U`）。不过，由于方法参数的基类型是 `Child`，此方法只能将相同派生类类型的两个值相加。若参数改用 `Tuple3`，就会无声地允许与任何继承自 `Tuple3` 的类型相加，而这未必符合设计意图。
 ]
 
 #parec[
   There are two interesting things in the declaration of the return type, to the right of the `->` operator after the method's parameter list. First, the base return type is `Child`; thus, if one adds two `Vector3` values, the returned value will be of `Vector3` type. This, too, eliminates a class of potential errors: if a `Tuple3` was returned, then it would for example be possible to add two `Vector3`s and assign the result to a `Point3`, which is nonsensical. Finally, the component type of the returned type is determined based on the type of an expression adding values of types `T` and `U`. Thus, this method follows C++'s standard type promotion rules: if a `Vector3` that stored integer values is added to one that stores `Float`s, the result is a `Vector3` storing `Float`s.
 ][
-  在返回类型的声明中有两件有趣的事情，在方法参数列表后面的`->`运算符的右边。首先，基本返回类型是`Child`；因此，如果一个添加两个`Vector3`值，返回的值将是`Vector3`类型的。这也消除了潜在错误的一类情况：如果返回的是`Tuple3`，那么例如可以将两个`Vector3`相加并将结果赋给`Point3`，这是没有意义的。 最后，返回类型的组件类型是基于添加类型为`T`和`U`的值的表达式的类型确定的。因此，该方法遵循C++的标准类型提升规则：如果一个存储整数值的`Vector3`与一个存储`Float`的`Vector3`相加，结果是一个存储`Float`的`Vector3`。
+  返回类型声明位于参数列表后 `->` 的右侧，其中有两点值得注意。首先，返回类型的基类型是 `Child`，因此两个 `Vector3` 值相加后，结果仍是 `Vector3`。这也排除了一类潜在错误：如果返回 `Tuple3`，就可能把两个 `Vector3` 相加的结果赋给 `Point3`，而这种操作没有意义。其次，返回类型的分量类型，由类型为 `T` 和 `U` 的值相加所得表达式的类型决定。因此，该方法遵循 C++ 的标准类型提升规则：存储整数的 `Vector3` 与存储 `Float` 的 `Vector3` 相加，结果是存储 `Float` 的 `Vector3`。
 ]
 
 #parec[
-  In the interests of space, we will not include the other `Tuple3` arithmetic operators here, nor will we include the various other utility functions that perform component-wise operations on them. The full list of capabilities provided by #link("<Tuple2>")[Tuple2] and #link("<Tuple3>")[Tuple3] is:
+  In the interests of space, we will not include the other `Tuple3` arithmetic operators here, nor will we include the various other utility functions that perform component-wise operations on them. The full list of capabilities provided by #link(<Tuple2>)[`Tuple2`] and #link(<Tuple3>)[`Tuple3`] is:
 ][
-  出于篇幅考虑，我们在这里不包括其他`Tuple3`算术运算符，也不包括执行组件操作的各种其他实用函数。#link("<Tuple2>")[Tuple2];和#link("<Tuple3>")[Tuple3];提供的完整功能列表是：
+  限于篇幅，这里不列出其他 `Tuple3` 算术运算符，也不列出对各分量进行操作的其他实用函数。#link(<Tuple2>)[`Tuple2`] 和 #link(<Tuple3>)[`Tuple3`] 提供的完整功能如下：
 ]
 
 #parec[
   - The basic arithmetic operators of per-component addition, subtraction, and negation, including the "in place" (e.g., `operator+=`) forms of them.
 ][
-  - 基本的按组件加法、减法和取反算术运算符，包括“原址”形式（例如，`operator+=`）。
+  - 按分量进行加法、减法和取负的基本算术运算符，包括“就地”形式（如 `operator+=`）。
 ]
 
 #parec[
   - Component-wise multiplication and division by a scalar value, including "in place" variants.
 ][
-  - 按标量值进行的组件乘法和除法，包括“就地”变体。
+  - 将每个分量乘以或除以一个标量，包括就地操作形式。
 ]
 
+#metadata(none) <Tuple3::Abs>
 #parec[
-  - #link("Tuple3::Abs")[`Abs(a)`];, which returns a value where the absolute value of each component of the tuple type has been taken.
+  - `Abs(a)`, which returns a value where the absolute value of each component of the tuple type has been taken.
 ][
-  - #link("Tuple3::Abs")[`Abs(a)`];，返回一个值，其中元组类型的每个组件的绝对值已被取。
+  - `Abs(a)`：返回对元组各分量分别取绝对值后的结果。
 ]
 
+#metadata(none) <Tuple3::Ceil>
+#metadata(none) <Tuple3::Floor>
 #parec[
-  - #link("Tuple3::Ceil")[`Ceil(a)`] and #link("Tuple3::Floor")[Floor(a)];, which return a value where the components have been rounded up or down to the nearest integer value, respectively.
+  - `Ceil(a)` and `Floor(a)`, which return a value where the components have been rounded up or down to the nearest integer value, respectively.
 ][
-  - #link("Tuple3::Ceil")[Ceil(a)];和#link("Tuple3::Floor")[Floor(a)];，分别返回一个值，其中组件已被向上或向下舍入到最近的整数值。
+  - `Ceil(a)` 和 `Floor(a)`：分别将各分量向上或向下取整，返回所得元组。
 ]
 
+#metadata(none) <Tuple3::Lerp>
 #parec[
-  - #link("Tuple3::Lerp")[Lerp(t, a, b)];, which returns the result of the linear interpolation $(1 - t) * a + t * b$.
+  - `Lerp(t, a, b)`, which returns the result of the linear interpolation `(1-t)*a + t*b`.
 ][
-  - #link("Tuple3::Lerp")[Lerp(t, a, b)];，返回线性插值的结果$(1 - t) * a + t * b$。
+  - `Lerp(t, a, b)`：返回线性插值 `(1-t)*a + t*b` 的结果。
 ]
 
+#metadata(none) <Tuple3::FMA>
 #parec[
-  - #link("Tuple3::FMA")[FMA(a, b, c)];, which takes three tuples and
-    returns the result of a component-wise fused multiply-add $a * b + c$.
+  - `FMA(a, b, c)`, which takes three tuples and
+    returns the result of a component-wise fused multiply-add `a*b + c`.
 ][
-  - #link("Tuple3::FMA")[FMA(a, b, c)];，接受三个元组并返回组件的融合乘加 $a * b + c$的结果。
+  - `FMA(a, b, c)`：接受三个元组，返回按分量进行融合乘加 `a*b + c` 的结果。
 ]
 
+#metadata(none) <Tuple3::Min>
+#metadata(none) <Tuple3::Max>
 #parec[
-  - #link("Tuple3::Min")[Min(a, b)] and #link("Tuple3::Max")[Max(a, b)];, which respectively return the component-wise minimum and maximum of the two given tuples.
+  - `Min(a, b)` and `Max(a, b)`, which respectively return the component-wise minimum and maximum of the two given tuples.
 ][
-  - #link("Tuple3::Min")[Min(a, b)];和#link("Tuple3::Max")[Max(a, b)];，分别返回给定两个元组的组件最小值和最大值。
+  - `Min(a, b)` 和 `Max(a, b)`：分别返回两个元组对应分量的最小值与最大值所组成的元组。
 ]
 
+#metadata(none) <Tuple3::MinComponentValue>
+#metadata(none) <Tuple3::MaxComponentValue>
 #parec[
-  - #link("Tuple3::MinComponentValue")[MinComponentValue(a)] and #link("Tuple3::MaxComponentValue")[MaxComponentValue(a)];, which respectively return the minimum and maximum value of the tuple's components.
+  - `MinComponentValue(a)` and `MaxComponentValue(a)`, which respectively return the minimum and maximum value of the tuple's components.
 ][
-  - #link("Tuple3::MinComponentValue")[MinComponentValue(a)];和#link("Tuple3::MaxComponentValue")[MaxComponentValue(a)];，分别返回元组组件的最小值和最大值。
+  - `MinComponentValue(a)` 和 `MaxComponentValue(a)`：分别返回元组所有分量中的最小值和最大值。
 ]
 
+#metadata(none) <Tuple3::MinComponentIndex>
+#metadata(none) <Tuple3::MaxComponentIndex>
 #parec[
-  - #link("Tuple3::MinComponentIndex")[MinComponentIndex(a)] and #link("Tuple3::MaxComponentIndex")[MaxComponentIndex(a)];, which respectively return the zero-based index of the tuple element with minimum or maximum value.
+  - `MinComponentIndex(a)` and `MaxComponentIndex(a)`, which respectively return the zero-based index of the tuple element with minimum or maximum value.
 ][
-  - #link("Tuple3::MinComponentIndex")[MinComponentIndex(a)];和#link("Tuple3::MaxComponentIndex")[MaxComponentIndex(a)];，分别返回具有最小值或最大值的元组元素的零基索引。
+  - `MinComponentIndex(a)` 和 `MaxComponentIndex(a)`：分别返回元组中最小值或最大值元素的索引，索引从 0 开始。
 ]
 
+#metadata(none) <Tuple3::Permute>
 #parec[
-  - #link("Tuple3::Permute")[Permute(a, perm)];, which returns the permutation of the tuple according to an array of indices.
+  - `Permute(a, perm)`, which returns the permutation of the tuple according to an array of indices.
 ][
-  - #link("Tuple3::Permute")[Permute(a, perm)];，根据索引数组返回元组的排列。
+  - `Permute(a, perm)`：按索引数组指定的顺序重新排列元组分量，并返回结果。
 ]
 
+#metadata(none) <Tuple3::HProd>
 #parec[
-  - #link("Tuple3::HProd")[HProd(a)];, which returns the horizontal product—the component values multiplied together.
+  - `HProd(a)`, which returns the horizontal product—the component values multiplied together.
 ][
-  - #link("Tuple3::HProd")[HProd(a)];，返回水平乘积——组件值相乘。
+  - `HProd(a)`：返回水平乘积，即所有分量值的乘积。
 ]
+
+
+#heading(level: 3, numbering: none)[#ez_caption[Supplement: Code in the Original Web Edition's Collapsed Panels][补充：原网页折叠面板中的代码]]
+#parec[
+  This supplement preserves additional implementations from the fixed upstream web edition's collapsed panels. Implementations already presented in the main text above are not repeated here.
+][
+  本补充保留固定上游网页折叠面板中额外提供的实现。正文已经展示的实现不在这里重复。
+]
+#include "supplements/3.2-expanded.typ"

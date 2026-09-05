@@ -1,0 +1,13 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="4.894ex" height="2.676ex" style="vertical-align: -0.338ex;" viewBox="0 -1006.6 2107.2 1152.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
+<title id="MathJax-SVG-1-Title">bold upper A Superscript upper T Baseline bold b</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E1-LATINMODERNNORMAL-1D400" d="M827 0c-35 3 -123 3 -163 3c-43 0 -138 0 -176 -3v47h95l-60 146h-268l-50 -121l-4 -12c0 -13 89 -13 89 -13v-47c-37 3 -93 3 -132 3l-117 -3v47h21c76 0 79 8 85 23l248 602c7 18 11 26 39 26c17 0 29 0 40 -26l256 -625h97v-47zM503 240l-114 278l-114 -278h228Z"></path>
+<path stroke-width="1" id="E1-LATINMODERNNORMAL-1D447" d="M704 666c0 -3 -1 -13 -2 -17l-27 -174c-2 -15 -4 -23 -15 -23c-9 0 -12 7 -12 13c0 3 2 15 3 19c4 26 8 65 8 80c0 78 -45 82 -146 82c-21 0 -54 0 -63 -2c-12 -3 -16 -9 -23 -37l-133 -531c-4 -15 -4 -21 -4 -21c0 -16 8 -19 37 -22c26 -2 39 -2 64 -2c26 0 34 0 34 -11 c0 -20 -12 -20 -22 -20c-28 0 -58 2 -87 2l-83 1l-85 -1c-27 0 -55 -2 -82 -2c-6 0 -17 0 -17 12c0 19 6 19 42 19c107 0 110 11 119 48l134 534c1 3 4 15 4 21c0 8 0 12 -28 12h-39c-148 0 -174 -18 -228 -173c-6 -16 -7 -21 -17 -21c-7 0 -12 5 -12 11c0 0 5 16 6 18 l60 176c7 19 8 20 32 20h555c17 0 27 0 27 -11Z"></path>
+<path stroke-width="1" id="E1-LATINMODERNNORMAL-1D41B" d="M600 223c0 -139 -103 -229 -252 -229c-89 0 -138 54 -146 62c-16 -19 -33 -37 -49 -56h-47v600c0 39 -7 39 -69 39v47l177 8v-293c24 20 74 49 147 49c145 0 239 -94 239 -227zM472 223c0 70 0 191 -122 191c-55 0 -103 -29 -130 -64v-251c10 -15 49 -69 119 -69 c32 0 78 11 107 52c26 39 26 94 26 141Z"></path>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E1-LATINMODERNNORMAL-1D400" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-LATINMODERNNORMAL-1D447" x="1229" y="602"></use>
+ <use xlink:href="#E1-LATINMODERNNORMAL-1D41B" x="1467" y="0"></use>
+</g>
+</svg>

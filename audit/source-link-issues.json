@@ -1,0 +1,35 @@
+{
+  "notice": "These original targets are unresolved. Reader output displays the original link text with an explicit pending-reference marker, never a guessed or broken link.",
+  "unresolved": [
+    {
+      "local": "chapter-6-Shapes/chapter-6.5-Triangle_Meshes.typ",
+      "dest": "../Shapes/Exercises.html#ex:shapes-exercise-quadrics",
+      "reason": "target absent or ambiguous in fixed original"
+    },
+    {
+      "local": "chapter-6-Shapes/chapter-6.5-Triangle_Meshes.typ",
+      "dest": "../Shapes/Exercises.html#ex:shapes-exercise-quadrics",
+      "reason": "target absent or ambiguous in fixed original"
+    },
+    {
+      "local": "chapter-12-Light_Sources/chapter-12.6-Light_Sampling.typ",
+      "dest": "LightBounds::Importance()",
+      "reason": "target absent or ambiguous in fixed original"
+    },
+    {
+      "local": "chapter-12-Light_Sources/chapter-12.6-Light_Sampling.typ",
+      "dest": "LightBounds::Importance()",
+      "reason": "target absent or ambiguous in fixed original"
+    },
+    {
+      "local": "chapter-12-Light_Sources/chapter-12.6-Light_Sampling.typ",
+      "dest": "../Primitives_and_Intersection_Acceleration/Bounding_Volume_Hierarchies.html#BVHAggregate::buildRecursive()",
+      "reason": "target absent or ambiguous in fixed original"
+    },
+    {
+      "local": "chapter-12-Light_Sources/chapter-12.6-Light_Sampling.typ",
+      "dest": "../Primitives_and_Intersection_Acceleration/Bounding_Volume_Hierarchies.html#BVHAggregate::buildRecursive()",
+      "reason": "target absent or ambiguous in fixed original"
+    }
+  ]
+}

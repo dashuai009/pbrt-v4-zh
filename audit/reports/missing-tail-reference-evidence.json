@@ -1,0 +1,3344 @@
+[
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Afra2012",
+      "line": 82,
+      "text": "Áfra, A. 2012.\nIncoherent ray tracing without acceleration structures.\nEurographics 2012 Short Papers.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Afra2012",
+      "line": 8,
+      "text": "Áfra, A. 2012. Incoherent ray tracing without acceleration structures. Eurographics 2012 Short Papers.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Afra2016",
+      "line": 87,
+      "text": "Áfra, A. T., C. Benthin, I. Wald, and J. Munkberg. 2016.\nLocal shading coherence extraction for SIMD-efficient path tracing on CPUs.\nProceedings of High Performance Graphics (HPG ’16), 119–28.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Afra2016",
+      "line": 10,
+      "text": "Áfra, A. T., C. Benthin, I. Wald, and J. Munkberg. 2016. Local shading coherence extraction for SIMD-efficient path tracing on CPUs. Proceedings of High Performance Graphics (HPG ’16), 119–28.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Azinovic2019",
+      "line": 92,
+      "text": "Azinović, D., T.-M. Li, A. Kaplanyan, and M. Nießner. 2019.\nInverse path tracing for joint material and lighting estimation.\nIn IEEE Conference on Computer Vision and Pattern Recognition,\n2442–51.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Azinovic2019",
+      "line": 12,
+      "text": "Azinović, D., T.-M. Li, A. Kaplanyan, and M. Nießner. 2019. Inverse path tracing for joint material and lighting estimation. In IEEE Conference on Computer Vision and Pattern Recognition, 2442–51.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Badouel:1989:AEP",
+      "line": 98,
+      "text": "Badouel, D., and T. Priol. 1990. An efficient parallel ray tracing scheme for\nhighly parallel architectures. In Proceedings of the Fifth\nEurographics conference on Advances in Computer Graphics Hardware:\nRendering, Ray Tracing and Visualization Systems (EGGH ’90), 93–106.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Badouel:1989:AEP",
+      "line": 14,
+      "text": "Badouel, D., and T. Priol. 1990. An efficient parallel ray tracing scheme for highly parallel architectures. In Proceedings of the Fifth Eurographics conference on Advances in Computer Graphics Hardware: Rendering, Ray Tracing and Visualization Systems (EGGH ’90), 93–106.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Bangaru2020",
+      "line": 104,
+      "text": "Bangaru, S., T.-M. Li, and F. Durand. 2020.\nUnbiased warped-area sampling for differentiable rendering.\nACM Transactions on Graphics (Proceedings of SIGGRAPH\nAsia) 39 (6), 245:1–18.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Bangaru2020",
+      "line": 16,
+      "text": "Bangaru, S., T.-M. Li, and F. Durand. 2020. Unbiased warped-area sampling for differentiable rendering. ACM Transactions on Graphics (Proceedings of SIGGRAPH Asia) 39 (6), 245:1–18.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Barringer2014",
+      "line": 110,
+      "text": "Barringer, R., and T. Akenine-Möller. 2014.\nDynamic ray stream traversal.\nACM Transactions on Graphics (Proceedings of SIGGRAPH\n2014) 33 (4), 151:1–9.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Barringer2014",
+      "line": 18,
+      "text": "Barringer, R., and T. Akenine-Möller. 2014. Dynamic ray stream traversal. ACM Transactions on Graphics (Proceedings of SIGGRAPH 2014) 33 (4), 151:1–9.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Benthin09",
+      "line": 116,
+      "text": "Benthin, C., and I. Wald. 2009. \nEfficient ray traced soft shadows using multi-frusta tracing. \nIn Proceedings of High Performance Graphics 2009, 135–44.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Benthin09",
+      "line": 20,
+      "text": "Benthin, C., and I. Wald. 2009. Efficient ray traced soft shadows using multi-frusta tracing. In Proceedings of High Performance Graphics 2009, 135–44.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Benthin2011",
+      "line": 121,
+      "text": "Benthin, C., I. Wald, S. Woop, M. Ernst, and W. R. Mark. 2011.\nCombining single and packet ray tracing for arbitrary ray distributions on\nthe Intel® MIC architecture.\nIEEE Transactions on Visualization and Computer\nGraphics 18 (9), 1438–48.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Benthin2011",
+      "line": 22,
+      "text": "Benthin, C., I. Wald, S. Woop, M. Ernst, and W. R. Mark. 2011. Combining single and packet ray tracing for arbitrary ray distributions on the Intel® MIC architecture. IEEE Transactions on Visualization and Computer Graphics 18 (9), 1438–48.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Bitterli2020",
+      "line": 128,
+      "text": "Bitterli, B., C. Wyman, M. Pharr, P. Shirley, A. Lefohn, and W. Jarosz. 2020.\nSpatiotemporal reservoir resampling for real-time ray tracing with dynamic direct lighting. \nACM Transactions on Graphics (Proceedings of\nSIGGRAPH) 39 (4), 148:1–17.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Bitterli2020",
+      "line": 24,
+      "text": "Bitterli, B., C. Wyman, M. Pharr, P. Shirley, A. Lefohn, and W. Jarosz. 2020. Spatiotemporal reservoir resampling for real-time ray tracing with dynamic direct lighting. ACM Transactions on Graphics (Proceedings of SIGGRAPH) 39 (4), 148:1–17.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Boulos08",
+      "line": 134,
+      "text": "Boulos, S., I. Wald, and C. Benthin. 2008.\nAdaptive ray packet reordering.\nIn Proceedings of IEEE Symposium on Interactive Ray Tracing, 131–38.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Boulos08",
+      "line": 26,
+      "text": "Boulos, S., I. Wald, and C. Benthin. 2008. Adaptive ray packet reordering. In Proceedings of IEEE Symposium on Interactive Ray Tracing, 131–38.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Budge09",
+      "line": 139,
+      "text": "Budge, B., T. Bernardin, J. Stuart, S. Sengupta, K. Joy, and J. D. Owens. 2009.\nOut-of-core data management for path tracing on hybrid resources.\nComputer Graphics Forum (Proceedings of Eurographics\n2009) 28 (2), 385–96.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Budge09",
+      "line": 28,
+      "text": "Budge, B., T. Bernardin, J. Stuart, S. Sengupta, K. Joy, and J. D. Owens. 2009. Out-of-core data management for path tracing on hybrid resources. Computer Graphics Forum (Proceedings of Eurographics 2009) 28 (2), 385–96.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Burley2018",
+      "line": 145,
+      "text": "Burley, B., D. Adler, M. J-Y. Chiang, H. Driskill, R. Habel, P. Kelly,\nP. Kutz, Y. K. Li, and D. Teece. 2018.\nThe design and evolution of Disney’s Hyperion renderer.\nACM Transactions on Graphics 37 (3), 33:1–22.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Burley2018",
+      "line": 30,
+      "text": "Burley, B., D. Adler, M. J-Y. Chiang, H. Driskill, R. Habel, P. Kelly, P. Kutz, Y. K. Li, and D. Teece. 2018. The design and evolution of Disney’s Hyperion renderer. ACM Transactions on Graphics 37 (3), 33:1–22.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Chen2017",
+      "line": 151,
+      "text": "Chen, Q., and V. Koltun. 2017.\nPhotographic image synthesis with cascaded refinement networks.\nIEEE/CVF International Conference on Computer Vision (ICCV),\n1511–20. arXiv:1707:09405 [cs.CV].\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Chen2017",
+      "line": 32,
+      "text": "Chen, Q., and V. Koltun. 2017. Photographic image synthesis with cascaded refinement networks. IEEE/CVF International Conference on Computer Vision (ICCV), 1511–20. arXiv:1707:09405 [cs.CV].",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Chen2021",
+      "line": 157,
+      "text": "Chen, X., D. Cohen-Or, B. Chen, and N. J. Mitra. 2021.\nTowards a neural graphics pipeline for controllable image generation.\nComputer Graphics Forum 40 (2), 127–40.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Chen2021",
+      "line": 34,
+      "text": "Chen, X., D. Cohen-Or, B. Chen, and N. J. Mitra. 2021. Towards a neural graphics pipeline for controllable image generation. Computer Graphics Forum 40 (2), 127–40.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Cho2021",
+      "line": 162,
+      "text": "Cho, I.-Y., Y. Huo, and S.-E. Yoon. 2021.\nWeakly-supervised contrastive learning in path manifold for Monte Carlo image reconstruction.\nACM Transactions on Graphics (Proceedings of SIGGRAPH\n2021) 40 (4), 38:1–14.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Cho2021",
+      "line": 36,
+      "text": "Cho, I.-Y., Y. Huo, and S.-E. Yoon. 2021. Weakly-supervised contrastive learning in path manifold for Monte Carlo image reconstruction. ACM Transactions on Graphics (Proceedings of SIGGRAPH 2021) 40 (4), 38:1–14.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Christensen03",
+      "line": 168,
+      "text": "Christensen, P. H., D. M. Laur, J. Fong, W. L. Wooten, and D. Batali. 2003.\nRay differentials and multiresolution geometry caching for\n  distribution ray tracing in complex scenes.\nIn Computer Graphics Forum (Eurographics 2003 Conference\n  Proceedings) 22 (3), 543–52.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Christensen03",
+      "line": 38,
+      "text": "Christensen, P. H., D. M. Laur, J. Fong, W. L. Wooten, and D. Batali. 2003. Ray differentials and multiresolution geometry caching for distribution ray tracing in complex scenes. In Computer Graphics Forum (Eurographics 2003 Conference Proceedings) 22 (3), 543–52.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Christensen2006",
+      "line": 175,
+      "text": "Christensen, P. H., J. Fong, D. M. Laur, and D. Batali. 2006.\nRay tracing for the movie Cars.\nIn Proceedings of the IEEE Symposium on Interactive Ray Tracing,\n1–6.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Christensen2006",
+      "line": 40,
+      "text": "Christensen, P. H., J. Fong, D. M. Laur, and D. Batali. 2006. Ray tracing for the movie Cars. In Proceedings of the IEEE Symposium on Interactive Ray Tracing, 1–6.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Cleary:1983:DAA",
+      "line": 181,
+      "text": "Cleary, J. G., B. M. Wyvill, R. Vatti, and G. M. Birtwistle. 1983.\nDesign and analysis of a parallel ray tracing computer.\nIn Proceedings of Graphics Interface 1983, 33–38.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Cleary:1983:DAA",
+      "line": 42,
+      "text": "Cleary, J. G., B. M. Wyvill, R. Vatti, and G. M. Birtwistle. 1983. Design and analysis of a parallel ray tracing computer. In Proceedings of Graphics Interface 1983, 33–38.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Cook87",
+      "line": 186,
+      "text": "Cook, R. L., L. Carpenter, and E. Catmull. 1987.\nThe Reyes image rendering architecture.\nComputer Graphics (Proceedings of SIGGRAPH ’87) 21 (4), 95–102.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Cook87",
+      "line": 44,
+      "text": "Cook, R. L., L. Carpenter, and E. Catmull. 1987. The Reyes image rendering architecture. Computer Graphics (Proceedings of SIGGRAPH ’87) 21 (4), 95–102.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Dachsbacher2011",
+      "line": 191,
+      "text": "Dachsbacher, C. 2011.\nAnalyzing visibility configurations.\nIEEE Transactions on Visualization and Computer Graphics 17 (4), 475–86.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Dachsbacher2011",
+      "line": 46,
+      "text": "Dachsbacher, C. 2011. Analyzing visibility configurations. IEEE Transactions on Visualization and Computer Graphics 17 (4), 475–86.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Dammertz2008",
+      "line": 196,
+      "text": "Dammertz, H., J. Hanika, and A. Keller. 2008.\nShallow bounding volume hierarchies for fast SIMD ray tracing of incoherent\nrays.\nComputer Graphics Forum 27 (4), 1225–33.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Dammertz2008",
+      "line": 48,
+      "text": "Dammertz, H., J. Hanika, and A. Keller. 2008. Shallow bounding volume hierarchies for fast SIMD ray tracing of incoherent rays. Computer Graphics Forum 27 (4), 1225–33.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Deering95",
+      "line": 202,
+      "text": "Deering, M. F. 1995.\nGeometry compression.\nIn Proceedings of SIGGRAPH ’95, Computer Graphics Proceedings,\n  Annual Conference Series, 13–20.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Deering95",
+      "line": 50,
+      "text": "Deering, M. F. 1995. Geometry compression. In Proceedings of SIGGRAPH ’95, Computer Graphics Proceedings, Annual Conference Series, 13–20.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Dittebrandt2020",
+      "line": 208,
+      "text": "Dittebrandt, A., J. Hanika, and C. Dachsbacher. 2020.\nTemporal sample reuse for next event estimation and path guiding for real-time path tracing.\nEurographics Symposium on Rendering, 1–13.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Dittebrandt2020",
+      "line": 52,
+      "text": "Dittebrandt, A., J. Hanika, and C. Dachsbacher. 2020. Temporal sample reuse for next event estimation and path guiding for real-time path tracing. Eurographics Symposium on Rendering, 1–13.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Dongarra1984",
+      "line": 213,
+      "text": "Dongarra, J. J. 1984.\nPerformance of various computers using standard linear equations software in a Fortran environment.\nACM SIGNUM Newsletter 19 (1), 23–26.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Dongarra1984",
+      "line": 54,
+      "text": "Dongarra, J. J. 1984. Performance of various computers using standard linear equations software in a Fortran environment. ACM SIGNUM Newsletter 19 (1), 23–26.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Eisenacher2013",
+      "line": 218,
+      "text": "Eisenacher, C., G. Nichols, A. Selle, and B. Burley. 2013.\nSorted deferred shading for production path tracing.\nComputer Graphics Forum (Proceedings of the 2013 Eurographics Symposium on\nRendering) 32 (4), 125–32.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Eisenacher2013",
+      "line": 56,
+      "text": "Eisenacher, C., G. Nichols, A. Selle, and B. Burley. 2013. Sorted deferred shading for production path tracing. Computer Graphics Forum (Proceedings of the 2013 Eurographics Symposium on Rendering) 32 (4), 125–32.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Ernst2008",
+      "line": 224,
+      "text": "Ernst, M., and G. Greiner. 2008.\nMulti bounding volume hierarchies.\nIn Proceedings of the IEEE Symposium on Interactive Ray Tracing\n2008, 35–40.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Ernst2008",
+      "line": 58,
+      "text": "Ernst, M., and G. Greiner. 2008. Multi bounding volume hierarchies. In Proceedings of the IEEE Symposium on Interactive Ray Tracing 2008, 35–40.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Fascione2018",
+      "line": 230,
+      "text": "Fascione, L., J. Hanika, M. Leone, M. Droske, J. Schwarzhaupt,\nT. Davidovič, A. Weidlich, and J. Meng. 2018.\nManuka: A batch-shading architecture for spectral path tracing in movie production.\nACM Transactions on Graphics 37 (3), 31:1–18.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Fascione2018",
+      "line": 60,
+      "text": "Fascione, L., J. Hanika, M. Leone, M. Droske, J. Schwarzhaupt, T. Davidovič, A. Weidlich, and J. Meng. 2018. Manuka: A batch-shading architecture for spectral path tracing in movie production. ACM Transactions on Graphics 37 (3), 31:1–18.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Fuetterling2017",
+      "line": 236,
+      "text": "Fuetterling, V., C. Lojewski, F.-J. Pfreundt, B. Hamann, and A. Ebert. 2017.\nAccelerated single ray tracing for wide vector units.\nProceedings of High Performance Graphics (HPG ’17), 6:1–9.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Fuetterling2017",
+      "line": 62,
+      "text": "Fuetterling, V., C. Lojewski, F.-J. Pfreundt, B. Hamann, and A. Ebert. 2017. Accelerated single ray tracing for wide vector units. Proceedings of High Performance Graphics (HPG ’17), 6:1–9.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Gatys2016",
+      "line": 241,
+      "text": "Gatys, L. A., A. S. Ecker, and M. Bethge. 2016.\nImage style transfer using convolutional neural networks.\nProceedings of the IEEE Conference on Computer Vision and Pattern\nRecognition (CVPR), 2414–23.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Gatys2016",
+      "line": 64,
+      "text": "Gatys, L. A., A. S. Ecker, and M. Bethge. 2016. Image style transfer using convolutional neural networks. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2414–23.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Georgiev08",
+      "line": 247,
+      "text": "Georgiev, I., and P. Slusallek. 2008.\nRTfact: Generic concepts for flexible and high performance ray tracing.\nIn Proceedings of IEEE Symposium on Interactive Ray Tracing,\n115–22.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Georgiev08",
+      "line": 66,
+      "text": "Georgiev, I., and P. Slusallek. 2008. RTfact: Generic concepts for flexible and high performance ray tracing. In Proceedings of IEEE Symposium on Interactive Ray Tracing, 115–22.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Ghosh2006:smc",
+      "line": 253,
+      "text": "Ghosh, A., A. Doucet, and W. Heidrich. 2006.\nSequential sampling for dynamic environment map illumination.\nProceedings of the Eurographics Symposium on Rendering, 115–26.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Ghosh2006:smc",
+      "line": 68,
+      "text": "Ghosh, A., A. Doucet, and W. Heidrich. 2006. Sequential sampling for dynamic environment map illumination. Proceedings of the Eurographics Symposium on Rendering, 115–26.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Gkioulekas2016",
+      "line": 258,
+      "text": "Gkioulekas, I., A. Levin, and T. Zickler. 2016.\nAn evaluation of computational imaging techniques for heterogeneous inverse scattering.\nEuropean Conference on Computer Vision (Proceedings of ECCV 2016),\n685–701.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Gkioulekas2016",
+      "line": 70,
+      "text": "Gkioulekas, I., A. Levin, and T. Zickler. 2016. An evaluation of computational imaging techniques for heterogeneous inverse scattering. European Conference on Computer Vision (Proceedings of ECCV 2016), 685–701.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Gkioulekas2013b",
+      "line": 264,
+      "text": "Gkioulekas, I., S. Zhao, K. Bala, T. Zickler, and A. Levin. 2013b.\nInverse volume rendering with material dictionaries.\nACM Transactions on Graphics (Proceedings of SIGGRAPH Asia\n2013) 32 (6), 162:1–13.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Gkioulekas2013b",
+      "line": 72,
+      "text": "Gkioulekas, I., S. Zhao, K. Bala, T. Zickler, and A. Levin. 2013b. Inverse volume rendering with material dictionaries. ACM Transactions on Graphics (Proceedings of SIGGRAPH Asia 2013) 32 (6), 162:1–13.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Granskog2020",
+      "line": 270,
+      "text": "Granskog, J., F. Rousselle, M. Papas, and J. Novák. 2020.\nCompositional neural scene representations for shading inference.\nACM Transactions on Graphics 39 (4), 135:1–13.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Granskog2020",
+      "line": 74,
+      "text": "Granskog, J., F. Rousselle, M. Papas, and J. Novák. 2020. Compositional neural scene representations for shading inference. ACM Transactions on Graphics 39 (4), 135:1–13.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Green:1989:ECF",
+      "line": 275,
+      "text": "Green, S. A., and D. J. Paddon. 1989.\nExploiting coherence for multiprocessor ray tracing.\nIEEE Computer Graphics and Applications 9 (6),\n  12–26.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Green:1989:ECF",
+      "line": 76,
+      "text": "Green, S. A., and D. J. Paddon. 1989. Exploiting coherence for multiprocessor ray tracing. IEEE Computer Graphics and Applications 9 (6), 12–26.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Gribble08",
+      "line": 281,
+      "text": "Gribble, C., and K. Ramani. 2008.\nCoherent ray tracing via stream filtering.\nProceedings of IEEE Symposium on Interactive Ray Tracing, 59–66.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Gribble08",
+      "line": 78,
+      "text": "Gribble, C., and K. Ramani. 2008. Coherent ray tracing via stream filtering. Proceedings of IEEE Symposium on Interactive Ray Tracing, 59–66.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Griewank2008",
+      "line": 286,
+      "text": "Griewank, A., and A. Walther. 2008.\nEvaluating derivatives: Principles and techniques of algorithmic\ndifferentiation (2nd ed.).\nSociety for Industrial and Applied Mathematics.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Griewank2008",
+      "line": 80,
+      "text": "Griewank, A., and A. Walther. 2008. Evaluating derivatives: Principles and techniques of algorithmic differentiation (2nd ed.). Society for Industrial and Applied Mathematics.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Hasan2013",
+      "line": 292,
+      "text": "Hašan, M., and R. Ramamoorthi. 2013.\nInteractive albedo editing in path-traced volumetric materials.\nACM Transactions on Graphics 32 (2), 11:1–11.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Hasan2013",
+      "line": 82,
+      "text": "Hašan, M., and R. Ramamoorthi. 2013. Interactive albedo editing in path-traced volumetric materials. ACM Transactions on Graphics 32 (2), 11:1–11.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Hanika2010",
+      "line": 297,
+      "text": "Hanika, J., A. Keller, and H. P. A. Lensch. 2010.\nTwo-level ray tracing with reordering for highly complex scenes.\nProceedings of Graphics Interface 2010, 145–52.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Hanika2010",
+      "line": 84,
+      "text": "Hanika, J., A. Keller, and H. P. A. Lensch. 2010. Two-level ray tracing with reordering for highly complex scenes. Proceedings of Graphics Interface 2010, 145–52.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Hao2021",
+      "line": 302,
+      "text": "Hao, Z., A. Mallya, S. Belongie, and M.-Y. Liu. 2021.\nGANcraft: Unsupervised 3D neural rendering of Minecraft worlds.\nIEEE/CVF International Conference on Computer Vision (ICCV).\narXiv:2104.07659 [cs.CV].\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Hao2021",
+      "line": 86,
+      "text": "Hao, Z., A. Mallya, S. Belongie, and M.-Y. Liu. 2021. GANcraft: Unsupervised 3D neural rendering of Minecraft worlds. IEEE/CVF International Conference on Computer Vision (ICCV). arXiv:2104.07659 [cs.CV].",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Hasselgren2020",
+      "line": 308,
+      "text": "Hasselgren, J., J. Munkberg, A. Patney, M. Salvi, and A. Lefohn. 2020.\nNeural temporal adaptive sampling and denoising.\nComputer Graphics Forum 39 (2), 147–55.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Hasselgren2020",
+      "line": 88,
+      "text": "Hasselgren, J., J. Munkberg, A. Patney, M. Salvi, and A. Lefohn. 2020. Neural temporal adaptive sampling and denoising. Computer Graphics Forum 39 (2), 147–55.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Hermosilla2019",
+      "line": 313,
+      "text": "Hermosilla, P., S. Maisch, T. Ritschel, and T. Ropinski. 2019.\nDeep-learning the latent space of light transport.\nComputer Graphics Forum 38 (4), 207–17.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Hermosilla2019",
+      "line": 90,
+      "text": "Hermosilla, P., S. Maisch, T. Ritschel, and T. Ropinski. 2019. Deep-learning the latent space of light transport. Computer Graphics Forum 38 (4), 207–17.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Hertzmann2003",
+      "line": 318,
+      "text": "Hertzmann, A. 2003.\nMachine learning for computer graphics: A manifesto and tutorial.\nProceedings of the 11th Pacific Conference on Computer Graphics and\nApplications (PG ’03).\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Hertzmann2003",
+      "line": 92,
+      "text": "Hertzmann, A. 2003. Machine learning for computer graphics: A manifesto and tutorial. Proceedings of the 11th Pacific Conference on Computer Graphics and Applications (PG ’03).",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Karras2018",
+      "line": 324,
+      "text": "Karras, T., S. Laine, and T. Aila. 2018.\nA style-based generator architecture for generative adversarial networks.\nComputer Vision and Pattern Recognition, 4396–405.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Karras2018",
+      "line": 94,
+      "text": "Karras, T., S. Laine, and T. Aila. 2018. A style-based generator architecture for generative adversarial networks. Computer Vision and Pattern Recognition, 4396–405.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Karras2020",
+      "line": 329,
+      "text": "Karras, T., S. Laine, M. Aittala, J. Hellsten, J. Lehtinen, and T. Aila. 2020.\nAnalyzing and improving the image quality of StyleGAN.\nComputer Vision and Pattern Recognition, 8110–19.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Karras2020",
+      "line": 96,
+      "text": "Karras, T., S. Laine, M. Aittala, J. Hellsten, J. Lehtinen, and T. Aila. 2020. Analyzing and improving the image quality of StyleGAN. Computer Vision and Pattern Recognition, 8110–19.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Kato2018",
+      "line": 334,
+      "text": "Kato, H., Y. Ushiku, and T. Harada. 2018.\nNeural 3D mesh renderer.\nIEEE Conference on Computer Vision and Pattern Recognition, 3907–16.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Kato2018",
+      "line": 98,
+      "text": "Kato, H., Y. Ushiku, and T. Harada. 2018. Neural 3D mesh renderer. IEEE Conference on Computer Vision and Pattern Recognition, 3907–16.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Keller2011",
+      "line": 339,
+      "text": "Keller, A., and C. Wächter. 2011.\nEfficient ray tracing without auxiliary acceleration data structure.\nHigh Performance Graphics 2011 Poster.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Keller2011",
+      "line": 100,
+      "text": "Keller, A., and C. Wächter. 2011. Efficient ray tracing without auxiliary acceleration data structure. High Performance Graphics 2011 Poster.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Khungurn2015",
+      "line": 344,
+      "text": "Khungurn, P., D. Schroeder, S. Zhao, K. Bala, and S. Marschner. 2015.\nMatching real fabrics with micro-appearance models.\nACM Transactions on Graphics (Proceedings of SIGGRAPH\n2015) 35 (1), 1:1–26.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Khungurn2015",
+      "line": 102,
+      "text": "Khungurn, P., D. Schroeder, S. Zhao, K. Bala, and S. Marschner. 2015. Matching real fabrics with micro-appearance models. ACM Transactions on Graphics (Proceedings of SIGGRAPH 2015) 35 (1), 1:1–26.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Kingma2014",
+      "line": 350,
+      "text": "Kingma, D. P., and J. Ba. 2014.\nAdam: A method for stochastic optimization.\n3rd International Conference on Learning Representations, (ICLR).\nSan Diego, CA, USA. arXIV:1412.6980 [cs.LG].\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Kingma2014",
+      "line": 104,
+      "text": "Kingma, D. P., and J. Ba. 2014. Adam: A method for stochastic optimization. 3rd International Conference on Learning Representations, (ICLR). San Diego, CA, USA. arXIV:1412.6980 [cs.LG].",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Kuznetsov2021",
+      "line": 356,
+      "text": "Kuznetsov, A., K. Mullia, Z. Xu, M. Hašan, and R. Ramamoorthi. 2021.\nNeuMIP: Multi-resolution neural materials.\nACM Transactions on Graphics (Proceedings of SIGGRAPH) 40 (4), 175:1–13.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Kuznetsov2021",
+      "line": 106,
+      "text": "Kuznetsov, A., K. Mullia, Z. Xu, M. Hašan, and R. Ramamoorthi. 2021. NeuMIP: Multi-resolution neural materials. ACM Transactions on Graphics (Proceedings of SIGGRAPH) 40 (4), 175:1–13.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Laine2020",
+      "line": 361,
+      "text": "Laine, S., J. Hellsten, T. Karras, Y. Seol, J. Lehtinen, and T. Aila. 2020.\nModular primitives for high-performance differentiable rendering.\nACM Transactions on Graphics (Proceedings of SIGGRAPH\nAsia) 39 (6), 194:1–14.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Laine2020",
+      "line": 108,
+      "text": "Laine, S., J. Hellsten, T. Karras, Y. Seol, J. Lehtinen, and T. Aila. 2020. Modular primitives for high-performance differentiable rendering. ACM Transactions on Graphics (Proceedings of SIGGRAPH Asia) 39 (6), 194:1–14.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Lee2017",
+      "line": 367,
+      "text": "Lee, M., B. Green, F. Xie, and E. Tabellion. 2017.\nVectorized production path tracing.\nIn Proceedings of High Performance Graphics (HPG ’17), 10:1–11.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Lee2017",
+      "line": 110,
+      "text": "Lee, M., B. Green, F. Xie, and E. Tabellion. 2017. Vectorized production path tracing. In Proceedings of High Performance Graphics (HPG ’17), 10:1–11.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Li2018",
+      "line": 372,
+      "text": "Li, T.-M., M. Aittala, F. Durand, and J. Lehtinen. 2018.\nDifferentiable Monte Carlo ray tracing through edge sampling.\nACM Transactions on Graphics (Proceedings of SIGGRAPH\nAsia) 37 (6), 222:1–11.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Li2018",
+      "line": 112,
+      "text": "Li, T.-M., M. Aittala, F. Durand, and J. Lehtinen. 2018. Differentiable Monte Carlo ray tracing through edge sampling. ACM Transactions on Graphics (Proceedings of SIGGRAPH Asia) 37 (6), 222:1–11.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Liu2019:softrast",
+      "line": 378,
+      "text": "Liu, S., W. Chen, T. Li, and H. Li. 2019a.\nSoft rasterizer: Differentiable rendering for unsupervised single-view mesh reconstruction.\nIEEE/CVF International Conference on Computer Vision (ICCV),\n7708–17.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Liu2019:softrast",
+      "line": 114,
+      "text": "Liu, S., W. Chen, T. Li, and H. Li. 2019a. Soft rasterizer: Differentiable rendering for unsupervised single-view mesh reconstruction. IEEE/CVF International Conference on Computer Vision (ICCV), 7708–17.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Longbottom2017",
+      "line": 384,
+      "text": "Longbottom, Roy. 2017.\nRoy Longbottom’s PC Benchmark Collection.\nhttp://www.roylongbottom.org.uk/linpack%20results.htm.\n",
+      "links": [
+        "http://www.roylongbottom.org.uk/linpack%20results.htm"
+      ]
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Longbottom2017",
+      "line": 116,
+      "text": "Longbottom, Roy. 2017. Roy Longbottom’s PC Benchmark Collection. http://www.roylongbottom.org.uk/linpack%20results.htm.",
+      "links": [
+        "http://www.roylongbottom.org.uk/linpack%20results.htm"
+      ]
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Loper2014",
+      "line": 389,
+      "text": "Loper, M. M., and M. J. Black. 2014.\nOpenDR: An approximate differentiable renderer.\nEuropean Conference on Computer Vision (Proceedings of ECCV 2014),\n154–69.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Loper2014",
+      "line": 118,
+      "text": "Loper, M. M., and M. J. Black. 2014. OpenDR: An approximate differentiable renderer. European Conference on Computer Vision (Proceedings of ECCV 2014), 154–69.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Loubet2019",
+      "line": 395,
+      "text": "Loubet, G., N. Holzschuch, and W. Jakob. 2019.\nReparameterizing discontinuous integrands for differentiable rendering.\nACM Transactions on Graphics (Proceedings of SIGGRAPH\nAsia) 38 (6), 1–14.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Loubet2019",
+      "line": 120,
+      "text": "Loubet, G., N. Holzschuch, and W. Jakob. 2019. Reparameterizing discontinuous integrands for differentiable rendering. ACM Transactions on Graphics (Proceedings of SIGGRAPH Asia) 38 (6), 1–14.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Muller2019:nis",
+      "line": 401,
+      "text": "Müller, T., B. McWilliams, F. Rousselle, M. Gross, and J. Novák. 2019.\nNeural importance sampling.\nACM Transaction on Graphics (presented at SIGGRAPH 2019) 38 (5), 145:1–19.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Muller2019:nis",
+      "line": 122,
+      "text": "Müller, T., B. McWilliams, F. Rousselle, M. Gross, and J. Novák. 2019. Neural importance sampling. ACM Transaction on Graphics (presented at SIGGRAPH 2019) 38 (5), 145:1–19.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Muller2020",
+      "line": 406,
+      "text": "Müller, T., F. Rousselle, A. Keller, and J. Novák. 2020.\nNeural control variates.\nACM Transactions on Graphics (Proceedings of SIGGRAPH\nAsia) 39 (6), 243:1–19.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Muller2020",
+      "line": 124,
+      "text": "Müller, T., F. Rousselle, A. Keller, and J. Novák. 2020. Neural control variates. ACM Transactions on Graphics (Proceedings of SIGGRAPH Asia) 39 (6), 243:1–19.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Muller2021",
+      "line": 412,
+      "text": "Müller, T., F. Rousselle, J. Novák, and A. Keller. 2021.\nReal-time neural radiance caching for path tracing.\nACM Transactions on Graphics (Proceedings of SIGGRAPH) 40 (4), 36:1–16.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Muller2021",
+      "line": 126,
+      "text": "Müller, T., F. Rousselle, J. Novák, and A. Keller. 2021. Real-time neural radiance caching for path tracing. ACM Transactions on Graphics (Proceedings of SIGGRAPH) 40 (4), 36:1–16.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Mansson07",
+      "line": 417,
+      "text": "Mansson, E., J. Munkberg, and T. Akenine-Möller. 2007.\nDeep coherent ray tracing.\nIn Proceedings of IEEE Symposium on Interactive Ray Tracing,\n79–85.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Mansson07",
+      "line": 128,
+      "text": "Mansson, E., J. Munkberg, and T. Akenine-Möller. 2007. Deep coherent ray tracing. In Proceedings of IEEE Symposium on Interactive Ray Tracing, 79–85.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Mildenhall2020",
+      "line": 423,
+      "text": "Mildenhall, B., P. P. Srinivasan, M. Tancik, J. T. Barron, R. Ramamoorthi, and R. Ng. 2020.\nNeRF: Representing scenes as neural radiance fields for view synthesis.\nEuropean Conference on Computer Vision (ECCV).\narXiv:2003.08934 [cs.CV].\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Mildenhall2020",
+      "line": 130,
+      "text": "Mildenhall, B., P. P. Srinivasan, M. Tancik, J. T. Barron, R. Ramamoorthi, and R. Ng. 2020. NeRF: Representing scenes as neural radiance fields for view synthesis. European Conference on Computer Vision (ECCV). arXiv:2003.08934 [cs.CV].",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Moon2010",
+      "line": 429,
+      "text": "Moon, B., Y. Byun, T.-J. Kim, P. Claudio, H.-S. Kim, Y.-J. Ban, S. W. Nam,\nand S.-E. Yoon. 2010.\nCache-oblivious ray reordering.\nACM Transactions on Graphics 29 (3), 28:1–10.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Moon2010",
+      "line": 132,
+      "text": "Moon, B., Y. Byun, T.-J. Kim, P. Claudio, H.-S. Kim, Y.-J. Ban, S. W. Nam, and S.-E. Yoon. 2010. Cache-oblivious ray reordering. ACM Transactions on Graphics 29 (3), 28:1–10.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Mora2011",
+      "line": 435,
+      "text": "Mora, B. 2011.\nNaive ray-tracing: A divide-and-conquer approach.\nACM Transactions on Graphics 30 (5), 117:1–12.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Mora2011",
+      "line": 134,
+      "text": "Mora, B. 2011. Naive ray-tracing: A divide-and-conquer approach. ACM Transactions on Graphics 30 (5), 117:1–12.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Munkberg2016",
+      "line": 440,
+      "text": "Munkberg, J., J. Hasselgren, P. Clarberg, M. Andersson, and T. Akenine-Möller. 2016.\nTexture space caching and reconstruction for ray tracing.\nACM Transactions on Graphics (Proceedings of SIGGRAPH\nAsia) 35 (6), 249:1–13.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Munkberg2016",
+      "line": 136,
+      "text": "Munkberg, J., J. Hasselgren, P. Clarberg, M. Andersson, and T. Akenine-Möller. 2016. Texture space caching and reconstruction for ray tracing. ACM Transactions on Graphics (Proceedings of SIGGRAPH Asia) 35 (6), 249:1–13.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Nabata2013",
+      "line": 446,
+      "text": "Nabata, K., K. Iwasaki, Y. Dobashi, and T. Nishita. 2013.\nEfficient divide-and-conquer ray tracing using ray sampling.\nIn Proceedings of High Performance Graphics 2013, 129–35.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Nabata2013",
+      "line": 138,
+      "text": "Nabata, K., K. Iwasaki, Y. Dobashi, and T. Nishita. 2013. Efficient divide-and-conquer ray tracing using ray sampling. In Proceedings of High Performance Graphics 2013, 129–35.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Nalbach2017",
+      "line": 451,
+      "text": "Nalbach, O., E. Arabadzhiyska, D. Mehta, H.-P. Seidel, and T. Ritschel. 2017.\nDeep shading: Convolutional neural networks for screen space shading.\nComputer Graphics Forum 36 (4), 65–78.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Nalbach2017",
+      "line": 140,
+      "text": "Nalbach, O., E. Arabadzhiyska, D. Mehta, H.-P. Seidel, and T. Ritschel. 2017. Deep shading: Convolutional neural networks for screen space shading. Computer Graphics Forum 36 (4), 65–78.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Nicolet2021",
+      "line": 456,
+      "text": "Nicolet, B., A. Jacobson, and W. Jakob. 2021.\nLarge steps in inverse rendering of geometry.\nACM Transactions on Graphics (Proceedings of SIGGRAPH\nAsia) 40 (6), 248:1–13.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Nicolet2021",
+      "line": 142,
+      "text": "Nicolet, B., A. Jacobson, and W. Jakob. 2021. Large steps in inverse rendering of geometry. ACM Transactions on Graphics (Proceedings of SIGGRAPH Asia) 40 (6), 248:1–13.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:NimierDavid2019",
+      "line": 462,
+      "text": "Nimier-David, M., D. Vicini, T. Zeltner, W. Jakob. 2019.\nMitsuba 2: A retargetable forward and inverse renderer.\nACM Transactions on Graphics (Proceedings of SIGGRAPH\n2019) 38 (6), 203:1–17.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:NimierDavid2019",
+      "line": 144,
+      "text": "Nimier-David, M., D. Vicini, T. Zeltner, W. Jakob. 2019. Mitsuba 2: A retargetable forward and inverse renderer. ACM Transactions on Graphics (Proceedings of SIGGRAPH 2019) 38 (6), 203:1–17.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:NimierDavid2020",
+      "line": 468,
+      "text": "Nimier-David, M., S. Speierer, B. Ruiz, and W. Jakob. 2020.\nRadiative backpropagation: An adjoint method for lightning-fast differentiable rendering. \nACM Transactions on Graphics (Proceedings of\nSIGGRAPH) 39 (4), 146:1–15.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:NimierDavid2020",
+      "line": 146,
+      "text": "Nimier-David, M., S. Speierer, B. Ruiz, and W. Jakob. 2020. Radiative backpropagation: An adjoint method for lightning-fast differentiable rendering. ACM Transactions on Graphics (Proceedings of SIGGRAPH) 39 (4), 146:1–15.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Nowrouzezahrai2009",
+      "line": 474,
+      "text": "Nowrouzezahrai, D., E. Kalogerakis, and E. Fiume. 2009.\nShadowing dynamic scenes with arbitrary BRDFs.\nComputer Graphics Forum (Proceedings of Eurographics) 28 (2),\n249–58.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Nowrouzezahrai2009",
+      "line": 148,
+      "text": "Nowrouzezahrai, D., E. Kalogerakis, and E. Fiume. 2009. Shadowing dynamic scenes with arbitrary BRDFs. Computer Graphics Forum (Proceedings of Eurographics) 28 (2), 249–58.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Ouyang2021",
+      "line": 480,
+      "text": "Ouyang, Y., S. Liu, M. Kettunen, M. Pharr, and J. Pantaleoni. 2021.\nReSTIR GI: Path resampling for real-time path tracing.\nComputer Graphics Forum (Proceedings of High Performance Graphics\n2021), 40 (8), 17–29.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Ouyang2021",
+      "line": 150,
+      "text": "Ouyang, Y., S. Liu, M. Kettunen, M. Pharr, and J. Pantaleoni. 2021. ReSTIR GI: Path resampling for real-time path tracing. Computer Graphics Forum (Proceedings of High Performance Graphics 2021), 40 (8), 17–29.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:PerardGayot19",
+      "line": 486,
+      "text": "Pérard-Gayot, A., R. Membarth, R. Leißa, S. Hack, and P. Slusallek. 2019.\nRodent: Generating renderers without writing a generator.\nACM Transactions on Graphics (Proceedings of SIGGRAPH\n2019) 38 (4), 40:1–12.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:PerardGayot19",
+      "line": 152,
+      "text": "Pérard-Gayot, A., R. Membarth, R. Leißa, S. Hack, and P. Slusallek. 2019. Rodent: Generating renderers without writing a generator. ACM Transactions on Graphics (Proceedings of SIGGRAPH 2019) 38 (4), 40:1–12.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Park2019",
+      "line": 492,
+      "text": "Park, T., M. Liu, T. Wang, and J. Zhu. 2019.\nSemantic image synthesis with spatially-adaptive normalization.\nIEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2332–41.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Park2019",
+      "line": 154,
+      "text": "Park, T., M. Liu, T. Wang, and J. Zhu. 2019. Semantic image synthesis with spatially-adaptive normalization. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2332–41.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Parker2010",
+      "line": 497,
+      "text": "Parker, S. G., J. Bigler, A. Dietrich, H. Friedrich, J. Hoberock,\nD. Luebke, D. McAllister, M. McGuire, K. Morley, A. Robison, and\nM. Stich. 2010.\nOptiX: A general purpose ray tracing engine.\nACM Transactions on Graphics (Proceedings of SIGGRAPH 2010) 29 (4), 66:1–13.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Parker2010",
+      "line": 156,
+      "text": "Parker, S. G., J. Bigler, A. Dietrich, H. Friedrich, J. Hoberock, D. Luebke, D. McAllister, M. McGuire, K. Morley, A. Robison, and M. Stich. 2010. OptiX: A general purpose ray tracing engine. ACM Transactions on Graphics (Proceedings of SIGGRAPH 2010) 29 (4), 66:1–13.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Parker07",
+      "line": 504,
+      "text": "Parker, S., S. Boulos, J. Bigler, and A. Robison. 2007.\nRTSL: A ray tracing shading language.\nIn Proceedings of IEEE Symposium on Interactive Ray Tracing, 149–60.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Parker07",
+      "line": 158,
+      "text": "Parker, S., S. Boulos, J. Bigler, and A. Robison. 2007. RTSL: A ray tracing shading language. In Proceedings of IEEE Symposium on Interactive Ray Tracing, 149–60.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Parker:1999:IRT",
+      "line": 509,
+      "text": "Parker, S., W. Martin, P.-P. J. Sloan, P. S. Shirley, B. Smits, and\nC. Hansen.\n  1999.\nInteractive ray tracing.\nIn 1999 ACM Symposium on Interactive 3D Graphics, 119–26.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Parker:1999:IRT",
+      "line": 160,
+      "text": "Parker, S., W. Martin, P.-P. J. Sloan, P. S. Shirley, B. Smits, and C. Hansen. 1999. Interactive ray tracing. In 1999 ACM Symposium on Interactive 3D Graphics, 119–26.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Peachey90",
+      "line": 516,
+      "text": "Peachey, D. R. 1990.\nTexture on demand.\nPixar Technical Memo #217.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Peachey90",
+      "line": 162,
+      "text": "Peachey, D. R. 1990. Texture on demand. Pixar Technical Memo #217.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Pharr96",
+      "line": 521,
+      "text": "Pharr, M., and P. Hanrahan. 1996.\nGeometry caching for ray-tracing displacement maps.\nIn Eurographics Rendering Workshop 1996, 31–40.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Pharr96",
+      "line": 164,
+      "text": "Pharr, M., and P. Hanrahan. 1996. Geometry caching for ray-tracing displacement maps. In Eurographics Rendering Workshop 1996, 31–40.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Pharr2012",
+      "line": 526,
+      "text": "Pharr, M., and W. R. Mark. 2012.\nispc: A SPMD compiler for high-performance CPU programming.\nIn Proceedings of Innovative Parallel Computing (InPar), 1–13.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Pharr2012",
+      "line": 166,
+      "text": "Pharr, M., and W. R. Mark. 2012. ispc: A SPMD compiler for high-performance CPU programming. In Proceedings of Innovative Parallel Computing (InPar), 1–13.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Pharr97",
+      "line": 531,
+      "text": "Pharr, M., C. Kolb, R. Gershbein, and P. M. Hanrahan. 1997.\nRendering complex scenes with memory-coherent ray tracing.\nIn Proceedings of SIGGRAPH ’97, Computer Graphics Proceedings,\n  Annual Conference Series, 101–8.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Pharr97",
+      "line": 168,
+      "text": "Pharr, M., C. Kolb, R. Gershbein, and P. M. Hanrahan. 1997. Rendering complex scenes with memory-coherent ray tracing. In Proceedings of SIGGRAPH ’97, Computer Graphics Proceedings, Annual Conference Series, 101–8.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Rainer2019",
+      "line": 537,
+      "text": "Rainer, G., W. Jakob, A. Ghosh, and T. Weyrich. 2019.\nNeural BTF compression and interpolation.\nComputer Graphics Forum 38 (2), 235–44.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Rainer2019",
+      "line": 170,
+      "text": "Rainer, G., W. Jakob, A. Ghosh, and T. Weyrich. 2019. Neural BTF compression and interpolation. Computer Graphics Forum 38 (2), 235–44.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Rainer2020",
+      "line": 542,
+      "text": "Rainer, R., A. Ghosh, W. Jakob, and T. Weyrich. 2020.\nUnified neural encoding of BTFs.\nComputer Graphics Forum 39 (2), 167–78.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Rainer2020",
+      "line": 172,
+      "text": "Rainer, R., A. Ghosh, W. Jakob, and T. Weyrich. 2020. Unified neural encoding of BTFs. Computer Graphics Forum 39 (2), 167–78.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Ren2013",
+      "line": 547,
+      "text": "Ren, P., J. Wang, M. Gong, S. Lin, X. Tong, and B. Guo. 2013.\nGlobal illumination with radiance regression functions.\nACM Transactions on Graphics (Proceedings of SIGGRAPH\n2013) 32 (4), 130:1–12.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Ren2013",
+      "line": 174,
+      "text": "Ren, P., J. Wang, M. Gong, S. Lin, X. Tong, and B. Guo. 2013. Global illumination with radiance regression functions. ACM Transactions on Graphics (Proceedings of SIGGRAPH 2013) 32 (4), 130:1–12.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Reshetov07",
+      "line": 553,
+      "text": "Reshetov, A. 2007.\nFaster ray packets–triangle intersection through vertex culling. \nIn Proceedings of IEEE Symposium on Interactive Ray Tracing,\n105–12.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Reshetov07",
+      "line": 176,
+      "text": "Reshetov, A. 2007. Faster ray packets–triangle intersection through vertex culling. In Proceedings of IEEE Symposium on Interactive Ray Tracing, 105–12.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:mlrt05",
+      "line": 559,
+      "text": "Reshetov, A., A. Soupikov, and J. Hurley. 2005.\nMulti-level ray tracing algorithm. \nACM Transactions on Graphics (Proceedings of SIGGRAPH\n2005) 24 (3),  1176–85.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:mlrt05",
+      "line": 178,
+      "text": "Reshetov, A., A. Soupikov, and J. Hurley. 2005. Multi-level ray tracing algorithm. ACM Transactions on Graphics (Proceedings of SIGGRAPH 2005) 24 (3), 1176–85.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Rhodin2015",
+      "line": 565,
+      "text": "Rhodin, H., N. Robertini, C. Richardt, H.-P. Seidel, and C. Theobalt. 2015.\nA versatile scene model with differentiable visibility applied to generative pose estimation.\nIEEE/CVF International Conference on Computer Vision (ICCV).\narXiv:1602.03725 [cs.CV].\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Rhodin2015",
+      "line": 180,
+      "text": "Rhodin, H., N. Robertini, C. Richardt, H.-P. Seidel, and C. Theobalt. 2015. A versatile scene model with differentiable visibility applied to generative pose estimation. IEEE/CVF International Conference on Computer Vision (ICCV). arXiv:1602.03725 [cs.CV].",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Rupp2020",
+      "line": 571,
+      "text": "Rupp, K. 2020.\nMicroprocessor trend data.\nhttps://github.com/karlrupp/microprocessor-trend-data.\n",
+      "links": [
+        "https://github.com/karlrupp/microprocessor-trend-data"
+      ]
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Rupp2020",
+      "line": 182,
+      "text": "Rupp, K. 2020. Microprocessor trend data. https://github.com/karlrupp/microprocessor-trend-data.",
+      "links": [
+        "https://github.com/karlrupp/microprocessor-trend-data"
+      ]
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Rushmeier:1993:GSF",
+      "line": 576,
+      "text": "Rushmeier, H., C. Patterson, and A. Veerasamy. 1993.\nGeometric simplification for indirect illumination calculations.\nIn Proceedings of Graphics Interface 1993, 227–36.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Rushmeier:1993:GSF",
+      "line": 184,
+      "text": "Rushmeier, H., C. Patterson, and A. Veerasamy. 1993. Geometric simplification for indirect illumination calculations. In Proceedings of Graphics Interface 1993, 227–36.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Scherzer2011",
+      "line": 581,
+      "text": "Scherzer, D., L. Yang, O. Mattausch, D. Nehab, P. V. Sander, M. Wimmer, and \nE. Eisemann. 2011.\nA survey on temporal coherence methods in real-time rendering.\nIn EUROGRAPHICS 2011—State of the Art Reports, 101–26.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Scherzer2011",
+      "line": 186,
+      "text": "Scherzer, D., L. Yang, O. Mattausch, D. Nehab, P. V. Sander, M. Wimmer, and E. Eisemann. 2011. A survey on temporal coherence methods in real-time rendering. In EUROGRAPHICS 2011—State of the Art Reports, 101–26.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Schied2018",
+      "line": 587,
+      "text": "Schied, C., C. Peters, and C. Dachsbacher. 2018.\nGradient estimation for real-time adaptive temporal filtering.\nProceedings of the ACM on Computer Graphics and Interactive Techniques\n1 (2), 24:1–16.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Schied2018",
+      "line": 188,
+      "text": "Schied, C., C. Peters, and C. Dachsbacher. 2018. Gradient estimation for real-time adaptive temporal filtering. Proceedings of the ACM on Computer Graphics and Interactive Techniques 1 (2), 24:1–16.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Schied2017",
+      "line": 593,
+      "text": "Schied, S., A. Kaplanyan, C. Wyman, A. Patney, C. R. Alla Chaitanya,\nJ. Burgess, S. Liu, C. Dachsbacher, A. Lefohn, and M. Salvi. 2017.\nSpatiotemporal variance-guided filtering: Real-time reconstruction for\npath-traced global illumination.\nIn Proceedings of High Performance Graphics (HPG ’17), 2:1–12.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Schied2017",
+      "line": 190,
+      "text": "Schied, S., A. Kaplanyan, C. Wyman, A. Patney, C. R. Alla Chaitanya, J. Burgess, S. Liu, C. Dachsbacher, A. Lefohn, and M. Salvi. 2017. Spatiotemporal variance-guided filtering: Real-time reconstruction for path-traced global illumination. In Proceedings of High Performance Graphics (HPG ’17), 2:1–12.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Stam2020",
+      "line": 600,
+      "text": "Stam, J. 2020.\nComputing light transport gradients using the adjoint method.\narXiv:2006.15059 [cs.GR].\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Stam2020",
+      "line": 192,
+      "text": "Stam, J. 2020. Computing light transport gradients using the adjoint method. arXiv:2006.15059 [cs.GR].",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Spec06",
+      "line": 605,
+      "text": "Standard Performance Evaluation Corporation. 2006.\nCINT2006 (Integer Component of SPEC CPU2006).\nhttps://www.spec.org/cpu2006/CINT2006/.\n",
+      "links": [
+        "https://www.spec.org/cpu2006/CINT2006/"
+      ]
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Spec06",
+      "line": 194,
+      "text": "Standard Performance Evaluation Corporation. 2006. CINT2006 (Integer Component of SPEC CPU2006). https://www.spec.org/cpu2006/CINT2006/.",
+      "links": [
+        "https://www.spec.org/cpu2006/CINT2006/"
+      ]
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Tewari2020",
+      "line": 610,
+      "text": "Tewari, A., O. Fried, J. Thies, V. Sitzmann, S. Lombardi, K. Sunkavalli,\nR. Martin-Brualla, T. Simon, J. Saragih, M. Nießner, R. Pandey,\nS. Fanello, G. Wetzstein, J.-Y. Zhu, C. Theobalt, M. Agrawala,\nE. Shechtman, D. B. Goldman, and M. Zollhöfer. 2020.\nState of the art on neural rendering.\nComputer Graphics Forum (Eurographics State of the Art\nReport) 39 (2), 701–27.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Tewari2020",
+      "line": 196,
+      "text": "Tewari, A., O. Fried, J. Thies, V. Sitzmann, S. Lombardi, K. Sunkavalli, R. Martin-Brualla, T. Simon, J. Saragih, M. Nießner, R. Pandey, S. Fanello, G. Wetzstein, J.-Y. Zhu, C. Theobalt, M. Agrawala, E. Shechtman, D. B. Goldman, and M. Zollhöfer. 2020. State of the art on neural rendering. Computer Graphics Forum (Eurographics State of the Art Report) 39 (2), 701–27.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Tsakok09",
+      "line": 619,
+      "text": "Tsakok, J.  2009.\nFaster incoherent rays: Multi-BVH ray stream tracing.\nIn Proceedings of High Performance Graphics 2009, 151–58.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Tsakok09",
+      "line": 198,
+      "text": "Tsakok, J. 2009. Faster incoherent rays: Multi-BVH ray stream tracing. In Proceedings of High Performance Graphics 2009, 151–58.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Vicini2021",
+      "line": 624,
+      "text": "Vicini, D., S. Speierer, and W. Jakob. 2021.\nPath replay backpropagation: Differentiating light paths using constant memory and linear time.\nACM Transactions on Graphics (Proceedings of SIGGRAPH) 40 (4), 108:1–14.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Vicini2021",
+      "line": 200,
+      "text": "Vicini, D., S. Speierer, and W. Jakob. 2021. Path replay backpropagation: Differentiating light paths using constant memory and linear time. ACM Transactions on Graphics (Proceedings of SIGGRAPH) 40 (4), 108:1–14.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Vorba2014",
+      "line": 629,
+      "text": "Vorba, J., O. Karlík, M. Šik, T. Ritschel, and J. Křivánek. 2014.\nOn-line learning of parametric mixture models for light transport\nsimulation.\nACM Transactions on Graphics (Proceedings of SIGGRAPH\n2014) 33 (4), 101:1–11.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Vorba2014",
+      "line": 202,
+      "text": "Vorba, J., O. Karlík, M. Šik, T. Ritschel, and J. Křivánek. 2014. On-line learning of parametric mixture models for light transport simulation. ACM Transactions on Graphics (Proceedings of SIGGRAPH 2014) 33 (4), 101:1–11.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Wald03",
+      "line": 636,
+      "text": "Wald, I., C. Benthin, and P. Slusallek. 2003.\nInteractive global illumination in complex and highly occluded\n  environments.\nIn Eurographics Symposium on Rendering: 14th Eurographics\n  Workshop on Rendering, 74–81.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Wald03",
+      "line": 204,
+      "text": "Wald, I., C. Benthin, and P. Slusallek. 2003. Interactive global illumination in complex and highly occluded environments. In Eurographics Symposium on Rendering: 14th Eurographics Workshop on Rendering, 74–81.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Wald2008",
+      "line": 643,
+      "text": "Wald, I., C. Benthin, and S. Boulos. 2008.\nGetting rid of packets–efficient SIMD single-ray traversal using multibranching\nBVHs.\nIn Proceedings of the IEEE Symposium on Interactive Ray Tracing\n2008, 49–57.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Wald2008",
+      "line": 206,
+      "text": "Wald, I., C. Benthin, and S. Boulos. 2008. Getting rid of packets–efficient SIMD single-ray traversal using multibranching BVHs. In Proceedings of the IEEE Symposium on Interactive Ray Tracing 2008, 49–57.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Wald01b",
+      "line": 650,
+      "text": "Wald, I., P. Slusallek, and C. Benthin. 2001b.\nInteractive distributed ray tracing of highly complex models.\nIn Rendering Techniques 2001: 12th Eurographics Workshop on\n  Rendering, 277–88.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Wald01b",
+      "line": 208,
+      "text": "Wald, I., P. Slusallek, and C. Benthin. 2001b. Interactive distributed ray tracing of highly complex models. In Rendering Techniques 2001: 12th Eurographics Workshop on Rendering, 277–88.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Wald01a",
+      "line": 656,
+      "text": "Wald, I., P. Slusallek, C. Benthin, and M. Wagner. 2001a.\nInteractive rendering with coherent ray tracing.\nComputer Graphics Forum 20 (3), 153–64.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Wald01a",
+      "line": 210,
+      "text": "Wald, I., P. Slusallek, C. Benthin, and M. Wagner. 2001a. Interactive rendering with coherent ray tracing. Computer Graphics Forum 20 (3), 153–64.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Wald2014",
+      "line": 661,
+      "text": "Wald, I., S. Woop, C. Benthin, G. S. Johnson, and M. Ernst. 2014.\nEmbree: A kernel framework for efficient CPU ray tracing.\nACM Transactions on Graphics (Proceedings of SIGGRAPH\n2014) 33 (4), 143:1–8.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Wald2014",
+      "line": 212,
+      "text": "Wald, I., S. Woop, C. Benthin, G. S. Johnson, and M. Ernst. 2014. Embree: A kernel framework for efficient CPU ray tracing. ACM Transactions on Graphics (Proceedings of SIGGRAPH 2014) 33 (4), 143:1–8.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Wald02",
+      "line": 667,
+      "text": "Wald, I., T. Kollig, C. Benthin, A. Keller, and P. Slusallek. 2002.\nInteractive global illumination using fast ray tracing.\nIn Rendering Techniques 2002: 13th Eurographics Workshop on\n  Rendering, 15–24.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Wald02",
+      "line": 214,
+      "text": "Wald, I., T. Kollig, C. Benthin, A. Keller, and P. Slusallek. 2002. Interactive global illumination using fast ray tracing. In Rendering Techniques 2002: 13th Eurographics Workshop on Rendering, 15–24.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Ward92",
+      "line": 673,
+      "text": "Ward, G. 1992.\nReal pixels.\nIn J. Arvo (ed.), Graphics Gems IV, 80–83. San Diego:\n  Academic Press.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Ward92",
+      "line": 216,
+      "text": "Ward, G. 1992. Real pixels. In J. Arvo (ed.), Graphics Gems IV, 80–83. San Diego: Academic Press.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Ward88",
+      "line": 679,
+      "text": "Ward, G. J., F. M. Rubinstein, and R. D. Clear. 1988.\nA ray tracing solution for diffuse interreflection.\nComputer Graphics (SIGGRAPH ’88 Proceedings),\n  Volume 22, 85–92.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Ward88",
+      "line": 218,
+      "text": "Ward, G. J., F. M. Rubinstein, and R. D. Clear. 1988. A ray tracing solution for diffuse interreflection. Computer Graphics (SIGGRAPH ’88 Proceedings), Volume 22, 85–92.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:yoonrlod",
+      "line": 685,
+      "text": "Yoon, S.-E., C. Lauterbach, and D. Manocha.  2006.\nR-LODs: Fast LOD-based ray tracing of massive models.\nThe Visual Computer 22 (9),  772–84.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:yoonrlod",
+      "line": 220,
+      "text": "Yoon, S.-E., C. Lauterbach, and D. Manocha. 2006. R-LODs: Fast LOD-based ray tracing of massive models. The Visual Computer 22 (9), 772–84.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Zeltner2021",
+      "line": 690,
+      "text": "Zeltner, T., S. Speierer, I. Georgiev, and W. Jakob. 2021.\nMonte Carlo estimators for differential light transport.\nACM Transactions on Graphics (Proceedings of\nSIGGRAPH) 40 (4), 78:1–16.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Zeltner2021",
+      "line": 222,
+      "text": "Zeltner, T., S. Speierer, I. Georgiev, and W. Jakob. 2021. Monte Carlo estimators for differential light transport. ACM Transactions on Graphics (Proceedings of SIGGRAPH) 40 (4), 78:1–16.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Zhang2020",
+      "line": 696,
+      "text": "Zhang, C., B. Miller, K. Yan, I. Gkioulekas, and S. Zhao. 2020.\nPath-space differentiable rendering.\nACM Transactions on Graphics (Proceedings of\nSIGGRAPH) 39 (4), 143:1–19.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Zhang2020",
+      "line": 224,
+      "text": "Zhang, C., B. Miller, K. Yan, I. Gkioulekas, and S. Zhao. 2020. Path-space differentiable rendering. ACM Transactions on Graphics (Proceedings of SIGGRAPH) 39 (4), 143:1–19.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Zhang2019",
+      "line": 702,
+      "text": "Zhang, C., L. Wu, C. Zheng, I. Gkioulekas, R. Ramamoorthi, and S. Zhao. 2019.\nA differential theory of radiative transfer.\nACM Transactions on Graphics (Proceedings of SIGGRAPH\nAsia) 38 (6), 227:1–16.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Zhang2019",
+      "line": 226,
+      "text": "Zhang, C., L. Wu, C. Zheng, I. Gkioulekas, R. Ramamoorthi, and S. Zhao. 2019. A differential theory of radiative transfer. ACM Transactions on Graphics (Proceedings of SIGGRAPH Asia) 38 (6), 227:1–16.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Zhang2021a",
+      "line": 708,
+      "text": "Zhang, C., Z. Dong, M. Doggett, and S. Zhao. 2021a.\nAntithetic sampling for Monte Carlo differentiable rendering.\nACM Transactions on Graphics (Proceedings of\nSIGGRAPH) 40 (4), 77:1–12.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Zhang2021a",
+      "line": 228,
+      "text": "Zhang, C., Z. Dong, M. Doggett, and S. Zhao. 2021a. Antithetic sampling for Monte Carlo differentiable rendering. ACM Transactions on Graphics (Proceedings of SIGGRAPH) 40 (4), 77:1–12.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Zhang2021b",
+      "line": 714,
+      "text": "Zhang, C., Z. Yu, and S. Zhao. 2021b.\nPath-space differentiable rendering of participating media.\nACM Transactions on Graphics (Proceedings of\nSIGGRAPH) 40 (4), 76:1–15.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Zhang2021b",
+      "line": 230,
+      "text": "Zhang, C., Z. Yu, and S. Zhao. 2021b. Path-space differentiable rendering of participating media. ACM Transactions on Graphics (Proceedings of SIGGRAPH) 40 (4), 76:1–15.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Zhao2016:downsample",
+      "line": 720,
+      "text": "Zhao, S., L. Wu, F. Durand, and R. Ramamoorthi. 2016.\nDownsampling scattering parameters for rendering anisotropic media.\nACM Transactions on Graphics 35 (6), 166:1–11.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Zhao2016:downsample",
+      "line": 232,
+      "text": "Zhao, S., L. Wu, F. Durand, and R. Ramamoorthi. 2016. Downsampling scattering parameters for rendering anisotropic media. ACM Transactions on Graphics 35 (6), 166:1–11.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Zhu2021:luminaires",
+      "line": 725,
+      "text": "Zhu, J., Y. Bai, Z. Xu, S. Bako, E. Velázquez-Armendáriz, L. Wang, P. Sen, M. Hašan, and L.-Q. Yan. 2021.\nNeural complex luminaires: Representation and rendering.\nACM Transactions on Graphics (Proceedings of\nSIGGRAPH) 40 (4), 57:1–12.\n",
+      "links": []
+    },
+    "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Zhu2021:luminaires",
+      "line": 234,
+      "text": "Zhu, J., Y. Bai, Z. Xu, S. Bako, E. Velázquez-Armendáriz, L. Wang, P. Sen, M. Hašan, and L.-Q. Yan. 2021. Neural complex luminaires: Representation and rendering. ACM Transactions on Graphics (Proceedings of SIGGRAPH) 40 (4), 57:1–12.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Sampling_Algorithms/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Binder2020",
+      "line": 208,
+      "text": "Binder, N., and A. Keller. 2020.\nMassively parallel construction of radix tree forests for the efficient sampling of discrete or piecewise constant probability distributions.\nMonte Carlo and Quasi-Monte Carlo Methods (MCQMC 2018). arXiv:\n1902.05942 [cs].\n",
+      "links": []
+    },
+    "local": "Appendix-A-Sampling_Algorithms/A.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Binder2020",
+      "line": 68,
+      "text": "Binder, N., and A. Keller. 2020. Massively parallel construction of radix tree forests for the efficient sampling of discrete or piecewise constant probability distributions. Monte Carlo and Quasi-Monte Carlo Methods (MCQMC 2018). arXiv: 1902.05942 [cs].",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Sampling_Algorithms/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Bitterli2015",
+      "line": 214,
+      "text": "Bitterli, B., J. Novák, and W. Jarosz. 2015.\nPortal-masked environment map sampling. \nComputer Graphics Forum (Proceedings of the 2015\nEurographics Symposium on Rendering) 34 (4), 13–19.\n",
+      "links": []
+    },
+    "local": "Appendix-A-Sampling_Algorithms/A.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Bitterli2015",
+      "line": 71,
+      "text": "Bitterli, B., J. Novák, and W. Jarosz. 2015. Portal-masked environment map sampling. Computer Graphics Forum (Proceedings of the 2015 Eurographics Symposium on Rendering) 34 (4), 13–19.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Sampling_Algorithms/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Chao1982",
+      "line": 220,
+      "text": "Chao, M. T. 1982.\nA general purpose unequal probability sampling plan.\nBiometrika 69 (3), 653–56.\n",
+      "links": []
+    },
+    "local": "Appendix-A-Sampling_Algorithms/A.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Chao1982",
+      "line": 73,
+      "text": "Chao, M. T. 1982. A general purpose unequal probability sampling plan. Biometrika 69 (3), 653–56.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Sampling_Algorithms/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Chen1974",
+      "line": 225,
+      "text": "Chen, H. C., and Y. Asau. 1974.\nOn generating random variates from an empirical distribution.\nAIIE Transactions 6 (2), 163–66.\n",
+      "links": []
+    },
+    "local": "Appendix-A-Sampling_Algorithms/A.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Chen1974",
+      "line": 75,
+      "text": "Chen, H. C., and Y. Asau. 1974. On generating random variates from an empirical distribution. AIIE Transactions 6 (2), 163–66.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Sampling_Algorithms/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Clarberg05",
+      "line": 230,
+      "text": "Clarberg, P., W. Jarosz, T. Akenine-Möller, and H. W. Jensen. 2005.\nWavelet importance sampling: Efficiently evaluating products of complex\nfunctions.\nACM Transactions on Graphics (Proceedings of SIGGRAPH\n2005) 24 (3), 1166–75.\n",
+      "links": []
+    },
+    "local": "Appendix-A-Sampling_Algorithms/A.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Clarberg05",
+      "line": 77,
+      "text": "Clarberg, P., W. Jarosz, T. Akenine-Möller, and H. W. Jensen. 2005. Wavelet importance sampling: Efficiently evaluating products of complex functions. ACM Transactions on Graphics (Proceedings of SIGGRAPH 2005) 24 (3), 1166–75.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Sampling_Algorithms/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Cline09",
+      "line": 237,
+      "text": "Cline, D., A. Razdan, and P. Wonka. 2009.\nA comparison of tabular PDF inversion methods.\nComputer Graphics Forum 28 (1), 154–60.\n",
+      "links": []
+    },
+    "local": "Appendix-A-Sampling_Algorithms/A.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Cline09",
+      "line": 79,
+      "text": "Cline, D., A. Razdan, and P. Wonka. 2009. A comparison of tabular PDF inversion methods. Computer Graphics Forum 28 (1), 154–60.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Sampling_Algorithms/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Crow84",
+      "line": 242,
+      "text": "Crow, F. C. 1984.\nSummed-area tables for texture mapping.\nComputer Graphics (Proceedings of SIGGRAPH ’84) 18,\n207–12.\n",
+      "links": []
+    },
+    "local": "Appendix-A-Sampling_Algorithms/A.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Crow84",
+      "line": 81,
+      "text": "Crow, F. C. 1984. Summed-area tables for texture mapping. Computer Graphics (Proceedings of SIGGRAPH ’84) 18, 207–12.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Sampling_Algorithms/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Lawrence05",
+      "line": 248,
+      "text": "Lawrence, J., S. Rusinkiewicz, and R. Ramamoorthi. 2005.\nAdaptive numerical cumulative distribution functions for efficient\nimportance sampling.\nRendering Techniques 2005: 16th Eurographics Workshop on Rendering,\n11–20.\n",
+      "links": []
+    },
+    "local": "Appendix-A-Sampling_Algorithms/A.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Lawrence05",
+      "line": 83,
+      "text": "Lawrence, J., S. Rusinkiewicz, and R. Ramamoorthi. 2005. Adaptive numerical cumulative distribution functions for efficient importance sampling. Rendering Techniques 2005: 16th Eurographics Workshop on Rendering, 11–20.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Sampling_Algorithms/Further_Reading.html",
+    "source_row": {
+      "id": "cite:MacKay03",
+      "line": 255,
+      "text": "MacKay, D. 2003.\nInformation Theory, Inference, and Learning Algorithms.\nCambridge: Cambridge University Press.\n",
+      "links": []
+    },
+    "local": "Appendix-A-Sampling_Algorithms/A.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:MacKay03",
+      "line": 85,
+      "text": "MacKay, D. 2003. Information Theory, Inference, and Learning Algorithms. Cambridge: Cambridge University Press.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Sampling_Algorithms/Further_Reading.html",
+    "source_row": {
+      "id": "cite:McCool97",
+      "line": 260,
+      "text": "McCool, M. D., and P. K. Harwood. 1997.\nProbability trees.\nProceedings of Graphics Interface ’97, 37–46.\n",
+      "links": []
+    },
+    "local": "Appendix-A-Sampling_Algorithms/A.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:McCool97",
+      "line": 87,
+      "text": "McCool, M. D., and P. K. Harwood. 1997. Probability trees. Proceedings of Graphics Interface ’97, 37–46.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Sampling_Algorithms/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Morrical2021",
+      "line": 265,
+      "text": "Morrical, N., and S. Zellmann. 2021.\nInverse transform sampling using ray tracing hardware.\nIn Marrs, A., P. Shirley, and I. Wald (eds.), Ray Tracing Gems II,\n625–41. Berkeley: Apress.\n",
+      "links": []
+    },
+    "local": "Appendix-A-Sampling_Algorithms/A.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Morrical2021",
+      "line": 89,
+      "text": "Morrical, N., and S. Zellmann. 2021. Inverse transform sampling using ray tracing hardware. In Marrs, A., P. Shirley, and I. Wald (eds.), Ray Tracing Gems II, 625–41. Berkeley: Apress.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Sampling_Algorithms/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Piponi12",
+      "line": 271,
+      "text": "Piponi, D. 2012.\nLossless decompression and the generation of random samples.\nhttp://blog.sigfpe.com/2012/01/lossless-decompression-and-generation.html.\n",
+      "links": [
+        "http://blog.sigfpe.com/2012/01/lossless-decompression-and-generation.html"
+      ]
+    },
+    "local": "Appendix-A-Sampling_Algorithms/A.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Piponi12",
+      "line": 91,
+      "text": "Piponi, D. 2012. Lossless decompression and the generation of random samples. http://blog.sigfpe.com/2012/01/lossless-decompression-and-generation.html.",
+      "links": [
+        "http://blog.sigfpe.com/2012/01/lossless-decompression-and-generation.html"
+      ]
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Sampling_Algorithms/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Schwarz11",
+      "line": 276,
+      "text": "Schwarz, K. 2011.\nDarts, dice, and coins: Sampling from a discrete distribution.\nhttp://www.keithschwarz.com/darts-dice-coins/.\n",
+      "links": [
+        "http://www.keithschwarz.com/darts-dice-coins/"
+      ]
+    },
+    "local": "Appendix-A-Sampling_Algorithms/A.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Schwarz11",
+      "line": 93,
+      "text": "Schwarz, K. 2011. Darts, dice, and coins: Sampling from a discrete distribution. http://www.keithschwarz.com/darts-dice-coins/.",
+      "links": [
+        "http://www.keithschwarz.com/darts-dice-coins/"
+      ]
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Sampling_Algorithms/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Shirley92",
+      "line": 281,
+      "text": "Shirley, P. 1992.\nNonuniform random point sets via warping.\nIn D. Kirk (ed.), Graphics Gems III, 80–83. San Diego: Academic\n  Press.\n",
+      "links": []
+    },
+    "local": "Appendix-A-Sampling_Algorithms/A.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Shirley92",
+      "line": 95,
+      "text": "Shirley, P. 1992. Nonuniform random point sets via warping. In D. Kirk (ed.), Graphics Gems III, 80–83. San Diego: Academic Press.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Sampling_Algorithms/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Shirley2011",
+      "line": 287,
+      "text": "Shirley, P. 2011.\nImproved code for concentric map.\nhttp://psgraphics.blogspot.com/2011/01/improved-code-for-concentric-map.html.\n",
+      "links": [
+        "http://psgraphics.blogspot.com/2011/01/improved-code-for-concentric-map.html"
+      ]
+    },
+    "local": "Appendix-A-Sampling_Algorithms/A.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Shirley2011",
+      "line": 97,
+      "text": "Shirley, P. 2011. Improved code for concentric map. http://psgraphics.blogspot.com/2011/01/improved-code-for-concentric-map.html.",
+      "links": [
+        "http://psgraphics.blogspot.com/2011/01/improved-code-for-concentric-map.html"
+      ]
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Sampling_Algorithms/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Shirley97",
+      "line": 292,
+      "text": "Shirley, P., and K. Chiu. 1997.\nA low distortion map between disk and square.\nJournal of Graphics Tools 2 (3), 45–52.\n",
+      "links": []
+    },
+    "local": "Appendix-A-Sampling_Algorithms/A.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Shirley97",
+      "line": 99,
+      "text": "Shirley, P., and K. Chiu. 1997. A low distortion map between disk and square. Journal of Graphics Tools 2 (3), 45–52.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Sampling_Algorithms/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Shirley2019",
+      "line": 297,
+      "text": "Shirley, P., S. Laine, D. Hart, M. Pharr, P. Clarberg, E. Haines, M. Raab, and D. Cline. 2019.\nSampling transformations zoo.\nIn E. Haines and T. Akenine-Möller (eds.), Ray Tracing Gems,\n223–46. Berkeley: Apress.\n",
+      "links": []
+    },
+    "local": "Appendix-A-Sampling_Algorithms/A.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Shirley2019",
+      "line": 101,
+      "text": "Shirley, P., S. Laine, D. Hart, M. Pharr, P. Clarberg, E. Haines, M. Raab, and D. Cline. 2019. Sampling transformations zoo. In E. Haines and T. Akenine-Möller (eds.), Ray Tracing Gems, 223–46. Berkeley: Apress.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Sampling_Algorithms/Further_Reading.html",
+    "source_row": {
+      "id": "cite:SteiglederMcCool03",
+      "line": 303,
+      "text": "Steigleder, M., and M. McCool.  2003.\nGeneralized stratified sampling using the Hilbert curve.\nJournal of Graphics Tools 8 (3), 41–47.\n",
+      "links": []
+    },
+    "local": "Appendix-A-Sampling_Algorithms/A.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:SteiglederMcCool03",
+      "line": 103,
+      "text": "Steigleder, M., and M. McCool. 2003. Generalized stratified sampling using the Hilbert curve. Journal of Graphics Tools 8 (3), 41–47.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Sampling_Algorithms/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Vitsas2021",
+      "line": 308,
+      "text": "Vitsas, N., K. Vardis, and G. Papaioannou. 2021.\nSampling clear sky models using truncated Gaussian mixtures.\nProceedings of the Eurographics Symposium on Rendering, 35–44.\n",
+      "links": []
+    },
+    "local": "Appendix-A-Sampling_Algorithms/A.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Vitsas2021",
+      "line": 105,
+      "text": "Vitsas, N., K. Vardis, and G. Papaioannou. 2021. Sampling clear sky models using truncated Gaussian mixtures. Proceedings of the Eurographics Symposium on Rendering, 35–44.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Sampling_Algorithms/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Vitter1985",
+      "line": 313,
+      "text": "Vitter, J. S. 1985.\nRandom sampling with a reservoir.\nACM Transactions on Mathematical Software, 11 (1), 37–57.\n",
+      "links": []
+    },
+    "local": "Appendix-A-Sampling_Algorithms/A.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Vitter1985",
+      "line": 107,
+      "text": "Vitter, J. S. 1985. Random sampling with a reservoir. ACM Transactions on Mathematical Software, 11 (1), 37–57.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Sampling_Algorithms/Further_Reading.html",
+    "source_row": {
+      "id": "cite:vonNeumann1951",
+      "line": 318,
+      "text": "von Neumann, J. 1951.\nVarious techniques used in connection with random digits.\nJournal of Research of the National Bureau of Standards, Applied\nMathematics Series 12, 36–38.\n",
+      "links": []
+    },
+    "local": "Appendix-A-Sampling_Algorithms/A.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:vonNeumann1951",
+      "line": 109,
+      "text": "von Neumann, J. 1951. Various techniques used in connection with random digits. Journal of Research of the National Bureau of Standards, Applied Mathematics Series 12, 36–38.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Sampling_Algorithms/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Vose1991",
+      "line": 324,
+      "text": "Vose, M. D. 1991.\nA linear algorithm for generating random numbers with a given distribution.\nIEEE Transactions on Software Engineering 17 (9), 972–75.\n",
+      "links": []
+    },
+    "local": "Appendix-A-Sampling_Algorithms/A.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Vose1991",
+      "line": 111,
+      "text": "Vose, M. D. 1991. A linear algorithm for generating random numbers with a given distribution. IEEE Transactions on Software Engineering 17 (9), 972–75.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Sampling_Algorithms/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Walker1974",
+      "line": 329,
+      "text": "Walker, A. J. 1974.\nNew fast method for generating discrete random numbers with arbitrary\nfrequency distributions.\nElectronics Letters 10 (8): 127–28.\n",
+      "links": []
+    },
+    "local": "Appendix-A-Sampling_Algorithms/A.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Walker1974",
+      "line": 113,
+      "text": "Walker, A. J. 1974. New fast method for generating discrete random numbers with arbitrary frequency distributions. Electronics Letters 10 (8): 127–28.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Sampling_Algorithms/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Walker1977",
+      "line": 335,
+      "text": "Walker, A. J. 1977.\nAn efficient method for generating discrete random variables with general distributions.\nACM Transactions on Mathematical Software 3 (3), 253–56.\n",
+      "links": []
+    },
+    "local": "Appendix-A-Sampling_Algorithms/A.6-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Walker1977",
+      "line": 115,
+      "text": "Walker, A. J. 1977. An efficient method for generating discrete random variables with general distributions. ACM Transactions on Mathematical Software 3 (3), 253–56.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Anderson2004",
+      "line": 185,
+      "text": "Anderson, S. 2004. Bit twiddling hacks. graphics.stanford.edu/ seander/bithacks.html.\n",
+      "links": [
+        "http://graphics.stanford.edu/ seander/bithacks.html"
+      ]
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Anderson2004",
+      "line": 86,
+      "text": "Anderson, S. 2004. Bit twiddling hacks. graphics.stanford.edu/~seander/bithacks.html.",
+      "links": [
+        "http://graphics.stanford.edu/~seander/bithacks.html"
+      ]
+    },
+    "id_match": true,
+    "text_match": false,
+    "links_match": false
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Appleby2011",
+      "line": 188,
+      "text": "Appleby, A. 2011.\nMurmurHash3.\nhttps://sites.google.com/site/murmurhash/.\n",
+      "links": [
+        "https://sites.google.com/site/murmurhash/"
+      ]
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Appleby2011",
+      "line": 88,
+      "text": "Appleby, A. 2011. MurmurHash3. https://sites.google.com/site/murmurhash/.",
+      "links": [
+        "https://sites.google.com/site/murmurhash/"
+      ]
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Atkinson1993",
+      "line": 193,
+      "text": "Atkinson, K. 1993.\nElementary Numerical Analysis. New York: John Wiley & Sons.\n",
+      "links": []
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Atkinson1993",
+      "line": 90,
+      "text": "Atkinson, K. 1993. Elementary Numerical Analysis. New York: John Wiley & Sons.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Blumofe99",
+      "line": 197,
+      "text": "Blumofe, R., and C. Leiserson. 1999.\nScheduling multithreaded computations by work stealing.\nJournal of the ACM 46 (5), 720–48.\n",
+      "links": []
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Blumofe99",
+      "line": 92,
+      "text": "Blumofe, R., and C. Leiserson. 1999. Scheduling multithreaded computations by work stealing. Journal of the ACM 46 (5), 720–48.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Blumofe96",
+      "line": 202,
+      "text": "Blumofe, R., C. Joerg, B. Kuszmaul, C. Leiserson, K. Randall, and\n Y. Zhou. 1996.\nCilk: An efficient multithreaded runtime system.\nJournal of Parallel and Distributed Computing 37 (1),\n55–69.\n",
+      "links": []
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Blumofe96",
+      "line": 94,
+      "text": "Blumofe, R., C. Joerg, B. Kuszmaul, C. Leiserson, K. Randall, and Y. Zhou. 1996. Cilk: An efficient multithreaded runtime system. Journal of Parallel and Distributed Computing 37 (1), 55–69.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Boehm05",
+      "line": 209,
+      "text": "Boehm, H.-J. 2005.\nThreads cannot be implemented as a library.\nACM SIGPLAN Notices 40 (6), 261–68.\n",
+      "links": []
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Boehm05",
+      "line": 96,
+      "text": "Boehm, H.-J. 2005. Threads cannot be implemented as a library. ACM SIGPLAN Notices 40 (6), 261–68.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Chan79",
+      "line": 214,
+      "text": "Chan, T. F., G. Golub, R. J. LeVeque. 1979.\nUpdating formulae and a pairwise algorithm for computing sample variances.\nTechnical Report STAN-CS-79-773, Department of Computer Science,\nStanford University.\n",
+      "links": []
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Chan79",
+      "line": 98,
+      "text": "Chan, T. F., G. Golub, R. J. LeVeque. 1979. Updating formulae and a pairwise algorithm for computing sample variances. Technical Report STAN-CS-79-773, Department of Computer Science, Stanford University.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Drepper07",
+      "line": 220,
+      "text": "Drepper, U. 2007.\nWhat every programmer should know about memory.\npeople.redhat.com/drepper/cpumemory.pdf.\n",
+      "links": [
+        "http://people.redhat.com/drepper/cpumemory.pdf"
+      ]
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Drepper07",
+      "line": 100,
+      "text": "Drepper, U. 2007. What every programmer should know about memory. people.redhat.com/drepper/cpumemory.pdf.",
+      "links": [
+        "http://people.redhat.com/drepper/cpumemory.pdf"
+      ]
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Farin2001",
+      "line": 225,
+      "text": "Farin, G. 2001.\nCurves and Surfaces for CAGD: A Practical Guide (5th ed.).\nSan Francisco: Morgan Kaufmann.\n",
+      "links": []
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Farin2001",
+      "line": 102,
+      "text": "Farin, G. 2001. Curves and Surfaces for CAGD: A Practical Guide (5th ed.). San Francisco: Morgan Kaufmann.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Gritz08",
+      "line": 230,
+      "text": "Gritz, L., and E. d’Eon. 2008.\nThe importance of being linear.\nIn H. Nguyen (ed.), GPU Gems 3, 529–42.\nBoston, Massachusetts: Addison-Wesley.\n",
+      "links": []
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Gritz08",
+      "line": 104,
+      "text": "Gritz, L., and E. d'Eon. 2008. The importance of being linear. In H. Nguyen (ed.), GPU Gems 3, 529–42. Boston, Massachusetts: Addison-Wesley.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Guthe05",
+      "line": 236,
+      "text": "Guthe, S., and P. Heckbert 2005.\nNon-power-of-two Mipmap creation.\nNVIDIA Technical Report.\n",
+      "links": []
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Guthe05",
+      "line": 106,
+      "text": "Guthe, S., and P. Heckbert 2005. Non-power-of-two Mipmap creation. NVIDIA Technical Report.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Hatch2003",
+      "line": 241,
+      "text": "Hatch, D. 2003.\nThe right way to calculate stuff.\nhttp://www.plunk.org/ hatch/rightway.html.\n",
+      "links": [
+        "http://www.plunk.org/ hatch/rightway.html"
+      ]
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Hatch2003",
+      "line": 108,
+      "text": "Hatch, D. 2003. The right way to calculate stuff. http://www.plunk.org/ hatch/rightway.html.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": false
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:IEC1999",
+      "line": 246,
+      "text": "International Electrotechnical Commission (IEC). 1999.\nMultimedia systems and equipment—Colour measurement and management—Part\n2-1: Colour management—Default RGB colour space—sRGB.\nIEC Standard 61966-2-1.\n",
+      "links": []
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:IEC1999",
+      "line": 111,
+      "text": "International Electrotechnical Commission (IEC). 1999. Multimedia systems and equipment—Colour measurement and management—Part 2-1: Colour management—Default RGB colour space—sRGB. IEC Standard 61966-2-1.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Jeannerod2013",
+      "line": 252,
+      "text": "Jeannerod, C.-P., N. Louvet, and J.-M. Muller. 2013.\nFurther analysis of Kahan’s algorithm for the accurate computation of 2 times 2 determinants.\nMathematics of Computation 82 (284), 2245–64.\n",
+      "links": []
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Jeannerod2013",
+      "line": 113,
+      "text": "Jeannerod, C.-P., N. Louvet, and J.-M. Muller. 2013. Further analysis of Kahan's algorithm for the accurate computation of 2 times 2 determinants. Mathematics of Computation 82 (284), 2245–64.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Kahan1965",
+      "line": 268,
+      "text": "Kahan, W. 1965.\nFurther remarks on reducing truncation errors.\nCommunications of the ACM 8 (1), 40.\n",
+      "links": []
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Kahan1965",
+      "line": 115,
+      "text": "Kahan, W. 1965. Further remarks on reducing truncation errors. Communications of the ACM 8 (1), 40.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Kainz04",
+      "line": 273,
+      "text": "Kainz, F., R. Bogart, and D. Hess. 2004.\nThe OpenEXR File Format.\nIn R. Fernando (ed.), GPU Gems, 425–44.\nReading, Massachusetts: Addison-Wesley.\n",
+      "links": []
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Kainz04",
+      "line": 117,
+      "text": "Kainz, F., R. Bogart, and D. Hess. 2004. The OpenEXR File Format. In R. Fernando (ed.), GPU Gems, 425–44. Reading, Massachusetts: Addison-Wesley.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Knuth69",
+      "line": 279,
+      "text": "Knuth, D. E. 1969.\nThe Art of Computer Programming: Seminumerical Algorithms.\nReading, Massachusetts: Addison-Wesley.\n",
+      "links": []
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Knuth69",
+      "line": 119,
+      "text": "Knuth, D. E. 1969. The Art of Computer Programming: Seminumerical Algorithms. Reading, Massachusetts: Addison-Wesley.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:LEcuyer2007",
+      "line": 284,
+      "text": "L’Ecuyer, P., and R. Simard. 2007.\nTestU01: A C library for empirical testing of random number\ngenerators.\nACM Transactions on Mathematical Software 33 (4), 22:1–40.\n",
+      "links": []
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:LEcuyer2007",
+      "line": 121,
+      "text": "L'Ecuyer, P., and R. Simard. 2007. TestU01: A C library for empirical testing of random number generators. ACM Transactions on Mathematical Software 33 (4), 22:1–40.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Moller65",
+      "line": 290,
+      "text": "Møller, O. 1965.\nQuasi double precision in floating-point arithmetic.\nBIT Numerical Mathematics 5, 37–50.\n",
+      "links": []
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Moller65",
+      "line": 123,
+      "text": "Møller, O. 1965. Quasi double precision in floating-point arithmetic. BIT Numerical Mathematics 5, 37–50.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:McKenney2021",
+      "line": 295,
+      "text": "McKenney, P. E. 2021.\nIs Parallel Programming Hard, and, If So, What Can You Do About It?\nhttps://mirrors.edge.kernel.org/pub/linux/kernel/people/paulmck/perfbook/perfbook.html.\n",
+      "links": [
+        "https://mirrors.edge.kernel.org/pub/linux/kernel/people/paulmck/perfbook/perfbook.html"
+      ]
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:McKenney2021",
+      "line": 125,
+      "text": "McKenney, P. E. 2021. Is Parallel Programming Hard, and, If So, What Can You Do About It? https://mirrors.edge.kernel.org/pub/linux/kernel/people/paulmck/perfbook/perfbook.html.",
+      "links": [
+        "https://mirrors.edge.kernel.org/pub/linux/kernel/people/paulmck/perfbook/perfbook.html"
+      ]
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Moore66",
+      "line": 300,
+      "text": "Moore, R. E. 1966.\nInterval Analysis.\nEnglewood Cliffs, New Jersey: Prentice Hall.\n",
+      "links": []
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Moore66",
+      "line": 127,
+      "text": "Moore, R. E. 1966. Interval Analysis. Englewood Cliffs, New Jersey: Prentice Hall.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:ONeill2014",
+      "line": 305,
+      "text": "O’Neill, M. 2014.\nPCG: A family of simple fast space-efficient statistically good algorithms\nfor random number generation.\nUnpublished manuscript. http://www.pcg-random.org/paper.html.\n",
+      "links": [
+        "http://www.pcg-random.org/paper.html"
+      ]
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:ONeill2014",
+      "line": 129,
+      "text": "O'Neill, M. 2014. PCG: A family of simple fast space-efficient statistically good algorithms for random number generation. Unpublished manuscript. http://www.pcg-random.org/paper.html.",
+      "links": [
+        "http://www.pcg-random.org/paper.html"
+      ]
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Ogita2005",
+      "line": 311,
+      "text": "Ogita, T., S. M. Rump, and S. Oishi. 2005.\nAccurate sum and dot product.\nSIAM Journal on Scientific Computing 26 (6), 1955–88.\n",
+      "links": []
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Ogita2005",
+      "line": 131,
+      "text": "Ogita, T., S. M. Rump, and S. Oishi. 2005. Accurate sum and dot product. SIAM Journal on Scientific Computing 26 (6), 1955–88.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:OpenMP13",
+      "line": 316,
+      "text": "OpenMP Architecture Review Board. 2013.\nOpenMP Application Program Interface.\nhttp://www.openmp.org/mp-documents/OpenMP4.0.0.pdf.\n",
+      "links": [
+        "http://www.openmp.org/mp-documents/OpenMP4.0.0.pdf"
+      ]
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:OpenMP13",
+      "line": 133,
+      "text": "OpenMP Architecture Review Board. 2013. OpenMP Application Program Interface. http://www.openmp.org/mp-documents/OpenMP4.0.0.pdf.",
+      "links": [
+        "http://www.openmp.org/mp-documents/OpenMP4.0.0.pdf"
+      ]
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Poynton02color",
+      "line": 321,
+      "text": "Poynton, C. 2002a.\nFrequently-asked questions about color.\nwww.poynton.com/ColorFAQ.html.\n",
+      "links": [
+        "http://www.poynton.com/ColorFAQ.html"
+      ]
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Poynton02color",
+      "line": 135,
+      "text": "Poynton, C. 2002a. Frequently-asked questions about color. www.poynton.com/ColorFAQ.html.",
+      "links": [
+        "http://www.poynton.com/ColorFAQ.html"
+      ]
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Poynton02",
+      "line": 326,
+      "text": "Poynton, C. 2002b.\nFrequently-asked questions about gamma.\nwww.poynton.com/GammaFAQ.html.\n",
+      "links": [
+        "http://www.poynton.com/GammaFAQ.html"
+      ]
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Poynton02",
+      "line": 137,
+      "text": "Poynton, C. 2002b. Frequently-asked questions about gamma. www.poynton.com/GammaFAQ.html.",
+      "links": [
+        "http://www.poynton.com/GammaFAQ.html"
+      ]
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Quilez2010",
+      "line": 331,
+      "text": "Quilez, I. 2010.\nInverse bilinear interpolation.\nhttps://www.iquilezles.org/www/articles/ibilinear/ibilinear.htm.\n",
+      "links": [
+        "https://www.iquilezles.org/www/articles/ibilinear/ibilinear.htm"
+      ]
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Quilez2010",
+      "line": 139,
+      "text": "Quilez, I. 2010. Inverse bilinear interpolation. https://www.iquilezles.org/www/articles/ibilinear/ibilinear.htm.",
+      "links": [
+        "https://www.iquilezles.org/www/articles/ibilinear/ibilinear.htm"
+      ]
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Radzivilovsky2012",
+      "line": 336,
+      "text": "Radzivilovsky, P., Y. Galka, and S. Novgorodov. 2012.\nUTF-8 everywhere.\nhttp://utf8everywhere.org.\n",
+      "links": [
+        "http://utf8everywhere.org"
+      ]
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Radzivilovsky2012",
+      "line": 141,
+      "text": "Radzivilovsky, P., Y. Galka, and S. Novgorodov. 2012. UTF-8 everywhere. http://utf8everywhere.org.",
+      "links": [
+        "http://utf8everywhere.org"
+      ]
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Ramshaw1987",
+      "line": 341,
+      "text": "Ramshaw, L. 1987.\nBlossoming: A connect-the-dots approach to splines.\nDigital Systems Research Center Technical Report.\n",
+      "links": []
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Ramshaw1987",
+      "line": 143,
+      "text": "Ramshaw, L. 1987. Blossoming: A connect-the-dots approach to splines. Digital Systems Research Center Technical Report.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Ramshaw1989",
+      "line": 346,
+      "text": "Ramshaw, R. 1989.\nBlossoms are polar forms.\nComputer Aided Geometric Design 6 (4), 323–58.\n",
+      "links": []
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Ramshaw1989",
+      "line": 145,
+      "text": "Ramshaw, R. 1989. Blossoms are polar forms. Computer Aided Geometric Design 6 (4), 323–58.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Stafford2011",
+      "line": 351,
+      "text": "Stafford, D. 2011.\nBetter bit mixing—improving on MurmurHash3’s 64-bit finalizer.\nhttp://zimbry.blogspot.com/2011/09/better-bit-mixing-improving-on.html.\n",
+      "links": [
+        "http://zimbry.blogspot.com/2011/09/better-bit-mixing-improving-on.html"
+      ]
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Stafford2011",
+      "line": 147,
+      "text": "Stafford, D. 2011. Better bit mixing—improving on MurmurHash3's 64-bit finalizer. http://zimbry.blogspot.com/2011/09/better-bit-mixing-improving-on.html.",
+      "links": [
+        "http://zimbry.blogspot.com/2011/09/better-bit-mixing-improving-on.html"
+      ]
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Unicode2020",
+      "line": 356,
+      "text": "Unicode Consortium. 2020.\nThe Unicode Standard: Version 13.0.\nhttps://www.unicode.org/versions/Unicode13.0.0/UnicodeStandard-13.0.pdf.\n",
+      "links": [
+        "https://www.unicode.org/versions/Unicode13.0.0/UnicodeStandard-13.0.pdf"
+      ]
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Unicode2020",
+      "line": 149,
+      "text": "Unicode Consortium. 2020. The Unicode Standard: Version 13.0. https://www.unicode.org/versions/Unicode13.0.0/UnicodeStandard-13.0.pdf.",
+      "links": [
+        "https://www.unicode.org/versions/Unicode13.0.0/UnicodeStandard-13.0.pdf"
+      ]
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:HackersDelight",
+      "line": 361,
+      "text": "Warren, H. 2006.\nHacker’s Delight.\nReading, Massachusetts: Addison-Wesley.\n",
+      "links": []
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:HackersDelight",
+      "line": 151,
+      "text": "Warren, H. 2006. Hacker's Delight. Reading, Massachusetts: Addison-Wesley.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  },
+  {
+    "source": "4ed/Utilities/Further_Reading.html",
+    "source_row": {
+      "id": "cite:Welford62",
+      "line": 366,
+      "text": "Welford, B. P. 1962.\nNote on a method for calculating corrected sums of squares and products.\nTechnometrics 4 (3), 419–20.\n",
+      "links": []
+    },
+    "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "local_row": {
+      "id": "cite:Welford62",
+      "line": 153,
+      "text": "Welford, B. P. 1962. Note on a method for calculating corrected sums of squares and products. Technometrics 4 (3), 419–20.",
+      "links": []
+    },
+    "id_match": true,
+    "text_match": true,
+    "links_match": true
+  }
+]

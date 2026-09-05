@@ -1,0 +1,11 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.205ex" height="2.509ex" style="vertical-align: -0.671ex;" viewBox="0 -791.3 949.3 1080.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
+<title id="MathJax-SVG-1-Title">delta Subscript x</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E1-LATINMODERNNORMAL-1D6FF" d="M452 667c0 -6 -2 -12 -5 -18c-7 -13 -22 -22 -36 -22c-3 0 -7 1 -11 2c-38 16 -66 48 -111 50c-11 0 -21 -1 -32 -6c-9 -5 -17 -14 -22 -23c-3 -5 -4 -11 -4 -17c0 -45 63 -124 107 -181c28 -35 49 -75 58 -122c2 -15 3 -30 3 -46c0 -33 -5 -68 -14 -102 c-24 -98 -96 -193 -184 -193c-56 0 -103 26 -130 68c-19 29 -28 63 -28 100c0 20 2 40 8 61c14 58 48 115 98 158c35 30 75 51 116 60c-30 56 -61 120 -61 173c0 19 3 36 12 51c7 14 18 26 31 34c14 9 29 13 43 16c8 1 17 2 26 2c36 0 78 -10 115 -19c13 -3 21 -13 21 -26z M330 244c0 17 -1 34 -5 50c-8 42 -26 80 -46 116l-3 5c-31 -9 -62 -29 -86 -55c-40 -42 -60 -95 -73 -147c-7 -28 -13 -57 -13 -84c0 -22 4 -43 12 -61c15 -34 45 -57 86 -57c63 0 99 79 118 152c7 27 10 55 10 81Z"></path>
+<path stroke-width="1" id="E1-LATINMODERNNORMAL-1D465" d="M527 376c0 -40 -32 -58 -54 -58c-27 0 -38 19 -38 35c0 24 20 49 48 54c-21 13 -45 13 -50 13c-70 0 -93 -92 -99 -118l-34 -137c-11 -44 -17 -66 -17 -88c0 -34 16 -66 55 -66c32 0 100 24 133 131c2 7 4 11 13 11c3 0 12 0 12 -10c0 -25 -57 -154 -160 -154 c-60 0 -96 39 -108 76c-3 -6 -39 -76 -105 -76c-44 0 -94 20 -94 66c0 32 25 58 55 58c15 0 37 -8 37 -35c0 -28 -22 -49 -47 -54c21 -13 44 -13 50 -13c44 0 79 42 95 104c37 140 54 207 54 238c0 58 -35 67 -54 67c-34 0 -100 -25 -134 -131c-2 -9 -5 -11 -13 -11 c0 0 -12 0 -12 10c0 25 57 154 161 154c29 0 83 -10 108 -76c12 23 47 76 105 76c34 0 93 -14 93 -66Z"></path>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E1-LATINMODERNNORMAL-1D6FF" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-LATINMODERNNORMAL-1D465" x="628" y="-213"></use>
+</g>
+</svg>

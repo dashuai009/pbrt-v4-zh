@@ -1,0 +1,13 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="5.588ex" height="2.176ex" style="vertical-align: -0.338ex;" viewBox="0 -791.3 2406.1 936.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
+<title id="MathJax-SVG-1-Title">sigma equals 1</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E1-LATINMODERNNORMAL-1D70E" d="M567 407c0 -34 -36 -34 -49 -34h-110c31 -44 31 -92 31 -109c0 -154 -133 -275 -251 -275c-91 0 -150 70 -150 158c0 119 111 284 262 284h228c18 0 39 0 39 -24zM375 276c0 31 -8 97 -92 97c-34 0 -94 -14 -136 -83c-35 -59 -47 -141 -47 -171c0 -72 40 -108 89 -108 c39 0 93 26 132 85c34 51 54 133 54 180Z"></path>
+<path stroke-width="1" id="E1-LATINMODERNMAIN-3D" d="M722 347c0 -11 -9 -20 -20 -20h-626c-11 0 -20 9 -20 20s9 20 20 20h626c11 0 20 -9 20 -20zM722 153c0 -11 -9 -20 -20 -20h-626c-11 0 -20 9 -20 20s9 20 20 20h626c11 0 20 -9 20 -20Z"></path>
+<path stroke-width="1" id="E1-LATINMODERNMAIN-31" d="M419 0c-35 3 -122 3 -162 3s-127 0 -162 -3v31h32c90 0 93 12 93 48v518c-52 -26 -111 -26 -131 -26v31c32 0 120 0 182 64c23 0 23 -2 23 -26v-561c0 -37 3 -48 93 -48h32v-31Z"></path>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E1-LATINMODERNNORMAL-1D70E" x="0" y="0"></use>
+ <use xlink:href="#E1-LATINMODERNMAIN-3D" x="849" y="0"></use>
+ <use xlink:href="#E1-LATINMODERNMAIN-31" x="1905" y="0"></use>
+</g>
+</svg>

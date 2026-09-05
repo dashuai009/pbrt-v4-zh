@@ -1,0 +1,500 @@
+{
+  "notice": "Candidates require source comparison and actual rendering. They are not automated verdicts, and are never mass-replaced.",
+  "issues": [
+    {
+      "file": "chapter-2-Monte_Carlo_Integration/chapter-2.1-Monte_Carlo_Basics.typ",
+      "line": 450,
+      "reasons": [
+        "reference label touches Chinese text"
+      ],
+      "snippet": "  The division by $n-1$ rather than $n$ is *Bessel's correction*, and ensures that the sample variance is an unbiased estimate of the variance. (See also @b.2.11-鲁棒方差估计, where a numerically stable approach for computing the sample variance ",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-2-Monte_Carlo_Integration/chapter-2.1-Monte_Carlo_Basics.typ",
+      "line": 452,
+      "reasons": [
+        "reference label touches Chinese text"
+      ],
+      "snippet": "  除以 $n-1$ 而不是 $n$ 称为*贝塞尔校正*，它保证样本方差是总体方差的无偏估计量。（另见 @b.2.11-鲁棒方差估计，其中介绍了计算样本方差的数值稳定方法。）",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-6-Shapes/chapter-6.5-Triangle_Meshes.typ",
+      "line": 547,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "            // Compute triangle partial-differential normal p / partial-differential u and partial-differential normal p / partial-differential v via matrix inversion",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-6-Shapes/chapter-6.5-Triangle_Meshes.typ",
+      "line": 596,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "            // Compute partial-differential n / partial-differential u and partial-differential n / partial-differential v for triangle shading geometry",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-6-Shapes/chapter-6.5-Triangle_Meshes.typ",
+      "line": 1481,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "        // Compute partial-differential normal / partial-differential u",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-6-Shapes/chapter-6.5-Triangle_Meshes.typ",
+      "line": 1482,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "        // and partial-differential normal / partial-differential v for triangle shading geometry",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-6-Shapes/chapter-6.5-Triangle_Meshes.typ",
+      "line": 1525,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  To generate consistent tangent vectors over triangle meshes, it is necessary to compute the partial derivatives $partial p \\/ partial u$ and $partial p \\/ partial v$ using the parametric $(u,v)$ values at the triangle vertices, if provide",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-6-Shapes/chapter-6.5-Triangle_Meshes.typ",
+      "line": 1527,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  为了在三角网格上生成一致的切线向量，有必要使用三角形顶点处的参数化 $(u,v)$ 值来计算偏导数 $partial p \\/ partial u$ 和 $partial p \\/ partial v$。尽管在三角形上的所有点处这些偏导数是相同的，但此处的实现每次找到交点时都会重新计算它们。尽管这会导致重复计算，但对于大型三角网格来说，节省的存储空间可能是相当可观的。",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-6-Shapes/chapter-6.6-Bilinear_Patches.typ",
+      "line": 650,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "partial-normal p/partial-u, and partial-normal p/partial-v for (u, v)",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-6-Shapes/chapter-6.6-Bilinear_Patches.typ",
+      "line": 651,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "\\\\/\\/ Get bilinear patch vertices in p00, p01, p10, and p11 const int ];v \\= &mesh-\\>vertexIndices\\[4 \\* blpIndex\\]; Point3f p00 = mesh-\\>p\\[v\\[0\\]\\], p10 = mesh-\\>p\\[v\\[1\\]\\]; Point3f p01 = mesh-\\>p\\[v\\[2\\]\\], p11 = mesh-\\>p\\[v\\[3\\]\\]; Poi",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-6-Shapes/chapter-6.6-Bilinear_Patches.typ",
+      "line": 655,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "获取双线性补丁顶点在 p00, p01, p10 和 p11 中 const int ];v = &mesh-\\>vertexIndices\\[4 \\* blpIndex\\]; Point3f p00 = mesh-\\>p\\[v\\[0\\]\\], p10 = mesh-\\>p\\[v\\[1\\]\\]; Point3f p01 = mesh-\\>p\\[v\\[2\\]\\], p11 = mesh-\\>p\\[v\\[3\\]\\]; Point3f p = Lerp(uv\\[0\\], Lerp(",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-9-Reflection_Models/chapter-9.9-Scattering_from_Hair.typ",
+      "line": 66,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "    #ez_caption[ (a) Given a direction $omega$ at a point on a curve, the longitudinal angle $omega$ is defined by the angle between $omega$ and the normal plane at the point (thick line). The curve's tangent vector at the point is aligned ",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-9-Reflection_Models/chapter-9.9-Scattering_from_Hair.typ",
+      "line": 69,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "      (a) 对于曲线上某一点给定的方向 $omega$，纵向角（longitudinal angle）$omega$ 定义为该方向与该点处法平面（normal plane）之间的夹角（图中粗线所示）。在 BSDF 坐标系中，曲线在该点的切向量与 $x$ 轴对齐。 (b) 对于一个方向 $omega$，方位角（azimuthal angle） $phi.alt$ 的求法是：先将该方向投影到法平面上，再计算该投影与 $y$ 轴之间的夹角；这里的 $y$ 轴对应于 BSDF",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-9-Reflection_Models/chapter-9.9-Scattering_from_Hair.typ",
+      "line": 76,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  We will find it useful to represent directions at a ray-curve intersection point with respect to coordinates $(theta, phi.alt)$ that are defined with respect to the normal plane at the $u$ position where the ray intersected the curve. The",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-9-Reflection_Models/chapter-9.9-Scattering_from_Hair.typ",
+      "line": 79,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  角度 $theta$ 是纵向角（longitudinal angle），它表示射线相对于法平面的偏离程度（见图 @fig:curve-parameterization;(a)）。 $theta$的取值范围为$- pi \\/ 2$ 到 $pi \\/ 2$，其中$pi \\/ 2$ 表示方向与 $partial upright(p)\\/partial u$ 对齐，而 $- pi \\/ 2$ 表示方向与 $- partial upright(p)\\/partial u$对齐。",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-9-Reflection_Models/chapter-9.9-Scattering_from_Hair.typ",
+      "line": 80,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  如第9.1.1 节 所述，在 `pbrt` 的标准 BSDF 坐标系中，$partial upright(p)\\/partial u$ 与 (x) 轴对齐，因此，对于给定的 BSDF 坐标系中的方向，有： $sin (theta) = omega_x$",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-9-Reflection_Models/chapter-9.9-Scattering_from_Hair.typ",
+      "line": 81,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  因为法平面与 $partial upright(p)\\/partial u$ 垂直。",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-9-Reflection_Models/chapter-9.9-Scattering_from_Hair.typ",
+      "line": 86,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  In the BSDF coordinate system, the normal plane is spanned by the $y$ and $z$ coordinate axes. ( $y$ corresponds to $partial upright(p)\\/partial v$ for curves, which is always perpendicular to the curve's $partial upright(p)\\/partial u$, ",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-9-Reflection_Models/chapter-9.9-Scattering_from_Hair.typ",
+      "line": 88,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  在BSDF坐标系中，法线平面由 $y$ 和 $z$ 坐标轴张成。（ $y$ 对应于曲线的$partial upright(p)\\/partial u$， 它始终垂直于曲线的$partial upright(p)\\/partial u$， 而$z$与带状法线对齐。）#emph[方位角] $phi.alt$ 通过将方向 $omega$ 投影到法线平面并计算其与$y$轴的角度来找到。它的范围是从 $0$ 到 $2 pi$ （@fig:curve-parameterization",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.1-Texture_Sampling_and_Antialiasing.typ",
+      "line": 95,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  For more complex scene geometry, camera projections, and mappings to texture coordinates, it is much more difficult to precisely determine the relationship between image positions and texture parameter values. Fortunately, for texture ant",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.1-Texture_Sampling_and_Antialiasing.typ",
+      "line": 97,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  对于更复杂的场景几何、相机投影和纹理坐标的映射，精确确定图像位置和纹理参数值之间的关系要困难得多。幸运的是，对于纹理抗锯齿，我们不需要对任意 $(x , y)$ 评估 $f (x , y)$，只需找到像素样本位置变化与图像上特定点纹理样本位置变化之间的关系即可。 这个关系由该函数的偏导数 $partial f \\/ partial  x$ 和 $partial f \\/ partial  y$ 给出。例如，这些可以用来找到 $f$ 值的一阶近似。",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.1-Texture_Sampling_and_Antialiasing.typ",
+      "line": 107,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  If these partial derivatives are changing slowly with respect to the distances $x prime - x$ and $y prime - y$, this is a reasonable approximation. More importantly, the values of these partial derivatives give an approximation to the cha",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.1-Texture_Sampling_and_Antialiasing.typ",
+      "line": 109,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  如果这些偏导数相对于距离 $x prime - x$ 和 $y prime - y$ 变化缓慢，那么这是一个合理的近似。更重要的是，这些偏导数的值分别近似表示了在 $x$ 和 $y$ 方向上移动一个像素时纹理样本位置的变化，从而直接得出纹理采样率。例如，在前面的四边形例子中， $partial s \\/ partial x = 1 \\/ r , partial s \\/ partial y = 0 , partial t \\/ partial x = 0 , partia",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.1-Texture_Sampling_and_Antialiasing.typ",
+      "line": 290,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "      Visualization of the Ratio of Filter Areas Estimated by Regular Ray Differentials to Areas Estimated by `CameraBase::Approximate_dp_dxy()`. We represent the filter area as the product $max( | partial u\\/ partial x |,  | partial u \\/ p",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.1-Texture_Sampling_and_Antialiasing.typ",
+      "line": 293,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "      由常规光线差分估计的滤波器面积与由 `CameraBase::Approximate_dp_dxy()` 估计的面积的比率可视化。我们将滤波器面积表示为 $max( | partial u\\/ partial x |,  | partial u partial y )  max ( |partial v\\/ partial x| ,  |partial v \\/ partial y| )$ 的乘积，并可视化由两种技术计算的面积比率的以 2 为底的对数。对数 2 比",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.1-Texture_Sampling_and_Antialiasing.typ",
+      "line": 372,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  Given the intersection points `px` and `py`, $partial p \\/ partial x$ and $partial p \\/ partial y$ can now be estimated by taking their differences with the main intersection point. To get final estimates of the partial derivatives, these",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.1-Texture_Sampling_and_Antialiasing.typ",
+      "line": 374,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  给定交点 `px` 和 `py`，可以通过与主交点的差异来估计 $partial p \\/ partial x$ and $partial p \\/ partial y$。为了获得偏导数的最终估计，这些向量必须被转换回渲染空间并缩放以考虑实际的像素采样率。与在 `<<Scale camera ray differentials based on image sampling rate` 片段中生成的初始光线差分一样，这些也被缩放以考虑像素采样率。",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.1-Texture_Sampling_and_Antialiasing.typ",
+      "line": 387,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  A call to this method takes care of computing the $partial p \\/ partial x$ and $partial p \\/ partial y$ differentials in the `ComputeDifferentials()` method.",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.1-Texture_Sampling_and_Antialiasing.typ",
+      "line": 389,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  调用此方法负责在 `ComputeDifferentials()` 方法中计算 $partial p \\/ partial x$ and $partial p \\/ partial y$ 差分。",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.1-Texture_Sampling_and_Antialiasing.typ",
+      "line": 396,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  We now have both the partial derivatives $partial p\\/partial u$ and $partial p\\/partial v$ as well as, one way or another, $partial p\\/partial x$ and $partial p\\/partial y$. From them, we would now like to compute $partial u\\/partial x$, ",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.1-Texture_Sampling_and_Antialiasing.typ",
+      "line": 398,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  我们现在有了偏导数 $partial p \\/ partial u$ 和 $partial p \\/ partial v$，以及以某种方式得到的 $partial p\\/partial x$ 和 $partial p\\/partial y$。从它们中，我们现在希望计算 $partial u\\/partial x$ 、 $partial u\\/partial y$ 、 $partial v\\/partial x$ 和 $partial v\\/partial y$。使用链式法",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.2-Texture_Coordinate_Generation.typ",
+      "line": 420,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  The planar mapping differentials can be computed directly using the partial derivatives of the mapping function, which are easily found. For example, the partial derivative of the $s$ texture coordinate with respect to screen-space $x$ is",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.2-Texture_Coordinate_Generation.typ",
+      "line": 422,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  平面映射的微分可以直接通过映射函数的偏导数计算出来，这些偏导数很容易找到。例如，纹理坐标 $s$ 对屏幕空间 $x$ 的偏导数是 $partial s \\/ partial x = (upright(bold(v)) _ s dot partial upright(p) \\/ partial x)$",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.5-Material_Interface_and_Implementations.typ",
+      "line": 1040,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  This function returns partial derivatives of the surface that account for the shading normal rather than the shading normal itself. Suitable partial derivatives can be found in two steps. First, a call to #link(\"../Geometry_and_Transforma",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.5-Material_Interface_and_Implementations.typ",
+      "line": 1044,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  首先，使用原始的 $partial p \\/ partial u$ 和新的着色法线 $upright(bold(n))_s$ 调用 #link(\"../Geometry_and_Transformations/Vectors.html#GramSchmidt\")[GramSchmidt()]; 进行正交化。",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.5-Material_Interface_and_Implementations.typ",
+      "line": 1045,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  然后，通过 $upright(bold(n))_s$ 与新的 $partial p \\/ partial u$ 进行叉乘，计算新的 $partial p \\/ partial v$ ，从而构建一个正交坐标系。",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.5-Material_Interface_and_Implementations.typ",
+      "line": 1046,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  最终，这两个向量分别被缩放，使其长度与原始的 $partial p \\/ partial u$ 和 $partial p \\/ partial v$ 相同，从而保持原始的尺度信息。",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.5-Material_Interface_and_Implementations.typ",
+      "line": 1111,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  The #link(\"<BumpMap>\")[`BumpMap()`] function is responsible for computing the effect of bump mapping at the point being shaded given a particular displacement texture. Its implementation is based on finding an approximation to the partial",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.5-Material_Interface_and_Implementations.typ",
+      "line": 1114,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  它的实现基于找到位移表面偏导数的近似值 $partial p \\/ partial u$ 和 $partial p \\/ partial v$ ，并用它们代替表面的实际偏导数来计算着色法线。",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.5-Material_Interface_and_Implementations.typ",
+      "line": 1151,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  We have already computed the value of $partial p (u , v) \\/ partial u$ ; it is $partial p \\/ partial u$ and is available in the #link(\"../Textures_and_Materials/Texture_Coordinate_Generation.html#TextureEvalContext\")[`TextureEvalContext`]",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.5-Material_Interface_and_Implementations.typ",
+      "line": 1153,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  我们已经计算了 $partial p (u , v) \\/ partial u$ 的值，即 $partial p \\/ partial u$ ，并且它存储在 #link(\"../Textures_and_Materials/Texture_Coordinate_Generation.html#TextureEvalContext\")[`TextureEvalContext`] 结构中。",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.5-Material_Interface_and_Implementations.typ",
+      "line": 1154,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  该结构还存储了表面法线 $upright(bold(n)) (u , v)$ 和偏导数 $partial upright(bold(n)) (u , v) \\/ partial u = partial upright(bold(n)) \\/ partial u$ 。",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.5-Material_Interface_and_Implementations.typ",
+      "line": 1155,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  置换函数 $d (u , v)$ 可以直接求值，因此剩下唯一需要计算的项是 $partial d (u , v) \\/ partial u$ 。",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.5-Material_Interface_and_Implementations.typ",
+      "line": 1159,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  There are two possible approaches to finding the values of $partial d (u , v) \\/ partial u$ and $partial d (u , v) \\/ partial v$. One option would be to augment the `FloatTexture` interface with a method to compute partial derivatives of ",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.5-Material_Interface_and_Implementations.typ",
+      "line": 1161,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  有两种可能的方法来找到 $partial d (u , v) \\/ partial u$ 和 $partial d (u , v) \\/ partial v$ 的值。一种选择是通过一种方法来增强 `FloatTexture` 接口，以计算底层纹理函数的偏导数。例如，对于直接使用其 $(u , v)$ 参数化映射到表面的图像贴图纹理，这些偏导数可以通过在 $u$ 和 $v$ 方向上减去相邻的纹素来计算。然而，这种方法很难扩展到本章前面定义的一些复杂程序纹理。因此，`pbrt",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.5-Material_Interface_and_Implementations.typ",
+      "line": 1175,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  Forward differencing approximates the value using a finite value of $Delta u$ and evaluating $d (u , v)$ at two positions. Thus, the final expression for $partial p prime \\/ partial u$ is the following (for simplicity, we have dropped the",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.5-Material_Interface_and_Implementations.typ",
+      "line": 1178,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  因此， $partial p prime \\/ partial u$ 的最终表达式如下（为简单起见，我们省略了一些项对 $(u , v)$ 的显式依赖）：",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.5-Material_Interface_and_Implementations.typ",
+      "line": 1185,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  Interestingly enough, most bump-mapping implementations ignore the final term under the assumption that $d (u , v)$ is expected to be relatively small. (Since bump mapping is mostly useful for approximating small perturbations, this is a ",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.5-Material_Interface_and_Implementations.typ",
+      "line": 1188,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  许多渲染器不进行 $partial upright(bold(n)) \\/ partial u$ 和 $partial upright(bold(n)) \\/ partial v$ 的计算，这也可能与这种简化有关。",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "chapter-10-Textures_and_Materials/chapter-10.5-Material_Interface_and_Implementations.typ",
+      "line": 1190,
+      "reasons": [
+        "un-grouped partial derivative division; inspect rendered fraction"
+      ],
+      "snippet": "  `pbrt` 计算所有三个项，因为它可以直接获得 $partial upright(bold(n)) \\/ partial u$ 和 $partial upright(bold(n)) \\/ partial v$ ，尽管在实践中，这个最终项对视觉效果的影响通常微乎其微。",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "Appendix-B-Utilities/B.2-Mathematical_Infrastructure.typ",
+      "line": 1580,
+      "reasons": [
+        "TeX shown as code; compare with original mathematical display"
+      ],
+      "snippet": "```text",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "Appendix-B-Utilities/B.2-Mathematical_Infrastructure.typ",
+      "line": 1595,
+      "reasons": [
+        "TeX shown as code; compare with original mathematical display"
+      ],
+      "snippet": "```text",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "Appendix-B-Utilities/B.2-Mathematical_Infrastructure.typ",
+      "line": 1600,
+      "reasons": [
+        "TeX shown as code; compare with original mathematical display"
+      ],
+      "snippet": "```text",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "Appendix-B-Utilities/B.2-Mathematical_Infrastructure.typ",
+      "line": 2041,
+      "reasons": [
+        "TeX shown as code; compare with original mathematical display"
+      ],
+      "snippet": "```tex",
+      "status": "needs_source_and_render_review"
+    },
+    {
+      "file": "Appendix-B-Utilities/B.2-Mathematical_Infrastructure.typ",
+      "line": 3146,
+      "reasons": [
+        "TeX shown as code; compare with original mathematical display"
+      ],
+      "snippet": "```tex",
+      "status": "needs_source_and_render_review"
+    }
+  ]
+}

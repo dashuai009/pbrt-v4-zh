@@ -1,0 +1,72 @@
+{
+  "baseline": "9e0ba8bd373932cd5fbab2d4ad9b13b1788b2d4e",
+  "notice": "Lexical candidates only. Absence from this list does not prove completeness or translation accuracy.",
+  "results": [
+    {
+      "local": "chapter-3-Geometry_and_Transformations/chapter-3.13-Exercises.typ",
+      "expected_source": "4ed/Geometry_and_Transformations/Exercises.html",
+      "expected_score": 0.11516488906359715,
+      "best": {
+        "source": "4ed/Cameras_and_Film/Exercises.html",
+        "score": 0.9895071519169223
+      },
+      "kind": "possible_misplaced_content",
+      "status": "candidate_requires_original_comparison"
+    },
+    {
+      "local": "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+      "expected_source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+      "expected_score": 0,
+      "best": {
+        "source": "4ed/Preface.html",
+        "score": 0
+      },
+      "kind": "empty_baseline",
+      "status": "candidate_requires_original_comparison"
+    },
+    {
+      "local": "Appendix-A-Sampling_Algorithms/A.6-Further_Reading.typ",
+      "expected_source": "4ed/Sampling_Algorithms/Further_Reading.html",
+      "expected_score": 0,
+      "best": {
+        "source": "4ed/Preface.html",
+        "score": 0
+      },
+      "kind": "empty_baseline",
+      "status": "candidate_requires_original_comparison"
+    },
+    {
+      "local": "Appendix-A-Sampling_Algorithms/A.7-Exercises.typ",
+      "expected_source": "4ed/Sampling_Algorithms/Exercises.html",
+      "expected_score": 0,
+      "best": {
+        "source": "4ed/Preface.html",
+        "score": 0
+      },
+      "kind": "empty_baseline",
+      "status": "candidate_requires_original_comparison"
+    },
+    {
+      "local": "Appendix-B-Utilities/B.8-Further_Reading.typ",
+      "expected_source": "4ed/Utilities/Further_Reading.html",
+      "expected_score": 0,
+      "best": {
+        "source": "4ed/Preface.html",
+        "score": 0
+      },
+      "kind": "empty_baseline",
+      "status": "candidate_requires_original_comparison"
+    },
+    {
+      "local": "Appendix-B-Utilities/B.9-Exercises.typ",
+      "expected_source": "4ed/Utilities/Exercises.html",
+      "expected_score": 0,
+      "best": {
+        "source": "4ed/Preface.html",
+        "score": 0
+      },
+      "kind": "empty_baseline",
+      "status": "candidate_requires_original_comparison"
+    }
+  ]
+}

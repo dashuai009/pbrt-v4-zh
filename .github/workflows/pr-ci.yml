@@ -1,24 +1,35 @@
-name: Check compilation.
-
+name: Book checks
 on:
   pull_request:
-    branches:
-      - main
-    types: [opened, synchronize, reopened]
+    branches: [main]
+  workflow_call:
+permissions:
+  contents: read
 jobs:
-  render-pdf:
+  validate:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
-          submodules: true
-          fetch-depth: 0
-      - uses: typst-community/setup-typst@v3
-      - run: typst --version
-      - run: typst fonts --font-path ./fonts
-      - run: mkdir output
-      # Now Typst is installed and packages will be cached!
-      - run: typst c main.typ ./output/pbrt-v4-zh-en-$(git describe --tags --abbrev=0).pdf --font-path ./fonts
-      - run: typst c main.typ ./output/pbrt-v4-zh-$(git describe --tags --abbrev=0).pdf --font-path ./fonts  --input LANG_OUT=zh
-      - run: typst c main.typ ./output/pbrt-v4-en-$(git describe --tags --abbrev=0).pdf --font-path ./fonts  --input LANG_OUT=en
+          submodules: recursive
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.15.0'
+          cache: npm
+          cache-dependency-path: tooling/package-lock.json
+      - run: npm ci --prefix tooling --ignore-scripts
+      - name: Install pinned compilers
+        run: bash tooling/install-tools.sh
+      - name: Check content, compile three PDFs, build whole site, validate links
+        run: bash tooling/build.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: book-pdfs
+          path: output/*.pdf
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: validation-records
+          path: |
+            output/link-report.json
+            audit/source-link-issues.json

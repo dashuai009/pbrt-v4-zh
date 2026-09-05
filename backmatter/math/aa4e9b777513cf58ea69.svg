@@ -1,0 +1,16 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="6.702ex" height="2.843ex" style="vertical-align: -0.838ex;" viewBox="0 -863.1 2885.5 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
+<title id="MathJax-SVG-1-Title">partial-differential bold n Subscript slash partial-differential u</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E1-LATINMODERNMAIN-2202" d="M515 457c36 -143 15 -479 -223 -479c-140 0 -212 116 -228 178c-8 31 -24 124 38 207c59 78 120 94 181 94c78 0 133 -56 158 -118c2 81 -5 132 -14 171c-33 129 -116 181 -189 181c-29 0 -98 -6 -124 -80c16 0 47 0 56 -35c6 -23 -8 -53 -41 -53c-30 0 -43 21 -46 35 c-7 28 6 158 151 158c123 0 241 -100 281 -259zM432 303c-5 20 -35 132 -144 132c-62 0 -103 -32 -128 -89c-26 -60 -16 -200 -10 -227c3 -10 29 -113 139 -113c154 0 161 225 143 297Z"></path>
+<path stroke-width="1" id="E1-LATINMODERNNORMAL-1D427" d="M615 0l-126 3l-126 -3v47h69v270c0 76 -21 97 -55 97c-63 0 -149 -49 -149 -158v-209h69v-47l-126 3l-126 -3v47h69v309c0 39 -7 39 -69 39v47l172 8v-108c26 51 79 108 175 108c100 0 154 -39 154 -144v-259h69v-47Z"></path>
+<path stroke-width="1" id="E1-LATINMODERNMAIN-2F" d="M445 730c0 -2 0 -5 -1 -7l-349 -960c-3 -8 -10 -13 -19 -13c-11 0 -20 9 -20 20c0 2 0 5 1 7l349 960c3 8 10 13 19 13c11 0 20 -9 20 -20Z"></path>
+<path stroke-width="1" id="E1-LATINMODERNNORMAL-1D462" d="M543 143c0 0 -13 -63 -30 -99c-16 -32 -39 -55 -74 -55c-43 0 -78 26 -89 67c-17 -22 -53 -67 -119 -67c-54 0 -123 25 -123 120c0 49 21 111 58 210c6 15 17 44 17 68c0 32 -16 33 -25 33c-38 0 -76 -37 -101 -124c-5 -16 -6 -18 -16 -18c0 0 -12 0 -12 10 c0 9 37 154 132 154c50 0 82 -37 82 -82c0 -19 -5 -33 -17 -63c-26 -69 -54 -148 -54 -204c0 -37 10 -82 62 -82c73 0 113 80 114 84l75 301c8 34 34 35 39 35c15 0 29 -9 29 -27c0 -6 -10 -44 -15 -67c-4 -15 -14 -53 -17 -68l-28 -108c-8 -35 -20 -82 -20 -104 c0 -33 10 -46 31 -46c42 0 61 68 75 124c3 14 4 18 14 18c3 0 12 0 12 -10Z"></path>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E1-LATINMODERNMAIN-2202" x="0" y="0"></use>
+ <use xlink:href="#E1-LATINMODERNNORMAL-1D427" x="586" y="0"></use>
+ <use xlink:href="#E1-LATINMODERNMAIN-2F" x="1226" y="0"></use>
+ <use xlink:href="#E1-LATINMODERNMAIN-2202" x="1726" y="0"></use>
+ <use xlink:href="#E1-LATINMODERNNORMAL-1D462" x="2313" y="0"></use>
+</g>
+</svg>

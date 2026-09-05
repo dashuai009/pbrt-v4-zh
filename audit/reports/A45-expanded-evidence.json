@@ -1,0 +1,46 @@
+[
+  {
+    "source": "Sampling_1D_Functions.html",
+    "panel": "fragbit-2652",
+    "source_line": 3636,
+    "local": "A.4-expanded.typ",
+    "extra_part": 0,
+    "code": "PBRT_CPU_GPU\nsize_t BytesUsed() const {\n    return (func.capacity() + cdf.capacity()) * sizeof(Float);\n}\nstatic void TestCompareDistributions(const PiecewiseConstant1D &da,\n                                     const PiecewiseConstant1D &db, Float eps = 1e-5);\nstd::string ToString() const {\n    return StringPrintf(\"[ PiecewiseConstant1D func: %s cdf: %s \"\n                        \"min: %f max: %f funcInt: %f ]\",\n                        func, cdf, min, max, funcInt);\n}\nPiecewiseConstant1D() = default;\nPiecewiseConstant1D(Allocator alloc) : func(alloc), cdf(alloc) {}\nPiecewiseConstant1D(pstd::span<const Float> f, Allocator alloc = {})\n    : PiecewiseConstant1D(f, 0., 1., alloc) {}",
+    "duplicate_policy": "Other panel methods occur as visible named fragments and are not repeated."
+  },
+  {
+    "source": "Sampling_Multidimensional_Functions.html",
+    "panel": "fragbit-2674",
+    "source_line": 4208,
+    "local": "A.5-expanded.typ",
+    "extra_part": 0,
+    "code": "PiecewiseConstant2D() = default;\nPiecewiseConstant2D(Allocator alloc) : pConditionalV(alloc), pMarginal(alloc) {}\nPiecewiseConstant2D(pstd::span<const Float> data, int nx, int ny,\n                    Allocator alloc = {})\n    : PiecewiseConstant2D(data, nx, ny, Bounds2f(Point2f(0, 0), Point2f(1, 1)),\n                          alloc) {}\nexplicit PiecewiseConstant2D(const Array2D<Float> &data, Allocator alloc = {})\n    : PiecewiseConstant2D(pstd::span<const Float>(data), data.XSize(), data.YSize(),\n                          alloc) {}\nPiecewiseConstant2D(const Array2D<Float> &data, Bounds2f domain, Allocator alloc = {})\n    : PiecewiseConstant2D(pstd::span<const Float>(data), data.XSize(), data.YSize(),\n                          domain, alloc) {}",
+    "duplicate_policy": "Other panel methods occur as visible named fragments and are not repeated."
+  },
+  {
+    "source": "Sampling_Multidimensional_Functions.html",
+    "panel": "fragbit-2674",
+    "source_line": 4208,
+    "local": "A.5-expanded.typ",
+    "extra_part": 1,
+    "code": "PBRT_CPU_GPU\nsize_t BytesUsed() const {\n    return pConditionalV.size() *\n               (pConditionalV[0].BytesUsed() + sizeof(pConditionalV[0])) +\n           pMarginal.BytesUsed();\n}\nPBRT_CPU_GPU\nBounds2f Domain() const { return domain; }\nPBRT_CPU_GPU\nPoint2i Resolution() const {\n    return {int(pConditionalV[0].size()), int(pMarginal.size())};\n}\nstd::string ToString() const {\n    return StringPrintf(\"[ PiecewiseConstant2D domain: %s pConditionalV: %s \"\n                        \"pMarginal: %s ]\",\n                        domain, pConditionalV, pMarginal);\n}\nstatic void TestCompareDistributions(const PiecewiseConstant2D &da,\n                                     const PiecewiseConstant2D &db, Float eps = 1e-5);",
+    "duplicate_policy": "Other panel methods occur as visible named fragments and are not repeated."
+  },
+  {
+    "source": "Sampling_Multidimensional_Functions.html",
+    "panel": "fragbit-2674",
+    "source_line": 4208,
+    "local": "A.5-expanded.typ",
+    "extra_part": 2,
+    "code": "pstd::optional<Point2f> Invert(Point2f p) const {\n    pstd::optional<Float> mInv = pMarginal.Invert(p[1]);\n    if (!mInv)\n        return {};\n    Float p1o = (p[1] - domain.pMin[1]) / (domain.pMax[1] - domain.pMin[1]);\n    if (p1o < 0 || p1o > 1)\n        return {};\n    int offset = Clamp(p1o * pConditionalV.size(), 0, pConditionalV.size() - 1);\n    pstd::optional<Float> cInv = pConditionalV[offset].Invert(p[0]);\n    if (!cInv)\n        return {};\n    return Point2f(*cInv, *mInv);\n}",
+    "duplicate_policy": "Other panel methods occur as visible named fragments and are not repeated."
+  },
+  {
+    "source": "Sampling_Multidimensional_Functions.html",
+    "panel": "fragbit-2680",
+    "source_line": 5019,
+    "local": "A.5-expanded.typ",
+    "code": "std::string ToString() const;",
+    "duplicate_policy": "Constructor and Integral already appear in main text; ToString is a declaration only in this panel."
+  }
+]

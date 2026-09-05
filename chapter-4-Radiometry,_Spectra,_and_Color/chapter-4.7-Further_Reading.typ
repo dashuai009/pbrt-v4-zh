@@ -1,62 +1,124 @@
-== Further Reading
+#import "../template.typ": parec, ez_caption, source-cite
 
+== #ez_caption[Further Reading][延伸阅读]
+<radiometry-further-reading>
 
-McCluney's book on radiometry is an excellent introduction to the topic (McCluney 1994). Preisendorfer (1965) also covered radiometry in an accessible manner and delved into the relationship between radiometry and the physics of light. Nicodemus et al. (1977) carefully defined the BRDF, BSSRDF, and various quantities that can be derived from them.
-McCluney关于辐射测量的书是对这个主题的一个很好的介绍（McCluney 1994）。Preisendorfer（1965）也以一种容易理解的方式涵盖了辐射测量学，并深入研究了辐射测量学和光物理学之间的关系。Nicodemus等人（1977）仔细定义了BRDF，BSSRDF以及可以从它们导出的各种量。
+#parec[
+  McCluney's book on radiometry is an excellent introduction to the topic (McCluney #source-cite("McCluney94")). Preisendorfer (#source-cite("Preisendorfer65")) also covered radiometry in an accessible manner and delved into the relationship between radiometry and the physics of light. Nicodemus et al. (#source-cite("Nicodemus77")) carefully defined the BRDF, BSSRDF, and various quantities that can be derived from them.
+][
+  McCluney 的辐射度量学著作是这一主题的优秀入门读物（McCluney #source-cite("McCluney94")）。Preisendorfer（#source-cite("Preisendorfer65")）也以易于理解的方式介绍了辐射度量学，并深入讨论了它与光的物理学之间的关系。Nicodemus 等人（#source-cite("Nicodemus77")）严格定义了 BRDF、BSSRDF 及由它们导出的各种量。
+]
 
-Books by Moon and Spencer (1936, 1948) and Gershun (1939) are classic early introductions to radiometry. Lambert's seminal early writings about photometry from the mid-18th century have been translated into English by DiLaura (Lambert 1760).
-Moon和Spencer（1936、1948）和Gershun（1939）的书籍是辐射测量学的经典早期介绍。兰伯特的开创性的早期著作测光从中期的世纪已被翻译成英语的迪劳拉（兰伯特1760年）。
+#parec[
+  Books by Moon and Spencer (#source-cite("Moon36"), #source-cite("Moon48")) and Gershun (#source-cite("Gershun39")) are classic early introductions to radiometry. Lambert's seminal early writings about photometry from the mid-18th century have been translated into English by DiLaura (Lambert #source-cite("Lambert1760")).
+][
+  Moon 和 Spencer（#source-cite("Moon36")、#source-cite("Moon48")）以及 Gershun（#source-cite("Gershun39")）的著作是辐射度量学的早期经典入门读物。Lambert 在 18 世纪中叶撰写的开创性光度学著作已由 DiLaura 译为英文（Lambert #source-cite("Lambert1760")）。
+]
 
-Preisendorfer (1965) has connected radiative transfer theory to Maxwell's classical equations describing electromagnetic fields, and further work was done in this area by Fante (1981). Going well beyond earlier work that represented radiance with Wigner distribution functions to model wave effects (Oh 2010, Cuypers et al. 2012), Steinberg and Yan (2021) have recently introduced a comprehensive model of light transport based on a wave model, including a generalization of the light transport equation.
-Preisendorfer（1965）将辐射传输理论与描述电磁场的麦克斯韦经典方程联系起来，Fante（1981）在这一领域做了进一步的工作。Steinberg和Yan（2021）远远超出了早期用Wigner分布函数表示辐射以模拟波效应的工作（Oh 2010，Cuypers et al. 2012），最近引入了一个基于波模型的光传输综合模型，包括光传输方程的推广。
+#parec[
+  Preisendorfer (#source-cite("Preisendorfer65")) has connected radiative transfer theory to Maxwell's classical equations describing electromagnetic fields, and further work was done in this area by Fante (#source-cite("Fante81")). Going well beyond earlier work that represented radiance with Wigner distribution functions to model wave effects (Oh #source-cite("Oh2010"), Cuypers et al. #source-cite("Cuypers2012")), Steinberg and Yan (#source-cite("Steinberg2021")) have recently introduced a comprehensive model of light transport based on a wave model, including a generalization of the light transport equation.
+][
+  Preisendorfer（#source-cite("Preisendorfer65")）将辐射传输理论与描述电磁场的经典 Maxwell 方程联系起来，Fante（#source-cite("Fante81")）在这一方向作了进一步研究。早期工作用 Wigner 分布函数表示辐亮度，以模拟波动效应（Oh #source-cite("Oh2010")；Cuypers 等人 #source-cite("Cuypers2012")）。Steinberg 和 Yan（#source-cite("Steinberg2021")）在此基础上大幅推进，提出了基于波动模型的完整光传输模型，其中包括光传输方程的推广。
+]
 
-Correctly implementing radiometric computations can be tricky: one missed cosine factor and one is computing a completely different quantity than expected. Debugging these sorts of issues can be quite time-consuming. Ou and Pellacini (2010) showed how to use C++'s type system to associate units with each term of these sorts of computations so that, for example, trying to add a radiance value to another value that represents irradiance would trigger a compile time error.
-正确执行辐射计算可能很棘手：一个错过了余弦因子，另一个计算的量与预期完全不同。解决这类问题可能非常耗时。Ou和Pellacini（2010）展示了如何使用C++的类型系统将单位与这些计算的每个项相关联，例如，尝试将辐射值添加到另一个表示辐照度的值将触发编译时错误。
+#parec[
+  Correctly implementing radiometric computations can be tricky: one missed cosine factor and one is computing a completely different quantity than expected. Debugging these sorts of issues can be quite time-consuming. Ou and Pellacini (#source-cite("Ou2010")) showed how to use C++'s type system to associate units with each term of these sorts of computations so that, for example, trying to add a radiance value to another value that represents irradiance would trigger a compile time error.
+][
+  正确实现辐射度量学计算并不容易：只要漏掉一个余弦因子，计算的就可能是与预期完全不同的物理量。排查这类问题往往很耗时。Ou 和 Pellacini（#source-cite("Ou2010")）展示了如何利用 C++ 类型系统，为这类计算中的各项关联单位。例如，试图把辐亮度值与辐照度值相加时，就会触发编译错误。
+]
 
-The books by McCluney (1994) and Malacara (2002) discuss blackbody emitters and the standard illuminants in detail. The Standard Illuminants are defined in a CIE Technical Report (2004); Judd et al. (1964) developed the approach that was used to define the D Standard Illuminant.
-McCluney（1994）和Malacara（2002）的书详细讨论了黑体发射体和标准光源。标准光源在CIE技术报告（2004）中定义; Judd等人（1964）开发了用于定义D标准光源的方法。
+#parec[
+  The books by McCluney (#source-cite("McCluney94")) and Malacara (#source-cite("Malacara02")) discuss blackbody emitters and the standard illuminants in detail. The Standard Illuminants are defined in a CIE Technical Report (#source-cite("Report2004")); Judd et al. (#source-cite("Judd1964")) developed the approach that was used to define the D Standard Illuminant.
+][
+  McCluney（#source-cite("McCluney94")）和 Malacara（#source-cite("Malacara02")）的著作详细讨论了黑体发射体和标准照明体。标准照明体由 CIE 技术报告（#source-cite("Report2004")）定义；定义 D 标准照明体所用的方法由 Judd 等人（#source-cite("Judd1964")）提出。
+]
 
-Wilkie and Weidlich (2011) noted that common practice in rendering has been to use the blackbody distribution of Equation (4.17) to model light emission for rendering, while Kirchhoff's law, Equation (4.18), would be more accurate. They also pointed out that as objects become hot, their BRDFs often change, which makes Kirchhoff's law more difficult to adopt, especially in that models that account for the effect of temperature variation on BRDFs generally are not available.
-Wilkie和Weidlich（2011）指出，渲染中的常见做法是使用公式（4.17）的黑体分布来模拟渲染的光发射，而基尔霍夫定律，公式（4.18）将更准确。他们还指出，随着物体变热，它们的BRDF经常发生变化，这使得基尔霍夫定律更难以采用，特别是考虑温度变化对BRDF影响的模型通常不可用。
+#parec[
+  Wilkie and Weidlich (#source-cite("Wilkie2011")) noted that common practice in rendering has been to use the blackbody distribution of @eqt:plancks-law to model light emission for rendering, while Kirchhoff's law, @eqt:kirchoffs-law, would be more accurate. They also pointed out that as objects become hot, their BRDFs often change, which makes Kirchhoff's law more difficult to adopt, especially in that models that account for the effect of temperature variation on BRDFs generally are not available.
+][
+  Wilkie 和 Weidlich（#source-cite("Wilkie2011")）指出，渲染中通常用 @eqt:plancks-law 的黑体分布模拟光发射，而使用 Kirchhoff 定律（@eqt:kirchoffs-law）会更加准确。他们还指出，物体受热后 BRDF 往往会改变，使得采用 Kirchhoff 定律更加困难；尤其是，通常缺少描述温度变化如何影响 BRDF 的模型。
+]
 
-Spectral Representations 频谱表示
-Meyer was one of the first researchers to closely investigate spectral representations in graphics (Meyer and Greenberg 1980; Meyer et al. 1986). Hall (1989) summarized the state of the art in spectral representations through 1989, and Glassner's Principles of Digital Image Synthesis (1995) covers the topic through the mid-1990s. Survey articles by Hall (1999), Johnson and Fairchild (1999), and Devlin et al. (2002) are good resources on early work on this topic.
-Meyer是第一个仔细研究图形中的光谱表示的研究人员之一（Meyer and Greenberg 1980; Meyer et al.1986）。Hall（1989）总结了1989年光谱表示的最新技术，Glassner的Principles of Digital Image Synthesis（1995）涵盖了1990年代中期的主题。Hall（1999）、约翰逊和费尔柴尔德（1999）以及Devlin等人（2002）的调查文章是有关该主题早期工作的良好资源。
+#heading(level: 3, numbering: none)[#ez_caption[Spectral Representations][光谱表示]]
 
-Borges (1991) analyzed the error introduced from the tristimulus representation when used for spectral computation. A variety of approaches based on representing spectra using basis functions have been developed, including Peercy (1993), who developed a technique based on choosing basis functions in a scene-dependent manner by considering the spectral distributions of the lights and reflecting objects in the scene. Rougeron and Péroche (1997) projected all spectra in the scene onto a hierarchical basis (the Haar wavelets), and showed that this adaptive representation can be used to stay within a desired error bound. Ward and Eydelberg-Vileshin (2002) developed a method for improving the spectral fidelity of regular RGB-only rendering systems by carefully adjusting the color values provided to the system before rendering.
-Borges（1991）分析了三色刺激表示法用于光谱计算时引入的误差。已经开发了各种基于使用基函数表示光谱的方法，包括Peercy（1993），他开发了一种基于通过考虑场景中的光和反射物体的光谱分布以场景依赖的方式选择基函数的技术。Rougeron和Péroche（1997）将场景中的所有光谱投影到分层基础（Haar小波）上，并表明这种自适应表示可以用于保持在期望的误差范围内。Ward和Eydelberg-Vileshin（2002）开发了一种方法，通过在渲染之前仔细调整提供给系统的颜色值来提高常规RGB渲染系统的光谱保真度。
+#parec[
+  Meyer was one of the first researchers to closely investigate spectral representations in graphics (Meyer and Greenberg #source-cite("Meyer80"); Meyer et al. #source-cite("Meyer86")). Hall (#source-cite("Hall89")) summarized the state of the art in spectral representations through 1989, and Glassner's #emph[Principles of Digital Image Synthesis] (#source-cite("Glassner:PODIS")) covers the topic through the mid-1990s. Survey articles by Hall (#source-cite("Hall:1999:CSC")), Johnson and Fairchild (#source-cite("Johnson1999")), and Devlin et al. (#source-cite("Devlin02")) are good resources on early work on this topic.
+][
+  Meyer 是最早深入研究图形学中光谱表示的研究者之一（Meyer 和 Greenberg #source-cite("Meyer80")；Meyer 等人 #source-cite("Meyer86")）。Hall（#source-cite("Hall89")）总结了截至 1989 年的光谱表示研究进展；Glassner 的《Principles of Digital Image Synthesis》（#source-cite("Glassner:PODIS")）则覆盖到 20 世纪 90 年代中期。Hall（#source-cite("Hall:1999:CSC")）、Johnson 和 Fairchild（#source-cite("Johnson1999")）以及 Devlin 等人（#source-cite("Devlin02")）的综述，是了解这一主题早期工作的良好资料。
+]
 
-Another approach to spectral representation was investigated by Sun et al. (2001), who partitioned spectral distributions into a smooth base distribution and a set of spikes. Each part was represented differently, using basis functions that worked well for each of these parts of the distribution. Drew and Finlayson (2003) applied a “sharp” basis, which is adaptive but has the property that computing the product of two functions in the basis does not require a full matrix multiplication as many other basis representations do.
-Sun等人（2001）研究了另一种谱表示方法，他们将谱分布划分为平滑的基本分布和一组尖峰。每个部分都有不同的表示，使用的基函数对分布的每个部分都很好。Drew和Finlayson（2003）应用了一种“尖锐”基，它是自适应的，但具有计算基中两个函数的乘积不需要像许多其他基表示那样进行全矩阵乘法的特性。
+#parec[
+  Borges (#source-cite("Borges1991")) analyzed the error introduced from the tristimulus representation when used for spectral computation. A variety of approaches based on representing spectra using basis functions have been developed, including Peercy (#source-cite("Peercy93")), who developed a technique based on choosing basis functions in a scene-dependent manner by considering the spectral distributions of the lights and reflecting objects in the scene. Rougeron and Péroche (#source-cite("Rougeron97")) projected all spectra in the scene onto a hierarchical basis (the Haar wavelets), and showed that this adaptive representation can be used to stay within a desired error bound. Ward and Eydelberg-Vileshin (#source-cite("Ward02")) developed a method for improving the spectral fidelity of regular RGB-only rendering systems by carefully adjusting the color values provided to the system before rendering.
+][
+  Borges（#source-cite("Borges1991")）分析了将三刺激表示用于光谱计算时引入的误差。研究者提出了多种用基函数表示光谱的方法。例如，Peercy（#source-cite("Peercy93")）根据场景中光源和反射物体的光谱分布，选择与场景相关的基函数。Rougeron 和 Péroche（#source-cite("Rougeron97")）把场景中的全部光谱投影到层次基（Haar 小波）上，并证明这种自适应表示可以将误差控制在指定界限内。Ward 和 Eydelberg-Vileshin（#source-cite("Ward02")）则在渲染前仔细调整输入颜色值，以提高仅使用 RGB 的常规渲染系统的光谱保真度。
+]
 
-Both Walter et al. (1997) and Morley et al. (2006) described light transport algorithms based on associating a single wavelength with each light path. Evans and McCool (1999) generalized these techniques with stratified wavelength clusters, which are effectively the approach implemented in SampledSpectrum and SampledWavelengths.
-Walter等人（1997）和莫利等人（2006）都描述了基于将单个波长与每个光路相关联的光传输算法。Evans和McCool（1999）将这些技术与分层波长簇进行了推广，这是在 SampledSpectrum 和 SampledWavelengths 中有效实现的方法。
+#parec[
+  Another approach to spectral representation was investigated by Sun et al. (#source-cite("Sun01")), who partitioned spectral distributions into a smooth base distribution and a set of spikes. Each part was represented differently, using basis functions that worked well for each of these parts of the distribution. Drew and Finlayson (#source-cite("Drew2003")) applied a “sharp” basis, which is adaptive but has the property that computing the product of two functions in the basis does not require a full matrix multiplication as many other basis representations do.
+][
+  Sun 等人（#source-cite("Sun01")）研究了另一种光谱表示方法，将光谱分布分解为平滑的基础分布与一组尖峰，再为这两部分分别采用适合的基函数表示。Drew 和 Finlayson（#source-cite("Drew2003")）采用了自适应的“尖锐”基；这种基的一个特点是，计算两个函数的乘积时，不必像许多其他基表示那样进行完整的矩阵乘法。
+]
 
-Radziszewski et al. (2009) noted that it is not necessary to terminate all secondary spectral wavelengths when effects like dispersion happen at non-specular interfaces; they showed that it is possible to compute all wavelengths' contributions for a single path, weighting the results using multiple importance sampling. Wilkie et al. (2014) used equally spaced point samples in the wavelength domain and showed how this approach can also be used for photon mapping and rendering of participating media.
-Radziszewski等人（2009年）指出，当色散等效应发生在非镜面反射界面时，没有必要终止所有次级光谱波长;他们表明可以计算单个路径的所有波长的贡献，使用多个重要性采样对结果进行加权。Wilkie等人（2014）在波长域中使用了等距点样本，并展示了这种方法如何也可用于光子映射和参与介质的渲染。
+#parec[
+  Both Walter et al. (#source-cite("Walter:1997:GIU")) and Morley et al. (#source-cite("Morley2006")) described light transport algorithms based on associating a single wavelength with each light path. Evans and McCool (#source-cite("Evans1999")) generalized these techniques with stratified wavelength clusters, which are effectively the approach implemented in `SampledSpectrum` and `SampledWavelengths`.
+][
+  Walter 等人（#source-cite("Walter:1997:GIU")）和 Morley 等人（#source-cite("Morley2006")）都介绍了为每条光路关联单一波长的光传输算法。Evans 和 McCool（#source-cite("Evans1999")）用分层波长簇推广了这些技术，`SampledSpectrum` 和 `SampledWavelengths` 实现的基本就是这种方法。
+]
 
-Color 颜色
-For background information on properties of the human visual system, Wandell's book on vision is an excellent starting point (Wandell 1995). Ferwerda (2001) presented an overview of the human visual system for applications in graphics, and Malacara (2002) gave a concise overview of color theory and basic properties of how the human visual system processes color. Ciechanowski (2019) presented an excellent interactive introduction to color spaces; his treatment has influenced our presentation of the XYZ color space and chromaticity.
-关于人类视觉系统特性的背景信息，Wandell关于视觉的书是一个很好的起点（Wandell 1995）。Ferwerda（2001）概述了人类视觉系统在图形中的应用，Malacara（2002）简要概述了颜色理论和人类视觉系统如何处理颜色的基本属性。Ciechanowski（2019）对颜色空间进行了出色的交互式介绍;他的处理影响了我们对XYZ颜色空间和色度的介绍。
+#parec[
+  Radziszewski et al. (#source-cite("Radziszewski2009")) noted that it is not necessary to terminate all secondary spectral wavelengths when effects like dispersion happen at non-specular interfaces; they showed that it is possible to compute all wavelengths' contributions for a single path, weighting the results using multiple importance sampling. Wilkie et al. (#source-cite("Wilkie2014")) used equally spaced point samples in the wavelength domain and showed how this approach can also be used for photon mapping and rendering of participating media.
+][
+  Radziszewski 等人（#source-cite("Radziszewski2009")）指出，当色散等效应发生在非镜面界面时，不必终止所有次级波长；可以在同一条路径上计算所有波长的贡献，并用多重重要性采样加权结果。Wilkie 等人（#source-cite("Wilkie2014")）在波长域中采用等间距点样本，并展示了如何将这一方法用于光子映射及参与介质的渲染。
+]
 
-A number of different approaches have been developed for mapping out-of-gamut colors to ones that can be displayed on a device with particular display primaries. This problem can manifest itself in a few ways: a color's chromaticity may be outside of the displayed range, its chromaticity may be valid but it may be too bright for display, or both may be out of range.
-已经开发了许多不同的方法来将色域外颜色映射到可以在具有特定显示原色的设备上显示的颜色。这个问题可以通过几种方式表现出来：颜色的色度可能在显示范围之外，它的色度可能是有效的，但它可能太亮而无法显示，或者两者都可能在范围之外。
+#heading(level: 3, numbering: none)[#ez_caption[Color][颜色]]
 
-For the issue of how to handle colors with undisplayable chromaticities, see Rougeron and Péroche's survey article, which includes references to many approaches (Rougeron and Péroche 1998). This topic was also covered by Hall (1989). Morovi's book (2008) covers this topic, and a more recent survey has been written by Faridul et al. (2016).
-关于如何处理具有不可显示色度的颜色的问题，请参阅Rougeron和Péroche的调查文章，其中包括对许多方法的引用（Rougeron和Péroche 1998）。Hall（1989）也讨论了这个问题。Morovi的书（2008年）涵盖了这个主题，Faridul等人（2016年）撰写了一份最近的调查。
+#parec[
+  For background information on properties of the human visual system, Wandell's book on vision is an excellent starting point (Wandell #source-cite("Wandell95")). Ferwerda (#source-cite("Ferwerda01")) presented an overview of the human visual system for applications in graphics, and Malacara (#source-cite("Malacara02")) gave a concise overview of color theory and basic properties of how the human visual system processes color. Ciechanowski (#source-cite("Ciechanowski2019")) presented an excellent interactive introduction to color spaces; his treatment has influenced our presentation of the XYZ color space and chromaticity.
+][
+  关于人类视觉系统的背景知识，Wandell 的视觉学著作是很好的起点（Wandell #source-cite("Wandell95")）。Ferwerda（#source-cite("Ferwerda01")）面向图形学应用概述了人类视觉系统，Malacara（#source-cite("Malacara02")）则简要介绍了颜色理论以及视觉系统处理颜色的基本特性。Ciechanowski（#source-cite("Ciechanowski2019")）提供了优秀的交互式颜色空间入门介绍，本书对 XYZ 颜色空间和色度的讲解也受到了他的影响。
+]
 
-While high dynamic range displays that can display a wide range of intensities are now starting to become available, most of them are still not able to reproduce the full range of brightness in rendered images. This problem can be addressed with tone reproduction algorithms that use models of human visual response to make the most of displays' available dynamic ranges. This topic became an active area of research starting with the work of Tumblin and Rushmeier (1993). The survey article of Devlin et al. (2002) summarizes most of the work in this area through 2002, giving pointers to the original papers. See Reinhard et al.'s book (2010) on high dynamic range imaging, which includes comprehensive coverage of this topic through 2010. More recently, Reinhard et al. (2012) have developed tone reproduction algorithms that consider both accurate brightness and color reproduction together, also accounting for the display and viewing environment, and Eilertsen et al. (2017) surveyed algorithms for tone mapping of video.
-虽然可以显示宽范围强度的高动态范围显示器现在开始变得可用，但它们中的大多数仍然不能再现渲染图像中的全部亮度范围。这个问题可以通过色调再现算法来解决，该算法使用人类视觉响应的模型来充分利用显示器的可用动态范围。这个主题成为一个活跃的研究领域开始与工作的Tumblin和Rushmeier（1993年）。Devlin et al.（2002）的综述文章总结了2002年在这一领域的大部分工作，并指出了原始论文。参见Reinhard et al.的书（2010年）的高动态范围成像，其中包括全面覆盖这一主题，直到2010年。最近，Reinhard et al. （2012）开发了色调再现算法，该算法同时考虑了准确的亮度和颜色再现，还考虑了显示和观看环境，Eilertsen等人（2017）调查了视频色调映射的算法。
+#parec[
+  A number of different approaches have been developed for mapping out-of-gamut colors to ones that can be displayed on a device with particular display primaries. This problem can manifest itself in a few ways: a color's chromaticity may be outside of the displayed range, its chromaticity may be valid but it may be too bright for display, or both may be out of range.
+][
+  研究者提出了许多方法，将色域外的颜色映射为采用特定显示基色的设备能够显示的颜色。超出显示范围可能有几种情况：颜色的色度位于可显示范围之外；色度有效，但颜色过亮而无法显示；或两者同时超出范围。
+]
 
-From RGB to Spectra 从RGB到Spectra
-Glassner (1989b) did early work on converting RGB values to spectral distributions. Smits (1999) optimized discrete reflectance spectra to reproduce primaries (red, green, blue) and combinations of primaries (yellow, cyan, magenta, white) based on the observation that linear interpolation in such an extended space tends to produce smoother reflectance spectra. Mallett and Yuksel (2019) presented a surprising result showing that linear interpolation of three carefully chosen spectra can fully cover the sRGB gamut, albeit at some cost in terms of smoothness. Meng et al. (2015) optimized a highly smooth spectral interpolant based on a dense sampling of the space of chromaticities, enabling usage independent of any specific RGB gamut.
-Glassner（1989 b）在将RGB值转换为光谱分布方面做了早期工作。Smits（1999）优化离散反射光谱以再现原色（红色、绿色、蓝色）和原色的组合（黄色、青色、洋红、白色），其基于这样的扩展空间中的线性插值倾向于产生更平滑的反射光谱的观察。Mallett和Yuksel（2019）提出了一个令人惊讶的结果，表明三个精心选择的光谱的线性插值可以完全覆盖sRGB色域，尽管在平滑度方面有一些代价。Meng等人（2015）基于色度的 空间的密集采样优化了高度平滑的光谱插值，使其使用独立于任何特定的RGB色域。
+#parec[
+  For the issue of how to handle colors with undisplayable chromaticities, see Rougeron and Péroche's survey article, which includes references to many approaches (Rougeron and Péroche #source-cite("Rougeron98")). This topic was also covered by Hall (#source-cite("Hall89")). Morovi's book (#source-cite("Morovi2008")) covers this topic, and a more recent survey has been written by Faridul et al. (#source-cite("Faridul2016")).
+][
+  对于无法显示的色度，Rougeron 和 Péroche（#source-cite("Rougeron98")）的综述介绍并引用了许多处理方法。Hall（#source-cite("Hall89")）也讨论了这一问题。Morovi（#source-cite("Morovi2008")）的著作覆盖了这一主题，Faridul 等人（#source-cite("Faridul2016")）则撰写了较新的综述。
+]
 
-The method described in Section 4.6.6 was developed by Jakob and Hanika (2019). Several properties motivated its choice in pbrt: the spectral representation is based on a smooth function family with 3 parameters (i.e., the same dimension as an RGB). Conversion can then occur in two steps: a preprocessing step (e.g., per texel) replaces RGB values with polynomial coefficients, while the performance-critical evaluation at render time only requires a few floating-point instructions. Jung et al. (2019) extended this approach, using fluorescence to permit conversion of highly saturated RGB values that cannot be recreated using reflection alone.
-第4.6.6节中描述的方法由Jakob和Hanika（2019）开发。几个属性促使其在 pbrt 中的选择：谱表示基于具有3个参数的平滑函数族（即，与RGB相同的尺寸）。然后可以在两个步骤中进行转换：预处理步骤（例如，每纹素）用多项式系数替换RGB值，而渲染时的性能关键评估仅需要几个浮点指令。Jung等人（2019）扩展了这种方法，使用荧光来转换高度饱和的RGB值，这些值无法单独使用反射来重建。
+#parec[
+  While high dynamic range displays that can display a wide range of intensities are now starting to become available, most of them are still not able to reproduce the full range of brightness in rendered images. This problem can be addressed with tone reproduction algorithms that use models of human visual response to make the most of displays' available dynamic ranges. This topic became an active area of research starting with the work of Tumblin and Rushmeier (#source-cite("Tumblin93")). The survey article of Devlin et al. (#source-cite("Devlin02")) summarizes most of the work in this area through 2002, giving pointers to the original papers. See Reinhard et al.'s book (#source-cite("Reinhard10")) on high dynamic range imaging, which includes comprehensive coverage of this topic through 2010. More recently, Reinhard et al. (#source-cite("Reinhard2012")) have developed tone reproduction algorithms that consider both accurate brightness and color reproduction together, also accounting for the display and viewing environment, and Eilertsen et al. (#source-cite("Eilertsen2017")) surveyed algorithms for tone mapping of video.
+][
+  虽然能够显示较大强度范围的高动态范围显示器已开始出现，多数设备仍无法再现渲染图像的完整明亮程度范围。色调再现算法可以借助人类视觉响应模型，充分利用显示器可用的动态范围来处理这个问题。自 Tumblin 和 Rushmeier（#source-cite("Tumblin93")）的工作起，这一主题成为活跃的研究领域。Devlin 等人（#source-cite("Devlin02")）的综述总结了截至 2002 年的大部分相关工作，并给出了原始论文线索。Reinhard 等人（#source-cite("Reinhard10")）关于高动态范围成像的著作全面介绍了截至 2010 年的相关进展。随后，Reinhard 等人（#source-cite("Reinhard2012")）提出了同时考虑准确再现明亮程度与颜色的色调再现算法，并将显示设备及观看环境纳入考虑。Eilertsen 等人（#source-cite("Eilertsen2017")）综述了视频色调映射算法。
+]
 
-Peters et al. (2019) proposed a powerful parameterization of smooth reflectance spectra in terms of Fourier coefficients. Instead of using them in a truncated Fourier series, which would suffer from ringing, they built on the theory of moments to reconstruct smooth and energy-conserving spectra.
-Peters等人。（2019）提出了一种在傅立叶系数方面对平滑反射光谱的强大参数化。他们没有在截断的傅里叶级数中使用它们，因为这会受到振铃的影响，而是建立在矩理论的基础上来重建平滑和节能的光谱。
+#heading(level: 3, numbering: none)[#ez_caption[From RGB to Spectra][从 RGB 转换为光谱]]
 
-The previous methods all incorporated smoothness as a central design constraint. While natural spectra indeed often tend to be smooth, maximally smooth spectra are not necessarily the most natural, especially when more information about the underlying type of material is available. Otsu et al. (2018b) processed a large database of measured spectra, using principal component analysis to create a data-driven interpolant. Tódová et al. (2021) built on the moment-based method by Peters et al. (2019) to precompute an efficient spectral interpolant that is designed to reproduce user-specified spectra for certain RGB inputs.
-以前的方法都将平滑度作为中心设计约束。虽然自然光谱确实往往是平滑的，但最大平滑光谱并不一定是最自然的，尤其是当可以获得有关底层材料类型的更多信息时。大津等人（2018 b）使用主成分分析处理了测量光谱的大型数据库，以创建数据驱动的插值。Tódová et al.（2021）基于Peters et al.（2019）的基于矩的方法来预先计算一个有效的光谱插值，该插值旨在为某些RGB输入重现用户指定的光谱。
+#parec[
+  Glassner (#source-cite("Glassner89rgb")) did early work on converting RGB values to spectral distributions. Smits (#source-cite("Smits:1999:ARC")) optimized discrete reflectance spectra to reproduce primaries (red, green, blue) and combinations of primaries (yellow, cyan, magenta, white) based on the observation that linear interpolation in such an extended space tends to produce smoother reflectance spectra. Mallett and Yuksel (#source-cite("Mallett2019")) presented a surprising result showing that linear interpolation of three carefully chosen spectra can fully cover the sRGB gamut, albeit at some cost in terms of smoothness. Meng et al. (#source-cite("Meng2015")) optimized a highly smooth spectral interpolant based on a dense sampling of the space of $x y$ chromaticities, enabling usage independent of any specific RGB gamut.
+][
+  Glassner（#source-cite("Glassner89rgb")）较早研究了将 RGB 值转换为光谱分布的问题。Smits（#source-cite("Smits:1999:ARC")）观察到，在扩展颜色空间中进行线性插值往往能得到更平滑的反射率光谱，因此优化了再现基色（红、绿、蓝）及其组合（黄、青、品红、白）的离散反射率光谱。Mallett 和 Yuksel（#source-cite("Mallett2019")）给出了一个出人意料的结果：对三个精心选择的光谱进行线性插值，就能完全覆盖 sRGB 色域，代价是牺牲一些平滑性。Meng 等人（#source-cite("Meng2015")）在 $x y$ 色度空间密集采样，优化得到高度平滑的光谱插值函数，使其使用不依赖于任何特定 RGB 色域。
+]
+
+#parec[
+  The method described in @from-rgb-to-specturm was developed by Jakob and Hanika (#source-cite("Jakob2019")). Several properties motivated its choice in `pbrt`: the spectral representation is based on a smooth function family with 3 parameters (i.e., the same dimension as an RGB). Conversion can then occur in two steps: a preprocessing step (e.g., per texel) replaces RGB values with polynomial coefficients, while the performance-critical evaluation at render time only requires a few floating-point instructions. Jung et al. (#source-cite("Jung2019")) extended this approach, using fluorescence to permit conversion of highly saturated RGB values that cannot be recreated using reflection alone.
+][
+  @from-rgb-to-specturm 中的方法由 Jakob 和 Hanika（#source-cite("Jakob2019")）提出。`pbrt` 选择它是因为几个特点：光谱表示采用具有 3 个参数的平滑函数族，与 RGB 的维数相同；转换可分为两步，先在预处理阶段（例如逐纹素）把 RGB 值替换为多项式系数，然后在性能敏感的渲染阶段，只需几条浮点指令即可求值。Jung 等人（#source-cite("Jung2019")）利用荧光扩展了该方法，使其能转换单靠反射无法再现的高饱和度 RGB 值。
+]
+
+#parec[
+  Peters et al. (#source-cite("Peters2019:moments")) proposed a powerful parameterization of smooth reflectance spectra in terms of Fourier coefficients. Instead of using them in a truncated Fourier series, which would suffer from ringing, they built on the theory of moments to reconstruct smooth and energy-conserving spectra.
+][
+  Peters 等人（#source-cite("Peters2019:moments")）提出了用傅里叶系数参数化平滑反射率光谱的有力方法。他们没有把系数用于截断傅里叶级数，因为那会产生振铃；而是借助矩理论重建平滑且满足能量守恒的光谱。
+]
+
+#parec[
+  The previous methods all incorporated smoothness as a central design constraint. While natural spectra indeed often tend to be smooth, maximally smooth spectra are not necessarily the most natural, especially when more information about the underlying type of material is available. Otsu et al. (#source-cite("Otsu2018:rgb")) processed a large database of measured spectra, using principal component analysis to create a data-driven interpolant. Tódová et al. (#source-cite("Todova2021")) built on the moment-based method by Peters et al. (#source-cite("Peters2019:moments")) to precompute an efficient spectral interpolant that is designed to reproduce user-specified spectra for certain RGB inputs.
+][
+  上述方法都将平滑性作为核心设计约束。尽管自然光谱往往平滑，最平滑的光谱却未必最自然；当已知更多材料类型信息时，尤其如此。Otsu 等人（#source-cite("Otsu2018:rgb")）处理了大型实测光谱数据库，用主成分分析构造数据驱动的插值函数。Tódová 等人（#source-cite("Todova2021")）基于 Peters 等人（#source-cite("Peters2019:moments")）的矩方法，预计算了高效的光谱插值函数，使某些 RGB 输入能够再现用户指定的光谱。
+]

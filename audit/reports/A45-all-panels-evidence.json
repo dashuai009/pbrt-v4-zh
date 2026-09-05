@@ -1,0 +1,712 @@
+[
+  {
+    "section": "A4",
+    "panel": "fragbit-2652",
+    "source_line": 3636,
+    "code": "PBRT_CPU_GPU\nsize_t BytesUsed() const {\n    return (func.capacity() + cdf.capacity()) * sizeof(Float);\n}\nstatic void TestCompareDistributions(const PiecewiseConstant1D &da,\n                                     const PiecewiseConstant1D &db, Float eps = 1e-5);\nstd::string ToString() const {\n    return StringPrintf(\"[ PiecewiseConstant1D func: %s cdf: %s \"\n                        \"min: %f max: %f funcInt: %f ]\",\n                        func, cdf, min, max, funcInt);\n}\nPiecewiseConstant1D() = default;\nPiecewiseConstant1D(Allocator alloc) : func(alloc), cdf(alloc) {}\nPiecewiseConstant1D(pstd::span<const Float> f, Allocator alloc = {})\n    : PiecewiseConstant1D(f, 0., 1., alloc) {}\nPiecewiseConstant1D(pstd::span<const Float> f, Float min, Float max,\n                    Allocator alloc = {})\n    : func(f.begin(), f.end(), alloc), cdf(f.size() + 1, alloc),\n      min(min), max(max) {\n    <<Take absolute value of func>>\n    <<Compute integral of step function at x_i>>\n    <<Transform step function integral into CDF>>\n}\nFloat Integral() const { return funcInt; }\nsize_t size() const { return func.size(); }\nFloat Sample(Float u, Float *pdf = nullptr, int *offset = nullptr) const {\n    <<Find surrounding CDF segments and offset>>\n    <<Compute offset along CDF segment>>\n    <<Compute PDF for sampled offset>>\n    <<Return x corresponding to sample>>\n}\npstd::optional<Float> Invert(Float x) const {\n    <<Compute offset to CDF values that bracket x>>\n    <<Linearly interpolate between adjacent CDF values to find sample value>>\n}",
+    "equal_visible_fragment": [],
+    "decision": "composite panel; additional methods in supplement, constituent visible definitions are not duplicated",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A4",
+    "panel": "fragbit-2653",
+    "source_line": 3655,
+    "code": "for (Float &f : func) f = std::abs(f);",
+    "equal_visible_fragment": [
+      "fragment-Takeabsolutevalueofmonofunc-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A4",
+    "panel": "fragbit-2654",
+    "source_line": 3666,
+    "code": "cdf[0] = 0;\nsize_t n = f.size();\nfor (size_t i = 1; i < n + 1; ++i)\n    cdf[i] = cdf[i - 1] + func[i - 1] * (max - min) / n;",
+    "equal_visible_fragment": [
+      "fragment-Computeintegralofstepfunctionatx_i-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A4",
+    "panel": "fragbit-2655",
+    "source_line": 3671,
+    "code": "funcInt = cdf[n];\nif (funcInt == 0)\n    for (size_t i = 1; i < n + 1; ++i)\n        cdf[i] = Float(i) / Float(n);\nelse\n    for (size_t i = 1; i < n + 1; ++i)\n        cdf[i] /= funcInt;",
+    "equal_visible_fragment": [
+      "fragment-TransformstepfunctionintegralintoCDF-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A4",
+    "panel": "fragbit-2656",
+    "source_line": 3682,
+    "code": "int o = FindInterval((int)cdf.size(),\n                     [&](int index) { return cdf[index] <= u; });\nif (offset)\n    *offset = o;",
+    "equal_visible_fragment": [
+      "fragment-FindsurroundingCDFsegmentsandmonooffset-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A4",
+    "panel": "fragbit-2657",
+    "source_line": 3686,
+    "code": "Float du = u - cdf[o];\nif (cdf[o + 1] - cdf[o] > 0)\n    du /= cdf[o + 1] - cdf[o];",
+    "equal_visible_fragment": [
+      "fragment-ComputeoffsetalongCDFsegment-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A4",
+    "panel": "fragbit-2658",
+    "source_line": 3690,
+    "code": "if (pdf)\n    *pdf = (funcInt > 0) ? func[o] / funcInt : 0;",
+    "equal_visible_fragment": [
+      "fragment-ComputePDFforsampledoffset-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A4",
+    "panel": "fragbit-2659",
+    "source_line": 3700,
+    "code": "return Lerp((o + du) / size(), min, max);",
+    "equal_visible_fragment": [
+      "fragment-Returnxcorrespondingtosample-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A4",
+    "panel": "fragbit-2660",
+    "source_line": 3711,
+    "code": "if (x < min || x > max)\n    return {};\nFloat c = (x - min) / (max - min) * func.size();\nint offset = Clamp(int(c), 0, func.size() - 1);",
+    "equal_visible_fragment": [
+      "fragment-ComputeoffsettoCDFvaluesthatbracketx-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A4",
+    "panel": "fragbit-2661",
+    "source_line": 3716,
+    "code": "Float delta = c - offset;\nreturn Lerp(delta, cdf[offset], cdf[offset + 1]);",
+    "equal_visible_fragment": [
+      "fragment-LinearlyinterpolatebetweenadjacentCDFvaluestofindsamplevalue-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A4",
+    "panel": "fragbit-2662",
+    "source_line": 3719,
+    "code": "pstd::vector<Float> func, cdf;\nFloat min, max;\nFloat funcInt = 0;",
+    "equal_visible_fragment": [],
+    "decision": "composite panel; additional methods in supplement, constituent visible definitions are not duplicated",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A4",
+    "panel": "fragbit-2663",
+    "source_line": 3787,
+    "code": "for (Float &f : func) f = std::abs(f);",
+    "equal_visible_fragment": [
+      "fragment-Takeabsolutevalueofmonofunc-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A4",
+    "panel": "fragbit-2664",
+    "source_line": 3798,
+    "code": "cdf[0] = 0;\nsize_t n = f.size();\nfor (size_t i = 1; i < n + 1; ++i)\n    cdf[i] = cdf[i - 1] + func[i - 1] * (max - min) / n;",
+    "equal_visible_fragment": [
+      "fragment-Computeintegralofstepfunctionatx_i-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A4",
+    "panel": "fragbit-2665",
+    "source_line": 3803,
+    "code": "funcInt = cdf[n];\nif (funcInt == 0)\n    for (size_t i = 1; i < n + 1; ++i)\n        cdf[i] = Float(i) / Float(n);\nelse\n    for (size_t i = 1; i < n + 1; ++i)\n        cdf[i] /= funcInt;",
+    "equal_visible_fragment": [
+      "fragment-TransformstepfunctionintegralintoCDF-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A4",
+    "panel": "fragbit-2666",
+    "source_line": 4019,
+    "code": "int o = FindInterval((int)cdf.size(),\n                     [&](int index) { return cdf[index] <= u; });\nif (offset)\n    *offset = o;",
+    "equal_visible_fragment": [
+      "fragment-FindsurroundingCDFsegmentsandmonooffset-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A4",
+    "panel": "fragbit-2667",
+    "source_line": 4023,
+    "code": "Float du = u - cdf[o];\nif (cdf[o + 1] - cdf[o] > 0)\n    du /= cdf[o + 1] - cdf[o];",
+    "equal_visible_fragment": [
+      "fragment-ComputeoffsetalongCDFsegment-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A4",
+    "panel": "fragbit-2668",
+    "source_line": 4027,
+    "code": "if (pdf)\n    *pdf = (funcInt > 0) ? func[o] / funcInt : 0;",
+    "equal_visible_fragment": [
+      "fragment-ComputePDFforsampledoffset-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A4",
+    "panel": "fragbit-2669",
+    "source_line": 4037,
+    "code": "return Lerp((o + du) / size(), min, max);",
+    "equal_visible_fragment": [
+      "fragment-Returnxcorrespondingtosample-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A4",
+    "panel": "fragbit-2670",
+    "source_line": 4294,
+    "code": "if (x < min || x > max)\n    return {};\nFloat c = (x - min) / (max - min) * func.size();\nint offset = Clamp(int(c), 0, func.size() - 1);",
+    "equal_visible_fragment": [
+      "fragment-ComputeoffsettoCDFvaluesthatbracketx-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A4",
+    "panel": "fragbit-2671",
+    "source_line": 4299,
+    "code": "Float delta = c - offset;\nreturn Lerp(delta, cdf[offset], cdf[offset + 1]);",
+    "equal_visible_fragment": [
+      "fragment-LinearlyinterpolatebetweenadjacentCDFvaluestofindsamplevalue-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2672",
+    "source_line": 848,
+    "code": "Point2f uOffset = 2 * u - Vector2f(1, 1);\nif (uOffset.x == 0 && uOffset.y == 0)\n    return {0, 0};",
+    "equal_visible_fragment": [
+      "fragment-Mapmonouto-112andhandledegeneracyattheorigin-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2673",
+    "source_line": 851,
+    "code": "Float theta, r;\nif (std::abs(uOffset.x) > std::abs(uOffset.y)) {\n    r = uOffset.x;\n    theta = PiOver4 * (uOffset.y / uOffset.x);\n} else {\n    r = uOffset.y;\n    theta = PiOver2 - PiOver4 * (uOffset.x / uOffset.y);\n}\nreturn r * Point2f(std::cos(theta), std::sin(theta));",
+    "equal_visible_fragment": [
+      "fragment-Applyconcentricmappingtopoint-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2674",
+    "source_line": 4208,
+    "code": "PiecewiseConstant2D() = default;\nPiecewiseConstant2D(Allocator alloc) : pConditionalV(alloc), pMarginal(alloc) {}\nPiecewiseConstant2D(pstd::span<const Float> data, int nx, int ny,\n                    Allocator alloc = {})\n    : PiecewiseConstant2D(data, nx, ny, Bounds2f(Point2f(0, 0), Point2f(1, 1)),\n                          alloc) {}\nexplicit PiecewiseConstant2D(const Array2D<Float> &data, Allocator alloc = {})\n    : PiecewiseConstant2D(pstd::span<const Float>(data), data.XSize(), data.YSize(),\n                          alloc) {}\nPiecewiseConstant2D(const Array2D<Float> &data, Bounds2f domain, Allocator alloc = {})\n    : PiecewiseConstant2D(pstd::span<const Float>(data), data.XSize(), data.YSize(),\n                          domain, alloc) {}\nPBRT_CPU_GPU\nsize_t BytesUsed() const {\n    return pConditionalV.size() *\n               (pConditionalV[0].BytesUsed() + sizeof(pConditionalV[0])) +\n           pMarginal.BytesUsed();\n}\nPBRT_CPU_GPU\nBounds2f Domain() const { return domain; }\nPBRT_CPU_GPU\nPoint2i Resolution() const {\n    return {int(pConditionalV[0].size()), int(pMarginal.size())};\n}\nstd::string ToString() const {\n    return StringPrintf(\"[ PiecewiseConstant2D domain: %s pConditionalV: %s \"\n                        \"pMarginal: %s ]\",\n                        domain, pConditionalV, pMarginal);\n}\nstatic void TestCompareDistributions(const PiecewiseConstant2D &da,\n                                     const PiecewiseConstant2D &db, Float eps = 1e-5);\nPiecewiseConstant2D(pstd::span<const Float> func, int nu, int nv,\n                    Bounds2f domain, Allocator alloc = {})\n    : domain(domain), pConditionalV(alloc), pMarginal(alloc) {\n    for (int v = 0; v < nv; ++v)\n        <<Compute conditional sampling distribution for ṽ>>\n    <<Compute marginal sampling distribution p[ṽ]>>\n}\nFloat Integral() const { return pMarginal.Integral(); }\nPoint2f Sample(Point2f u, Float *pdf = nullptr,\n               Point2i *offset = nullptr) const {\n    Float pdfs[2];\n    Point2i uv;\n    Float d1 = pMarginal.Sample(u[1], &pdfs[1], &uv[1]);\n    Float d0 = pConditionalV[uv[1]].Sample(u[0], &pdfs[0], &uv[0]);\n    if (pdf)\n        *pdf = pdfs[0] * pdfs[1];\n    if (offset)\n        *offset = uv;\n    return Point2f(d0, d1);\n}\nFloat PDF(Point2f pr) const {\n    Point2f p = Point2f(domain.Offset(pr));\n    int iu = Clamp(int(p[0] * pConditionalV[0].size()), 0,\n                   pConditionalV[0].size() - 1);\n    int iv = Clamp(int(p[1] * pMarginal.size()), 0, pMarginal.size() - 1);\n    return pConditionalV[iv].func[iu] / pMarginal.Integral();\n}\npstd::optional<Point2f> Invert(Point2f p) const {\n    pstd::optional<Float> mInv = pMarginal.Invert(p[1]);\n    if (!mInv)\n        return {};\n    Float p1o = (p[1] - domain.pMin[1]) / (domain.pMax[1] - domain.pMin[1]);\n    if (p1o < 0 || p1o > 1)\n        return {};\n    int offset = Clamp(p1o * pConditionalV.size(), 0, pConditionalV.size() - 1);\n    pstd::optional<Float> cInv = pConditionalV[offset].Invert(p[0]);\n    if (!cInv)\n        return {};\n    return Point2f(*cInv, *mInv);\n}",
+    "equal_visible_fragment": [],
+    "decision": "composite panel; additional methods in supplement, constituent visible definitions are not duplicated",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2675",
+    "source_line": 4253,
+    "code": "pConditionalV.emplace_back(func.subspan(v * nu, nu), domain.pMin[0],\n                           domain.pMax[0], alloc);",
+    "equal_visible_fragment": [
+      "fragment-Computeconditionalsamplingdistributionfortildev-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2676",
+    "source_line": 4273,
+    "code": "pstd::vector<Float> marginalFunc;\nfor (int v = 0; v < nv; ++v)\n    marginalFunc.push_back(pConditionalV[v].Integral());\npMarginal = PiecewiseConstant1D(marginalFunc, domain.pMin[1],\n                                domain.pMax[1], alloc);",
+    "equal_visible_fragment": [
+      "fragment-Computemarginalsamplingdistributionptildev-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2677",
+    "source_line": 4313,
+    "code": "Bounds2f domain;\npstd::vector<PiecewiseConstant1D> pConditionalV;\nPiecewiseConstant1D pMarginal;",
+    "equal_visible_fragment": [],
+    "decision": "composite panel; additional methods in supplement, constituent visible definitions are not duplicated",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2678",
+    "source_line": 4413,
+    "code": "pConditionalV.emplace_back(func.subspan(v * nu, nu), domain.pMin[0],\n                           domain.pMax[0], alloc);",
+    "equal_visible_fragment": [
+      "fragment-Computeconditionalsamplingdistributionfortildev-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2679",
+    "source_line": 4433,
+    "code": "pstd::vector<Float> marginalFunc;\nfor (int v = 0; v < nv; ++v)\n    marginalFunc.push_back(pConditionalV[v].Integral());\npMarginal = PiecewiseConstant1D(marginalFunc, domain.pMin[1],\n                                domain.pMax[1], alloc);",
+    "equal_visible_fragment": [
+      "fragment-Computemarginalsamplingdistributionptildev-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2680",
+    "source_line": 5019,
+    "code": "SummedAreaTable(const Array2D<Float> &values, Allocator alloc = {})\n    : sum(values.XSize(), values.YSize(), alloc) {\n    sum(0, 0) = values(0, 0);\n    <<Compute sums along first row and column>>\n    <<Compute sums for the remainder of the entries>>\n}\nFloat Integral(Bounds2f extent) const {\n    double s = (((double)Lookup(extent.pMax.x, extent.pMax.y) -\n                 (double)Lookup(extent.pMin.x, extent.pMax.y)) +\n                ((double)Lookup(extent.pMin.x, extent.pMin.y) -\n                 (double)Lookup(extent.pMax.x, extent.pMin.y)));\n    return std::max<Float>(s  / (sum.XSize() * sum.YSize()), 0);\n}\nstd::string ToString() const;",
+    "equal_visible_fragment": [],
+    "decision": "composite panel; additional methods in supplement, constituent visible definitions are not duplicated",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2681",
+    "source_line": 5022,
+    "code": "for (int x = 1; x < sum.XSize(); ++x)\n    sum(x, 0) = values(x, 0) + sum(x - 1, 0);\nfor (int y = 1; y < sum.YSize(); ++y)\n    sum(0, y) = values(0, y) + sum(0, y - 1);",
+    "equal_visible_fragment": [
+      "fragment-Computesumsalongfirstrowandcolumn-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2682",
+    "source_line": 5026,
+    "code": "for (int y = 1; y < sum.YSize(); ++y)\n    for (int x = 1; x < sum.XSize(); ++x)\n        sum(x, y) = (values(x, y) + sum(x - 1, y) + sum(x, y - 1) -\n                     sum(x - 1, y - 1));",
+    "equal_visible_fragment": [
+      "fragment-Computesumsfortheremainderoftheentries-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2683",
+    "source_line": 5040,
+    "code": "Float Lookup(Float x, Float y) const {\n    <<Rescale (x, y) to table resolution and compute integer coordinates>>\n    <<Bilinearly interpolate between surrounding table values>>\n}\nFloat LookupInt(int x, int y) const {\n    <<Return zero at lower boundaries>>\n    <<Reindex (x, y) and return actual stored value>>\n}",
+    "equal_visible_fragment": [],
+    "decision": "composite panel; additional methods in supplement, constituent visible definitions are not duplicated",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2684",
+    "source_line": 5057,
+    "code": "x *= sum.XSize();\ny *= sum.YSize();\nint x0 = (int)x, y0 = (int)y;",
+    "equal_visible_fragment": [
+      "fragment-Rescalexytotableresolutionandcomputeintegercoordinates-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2685",
+    "source_line": 5060,
+    "code": "Float v00 = LookupInt(x0, y0), v10 = LookupInt(x0 + 1, y0);\nFloat v01 = LookupInt(x0, y0 + 1), v11 = LookupInt(x0 + 1, y0 + 1);\nFloat dx = x - int(x), dy = y - int(y);\nreturn (1 - dx) * (1 - dy) * v00 + (1 - dx) * dy * v01 +\n            dx  * (1 - dy) * v10 +      dx *  dy * v11;",
+    "equal_visible_fragment": [
+      "fragment-Bilinearlyinterpolatebetweensurroundingtablevalues-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2686",
+    "source_line": 5067,
+    "code": "if (x == 0 || y == 0)\n    return 0;",
+    "equal_visible_fragment": [
+      "fragment-Returnzeroatlowerboundaries-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2687",
+    "source_line": 5085,
+    "code": "x = std::min(x - 1, sum.XSize() - 1);\ny = std::min(y - 1, sum.YSize() - 1);\nreturn sum(x, y);",
+    "equal_visible_fragment": [
+      "fragment-Reindexxyandreturnactualstoredvalue-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2688",
+    "source_line": 5089,
+    "code": "Array2D<double> sum;",
+    "equal_visible_fragment": [
+      "fragment-SummedAreaTablePrivateMembers-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2689",
+    "source_line": 5119,
+    "code": "for (int x = 1; x < sum.XSize(); ++x)\n    sum(x, 0) = values(x, 0) + sum(x - 1, 0);\nfor (int y = 1; y < sum.YSize(); ++y)\n    sum(0, y) = values(0, y) + sum(0, y - 1);",
+    "equal_visible_fragment": [
+      "fragment-Computesumsalongfirstrowandcolumn-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2690",
+    "source_line": 5123,
+    "code": "for (int y = 1; y < sum.YSize(); ++y)\n    for (int x = 1; x < sum.XSize(); ++x)\n        sum(x, y) = (values(x, y) + sum(x - 1, y) + sum(x, y - 1) -\n                     sum(x - 1, y - 1));",
+    "equal_visible_fragment": [
+      "fragment-Computesumsfortheremainderoftheentries-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2691",
+    "source_line": 5451,
+    "code": "x *= sum.XSize();\ny *= sum.YSize();\nint x0 = (int)x, y0 = (int)y;",
+    "equal_visible_fragment": [
+      "fragment-Rescalexytotableresolutionandcomputeintegercoordinates-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2692",
+    "source_line": 5454,
+    "code": "Float v00 = LookupInt(x0, y0), v10 = LookupInt(x0 + 1, y0);\nFloat v01 = LookupInt(x0, y0 + 1), v11 = LookupInt(x0 + 1, y0 + 1);\nFloat dx = x - int(x), dy = y - int(y);\nreturn (1 - dx) * (1 - dy) * v00 + (1 - dx) * dy * v01 +\n            dx  * (1 - dy) * v10 +      dx *  dy * v11;",
+    "equal_visible_fragment": [
+      "fragment-Bilinearlyinterpolatebetweensurroundingtablevalues-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2693",
+    "source_line": 5532,
+    "code": "if (x == 0 || y == 0)\n    return 0;",
+    "equal_visible_fragment": [
+      "fragment-Returnzeroatlowerboundaries-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2694",
+    "source_line": 5550,
+    "code": "x = std::min(x - 1, sum.XSize() - 1);\ny = std::min(y - 1, sum.YSize() - 1);\nreturn sum(x, y);",
+    "equal_visible_fragment": [
+      "fragment-Reindexxyandreturnactualstoredvalue-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2695",
+    "source_line": 5813,
+    "code": "WindowedPiecewiseConstant2D(Array2D<Float> f, Allocator alloc = {})\n    : sat(f, alloc), func(f, alloc) {}\npstd::optional<Point2f> Sample(Point2f u, Bounds2f b, Float *pdf) const {\n    <<Handle zero-valued function for windowed sampling>>\n    <<Define lambda function Px for marginal cumulative distribution>>\n    <<Sample marginal windowed function in x>>\n    <<Sample conditional windowed function in y>>\n    <<Compute PDF and return point sampled from windowed function>>\n}\nFloat PDF(Point2f p, const Bounds2f &b) const {\n    Float funcInt = sat.Integral(b);\n    if (funcInt == 0)\n        return 0;\n    return Eval(p) / funcInt;\n}",
+    "equal_visible_fragment": [],
+    "decision": "composite panel; additional methods in supplement, constituent visible definitions are not duplicated",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2696",
+    "source_line": 5816,
+    "code": "if (sat.Integral(b) == 0)\n    return {};",
+    "equal_visible_fragment": [
+      "fragment-Handlezero-valuedfunctionforwindowedsampling-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2697",
+    "source_line": 5818,
+    "code": "Float bInt = sat.Integral(b);\nauto Px = [&, this](Float x) -> Float {\n    Bounds2f bx = b;\n    bx.pMax.x = x;\n    return sat.Integral(bx) / bInt;\n};",
+    "equal_visible_fragment": [
+      "fragment-DefinelambdafunctionmonoPxformarginalcumulativedistribution-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2698",
+    "source_line": 5832,
+    "code": "Point2f p;\np.x = SampleBisection(Px, u[0], b.pMin.x, b.pMax.x, func.XSize());",
+    "equal_visible_fragment": [
+      "fragment-Samplemarginalwindowedfunctioninx-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2699",
+    "source_line": 5842,
+    "code": "<<Compute 2D bounds bCond for conditional sampling>>\n<<Define lambda function for conditional distribution and sample y>>",
+    "equal_visible_fragment": [
+      "fragment-Sampleconditionalwindowedfunctioniny-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2700",
+    "source_line": 5842,
+    "code": "int nx = func.XSize();\nBounds2f bCond(Point2f(pstd::floor(p.x * nx) / nx, b.pMin.y),\n               Point2f(pstd::ceil(p.x * nx) / nx, b.pMax.y));\nif (bCond.pMin.x == bCond.pMax.x) bCond.pMax.x += 1.f / nx;\nif (sat.Integral(bCond) == 0)\n    return {};",
+    "equal_visible_fragment": [
+      "fragment-Compute2DboundsmonobCondforconditionalsampling-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2701",
+    "source_line": 5856,
+    "code": "Float condIntegral = sat.Integral(bCond);\nauto Py = [&, this](Float y) -> Float {\n    Bounds2f by = bCond;\n    by.pMax.y = y;\n    return sat.Integral(by) / condIntegral;\n};\np.y = SampleBisection(Py, u[1], b.pMin.y, b.pMax.y, func.YSize());",
+    "equal_visible_fragment": [
+      "fragment-Definelambdafunctionforconditionaldistributionandsampley-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2702",
+    "source_line": 5863,
+    "code": "*pdf = Eval(p) / bInt;\nreturn p;",
+    "equal_visible_fragment": [
+      "fragment-ComputePDFandreturnpointsampledfromwindowedfunction-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2703",
+    "source_line": 5873,
+    "code": "template <typename CDF>\nstatic Float SampleBisection(CDF P, Float u, Float min, Float max, int n) {\n    <<Apply bisection to bracket u>>\n    <<Find sample by interpolating between min and max>>\n}\nFloat Eval(Point2f p) const {\n    Point2i pi(std::min<int>(p[0] * func.XSize(), func.XSize() - 1),\n               std::min<int>(p[1] * func.YSize(), func.YSize() - 1));\n    return func[pi];\n}",
+    "equal_visible_fragment": [],
+    "decision": "composite panel; additional methods in supplement, constituent visible definitions are not duplicated",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2704",
+    "source_line": 5875,
+    "code": "while (pstd::ceil(n * max) - pstd::floor(n * min) > 1) {\n    Float mid = (min + max) / 2;\n    if (P(mid) > u) max = mid;\n    else min = mid;\n}",
+    "equal_visible_fragment": [
+      "fragment-Applybisectiontobracketmonou-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2705",
+    "source_line": 5880,
+    "code": "Float t = (u - P(min)) / (P(max) - P(min));\nreturn Clamp(Lerp(t, min, max), min, max);",
+    "equal_visible_fragment": [
+      "fragment-Findsamplebyinterpolatingbetweenmonominandmonomax-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2706",
+    "source_line": 5888,
+    "code": "SummedAreaTable sat;\nArray2D<Float> func;",
+    "equal_visible_fragment": [
+      "fragment-WindowedPiecewiseConstant2DPrivateMembers-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2707",
+    "source_line": 5922,
+    "code": "if (sat.Integral(b) == 0)\n    return {};",
+    "equal_visible_fragment": [
+      "fragment-Handlezero-valuedfunctionforwindowedsampling-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2708",
+    "source_line": 5924,
+    "code": "Float bInt = sat.Integral(b);\nauto Px = [&, this](Float x) -> Float {\n    Bounds2f bx = b;\n    bx.pMax.x = x;\n    return sat.Integral(bx) / bInt;\n};",
+    "equal_visible_fragment": [
+      "fragment-DefinelambdafunctionmonoPxformarginalcumulativedistribution-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2709",
+    "source_line": 5938,
+    "code": "Point2f p;\np.x = SampleBisection(Px, u[0], b.pMin.x, b.pMax.x, func.XSize());",
+    "equal_visible_fragment": [
+      "fragment-Samplemarginalwindowedfunctioninx-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2710",
+    "source_line": 5948,
+    "code": "<<Compute 2D bounds bCond for conditional sampling>>\n<<Define lambda function for conditional distribution and sample y>>",
+    "equal_visible_fragment": [
+      "fragment-Sampleconditionalwindowedfunctioniny-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2711",
+    "source_line": 5948,
+    "code": "int nx = func.XSize();\nBounds2f bCond(Point2f(pstd::floor(p.x * nx) / nx, b.pMin.y),\n               Point2f(pstd::ceil(p.x * nx) / nx, b.pMax.y));\nif (bCond.pMin.x == bCond.pMax.x) bCond.pMax.x += 1.f / nx;\nif (sat.Integral(bCond) == 0)\n    return {};",
+    "equal_visible_fragment": [
+      "fragment-Compute2DboundsmonobCondforconditionalsampling-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2712",
+    "source_line": 5962,
+    "code": "Float condIntegral = sat.Integral(bCond);\nauto Py = [&, this](Float y) -> Float {\n    Bounds2f by = bCond;\n    by.pMax.y = y;\n    return sat.Integral(by) / condIntegral;\n};\np.y = SampleBisection(Py, u[1], b.pMin.y, b.pMax.y, func.YSize());",
+    "equal_visible_fragment": [
+      "fragment-Definelambdafunctionforconditionaldistributionandsampley-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2713",
+    "source_line": 5969,
+    "code": "*pdf = Eval(p) / bInt;\nreturn p;",
+    "equal_visible_fragment": [
+      "fragment-ComputePDFandreturnpointsampledfromwindowedfunction-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2714",
+    "source_line": 6502,
+    "code": "while (pstd::ceil(n * max) - pstd::floor(n * min) > 1) {\n    Float mid = (min + max) / 2;\n    if (P(mid) > u) max = mid;\n    else min = mid;\n}",
+    "equal_visible_fragment": [
+      "fragment-Applybisectiontobracketmonou-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2715",
+    "source_line": 6507,
+    "code": "Float t = (u - P(min)) / (P(max) - P(min));\nreturn Clamp(Lerp(t, min, max), min, max);",
+    "equal_visible_fragment": [
+      "fragment-Findsamplebyinterpolatingbetweenmonominandmonomax-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2716",
+    "source_line": 6802,
+    "code": "int nx = func.XSize();\nBounds2f bCond(Point2f(pstd::floor(p.x * nx) / nx, b.pMin.y),\n               Point2f(pstd::ceil(p.x * nx) / nx, b.pMax.y));\nif (bCond.pMin.x == bCond.pMax.x) bCond.pMax.x += 1.f / nx;\nif (sat.Integral(bCond) == 0)\n    return {};",
+    "equal_visible_fragment": [
+      "fragment-Compute2DboundsmonobCondforconditionalsampling-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  },
+  {
+    "section": "A5",
+    "panel": "fragbit-2717",
+    "source_line": 6816,
+    "code": "Float condIntegral = sat.Integral(bCond);\nauto Py = [&, this](Float y) -> Float {\n    Bounds2f by = bCond;\n    by.pMax.y = y;\n    return sat.Integral(by) / condIntegral;\n};\np.y = SampleBisection(Py, u[1], b.pMin.y, b.pMax.y, func.YSize());",
+    "equal_visible_fragment": [
+      "fragment-Definelambdafunctionforconditionaldistributionandsampley-0"
+    ],
+    "decision": "same visible fragment",
+    "unaccounted_normalized_code": ""
+  }
+]

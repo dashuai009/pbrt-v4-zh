@@ -1,0 +1,445 @@
+{
+  "visible": [
+    {
+      "id": "fragment-CameraDefinition-0",
+      "line": 89,
+      "code": "class Camera : public TaggedPointer<PerspectiveCamera, OrthographicCamera,\n                                    SphericalCamera, RealisticCamera> {\n  public:\n    <<Camera Interface>> \n};"
+    },
+    {
+      "id": "fragment-CameraInterface-0",
+      "line": 135,
+      "code": "pstd::optional<CameraRay> GenerateRay(CameraSample sample,\n                                      SampledWavelengths &lambda) const;"
+    },
+    {
+      "id": "fragment-CameraSampleDefinition-0",
+      "line": 159,
+      "code": "struct CameraSample {\n    Point2f pFilm;\n    Point2f pLens;\n    Float time = 0;\n    Float filterWeight = 1;\n};"
+    },
+    {
+      "id": "fragment-CameraRayDefinition-0",
+      "line": 179,
+      "code": "struct CameraRay {\n    Ray ray;\n    SampledSpectrum weight = SampledSpectrum(1);\n};"
+    },
+    {
+      "id": "fragment-CameraInterface-1",
+      "line": 214,
+      "code": "pstd::optional<CameraRayDifferential> GenerateRayDifferential(\n    CameraSample sample, SampledWavelengths &lambda) const;"
+    },
+    {
+      "id": "fragment-CameraRayDifferentialDefinition-0",
+      "line": 226,
+      "code": "struct CameraRayDifferential {\n    RayDifferential ray;\n    SampledSpectrum weight = SampledSpectrum(1);\n};"
+    },
+    {
+      "id": "fragment-CameraInterface-2",
+      "line": 240,
+      "code": "Film GetFilm() const;"
+    },
+    {
+      "id": "fragment-CameraInterface-3",
+      "line": 279,
+      "code": "Float SampleTime(Float u) const;"
+    },
+    {
+      "id": "fragment-CameraInterface-4",
+      "line": 292,
+      "code": "void InitMetadata(ImageMetadata *metadata) const;"
+    },
+    {
+      "id": "fragment-CameraTransformDefinition-0",
+      "line": 526,
+      "code": "class CameraTransform {\n  public:\n    <<CameraTransform Public Methods>> \n  private:\n    <<CameraTransform Private Members>> \n};"
+    },
+    {
+      "id": "fragment-CameraInterface-5",
+      "line": 598,
+      "code": "const CameraTransform &GetCameraTransform() const;"
+    },
+    {
+      "id": "fragment-CameraTransformPrivateMembers-0",
+      "line": 620,
+      "code": "AnimatedTransform renderFromCamera;\nTransform worldFromRender;"
+    },
+    {
+      "id": "fragment-CameraTransformMethodDefinitions-0",
+      "line": 637,
+      "code": "CameraTransform::CameraTransform(const AnimatedTransform &worldFromCamera) {\n    switch (Options->renderingSpace) {\n    case RenderingCoordinateSystem::Camera: {\n        <<Compute worldFromRender for camera-space rendering>> \n    } case RenderingCoordinateSystem::CameraWorld: {\n        <<Compute worldFromRender for camera-world space rendering>> \n    } case RenderingCoordinateSystem::World: {\n        <<Compute worldFromRender for world-space rendering>> \n    }\n    }\n    <<Compute renderFromCamera transformation>> \n}"
+    },
+    {
+      "id": "fragment-ComputemonoworldFromRenderforcamera-spacerendering-0",
+      "line": 673,
+      "code": "Float tMid = (worldFromCamera.startTime + worldFromCamera.endTime) / 2;\nworldFromRender = worldFromCamera.Interpolate(tMid);\nbreak;"
+    },
+    {
+      "id": "fragment-ComputemonoworldFromRenderforcamera-worldspacerendering-0",
+      "line": 686,
+      "code": "Float tMid = (worldFromCamera.startTime + worldFromCamera.endTime) / 2;\nPoint3f pCamera = worldFromCamera(Point3f(0, 0, 0), tMid);\nworldFromRender = Translate(Vector3f(pCamera));\nbreak;"
+    },
+    {
+      "id": "fragment-ComputemonoworldFromRenderforworld-spacerendering-0",
+      "line": 698,
+      "code": "worldFromRender = Transform();\nbreak;"
+    },
+    {
+      "id": "fragment-ComputemonorenderFromCameratransformation-0",
+      "line": 710,
+      "code": "Transform renderFromWorld = Inverse(worldFromRender);\nTransform rfc[2] = { renderFromWorld * worldFromCamera.startTransform,\n                     renderFromWorld * worldFromCamera.endTransform };\nrenderFromCamera = AnimatedTransform(rfc[0], worldFromCamera.startTime,\n                                     rfc[1], worldFromCamera.endTime);"
+    },
+    {
+      "id": "fragment-CameraBaseDefinition-0",
+      "line": 770,
+      "code": "class CameraBase {\n  public:\n    <<CameraBase Public Methods>> \n  protected:\n    <<CameraBase Protected Members>> \n    <<CameraBase Protected Methods>> \n};"
+    },
+    {
+      "id": "fragment-CameraBaseParametersDefinition-0",
+      "line": 907,
+      "code": "struct CameraBaseParameters {\n    CameraTransform cameraTransform;\n    Float shutterOpen = 0, shutterClose = 1;\n    Film film;\n    Medium medium;\n};"
+    },
+    {
+      "id": "fragment-CameraBaseProtectedMethods-0",
+      "line": 926,
+      "code": "CameraBase(CameraBaseParameters p);"
+    },
+    {
+      "id": "fragment-CameraBaseProtectedMembers-0",
+      "line": 935,
+      "code": "CameraTransform cameraTransform;\nFloat shutterOpen, shutterClose;\nFilm film;\nMedium medium;"
+    },
+    {
+      "id": "fragment-CameraBasePublicMethods-0",
+      "line": 953,
+      "code": "Film GetFilm() const { return film; }\nconst CameraTransform &GetCameraTransform() const {\n    return cameraTransform;\n}"
+    },
+    {
+      "id": "fragment-CameraBasePublicMethods-1",
+      "line": 966,
+      "code": "Float SampleTime(Float u) const {\n    return Lerp(u, shutterOpen, shutterClose);\n}"
+    },
+    {
+      "id": "fragment-CameraBaseMethodDefinitions-0",
+      "line": 994,
+      "code": "pstd::optional<CameraRayDifferential>\nCameraBase::GenerateRayDifferential(Camera camera,\n        CameraSample sample, SampledWavelengths &lambda) {\n    <<Generate regular camera ray cr for ray differential>> \n    <<Find camera ray after shifting one pixel in the x direction>> \n    <<Find camera ray after shifting one pixel in the y direction>> \n    <<Return approximate ray differential and weight>> \n}"
+    },
+    {
+      "id": "fragment-Generateregularcameraraymonocrforraydifferential-0",
+      "line": 1057,
+      "code": "pstd::optional<CameraRay> cr = camera.GenerateRay(sample, lambda);\nif (!cr) return {};\nRayDifferential rd(cr->ray);"
+    },
+    {
+      "id": "fragment-Findcamerarayaftershiftingonepixelinthexdirection-0",
+      "line": 1090,
+      "code": "pstd::optional<CameraRay> rx;\nfor (Float eps : {.05f, -.05f}) {\n    CameraSample sshift = sample;\n    sshift.pFilm.x += eps;\n    <<Try to generate ray with sshift and compute x differential>> \n}"
+    },
+    {
+      "id": "fragment-Trytogenerateraywithmonosshiftandcomputexdifferential-0",
+      "line": 1133,
+      "code": "if (rx = camera.GenerateRay(sshift, lambda); rx) {\n    rd.rxOrigin = rd.o + (rx->ray.o - rd.o) / eps;\n    rd.rxDirection = rd.d + (rx->ray.d - rd.d) / eps;\n    break;\n}"
+    },
+    {
+      "id": "fragment-Returnapproximateraydifferentialandweight-0",
+      "line": 1179,
+      "code": "rd.hasDifferentials = rx && ry;\nreturn CameraRayDifferential{rd, cr->weight};"
+    },
+    {
+      "id": "fragment-CameraBaseProtectedMethods-1",
+      "line": 1192,
+      "code": "Ray RenderFromCamera(const Ray &r) const {\n    return cameraTransform.RenderFromCamera(r);\n}"
+    }
+  ],
+  "panels": [
+    {
+      "id": "fragbit-196",
+      "line": 92,
+      "code": "using TaggedPointer::TaggedPointer;\n       \n       static Camera Create(const std::string &name,\n                                  const ParameterDictionary &parameters, Medium medium,\n                                  const CameraTransform &cameraTransform, Film film,\n                                  const FileLoc *loc, Allocator alloc);\n       \n       std::string ToString() const;\n       pstd::optional<CameraRay> GenerateRay(CameraSample sample,\n                                             SampledWavelengths &lambda) const;\n       pstd::optional<CameraRayDifferential> GenerateRayDifferential(\n           CameraSample sample, SampledWavelengths &lambda) const;\n       Film GetFilm() const;\n       Float SampleTime(Float u) const;\n       void InitMetadata(ImageMetadata *metadata) const;\n       const CameraTransform &GetCameraTransform() const;\n       void Approximate_dp_dxy(Point3f p, Normal3f n, Float time,\n           int samplesPerPixel, Vector3f *dpdx, Vector3f *dpdy) const;",
+      "expanded_code": "using TaggedPointer::TaggedPointer;\n       \n       static Camera Create(const std::string &name,\n                                  const ParameterDictionary &parameters, Medium medium,\n                                  const CameraTransform &cameraTransform, Film film,\n                                  const FileLoc *loc, Allocator alloc);\n       \n       std::string ToString() const;\n       pstd::optional<CameraRay> GenerateRay(CameraSample sample,\n                                             SampledWavelengths &lambda) const;\n       pstd::optional<CameraRayDifferential> GenerateRayDifferential(\n           CameraSample sample, SampledWavelengths &lambda) const;\n       Film GetFilm() const;\n       Float SampleTime(Float u) const;\n       void InitMetadata(ImageMetadata *metadata) const;\n       const CameraTransform &GetCameraTransform() const;\n       void Approximate_dp_dxy(Point3f p, Normal3f n, Float time,\n           int samplesPerPixel, Vector3f *dpdx, Vector3f *dpdy) const;",
+      "matched_local_code_indices": [
+        4,
+        1,
+        10,
+        8,
+        7,
+        6
+      ],
+      "remaining": "usingTaggedPointer::TaggedPointer;staticCameraCreate(conststd::string&name,constParameterDictionary&parameters,Mediummedium,constCameraTransform&cameraTransform,Filmfilm,constFileLoc*loc,Allocatoralloc);std::stringToString()const;voidApproximate_dp_dxy(Point3fp,Normal3fn,Floattime,intsamplesPerPixel,Vector3f*dpdx,Vector3f*dpdy)const;",
+      "whole_panel_within_supplement": [],
+      "extra_chunks_source_checks": [
+        {
+          "code": "using TaggedPointer::TaggedPointer;",
+          "in_original_panel": true
+        },
+        {
+          "code": "static Camera Create(const std::string &name,\n                           const ParameterDictionary &parameters, Medium medium,\n                           const CameraTransform &cameraTransform, Film film,\n                           const FileLoc *loc, Allocator alloc);",
+          "in_original_panel": true
+        },
+        {
+          "code": "std::string ToString() const;",
+          "in_original_panel": true
+        },
+        {
+          "code": "void Approximate_dp_dxy(Point3f p, Normal3f n, Float time,\n    int samplesPerPixel, Vector3f *dpdx, Vector3f *dpdy) const;",
+          "in_original_panel": true
+        }
+      ],
+      "review_note": "Read original complete panel and corresponding visible/supplement code. Coarse subtraction remainder is not an omission finding: composite public/protected methods interleave visible definitions and supplement methods; subpanels 204–206 are incorporated into the complete Approximate_dp_dxy method."
+    },
+    {
+      "id": "fragbit-197",
+      "line": 528,
+      "code": "CameraTransform() = default;\n       explicit CameraTransform(const AnimatedTransform &worldFromCamera);\n       Point3f RenderFromCamera(Point3f p, Float time) const {\n           return renderFromCamera(p, time);\n       }\n       Point3f CameraFromRender(Point3f p, Float time) const {\n           return renderFromCamera.ApplyInverse(p, time);\n       }\n       Point3f RenderFromWorld(Point3f p) const {\n           return worldFromRender.ApplyInverse(p);\n       }\n       Transform RenderFromWorld() const { return Inverse(worldFromRender); }\n       Transform CameraFromRender(Float time) const {\n           return Inverse(renderFromCamera.Interpolate(time));\n       }\n       Transform CameraFromWorld(Float time) const {\n           return Inverse(worldFromRender * renderFromCamera.Interpolate(time));\n       }\n       PBRT_CPU_GPU\n       bool CameraFromRenderHasScale() const { return renderFromCamera.HasScale(); }\n       \n       PBRT_CPU_GPU\n       Vector3f RenderFromCamera(Vector3f v, Float time) const {\n           return renderFromCamera(v, time);\n       }\n       \n       PBRT_CPU_GPU\n       Normal3f RenderFromCamera(Normal3f n, Float time) const {\n           return renderFromCamera(n, time);\n       }\n       \n       PBRT_CPU_GPU\n       Ray RenderFromCamera(const Ray &r) const { return renderFromCamera(r); }\n       \n       PBRT_CPU_GPU\n       RayDifferential RenderFromCamera(const RayDifferential &r) const {\n           return renderFromCamera(r);\n       }\n       \n       PBRT_CPU_GPU\n       Vector3f CameraFromRender(Vector3f v, Float time) const {\n           return renderFromCamera.ApplyInverse(v, time);\n       }\n       \n       PBRT_CPU_GPU\n       Normal3f CameraFromRender(Normal3f v, Float time) const {\n           return renderFromCamera.ApplyInverse(v, time);\n       }\n       \n       PBRT_CPU_GPU\n       const AnimatedTransform &RenderFromCamera() const { return renderFromCamera; }\n       \n       PBRT_CPU_GPU\n       const Transform &WorldFromRender() const { return worldFromRender; }\n       \n       std::string ToString() const;",
+      "expanded_code": "CameraTransform() = default;\n       explicit CameraTransform(const AnimatedTransform &worldFromCamera);\n       Point3f RenderFromCamera(Point3f p, Float time) const {\n           return renderFromCamera(p, time);\n       }\n       Point3f CameraFromRender(Point3f p, Float time) const {\n           return renderFromCamera.ApplyInverse(p, time);\n       }\n       Point3f RenderFromWorld(Point3f p) const {\n           return worldFromRender.ApplyInverse(p);\n       }\n       Transform RenderFromWorld() const { return Inverse(worldFromRender); }\n       Transform CameraFromRender(Float time) const {\n           return Inverse(renderFromCamera.Interpolate(time));\n       }\n       Transform CameraFromWorld(Float time) const {\n           return Inverse(worldFromRender * renderFromCamera.Interpolate(time));\n       }\n       PBRT_CPU_GPU\n       bool CameraFromRenderHasScale() const { return renderFromCamera.HasScale(); }\n       \n       PBRT_CPU_GPU\n       Vector3f RenderFromCamera(Vector3f v, Float time) const {\n           return renderFromCamera(v, time);\n       }\n       \n       PBRT_CPU_GPU\n       Normal3f RenderFromCamera(Normal3f n, Float time) const {\n           return renderFromCamera(n, time);\n       }\n       \n       PBRT_CPU_GPU\n       Ray RenderFromCamera(const Ray &r) const { return renderFromCamera(r); }\n       \n       PBRT_CPU_GPU\n       RayDifferential RenderFromCamera(const RayDifferential &r) const {\n           return renderFromCamera(r);\n       }\n       \n       PBRT_CPU_GPU\n       Vector3f CameraFromRender(Vector3f v, Float time) const {\n           return renderFromCamera.ApplyInverse(v, time);\n       }\n       \n       PBRT_CPU_GPU\n       Normal3f CameraFromRender(Normal3f v, Float time) const {\n           return renderFromCamera.ApplyInverse(v, time);\n       }\n       \n       PBRT_CPU_GPU\n       const AnimatedTransform &RenderFromCamera() const { return renderFromCamera; }\n       \n       PBRT_CPU_GPU\n       const Transform &WorldFromRender() const { return worldFromRender; }\n       \n       std::string ToString() const;",
+      "matched_local_code_indices": [
+        30
+      ],
+      "remaining": "",
+      "whole_panel_within_supplement": [
+        1
+      ],
+      "review_note": "Read original complete panel and corresponding visible/supplement code. Coarse subtraction remainder is not an omission finding: composite public/protected methods interleave visible definitions and supplement methods; subpanels 204–206 are incorporated into the complete Approximate_dp_dxy method."
+    },
+    {
+      "id": "fragbit-198",
+      "line": 585,
+      "code": "AnimatedTransform renderFromCamera;\n       Transform worldFromRender;",
+      "expanded_code": "AnimatedTransform renderFromCamera;\n       Transform worldFromRender;",
+      "matched_local_code_indices": [
+        11
+      ],
+      "remaining": "",
+      "whole_panel_within_supplement": [],
+      "review_note": "Read original complete panel and corresponding visible/supplement code. Coarse subtraction remainder is not an omission finding: composite public/protected methods interleave visible definitions and supplement methods; subpanels 204–206 are incorporated into the complete Approximate_dp_dxy method."
+    },
+    {
+      "id": "fragbit-199",
+      "line": 640,
+      "code": "Float tMid = (worldFromCamera.startTime + worldFromCamera.endTime) / 2;\n           worldFromRender = worldFromCamera.Interpolate(tMid);\n           break;",
+      "expanded_code": "Float tMid = (worldFromCamera.startTime + worldFromCamera.endTime) / 2;\n           worldFromRender = worldFromCamera.Interpolate(tMid);\n           break;",
+      "matched_local_code_indices": [
+        13
+      ],
+      "remaining": "",
+      "whole_panel_within_supplement": [],
+      "review_note": "Read original complete panel and corresponding visible/supplement code. Coarse subtraction remainder is not an omission finding: composite public/protected methods interleave visible definitions and supplement methods; subpanels 204–206 are incorporated into the complete Approximate_dp_dxy method."
+    },
+    {
+      "id": "fragbit-200",
+      "line": 644,
+      "code": "Float tMid = (worldFromCamera.startTime + worldFromCamera.endTime) / 2;\n           Point3f pCamera = worldFromCamera(Point3f(0, 0, 0), tMid);\n           worldFromRender = Translate(Vector3f(pCamera));\n           break;",
+      "expanded_code": "Float tMid = (worldFromCamera.startTime + worldFromCamera.endTime) / 2;\n           Point3f pCamera = worldFromCamera(Point3f(0, 0, 0), tMid);\n           worldFromRender = Translate(Vector3f(pCamera));\n           break;",
+      "matched_local_code_indices": [
+        14
+      ],
+      "remaining": "",
+      "whole_panel_within_supplement": [],
+      "review_note": "Read original complete panel and corresponding visible/supplement code. Coarse subtraction remainder is not an omission finding: composite public/protected methods interleave visible definitions and supplement methods; subpanels 204–206 are incorporated into the complete Approximate_dp_dxy method."
+    },
+    {
+      "id": "fragbit-201",
+      "line": 649,
+      "code": "worldFromRender = Transform();\n           break;",
+      "expanded_code": "worldFromRender = Transform();\n           break;",
+      "matched_local_code_indices": [
+        15
+      ],
+      "remaining": "",
+      "whole_panel_within_supplement": [],
+      "review_note": "Read original complete panel and corresponding visible/supplement code. Coarse subtraction remainder is not an omission finding: composite public/protected methods interleave visible definitions and supplement methods; subpanels 204–206 are incorporated into the complete Approximate_dp_dxy method."
+    },
+    {
+      "id": "fragbit-202",
+      "line": 653,
+      "code": "Transform renderFromWorld = Inverse(worldFromRender);\n       Transform rfc[2] = { renderFromWorld * worldFromCamera.startTransform,\n                            renderFromWorld * worldFromCamera.endTransform };\n       renderFromCamera = AnimatedTransform(rfc[0], worldFromCamera.startTime,\n                                            rfc[1], worldFromCamera.endTime);",
+      "expanded_code": "Transform renderFromWorld = Inverse(worldFromRender);\n       Transform rfc[2] = { renderFromWorld * worldFromCamera.startTransform,\n                            renderFromWorld * worldFromCamera.endTransform };\n       renderFromCamera = AnimatedTransform(rfc[0], worldFromCamera.startTime,\n                                            rfc[1], worldFromCamera.endTime);",
+      "matched_local_code_indices": [
+        16
+      ],
+      "remaining": "",
+      "whole_panel_within_supplement": [],
+      "review_note": "Read original complete panel and corresponding visible/supplement code. Coarse subtraction remainder is not an omission finding: composite public/protected methods interleave visible definitions and supplement methods; subpanels 204–206 are incorporated into the complete Approximate_dp_dxy method."
+    },
+    {
+      "id": "fragbit-203",
+      "line": 772,
+      "code": "Film GetFilm() const { return film; }\n       const CameraTransform &GetCameraTransform() const {\n           return cameraTransform;\n       }\n       Float SampleTime(Float u) const {\n           return Lerp(u, shutterOpen, shutterClose);\n       }\n       void InitMetadata(ImageMetadata *metadata) const;\n       std::string ToString() const;\n       void Approximate_dp_dxy(Point3f p, Normal3f n, Float time,\n               int samplesPerPixel, Vector3f *dpdx, Vector3f *dpdy) const {\n           <<Compute tangent plane equation for ray differential intersections>> \n           <<Find intersection points for approximated camera differential rays>> \n           <<Estimate dp/dx and dp/dy in tangent plane at intersection point>> \n       }",
+      "expanded_code": "Film GetFilm() const { return film; }\n       const CameraTransform &GetCameraTransform() const {\n           return cameraTransform;\n       }\n       Float SampleTime(Float u) const {\n           return Lerp(u, shutterOpen, shutterClose);\n       }\n       void InitMetadata(ImageMetadata *metadata) const;\n       std::string ToString() const;\n       void Approximate_dp_dxy(Point3f p, Normal3f n, Float time,\n               int samplesPerPixel, Vector3f *dpdx, Vector3f *dpdy) const {\n           <<Compute tangent plane equation for ray differential intersections>>               Point3f pCamera = CameraFromRender(p, time);\n              Transform DownZFromCamera =\n                  RotateFromTo(Normalize(Vector3f(pCamera)), Vector3f(0, 0, 1));\n              Point3f pDownZ = DownZFromCamera(pCamera);\n              Normal3f nDownZ = DownZFromCamera(CameraFromRender(n, time));\n              Float d = nDownZ.z * pDownZ.z;\n           <<Find intersection points for approximated camera differential rays>>               Ray xRay(Point3f(0,0,0) + minPosDifferentialX,\n                       Vector3f(0,0,1) + minDirDifferentialX);\n              Float tx = -(Dot(nDownZ, Vector3f(xRay.o)) - d) / Dot(nDownZ, xRay.d);\n              Ray yRay(Point3f(0,0,0) + minPosDifferentialY,\n                       Vector3f(0,0,1) + minDirDifferentialY);\n              Float ty = -(Dot(nDownZ, Vector3f(yRay.o)) - d) / Dot(nDownZ, yRay.d);\n              Point3f px = xRay(tx), py = yRay(ty);\n           <<Estimate dp/dx and dp/dy in tangent plane at intersection point>>               Float sppScale = GetOptions().disablePixelJitter ? 1 :\n                  std::max<Float>(.125, 1 / std::sqrt((Float)samplesPerPixel));\n              *dpdx = sppScale *\n                  RenderFromCamera(DownZFromCamera.ApplyInverse(px - pDownZ), time);\n              *dpdy = sppScale *\n                  RenderFromCamera(DownZFromCamera.ApplyInverse(py - pDownZ), time);\n       }",
+      "matched_local_code_indices": [
+        31,
+        21,
+        22
+      ],
+      "remaining": "",
+      "whole_panel_within_supplement": [],
+      "review_note": "Read original complete panel and corresponding visible/supplement code. Coarse subtraction remainder is not an omission finding: composite public/protected methods interleave visible definitions and supplement methods; subpanels 204–206 are incorporated into the complete Approximate_dp_dxy method."
+    },
+    {
+      "id": "fragbit-204",
+      "line": 783,
+      "code": "Point3f pCamera = CameraFromRender(p, time);\n              Transform DownZFromCamera =\n                  RotateFromTo(Normalize(Vector3f(pCamera)), Vector3f(0, 0, 1));\n              Point3f pDownZ = DownZFromCamera(pCamera);\n              Normal3f nDownZ = DownZFromCamera(CameraFromRender(n, time));\n              Float d = nDownZ.z * pDownZ.z;",
+      "expanded_code": "Point3f pCamera = CameraFromRender(p, time);\n              Transform DownZFromCamera =\n                  RotateFromTo(Normalize(Vector3f(pCamera)), Vector3f(0, 0, 1));\n              Point3f pDownZ = DownZFromCamera(pCamera);\n              Normal3f nDownZ = DownZFromCamera(CameraFromRender(n, time));\n              Float d = nDownZ.z * pDownZ.z;",
+      "matched_local_code_indices": [],
+      "remaining": "Point3fpCamera=CameraFromRender(p,time);TransformDownZFromCamera=RotateFromTo(Normalize(Vector3f(pCamera)),Vector3f(0,0,1));Point3fpDownZ=DownZFromCamera(pCamera);Normal3fnDownZ=DownZFromCamera(CameraFromRender(n,time));Floatd=nDownZ.z*pDownZ.z;",
+      "whole_panel_within_supplement": [
+        2
+      ],
+      "review_note": "Read original complete panel and corresponding visible/supplement code. Coarse subtraction remainder is not an omission finding: composite public/protected methods interleave visible definitions and supplement methods; subpanels 204–206 are incorporated into the complete Approximate_dp_dxy method."
+    },
+    {
+      "id": "fragbit-205",
+      "line": 789,
+      "code": "Ray xRay(Point3f(0,0,0) + minPosDifferentialX,\n                       Vector3f(0,0,1) + minDirDifferentialX);\n              Float tx = -(Dot(nDownZ, Vector3f(xRay.o)) - d) / Dot(nDownZ, xRay.d);\n              Ray yRay(Point3f(0,0,0) + minPosDifferentialY,\n                       Vector3f(0,0,1) + minDirDifferentialY);\n              Float ty = -(Dot(nDownZ, Vector3f(yRay.o)) - d) / Dot(nDownZ, yRay.d);\n              Point3f px = xRay(tx), py = yRay(ty);",
+      "expanded_code": "Ray xRay(Point3f(0,0,0) + minPosDifferentialX,\n                       Vector3f(0,0,1) + minDirDifferentialX);\n              Float tx = -(Dot(nDownZ, Vector3f(xRay.o)) - d) / Dot(nDownZ, xRay.d);\n              Ray yRay(Point3f(0,0,0) + minPosDifferentialY,\n                       Vector3f(0,0,1) + minDirDifferentialY);\n              Float ty = -(Dot(nDownZ, Vector3f(yRay.o)) - d) / Dot(nDownZ, yRay.d);\n              Point3f px = xRay(tx), py = yRay(ty);",
+      "matched_local_code_indices": [],
+      "remaining": "RayxRay(Point3f(0,0,0)+minPosDifferentialX,Vector3f(0,0,1)+minDirDifferentialX);Floattx=-(Dot(nDownZ,Vector3f(xRay.o))-d)/Dot(nDownZ,xRay.d);RayyRay(Point3f(0,0,0)+minPosDifferentialY,Vector3f(0,0,1)+minDirDifferentialY);Floatty=-(Dot(nDownZ,Vector3f(yRay.o))-d)/Dot(nDownZ,yRay.d);Point3fpx=xRay(tx),py=yRay(ty);",
+      "whole_panel_within_supplement": [
+        2
+      ],
+      "review_note": "Read original complete panel and corresponding visible/supplement code. Coarse subtraction remainder is not an omission finding: composite public/protected methods interleave visible definitions and supplement methods; subpanels 204–206 are incorporated into the complete Approximate_dp_dxy method."
+    },
+    {
+      "id": "fragbit-206",
+      "line": 826,
+      "code": "Float sppScale = GetOptions().disablePixelJitter ? 1 :\n                  std::max<Float>(.125, 1 / std::sqrt((Float)samplesPerPixel));\n              *dpdx = sppScale *\n                  RenderFromCamera(DownZFromCamera.ApplyInverse(px - pDownZ), time);\n              *dpdy = sppScale *\n                  RenderFromCamera(DownZFromCamera.ApplyInverse(py - pDownZ), time);",
+      "expanded_code": "Float sppScale = GetOptions().disablePixelJitter ? 1 :\n                  std::max<Float>(.125, 1 / std::sqrt((Float)samplesPerPixel));\n              *dpdx = sppScale *\n                  RenderFromCamera(DownZFromCamera.ApplyInverse(px - pDownZ), time);\n              *dpdy = sppScale *\n                  RenderFromCamera(DownZFromCamera.ApplyInverse(py - pDownZ), time);",
+      "matched_local_code_indices": [],
+      "remaining": "FloatsppScale=GetOptions().disablePixelJitter?1:std::max<Float>(.125,1/std::sqrt((Float)samplesPerPixel));*dpdx=sppScale*RenderFromCamera(DownZFromCamera.ApplyInverse(px-pDownZ),time);*dpdy=sppScale*RenderFromCamera(DownZFromCamera.ApplyInverse(py-pDownZ),time);",
+      "whole_panel_within_supplement": [
+        2
+      ],
+      "review_note": "Read original complete panel and corresponding visible/supplement code. Coarse subtraction remainder is not an omission finding: composite public/protected methods interleave visible definitions and supplement methods; subpanels 204–206 are incorporated into the complete Approximate_dp_dxy method."
+    },
+    {
+      "id": "fragbit-207",
+      "line": 834,
+      "code": "CameraTransform cameraTransform;\n       Float shutterOpen, shutterClose;\n       Film film;\n       Medium medium;\n       Vector3f minPosDifferentialX, minPosDifferentialY;\n       Vector3f minDirDifferentialX, minDirDifferentialY;",
+      "expanded_code": "CameraTransform cameraTransform;\n       Float shutterOpen, shutterClose;\n       Film film;\n       Medium medium;\n       Vector3f minPosDifferentialX, minPosDifferentialY;\n       Vector3f minDirDifferentialX, minDirDifferentialY;",
+      "matched_local_code_indices": [
+        32,
+        20
+      ],
+      "remaining": "",
+      "whole_panel_within_supplement": [],
+      "review_note": "Read original complete panel and corresponding visible/supplement code. Coarse subtraction remainder is not an omission finding: composite public/protected methods interleave visible definitions and supplement methods; subpanels 204–206 are incorporated into the complete Approximate_dp_dxy method."
+    },
+    {
+      "id": "fragbit-208",
+      "line": 840,
+      "code": "CameraBase(CameraBaseParameters p);\n       PBRT_CPU_GPU\n       static pstd::optional<CameraRayDifferential> GenerateRayDifferential(\n           Camera camera, CameraSample sample, SampledWavelengths &lambda);\n       Ray RenderFromCamera(const Ray &r) const {\n           return cameraTransform.RenderFromCamera(r);\n       }\n       RayDifferential RenderFromCamera(const RayDifferential &r) const {\n           return cameraTransform.RenderFromCamera(r);\n       }\n       \n       PBRT_CPU_GPU\n       Vector3f RenderFromCamera(Vector3f v, Float time) const {\n           return cameraTransform.RenderFromCamera(v, time);\n       }\n       \n       PBRT_CPU_GPU\n       Normal3f RenderFromCamera(Normal3f v, Float time) const {\n           return cameraTransform.RenderFromCamera(v, time);\n       }\n       \n       PBRT_CPU_GPU\n       Point3f RenderFromCamera(Point3f p, Float time) const {\n           return cameraTransform.RenderFromCamera(p, time);\n       }\n       \n       PBRT_CPU_GPU\n       Vector3f CameraFromRender(Vector3f v, Float time) const {\n           return cameraTransform.CameraFromRender(v, time);\n       }\n       \n       PBRT_CPU_GPU\n       Normal3f CameraFromRender(Normal3f v, Float time) const {\n           return cameraTransform.CameraFromRender(v, time);\n       }\n       \n       PBRT_CPU_GPU\n       Point3f CameraFromRender(Point3f p, Float time) const {\n           return cameraTransform.CameraFromRender(p, time);\n       }\n       void FindMinimumDifferentials(Camera camera);",
+      "expanded_code": "CameraBase(CameraBaseParameters p);\n       PBRT_CPU_GPU\n       static pstd::optional<CameraRayDifferential> GenerateRayDifferential(\n           Camera camera, CameraSample sample, SampledWavelengths &lambda);\n       Ray RenderFromCamera(const Ray &r) const {\n           return cameraTransform.RenderFromCamera(r);\n       }\n       RayDifferential RenderFromCamera(const RayDifferential &r) const {\n           return cameraTransform.RenderFromCamera(r);\n       }\n       \n       PBRT_CPU_GPU\n       Vector3f RenderFromCamera(Vector3f v, Float time) const {\n           return cameraTransform.RenderFromCamera(v, time);\n       }\n       \n       PBRT_CPU_GPU\n       Normal3f RenderFromCamera(Normal3f v, Float time) const {\n           return cameraTransform.RenderFromCamera(v, time);\n       }\n       \n       PBRT_CPU_GPU\n       Point3f RenderFromCamera(Point3f p, Float time) const {\n           return cameraTransform.RenderFromCamera(p, time);\n       }\n       \n       PBRT_CPU_GPU\n       Vector3f CameraFromRender(Vector3f v, Float time) const {\n           return cameraTransform.CameraFromRender(v, time);\n       }\n       \n       PBRT_CPU_GPU\n       Normal3f CameraFromRender(Normal3f v, Float time) const {\n           return cameraTransform.CameraFromRender(v, time);\n       }\n       \n       PBRT_CPU_GPU\n       Point3f CameraFromRender(Point3f p, Float time) const {\n           return cameraTransform.CameraFromRender(p, time);\n       }\n       void FindMinimumDifferentials(Camera camera);",
+      "matched_local_code_indices": [
+        28,
+        19
+      ],
+      "remaining": "PBRT_CPU_GPUstaticpstd::optional<CameraRayDifferential>GenerateRayDifferential(Cameracamera,CameraSamplesample,SampledWavelengths&lambda);RayDifferentialRenderFromCamera(constRayDifferential&r)const{returncameraTransform.RenderFromCamera(r);}PBRT_CPU_GPUVector3fRenderFromCamera(Vector3fv,Floattime)const{returncameraTransform.RenderFromCamera(v,time);}PBRT_CPU_GPUNormal3fRenderFromCamera(Normal3fv,Floattime)const{returncameraTransform.RenderFromCamera(v,time);}PBRT_CPU_GPUPoint3fRenderFromCamera(Point3fp,Floattime)const{returncameraTransform.RenderFromCamera(p,time);}PBRT_CPU_GPUVector3fCameraFromRender(Vector3fv,Floattime)const{returncameraTransform.CameraFromRender(v,time);}PBRT_CPU_GPUNormal3fCameraFromRender(Normal3fv,Floattime)const{returncameraTransform.CameraFromRender(v,time);}PBRT_CPU_GPUPoint3fCameraFromRender(Point3fp,Floattime)const{returncameraTransform.CameraFromRender(p,time);}voidFindMinimumDifferentials(Cameracamera);",
+      "whole_panel_within_supplement": [],
+      "extra_chunks_source_checks": [
+        {
+          "code": "PBRT_CPU_GPU\nstatic pstd::optional<CameraRayDifferential> GenerateRayDifferential(\n    Camera camera, CameraSample sample, SampledWavelengths &lambda);",
+          "in_original_panel": true
+        },
+        {
+          "code": "RayDifferential RenderFromCamera(const RayDifferential &r) const {\n    return cameraTransform.RenderFromCamera(r);\n}",
+          "in_original_panel": true
+        },
+        {
+          "code": "PBRT_CPU_GPU\nVector3f RenderFromCamera(Vector3f v, Float time) const {\n    return cameraTransform.RenderFromCamera(v, time);\n}",
+          "in_original_panel": true
+        },
+        {
+          "code": "PBRT_CPU_GPU\nNormal3f RenderFromCamera(Normal3f v, Float time) const {\n    return cameraTransform.RenderFromCamera(v, time);\n}",
+          "in_original_panel": true
+        },
+        {
+          "code": "PBRT_CPU_GPU\nPoint3f RenderFromCamera(Point3f p, Float time) const {\n    return cameraTransform.RenderFromCamera(p, time);\n}",
+          "in_original_panel": true
+        },
+        {
+          "code": "PBRT_CPU_GPU\nVector3f CameraFromRender(Vector3f v, Float time) const {\n    return cameraTransform.CameraFromRender(v, time);\n}",
+          "in_original_panel": true
+        },
+        {
+          "code": "PBRT_CPU_GPU\nNormal3f CameraFromRender(Normal3f v, Float time) const {\n    return cameraTransform.CameraFromRender(v, time);\n}",
+          "in_original_panel": true
+        },
+        {
+          "code": "PBRT_CPU_GPU\nPoint3f CameraFromRender(Point3f p, Float time) const {\n    return cameraTransform.CameraFromRender(p, time);\n}\nvoid FindMinimumDifferentials(Camera camera);",
+          "in_original_panel": true
+        }
+      ],
+      "review_note": "Read original complete panel and corresponding visible/supplement code. Coarse subtraction remainder is not an omission finding: composite public/protected methods interleave visible definitions and supplement methods; subpanels 204–206 are incorporated into the complete Approximate_dp_dxy method."
+    },
+    {
+      "id": "fragbit-209",
+      "line": 997,
+      "code": "pstd::optional<CameraRay> cr = camera.GenerateRay(sample, lambda);\n       if (!cr) return {};\n       RayDifferential rd(cr->ray);",
+      "expanded_code": "pstd::optional<CameraRay> cr = camera.GenerateRay(sample, lambda);\n       if (!cr) return {};\n       RayDifferential rd(cr->ray);",
+      "matched_local_code_indices": [
+        24
+      ],
+      "remaining": "",
+      "whole_panel_within_supplement": [],
+      "review_note": "Read original complete panel and corresponding visible/supplement code. Coarse subtraction remainder is not an omission finding: composite public/protected methods interleave visible definitions and supplement methods; subpanels 204–206 are incorporated into the complete Approximate_dp_dxy method."
+    },
+    {
+      "id": "fragbit-210",
+      "line": 1008,
+      "code": "pstd::optional<CameraRay> rx;\n       for (Float eps : {.05f, -.05f}) {\n           CameraSample sshift = sample;\n           sshift.pFilm.x += eps;\n           <<Try to generate ray with sshift and compute x differential>> \n       }",
+      "expanded_code": "pstd::optional<CameraRay> rx;\n       for (Float eps : {.05f, -.05f}) {\n           CameraSample sshift = sample;\n           sshift.pFilm.x += eps;\n           <<Try to generate ray with sshift and compute x differential>>               if (rx = camera.GenerateRay(sshift, lambda); rx) {\n                  rd.rxOrigin = rd.o + (rx->ray.o - rd.o) / eps;\n                  rd.rxDirection = rd.d + (rx->ray.d - rd.d) / eps;\n                  break;\n              }\n       }",
+      "matched_local_code_indices": [
+        26,
+        25
+      ],
+      "remaining": "",
+      "whole_panel_within_supplement": [],
+      "review_note": "Read original complete panel and corresponding visible/supplement code. Coarse subtraction remainder is not an omission finding: composite public/protected methods interleave visible definitions and supplement methods; subpanels 204–206 are incorporated into the complete Approximate_dp_dxy method."
+    },
+    {
+      "id": "fragbit-211",
+      "line": 1020,
+      "code": "if (rx = camera.GenerateRay(sshift, lambda); rx) {\n                  rd.rxOrigin = rd.o + (rx->ray.o - rd.o) / eps;\n                  rd.rxDirection = rd.d + (rx->ray.d - rd.d) / eps;\n                  break;\n              }",
+      "expanded_code": "if (rx = camera.GenerateRay(sshift, lambda); rx) {\n                  rd.rxOrigin = rd.o + (rx->ray.o - rd.o) / eps;\n                  rd.rxDirection = rd.d + (rx->ray.d - rd.d) / eps;\n                  break;\n              }",
+      "matched_local_code_indices": [
+        26
+      ],
+      "remaining": "",
+      "whole_panel_within_supplement": [],
+      "review_note": "Read original complete panel and corresponding visible/supplement code. Coarse subtraction remainder is not an omission finding: composite public/protected methods interleave visible definitions and supplement methods; subpanels 204–206 are incorporated into the complete Approximate_dp_dxy method."
+    },
+    {
+      "id": "fragbit-212",
+      "line": 1034,
+      "code": "pstd::optional<CameraRay> ry;\n       for (Float eps : {.05f, -.05f}) {\n           CameraSample sshift = sample;\n           sshift.pFilm.y += eps;\n           if (ry = camera.GenerateRay(sshift, lambda); ry) {\n               rd.ryOrigin = rd.o + (ry->ray.o - rd.o) / eps;\n               rd.ryDirection = rd.d + (ry->ray.d - rd.d) / eps;\n               break;\n           }\n       }",
+      "expanded_code": "pstd::optional<CameraRay> ry;\n       for (Float eps : {.05f, -.05f}) {\n           CameraSample sshift = sample;\n           sshift.pFilm.y += eps;\n           if (ry = camera.GenerateRay(sshift, lambda); ry) {\n               rd.ryOrigin = rd.o + (ry->ray.o - rd.o) / eps;\n               rd.ryDirection = rd.d + (ry->ray.d - rd.d) / eps;\n               break;\n           }\n       }",
+      "matched_local_code_indices": [
+        34
+      ],
+      "remaining": "",
+      "whole_panel_within_supplement": [
+        5
+      ],
+      "review_note": "Read original complete panel and corresponding visible/supplement code. Coarse subtraction remainder is not an omission finding: composite public/protected methods interleave visible definitions and supplement methods; subpanels 204–206 are incorporated into the complete Approximate_dp_dxy method."
+    },
+    {
+      "id": "fragbit-213",
+      "line": 1044,
+      "code": "rd.hasDifferentials = rx && ry;\n       return CameraRayDifferential{rd, cr->weight};",
+      "expanded_code": "rd.hasDifferentials = rx && ry;\n       return CameraRayDifferential{rd, cr->weight};",
+      "matched_local_code_indices": [
+        27
+      ],
+      "remaining": "",
+      "whole_panel_within_supplement": [],
+      "review_note": "Read original complete panel and corresponding visible/supplement code. Coarse subtraction remainder is not an omission finding: composite public/protected methods interleave visible definitions and supplement methods; subpanels 204–206 are incorporated into the complete Approximate_dp_dxy method."
+    },
+    {
+      "id": "fragbit-214",
+      "line": 1102,
+      "code": "if (rx = camera.GenerateRay(sshift, lambda); rx) {\n           rd.rxOrigin = rd.o + (rx->ray.o - rd.o) / eps;\n           rd.rxDirection = rd.d + (rx->ray.d - rd.d) / eps;\n           break;\n       }",
+      "expanded_code": "if (rx = camera.GenerateRay(sshift, lambda); rx) {\n           rd.rxOrigin = rd.o + (rx->ray.o - rd.o) / eps;\n           rd.rxDirection = rd.d + (rx->ray.d - rd.d) / eps;\n           break;\n       }",
+      "matched_local_code_indices": [
+        26
+      ],
+      "remaining": "",
+      "whole_panel_within_supplement": [],
+      "review_note": "Read original complete panel and corresponding visible/supplement code. Coarse subtraction remainder is not an omission finding: composite public/protected methods interleave visible definitions and supplement methods; subpanels 204–206 are incorporated into the complete Approximate_dp_dxy method."
+    }
+  ]
+}

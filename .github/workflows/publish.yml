@@ -1,37 +1,70 @@
-name: Render pbrt-v4.pdf
+name: Publish book
 on:
   push:
-    branches:
-      - main
-    tags:
-      - "v*"
+    branches: [main]
+    tags: ['v*']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
 jobs:
-  render-pdf:
+  build:
+    permissions:
+      contents: read
+      pages: read
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
-          submodules: true
-          fetch-depth: 0
-      - uses: typst-community/setup-typst@v3
-      - run: typst --version
-      - run: typst fonts --font-path ./fonts
-      - run: mkdir output
-      # Now Typst is installed and packages will be cached!
-      - run: typst c main.typ ./output/pbrt-v4-zh-en-$(git describe --tags --abbrev=0).pdf --font-path ./fonts
-      - run: typst c main.typ ./output/pbrt-v4-zh-$(git describe --tags --abbrev=0).pdf --font-path ./fonts  --input LANG_OUT=zh
-      - run: typst c main.typ ./output/pbrt-v4-en-$(git describe --tags --abbrev=0).pdf --font-path ./fonts  --input LANG_OUT=en
-      - name: Release
-        uses: softprops/action-gh-release@v2
-        if: startsWith(github.ref, 'refs/tags/')
+          submodules: recursive
+      - uses: actions/setup-node@v4
         with:
-          body_path: CHANGELOG.txt
-          draft: true
-          files: |
-            ./output/*.pdf
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+          node-version: '24.15.0'
+          cache: npm
+          cache-dependency-path: tooling/package-lock.json
+      - run: npm ci --prefix tooling --ignore-scripts
+      - run: bash tooling/install-tools.sh
+      - name: Read repository Pages configuration
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Build and validate every output
+        env:
+          PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}/
+        run: bash tooling/build.sh
+      - uses: actions/upload-artifact@v4
         with:
-          name: output-pdfs
+          name: book-pdfs
           path: output/*.pdf
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: output/site
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment
+  release:
+    if: startsWith(github.ref, 'refs/tags/')
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: book-pdfs
+          path: pdfs
+      - uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: pdfs/*.pdf

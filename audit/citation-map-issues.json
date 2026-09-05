@@ -1,0 +1,717 @@
+[
+  {
+    "key": "10.5555/536123",
+    "title": "{TEX}: The Program",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "Knuth1993b",
+    "title": "The Stanford GraphBase: A Platform for Combinatorial Computing",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "4b212a02-105c-42a2-ad5c-91c16a06e815",
+    "title": "Immersive Linear Algebra",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "978-1138627000",
+    "title": "Real-Time Rendering",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.5555/136311",
+    "title": "Lex \\& Yacc",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.5555/90767.90913",
+    "title": "Using Quaternions for Coding {3D} Transformations",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "enwiki:1013104981",
+    "title": "Division ring --- {Wikipedia}{,} The Free Encyclopedia",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "farmer1981comparing",
+    "title": "Comparing the 4341 and {M}80/42",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.5555/124947",
+    "title": "Physically Based Lighting Calculations for Computer Graphics",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "slusallek1996vision",
+    "title": "Vision-an Architecture for Physically-based Rendering: Vision-Eine Architektur F{\\\"u}r Die Physikalisch-basierte Bildsynthese",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "ohmer1997",
+    "title": "Ray Tracers: Blue Sky Studios",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1145/2776880.2792699",
+    "title": "The Path Tracing Revolution in the Movie Industry",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "doi:10.1177/003754977101600104",
+    "title": "3-{D} Visual simulation",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1145/37401.37411",
+    "title": "Ray Tracing {JELL}-{OTM} Brand Gelatin",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.5555/200607",
+    "title": "Radiosity: A Programmer's Perspective",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "Kirk88theray",
+    "title": "The Ray Tracing Kernel",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.5555/94788",
+    "title": "An Introduction to Ray Tracing",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "egtp.19911035",
+    "title": "A Testbed for Image Synthesis",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.5555/555371",
+    "title": "Advanced RenderMan: Creating {CGI} for Motion Picture",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "doi:10.1080/10867651.1996.10487462",
+    "title": "{BMRT}: A Global Illumination Implementation of the RenderMan Standard",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.5555/863712",
+    "title": "Programming Mental Ray",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "acton_2014",
+    "title": "Data-Oriented Design and {C}++",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "SHOEMAKE1991351",
+    "title": "VII.6 - Quaternions and 4x4 matrices",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "Blow_2004",
+    "title": "Understanding Slerp, Then Not Using It",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "Mann97acoordinate",
+    "title": "A Coordinate Free Geometry {ADT}",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.5555/2821579",
+    "title": "Geometric Tools for Computer Graphics",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1201/9781315365459",
+    "title": "Real-Time Rendering",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "SHOEMAKE1994207",
+    "title": "III.4. - Polar Matrix Decomposition",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "Bloom2003ErrorsAO",
+    "title": "Errors and Omissions in {M}arc {A}lexa's  \"Linear Combination of Transformations\"",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "doi:10.1080/2151237X.2011.610255",
+    "title": "A Fast and Accurate Algorithm for Computing SLERP",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "doi:10.1080/10867651.1999.10487509",
+    "title": "Efficiently Building a Matrix to Rotate One Vector to Another",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "gray2017modern",
+    "title": "Modern Differential Geometry of Curves and Surfaces with Mathematica",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1145/192161.192233",
+    "title": "Piecewise Smooth Surface Reconstruction",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1109/IEEESTD.1985.82928",
+    "title": "{IEEE} Standard for Binary Floating-Point Arithmetic",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1109/IEEESTD.2008.4610935",
+    "title": "{IEEE} Standard for Floating-Point Arithmetic",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "Heckbert84themathematics",
+    "title": "The Mathematics of Quadric Surface Rendering and {SOID}",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "doi:10.1080/10867651.2000.10487519",
+    "title": "Practical Ray Tracing of Trimmed {NURBS} Surfaces",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "doi:10.1080/2151237X.2006.10129218",
+    "title": "Techniques for Interactive Ray Tracing of Bézier Surfaces",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "doi:10.1080/10867651.2004.10504896",
+    "title": "Ray Bilinear Patch Intersections",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "Woop2013Watertight",
+    "title": "Watertight Ray/Triangle Intersection",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "doi:10.1080/10867651.1997.10487468",
+    "title": "Fast, Minimum Storage Ray-Triangle Intersection",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1145/1179849.1179904",
+    "title": "Ray-Tracing Fur for {\\it {I}ce {A}ge}: The Melt Down",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "DOO1978356",
+    "title": "Behaviour of recursive division surfaces near extraordinary points",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "CATMULL1978350",
+    "title": "Recursively generated {B}-spline surfaces on arbitrary topological meshes",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "loop1987smooth",
+    "title": "Smooth subdivision surfaces based on triangles",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "zorin2000subdivision",
+    "title": "Subdivision for modeling and animation",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "WARREN20021",
+    "title": "Subdivision Methods for Geometric Design",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "SCI:Ben2007a",
+    "title": "Packet-based Ray Tracing of {C}atmull-{C}lark Subdivision Surfaces",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1145/280814.280945",
+    "title": "Exact Evaluation of {C}atmull-{C}lark Subdivision Surfaces at Arbitrary Parameter Values",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1145/504502.504505",
+    "title": "Rapid Evaluation of {C}atmull-{C}lark Subdivision Surfaces",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1145/1572769.1572785",
+    "title": "Parallel View-Dependent Tessellation of {C}atmull-{C}lark Subdivision Surfaces",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "Amanatides1990:27",
+    "title": "Some Regularization Problems in Ray Tracing",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "Ize2013BVH",
+    "title": "Robust {BVH} Ray Traversal",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "HAINES199424",
+    "title": "I.4. - Point in Polygon Strategies",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "ROTH1982109",
+    "title": "Ray casting for modeling solids",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1111/1467-8659.t01-2-00647",
+    "title": "Quad/Triangle Subdivision",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1145/1661412.1618496",
+    "title": "DiagSplit: Parallel, Crack-Free, Adaptive Tessellation for Micropolygon Rendering",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "Jevans1989:23",
+    "title": "Adaptive Voxel Subdivision for Ray TraCing",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1080/2151237X.2007.10129248",
+    "title": "Fast Ray/Axis-Aligned Bounding Box Overlap Tests using Ray Slopes",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "BITTNER2015135",
+    "title": "Incremental {BVH} construction for ray tracing",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "kaplan1985use",
+    "title": "The use of spatial coherence in ray tracing",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "Naylor1993:27",
+    "title": "Constructing good partitioning trees",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "Havran2000:PhD",
+    "title": "Heuristic Ray Shooting Algorithms",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "SUNG1992271",
+    "title": "VI.1 - RAY TRACING WITH THE {BSP} TREE",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "4061547",
+    "title": "On building fast kd-Trees for Ray Tracing, and on doing that in {O}({N} log {N})",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "VINKLER2012283",
+    "title": "Visibility driven {BVH} build up algorithm for ray tracing",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "2151237X.2006.10129224",
+    "title": "Ray Queries with Wide Object Isolation and the {DE}-Tree",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "Arnaldi1987",
+    "title": "A new space subdivision method for ray tracing {CSG} modelled scenes",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "doi:10.1080/10867651.2001.10487535",
+    "title": "Fast {3D} Triangle-Box Overlap Testing",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1080/10867651.1999.10487511",
+    "title": "An {RGB}-to-Spectrum Conversion for Reflectances",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "PREISENDORFER19653",
+    "title": "Radiative Transfer on Discrete Spaces",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "Fante:81",
+    "title": "Relationship between radiative-transport theory and {M}axwell's equations in dielectric media",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1145/166117.166142",
+    "title": "Linear Color Representations for Full Speed Spectral Rendering",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "Drew:03",
+    "title": "Multispectral processing without spectra",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "Lehtonen:06",
+    "title": "Optimal sampling of color spectra",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "9100708",
+    "title": "Introduction to Radiometry and Photometry",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "978-7-5640-0658-7",
+    "title": "辐射度 光度与色度及其测量",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "wiki:solidangle",
+    "title": "立體角 --- 维基百科{,} 自由的百科全书",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "GB3102.6-93",
+    "title": "光及有关电磁辐射的量和单位",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "enwiki:1052681830",
+    "title": "Bidirectional reflectance distribution function --- {Wikipedia}{,} The Free Encyclopedia",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "wiki:candela",
+    "title": "坎德拉 --- 维基百科{,} 自由的百科全书",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "Hoffmann2015",
+    "title": "{CIE} Color Space",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "wiki:eye",
+    "title": "眼 --- 维基百科{,} 自由的百科全书",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "SETCHELL2012219",
+    "title": "8 - Colour description and communication",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "BERTALMIO2020131",
+    "title": "Chapter 6 - Colour representation and colour gamuts",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "enwiki:SRGB",
+    "title": "{SRGB} --- {Wikipedia}{,} The Free Encyclopedia",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1201/b22086",
+    "title": "Real-Time Rendering",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "EBERLY2007",
+    "title": "3{D} Game Engine Design",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "KENTON1992288",
+    "title": "VI.4 - A Panoramic Virtual Screen for Ray Tracing",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "0321188780",
+    "title": "Optics",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "9780071476874",
+    "title": "Modern Optical Engineering: The Design of Optical Systems",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1080/2151237X.2007.10129235",
+    "title": "Improving Motion Blur: Shutter Efficiency and Temporal Sampling",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1145/1242073.1242155",
+    "title": "A Phenomenological Model for Bokeh Rendering",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "hecht2016optics",
+    "title": "Optics",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "Smith95apixel",
+    "title": "A Pixel Is Not A Little Square, A Pixel Is Not A Little Square, A Pixel Is Not A Little Square! (And a Voxel is Not a Little Cube)",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "HECKBERT1990246",
+    "title": "What are the Coordinates of a Pixel?",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.5555/2462741",
+    "title": "Hacker's Delight",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "LARCHER2016546",
+    "title": "On the discrepancy of sequences in the unit-interval",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1126/science.6867716",
+    "title": "Spectral Consequences of Photoreceptor Sampling in the Rhesus Retina",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1145/122718.122736",
+    "title": "Spectrally Optimal Sampling for Distribution Ray Tracing",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "CHIU1994370",
+    "title": "V.4. - Multi-Jittered Sampling",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "Kensler2013Pixar",
+    "title": "Correlated Multi-Jittered Sampling",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1080/2151237X.2006.10129217",
+    "title": "Efficient Generation of Poisson-Disk Sampling Patterns",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1145/1179352.1141915",
+    "title": "A Spatial Data Structure for Fast Poisson-Disk Sample Generation",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1145/1399504.1360619",
+    "title": "Parallel Poisson Disk Sampling",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1145/1866158.1866189",
+    "title": "Anisotropic Blue Noise Sampling",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1145/1964921.1964944",
+    "title": "Efficient Maximal Poisson-Disk Sampling",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1111/j.1467-8659.2012.03059.x",
+    "title": "A Simple Algorithm for Maximal Poisson-Disk Sampling in High Dimensions",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1111/cgf.12725",
+    "title": "Projective Blue-Noise Sampling",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "PURGATHOFER1987157",
+    "title": "A statistical method for adaptive stochastic sampling",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1145/1360612.1360632",
+    "title": "Multidimensional Adaptive Sampling and Reconstruction for Ray Tracing",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1145/1618452.1618486",
+    "title": "Adaptive Wavelet Rendering",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1145/2641762",
+    "title": "Adaptive Rendering Based on Weighted Local Regression",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "FAURE199247",
+    "title": "Good permutations for extreme discrepancy",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1007/978-3-540-74496-2_23",
+    "title": "(t, m, s)-Nets and Maximized Minimum Distance",
+    "reason": "ambiguous source identity"
+  },
+  {
+    "key": "10.1137/070709359",
+    "title": "Constructing Sobol Sequences with Better Two-Dimensional Projections",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1145/1572769.1572787",
+    "title": "Morphological Antialiasing",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "Guertin2014MotionBlur",
+    "title": "A Fast and Stable Feature-Aware Motion Blur Filter",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1145/2010324.1964950",
+    "title": "Temporal Light Field Reconstruction for Rendering Distribution Effects",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1145/2185520.2185547",
+    "title": "Reconstructing the Indirect Light Field for Global Illumination",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1111/cgf.12029",
+    "title": "Removing the Noise in {M}onte {C}arlo Rendering with General Image Denoising Algorithms",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1145/2366145.2366214",
+    "title": "Adaptive Rendering with Non-Local Means Filtering",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1111/cgf.12219",
+    "title": "Robust Denoising using Feature and Color Information",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1145/2532708",
+    "title": "Boosting {M}onte {C}arlo Rendering by Ray Histogram Fusion",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1111/cgf.12415",
+    "title": "Layered Reconstruction for Defocus and Motion Blur",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1111/cgf.12587",
+    "title": "General and Robust Error Estimation and Reconstruction for {M}onte {C}arlo Rendering",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1007/3-540-31186-6_16",
+    "title": "Irradiance Filtering for {M}onte {C}arlo Ray Tracing",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "Malacara2011Color",
+    "title": "Color Vision and Colorimetry",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1007/3-540-31186-6_14",
+    "title": "Myths of Computer Graphics",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1145/344779.344938",
+    "title": "A Fast Relighting Engine for Interactive Cinematic Lighting Design",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "DigitalSignalProcessing",
+    "title": "数字信号处理教程（第四版）",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "enwiki:1115652231",
+    "title": "{D}irac delta function --- {Wikipedia}{,} The Free Encyclopedia",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "enwiki:1115414995",
+    "title": "{F}ourier transform --- {Wikipedia}{,} The Free Encyclopedia",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "enwiki:1098200554",
+    "title": "{P}lancherel theorem --- {Wikipedia}{,} The Free Encyclopedia",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "enwiki:1114206769",
+    "title": "Convolution theorem --- {Wikipedia}{,} The Free Encyclopedia",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "ElementaryNumberTheory",
+    "title": "初等数论",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "wiki:ExtendedEuclideanAlgorithm",
+    "title": "扩展欧几里得算法 --- 维基百科{,} 自由的百科全书",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "1987BeckmannSpizzichino",
+    "title": "The Scattering of Electromagnetic Waves from Rough Surfaces",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "Trowbridge:75",
+    "title": "Average irregularity representation of a rough surface for ray reflection",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1145/344779.344814",
+    "title": "A microfacet-based {BRDF} generator",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "841905",
+    "title": "Effect of correlation between shadowing and shadowed points on the Wagner and Smith monostatic one-dimensional shadowing functions",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "10.1111/1467-8659.1330233",
+    "title": "An Inexpensive {BRDF} Model for Physically-based Rendering",
+    "reason": "no exact unique title/year/author identity"
+  },
+  {
+    "key": "guennebaud2010eigen",
+    "title": "Eigen v3",
+    "reason": "no exact unique title/year/author identity"
+  }
+]

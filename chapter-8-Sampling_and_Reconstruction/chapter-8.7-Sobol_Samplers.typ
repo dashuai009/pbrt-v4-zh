@@ -541,9 +541,9 @@ if ((uint32_t)MixBits((v & mask) ^ seed) & (1u << b))
 ]
 
 #parec[
-  The general approach used to derive the algorithm it implements is similar to that used by the Halton sampler in its `StartPixelSample()` method. Here, scaling by a power of two means that the base-2 logarithm of the scale gives the number of digits of the \$ extbf{C}ig(d\_i(a)ig)^T\$ product that form the scaled sample's integer component. To find the values of $a$ that give a particular integer value after scaling, we can compute the inverse of \$ extbf{C}\$:
+  The general approach used to derive the algorithm it implements is similar to that used by the Halton sampler in its `StartPixelSample()` method. Here, scaling by a power of two means that the base-2 logarithm of the scale gives the number of digits of the $bold(C)[d_i(a)]^T$ product that form the scaled sample's integer component. To find the values of $a$ that give a particular integer value after scaling, we can compute the inverse of $bold(C)$:
 ][
-  用于推导其实现算法的总体方法类似于 Halton 采样器在其 `StartPixelSample()` 方法中使用的方法。在这里，通过二次幂缩放意味着比例的基-2 对数给出了形成缩放样本整数分量的 \$ extbf{C}ig(d\_i(a)ig)^T\$ 乘积的数字数。要找到在缩放后给出特定整数值的 $a$ 的值，我们可以计算 \$ extbf{C}\$ 矩阵的逆：
+  用于推导其实现算法的总体方法类似于 Halton 采样器在其 `StartPixelSample()` 方法中使用的方法。在这里，通过二次幂缩放意味着比例的基-2 对数给出了形成缩放样本整数分量的 $bold(C)[d_i(a)]^T$ 乘积的数字数。要找到在缩放后给出特定整数值的 $a$ 的值，我们可以计算 $bold(C)$ 矩阵的逆：
 ]
 
 

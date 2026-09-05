@@ -1,4 +1,6 @@
-#import "../template.typ": parec
+#import "../template.typ": parec, ez_caption
+
+== #ez_caption[Conclusion][结语] <conclusion>
 
 #parec[
   The idea for `pbrt` was born in October 1999. Over the next five years, it evolved from a system designed only to support the students taking Stanford's CS348b course to a robust, feature-rich, extensible rendering system. Since its inception, we have learned a great deal about what it takes to build a rendering system that does not just make pretty pictures but is one that other people enjoy using and modifying as well. What has been most difficult, however, is designing a large piece of software that others might enjoy reading. This has been a far more challenging (and rewarding) task than implementing any of the rendering algorithms themselves.

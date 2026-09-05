@@ -1,15 +1,15 @@
-#import "../template.typ": parec, ez_caption
+#import "../template.typ": parec, ez_caption, translator
 
 
-== Transformations
+== #ez_caption[Transformations][变换]
 #parec[
   In general, a #emph[transformation] $upright(bold(T))$ is a mapping from points to points and from vectors to vectors:
 ][
-  一般来说，#emph[变换] $upright(bold(T))$ 是从点到点和从向量到向量的映射：
+  一般而言，#emph[变换] $upright(bold(T))$ 是从点到点和从向量到向量的映射：
 ]
 
 $
-  upright(bold(p prime)) = upright(bold(T)) (upright(bold(p))) , quad upright(bold(v prime)) = upright(bold(T)) (
+  upright(p)' = upright(bold(T)) (upright(p)) , quad upright(bold(v))' = upright(bold(T)) (
     upright(bold(v))
   )
 $
@@ -24,13 +24,13 @@ $
 #parec[
   #emph[Linear:] If $upright(bold(T))$ is an arbitrary linear transformation and $s$ is an arbitrary scalar, then $upright(bold(T))(s upright(bold(v))) = s upright(bold(T))(upright(bold(v)))$ and $upright(bold(T))(upright(bold(v))_1 + upright(bold(v))_2) = upright(bold(T))(upright(bold(v))_1) + upright(bold(T))(upright(bold(v))_2)$. These two properties can greatly simplify reasoning about transformations.
 ][
-  #emph[线性:] 如果 $upright(bold(T))$ 是一个任意的线性变换且 $s$ 是一个任意标量，那么 $upright(bold(T))(s upright(bold(v))) = s upright(bold(T))(upright(bold(v)))$ 且 $upright(bold(T))(upright(bold(v))_1 + upright(bold(v))_2) = upright(bold(T))(upright(bold(v))_1) + upright(bold(T))(upright(bold(v))_2)$。这两个性质可以极大地简化对变换的推理。
+  #emph[线性：] 如果 $upright(bold(T))$ 是一个任意的线性变换且 $s$ 是一个任意标量，那么 $upright(bold(T))(s upright(bold(v))) = s upright(bold(T))(upright(bold(v)))$ 且 $upright(bold(T))(upright(bold(v))_1 + upright(bold(v))_2) = upright(bold(T))(upright(bold(v))_1) + upright(bold(T))(upright(bold(v))_2)$。这两个性质可以极大地简化对变换的推理。
 ]
 
 #parec[
   #emph[Continuous:] Roughly speaking, $upright(bold(T))$ maps the neighborhoods around $p$ and $upright(bold(v))$ to neighborhoods around $p'$ and $upright(bold(v))'$ .
 ][
-  #emph[连续:] 粗略地说， $upright(bold(T))$ 将 $p$ 和 $upright(bold(v))$ 周围的邻域映射到 $p'$ and $upright(bold(v))'$ 周围的邻域。
+  #emph[连续：] 粗略地说， $upright(bold(T))$ 将 $p$ 和 $upright(bold(v))$ 周围的邻域映射到 $p'$ 和 $upright(bold(v))'$ 周围的邻域。
 ]
 
 #parec[
@@ -42,50 +42,50 @@ $
 #parec[
   We will often want to take a point, vector, or normal defined with respect to one coordinate frame and find its coordinate values with respect to another frame. Using basic properties of linear algebra, a $4 times 4$ matrix can be shown to express the linear transformation of a point or vector from one frame to another. Furthermore, such a $4 times 4$ matrix suffices to express all linear transformations of points and vectors within a fixed frame, such as translation in space or rotation around a point. Therefore, there are two different (and incompatible!) ways that a matrix can be interpreted:
 ][
-  我们经常希望将相对于一个坐标系定义的点、向量或法线转换为相对于另一个坐标系的坐标值。利用线性代数的基本性质，可以证明一个 $4 times 4$ 矩阵可以表达从一个坐标系到另一个坐标系的点或向量的线性变换。 此外，这样的 $4 times 4$ 矩阵足以表达在固定坐标系内的所有线性变换，例如空间中的平移或绕某一点的旋转。 因此，矩阵可以有两种不同的（且不兼容的！）解释方式：
+  我们经常希望将相对于一个坐标系定义的点、向量或法向量转换为相对于另一个坐标系的坐标值。利用线性代数的基本性质，可以证明一个 $4 times 4$ 矩阵可以表达从一个坐标系到另一个坐标系的点或向量的线性变换。 此外，这样的 $4 times 4$ 矩阵足以表达在固定坐标系内的所有线性变换，例如空间中的平移或绕某一点的旋转。 因此，矩阵可以有两种不同的（且不兼容的！）解释方式：
 ]
 
 #parec[
   - #emph[Transformation within the frame:] Given a point, the matrix could express how to compute a #emph[new] point in the same frame that represents the transformation of the original point (e.g., by translating it in some direction).
 ][
-  - #emph[坐标系内的变换:] 给定一个点，矩阵可以表达如何在同一坐标系中计算一个表示原始点变换的新点（例如，通过在某个方向上平移它）。
+  - #emph[标架内的变换：] 给定一个点，矩阵可以表达如何在同一坐标系中计算一个表示原始点变换的新点（例如，通过在某个方向上平移它）。
 ]
 
 #parec[
   - #emph[Transformation from one frame to another:] A matrix can express the coordinates of a point or vector in a new frame in terms of the coordinates in the original frame.
 ][
-  - #emph[从一个坐标系到另一个坐标系的变换:] 矩阵可以用原始坐标系中的坐标表示新坐标系中的点或向量的坐标。
+  - #emph[从一个标架到另一个标架的变换：] 矩阵可以根据点或向量在原标架中的坐标，计算它在新标架中的坐标。
 ]
 
 #parec[
   Most uses of transformations in `pbrt` are for transforming points from one frame to another.
 ][
-  在 `pbrt` 中，变换的大多数用途是用于将点从一个坐标系转换到另一个坐标系。
+  在 `pbrt` 中，变换的大多数用途是用于将点从一个标架转换到另一个标架。
 ]
 
 #parec[
   In general, transformations make it possible to work in the most convenient coordinate space. For example, we can write routines that define a virtual camera, assuming that the camera is located at the origin, looks down the $z$ axis, and has the $y$ axis pointing up and the $x$ axis pointing right. These assumptions greatly simplify the camera implementation. To place the camera at any point in the scene looking in any direction, we construct a transformation that maps points in the scene's coordinate system to the camera's coordinate system. (See @camera-coordinate-spaces for more information about camera coordinate spaces in `pbrt`.)
 ][
-  一般来说，变换使得在最方便的坐标空间中工作成为可能。 例如，我们可以编写定义虚拟相机的例程，假设相机位于原点，沿 $z$ 轴向下看， $y$ 轴向上， $x$ 轴向右。 这些假设大大简化了相机的实现过程。为了将相机放置在场景中的任意点并朝任意方向看，我们构建一个变换，将场景坐标系中的点映射到相机坐标系中。 （有关 `pbrt` 中相机坐标空间的更多信息，请参见@camera-coordinate-spaces。）
+  一般而言，变换使得在最方便的坐标空间中工作成为可能。 例如，我们可以编写定义虚拟相机的例程，假设相机位于原点，沿 $z$ 轴观察， $y$ 轴向上， $x$ 轴向右。 这些假设大大简化了相机的实现过程。为了将相机放置在场景中的任意点并朝任意方向看，我们构建一个变换，将场景坐标系中的点映射到相机坐标系中。 （有关 `pbrt` 中相机坐标空间的更多信息，请参见@camera-coordinate-spaces。）
 ]
 
-=== Homogeneous Coordinates
+=== #ez_caption[Homogeneous Coordinates][齐次坐标]
 <homogeneous-coordinates>
 
 #parec[
-  Given a frame defined by $(upright("p")_0 , upright(bold(v))_1 , upright(bold(v))_2 , upright(bold(v))_3)$, there is ambiguity between the representation of a point $(upright("p")_x , upright("p")_y , upright("p")_z)$ and a vector $(upright(bold(v))_x , upright(bold(v))_y , upright(bold(v))_z)$ with the same $(x , y , z)$ coordinates. Using the representations of points and vectors introduced at the start of the chapter, we can write the point as the inner product $[s_1 s_2 s_3 1] [upright(bold(v))_1 upright(bold(v))_2 upright(bold(v))_3 upright("p")_0]^T$ and the vector as the inner product $[s prime_1 s prime_2 s prime_3 0] [upright(bold(v))_1 upright(bold(v))_2 upright(bold(v))_3 upright("p")_0]^T$. These four-vectors of three $s_i$ values and a zero or one are called the #emph[homogeneous] representations of the point and the vector. The fourth coordinate of the homogeneous representation is sometimes called the #emph[weight];. For a point, its value can be any scalar other than zero: the homogeneous points $[1 , 3 , - 2 , 1]$ and $[- 2 , - 6 , 4 , - 2]$ describe the same Cartesian point $(1 , 3 , - 2)$. Converting homogeneous points into ordinary points entails dividing the first three components by the weight:
+  Given a frame defined by $(upright("p")_o , upright(bold(v))_1 , upright(bold(v))_2 , upright(bold(v))_3)$, there is ambiguity between the representation of a point $(upright("p")_x , upright("p")_y , upright("p")_z)$ and a vector $(upright(bold(v))_x , upright(bold(v))_y , upright(bold(v))_z)$ with the same $(x , y , z)$ coordinates. Using the representations of points and vectors introduced at the start of the chapter, we can write the point as the inner product $[s_1 thin s_2 thin s_3 thin 1] [upright(bold(v))_1 thin upright(bold(v))_2 thin upright(bold(v))_3 thin upright("p")_o]^T$ and the vector as the inner product $[s'_1 thin s'_2 thin s'_3 thin 0] [upright(bold(v))_1 thin upright(bold(v))_2 thin upright(bold(v))_3 thin upright("p")_o]^T$. These four-vectors of three $s_i$ values and a zero or one are called the #emph[homogeneous] representations of the point and the vector. The fourth coordinate of the homogeneous representation is sometimes called the #emph[weight]. For a point, its value can be any scalar other than zero: the homogeneous points $[1 , 3 , - 2 , 1]$ and $[- 2 , - 6 , 4 , - 2]$ describe the same Cartesian point $(1 , 3 , - 2)$. Converting homogeneous points into ordinary points entails dividing the first three components by the weight:
 ][
-  给定一个由 $(upright("p")_0 , upright(bold(v))_1 , upright(bold(v))_2 , upright(bold(v))_3)$ 定义的坐标框架，点的表示 $(upright("p")_x , upright("p")_y , upright("p")_z)$ 与向量的表示 $(upright(bold(v))_x , upright(bold(v))_y , upright(bold(v))_z)$ 在相同的 $(x , y , z)$ 坐标下存在歧义。使用本章开始介绍的点和向量的表示方法，我们可以将点表示为内积 $[s_1 s_2 s_3 1] [upright(bold(v))_1 upright(bold(v))_2 upright(bold(v))_3 upright("p")_0]^T$，将向量表示为内积 $[s prime_1 s prime_2 s prime_3 0] [upright(bold(v))_1 upright(bold(v))_2 upright(bold(v))_3 upright("p")_0]^T$。这些四维向量中的三个 $s_i$ 值和一个零或一被称为点和向量的#emph[齐次];表示。齐次表示的第四个坐标有时被称为#emph[权重];。对于一个点，其值可以是除零以外的任何标量：齐次点 $[1 , 3 , - 2 , 1]$ 和 $[- 2 , - 6 , 4 , - 2]$ 描述相同的笛卡尔点 $(1 , 3 , - 2)$。将齐次点转换为普通点需要将前三个分量除以权重：
+  给定一个由 $(upright("p")_o , upright(bold(v))_1 , upright(bold(v))_2 , upright(bold(v))_3)$ 定义的标架，点的表示 $(upright("p")_x , upright("p")_y , upright("p")_z)$ 与向量的表示 $(upright(bold(v))_x , upright(bold(v))_y , upright(bold(v))_z)$ 在相同的 $(x , y , z)$ 坐标下存在歧义。使用本章开始介绍的点和向量的表示方法，我们可以将点表示为内积 $[s_1 thin s_2 thin s_3 thin 1] [upright(bold(v))_1 thin upright(bold(v))_2 thin upright(bold(v))_3 thin upright("p")_o]^T$，将向量表示为内积 $[s'_1 thin s'_2 thin s'_3 thin 0] [upright(bold(v))_1 thin upright(bold(v))_2 thin upright(bold(v))_3 thin upright("p")_o]^T$。这些由三个 $s_i$ 值和一个零或一组成的四维向量，被称为点和向量的#emph[齐次]表示。齐次表示的第四个坐标有时被称为#emph[权重]。对于一个点，该权重可以取任何非零标量：齐次点 $[1 , 3 , - 2 , 1]$ 和 $[- 2 , - 6 , 4 , - 2]$ 描述相同的笛卡尔点 $(1 , 3 , - 2)$。将齐次点转换为普通点需要将前三个分量除以权重：
 ]
 $ (x , y , z , w) arrow.r (x / w , y / w , z / w) . $
 
 #parec[
   We will use these facts to see how a transformation matrix can describe how points and vectors in one frame can be mapped to another frame. Consider a matrix $upright(bold(M))$ that describes the transformation from one coordinate system to another:
 ][
-  我们将使用这些事实来了解变换矩阵如何描述一个坐标框架中的点和向量如何映射到另一个坐标框架。考虑一个描述从一个坐标系统到另一个坐标系统的变换的矩阵 $upright(bold(M))$ ：
+  我们将使用这些事实来了解变换矩阵如何描述一个标架中的点和向量如何映射到另一个标架。考虑一个描述从一个坐标系到另一个坐标系的变换的矩阵 $upright(bold(M))$ ：
 ]
 $
-  upright(bold(M)) = mat(delim: "[", m_(0 , 0), m_(0 , 1), m_(0 , 2), m_(0 , 3); m_(1 , 0), m_(1 , 1), m_(1 , 2), m_(1 , 3); m_(2 , 0), m_(2 , 1), m_(2 , 2), m_(2 , 3); m_(3 , 0), m_(3 , 1), m_(3 , 2), m_(3 , 3)) .
+  upright(bold(M)) = mat(delim: "(", m_(0 , 0), m_(0 , 1), m_(0 , 2), m_(0 , 3); m_(1 , 0), m_(1 , 1), m_(1 , 2), m_(1 , 3); m_(2 , 0), m_(2 , 1), m_(2 , 2), m_(2 , 3); m_(3 , 0), m_(3 , 1), m_(3 , 2), m_(3 , 3)) .
 $
 
 #parec[
@@ -97,9 +97,7 @@ $
 
 
 $
-  upright(bold(M x)) = upright(bold(M))(mat(delim: #none, 1; 0; 0; 0))^T =(
-    mat(delim: #none, m_(0 comma 0), m_(1 comma 0), m_(2 comma 0), m_(3 comma 0))
-  )^T .
+  upright(bold(M x)) = upright(bold(M)) mat(delim: "[", 1, 0, 0, 0)^T = mat(delim: "[", m_(0,0), m_(1,0), m_(2,0), m_(3,0))^T .
 $
 
 
@@ -110,9 +108,9 @@ $
 ]
 
 $
-  upright(bold(M y)) & =(mat(delim: #none, m_(0 comma 1), m_(1 comma 1), m_(2 comma 1), m_(3 comma 1)))^T \
-  upright(bold(M z)) & =(mat(delim: #none, m_(0 comma 2), m_(1 comma 2), m_(2 comma 2), m_(3 comma 2)))^T \
-  upright(bold(M p)) & =(mat(delim: #none, m_(0 comma 3), m_(1 comma 3), m_(2 comma 3), m_(3 comma 3)))^T .
+  upright(bold(M y)) &= mat(delim: "[", m_(0,1), m_(1,1), m_(2,1), m_(3,1))^T \
+  upright(bold(M z)) &= mat(delim: "[", m_(0,2), m_(1,2), m_(2,2), m_(3,2))^T \
+  upright(bold(M)) upright(p) &= mat(delim: "[", m_(0,3), m_(1,3), m_(2,3), m_(3,3))^T .
 $
 
 
@@ -120,112 +118,109 @@ $
 #parec[
   In general, by characterizing how the basis is transformed, we know how any point or vector specified in terms of that basis is transformed. Because points and vectors in a coordinate system are expressed in terms of the coordinate system's frame, applying the transformation to them directly is equivalent to applying the transformation to the coordinate system's basis and finding their coordinates in terms of the transformed basis.
 ][
-  通常，通过描述基如何变换，我们知道如何变换以该基为标准的任何点或向量。因为坐标系中的点和向量是以坐标系的框架表示的，直接对它们应用变换相当于对坐标系的基应用变换并找到它们在变换后的基中的坐标。
+  通常，通过描述基如何变换，我们知道如何变换以该基为标准的任何点或向量。因为坐标系中的点和向量是以坐标系的标架表示的，直接对它们应用变换相当于对坐标系的基应用变换并找到它们在变换后的基中的坐标。
 ]
 
 #parec[
   We will not use homogeneous coordinates explicitly in our code; there is no `HomogeneousPoint` class in `pbrt`. However, the various transformation routines in the next section will implicitly convert points, vectors, and normals to homogeneous form, transform the homogeneous points, and then convert them back before returning the result. This isolates the details of homogeneous coordinates in one place (namely, the implementation of transformations).
 ][
-  我们不会在代码中显式使用齐次坐标；在`pbrt`中没有`HomogeneousPoint`类。然而，下一节中的各种变换例程将隐式地将点、向量和法线转换为齐次形式，变换齐次点，然后在返回结果之前将它们转换回来。这将齐次坐标的细节隔离在一个地方（即变换的实现中）。
+  我们不会在代码中显式使用齐次坐标；`pbrt` 中没有 `HomogeneousPoint` 类。然而，下一节中的各种变换例程将隐式地将点、向量和法向量转换为齐次形式，变换齐次点，然后在返回结果之前将它们转换回来。这将齐次坐标的细节隔离在一个地方（即变换的实现中）。
 ]
 
-=== Transform Class Definition
+=== #ez_caption[Transform Class Definition][Transform 类定义]
 
 
 #parec[
-  The `Transform` class represents a $4 times 4$ transformation. Its implementation is in the files #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/util/transform.h")[util/transform.h] and #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/util/transform.cpp")[util/transform.cpp];.
+  The `Transform` class represents a $4 times 4$ transformation. Its implementation is in the files #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/util/transform.h")[util/transform.h] and #link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/util/transform.cpp")[util/transform.cpp].
 ][
-  `Transform`类表示一个 $4 times 4$ 的变换。其实现位于文件#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/util/transform.h")[util/transform.h];和#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/util/transform.cpp")[util/transform.cpp];中。
+  `Transform`类表示一个 $4 times 4$ 的变换。其实现位于文件#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/util/transform.h")[util/transform.h] 和#link("https://github.com/mmp/pbrt-v4/tree/master/src/pbrt/util/transform.cpp")[util/transform.cpp] 中。
 ]
 
 
+#block(sticky: true)[#raw("<<Transform Definition>>=")] <fragment-TransformDefinition-0>
 ```cpp
-<<Transform Definition>>=
 class Transform {
   public:
-    <<Transform Public Methods>>
+    <<Transform Public Methods>> 
   private:
-    <<Transform Private Members>>
+    <<Transform Private Members>> 
 };
-```
+``` <Transform>
 
 
 #parec[
-  The transformation matrix is represented by the elements of the matrix `m`, which is represented by a `SquareMatrix<4>` object. (The #link("../Utilities/Mathematical_Infrastructure.html#SquareMatrix")[`SquareMatrix`] class is defined in Section~#link("../Utilities/Mathematical_Infrastructure.html#sec:square-matrix")[B.2.12];.) The matrix `m` is stored in #emph[row-major] form, so element `m[i][j]` corresponds to $m_(i , j)$, where~ $i$ is the row number and~ $j$ is the column number. For convenience, the #link("<Transform>")[`Transform`] also stores the inverse of `m` in its #link("<Transform::mInv>")[`Transform::mInv`] member variable; for `pbrt`'s needs, it is better to have the inverse easily available than to repeatedly compute it as needed.
+  The transformation matrix is represented by the elements of the matrix `m`, which is represented by a `SquareMatrix<4>` object. (The #link("https://pbr-book.org/4ed/Utilities/Mathematical_Infrastructure.html#SquareMatrix")[`SquareMatrix`] class is defined in Section #link("https://pbr-book.org/4ed/Utilities/Mathematical_Infrastructure.html#sec:square-matrix")[B.2.12].) The matrix `m` is stored in #emph[row-major] form, so element `m[i][j]` corresponds to $m_(i , j)$, where  $i$ is the row number and  $j$ is the column number. For convenience, the #link(<Transform>)[`Transform`] also stores the inverse of `m` in its #link(<Transform::mInv>)[`Transform::mInv`] member variable; for `pbrt`'s needs, it is better to have the inverse easily available than to repeatedly compute it as needed.
 ][
-  变换矩阵由矩阵元素 `m` 表示，该矩阵由 `SquareMatrix<4>` 对象表示。（`SquareMatrix` 类在#link("../Utilities/Mathematical_Infrastructure.html#sec:square-matrix")[第B.2.12节];中定义。）矩阵 `m` 以#emph[行主序];存储，因此元素 `m[i][j]` 对应于 $m_(i , j)$，其中 $i$ 是行号， $j$ 是列号。为了方便，`Transform` 还在其成员变量 #link("<Transform::mInv>")[`Transform::mInv`] 中存储了 `m` 的逆；对于 `pbrt` 的需求，将逆矩阵轻松可用比反复计算更为有效。
+  变换矩阵由矩阵元素 `m` 表示，该矩阵由 `SquareMatrix<4>` 对象表示。（`SquareMatrix` 类在#link("https://pbr-book.org/4ed/Utilities/Mathematical_Infrastructure.html#sec:square-matrix")[第B.2.12节] 中定义。）矩阵 `m` 以#emph[行主序] 存储，因此元素 `m[i][j]` 对应于 $m_(i , j)$，其中 $i$ 是行号， $j$ 是列号。为了方便，`Transform` 还在其成员变量 #link(<Transform::mInv>)[`Transform::mInv`] 中存储了 `m` 的逆；对于 `pbrt` 的用途，直接保存可随时访问的逆矩阵，比按需反复求逆更合适。
 ]
+#block(sticky: true)[#raw("<<Transform Private Members>>=")] <fragment-TransformPrivateMembers-0>
 ```cpp
- <<Transform Private Members>>=
-`SquareMatrix<4> m, mInv;`
-```
+SquareMatrix<4> m, mInv;
+``` <Transform::mInv>
 #parec[
-  This representation of transformations is relatively memory hungry: assuming 4 bytes of storage for a `Float` value, a #link("<Transform>")[`Transform`] requires 128 bytes of storage. Used naïvely, this approach can be wasteful; if a scene has millions of shapes but only a few thousand unique transformations, there is no reason to redundantly store the same matrices many times. Therefore, #link("../Shapes/Basic_Shape_Interface.html#Shape")[`Shape`];s in `pbrt` store a pointer to a `Transform` and the scene specification code defined in Section~#link("../Processing_the_Scene_Description/Managing_the_Scene_Description.html#sec:managing-xforms")[C.2.3] uses an #link("../Utilities/Containers_and_Memory_Management.html#InternCache")[`InternCache`] of #link("<Transform>")[`Transform`];s to ensure that all shapes that share the same transformation point to a single instance of that transformation in memory.
+  This representation of transformations is relatively memory hungry: assuming 4 bytes of storage for a `Float` value, a #link(<Transform>)[`Transform`] requires 128 bytes of storage. Used naïvely, this approach can be wasteful; if a scene has millions of shapes but only a few thousand unique transformations, there is no reason to redundantly store the same matrices many times. Therefore, #link("https://pbr-book.org/4ed/Shapes/Basic_Shape_Interface.html#Shape")[`Shape`]s in `pbrt` store a pointer to a `Transform` and the scene specification code defined in Section #link("https://pbr-book.org/4ed/Processing_the_Scene_Description/Managing_the_Scene_Description.html#sec:managing-xforms")[C.2.3] uses an #link("https://pbr-book.org/4ed/Utilities/Containers_and_Memory_Management.html#InternCache")[`InternCache`] of #link(<Transform>)[`Transform`]s to ensure that all shapes that share the same transformation point to a single instance of that transformation in memory.
 ][
-  这种变换的表示相对于内存消耗较大：假设 `Float` 值的存储空间为4字节，一个 `Transform` 需要128字节的存储空间。如果使用不当，这种方法可能会造成浪费；如果一个场景有数百万个形状但只有几千个独特的变换，就没有理由重复存储相同的矩阵多次。因此，`pbrt` 中的 `Shape` 存储一个指向 `Transform` 的指针，并且在#link("../Processing_the_Scene_Description/Managing_the_Scene_Description.html#sec:managing-xforms")[第C.2.3节];中定义的场景规范代码使用 #link("../Utilities/Containers_and_Memory_Management.html#InternCache")[`InternCache`] 中的 `Transform` 来确保所有共享同一变换的形状指向内存中该变换的单一实例。
+  这种变换表示的内存开销较大：假设 `Float` 值的存储空间为 4 字节，一个 `Transform` 需要 128 字节的存储空间。如果使用不当，这种方法可能会造成浪费；如果一个场景有数百万个形状但只有几千个不同的变换，就没有理由重复存储相同的矩阵多次。因此，`pbrt` 中的 `Shape` 存储一个指向 `Transform` 的指针，并且在#link("https://pbr-book.org/4ed/Processing_the_Scene_Description/Managing_the_Scene_Description.html#sec:managing-xforms")[第C.2.3节] 中定义的场景描述处理代码使用 #link("https://pbr-book.org/4ed/Utilities/Containers_and_Memory_Management.html#InternCache")[`InternCache`] 中的 `Transform` 来确保所有共享同一变换的形状指向内存中该变换的单一实例。
 ]
 
 
-=== Basic Operations
+=== #ez_caption[Basic Operations][基本操作]
 <basic-operations>
 
 #parec[
-  When a new #link("<Transform>")[Transform] is created, it defaults to the #emph[identity transformation];—the transformation that maps each point and each vector to itself. This transformation is represented by the #emph[identity matrix];:
+  When a new #link(<Transform>)[Transform] is created, it defaults to the #emph[identity transformation]—the transformation that maps each point and each vector to itself. This transformation is represented by the #emph[identity matrix]:
 ][
-  当创建一个新的#link("<Transform>")[Transform];时，它默认为#emph[恒等变换];——将每个点和每个向量映射到自身的变换。此变换由#emph[恒等矩阵];表示：
+  当创建一个新的#link(<Transform>)[Transform] 时，它默认为#emph[恒等变换]——将每个点和每个向量映射到自身的变换。此变换由#emph[单位矩阵]表示：
 ]
 
 $
-  upright(bold(I)) = mat(delim: #none, 1, 0, 0, 0;
+  upright(bold(I)) = mat(delim: "(", 1, 0, 0, 0;
 0, 1, 0, 0;
 0, 0, 1, 0;
 0, 0, 0, 1) .
 $
 #parec[
-  The implementation here relies on the default #link("../Utilities/Mathematical_Infrastructure.html#SquareMatrix")[SquareMatrix] constructor to fill in the identity matrix for `m` and `mInv`.
+  The implementation here relies on the default #link("https://pbr-book.org/4ed/Utilities/Mathematical_Infrastructure.html#SquareMatrix")[SquareMatrix] constructor to fill in the identity matrix for `m` and `mInv`.
 ][
-  这里的实现依赖于默认的#link("../Utilities/Mathematical_Infrastructure.html#SquareMatrix")[SquareMatrix];构造函数来填充`m`和`mInv`的恒等矩阵。
+  这里的实现依赖于默认的#link("https://pbr-book.org/4ed/Utilities/Mathematical_Infrastructure.html#SquareMatrix")[SquareMatrix] 构造函数来填充`m`和`mInv`的单位矩阵。
 ]
 
 
+#block(sticky: true)[#raw("<<Transform Public Methods>>=") #link(<fragment-TransformPublicMethods-1>)[▼]] <fragment-TransformPublicMethods-0>
 ```cpp
 Transform() = default;
 ```
 
 
 #parec[
-  A #link("<Transform>")[Transform] can also be created from a given matrix. In this case, the matrix must be explicitly inverted.
+  A #link(<Transform>)[Transform] can also be created from a given matrix. In this case, the matrix must be explicitly inverted.
 ][
-  也可以从给定的矩阵创建一个#link("<Transform>")[Transform];。在这种情况下，矩阵必须显式地求逆。
+  也可以从给定的矩阵创建一个#link(<Transform>)[Transform]。在这种情况下，必须显式计算该矩阵的逆。
 ]
 
 
 
 
+#block(sticky: true)[#raw("<<Transform Public Methods>>+=") #link(<fragment-TransformPublicMethods-0>)[▲] #link(<fragment-TransformPublicMethods-2>)[▼]] <fragment-TransformPublicMethods-1>
 ```cpp
 Transform(const SquareMatrix<4> &m) : m(m) {
     pstd::optional<SquareMatrix<4>> inv = Inverse(m);
     if (inv)
         mInv = *inv;
     else {
-        // Initialize mInv with not-a-number values
-        Float NaN = std::numeric_limits<Float>::has_signaling_NaN
-                                    ? std::numeric_limits<Float>::signaling_NaN()
-                                    : std::numeric_limits<Float>::quiet_NaN();
-        for (int i = 0; i < 4; ++i)
-            for (int j = 0; j < 4; ++j)
-                mInv[i][j] = NaN;
+        <<Initialize mInv with not-a-number values>> 
     }
 }
 ```
 
 
 #parec[
-  If the matrix provided by the caller is degenerate and cannot be inverted, `mInv` is initialized with floating-point not-a-number values, which poison computations that involve them: arithmetic performed using a not-a-number value always gives a not-a-number value. In this way, a caller who provides a degenerate matrix `m` can still use the #link("<Transform>")[Transform] as long as no methods that access `mInv` are called.
+  If the matrix provided by the caller is degenerate and cannot be inverted, `mInv` is initialized with floating-point not-a-number values, which poison computations that involve them: arithmetic performed using a not-a-number value always gives a not-a-number value. In this way, a caller who provides a degenerate matrix `m` can still use the #link(<Transform>)[Transform] as long as no methods that access `mInv` are called.
 ][
-  如果调用者提供的矩阵是退化的且无法求逆，`mInv`将用浮点非数字值初始化，这会影响涉及它们的计算：使用非数字值进行的算术运算总是会产生非数字值。这样，提供退化矩阵`m`的调用者仍然可以使用#link("<Transform>")[Transform];，只要不调用需要访问`mInv`的方法即可。
+  如果调用者提供的矩阵是退化的且无法求逆，`mInv` 将用浮点非数值初始化，这会影响涉及它们的计算：使用非数值进行的算术运算总是会产生非数值。这样，提供退化矩阵 `m`的调用者仍然可以使用#link(<Transform>)[Transform]，只要不调用需要访问`mInv`的方法即可。
 ]
 
+#block(sticky: true)[#raw("<<Initialize mInv with not-a-number values>>=")] <fragment-InitializemonomInvwithnot-a-numbervalues-0>
 ```cpp
 Float NaN = std::numeric_limits<Float>::has_signaling_NaN
                          ? std::numeric_limits<Float>::signaling_NaN()
@@ -243,6 +238,7 @@ for (int i = 0; i < 4; ++i)
 ]
 
 
+#block(sticky: true)[#raw("<<Transform Public Methods>>+=") #link(<fragment-TransformPublicMethods-1>)[▲] #link(<fragment-TransformPublicMethods-3>)[▼]] <fragment-TransformPublicMethods-2>
 ```cpp
 Transform(const Float mat[4][4]) : Transform(SquareMatrix<4>(mat)) {}
 ```
@@ -251,11 +247,12 @@ Transform(const Float mat[4][4]) : Transform(SquareMatrix<4>(mat)) {}
 #parec[
   The most commonly used constructor takes a reference to the transformation matrix along with an explicitly provided inverse. This is a superior approach to computing the inverse in the constructor because many geometric transformations have simple inverses, and we can avoid the expense and potential loss of numeric accuracy from computing a general $4 times 4$ matrix inverse. Of course, this places the burden on the caller to make sure that the supplied inverse is correct.
 ][
-  最常用的构造函数接受一个变换矩阵的引用以及一个显式提供的逆矩阵。这是一种优于在构造函数中计算逆矩阵的方法，因为许多几何变换有简单的逆矩阵，我们可以避免计算一般 $4 times 4$ 矩阵逆矩阵的开销和潜在的数值精度损失。当然，这将责任放在调用者身上，以确保提供的逆矩阵是正确的。
+  最常用的构造函数接受一个变换矩阵的引用以及一个显式提供的逆矩阵。这是一种优于在构造函数中计算逆矩阵的方法，因为许多几何变换有简单的逆矩阵，我们可以避免计算一般 $4 times 4$ 矩阵逆矩阵的开销和潜在的数值精度损失。当然，调用者因此必须负责确保所提供的逆矩阵正确。
 ]
 
 
 
+#block(sticky: true)[#raw("<<Transform Public Methods>>+=") #link(<fragment-TransformPublicMethods-2>)[▲] #link(<fragment-TransformPublicMethods-4>)[▼]] <fragment-TransformPublicMethods-3>
 ```cpp
 Transform(const SquareMatrix<4> &m, const SquareMatrix<4> &mInv)
     : m(m), mInv(mInv) {}
@@ -267,6 +264,7 @@ Transform(const SquareMatrix<4> &m, const SquareMatrix<4> &mInv)
 ]
 
 
+#block(sticky: true)[#raw("<<Transform Public Methods>>+=") #link(<fragment-TransformPublicMethods-3>)[▲] #link(<fragment-TransformPublicMethods-5>)[▼]] <fragment-TransformPublicMethods-4>
 ```cpp
 const SquareMatrix<4> &GetMatrix() const { return m; }
 const SquareMatrix<4> &GetInverseMatrix() const { return mInv; }
@@ -274,12 +272,13 @@ const SquareMatrix<4> &GetInverseMatrix() const { return mInv; }
 
 
 #parec[
-  The #link("<Transform>")[Transform] representing the inverse of a `Transform` can be returned by just swapping the roles of `mInv` and `m`.
+  The #link(<Transform>)[Transform] representing the inverse of a `Transform` can be returned by just swapping the roles of `mInv` and `m`.
 ][
-  表示`Transform`逆的#link("<Transform>")[Transform];可以通过交换`mInv`和`m`的角色返回。
+  表示 `Transform` 逆变换的#link(<Transform>)[Transform]可以通过交换 `mInv` 和 `m`的角色返回。
 ]
 
 
+#block(sticky: true)[#raw("<<Transform Inline Functions>>=") #link(<fragment-TransformInlineFunctions-1>)[▼]] <fragment-TransformInlineFunctions-0>
 ```cpp
 Transform Inverse(const Transform &t) {
     return Transform(t.GetInverseMatrix(), t.GetMatrix());
@@ -295,6 +294,7 @@ Transform Inverse(const Transform &t) {
 
 
 
+#block(sticky: true)[#raw("<<Transform Inline Functions>>+=") #link(<fragment-TransformInlineFunctions-0>)[▲] #link(<fragment-TransformInlineFunctions-2>)[▼]] <fragment-TransformInlineFunctions-1>
 ```cpp
 Transform Transpose(const Transform &t) {
     return Transform(Transpose(t.GetMatrix()),
@@ -305,12 +305,13 @@ Transform Transpose(const Transform &t) {
 #parec[
   The `Transform` class also provides equality and inequality testing methods as well as an `IsIdentity()` method that checks to see if the transformation is the identity.
 ][
-  `Transform`类还提供了等价和不等价测试方法以及一个`IsIdentity()`方法，用于检查变换是否为恒等变换。
+  `Transform`类还提供了相等与不等测试方法以及一个`IsIdentity()`方法，用于检查变换是否为恒等变换。
 ]
 
 
 
 
+#block(sticky: true)[#raw("<<Transform Public Methods>>+=") #link(<fragment-TransformPublicMethods-4>)[▲] #link(<fragment-TransformPublicMethods-6>)[▼]] <fragment-TransformPublicMethods-5>
 ```cpp
 bool operator==(const Transform &t) const { return t.m == m; }
 bool operator!=(const Transform &t) const { return t.m != m; }
@@ -319,21 +320,21 @@ bool IsIdentity() const { return m.IsIdentity(); }
 
 
 
-=== Translations
+=== #ez_caption[Translations][平移]
 <translations>
 
 
 #parec[
-  One of the simplest transformations is the #emph[translationtransformation];, $upright(bold(T))(Delta x, Delta y, Delta z)$. When applied to a point $p$, it translates $p$ 's coordinates by $Delta x$, $Delta y$, and $Delta z$, as shown in @fig:translateexample. As an example, $upright(bold(T))(2, 2, 1)(x, y, z) =(x + 2, y + 2, z + 1)$.
+  One of the simplest transformations is the #emph[translation transformation], $upright(bold(T))(Delta x, Delta y, Delta z)$. When applied to a point $p$, it translates $p$ 's coordinates by $Delta x$, $Delta y$, and $Delta z$, as shown in @fig:translateexample. As an example, $upright(bold(T))(2, 2, 1)(x, y, z) =(x + 2, y + 2, z + 1)$.
 ][
-  最简单的变换之一是#emph[平移变换];， $upright(bold(T))(Delta x, Delta y, Delta z)$ 当应用于点 $p$ 时，它将 $p$ 的坐标平移 $Delta x$, $Delta y$, and $Delta z$，如@fig:translateexample 所示。例如， $upright(bold(T))(2, 2, 1)(x, y, z) =(x + 2, y + 2, z + 1)$。
+  最简单的变换之一是#emph[平移变换]， $upright(bold(T))(Delta x, Delta y, Delta z)$ 当应用于点 $p$ 时，它将 $p$ 的坐标分别平移 $Delta x$、$Delta y$ 和 $Delta z$，如@fig:translateexample 所示。例如， $upright(bold(T))(2, 2, 1)(x, y, z) =(x + 2, y + 2, z + 1)$。
 ]
 
 
 #figure(
   image("../pbr-book-website/4ed/Geometry_and_Transformations/pha03f25.svg"),
   caption: [
-    #ez_caption[ Translation in 2D. Adding offsets (x) and (y) to a point’s coordinates correspondingly changes its position in space. ][ 平移。将偏移量(x)和(y)添加到点的二维坐标，相应地改变其在空间中的位置。 ]
+    #ez_caption[ Translation in 2D. Adding offsets $Delta x$ and $Delta y$ to a point’s coordinates correspondingly changes its position in space. ][ 平移。将偏移量 $Delta x$ 和 $Delta y$添加到点的二维坐标，相应地改变其在空间中的位置。 ]
 
   ],
 ) <translateexample>
@@ -341,7 +342,7 @@ bool IsIdentity() const { return m.IsIdentity(); }
 #parec[
   Translation has some basic properties:
 ][
-  平移具有一些基本属性：
+  平移具有一些基本性质：
 ]
 
 
@@ -362,13 +363,13 @@ $
 $
   bold("T") (
     Delta x , Delta y , Delta z
-  ) = mat(delim: "[", 1, 0, 0, Delta x; 0, 1, 0, Delta y; 0, 0, 1, Delta z; 0, 0, 0, 1) .
+  ) = mat(delim: "(", 1, 0, 0, Delta x; 0, 1, 0, Delta y; 0, 0, 1, Delta z; 0, 0, 0, 1) .
 $
 
 #parec[
-  When we consider the operation of a translation matrix on a point, we see the value of homogeneous coordinates. Consider the product of the matrix for $bold("T") (Delta x , Delta y , Delta z)$ with a point $upright(bold(p))$ in homogeneous coordinates $mat(delim: "[", x; y; z; 1)$ :
+  When we consider the operation of a translation matrix on a point, we see the value of homogeneous coordinates. Consider the product of the matrix for $bold("T") (Delta x , Delta y , Delta z)$ with a point $upright(p)$ in homogeneous coordinates $mat(delim: "[", x, y, z, 1)^T$ :
 ][
-  当我们考虑平移矩阵对一个点的操作时，我们可以看到齐次坐标的作用。考虑矩阵 $bold("T") (Delta x , Delta y , Delta z)$ 与一个点 $upright(bold(p))$ 在 齐次坐标 $mat(delim: "[", x, comma, y, comma, z,  comma, 1)^T$ 中的乘积：
+  当我们考虑平移矩阵对一个点的操作时，我们可以看到齐次坐标的作用。考虑矩阵 $bold("T") (Delta x , Delta y , Delta z)$ 与一个点 $upright(p)$ 在齐次坐标 $mat(delim: "[", x, y, z, 1)^T$ 中的乘积：
 ]
 
 $
@@ -399,6 +400,7 @@ $
   `Translate()` 函数返回一个表示指定平移的 `Transform`——这是平移矩阵方程的直接应用。平移的逆变换很容易计算，因此也提供给 `Transform` 构造函数。
 ]
 
+#block(sticky: true)[#raw("<<Transform Function Definitions>>=") #link(<fragment-TransformFunctionDefinitions-1>)[▼]] <fragment-TransformFunctionDefinitions-0>
 ```cpp
 Transform Translate(Vector3f delta) {
     SquareMatrix<4> m(1, 0, 0, delta.x,
@@ -413,12 +415,12 @@ Transform Translate(Vector3f delta) {
 }
 ```
 
-=== Scaling
+=== #ez_caption[Scaling][缩放]
 
 #parec[
   Another basic transformation is the scale transformation, $bold("S") (s_x , s_y , s_z)$. It has the effect of taking a point or vector and multiplying its components by scale factors in $x$, $y$, and $z$ : $bold("S") (2 , 2 , 1) (x , y , z) = (2 x , 2 y , z)$. It has the following basic properties:
 ][
-  另一种基本变换是缩放变换， $bold("S") (s_x , s_y , s_z)$。它的作用是将点或向量的各个分量乘以 $x$ 、 $y$ 和 $z$ 的缩放因子： $bold("S") (2 , 2 , 1) (x , y , z) = (2 x , 2 y , z)$。它具有以下基本属性：
+  另一种基本变换是缩放变换， $bold("S") (s_x , s_y , s_z)$。它的作用是将点或向量的各个分量乘以 $x$ 、 $y$ 和 $z$ 的缩放因子： $bold("S") (2 , 2 , 1) (x , y , z) = (2 x , 2 y , z)$。它具有以下基本性质：
 ]
 
 $
@@ -432,14 +434,14 @@ $
 #parec[
   We can differentiate between uniform scaling, where all three scale factors have the same value, and nonuniform scaling, where they may have different values. The general scale matrix is
 ][
-  我们可以区分均匀缩放（即三个缩放因子相同）和非均匀缩放（即缩放因子不同）。一般的缩放矩阵是
+  我们可以区分均匀缩放（即三个缩放因子相同）和非均匀缩放（即缩放因子可以不同）。一般的缩放矩阵是
 ]
 
 
 $ upright(bold(S)) (x , y , z) = mat(delim: "(", x, 0, 0, 0; 0, y, 0, 0; 0, 0, z, 0; 0, 0, 0, 1) . $
 
+#block(sticky: true)[#raw("<<Transform Function Definitions>>+=") #link(<fragment-TransformFunctionDefinitions-0>)[▲] #link(<fragment-TransformFunctionDefinitions-2>)[▼]] <fragment-TransformFunctionDefinitions-1>
 ```cpp
-<<Transform Function Definitions>>+=
 Transform Scale(Float x, Float y, Float z) {
     SquareMatrix<4> m(x, 0, 0, 0,
                       0, y, 0, 0,
@@ -461,6 +463,7 @@ Transform Scale(Float x, Float y, Float z) {
 ]
 
 
+#block(sticky: true)[#raw("<<Transform Public Methods>>+=") #link(<fragment-TransformPublicMethods-5>)[▲]] <fragment-TransformPublicMethods-6>
 ```cpp
 bool HasScale(Float tolerance = 1e-3f) const {
     Float la2 = LengthSquared((*this)(Vector3f(1, 0, 0)));
@@ -472,15 +475,15 @@ bool HasScale(Float tolerance = 1e-3f) const {
 }
 ```
 
-=== $x$, $y$, and $z$ Axis Rotations
+=== #ez_caption[$x$, $y$, and $z$ Axis Rotations][绕 $x$、$y$、$z$ 轴旋转]
 
 
 
 #parec[
   Another useful type of transformation is the #emph[rotation
-transformation];, $upright(bold(R))$. In general, we can define an arbitrary axis from the origin in any direction and then rotate around that axis by a given angle. The most common rotations of this type are around the $x$, $y$, and $z$ coordinate axes. We will write these rotations as $upright(bold(R))_x (theta)$, $upright(bold(R))_y (theta)$, and so on. The rotation around an arbitrary axis $(x , y , z)$ is denoted by $upright(bold(R))_((x , y , z)) (theta)$.
+transformation], $upright(bold(R))$. In general, we can define an arbitrary axis from the origin in any direction and then rotate around that axis by a given angle. The most common rotations of this type are around the $x$, $y$, and $z$ coordinate axes. We will write these rotations as $upright(bold(R))_(x) (theta)$, $upright(bold(R))_(y) (theta)$, and so on. The rotation around an arbitrary axis $(x , y , z)$ is denoted by $upright(bold(R))_((x , y , z)) (theta)$.
 ][
-  另一种有用的变换类型是#emph[旋转变换];，记作 $upright(bold(R))$。通常，我们可以从原点定义一个任意方向的轴，然后围绕该轴旋转一个给定的角度。这种类型最常见的旋转是围绕 $x$ 、 $y$ 和 $z$ 坐标轴。我们将这些旋转写为 $upright(bold(R))_x (theta)$ 、 $upright(bold(R))_y (theta)$ 等。围绕任意轴 $(x , y , z)$ 的旋转记作 $upright(bold(R))_((x , y , z)) (theta)$。
+  另一种有用的变换类型是#emph[旋转变换]，记作 $upright(bold(R))$。通常，我们可以从原点定义一个任意方向的轴，然后围绕该轴旋转一个给定的角度。这种类型最常见的旋转是围绕 $x$ 、 $y$ 和 $z$ 坐标轴。我们将这些旋转写为 $upright(bold(R))_(x) (theta)$ 、 $upright(bold(R))_(y) (theta)$ 等。围绕任意轴 $(x , y , z)$ 的旋转记作 $upright(bold(R))_((x , y , z)) (theta)$。
 ]
 
 #parec[
@@ -490,19 +493,19 @@ transformation];, $upright(bold(R))$. In general, we can define an arbitrary axi
 ]
 
 $
-  upright(bold(R))_a (0) & = upright(bold(I))\
-  upright(bold(R))_a (theta_1) upright(bold(R))_a (theta_2) & = upright(bold(R))_a (theta_1 + theta_2)\
-  upright(bold(R))_a (theta_1) upright(bold(R))_a (theta_2) & = upright(bold(R))_a (theta_2) upright(bold(R))_a (
+  upright(bold(R))_(a) (0) & = upright(bold(I))\
+  upright(bold(R))_(a) (theta_1) upright(bold(R))_(a) (theta_2) & = upright(bold(R))_(a) (theta_1 + theta_2)\
+  upright(bold(R))_(a) (theta_1) upright(bold(R))_(a) (theta_2) & = upright(bold(R))_(a) (theta_2) upright(bold(R))_(a) (
     theta_1
   )\
-  upright(bold(R))_a^(- 1) (theta) & = upright(bold(R))_a (- theta) = upright(bold(R))_a^(upright(T)) (theta) ,
+  upright(bold(R))_(a)^(- 1) (theta) & = upright(bold(R))_(a) (- theta) = upright(bold(R))_(a)^(upright(T)) (theta) ,
 $
 
 
 #parec[
-  where $upright(bold(R))^(upright(T))$ is the matrix transpose of $upright(bold(R))$. This last property, that the inverse of $upright(bold(R))$ is equal to its transpose, stems from the fact that $upright(bold(R))$ is an #emph[orthogonal matrix];; its first three columns (or rows) are all normalized and orthogonal to each other. Fortunately, the transpose is much easier to compute than a full matrix inverse.
+  where $upright(bold(R))^(upright(T))$ is the matrix transpose of $upright(bold(R))$. This last property, that the inverse of $upright(bold(R))$ is equal to its transpose, stems from the fact that $upright(bold(R))$ is an #emph[orthogonal matrix] its first three columns (or rows) are all normalized and orthogonal to each other. Fortunately, the transpose is much easier to compute than a full matrix inverse.
 ][
-  其中 $upright(bold(R))^(upright(T))$ 是 $upright(bold(R))$ 的转置矩阵。最后一个性质，即 $upright(bold(R))$ 的逆矩阵等于其转置矩阵，源于 $upright(bold(R))$ 是一个#emph[正交矩阵];；它的前三列（或行）都是标准化的并且彼此正交。幸运的是，计算转置矩阵比计算完整的逆矩阵要容易得多。
+  其中 $upright(bold(R))^(upright(T))$ 是 $upright(bold(R))$ 的转置矩阵。最后一个性质，即 $upright(bold(R))$ 的逆矩阵等于其转置矩阵，源于 $upright(bold(R))$ 是一个#emph[正交矩阵]；它的前三列（或行）都是归一化的并且彼此正交。幸运的是，计算转置矩阵比计算完整的逆矩阵要容易得多。
 ]
 
 #parec[
@@ -511,17 +514,20 @@ $
   对于左手坐标系，绕 $x$ 轴顺时针旋转的矩阵为
 ]
 $
-  upright(bold(R))_x (
+  upright(bold(R))_(x) (
     theta
-  ) = mat(delim: "[", 1, 0, 0, 0; 0, cos theta, - sin theta, 0; 0, sin theta, cos theta, 0; 0, 0, 0, 1) .
+  ) = mat(delim: "(", 1, 0, 0, 0; 0, cos theta, - sin theta, 0; 0, sin theta, cos theta, 0; 0, 0, 0, 1) .
 $
 
 
 #parec[
-  Figure 3.26 gives an intuition for how this matrix works.
+  @fig:rotate-x gives an intuition for how this matrix works.
 ][
-  图 3.26 给出了这个矩阵如何工作的直观理解。
+  @fig:rotate-x 给出了这个矩阵作用方式的直观解释。
 ]
+
+#figure(image("../pbr-book-website/4ed/Geometry_and_Transformations/pha03f26.svg"), caption: [#ez_caption[Clockwise rotation by an angle $theta$ about the $x$ axis leaves the $x$ coordinate unchanged. The $y$ and $z$ axes are mapped to the vectors given by the dashed lines; $y$ and $z$ coordinates move accordingly.][绕 $x$ 轴顺时针旋转角度 $theta$ 时，$x$ 坐标保持不变。$y$、$z$ 轴映射为虚线所示的向量，相应坐标也随之改变。]]) <rotate-x>
+
 
 #parec[
   It is easy to see that the matrix leaves the $x$ axis unchanged:
@@ -531,7 +537,7 @@ $
 
 
 $
-  upright(bold(R))_x (theta)(mat(delim: #none, 1; 0; 0; 0))^T =(mat(delim: #none, 1; 0; 0; 0))^T .
+  upright(bold(R))_(x)(theta) mat(delim: "[", 1, 0, 0, 0)^T = mat(delim: "[", 1, 0, 0, 0)^T .
 $
 #parec[
   It maps the $y$ axis $(0 , 1 , 0)$ to $(0 , cos theta , sin theta)$ and the $z$ axis to $(0 , - sin theta , cos theta)$. The $y$ and $z$ axes remain in the same plane, perpendicular to the $x$ axis, but are rotated by the given angle. An arbitrary point in space is similarly rotated about the $x$ axis by this transformation while staying in the same $y z$ plane as it was originally.
@@ -545,7 +551,8 @@ $
   `RotateX()` 函数的实现很简单。
 ]
 
-```
+#block(sticky: true)[#raw("<<Transform Function Definitions>>+=") #link(<fragment-TransformFunctionDefinitions-1>)[▲] #link(<fragment-TransformFunctionDefinitions-3>)[▼]] <fragment-TransformFunctionDefinitions-2>
+```cpp
 Transform RotateX(Float theta) {
     Float sinTheta = std::sin(Radians(theta));
     Float cosTheta = std::cos(Radians(theta));
@@ -564,11 +571,11 @@ Transform RotateX(Float theta) {
 ]
 
 $
-  upright(bold(R))_y (
+  upright(bold(R))_(y) (
     theta
-  ) = mat(delim: "[", cos theta, 0, sin theta, 0; 0, 1, 0, 0; - sin theta, 0, cos theta, 0; 0, 0, 0, 1) quad upright(bold(R))_z (
+  ) = mat(delim: "(", cos theta, 0, sin theta, 0; 0, 1, 0, 0; - sin theta, 0, cos theta, 0; 0, 0, 0, 1) quad upright(bold(R))_(z) (
     theta
-  ) = mat(delim: "[", cos theta, - sin theta, 0, 0; sin theta, cos theta, 0, 0; 0, 0, 1, 0; 0, 0, 0, 1) .
+  ) = mat(delim: "(", cos theta, - sin theta, 0, 0; sin theta, cos theta, 0, 0; 0, 0, 1, 0; 0, 0, 0, 1) .
 $
 
 
@@ -578,7 +585,7 @@ $
   `RotateY()` 和 `RotateZ()` 的实现直接得出，这里不再包括。
 ]
 
-=== Rotation around an Arbitrary Axis
+=== #ez_caption[Rotation around an Arbitrary Axis][绕任意轴旋转]
 <rotation-around-an-arbitrary-axis>
 #parec[
   We also provide a routine to compute the transformation that represents rotation around an arbitrary axis. A common derivation of this matrix is based on computing rotations that map the given axis to a fixed axis (e.g., $z$ ), performing the rotation there, and then rotating the fixed axis back to the original axis. A more elegant derivation can be constructed with vector algebra.
@@ -587,19 +594,22 @@ $
 ]
 
 #parec[
-  Consider a normalized direction vector $upright(bold(a))$ that gives the axis to rotate around by angle $theta$, and a vector $upright(bold(v))$ to be rotated (Figure 3.27).
+  Consider a normalized direction vector $upright(bold(a))$ that gives the axis to rotate around by angle $theta$, and a vector $upright(bold(v))$ to be rotated (@fig:rot-arb-axis).
 ][
-  考虑一个标准化方向向量 $upright(bold(a))$，它给出了绕其旋转的轴和一个要旋转的向量 $upright(bold(v))$ （图 3.27）。
+  考虑归一化方向向量 $upright(bold(a))$，它给出要绕其旋转角度 $theta$ 的轴；再取一个待旋转向量 $upright(bold(v))$（@fig:rot-arb-axis）。
 ]
+
+#figure(image("../pbr-book-website/4ed/Geometry_and_Transformations/pha03f27.svg"), caption: [#ez_caption[A vector $upright(bold(v))$ can be rotated around an arbitrary axis $upright(bold(a))$ by constructing a coordinate system $(p,upright(bold(v))_1,upright(bold(v))_2)$ in the plane perpendicular to the axis that passes through $upright(bold(v))$'s end point and rotating the vectors $upright(bold(v))_1$ and $upright(bold(v))_2$ about $p$. Applying this rotation to the axes of the coordinate system $(1,0,0)$, $(0,1,0)$, and $(0,0,1)$ gives the general rotation matrix for this rotation.][要将向量 $upright(bold(v))$ 绕任意轴 $upright(bold(a))$ 旋转，可在经过 $upright(bold(v))$ 终点且垂直于该轴的平面内构造坐标系 $(p,upright(bold(v))_1,upright(bold(v))_2)$，再将 $upright(bold(v))_1$ 和 $upright(bold(v))_2$ 绕 $p$ 旋转。把这一旋转应用于坐标轴 $(1,0,0)$、$(0,1,0)$ 和 $(0,0,1)$，即可得到该旋转的一般矩阵。]]) <rot-arb-axis>
+
 
 #parec[
   First, we can compute the vector $upright(bold(v))_c$ along the axis $upright(bold(a))$ that is in the plane through the end point of $upright(bold(v))$ and is parallel to $upright(bold(a))$. Assuming $upright(bold(v))$ and $upright(bold(a))$ form an angle $alpha$, we have
 ][
-  首先，我们可以计算沿轴 $upright(bold(a))$ 的向量 $upright(bold(v))_c$，它在通过 $upright(bold(v))$ 的终点的平面中并且与 $upright(bold(a))$ 平行。假设 $upright(bold(v))$ 和 $upright(bold(a))$ 形成一个角度 $alpha$，我们有
+  首先，我们可以计算沿轴 $upright(bold(a))$ 的向量 $upright(bold(v))_c$，它与 $upright(bold(a))$ 平行，其终点位于经过 $upright(bold(v))$ 终点的上述平面内。假设 $upright(bold(v))$ 和 $upright(bold(a))$ 形成一个角度 $alpha$，我们有
 ]
 
 $
-  upright(bold(v))_(upright(bold(c))) = upright(bold(a)) parallel upright(bold(v)) parallel cos alpha = upright(bold(a)) (
+  upright(bold(v))_(upright(bold(c))) = upright(bold(a)) norm(upright(bold(v))) cos alpha = upright(bold(a)) (
     upright(bold(v)) dot.op upright(bold(a))
   ) .
 $
@@ -631,14 +641,14 @@ $ upright(bold(v))_2 = (upright(bold(v))_1 times upright(bold(a))) . $
 ]
 
 $
-  upright(bold(v)) prime = upright(bold(v))_(upright(bold(c))) + upright(bold(v))_1 cos theta + upright(bold(v))_2 sin theta .
+  upright(bold(v))' = upright(bold(v))_(upright(bold(c))) + upright(bold(v))_1 cos theta + upright(bold(v))_2 sin theta .
 $
 
 
 #parec[
   To convert this to a rotation matrix, we apply this formula to the basis vectors $(1 , 0 , 0)$, $(0 , 1 , 0)$, and $(0 , 0 , 1)$ to get the values of the rows of the matrix. The result of all this is encapsulated in the following function. As with the other rotation matrices, the inverse is equal to the transpose.
 ][
-  要将其转换为旋转矩阵，我们将此公式应用于标准基向量 $(1 , 0 , 0)$, $(0 , 1 , 0)$ 和 $(0 , 0 , 1)$ 以获取矩阵行的值。所有这些的结果都封装在以下函数中。与其他旋转矩阵一样，其逆矩阵等于其转置矩阵。
+  要将其转换为旋转矩阵，我们将此公式应用于标准基向量 $(1 , 0 , 0)$, $(0 , 1 , 0)$ 和 $(0 , 0 , 1)$ 以得到矩阵各行的值。所有这些的结果都封装在以下函数中。与其他旋转矩阵一样，其逆矩阵等于其转置矩阵。
 ]
 
 
@@ -649,27 +659,18 @@ $
   因为 `Rotate()` 函数的一些调用者已经有 $sin theta$ 和 $cos theta$，`pbrt` 提供了一个直接接受这些值的函数变体。
 ]
 
+#block(sticky: true)[#raw("<<Transform Inline Functions>>+=") #link(<fragment-TransformInlineFunctions-1>)[▲] #link(<fragment-TransformInlineFunctions-3>)[▼]] <fragment-TransformInlineFunctions-2>
 ```cpp
 Transform Rotate(Float sinTheta, Float cosTheta, Vector3f axis) {
     Vector3f a = Normalize(axis);
     SquareMatrix<4> m;
-    <<Compute rotation of first basis vector>>       m[0][0] = a.x * a.x + (1 - a.x * a.x) * cosTheta;
-       m[0][1] = a.x * a.y * (1 - cosTheta) - a.z * sinTheta;
-       m[0][2] = a.x * a.z * (1 - cosTheta) + a.y * sinTheta;
-       m[0][3] = 0;
-    <<Compute rotations of second and third basis vectors>>       m[1][0] = a.x * a.y * (1 - cosTheta) + a.z * sinTheta;
-       m[1][1] = a.y * a.y + (1 - a.y * a.y) * cosTheta;
-       m[1][2] = a.y * a.z * (1 - cosTheta) - a.x * sinTheta;
-       m[1][3] = 0;
-
-       m[2][0] = a.x * a.z * (1 - cosTheta) - a.y * sinTheta;
-       m[2][1] = a.y * a.z * (1 - cosTheta) + a.x * sinTheta;
-       m[2][2] = a.z * a.z + (1 - a.z * a.z) * cosTheta;
-       m[2][3] = 0;
+    <<Compute rotation of first basis vector>> 
+    <<Compute rotations of second and third basis vectors>> 
     return Transform(m, Transpose(m));
 }
 ```
 
+#block(sticky: true)[#raw("<<Compute rotation of first basis vector>>=")] <fragment-Computerotationoffirstbasisvector-0>
 ```cpp
 m[0][0] = a.x * a.x + (1 - a.x * a.x) * cosTheta;
 m[0][1] = a.x * a.y * (1 - cosTheta) - a.z * sinTheta;
@@ -689,6 +690,7 @@ m[0][3] = 0;
   `Rotate()` 的第二个变体接受角度 $theta$ （以度为单位），计算其正弦和余弦，然后调用第一个。
 ]
 
+#block(sticky: true)[#raw("<<Transform Inline Functions>>+=") #link(<fragment-TransformInlineFunctions-2>)[▲] #link(<fragment-TransformInlineFunctions-4>)[▼]] <fragment-TransformInlineFunctions-3>
 ```cpp
 Transform Rotate(Float theta, Vector3f axis) {
     Float sinTheta = std::sin(Radians(theta));
@@ -697,7 +699,7 @@ Transform Rotate(Float theta, Vector3f axis) {
 }
 ```
 
-=== Rotating One Vector to Another
+=== #ez_caption[Rotating One Vector to Another][将一个向量旋转到另一个向量]
 <rotating-one-vector-to-another>
 
 
@@ -735,11 +737,7 @@ $
   upright(bold(R)) = upright(bold(H)) (upright(bold(r)) - upright(bold(t))) upright(bold(H)) (
     upright(bold(r)) - upright(bold(f))
   ) ,
-$
-
-
-$ (3.10) $
-
+$ <householder-rot-from-to>
 
 #parec[
   the second matrix reflects $upright(bold(f))$ to $upright(bold(r))$ and the first then reflects $upright(bold(r))$ to $upright(bold(t))$, which together give the desired rotation.
@@ -747,26 +745,11 @@ $ (3.10) $
   第二个矩阵将 $upright(bold(f))$ 反射到 $upright(bold(r))$，然后第一个矩阵将 $upright(bold(r))$ 反射到 $upright(bold(t))$，这两个矩阵共同实现了所需的旋转。
 ]
 
+#block(sticky: true)[#raw("<<Transform Inline Functions>>+=") #link(<fragment-TransformInlineFunctions-3>)[▲]] <fragment-TransformInlineFunctions-4>
 ```cpp
 Transform RotateFromTo(Vector3f from, Vector3f to) {
-    <<Compute intermediate vector for vector reflection>>
-    Vector3f refl;
-    if (std::abs(from.x) < 0.72f && std::abs(to.x) < 0.72f)
-        refl = Vector3f(1, 0, 0);
-    else if (std::abs(from.y) < 0.72f && std::abs(to.y) < 0.72f)
-        refl = Vector3f(0, 1, 0);
-    else
-        refl = Vector3f(0, 0, 1);
-    <<Initialize matrix r for rotation>>
-    Vector3f u = refl - from, v = refl - to;
-    SquareMatrix<4> r;
-    for (int i = 0; i < 3; ++i)
-        for (int j = 0; j < 3; ++j)
-            <<Initialize matrix element r[i][j]>>
-            r[i][j] = ((i == j) ? 1 : 0) -
-                      2 / Dot(u, u) * u[i] * u[j] -
-                      2 / Dot(v, v) * v[i] * v[j] +
-                      4 * Dot(u, v) / (Dot(u, u) * Dot(v, v)) * v[i] * u[j];
+    <<Compute intermediate vector for vector reflection>> 
+    <<Initialize matrix r for rotation>> 
     return Transform(r, Transpose(r));
 }
 ```
@@ -775,16 +758,17 @@ Transform RotateFromTo(Vector3f from, Vector3f to) {
 #parec[
   The intermediate reflection direction `refl` is determined by choosing a basis vector that is not too closely aligned to either of the `from` and `to` vectors. In the computation here, because $0.72$ is just slightly greater than $sqrt(2)\/2$, the absolute value of at least one pair of matching coordinates must then both be less than $0.72$, assuming the vectors are normalized. In this way, a loss of accuracy is avoided when the reflection direction is nearly parallel to either `from` or `to`.
 ][
-  中间反射方向 `refl` 是通过选择一个与 `from` 和 `to` 向量 不太接近的基向量来确定的。在这里的计算中，因为 $0.72$ 略大于 $sqrt(2)\/2$ ，所以至少有一对匹配坐标的绝对值必须都小于 $0.72$，假设这些向量是归一化的。这样可以避免反射方向几乎与 `from` 或 `to` 平行时的精度损失。
+  中间反射方向 `refl` 选为一个与 `from`、`to` 均不太接近平行的基向量。在这里的计算中，因为 $0.72$ 略大于 $sqrt(2)\/2$ ，在两个向量均已归一化的前提下，必定至少有一对对应分量的绝对值都小于 $0.72$。这样可以避免反射方向几乎与 `from` 或 `to` 平行时的精度损失。
 ]
 
+#block(sticky: true)[#raw("<<Compute intermediate vector for vector reflection>>=")] <fragment-Computeintermediatevectorforvectorreflection-0>
 ```cpp
-Vect  or3f refl;
-  if (std::abs(from.x) < 0.72f && std::abs(to.x) < 0.72f)
-      refl = Vector3f(1, 0, 0);
-  else if (std::abs(from.y) < 0.72f && std::abs(to.y) < 0.72f)
-      refl = Vector3f(0, 1, 0);
-  else
+Vector3f refl;
+if (std::abs(from.x) < 0.72f && std::abs(to.x) < 0.72f)
+    refl = Vector3f(1, 0, 0);
+else if (std::abs(from.y) < 0.72f && std::abs(to.y) < 0.72f)
+    refl = Vector3f(0, 1, 0);
+else
     refl = Vector3f(0, 0, 1);
 ```
 
@@ -795,23 +779,20 @@ Vect  or3f refl;
   给定反射轴，矩阵元素可以直接初始化。
 ]
 
+#block(sticky: true)[#raw("<<Initialize matrix r for rotation>>=")] <fragment-Initializematrixmonorforrotation-0>
 ```cpp
-  Vector3f u = refl - from, v = refl - to;
-Squa  reMatrix<4> r;
-for (int   i = 0; i < 3; ++i)
-    for   (int j= 0; j < 3; ++j)
-        <<Initiali  ze matrix element r[i][j]>>
-        r[i][j] =   ((i == j) ? 1 : 0) -
-                    2 / Dot(u, u) * u[i] * u[j] -
-                    2 / Dot(v, v) * v[i] * v[j] +
-                  4 * Dot(u, v) / (Dot(u, u) * Dot(v, v)) * v[i] * u[j];
+Vector3f u = refl - from, v = refl - to;
+SquareMatrix<4> r;
+for (int i = 0; i < 3; ++i)
+    for (int j = 0; j < 3; ++j)
+        <<Initialize matrix element r[i][j]>>
 ```
 
 
 #parec[
-  Expanding the product of the Householder matrices in Equation (3.10), we can find that the matrix element $r_(i , j)$ is given by
+  Expanding the product of the Householder matrices in @eqt:householder-rot-from-to, we can find that the matrix element $r_(i , j)$ is given by
 ][
-  通过展开方程 (3.10) 中 Householder 矩阵的乘积，我们可以发现矩阵元素 $r_(i , j)$ 给出为
+  通过展开@eqt:householder-rot-from-to 中 Householder 矩阵的乘积，我们可以发现矩阵元素 $r_(i , j)$ 为
 ]
 
 $
@@ -823,25 +804,26 @@ $
 #parec[
   where $delta_(i,j)$ is the Kronecker delta function that is 1 if $i$ and $j$ are equal and 0 otherwise. The implementation follows directly.
 ][
-  其中 $delta_(i,j)$ 是 Kronecker delta 函数，即当 $i$ 和 $j$ 相等时为 1，否则为 0。实现直接遵循。
+  其中 $delta_(i,j)$ 是 克罗内克δ函数，即当 $i$ 和 $j$ 相等时为 1，否则为 0。实现直接遵循。
 ]
 
 
 
+#block(sticky: true)[#raw("<<Initialize matrix element r[i][j]>>=")] <fragment-Initializematrixelementmonorij-0>
 ```cpp
-r[  i][j] =   ((i == j) ? 1 : 0) -
-            2 / Dot(u, u) * u[i] * u[j] -
-            2 / Dot(v, v) * v[i] * v[j] +
+r[i][j] = ((i == j) ? 1 : 0) -
+          2 / Dot(u, u) * u[i] * u[j] -
+          2 / Dot(v, v) * v[i] * v[j] +
           4 * Dot(u, v) / (Dot(u, u) * Dot(v, v)) * v[i] * u[j];
 ```
 
-=== The Look-at Transformation
+=== #ez_caption[The Look-at Transformation][观察变换]
 <the-look-at-transformation>
 
 #parec[
-  The #emph[look-at transformation] is particularly useful for placing a camera in the scene. The caller specifies the desired position of the camera, a point the camera is looking at, and an "up" vector that orients the camera along the viewing direction implied by the first two parameters. All of these values are typically given in world-space coordinates; this gives a transformation from world space to camera space (Figure 3.28). We will assume that use in the discussion below, though note that this way of specifying transformations can also be useful for placing light sources in the scene.
+  The #emph[look-at transformation] is particularly useful for placing a camera in the scene. The caller specifies the desired position of the camera, a point the camera is looking at, and an "up" vector that orients the camera along the viewing direction implied by the first two parameters. All of these values are typically given in world-space coordinates; this gives a transformation from world space to camera space (@fig:lookat). We will assume that use in the discussion below, though note that this way of specifying transformations can also be useful for placing light sources in the scene.
 ][
-  #emph[观察变换] 在场景中放置相机时特别有用。调用者指定相机的期望位置、相机正在观察的点以及一个“向上”向量，该向量沿着由前两个参数隐含的视图方向定向相机。所有这些值通常以世界空间坐标给出；这提供了从世界空间到相机空间的变换（图 3.28）。我们将在下面的讨论中假设使用这种方式，尽管这种指定变换的方法也可以用于在场景中放置光源。
+  #emph[观察变换] 在场景中放置相机时特别有用。调用者指定相机位置、相机所观察的目标点，以及一个“向上”向量。在前两个参数确定观察方向后，“向上”向量进一步确定相机的朝向。所有这些值通常以世界空间坐标给出；这提供了从世界空间到相机空间的变换（@fig:lookat）。我们将在下面的讨论中假设使用这种方式，尽管这种指定变换的方法也可以用于在场景中放置光源。
 ]
 
 #figure(
@@ -850,19 +832,18 @@ r[  i][j] =   ((i == j) ? 1 : 0) -
   caption: [
 
     #ez_caption[
-      Figure 3.28: Given a camera position, the position being looked at from
+      Given a camera position, the position being looked at from
       the camera, and an "up" direction, the look-at transformation describes
       a transformation from a left-handed viewing coordinate system where the
       camera is at the origin looking down the $+ z$ axis, and the $+ y$ axis
       is along the up direction.
 
     ][
-      图
-      3.28：给定相机位置、从相机观察的位置和“向上”方向，观察变换描述了从左手视图坐标系的变换，其中相机位于原点，沿着
+      给定相机位置、从相机观察的位置和“向上”方向，观察变换描述了从左手视图坐标系的变换，其中相机位于原点，沿着
       $+ z$ 轴观察，$+ y$ 轴沿着向上方向。
     ]
   ],
-)
+) <lookat>
 
 
 #parec[
@@ -871,32 +852,14 @@ r[  i][j] =   ((i == j) ? 1 : 0) -
   为了找到观察变换矩阵的条目，我们使用本节前面描述的原则：变换矩阵的列给出了变换对坐标系基的影响。
 ]
 
+#block(sticky: true)[#raw("<<Transform Function Definitions>>+=") #link(<fragment-TransformFunctionDefinitions-2>)[▲]] <fragment-TransformFunctionDefinitions-3>
 ```cpp
-  Transform LookAt(Point3f pos, Point3f look, Vectorf up) {
-      SquareMatrix<4> worldFromCamera;
-      <<Initialize fourth column of viewing matrix>>
-      worldFromCamera[0][3] = pos.x;
-      worldFromCamera[1][3] = pos.y;
-      worldFromCamera[2][3] = pos.z;
-      worldFromCamer[3][3] = 1;
-      <<Initialize first three columns of viewing matrix>>
-      Vector3f dir = Normalize(look - pos);
-      Vector3f right = Normalize(Cross(Normalize(up), dir));
-      Vector3f newUp = Cross(dir, right);
-      worldFromCamera[0][0] = right.x;
-      worldFromCamera[1][0] = right.y;
-      worldFromCamera[2][0] = right.z;
-      worldFromCamera[3][0] = 0.;
-      worldFromCamera[0][1] = newUp.x;
-      worldFromCamera[1][1] = newUp.y;
-      worldFromCamera[2][1] = newUp.z;
-      worldFromCamera[3][1] = 0.;
-      worldFromCamera[0][2] = dir.x;
-      worldFromCamera[1][2] = dir.y;
-      worldFromCamera[2][2] = dir.z;
-      worldFromCamera[3][2] = 0.;
-      SquareMatrix<4> cameraFromWorld = InvertOrExit(worldFromCamera);
-      return Transform(cameraFromWorld, worldFromCamera);
+Transform LookAt(Point3f pos, Point3f look, Vector3f up) {
+    SquareMatrix<4> worldFromCamera;
+    <<Initialize fourth column of viewing matrix>> 
+    <<Initialize first three columns of viewing matrix>> 
+    SquareMatrix<4> cameraFromWorld = InvertOrExit(worldFromCamera);
+    return Transform(cameraFromWorld, worldFromCamera);
 }
 ```
 
@@ -907,10 +870,11 @@ r[  i][j] =   ((i == j) ? 1 : 0) -
   最简单的列是第四列，它给出了相机空间原点 $[0 thin 0 thin 0 thin 1]^(upright(T))$ 在世界空间中映射到的点。这显然就是用户指定的相机位置。
 ]
 
+#block(sticky: true)[#raw("<<Initialize fourth column of viewing matrix>>=")] <fragment-Initializefourthcolumnofviewingmatrix-0>
 ```cpp
-  worldFromCamera[0][3] = pos.x;
-  worldFromCamera[1][3] = pos.y;
-  worldFromCamera[2][3] = pos.z;
+worldFromCamera[0][3] = pos.x;
+worldFromCamera[1][3] = pos.y;
+worldFromCamera[2][3] = pos.z;
 worldFromCamera[3][3] = 1;
 ```
 
@@ -918,24 +882,31 @@ worldFromCamera[3][3] = 1;
 #parec[
   The other three columns are not much more difficult. First, `LookAt()` computes the normalized direction vector from the camera location to the look-at point; this gives the vector coordinates that the $z$ axis should map to and, thus, the third column of the matrix. (In a left-handed coordinate system, camera space is defined with the viewing direction down the $+ z$ axis.) The first column, giving the world-space direction that the $+ x$ axis in camera space maps to, is found by taking the cross product of the user-supplied "up" vector with the recently computed viewing direction vector. Finally, the "up" vector is recomputed by taking the cross product of the viewing direction vector with the transformed $x$ axis vector, thus ensuring that the $y$ and $z$ axes are perpendicular and we have an orthonormal viewing coordinate system.
 ][
-  其他三列也不难。首先，`LookAt()` 计算从相机位置到观察点的归一化方向向量；这给出了 $z$ 轴应该映射到的向量坐标，从而给出了矩阵的第三列。（在左手坐标系中，相机空间定义为沿着 $+ z$ 轴的视图方向。）第一列，给出相机空间中 $+ x$ 轴映射到的世界空间方向，是通过用户提供的“向上”向量与最近计算的视图方向向量的叉积得到的。最后，通过视图方向向量与变换后的 $x$ 轴向量的叉积重新计算“向上”向量，从而确保 $y$ 轴和 $z$ 轴是垂直的，并且我们有一个正交的视图坐标系。
+  其他三列也不难。首先，`LookAt()` 计算从相机位置到观察点的归一化方向向量；这给出了 $z$ 轴应该映射到的向量坐标，从而给出了矩阵的第三列。（在左手坐标系中，相机空间定义为沿着 $+ z$ 轴的视图方向。）第一列，给出相机空间中 $+ x$ 轴映射到的世界空间方向，是通过用户提供的“向上”向量与刚计算出的观察方向向量的叉积得到的。最后，通过观察方向向量与变换后的 $x$ 轴向量的叉积重新计算“向上”向量，从而确保 $y$ 轴和 $z$ 轴是垂直的，得到正交归一的观察坐标系。
 ]
 
+#block(sticky: true)[#raw("<<Initialize first three columns of viewing matrix>>=")] <fragment-Initializefirstthreecolumnsofviewingmatrix-0>
 ```cpp
-  Vector3f dir = Normalize(look - pos);
-  Vector3f right = Normalize(Cross(Normalize(up), dir));
-  Vector3f newUp = Cross(dir, right);
-  worldFromCamera[0][0] = right.x;
-  worldFromCamera[1][0] = right.y;
-  worldFromCamera[2][0] = right.z;
-  worldFromCamera[3][0] = 0.;
-  worldFromCamera[0][1] = newUp.x;
-  worldFromCamera[1][1] = newUp.y;
-  worldFromCamera[2][1] = newUp.z;
-  worldFromCamera[3][1] = 0.;
-  worldFromCamera[0][2] = dir.x;
-  worldFromCamera[1][2] = dir.y;
-  worldFromCamera[2][2] = dir.z;
+Vector3f dir = Normalize(look - pos);
+Vector3f right = Normalize(Cross(Normalize(up), dir));
+Vector3f newUp = Cross(dir, right);
+worldFromCamera[0][0] = right.x;
+worldFromCamera[1][0] = right.y;
+worldFromCamera[2][0] = right.z;
+worldFromCamera[3][0] = 0.;
+worldFromCamera[0][1] = newUp.x;
+worldFromCamera[1][1] = newUp.y;
+worldFromCamera[2][1] = newUp.z;
+worldFromCamera[3][1] = 0.;
+worldFromCamera[0][2] = dir.x;
+worldFromCamera[1][2] = dir.y;
+worldFromCamera[2][2] = dir.z;
 worldFromCamera[3][2] = 0.;
-
 ```
+
+#heading(level: 3, numbering: none)[#ez_caption[Supplement: Additional Code in the Original Collapsed Panels][补充：原网页折叠面板中的额外代码]]
+#include "supplements/3.9-expanded.typ"
+
+#parec[][
+  #translator[图 3.28 的固定原书图注写作从观察坐标系出发的变换，而正文与 LookAt 返回值讨论世界空间到相机空间；中间构造的 worldFromCamera 与其逆方向不同。此处保留原文方向说法并记录差异，未修改正确的求逆代码。]
+]

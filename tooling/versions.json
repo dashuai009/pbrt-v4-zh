@@ -1,0 +1,8 @@
+{
+  "typst": "0.13.1",
+  "shiroa_cli": "0.3.0",
+  "shiroa_package": "0.2.0",
+  "shiroa_macos_arm64_sha256": "a960e4a3ca1add1b6cbd89a71290895e5968c76d2c138768d9947a4efeae1c42",
+  "node": "24.15.0",
+  "status": "Whole-book validation in progress; see audit/WEB-VALIDATION.md"
+}

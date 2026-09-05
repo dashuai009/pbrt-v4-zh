@@ -1,0 +1,6 @@
+// Structural verification only; independent editorial review remains separate.
+import fs from 'node:fs';import {parse} from 'parse5';
+const walk=function*(n){yield n;for(const c of n.childNodes||[])yield*walk(c)};const attr=(n,k)=>n.attrs?.find(a=>a.name===k)?.value;
+const inv=JSON.parse(fs.readFileSync('audit/inventory.json'));const ids=new Map();for(const p of inv.pages){ids.set(p.source,new Set([...walk(parse(fs.readFileSync('pbr-book-website/'+p.source,'utf8')))].map(n=>attr(n,'id')).filter(Boolean)))}
+const issues=[];let count=0;for(const name of ['References','Index_of_Fragments','Index_of_Identifiers']){const file=`backmatter/${name}.typ`,s=fs.readFileSync(file,'utf8');for(const [,value]of s.matchAll(/#link\(("(?:[^"\\]|\\.)*")\)/g)){const href=JSON.parse(value);const u=new URL(href);if(u.hostname!=='pbr-book.org')continue;count++;const p=decodeURIComponent(u.pathname.slice(1));if(!ids.has(p)||u.hash&&!ids.get(p).has(decodeURIComponent(u.hash.slice(1))))issues.push({file,href,reason:!ids.has(p)?'source page missing':'source anchor missing'})}}
+fs.writeFileSync('audit/backmatter-link-issues.json',JSON.stringify({count,issues},null,2));console.log(JSON.stringify({count,issues:issues.length,sample:issues.slice(0,8)},null,2));

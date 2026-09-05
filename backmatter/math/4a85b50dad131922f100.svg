@@ -1,0 +1,11 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.509ex" height="2.509ex" style="vertical-align: -0.671ex;" viewBox="0 -791.3 1080.4 1080.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
+<title id="MathJax-SVG-1-Title">theta Subscript normal w</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E1-LATINMODERNNORMAL-1D703" d="M455 500c0 -224 -152 -511 -293 -511c-91 0 -120 111 -120 205c0 229 154 511 293 511c102 0 120 -139 120 -205zM389 562c0 57 -6 121 -55 121c-45 0 -82 -56 -109 -105c-40 -71 -60 -151 -77 -215h209c24 99 32 150 32 199zM348 331h-208c-26 -98 -32 -156 -32 -198 c0 -93 21 -122 54 -122c43 0 81 49 116 117c38 72 59 157 70 203Z"></path>
+<path stroke-width="1" id="E1-LATINMODERNMAIN-77" d="M703 400c-35 -1 -66 -14 -84 -64l-117 -328c-4 -10 -7 -19 -20 -19s-16 8 -20 19l-102 284l-101 -283c-5 -14 -7 -20 -20 -20s-16 8 -21 22l-126 354c-12 32 -24 35 -74 35v31l93 -3l109 3v-31c-20 0 -59 0 -59 -27c0 -4 0 -6 5 -18l95 -267l86 242c-7 19 -18 49 -23 55 c-10 13 -26 15 -63 15v31c30 -2 59 -3 89 -3l104 3v-31c-20 0 -59 0 -59 -27c0 -5 1 -7 5 -19l99 -279l91 256c5 13 5 15 5 21c0 29 -22 47 -58 48v31l93 -3c22 0 51 1 73 3v-31Z"></path>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E1-LATINMODERNNORMAL-1D703" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-LATINMODERNMAIN-77" x="663" y="-213"></use>
+</g>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="4.097ex" height="2.509ex" style="vertical-align: -0.338ex;" viewBox="0 -934.9 1763.9 1080.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
+<title id="MathJax-SVG-1-Title">upper R Superscript negative 1</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E1-LATINMODERNNORMAL-1D445" d="M646 553c0 99 -111 99 -182 99c-20 0 -52 0 -61 -1c-19 -3 -22 -13 -28 -37l-65 -261h112c90 0 143 32 169 58c39 39 55 108 55 142zM755 93c0 -14 -35 -115 -120 -115c-13 0 -133 0 -133 108c0 20 9 57 16 85c6 23 14 54 14 69c0 35 -18 91 -109 91h-119l-66 -265 c-1 -6 -3 -11 -3 -17c0 -18 28 -18 65 -18c19 0 28 0 28 -11c0 -20 -12 -20 -20 -20l-127 3l-126 -3s-14 0 -14 11c0 20 9 20 27 20c79 0 81 8 91 47l134 537c3 12 4 15 4 19c0 13 -9 14 -27 16c-17 2 -38 2 -38 2c-19 0 -28 0 -28 11c0 20 9 20 29 20h285 c131 0 221 -64 221 -150c0 -101 -119 -171 -220 -193c27 -10 94 -41 94 -118c0 -14 -2 -33 -4 -47c-4 -32 -10 -83 -10 -114c0 -39 7 -61 40 -61c23 0 66 17 91 91c2 7 4 14 13 14c0 0 12 0 12 -12Z"></path>
+<path stroke-width="1" id="E1-LATINMODERNMAIN-2212" d="M722 250c0 -11 -9 -20 -20 -20h-626c-11 0 -20 9 -20 20s9 20 20 20h626c11 0 20 -9 20 -20Z"></path>
+<path stroke-width="1" id="E1-LATINMODERNMAIN-31" d="M419 0c-35 3 -122 3 -162 3s-127 0 -162 -3v31h32c90 0 93 12 93 48v518c-52 -26 -111 -26 -131 -26v31c32 0 120 0 182 64c23 0 23 -2 23 -26v-561c0 -37 3 -48 93 -48h32v-31Z"></path>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E1-LATINMODERNNORMAL-1D445" x="0" y="0"></use>
+<g transform="translate(759,362)">
+ <use transform="scale(0.707)" xlink:href="#E1-LATINMODERNMAIN-2212" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-LATINMODERNMAIN-31" x="778" y="0"></use>
+</g>
+</g>
+</svg>

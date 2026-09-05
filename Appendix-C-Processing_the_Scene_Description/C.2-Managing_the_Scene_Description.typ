@@ -1,11 +1,7 @@
-#import "../template.typ": parec
+#import "../template.typ": parec, ez_caption
 
-#parec[
-  C.2 Managing the Scene Description
-
-][
-  C.2 场景描述的管理
-]
+== #ez_caption[Managing the Scene Description][管理场景描述]
+<sec:basic-scene-builder>
 
 #parec[
   `pbrt`’s scene description files allow the user to specify various

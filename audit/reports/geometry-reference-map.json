@@ -1,0 +1,234 @@
+[
+  {
+    "source_id": "Moller18",
+    "key": "978-1138627000",
+    "exists": true,
+    "source_text": "Akenine-Möller, T., E. Haines, N. Hoffman, A. Peesce, M. Iwanicki, and S. Hillaire. 2018. Real-Time Rendering (4th ed.). Boca Raton, FL: CRC Press.",
+    "current_status": "awaiting_review",
+    "exists_currently": true
+  },
+  {
+    "source_id": "Arvo90",
+    "key": "10.5555/90767.90922",
+    "exists": true,
+    "source_text": "Arvo, J. 1990. Transforming axis-aligned bounding boxes. In A. S. Glassner (ed.), Graphics Gems I , 548–50. San Diego: Academic Press.",
+    "current_status": "awaiting_review",
+    "exists_currently": true
+  },
+  {
+    "source_id": "Barequet2005",
+    "key": "barequet2005optimal",
+    "exists": false,
+    "source_text": "Barequet, G., and G. Elber. 2005. Optimal bounding cones of vectors in three dimensions. Information Processing Letters 93 (2), 83–89.",
+    "current_status": "awaiting_review",
+    "exists_currently": true
+  },
+  {
+    "source_id": "Buck78",
+    "key": "buck1978advanced",
+    "exists": true,
+    "source_text": "Buck, R. C. 1978. Advanced Calculus . New York: McGraw-Hill.",
+    "current_status": "awaiting_review",
+    "exists_currently": true
+  },
+  {
+    "source_id": "Cigolle2014",
+    "key": "cigolle2014survey",
+    "exists": false,
+    "source_text": "Cigolle, Z. H., S. Donow, D. Evangelakos, M. Mara, M. McGuire, and Q. Meyer. 2014. Survey of efficient representations for independent unit vectors. Journal of Computer Graphics Techniques (JCGT) 3 (2), 1–30.",
+    "current_status": "awaiting_review",
+    "exists_currently": true
+  },
+  {
+    "source_id": "Clarberg2008",
+    "key": "clarberg2008fast",
+    "exists": false,
+    "source_text": "Clarberg, P. 2008. Fast equal-area mapping of the (hemi)sphere using SIMD. Journal of Graphics Tools 13 (3), 53–68.",
+    "current_status": "awaiting_review",
+    "exists_currently": true
+  },
+  {
+    "source_id": "DeRose89",
+    "key": "derose1989coordinate",
+    "exists": false,
+    "source_text": "DeRose, T. D. 1989. A Coordinate-Free Approach to Geometric Programming . Math for SIGGRAPH, SIGGRAPH Course Notes #23. Also available as Technical Report No. 89-09-16, Department of Computer Science and Engineering, University of Washington, Seattle.",
+    "current_status": "awaiting_review",
+    "exists_currently": true
+  },
+  {
+    "source_id": "Donnay1945",
+    "key": "donnay1945spherical",
+    "exists": false,
+    "source_text": "Donnay, J. D. H. 1945. Spherical Trigonometry after the Cesàro Method . New York, NY: Interscience Publishers.",
+    "current_status": "awaiting_review",
+    "exists_currently": true
+  },
+  {
+    "source_id": "Duff2017",
+    "key": "duff2017building",
+    "exists": false,
+    "source_text": "Duff, T., J. Burgess, P. Christensen, C. Hery, A. Kensler, M. Liani, and R. Villemin. 2017. Building an orthonormal basis, revisited. Journal of Computer Graphics Techniques (JCGT) 6 (1), 1–8.",
+    "current_status": "awaiting_review",
+    "exists_currently": true
+  },
+  {
+    "source_id": "Frisvad2012",
+    "key": "frisvad2012building",
+    "exists": false,
+    "source_text": "Frisvad, J. R. 2012. Building an orthonormal basis from a 3d unit vector without normalization. Journal of Graphics Tools 16 (3), 151–159.",
+    "current_status": "awaiting_review",
+    "exists_currently": true
+  },
+  {
+    "source_id": "Geisler2020",
+    "key": "geisler2020geometry",
+    "exists": false,
+    "source_text": "Geisler, D., I. Yoon, A. Kabra, H. He, Y. Sanders, and A. Sampson. 2020. Geometry types for graphics programming. Proceedings of the ACM on Programming Languages (OOPSLA 2020) 4 , 173:1–25.",
+    "current_status": "awaiting_review",
+    "exists_currently": true
+  },
+  {
+    "source_id": "Goldman85",
+    "key": "10.1145/282957.282969",
+    "exists": true,
+    "source_text": "Goldman, R. 1985. Illicit expressions in vector algebra. ACM Transactions on Graphics 4 (3), 223–43.",
+    "current_status": "awaiting_review",
+    "exists_currently": true
+  },
+  {
+    "source_id": "Guennebaud2010",
+    "key": "guennebaud2010eigen",
+    "exists": false,
+    "source_text": "Guennebaud, G., B. Jacob, and others. 2010. Eigen v3. http://eigen.tuxfamily.org .",
+    "current_status": "awaiting_review",
+    "exists_currently": true
+  },
+  {
+    "source_id": "Hatch2003",
+    "key": "hatch2003right",
+    "exists": false,
+    "source_text": "Hatch, D. 2003. The right way to calculate stuff. http://www.plunk.org/ hatch/rightway.html .",
+    "current_status": "awaiting_review",
+    "exists_currently": true
+  },
+  {
+    "source_id": "Hughes2021",
+    "key": "hughes2021personal",
+    "exists": false,
+    "source_text": "Hughes, J. F. 2021. Personal communication.",
+    "current_status": "awaiting_review",
+    "exists_currently": true
+  },
+  {
+    "source_id": "Lang86",
+    "key": "lang1986introduction",
+    "exists": true,
+    "source_text": "Lang, S. 1986. An Introduction to Linear Algebra . New York: Springer-Verlag.",
+    "current_status": "awaiting_review",
+    "exists_currently": true
+  },
+  {
+    "source_id": "Tomas99",
+    "key": "doi:10.1080/10867651.1999.10487509",
+    "exists": true,
+    "source_text": "Möller, T., and J. Hughes. 1999. Efficiently building a matrix to rotate one vector to another. Journal of Graphics Tools 4 (4), 1–4.",
+    "current_status": "awaiting_review",
+    "exists_currently": true
+  },
+  {
+    "source_id": "Mann97",
+    "key": "Mann97acoordinate",
+    "exists": true,
+    "source_text": "Mann, S., N. Litke, and T. DeRose. 1997. A coordinate free geometry ADT. Research Report CS-97-15 , Computer Science Department, University of Waterloo.",
+    "current_status": "awaiting_review",
+    "exists_currently": true
+  },
+  {
+    "source_id": "Max2017",
+    "key": "max2017improved",
+    "exists": false,
+    "source_text": "Max, N. 2017. Improved accuracy when building an orthonormal basis. Journal of Computer Graphics Techniques (JCGT) 6 (1), 9–16.",
+    "current_status": "awaiting_review",
+    "exists_currently": true
+  },
+  {
+    "source_id": "Meyer2010",
+    "key": "meyer2010floating",
+    "exists": true,
+    "source_text": "Meyer, Q., J. Süssmuth, G. Sussner, M. Stamminger, and G. Greiner. 2010. On floating-point normal vectors. Proceedings of the 21st Eurographics Conference on Rendering , 1405–9.",
+    "current_status": "awaiting_review",
+    "exists_currently": true
+  },
+  {
+    "source_id": "Praun2003",
+    "key": "praun2003spherical",
+    "exists": false,
+    "source_text": "Praun, E., and Hoppe, H. 2003. Spherical parameterization and remeshing. ACM Transactions on Graphics (Proceedings of SIGGRAPH 2003) 22 (3), 340–49.",
+    "current_status": "awaiting_review",
+    "exists_currently": true
+  },
+  {
+    "source_id": "Rogers90",
+    "key": "10.5555/63448",
+    "exists": true,
+    "source_text": "Rogers, D. F., and J. A. Adams. 1990. Mathematical Elements for Computer Graphics . New York: McGraw-Hill.",
+    "current_status": "awaiting_review",
+    "exists_currently": true
+  },
+  {
+    "source_id": "Schneider03",
+    "key": "schneider2003geometric",
+    "exists": false,
+    "source_text": "Schneider, P. J., and D. H. Eberly. 2003. Geometric Tools for Computer Graphics . San Francisco: Morgan Kaufmann.",
+    "current_status": "awaiting_review",
+    "exists_currently": true
+  },
+  {
+    "source_id": "Shirley97",
+    "key": "shirley1997low",
+    "exists": false,
+    "source_text": "Shirley, P., and K. Chiu. 1997. A low distortion map between disk and square. Journal of Graphics Tools 2 (3), 45–52.",
+    "current_status": "awaiting_review",
+    "exists_currently": true
+  },
+  {
+    "source_id": "Stolfi91",
+    "key": "10.5555/113163",
+    "exists": true,
+    "source_text": "Stolfi, J. 1991. Oriented Projective Geometry . San Diego: Academic Press.",
+    "current_status": "awaiting_review",
+    "exists_currently": true
+  },
+  {
+    "source_id": "Strom2020",
+    "key": "strom2020immersive",
+    "exists": false,
+    "source_text": "Ström, J., K. Åström, and T. Akenine-Möller. 2020. Immersive linear algebra. immersivemath.com .",
+    "current_status": "awaiting_review",
+    "exists_currently": true
+  },
+  {
+    "source_id": "Turkowski90",
+    "key": "TURKOWSKI1990539",
+    "exists": true,
+    "source_text": "Turkowski, K. 1990b. Properties of surface-normal transformations. In A. S. Glassner (ed.), Graphics Gems I , 539–47. San Diego: Academic Press.",
+    "current_status": "awaiting_review",
+    "exists_currently": true
+  },
+  {
+    "source_id": "VanOosterom1983",
+    "key": "vanoosterom1983solid",
+    "exists": false,
+    "source_text": "Van Oosterom, A., and J. Strackee. 1983. The solid angle of a plane triangle. IEEE Transactions on Biomedical Engineering BME-30 (2), 125–26.",
+    "current_status": "awaiting_review",
+    "exists_currently": true
+  },
+  {
+    "source_id": "Wallis90",
+    "key": "inproceedings",
+    "exists": true,
+    "source_text": "Wallis, B. 1990. Forms, vectors, and transforms. In A. S. Glassner (ed.), Graphics Gems I , 533–38. San Diego: Academic Press.",
+    "current_status": "awaiting_review",
+    "exists_currently": true
+  }
+]

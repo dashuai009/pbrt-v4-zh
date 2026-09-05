@@ -1,0 +1,23 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="9.843ex" height="2.843ex" style="vertical-align: -0.838ex;" viewBox="0 -863.1 4237.9 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
+<title id="MathJax-SVG-1-Title">v overTilde equals left floor n Subscript v Baseline v right floor</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E1-LATINMODERNNORMAL-1D463" d="M468 372c0 -52 -57 -383 -225 -383c-46 0 -134 16 -134 124c0 43 13 89 57 205c7 18 17 45 17 70c0 32 -17 32 -25 32c-29 0 -72 -23 -101 -124c-5 -16 -6 -18 -16 -18c0 0 -12 0 -12 10c0 9 38 154 132 154c50 0 82 -37 82 -82c0 -19 -5 -33 -12 -50 c-31 -83 -58 -156 -58 -212c0 -52 23 -87 74 -87c117 0 178 229 178 271c0 36 -13 62 -34 82c-11 11 -16 17 -16 30c0 22 24 48 49 48c18 0 44 -16 44 -70Z"></path>
+<path stroke-width="1" id="E1-LATINMODERNMAIN-303" d="M-79 734c0 -1 0 -1 -1 -2c-8 -62 -19 -103 -58 -122c-14 -7 -30 -10 -45 -10c-31 0 -63 12 -92 25c-22 10 -45 22 -67 22c-8 0 -17 -2 -25 -6c-27 -13 -52 -32 -58 -77c-1 -5 -6 -10 -12 -10s-12 5 -12 12c0 1 0 1 1 2c8 62 19 103 58 122c14 7 30 10 45 10 c31 0 63 -12 92 -25c22 -10 45 -22 67 -22c8 0 17 2 25 6c27 13 52 32 58 77c1 5 6 10 12 10s12 -5 12 -12Z"></path>
+<path stroke-width="1" id="E1-LATINMODERNMAIN-3D" d="M722 347c0 -11 -9 -20 -20 -20h-626c-11 0 -20 9 -20 20s9 20 20 20h626c11 0 20 -9 20 -20zM722 153c0 -11 -9 -20 -20 -20h-626c-11 0 -20 9 -20 20s9 20 20 20h626c11 0 20 -9 20 -20Z"></path>
+<path stroke-width="1" id="E1-LATINMODERNMAIN-230A" d="M416 -230c0 -11 -9 -20 -20 -20h-222v980c0 11 9 20 20 20s20 -9 20 -20v-940h182c11 0 20 -9 20 -20Z"></path>
+<path stroke-width="1" id="E1-LATINMODERNNORMAL-1D45B" d="M571 143c0 -8 -37 -154 -131 -154c-47 0 -82 35 -82 82c0 11 1 23 10 46c16 43 65 171 65 233c0 33 -9 70 -54 70c-95 0 -148 -91 -163 -122l-13 -50c-5 -23 -11 -45 -17 -67l-22 -90c-6 -25 -18 -72 -19 -74c-7 -20 -25 -28 -37 -28c-15 0 -29 9 -29 27c0 5 6 28 9 43 l58 231c13 52 16 63 16 84c0 33 -11 46 -31 46c-36 0 -56 -48 -73 -119c-6 -22 -7 -23 -17 -23c0 0 -12 0 -12 10c0 4 14 63 30 97c10 18 29 57 75 57s87 -31 92 -87c17 23 66 87 156 87c72 0 115 -40 115 -107c0 -57 -42 -167 -61 -220c-9 -22 -18 -46 -18 -71 c0 -23 7 -33 24 -33c49 0 82 56 102 124c5 15 5 18 15 18c3 0 12 0 12 -10Z"></path>
+<path stroke-width="1" id="E1-LATINMODERNMAIN-230B" d="M270 -250h-222c-11 0 -20 9 -20 20s9 20 20 20h182v940c0 11 9 20 20 20s20 -9 20 -20v-980Z"></path>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E1-LATINMODERNNORMAL-1D463" x="0" y="0"></use>
+ <use xlink:href="#E1-LATINMODERNMAIN-303" x="466" y="-3"></use>
+ <use xlink:href="#E1-LATINMODERNMAIN-3D" x="763" y="0"></use>
+ <use xlink:href="#E1-LATINMODERNMAIN-230A" x="1819" y="0"></use>
+<g transform="translate(2264,0)">
+ <use xlink:href="#E1-LATINMODERNNORMAL-1D45B" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-LATINMODERNNORMAL-1D463" x="849" y="-213"></use>
+</g>
+ <use xlink:href="#E1-LATINMODERNNORMAL-1D463" x="3307" y="0"></use>
+ <use xlink:href="#E1-LATINMODERNMAIN-230B" x="3793" y="0"></use>
+</g>
+</svg>

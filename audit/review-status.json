@@ -1,0 +1,755 @@
+{
+  "schema": 1,
+  "notice": "Verified scope is limited to the exact file hash and the named independent review. Read source issues and rendering limitations in the reports. Structural inventory is not an editorial verdict.",
+  "files": {
+    "chapter-1-Introduction/chapter-1.0-Introduction.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "local_sha256": "eee735a8acbe4b2305efd55a257ce699a0563de47b92d95dc7c0803e3a88ffb2",
+      "source": "4ed/Introduction.html",
+      "source_sha256": "d95a80e552a6b29ea6cccdddde609d53df3023fdf335fa2c84266e9ad5c6fa9f",
+      "editor_report": "audit/reports/edit-introduction.md",
+      "independent_review_report": "audit/reports/review-introduction.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-1-Introduction/chapter-1.1-Literate_Programming.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "local_sha256": "da8872f765cc7d7cd853f6f2cdc0969fed7df20a50ba902082f062fbbe78253b",
+      "source": "4ed/Introduction/Literate_Programming.html",
+      "source_sha256": "5e2facd2d8b919713f2ddc4b57313084cd3fdb078db37a83f5e8ffbb26ab8095",
+      "editor_report": "audit/reports/edit-introduction.md",
+      "independent_review_report": "audit/reports/review-introduction.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-1-Introduction/chapter-1.2-Photorealistic_Rendering_and_the_Ray-Tracing_Algorithm.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "local_sha256": "0ede3bbd34dc4ffc3553c41d542ff1ad717d88729f32343203b7356ecd7dbd8d",
+      "source": "4ed/Introduction/Photorealistic_Rendering_and_the_Ray-Tracing_Algorithm.html",
+      "source_sha256": "66fd560f8be8aff4da30da693afe169989ae1446ab92f4450883387b3eafe0ba",
+      "editor_report": "audit/reports/edit-ray-tracing.md",
+      "independent_review_report": "audit/reports/review-ray-tracing.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-2-Monte_Carlo_Integration/chapter-2.0-Monte_Carlo_Integration.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "local_sha256": "65fc717392d33bd272e256369cb207865bd1cf754aa1ce87c29b2be455b28b26",
+      "source": "4ed/Monte_Carlo_Integration.html",
+      "source_sha256": "79516ce4725b8fd6057e246991f07e722d408b84dc56bd3a58f3bcd461c9edce",
+      "editor_report": "audit/reports/edit-monte-carlo.md",
+      "independent_review_report": "audit/reports/review-monte-carlo.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-2-Monte_Carlo_Integration/chapter-2.1-Monte_Carlo_Basics.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "local_sha256": "d99f6f042d327fecc67719e590cd4621a8c402987c2b228e42366910561d08c7",
+      "source": "4ed/Monte_Carlo_Integration/Monte_Carlo_Basics.html",
+      "source_sha256": "c2b2d3742dd7821eb8f82046e2758f229ed9821e8195b4c9f5f28a94969bc884",
+      "editor_report": "audit/reports/edit-monte-carlo.md",
+      "independent_review_report": "audit/reports/review-monte-carlo.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-2-Monte_Carlo_Integration/chapter-2.2-Improving_Efficiency.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "local_sha256": "ef794c2c13cc30dae5178cadb2b9e9985fb90d049caa26b6b80b6fb3c4b62acd",
+      "source": "4ed/Monte_Carlo_Integration/Improving_Efficiency.html",
+      "source_sha256": "41ba1925a1a4819edc3013c35de27e51fa8a7cf5467ea60d1f059621af9e6266",
+      "editor_report": "audit/reports/edit-efficiency.md",
+      "independent_review_report": "audit/reports/review-efficiency.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-2-Monte_Carlo_Integration/chapter-2.3-Sampling_Using_the_Inversion_Method.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "local_sha256": "fb3476dff8ab37d7c8a86bc5c89c55199fe51c4aa2986ad39e3986ab99029bc4",
+      "source": "4ed/Monte_Carlo_Integration/Sampling_Using_the_Inversion_Method.html",
+      "source_sha256": "dc4fa395179e5d601e442ea4080bc79f82932ac6cfce16faca0faf4fbd53027e",
+      "editor_report": "audit/reports/edit-inversion-transform.md",
+      "independent_review_report": "audit/reports/review-mc-tail.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-2-Monte_Carlo_Integration/chapter-2.4-Transforming_between_Distributions.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "local_sha256": "01e983ca2853903e0770439d917ea3b6c57353ee296889d1c996f21043c852ab",
+      "source": "4ed/Monte_Carlo_Integration/Transforming_between_Distributions.html",
+      "source_sha256": "fb2c49e26e5ee38464f92d793a8eef0763012992dda3a97dc134bbe112247cd3",
+      "editor_report": "audit/reports/edit-inversion-transform.md",
+      "independent_review_report": "audit/reports/review-mc-tail.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-2-Monte_Carlo_Integration/chapter-2.5-Further_Reading.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "local_sha256": "217ec198b85b1f0fda725428eead69ce75fceec6b13d8ff5a6418a9773246053",
+      "source": "4ed/Monte_Carlo_Integration/Further_Reading.html",
+      "source_sha256": "9f1f0944c02ec5c2a67a3ae5eab4df728d89e65de46dc0458ea0c561b8371fdc",
+      "editor_report": "audit/reports/edit-mc-reading-exercises.md",
+      "independent_review_report": "audit/reports/review-mc-tail.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-2-Monte_Carlo_Integration/chapter-2.6-Exercises.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "local_sha256": "fd72ac55a3016bbb44ba762a0b5db464b8e0da6f3dcf60a8db1be0ad86be059d",
+      "source": "4ed/Monte_Carlo_Integration/Exercises.html",
+      "source_sha256": "b1c7fbff59a825b633b6a99d6ae76aee3f191f13e161161fe20c67fc0789a887",
+      "editor_report": "audit/reports/edit-mc-reading-exercises.md",
+      "independent_review_report": "audit/reports/review-mc-tail.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-0-Preface/chapter-0.0-Preface.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "local_sha256": "c5332228405bb683861234a23a11805f11171312ae69978b4006fef965a1cf74",
+      "source": "4ed/Preface.html",
+      "source_sha256": "8867c12fece2ed876ddfad0e09e70bb0c28176f52a41a191b489d75903d777ab",
+      "editor_report": "audit/reports/edit-preface.md",
+      "independent_review_report": "audit/reports/review-preface.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-0-Preface/chapter-0.1-Further_Reading.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "local_sha256": "bb626a136033b3303230fbf49f9cdcd0350a97316283c33896c7dbac5adf4d38",
+      "source": "4ed/Preface/Further_Reading.html",
+      "source_sha256": "61410f8ec03db4e28d3183e41d1b8e47de9630c43be6d2dbdc8d38115a8ad473",
+      "editor_report": "audit/reports/edit-preface.md",
+      "independent_review_report": "audit/reports/review-preface.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-1-Introduction/chapter-1.5-Using_and_Understanding_the_Code.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "local_sha256": "6b46602768f3c1fc80a46e28da982e2111bc20bc5d7cc1a7adf228e160d1e1e1",
+      "source": "4ed/Introduction/Using_and_Understanding_the_Code.html",
+      "source_sha256": "25905912b47d68f5042ad29a6322d957b3c7d366e434e2a1da8729600f7dfe75",
+      "editor_report": "audit/reports/edit-code-history.md",
+      "independent_review_report": "audit/reports/review-code-history.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-1-Introduction/chapter-1.6-A_Brief_History_of_Physically_Based_Rendering.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "local_sha256": "d0e7dcb75301d268786045c8f948909bdded451047edc54a6573c923004b15be",
+      "source": "4ed/Introduction/A_Brief_History_of_Physically_Based_Rendering.html",
+      "source_sha256": "91da76f148e71f35fe82af8eb6c08218b163720e9ae28bb26858bedf196f32bd",
+      "editor_report": "audit/reports/edit-code-history.md",
+      "independent_review_report": "audit/reports/review-code-history.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-1-Introduction/chapter-1.7-Further_Reading.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "local_sha256": "92bd03845dc46e380db2fe515e4b34981ee91b96796b874a88ffc6846d74ab00",
+      "source": "4ed/Introduction/Further_Reading.html",
+      "source_sha256": "115d3f7bdcc04a691d7967f6d547d55f7cb17e272ac696dbbf7b5c2af30457ff",
+      "editor_report": "audit/reports/edit-code-history.md",
+      "independent_review_report": "audit/reports/review-code-history.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-1-Introduction/chapter-1.8-Exercises.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "local_sha256": "245ceb4786e8696ed45bd0aa5a59e8e81272dfdd2c15339da9b6ff5a9e844ff8",
+      "source": "4ed/Introduction/Exercises.html",
+      "source_sha256": "a41158f7f6c1e882bf82cfd40b473e5b2d6d0b53bf767e7389132c0d861f7225",
+      "editor_report": "audit/reports/edit-code-history.md",
+      "independent_review_report": "audit/reports/review-code-history.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-1-Introduction/chapter-1.3-pbrt_System_Overview.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {
+        "chapter-1-Introduction/supplements/1.3-expanded.typ": "78a47ae2084709f4220023db05e3d65f612a3e78fb2fdcfc566cd8d227ef9715"
+      },
+      "local_sha256": "f40399086176a52918502e15ff6ca61159758a817a3d7129bb7258ef35ec3c07",
+      "source": "4ed/Introduction/pbrt_System_Overview.html",
+      "source_sha256": "6504f72120976bdca57cda850165c2eb937cfaaf6fd25ea18fdb8b353340763e",
+      "editor_report": "audit/reports/edit-system-overview.md",
+      "independent_review_report": "audit/reports/review-system-overview.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-1-Introduction/chapter-1.4-How_to_Proceed_through_This_Book.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {},
+      "local_sha256": "c77586dbabbc65741efeef0216b3c98c52aab01a8a28c2d0d047eadce06e5dda",
+      "source": "4ed/Introduction/How_to_Proceed_through_This_Book.html",
+      "source_sha256": "9b32b082d379e85c013599d63d59f2b9eb9ffd71e6a083732f7d326cb3a8317b",
+      "editor_report": "audit/reports/edit-system-overview.md",
+      "independent_review_report": "audit/reports/review-system-overview.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-3-Geometry_and_Transformations/chapter-3.0-Geometry_and_Transformations.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {},
+      "local_sha256": "7aaa9f624fb80cd6a3164645a6bd4870980c8c393ae6bb0397166a627eb2a135",
+      "source": "4ed/Geometry_and_Transformations.html",
+      "source_sha256": "3d39d8ed8f992554d2d84d70b473d24332cf0ddcec39e94202fdb61752f2c645",
+      "editor_report": "audit/reports/edit-geometry-foundations.md",
+      "independent_review_report": "audit/reports/review-geometry-foundations.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-3-Geometry_and_Transformations/chapter-3.1-Coordinate_Systems.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {},
+      "local_sha256": "dd3a5e65c207178aaed16cf5055608dc5ab426ec98af13411daa0f6f52473351",
+      "source": "4ed/Geometry_and_Transformations/Coordinate_Systems.html",
+      "source_sha256": "57aa60c9d392915ecfabca1697a6d2804ae4fe7e49e1937c8af9dd67c3c8a200",
+      "editor_report": "audit/reports/edit-geometry-foundations.md",
+      "independent_review_report": "audit/reports/review-geometry-foundations.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-3-Geometry_and_Transformations/chapter-3.2-n-Tuple_Base_Classes.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {
+        "chapter-3-Geometry_and_Transformations/supplements/3.2-expanded.typ": "40cd261ff36db038745d21249f27f615e4d138415810a332f1e97ec82aaa5378"
+      },
+      "local_sha256": "4ff49784f1b9794049273206d899e363abe9bd1c661ff250533f9e8add656612",
+      "source": "4ed/Geometry_and_Transformations/n-Tuple_Base_Classes.html",
+      "source_sha256": "1f2ac3a7d862cd3d8d3450f3256413350d6d16b09e0f6535bd38138be16cf6a3",
+      "editor_report": "audit/reports/edit-geometry-foundations.md",
+      "independent_review_report": "audit/reports/review-geometry-foundations.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "backmatter/References.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {
+        "backmatter/math/inline.typ": "6057f0dc0013500f476db32b82b3d5260eba2cf4c7e3f3fe42d88a52510c4a1a",
+        "backmatter/math/b9a8def01252ef0678e3.svg": "b9a8def01252ef0678e38fe5435418a1f7dbfeef02472e7613c2280d333628b5",
+        "backmatter/math/002ea9adaa6f679a4687.svg": "002ea9adaa6f679a46874834b8b617f43f6c3fc342530970bd92472f70283c51",
+        "backmatter/math/e4d72c7e4215c7f14333.svg": "e4d72c7e4215c7f14333ef1bf35811c5e3dff78568428ccf3ea23329487d1c67",
+        "backmatter/math/98123efb7da96c1b5240.svg": "98123efb7da96c1b52402cf930568ef8ad89b63d33e4a612852484f15f1d04b1",
+        "backmatter/math/9a45c72c9c1f4bdc332a.svg": "9a45c72c9c1f4bdc332a86c1d3e5b38f50884cc9e8d7efb731c4b2c291a0ec26",
+        "backmatter/math/4d27579f84ec1dd90c36.svg": "4d27579f84ec1dd90c3631a2a23eeef05190bd9fb4e20c5099b684fc9e3ac60b"
+      },
+      "local_sha256": "12b5a2a196d7edaeb97ffaed6a6d2eaaaa4e66a133be3eec707d11ad088f27ed",
+      "source": "4ed/References.html",
+      "source_sha256": "52e7d5ba32d8fc8c66363046fcb0403124349ba95e4a72e64aa5dc7752808af0",
+      "editor_report": "audit/reports/integration-repairs.md",
+      "independent_review_report": "audit/reports/review-backmatter.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "backmatter/Index_of_Fragments.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {
+        "backmatter/math/inline.typ": "6057f0dc0013500f476db32b82b3d5260eba2cf4c7e3f3fe42d88a52510c4a1a",
+        "backmatter/math/7736feaeabc2035cf654.svg": "7736feaeabc2035cf6541f1302c54636f828aaa12d2d8ad51802d4f87f585886",
+        "backmatter/math/9953c688da33a1f33967.svg": "9953c688da33a1f3396793f375fbfb8af9e0bc9bfb57f9ecd58ef7108d42713e",
+        "backmatter/math/be9f6ac57b526701ec75.svg": "be9f6ac57b526701ec7585f68be52aac7e86ae6ed7cd30cef94f079d64f462be",
+        "backmatter/math/d223bad4dc0dae7e7b99.svg": "d223bad4dc0dae7e7b99ec75c20306c1fbadb328938302ff1752be507fe97a03",
+        "backmatter/math/47a6c683257489abaee4.svg": "47a6c683257489abaee4995d8c49517c1e3bd5d2605960e817b07dca24770eeb",
+        "backmatter/math/9a6146902143ab5220f3.svg": "9a6146902143ab5220f3e501578483aeecaca6b3f9f89b51b5fe55227390bbe8",
+        "backmatter/math/17816e27a0790bb67615.svg": "17816e27a0790bb676154ae95508b2362bd39cb5b0f020d571c2df1523bc256d",
+        "backmatter/math/6ea94546a27c1d0a17ba.svg": "6ea94546a27c1d0a17bac41d9bdf54a4383565c665dc0d0c63601f66a712ebb4",
+        "backmatter/math/92bd655ca1c38b8ee0f0.svg": "92bd655ca1c38b8ee0f0403c625295553db676612cf2144133a57f3b95b184e6",
+        "backmatter/math/a2d81c2113b35c8c7c00.svg": "a2d81c2113b35c8c7c00de9d5f36c5067a22f905cb420530cf68fcdd2400c1cb",
+        "backmatter/math/a225d1d6d9082d55aa40.svg": "a225d1d6d9082d55aa4099be25ca73a757014701c60143b38e0ffeb64e32a6f0",
+        "backmatter/math/e6d62ae3aa42695075ed.svg": "e6d62ae3aa42695075eda63e321f3384bc022c207cf5fd9c061aa601e1e3694a",
+        "backmatter/math/dd5c5a28a1ce9de604d3.svg": "dd5c5a28a1ce9de604d3306b9d4a3d84ceb08c3825209c84d9c52197db5d08ab",
+        "backmatter/math/1c03dff30cfae1a25b61.svg": "1c03dff30cfae1a25b612a9472afc8d7291ad3860ef9838daae0a6927cdee857",
+        "backmatter/math/63797e888199d8529fd8.svg": "63797e888199d8529fd846ee41065b26a95020b83868c87a1ecf014baf80ca4e",
+        "backmatter/math/bc1d41a6dfd7b2cec314.svg": "bc1d41a6dfd7b2cec31458b71c05122fc65c8782f1f8374215ab03aa2c9a49ab",
+        "backmatter/math/75406abda44a815f3aaf.svg": "75406abda44a815f3aafd1916ce7f86ebe40d74c820f60f117b84b611cb18941",
+        "backmatter/math/3366a0bd15d245a3e193.svg": "3366a0bd15d245a3e1939b60ead2e398870baf94fa068bd8dd2be7da5ca5eca8",
+        "backmatter/math/fc91a04e280f72660786.svg": "fc91a04e280f72660786fd48edb559c38ce8c96199d06e920e4629b20fa0559b",
+        "backmatter/math/3633871c3e811c3059e7.svg": "3633871c3e811c3059e7475e5e992a534843dc44f5fad134de19e5576abc69e1",
+        "backmatter/math/de6a40a1f6abd6912cba.svg": "de6a40a1f6abd6912cba8705c8fcfe84d617ea62913997fd51bb29bc0e0641b9",
+        "backmatter/math/250fede676e72ed0ff1f.svg": "250fede676e72ed0ff1f2acfffde9f636c471e14259bea4f22992ad708c44d1d",
+        "backmatter/math/0b593842954dab54213d.svg": "0b593842954dab54213dc51bca63ebcecaef4618f4351991dd8feb2ada28f3dc",
+        "backmatter/math/aa4e9b777513cf58ea69.svg": "aa4e9b777513cf58ea69224b7e410fd6b11c404097d0546e24838e33804c3b64",
+        "backmatter/math/96ae202c852434260be3.svg": "96ae202c852434260be3a250f8dbfc925f0c676f42be0c1e83534a2f50607b4a",
+        "backmatter/math/73b0c923fd728ac3e783.svg": "73b0c923fd728ac3e78327b9d8ba02651a1650022ac45bc04e34b2d2398f2f66",
+        "backmatter/math/3967d14ab0c57471c4b3.svg": "3967d14ab0c57471c4b369663bc8912ce65d807f8c7278cec2cf5dc75cba1948",
+        "backmatter/math/26da9efebd02a92b314c.svg": "26da9efebd02a92b314c336ad7015127039a807cf44aa2636f2ead0c95dab855",
+        "backmatter/math/381b52fc5575e55c3c06.svg": "381b52fc5575e55c3c067c1c2c29207ccbceecf096c3a2aaa106a497129a30bd",
+        "backmatter/math/309ab55f7c505ff5513c.svg": "309ab55f7c505ff5513c3c96f7ce3baf0f82d7e5a053812172376f180eac2567",
+        "backmatter/math/ccf7d9b5238a4db39257.svg": "ccf7d9b5238a4db39257b008536586bf7c9e54179f57566728851e1c411ce0bf",
+        "backmatter/math/b8379b8c5f321a6535e2.svg": "b8379b8c5f321a6535e2453e2cfa224876e5131ea058f57082e7a24068ec6762",
+        "backmatter/math/82d4c031ac57be196df3.svg": "82d4c031ac57be196df3bdfc2ea2900dccd93abba4c839a5718ce087bed53fe8",
+        "backmatter/math/fc268ef3628428bf9ad0.svg": "fc268ef3628428bf9ad027ac193aa7ba22dded166b05b88f4cf71e8b8b5d3fe9",
+        "backmatter/math/afeeb64c228eec155c34.svg": "afeeb64c228eec155c34809fbc492bcfca74b97cb4e9edd185b04e44d4ac27c1",
+        "backmatter/math/a209bebed3e3687ba28d.svg": "a209bebed3e3687ba28d5c54c8b45126bd67c43a307ac0259f36628cd4efbe92",
+        "backmatter/math/69bb244430e8ad74a1d4.svg": "69bb244430e8ad74a1d4c78f9263e9b0bf282e46159483b5a5d69552de36c496",
+        "backmatter/math/9adf8baad4bf4ca0998f.svg": "9adf8baad4bf4ca0998f28630079800985ae18c97dfc39ef27d80683227df9f3",
+        "backmatter/math/0eac5e8b594a286cded9.svg": "0eac5e8b594a286cded91d40903b2964052201bad7bd36440f71e9a1dc063ac8",
+        "backmatter/math/34c76e79bda4f0bafd43.svg": "34c76e79bda4f0bafd43f3688ea1140a3fa09f87afe9e316e033ddc474d0cd30",
+        "backmatter/math/e7f5686b9b63f261e0f8.svg": "e7f5686b9b63f261e0f8fb94ff31dfab7592b580dc5e918b96a7839f0756f7b5",
+        "backmatter/math/068a03bfebf3b5795204.svg": "068a03bfebf3b57952042c9d425c1da99674078226efed10dd2ff7be57282894",
+        "backmatter/math/8e7a59de3faf88022fcb.svg": "8e7a59de3faf88022fcb1ecdc24eab0c0e768cb5abfaac6ffac3df8f2ee8e0f0",
+        "backmatter/math/14c4858c78588ccf43b3.svg": "14c4858c78588ccf43b391d283ad14d8be4728015aa4a3a5c9d7dccc602ec895",
+        "backmatter/math/3dd519b38a1c9d835d09.svg": "3dd519b38a1c9d835d09a2245a431e312cdac8db31593fb1f828cffceea1ab34",
+        "backmatter/math/20013d69ebd84636191a.svg": "20013d69ebd84636191abb9ad47aa9882ab8ad594a2079c3ba2d46d3f0482e9d",
+        "backmatter/math/27dc638ac288451711a0.svg": "27dc638ac288451711a08a2c6a584b01f2c6b8c4f3f339a3f04c2d5796c29164",
+        "backmatter/math/2c52c0ff97ca794fb0fc.svg": "2c52c0ff97ca794fb0fc50cf640f97123db91fa94788f9a817876675e44e8903",
+        "backmatter/math/616b0e3aa7655fbf7670.svg": "616b0e3aa7655fbf7670207cd64fe0b4b99fcdef2a7525a682b960f8d1e1a793",
+        "backmatter/math/4fd5694e8aeea1fde50b.svg": "4fd5694e8aeea1fde50bf3fec09f977377bcad9ca24a3a9767b7a0e99851e7c3",
+        "backmatter/math/aeccb1855a00f234659e.svg": "aeccb1855a00f234659e19102a2219ca81e2aa53897ba91e3a366578dd386523",
+        "backmatter/math/ca0ef690ae200d62e696.svg": "ca0ef690ae200d62e696edbcf7434e6c3b4ebe6bd4acea19f10606ffceb8ad14",
+        "backmatter/math/19dba91a312342ef965b.svg": "19dba91a312342ef965b80f58247dfcddcb7e8889c4fda2963ed313c8ca884b4",
+        "backmatter/math/9a45c72c9c1f4bdc332a.svg": "9a45c72c9c1f4bdc332a86c1d3e5b38f50884cc9e8d7efb731c4b2c291a0ec26",
+        "backmatter/math/effd5c3852cecec307d3.svg": "effd5c3852cecec307d31caeddf755ee72cdfc81e74ba533a183e54b9faa9e92",
+        "backmatter/math/6fff7c873a238bf938ba.svg": "6fff7c873a238bf938ba8cb04eba7b2c08221c7317d6f753be092e12f5afef8b",
+        "backmatter/math/40c7147bf12639ea3381.svg": "40c7147bf12639ea33817cdd447ec4f01f3f1771f410da3e4de58e889e34a651",
+        "backmatter/math/45a155a2034c896261a9.svg": "45a155a2034c896261a9138843e8528527780c7ccbbc9fd2bf8d47ad4653526c",
+        "backmatter/math/8d28081f4843f1b77861.svg": "8d28081f4843f1b77861e12a95bee7d806cd2b43dc01e2a13609acb819af39c9",
+        "backmatter/math/4a85b50dad131922f100.svg": "4a85b50dad131922f10056a8485b1a706cca73d3230044009bc35d59dbeb82d6",
+        "backmatter/math/f6d8dd16bfd603bf121c.svg": "f6d8dd16bfd603bf121c1d136e8d3093f448146f18ed5e8af1b24a97afbf49cc",
+        "backmatter/math/1b175724f6e7339b3573.svg": "1b175724f6e7339b3573025e04a8c0678e47469638a6903bc5335d2340396a5f",
+        "backmatter/math/d561715ce366bf3e9324.svg": "d561715ce366bf3e932447fd63a9a490f3e6b4a7aa91437ab1b164ea1df414af",
+        "backmatter/math/7db2060c2d8250155414.svg": "7db2060c2d82501554144016dc3e725de699197c382ea20183097f2a7304b518",
+        "backmatter/math/87b6d6473106dfff4150.svg": "87b6d6473106dfff4150bf24025fd8dd12fedd896ed5ed8e2024c0c776200307",
+        "backmatter/math/e55068f09201acb2ea68.svg": "e55068f09201acb2ea689307b2a7c7fa5812a8d37c39050aff086ad47e24eb1a",
+        "backmatter/math/b82b74e3aea8ae48cd05.svg": "b82b74e3aea8ae48cd05d3f56ea7bdff4bcdfab2bf631be1c0a0a338287bed88",
+        "backmatter/math/808a17b9f784859e690e.svg": "808a17b9f784859e690e204df46f82ea93bf145a996fb1bbe585181e8250d37f",
+        "backmatter/math/678500e286307d6f50e2.svg": "678500e286307d6f50e28e65e2219713cde7508b31728a5a59e6d8dd8b6f1bab",
+        "backmatter/math/e97de9865b74ab4eb950.svg": "e97de9865b74ab4eb950d97fa0d6e1103ee2d21de7a5dd23ca26d48d0b08a077",
+        "backmatter/math/6cc5d8181f86dbeae116.svg": "6cc5d8181f86dbeae116ced4a0978cce64976d0448ca0d4cd136ab0dd0e042b6",
+        "backmatter/math/3e5e16a6620cc39f7fea.svg": "3e5e16a6620cc39f7feacd460e08d2e77a358a9eb1cd1d8e59b7995eb6bf8cbb",
+        "backmatter/math/2814c8f712acfe9f6e9d.svg": "2814c8f712acfe9f6e9d6c5bb9c2d0cc877fd579a7dc04d6366c5dbf9ba8172d",
+        "backmatter/math/9591b108dd5c16bb2f56.svg": "9591b108dd5c16bb2f5698888e002e8b8048998e58d40affa114d61b8f033b28",
+        "backmatter/math/b4b7542a67f880978be0.svg": "b4b7542a67f880978be08539eeadc4941f77ecf996227acf798de25c5fb44282",
+        "backmatter/math/d119ccf28b6ddda6a2c2.svg": "d119ccf28b6ddda6a2c2535c33efdad4082f0f3238c9d809ad4592a6d7af1ddc",
+        "backmatter/math/f29ac84c94df227e6469.svg": "f29ac84c94df227e6469ace4a63f905cf8b3a20e6b2a369b22958792396c3db6",
+        "backmatter/math/301ffc046f5d9eacf950.svg": "301ffc046f5d9eacf950ca00ceda41111d94f771cf1115bd831fff2c831c5f93",
+        "backmatter/math/a0ffbea75d3416632c2c.svg": "a0ffbea75d3416632c2c36c413b6201deeb77fc07ae3ee5d725808f1c9c21cf5",
+        "backmatter/math/1e80cd26325a1d33dbc3.svg": "1e80cd26325a1d33dbc37093c651fabc5dda1f09aa693be5d2d22cfa855d2ebb",
+        "backmatter/math/ea72cc26d11742995d90.svg": "ea72cc26d11742995d901b1667f26e37ecccebada188c5fb6537a73e3d813876",
+        "backmatter/math/87d8670ce855759bc42d.svg": "87d8670ce855759bc42d2528a5242049eb69e61834ff8129366ec3813b826eb9",
+        "backmatter/math/262dc59d969b333d00ba.svg": "262dc59d969b333d00ba125ec8a5d82bdd33ef998918592c9d68b58ea374259f",
+        "backmatter/math/3c0b1475d9537cb63d21.svg": "3c0b1475d9537cb63d214233ba269af968921ac11b8b96d9c5286996efe09ffd",
+        "backmatter/math/2a365fe693186dbd4515.svg": "2a365fe693186dbd4515588498aae5a1d55f2f2e24d8db1086264b69cb5e35c8",
+        "backmatter/math/c29844b14ad11522c4af.svg": "c29844b14ad11522c4af684bfb1f95085d04049d29287255f5e871fe28c9c5b6",
+        "backmatter/math/0e2c258cf954e598bed3.svg": "0e2c258cf954e598bed31a3a972e88cb0a6961980c507603e4f00841d468bfb0",
+        "backmatter/math/ebad714f8a7697523f2b.svg": "ebad714f8a7697523f2b5b416bbfdaad1c70adcc3d8d7c8b544d1f5fb9aee485",
+        "backmatter/math/5c086bf3d62f2f92c61d.svg": "5c086bf3d62f2f92c61da8853e1f51e7a22322f564ace01bcaa6afe1bfe6fe82",
+        "backmatter/math/9ef81b3ab03e78fbf8ae.svg": "9ef81b3ab03e78fbf8ae73b560006c59537135cd77a5304a88716fa26ed74ea9",
+        "backmatter/math/e3dc168471b01f7c8806.svg": "e3dc168471b01f7c8806bf191c97eea32a01cbee0e5056fc8013c924b1770448",
+        "backmatter/math/0a5da6ba10163d99051a.svg": "0a5da6ba10163d99051ae636589caf3c8f656bd91e7f3312bc5dcb86353c4b8d",
+        "backmatter/math/c140390b03ba37b11d61.svg": "c140390b03ba37b11d61e0d8c401f3fcdf21222c8b457b3e529cf22c871ab096",
+        "backmatter/math/3ec671f36d06e05de75f.svg": "3ec671f36d06e05de75fc15b25f9429b0822b2c306fcab94cabb4dea30974789",
+        "backmatter/math/eee2ecf62577ffb257b7.svg": "eee2ecf62577ffb257b7734e8c9577f1d3a4e021e3956ce6a2bb19a5f9832fe3",
+        "backmatter/math/69aa758afafd19985f68.svg": "69aa758afafd19985f687c741bc84ccf74dd5d3d9ac376b152d8aca7c6bd2f5f",
+        "backmatter/math/d2f370859dd5bf9c29d5.svg": "d2f370859dd5bf9c29d5ea7da6da7090c68633408863aba5b8242e4088d34619"
+      },
+      "local_sha256": "58f9bec8ce2a58b2c0a4ae2839ebba18a86513ebe5d3cca6e6961be883486792",
+      "source": "4ed/Index_of_Fragments.html",
+      "source_sha256": "5872ddac1561ef8509b8471057cc291e7711f13d97391e7df620b544f05f9ad3",
+      "editor_report": "audit/reports/integration-repairs.md",
+      "independent_review_report": "audit/reports/review-backmatter.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "backmatter/Index_of_Identifiers.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {
+        "backmatter/math/inline.typ": "6057f0dc0013500f476db32b82b3d5260eba2cf4c7e3f3fe42d88a52510c4a1a"
+      },
+      "local_sha256": "d803c333b1d99056b22f9e3b55ce7b2e9f13cb735710a8d0738038b3b146d65c",
+      "source": "4ed/Index_of_Identifiers.html",
+      "source_sha256": "fbf5707dd25ed73c6c8c26dfbf292f4c3732b340b27acb38a291f47da588eba6",
+      "editor_report": "audit/reports/integration-repairs.md",
+      "independent_review_report": "audit/reports/review-backmatter.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-3-Geometry_and_Transformations/chapter-3.3-Vectors.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {
+        "pbr-book-website/4ed/Geometry_and_Transformations/pha03f03.svg": "f15eba897f563f5a862752276b3ed82eb57d558474fc809e77d7a2c9b4033588",
+        "pbr-book-website/4ed/Geometry_and_Transformations/pha03f04.svg": "2187f1f8c16df60775c0bd3e34b52e450b908bccb3cb6388fd2a20dbfb57a545",
+        "pbr-book-website/4ed/Geometry_and_Transformations/pha03f05.svg": "c64fddd34084667c81a7abef7009c02afe8e791dd4420b9524a9e06169ff169e",
+        "pbr-book-website/4ed/Geometry_and_Transformations/pha03f06.svg": "21fd127221aa629f5aef946280b1802ce1ccdc3f620f3c86fdbcbdc3f5d0019a",
+        "chapter-3-Geometry_and_Transformations/supplements/3.3-expanded.typ": "6aadf5c0b356b1243216181906c6b4b64b6619313aaf5b065d3e9ae85c653bc0"
+      },
+      "local_sha256": "0be8f659935a2c2afe86cbec900aa3c06886787715f739f7457ed40c8f5f94e4",
+      "source": "4ed/Geometry_and_Transformations/Vectors.html",
+      "source_sha256": "9674ca65a6021035ce4efd8fc981d0b04ba6f2395f33b5e00bbdec7b91de208c",
+      "editor_report": "audit/reports/edit-geometry-rest.md",
+      "independent_review_report": "audit/reports/review-geometry-rest.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-3-Geometry_and_Transformations/chapter-3.4-Points.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {
+        "pbr-book-website/4ed/Geometry_and_Transformations/pha03f07.svg": "2f92f8a6771933916bb6cdad918ac8781b99da1d3d077e0de417d6ea9922fbce",
+        "chapter-3-Geometry_and_Transformations/supplements/3.4-expanded.typ": "c2c4571f0a1bcaf729e22b0e27421a368caa4533bbbc9aa48e9f524f58143a7f"
+      },
+      "local_sha256": "d03895eb99e092f0c7f09fa2567d72c5345d26b1d7caa9d5b60306568c9e1212",
+      "source": "4ed/Geometry_and_Transformations/Points.html",
+      "source_sha256": "8cf6dfe0bea475017de405bb91d4f5ae2b5bc1afbf1615c969cfadfd9cef858f",
+      "editor_report": "audit/reports/edit-geometry-rest.md",
+      "independent_review_report": "audit/reports/review-geometry-rest.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-3-Geometry_and_Transformations/chapter-3.5-Normals.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {
+        "chapter-3-Geometry_and_Transformations/supplements/3.5-expanded.typ": "dbd2beb7f93533e5b887adc7424e3d1701f1506fc8863fee5f08193fad1feebf"
+      },
+      "local_sha256": "3f107b6abd0709e7cc53fa97aec50fd0885a1d10530e0fd30bd9d3208b5b29f8",
+      "source": "4ed/Geometry_and_Transformations/Normals.html",
+      "source_sha256": "2f0fb238cb3f9c7088ad954873b04704590791b78e150c58b1698a1b5bd200cb",
+      "editor_report": "audit/reports/edit-geometry-rest.md",
+      "independent_review_report": "audit/reports/review-geometry-rest.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {},
+      "local_sha256": "c21c2aea4a34a7232fa12b5d4b1d4891deee78f3324be07fce1f210f9a901fd7",
+      "source": "4ed/Retrospective_and_the_Future/Further_Reading.html",
+      "source_sha256": "58c831cf4b69d866519e4d1b63b4cbeabbaae061b5c7103d93b41df6415f7efe",
+      "editor_report": "audit/reports/edit-missing-tail.md",
+      "independent_review_report": "audit/reports/review-missing-tail.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "Appendix-A-Sampling_Algorithms/A.6-Further_Reading.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {},
+      "local_sha256": "35c4d70fd25879174c5ce12083acc5a8217eb6e419504a329ef14ae532f1a651",
+      "source": "4ed/Sampling_Algorithms/Further_Reading.html",
+      "source_sha256": "1da307a7d431d40b809d2c3b749deadf03f77a3605cfb1e800c599d62ac9346d",
+      "editor_report": "audit/reports/edit-missing-tail.md",
+      "independent_review_report": "audit/reports/review-missing-tail.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "Appendix-A-Sampling_Algorithms/A.7-Exercises.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {},
+      "local_sha256": "b7d307ee67747288055521dde33bd337e78c580e359da89a45113746dd454281",
+      "source": "4ed/Sampling_Algorithms/Exercises.html",
+      "source_sha256": "eca974751ce135012899748c4b989377a92344b5f71ea3a6532b4521bc345cb1",
+      "editor_report": "audit/reports/edit-missing-tail.md",
+      "independent_review_report": "audit/reports/review-missing-tail.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "Appendix-B-Utilities/B.8-Further_Reading.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {},
+      "local_sha256": "9857aca051b0bbeef1b40fcb92dd6348ee3edd3ae6fc9bab609712e998f6cff9",
+      "source": "4ed/Utilities/Further_Reading.html",
+      "source_sha256": "dd033dd4b1b197e3f2c5b5b09e42145ca65d9de8c6472826d13b07391e741248",
+      "editor_report": "audit/reports/edit-missing-tail.md",
+      "independent_review_report": "audit/reports/review-missing-tail.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "Appendix-B-Utilities/B.9-Exercises.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {},
+      "local_sha256": "787c400621f76d97dabe0c06ac2bbbb792e26d750f5e1383dcd2f16efed0948f",
+      "source": "4ed/Utilities/Exercises.html",
+      "source_sha256": "84d46de33fbe6854f8c0999d51cd21e743443e01691b21e552b9be8ce22ee575",
+      "editor_report": "audit/reports/edit-missing-tail.md",
+      "independent_review_report": "audit/reports/review-missing-tail.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-3-Geometry_and_Transformations/chapter-3.6-Rays.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {
+        "pbr-book-website/4ed/Geometry_and_Transformations/pha03f08.svg": "4dd5419bc769d7b233518e7065614f0c0f0c076a4e9f170253556a2647983f38",
+        "chapter-3-Geometry_and_Transformations/supplements/3.6-expanded.typ": "92720d435beb72a97f9b439bd4a8d20d81e781b17e26c5846226f58f3baeba12"
+      },
+      "local_sha256": "968a96403537e6f700b5cd37d99633b927dd82a57c56607260db0908e0677dee",
+      "source": "4ed/Geometry_and_Transformations/Rays.html",
+      "source_sha256": "d7cab9781b0e767d20226d710682dc4e73c1ed5df3b1a3e8d3d12df2fa14da62",
+      "editor_report": "audit/reports/edit-geometry-rest.md",
+      "independent_review_report": "audit/reports/review-geometry-rest.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-3-Geometry_and_Transformations/chapter-3.7-Bounding_Boxes.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {
+        "pbr-book-website/4ed/Geometry_and_Transformations/pha03f09.svg": "305d38bb298a053ad29c5bf9eb7ff6a852d9f4acaaacf2738cf993f2d35ae52a",
+        "pbr-book-website/4ed/Geometry_and_Transformations/pha03f10.svg": "6eae3d01abe0ab2439b21deca5728177d156d5df1f7c790b748c00af00867b0d",
+        "pbr-book-website/4ed/Geometry_and_Transformations/pha03f11.svg": "88dd6e65f428ccc8fe0bb0d69eaee7133d4e3dd30fd9a8f6551822ddb0af3a8e",
+        "chapter-3-Geometry_and_Transformations/supplements/3.7-expanded.typ": "aa0338b1651dd8b842cdd585fa8769e95c5d6a06f2f59c8d7da7c62bafe96eef"
+      },
+      "local_sha256": "5578e71738002cd3dfb67c5525660ac9586703db409233686f48fb9d5831cb83",
+      "source": "4ed/Geometry_and_Transformations/Bounding_Boxes.html",
+      "source_sha256": "2829d0995f889157945515ee3c8169ef8a59dca345e75afa974012e0ccfc7474",
+      "editor_report": "audit/reports/edit-geometry-rest.md",
+      "independent_review_report": "audit/reports/review-geometry-rest.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-3-Geometry_and_Transformations/chapter-3.8-Spherical_Geometry.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {
+        "pbr-book-website/4ed/Geometry_and_Transformations/pha03f12.svg": "030592a2488686cb5feef8a95208a4049a0c58cb358674862dbc8a84cca32788",
+        "pbr-book-website/4ed/Geometry_and_Transformations/pha03f13.svg": "b3462794b05d032c6ba0c44153708deda959c1dde77ea767b84fe435d4d01627",
+        "pbr-book-website/4ed/Geometry_and_Transformations/pha03f14.svg": "965c96972fcdd0775a5b093e1ded8dc5cd6dbcb1740d8bc9a22daeb78c1cc2ea",
+        "pbr-book-website/4ed/Geometry_and_Transformations/pha03f15.svg": "8dd8df76b58abe09a64fb954304c990614899de729f8ac4a72e155e8619c8967",
+        "pbr-book-website/4ed/Geometry_and_Transformations/pha03f16.svg": "ca6aa3b8c2dadd1e2b0429f9398dd63a1040b0f0bb3dda291566b79738d3763c",
+        "pbr-book-website/4ed/Geometry_and_Transformations/pha03f17.svg": "cf86245fcc93e4f6095825ade9338d9b92ffc9e9293ef31e19d42d0f29486be9",
+        "pbr-book-website/4ed/Geometry_and_Transformations/pha03f18.svg": "eb2feb222daddc340ae7e8f931691393a7078eb837c3edd313c5eed2786a1c57",
+        "pbr-book-website/4ed/Geometry_and_Transformations/pha03f19.svg": "cef28c89631b7dfff34c9ca2fe97e7501ee0cde7dad9edb85a14fd7cd1e2aeee",
+        "pbr-book-website/4ed/Geometry_and_Transformations/pha03f20.svg": "79fb073a05a5e74cfd7968cbd125c95bde30d1226f866a8df72c71fb50eee2b9",
+        "pbr-book-website/4ed/Geometry_and_Transformations/pha03f21.svg": "29b17b9add42fb2f3e336a31a1a356a811c907238e12b2eb94bde6edc344f2b8",
+        "pbr-book-website/4ed/Geometry_and_Transformations/pha03f22.svg": "69ffc3cbe73cc226cd4434a512672c13c3280576af3f0a84373a0bfcc1018d0f",
+        "pbr-book-website/4ed/Geometry_and_Transformations/pha03f23.svg": "952d9fa0c025775ac089de43ef1a736e90d68a7c3ba6c22c523978dff4de6a74",
+        "pbr-book-website/4ed/Geometry_and_Transformations/pha03f24.svg": "f54e254c0f8c30d8e2a79e881461b1cacfb4c1c97b911a6f6fb51c204add5394",
+        "chapter-3-Geometry_and_Transformations/supplements/3.8-expanded.typ": "077a681ced9570ab1ea58500b32e9c86c8de619c459a9d1ae5e57b669147db95"
+      },
+      "local_sha256": "56064e36a55f7082ed1d866f5136425a1e8c21fde9348681fc7cd9e20f4a0de0",
+      "source": "4ed/Geometry_and_Transformations/Spherical_Geometry.html",
+      "source_sha256": "6686f5e6b1b97bb5c8b31142a33cb19ed30df0dac3967ec4d0e2e815b14ea575",
+      "editor_report": "audit/reports/edit-geometry-rest.md",
+      "independent_review_report": "audit/reports/review-geometry-rest.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-3-Geometry_and_Transformations/chapter-3.9-Transformations.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {
+        "pbr-book-website/4ed/Geometry_and_Transformations/pha03f25.svg": "4bf38c7558cef4d839d940ea91a7443a3d4cf35bbf7a2a544ce8aa949df37a88",
+        "pbr-book-website/4ed/Geometry_and_Transformations/pha03f26.svg": "50f0e045cf26caa5269b6b8aed82d93fa18ca33798fd59d9d4f7de2a6600ee1d",
+        "pbr-book-website/4ed/Geometry_and_Transformations/pha03f27.svg": "091acac0f7d1254f6ae14219c816b995be7196fa23d09a30d825ae401c736c16",
+        "pbr-book-website/4ed/Geometry_and_Transformations/pha03f28.svg": "18b5760295a052bde88993a13902c5618332fa4db889bdff92e0cb0f8287e7b7",
+        "chapter-3-Geometry_and_Transformations/supplements/3.9-expanded.typ": "b1440f0fee45e2a59a36db657e2289e7899e531b5de2ece22959c866e7a8edd1"
+      },
+      "local_sha256": "21df63e3be77a28071b93949cf986cbb760658e49bf4144306dd7702907b3486",
+      "source": "4ed/Geometry_and_Transformations/Transformations.html",
+      "source_sha256": "94674c972333fca1e12f815e0e5310bb5b4567244cea304d952c4adb2aee4261",
+      "editor_report": "audit/reports/edit-geometry-rest.md",
+      "independent_review_report": "audit/reports/review-geometry-rest.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-3-Geometry_and_Transformations/chapter-3.10-Applying_Transformations.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {
+        "pbr-book-website/4ed/Geometry_and_Transformations/pha03f29.svg": "b9a967e4bdeab2d1e408fc6903a679334a2eef3f81520a79fcb501aec0e46e4a",
+        "chapter-3-Geometry_and_Transformations/supplements/3.10-expanded.typ": "3408b9a2002af7ddd288de2a0ad3484ac18752e0a7cea728d9cb28c1bd454c38"
+      },
+      "local_sha256": "0463f707ba9745e2e2b854d2c0553df6b6e1893ed19289a6c45a88eb97eac6b3",
+      "source": "4ed/Geometry_and_Transformations/Applying_Transformations.html",
+      "source_sha256": "327195c90ee7b43b01a42e4aacee97f5eefcec427596cd5bd4e0ff09fae8ae4a",
+      "editor_report": "audit/reports/edit-geometry-rest.md",
+      "independent_review_report": "audit/reports/review-geometry-rest.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-3-Geometry_and_Transformations/chapter-3.11-Interactions.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {
+        "pbr-book-website/4ed/Geometry_and_Transformations/pha03f31.svg": "c695c4d41d9769909568a727f6e9794f0acd75164d4294bc8d6026d236aae5b1",
+        "chapter-3-Geometry_and_Transformations/supplements/3.11-expanded.typ": "bac32ccf2703cf9622762e701ea3e540005565c86f47f2b87aa26d3eca521881"
+      },
+      "local_sha256": "628e29372985c788e7d89a78da6ab5de5dbd5be7967be15e3042be60f0fe9450",
+      "source": "4ed/Geometry_and_Transformations/Interactions.html",
+      "source_sha256": "45bfc9031bba1ff905c17b66dcacbd3df67bc94636a96ac230417e4c5a01af9e",
+      "editor_report": "audit/reports/edit-geometry-rest.md",
+      "independent_review_report": "audit/reports/review-geometry-rest.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-3-Geometry_and_Transformations/chapter-3.12-Further_Reading.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {},
+      "local_sha256": "2c02b25155cd18ae811863cf23eb788c0949d3b9607c8747527656d173916a87",
+      "source": "4ed/Geometry_and_Transformations/Further_Reading.html",
+      "source_sha256": "90bde8fd68f69a4d58fb83cc41f865ff4d707c29a8e490ee8f6d049362f58727",
+      "editor_report": "audit/reports/edit-geometry-rest.md",
+      "independent_review_report": "audit/reports/review-geometry-rest.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-3-Geometry_and_Transformations/chapter-3.13-Exercises.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {},
+      "local_sha256": "759be71990d2c7978117cc5386a1a7f18a6c73022835215d053cf1ed56d000ac",
+      "source": "4ed/Geometry_and_Transformations/Exercises.html",
+      "source_sha256": "62353d5df50ed0afda4468d4a6563fe73bc9a1822d96fcf27ff142d95c7a2d2c",
+      "editor_report": "audit/reports/edit-geometry-rest.md",
+      "independent_review_report": "audit/reports/review-geometry-rest.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.0-Radiometry,_Spectra,_and_Color.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {
+        "pbr-book-website/4ed/openers/transparent-machines-812.jpg": "8229a82635609c995d6163c591b73db311d64a3766dd637ff7737c2a3dde25cd"
+      },
+      "local_sha256": "f40c03b2d1648a8e2fcdc742864071074f1bb8cccb3c81ce15cda4a43f08cf77",
+      "source": "4ed/Radiometry,_Spectra,_and_Color.html",
+      "source_sha256": "aeaa456582839525bd04ac1fa2bfe737c063329e51fbed6af69b89f7848dd062",
+      "editor_report": "audit/reports/edit-radiometry.md",
+      "independent_review_report": "audit/reports/review-radiometry.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.1-Radiometry.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f01.svg": "fb1fd6e77e5b3727e6ce0cc790b867ae24e5c11868c9f209185b5e28651d7f73",
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f02.svg": "bd262a178c966d4dbc45f61c72419e11cade9a753568beda503ffd8fc979e417",
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f03.svg": "660c300aef2ff4b4334747fc25932c77c0d679c61c6374467982524984248e0c",
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f04.svg": "f715193208c29aba71abfc31eb22ded57bf97cb7b69602d3e4057b433572cead"
+      },
+      "local_sha256": "67f27437fce1acfe29f9cf755d06d1c017a182bacfd645ff3ba9b22d43e2343a",
+      "source": "4ed/Radiometry,_Spectra,_and_Color/Radiometry.html",
+      "source_sha256": "3b665f264d21f94be06553ec6a871a77c6ef99f82e9dade53231caf7416b29e8",
+      "editor_report": "audit/reports/edit-radiometry.md",
+      "independent_review_report": "audit/reports/review-radiometry.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.2-Working_with_Radiometric_Integrals.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f05.svg": "bbe6d6c8771ba2561187b40ec272d9dcb75d493f342b4e6cfe4d480e3835a4b9",
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f06.svg": "54fe4bca1cebb63374b2ad69745fcbca7a08d0acce65668a86e2f20bdef018a1",
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f07.svg": "a4f74eaf02a62fef4a2ee30adc777e9a223301c03df617d270a80993dcf601a0",
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f08.svg": "6bdd4e1abdf1761fd872a9dba429e36df725a175b087fad7cb36b1620c99cfc6",
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f09.svg": "2fa1a7746218288f7d2c1fc8b27ff3a2db5b1b27730e6d1df8c32ec55302dfec"
+      },
+      "local_sha256": "cc58f65bf06c6d12a15aadd1ebce458633aeabf5db6cdfa8907f33479182cdc7",
+      "source": "4ed/Radiometry,_Spectra,_and_Color/Working_with_Radiometric_Integrals.html",
+      "source_sha256": "1754b565d38c80ac44677ef82d93e9fc345780ac0fde4ae0d1501fd127452408",
+      "editor_report": "audit/reports/edit-radiometry.md",
+      "independent_review_report": "audit/reports/review-radiometry.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.3-Surface_Reflection.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f10.svg": "4baa93824c7c8e3b8d4c9c36cfa37c1e419f1ae17726c10941e3de73969f8cd1",
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f11.svg": "76c04b378997279f9f33539dc5272f78fef3b77fa01c1a03cb1e76bea9ba6c8f"
+      },
+      "local_sha256": "541a468a027a39fc11c23c0c8e51c2d83ae48b48c05f2320585045aa153c6621",
+      "source": "4ed/Radiometry,_Spectra,_and_Color/Surface_Reflection.html",
+      "source_sha256": "b37205813b50187dcbc35ba784cbe29e711e4214c89bf19fe2ee2e6f734a2781",
+      "editor_report": "audit/reports/edit-radiometry.md",
+      "independent_review_report": "audit/reports/review-radiometry.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.4-Light_Emission.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f12.svg": "5197b45a02c09b244b2f3933067bb47f3a3ad8a3b1ebbcf968df165a78d92d83",
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f13.svg": "75f6865b36b68b3b13e478cfa9a2c427552a58f76a47db25c7bc934be8529417",
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f14.svg": "2f04ee8caa772c59a87336ca637c1e437b047f7435ee458c32676369267e38cb",
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f15.svg": "8a172bd03c0d462e1544636a0efaf55b5e7c02fd412dc5a8fb9c70ea3ca07315"
+      },
+      "local_sha256": "fe2d2aed13f32580cf8e8da82a8cc2e67cd8d9b5f1dce6b114c246adec8bb81d",
+      "source": "4ed/Radiometry,_Spectra,_and_Color/Light_Emission.html",
+      "source_sha256": "8421c3a60a959694f7660ae37846730366e2000a3f05ff407a719e14583e452b",
+      "editor_report": "audit/reports/edit-radiometry.md",
+      "independent_review_report": "audit/reports/review-radiometry.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.5-Representing_Spectral_Distributions.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f16.svg": "a5649c4aa0fa84d0b9ede86bc53797124ba335af9996b6a6174db708e2e1fe80",
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/piecewise-linear-spectrum.svg": "62658ff597f15ecf61613cc338a07fb49e2ab871e6048dfda64cabf892aafa45",
+        "chapter-4-Radiometry,_Spectra,_and_Color/supplements/4.5-expanded.typ": "aaeb7578c1e6aebc908f289faa01f59bc03b16366d56f1be6201511ae9c0cdd3"
+      },
+      "local_sha256": "ad7f4bdf44df8f7d7743256a6500e259d8a43266aad2b72fbf9b4eb14f2e0826",
+      "source": "4ed/Radiometry,_Spectra,_and_Color/Representing_Spectral_Distributions.html",
+      "source_sha256": "1ea839265b3fbf753f331e06d902e34674bf3275f11d759791ddb82783316b2e",
+      "editor_report": "audit/reports/edit-radiometry.md",
+      "independent_review_report": "audit/reports/review-radiometry.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.6-Color.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f18.svg": "9d57634da2296425f810f611ff94f3f3c75cd48d0fb88f4039d82db0d9199134",
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f19.svg": "0f1b65ece34f36c7cf22c734557525b251bf3733e451c541310f9f8b704dc78e",
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f20.svg": "7fe26e931ad6eac0642eb36347e9ac430b9f71956aec926d17501c819a46369e",
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f21.svg": "ba7b3358ce63ef2e4a0afd357406c7e1200893dd48d6d99998a2bfce5028eaa1",
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f22.svg": "3b3742dd037a5d3f281db34e8b89423b4b18ad97852dbd37454d03dc5177c873",
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f23.svg": "510b91c269ca3edc6a426503008656c09896a805b26e8900a902d8c913cd0c6d",
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f24.svg": "1baf2696b703c3617d02941244e4e121bf6d100c9a38d2573e6bd8096c873f93",
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f25.svg": "35fef9c56910b1c24be5749d832c5cb4e51154af896e077a1eebf24a93adfc08",
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f26.svg": "b98650c332c7bd7dbb19d9f44ad403c7bd2b7e3dbf3d51549d54224cfde41b8e",
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f27.svg": "0b64062245e64a45f9c3b5a95a9a26f0d764cb46fa5dd5b1c19b76c9045ef5cd",
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f28.svg": "4d611e16aff40e4331a58f182acb4fb487aa2737372bd74aeb940fc56f9e8d09",
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f29.svg": "99380a9a7913684d34c06610613354deb57814f874ce2f26a8378435d55ba5e1",
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f30.svg": "ca0c90c35e0c771b6d9401d86b7544030a8e92aa4ef677e73e90175f6ae57327",
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f31.svg": "625bd2b31864a8f23af304a72517ed4e9b059da32c522305ed30b1fcd7c8e4a3",
+        "pbr-book-website/4ed/Radiometry,_Spectra,_and_Color/pha04f32.svg": "31220e38215eb8713bd2ab6db500722f6f85cae6b3e6a3ada60e5cca2f43b8dd",
+        "chapter-4-Radiometry,_Spectra,_and_Color/supplements/4.6-expanded.typ": "c1564d03d7d254d9ea835463c64c87fffd6f99fe7ecca2c3fb2b54b341dceb03"
+      },
+      "local_sha256": "735060a0ba7954103db9102766864e8c10f0633b2b7fd9f3e23dc96c889e1f54",
+      "source": "4ed/Radiometry,_Spectra,_and_Color/Color.html",
+      "source_sha256": "f281fe73b61fb9b9548ffc39fb25c08bc698d65dc716e760e6c8f5e0710e7a20",
+      "editor_report": "audit/reports/edit-radiometry.md",
+      "independent_review_report": "audit/reports/review-radiometry.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.7-Further_Reading.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {},
+      "local_sha256": "736ea13046ff4ec6a7e13b38ffb5030d7023f407024587489c859e2da5ddf72d",
+      "source": "4ed/Radiometry,_Spectra,_and_Color/Further_Reading.html",
+      "source_sha256": "fbb00989adb1f0c09b9382ff580c2f7e12c9dd50821fae6b932debde855be447",
+      "editor_report": "audit/reports/edit-radiometry.md",
+      "independent_review_report": "audit/reports/review-radiometry.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.8-Exercises.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {},
+      "local_sha256": "dd6be3f56f16a8918a66a7707b96ca7c1de5a5fad703366ea8b5aeb2675b9df4",
+      "source": "4ed/Radiometry,_Spectra,_and_Color/Exercises.html",
+      "source_sha256": "aa10b5ddc01e06b066f107452bb92ca8584da60cfb435fd9265d8ec8ff4cafa4",
+      "editor_report": "audit/reports/edit-radiometry.md",
+      "independent_review_report": "audit/reports/review-radiometry.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "Appendix-A-Sampling_Algorithms/A.0-Sampling_Algorithms.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {},
+      "local_sha256": "b08a24bec620cd231107dabc66eda10695b8e123b69343a966c6ba026fc9d745",
+      "source": "4ed/Sampling_Algorithms.html",
+      "source_sha256": "b3893872b2fa72e9feaa2879e345176f8806ae05ced85d1b7ee631ab578db954",
+      "editor_report": "audit/reports/edit-sampling-appendix.md",
+      "independent_review_report": "audit/reports/review-sampling-appendix.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    },
+    "Appendix-A-Sampling_Algorithms/A.1-The_Alias_Method.typ": {
+      "status": "source_compared_and_independently_reviewed",
+      "included_files": {
+        "pbr-book-website/4ed/Sampling_Algorithms/phaaaf01.svg": "e8a5c29a69ff1b623907e122eba79de14a4398ec03536c6b9a260c0955d5715e",
+        "Appendix-A-Sampling_Algorithms/supplements/A.1-expanded.typ": "bbee251860ed7ce28fc8aa9422cafab040822135c0764e718834c5aa27fea9d5"
+      },
+      "local_sha256": "01df6366420b83acf21d6b2e2a8b374621addae02d629691a251b9ea1a61f6e4",
+      "source": "4ed/Sampling_Algorithms/The_Alias_Method.html",
+      "source_sha256": "8719f57c75509499407fefbce6115a09f374ca46af16683ff0ef0cd1cba8499a",
+      "editor_report": "audit/reports/edit-sampling-appendix.md",
+      "independent_review_report": "audit/reports/review-sampling-appendix.md",
+      "unresolved_issues": "See named reports; no claim that original-source defects are resolved",
+      "rendering": "See named reports; whole-book release acceptance remains pending"
+    }
+  }
+}

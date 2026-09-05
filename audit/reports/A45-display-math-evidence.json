@@ -1,0 +1,389 @@
+[
+  {
+    "section": "A4",
+    "source_line": 131,
+    "source_anchor": null,
+    "source_title": "f left-parenthesis x right-parenthesis equals StartLayout Enlarged left-brace 1st Row 1st Column r minus StartAbsoluteValue x EndAbsoluteValue 2nd Column StartAbsoluteValue x EndAbsoluteValue less-than r 2nd Row 1st Column 0 2nd Column otherwise period EndLayout",
+    "rendering": "native Typst",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A4",
+    "source_line": 397,
+    "source_anchor": null,
+    "source_title": "c integral Subscript 0 Superscript normal infinity Baseline normal e Superscript minus a x Baseline normal d x equals minus StartFraction c Over a EndFraction normal e Superscript minus a x Baseline vertical-bar Subscript 0 Superscript normal infinity Baseline equals StartFraction c Over a EndFraction equals 1 period",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A4",
+    "source_line": 549,
+    "source_anchor": "eq:exponential-cdf",
+    "source_title": "upper P left-parenthesis x right-parenthesis equals integral Subscript 0 Superscript x Baseline a normal e Superscript minus a x Super Superscript prime Superscript Baseline normal d x Superscript prime Baseline equals 1 minus normal e Superscript minus a x Baseline comma",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": "A.17",
+    "local_label": "exponential-cdf"
+  },
+  {
+    "section": "A4",
+    "source_line": 638,
+    "source_anchor": null,
+    "source_title": "upper P Superscript negative 1 Baseline left-parenthesis x right-parenthesis equals minus StartFraction ln left-parenthesis 1 minus x right-parenthesis Over a EndFraction period",
+    "rendering": "native Typst",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A4",
+    "source_line": 699,
+    "source_anchor": "eq:exponential-sampling-distance",
+    "source_title": "upper X equals minus StartFraction ln left-parenthesis 1 minus xi Subscript Baseline right-parenthesis Over a EndFraction period",
+    "rendering": "native Typst",
+    "displayed_number": "A.17",
+    "local_label": "exponential-sampling-distance"
+  },
+  {
+    "section": "A4",
+    "source_line": 924,
+    "source_anchor": "eq:gaussian-function",
+    "source_title": "g left-parenthesis x right-parenthesis equals StartFraction 1 Over StartRoot 2 pi sigma squared EndRoot EndFraction normal e Superscript minus StartFraction left-parenthesis x minus mu right-parenthesis squared Over 2 sigma squared EndFraction Baseline period",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": "A.17",
+    "local_label": "gaussian-function"
+  },
+  {
+    "section": "A4",
+    "source_line": 1039,
+    "source_anchor": null,
+    "source_title": "upper P left-parenthesis x right-parenthesis equals one-half left-parenthesis 1 plus e r f left-parenthesis StartFraction x minus mu Over sigma StartRoot italic 2 EndRoot EndFraction right-parenthesis right-parenthesis comma",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A4",
+    "source_line": 1165,
+    "source_anchor": null,
+    "source_title": "x equals mu plus StartRoot 2 EndRoot sigma e r f Superscript negative italic 1 Baseline italic left-parenthesis italic 2 xi minus italic 1 italic right-parenthesis italic period",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A4",
+    "source_line": 1386,
+    "source_anchor": "eq:logistic-function",
+    "source_title": "f left-parenthesis x right-parenthesis equals StartFraction normal e Superscript minus StartAbsoluteValue x EndAbsoluteValue slash s Baseline Over s left-parenthesis 1 plus normal e Superscript minus StartAbsoluteValue x EndAbsoluteValue slash s Baseline right-parenthesis squared EndFraction comma",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": "A.17",
+    "local_label": "logistic-function"
+  },
+  {
+    "section": "A4",
+    "source_line": 1582,
+    "source_anchor": null,
+    "source_title": "upper P left-parenthesis x right-parenthesis equals StartFraction 1 Over 1 plus normal e Superscript negative x slash s Baseline EndFraction comma",
+    "rendering": "native Typst",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A4",
+    "source_line": 1753,
+    "source_anchor": "eq:function-interval-pdf",
+    "source_title": "StartLayout 1st Row 1st Column p Subscript left-bracket a comma b right-bracket Baseline left-parenthesis x right-parenthesis 2nd Column equals StartFraction p left-parenthesis x right-parenthesis Over integral Subscript a Superscript b Baseline p left-parenthesis x right-parenthesis normal d x EndFraction 2nd Row 1st Column Blank 2nd Column equals StartFraction p left-parenthesis x right-parenthesis Over upper P left-parenthesis b right-parenthesis minus upper P left-parenthesis a right-parenthesis EndFraction period EndLayout",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": "A.17",
+    "local_label": "function-interval-pdf"
+  },
+  {
+    "section": "A4",
+    "source_line": 1946,
+    "source_anchor": "eq:trimmed-logistic-cdf",
+    "source_title": "upper P Subscript left-bracket a comma b right-bracket Baseline left-parenthesis x right-parenthesis equals integral Subscript a Superscript x Baseline p Subscript left-bracket a comma b right-bracket Baseline left-parenthesis x Superscript prime Baseline right-parenthesis normal d x Superscript prime Baseline equals StartFraction upper P left-parenthesis x right-parenthesis minus upper P left-parenthesis a right-parenthesis Over upper P left-parenthesis b right-parenthesis minus upper P left-parenthesis a right-parenthesis EndFraction period",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": "A.17",
+    "local_label": "trimmed-logistic-cdf"
+  },
+  {
+    "section": "A4",
+    "source_line": 2105,
+    "source_anchor": null,
+    "source_title": "upper X equals upper P Superscript negative 1 Baseline left-parenthesis xi left-parenthesis upper P left-parenthesis b right-parenthesis minus upper P left-parenthesis a right-parenthesis right-parenthesis plus upper P left-parenthesis a right-parenthesis right-parenthesis period",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A4",
+    "source_line": 2331,
+    "source_anchor": null,
+    "source_title": "f left-parenthesis x right-parenthesis equals 3 t squared minus 2 t cubed comma",
+    "rendering": "native Typst",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A4",
+    "source_line": 2431,
+    "source_anchor": null,
+    "source_title": "p left-parenthesis x right-parenthesis equals StartFraction 2 f left-parenthesis x right-parenthesis Over b minus a EndFraction period",
+    "rendering": "native Typst",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A4",
+    "source_line": 2500,
+    "source_anchor": null,
+    "source_title": "upper P left-parenthesis x right-parenthesis equals StartFraction 2 t cubed minus t Superscript 4 Baseline Over b minus a EndFraction period",
+    "rendering": "native Typst",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A4",
+    "source_line": 2832,
+    "source_anchor": null,
+    "source_title": "f left-parenthesis x right-parenthesis equals StartLayout Enlarged left-brace 1st Row 1st Column v 0 2nd Column x 0 less-than-or-equal-to x less-than x 1 2nd Row 1st Column v 1 2nd Column x 1 less-than-or-equal-to x less-than x 2 3rd Row 1st Column vertical-ellipsis EndLayout period",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A4",
+    "source_line": 2947,
+    "source_anchor": "eq:piecewise-step-integral",
+    "source_title": "c equals integral Subscript 0 Superscript 1 Baseline StartAbsoluteValue f left-parenthesis x right-parenthesis EndAbsoluteValue normal d x equals sigma-summation Underscript i equals 0 Overscript n minus 1 Endscripts StartAbsoluteValue v Subscript i Baseline EndAbsoluteValue normal upper Delta equals sigma-summation Underscript i equals 0 Overscript n minus 1 Endscripts StartFraction StartAbsoluteValue v Subscript i Baseline EndAbsoluteValue Over n EndFraction comma",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": "A.17",
+    "local_label": "piecewise-step-integral"
+  },
+  {
+    "section": "A4",
+    "source_line": 3142,
+    "source_anchor": null,
+    "source_title": "StartLayout 1st Row 1st Column upper P left-parenthesis x 0 right-parenthesis 2nd Column equals 0 2nd Row 1st Column upper P left-parenthesis x 1 right-parenthesis 2nd Column equals integral Subscript x 0 Superscript x 1 Baseline p left-parenthesis x right-parenthesis normal d x equals StartFraction StartAbsoluteValue v 0 EndAbsoluteValue Over c n EndFraction equals upper P left-parenthesis x 0 right-parenthesis plus StartFraction StartAbsoluteValue v 0 EndAbsoluteValue Over c n EndFraction 3rd Row 1st Column upper P left-parenthesis x 2 right-parenthesis 2nd Column equals integral Subscript x 0 Superscript x 2 Baseline p left-parenthesis x right-parenthesis normal d x equals integral Subscript x 0 Superscript x 1 Baseline p left-parenthesis x right-parenthesis normal d x plus integral Subscript x 1 Superscript x 2 Baseline p left-parenthesis x right-parenthesis normal d x equals upper P left-parenthesis x 1 right-parenthesis plus StartFraction StartAbsoluteValue v 1 EndAbsoluteValue Over c n EndFraction 4th Row 1st Column upper P left-parenthesis x Subscript i Baseline right-parenthesis 2nd Column equals upper P left-parenthesis x Subscript i minus 1 Baseline right-parenthesis plus StartFraction StartAbsoluteValue v Subscript i minus 1 Baseline EndAbsoluteValue Over c n EndFraction period EndLayout",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A4",
+    "source_line": 3486,
+    "source_anchor": null,
+    "source_title": "xi Subscript Baseline equals integral Subscript 0 Superscript x Baseline p left-parenthesis x Superscript prime Baseline right-parenthesis normal d x Superscript prime Baseline equals upper P left-parenthesis x right-parenthesis period",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A5",
+    "source_line": 290,
+    "source_anchor": null,
+    "source_title": "StartLayout 1st Row 1st Column p left-parenthesis r right-parenthesis 2nd Column equals integral Subscript 0 Superscript 2 pi Baseline p left-parenthesis r comma theta right-parenthesis normal d theta Subscript Baseline equals 2 r 2nd Row 1st Column p left-parenthesis theta vertical-bar r right-parenthesis 2nd Column equals StartFraction p left-parenthesis r comma theta right-parenthesis Over p left-parenthesis r right-parenthesis EndFraction equals StartFraction 1 Over 2 pi EndFraction period EndLayout",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A5",
+    "source_line": 494,
+    "source_anchor": null,
+    "source_title": "StartLayout 1st Row 1st Column r 2nd Column equals StartRoot xi 1 EndRoot 2nd Row 1st Column theta 2nd Column equals 2 pi xi 2 period EndLayout",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A5",
+    "source_line": 731,
+    "source_anchor": null,
+    "source_title": "StartLayout 1st Row 1st Column r 2nd Column equals x 2nd Row 1st Column theta 2nd Column equals StartFraction y Over x EndFraction StartFraction pi Over 4 EndFraction period EndLayout",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A5",
+    "source_line": 1165,
+    "source_anchor": null,
+    "source_title": "StartLayout 1st Row 1st Column upper P left-parenthesis theta right-parenthesis 2nd Column equals integral Subscript 0 Superscript theta Baseline sine theta prime normal d theta Subscript Superscript prime Baseline equals 1 minus cosine theta 2nd Row 1st Column upper P left-parenthesis phi right-parenthesis 2nd Column equals integral Subscript 0 Superscript phi Baseline StartFraction 1 Over 2 pi EndFraction normal d phi Superscript prime Baseline equals StartFraction phi Over 2 pi EndFraction period EndLayout",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A5",
+    "source_line": 1316,
+    "source_anchor": null,
+    "source_title": "StartLayout 1st Row 1st Column theta 2nd Column equals cosine Superscript negative 1 Baseline xi 1 2nd Row 1st Column phi 2nd Column equals 2 pi xi 2 period EndLayout",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A5",
+    "source_line": 1389,
+    "source_anchor": "eq:uniform-hemi-sample",
+    "source_title": "StartLayout 1st Row 1st Column x 2nd Column equals sine theta cosine phi equals cosine left-parenthesis 2 pi xi 2 right-parenthesis StartRoot 1 minus xi 1 squared EndRoot 2nd Row 1st Column y 2nd Column equals sine theta sine phi equals sine left-parenthesis 2 pi xi 2 right-parenthesis StartRoot 1 minus xi 1 squared EndRoot 3rd Row 1st Column z 2nd Column equals cosine theta equals xi 1 period EndLayout",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": "A.17",
+    "local_label": "uniform-hemi-sample"
+  },
+  {
+    "section": "A5",
+    "source_line": 1621,
+    "source_anchor": null,
+    "source_title": "StartLayout 1st Row 1st Column x 2nd Column equals cosine left-parenthesis 2 pi xi 2 right-parenthesis StartRoot 1 minus z squared EndRoot equals cosine left-parenthesis 2 pi xi 2 right-parenthesis 2 StartRoot xi 1 left-parenthesis 1 minus xi 1 right-parenthesis EndRoot 2nd Row 1st Column y 2nd Column equals sine left-parenthesis 2 pi xi 2 right-parenthesis StartRoot 1 minus z squared EndRoot equals sine left-parenthesis 2 pi xi 2 right-parenthesis 2 StartRoot xi 1 left-parenthesis 1 minus xi 1 right-parenthesis EndRoot 3rd Row 1st Column z 2nd Column equals 1 minus 2 xi 1 period EndLayout",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A5",
+    "source_line": 1897,
+    "source_anchor": null,
+    "source_title": "p left-parenthesis omega right-parenthesis proportional-to cosine theta period",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A5",
+    "source_line": 1943,
+    "source_anchor": null,
+    "source_title": "StartLayout 1st Row 1st Column integral Underscript script upper H squared Endscripts p left-parenthesis omega Subscript Baseline right-parenthesis normal d omega Subscript 2nd Column equals 1 2nd Row 1st Column integral Subscript 0 Superscript 2 pi Baseline integral Subscript 0 Superscript StartFraction pi Over 2 EndFraction Baseline c cosine theta sine theta normal d theta Subscript Baseline normal d phi Subscript 2nd Column equals 1 3rd Row 1st Column c Baseline 2 pi integral Subscript 0 Superscript pi slash 2 Baseline cosine theta sine theta normal d theta Subscript 2nd Column equals 1 4th Row 1st Column c 2nd Column equals StartFraction 1 Over pi EndFraction period EndLayout",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A5",
+    "source_line": 2096,
+    "source_anchor": null,
+    "source_title": "p left-parenthesis theta comma phi right-parenthesis equals StartFraction 1 Over pi EndFraction cosine theta sine theta period",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A5",
+    "source_line": 2322,
+    "source_anchor": null,
+    "source_title": "StartAbsoluteValue upper J Subscript upper T Baseline EndAbsoluteValue equals Start 2 By 2 Determinant 1st Row 1st Column cosine theta 2nd Column 0 2nd Row 1st Column 0 2nd Column 1 EndDeterminant equals cosine theta period",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A5",
+    "source_line": 2392,
+    "source_anchor": null,
+    "source_title": "p left-parenthesis theta comma phi right-parenthesis equals StartAbsoluteValue upper J Subscript upper T Baseline EndAbsoluteValue p left-parenthesis r comma phi right-parenthesis equals cosine theta StartFraction r Over pi EndFraction equals StartFraction cosine theta sine theta Over pi EndFraction comma",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A5",
+    "source_line": 2707,
+    "source_anchor": null,
+    "source_title": "StartLayout 1st Row 1st Column 1 2nd Column equals c integral Subscript 0 Superscript theta Subscript normal m normal a normal x Baseline Baseline sine theta normal d theta Subscript Baseline 2nd Row 1st Column Blank 2nd Column equals c left-parenthesis 1 minus cosine theta Subscript normal m normal a normal x Baseline right-parenthesis period EndLayout",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A5",
+    "source_line": 2926,
+    "source_anchor": null,
+    "source_title": "cosine theta equals left-parenthesis 1 minus xi Subscript Baseline right-parenthesis plus xi Subscript Baseline cosine theta Subscript normal m normal a normal x Baseline period",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A5",
+    "source_line": 3504,
+    "source_anchor": null,
+    "source_title": "upper I Subscript f Baseline equals integral integral f left-parenthesis u comma v right-parenthesis normal d u normal d v equals StartFraction 1 Over n Subscript u Baseline n Subscript v Baseline EndFraction sigma-summation Underscript i equals 0 Overscript n Subscript u Baseline minus 1 Endscripts sigma-summation Underscript j equals 0 Overscript n Subscript v Baseline minus 1 Endscripts f left-bracket u Subscript i Baseline comma v Subscript j Baseline right-bracket period",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A5",
+    "source_line": 3638,
+    "source_anchor": null,
+    "source_title": "p left-parenthesis u comma v right-parenthesis equals StartFraction f left-parenthesis u comma v right-parenthesis Over integral integral f left-parenthesis u comma v right-parenthesis normal d u normal d v EndFraction equals StartFraction f left-bracket u overTilde comma v overTilde right-bracket Over 1 slash left-parenthesis n Subscript u Baseline n Subscript v Baseline right-parenthesis sigma-summation Underscript i equals 0 Overscript n Subscript u Baseline minus 1 Endscripts sigma-summation Underscript j equals 0 Overscript n Subscript v Baseline minus 1 Endscripts f left-bracket u Subscript i Baseline comma v Subscript j Baseline right-bracket EndFraction period",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A5",
+    "source_line": 3840,
+    "source_anchor": "eq:2d-discrete-marginal-density",
+    "source_title": "p left-parenthesis v right-parenthesis equals integral p left-parenthesis u comma v right-parenthesis normal d u equals StartFraction left-parenthesis 1 slash n Subscript u Baseline right-parenthesis sigma-summation Underscript i equals 0 Overscript n Subscript u Baseline minus 1 Endscripts f left-bracket u Subscript i Baseline comma v overTilde right-bracket Over upper I Subscript f Baseline EndFraction period",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": "A.17",
+    "local_label": "2d-discrete-marginal-density"
+  },
+  {
+    "section": "A5",
+    "source_line": 4029,
+    "source_anchor": "eq:2d-discrete-conditional-density",
+    "source_title": "p left-parenthesis u vertical-bar v right-parenthesis equals StartFraction p left-parenthesis u comma v right-parenthesis Over p left-parenthesis v right-parenthesis EndFraction equals StartFraction f left-bracket u overTilde comma v overTilde right-bracket slash upper I Subscript f Baseline Over p left-bracket v overTilde right-bracket EndFraction period",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": "A.17",
+    "local_label": "2d-discrete-conditional-density"
+  },
+  {
+    "section": "A5",
+    "source_line": 4912,
+    "source_anchor": "eq:summed-area-table",
+    "source_title": "s left-parenthesis x comma y right-parenthesis equals sigma-summation Underscript x prime equals 0 Overscript x minus 1 Endscripts sigma-summation Underscript y prime equals 0 Overscript y minus 1 Endscripts a left-parenthesis x prime comma y Superscript prime Baseline right-parenthesis comma",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": "A.17",
+    "local_label": "summed-area-table"
+  },
+  {
+    "section": "A5",
+    "source_line": 6085,
+    "source_anchor": null,
+    "source_title": "p left-parenthesis x right-parenthesis equals StartFraction integral Subscript y 0 Superscript y 1 Baseline f left-parenthesis x comma y Superscript prime Baseline right-parenthesis normal d y Superscript prime Baseline Over integral Subscript x 0 Superscript x 1 Baseline integral Subscript y 0 Superscript y 1 Baseline f left-parenthesis x prime comma y Superscript prime Baseline right-parenthesis normal d x prime normal d y Superscript prime Baseline EndFraction comma",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A5",
+    "source_line": 6202,
+    "source_anchor": null,
+    "source_title": "upper P left-parenthesis x right-parenthesis equals StartFraction integral Subscript x 0 Superscript x Baseline integral Subscript y 0 Superscript y 1 Baseline f left-parenthesis x prime comma y Superscript prime Baseline right-parenthesis normal d x prime normal d y Superscript prime Baseline Over integral Subscript x 0 Superscript x 1 Baseline integral Subscript y 0 Superscript y 1 Baseline f left-parenthesis x prime comma y Superscript prime Baseline right-parenthesis normal d x prime normal d y Superscript prime Baseline EndFraction period",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A5",
+    "source_line": 6601,
+    "source_anchor": null,
+    "source_title": "p left-parenthesis y vertical-bar x right-parenthesis equals StartFraction f left-parenthesis x comma y right-parenthesis Over integral Subscript y 0 Superscript y 1 Baseline f left-parenthesis x comma y Superscript prime Baseline right-parenthesis normal d y Superscript prime Baseline EndFraction comma",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": null,
+    "local_label": null
+  },
+  {
+    "section": "A5",
+    "source_line": 6685,
+    "source_anchor": null,
+    "source_title": "upper P left-parenthesis y vertical-bar x right-parenthesis equals StartFraction integral Subscript y 0 Superscript y Baseline f left-parenthesis x comma y Superscript prime Baseline right-parenthesis normal d y Superscript prime Baseline Over integral Subscript y 0 Superscript y 1 Baseline f left-parenthesis x comma y Superscript prime Baseline right-parenthesis normal d y Superscript prime Baseline EndFraction period",
+    "rendering": "exact source SVG in math.equation",
+    "displayed_number": null,
+    "local_label": null
+  }
+]

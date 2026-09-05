@@ -1,0 +1,3176 @@
+{
+  "504": {
+    "index": 375,
+    "anchor": "original-reference-375",
+    "source_line": 1575,
+    "source_text": "Glassner, A. 1988. Spacetime ray tracing for animation. IEEE Computer Graphics & Applications 8 (2), 60–70.",
+    "title": "Spacetime ray tracing for animation",
+    "year": "1988",
+    "first_author": "glassner"
+  },
+  "31468": {
+    "index": 377,
+    "anchor": "original-reference-377",
+    "source_line": 1581,
+    "source_text": "Glassner, A. 1989b. How to derive a spectrum from an RGB triplet. IEEE Computer Graphics and Applications 9 (4), 95–99.",
+    "title": "How to derive a spectrum from an {RGB} triplet",
+    "year": "1989b",
+    "first_author": "glassner"
+  },
+  "55149": {
+    "index": 708,
+    "anchor": "original-reference-708",
+    "source_line": 2923,
+    "source_text": "Lee, M., and R. Redner. 1990. A note on the use of nonlinear filtering in computer graphics. IEEE Computer Graphics and Applications 10 (3), 23–29.",
+    "title": "A note on the use of nonlinear filtering in computer graphics",
+    "year": "1990",
+    "first_author": "lee"
+  },
+  "252554": {
+    "index": 1161,
+    "anchor": "original-reference-1161",
+    "source_line": 4682,
+    "source_text": "Tumblin, J., and H. E. Rushmeier. 1993. Tone reproduction for realistic images. IEEE Computer Graphics and Applications 13 (6), 42–48.",
+    "title": "Tone reproduction for realistic images",
+    "year": "1993",
+    "first_author": "tumblin"
+  },
+  "468387": {
+    "index": 1083,
+    "anchor": "original-reference-1083",
+    "source_line": 4370,
+    "source_text": "Slusallek, P., and H.-P. Seidel. 1995. Vision—An architecture for global illumination calculations. IEEE Transactions on Visualization and Computer Graphics 1 (1), 77–96.",
+    "title": "Vision-an architecture for global illumination calculations",
+    "year": "1995",
+    "first_author": "slusallek"
+  },
+  "536271": {
+    "index": 1287,
+    "anchor": "original-reference-1287",
+    "source_line": 5189,
+    "source_text": "Woo, A., A. Pearce, and M. Ouellette. 1996. It’s really not a rendering bug, you see…. IEEE Computer Graphics and Applications 16 (5), 21–25.",
+    "title": "It's really not a rendering bug, you see",
+    "year": "1996",
+    "first_author": "woo"
+  },
+  "556504": {
+    "index": 743,
+    "anchor": "original-reference-743",
+    "source_line": 3069,
+    "source_text": "Machiraju, R., and R. Yagel. 1996. Reconstruction error characterization and control: A sampling theory approach. IEEE Transactions on Visualization and Computer Graphics 2 (4), 364–78.",
+    "title": "Reconstruction error characterization and control: a sampling theory approach",
+    "year": "1996",
+    "first_author": "machiraju"
+  },
+  "576857": {
+    "index": 652,
+    "anchor": "original-reference-652",
+    "source_line": 2706,
+    "source_text": "Klimaszewski, K. S., and T. W. Sederberg. 1997. Faster ray tracing using adaptive grids. IEEE Computer Graphics and Applications 17 (1), 42–51.",
+    "title": "Faster ray tracing using adaptive grids",
+    "year": "1997",
+    "first_author": "klimaszewski"
+  },
+  "597800": {
+    "index": 807,
+    "anchor": "original-reference-807",
+    "source_line": 3305,
+    "source_text": "Möller, T., R. Machiraju, K. Mueller, and R. Yagel. 1997. Evaluation and design of filters using a Taylor series expansion. IEEE Transactions on Visualization and Computer Graphics 3 (2), 184–99.",
+    "title": "Evaluation and design of filters using a {T}aylor series expansion",
+    "year": "1997",
+    "first_author": "moller"
+  },
+  "722295": {
+    "index": 1118,
+    "anchor": "original-reference-1118",
+    "source_line": 4511,
+    "source_text": "Stürzlinger, W. 1998. Ray tracing triangular trimmed free-form surfaces. IEEE Transactions on Visualization and Computer Graphics 4 (3), 202–14.",
+    "title": "Ray-tracing triangular trimmed free-form surfaces",
+    "year": "1998",
+    "first_author": "sturzlinger"
+  },
+  "732097": {
+    "index": 1127,
+    "anchor": "original-reference-1127",
+    "source_line": 4543,
+    "source_text": "Sung, K., J. Craighead, C. Wang, S. Bakshi, A. Pearce, and A. Woo. 1998. Design and implementation of the Maya renderer. In Pacific Graphics ’98.",
+    "title": "Design and implementation of the Maya Renderer",
+    "year": "1998",
+    "first_author": "sung"
+  },
+  "761554": {
+    "index": 381,
+    "anchor": "original-reference-381",
+    "source_line": 1597,
+    "source_text": "Glassner, A. 1999. An open and shut case. IEEE Computer Graphics and Applications 19 (3), 82–92.",
+    "title": "An open and shut case",
+    "year": "1999",
+    "first_author": "glassner"
+  },
+  "773962": {
+    "index": 449,
+    "anchor": "original-reference-449",
+    "source_line": 1891,
+    "source_text": "Hall, R. 1999. Comparing spectral color computation methods. IEEE Computer Graphics and Applications 19 (4), 36–46.",
+    "title": "Comparing spectral color computation methods",
+    "year": "1999",
+    "first_author": "hall"
+  },
+  "773963": {
+    "index": 587,
+    "anchor": "original-reference-587",
+    "source_line": 2451,
+    "source_text": "Johnson, G. M., and M. D. Fairchild. 1999. Full spectral color calculations in realistic image synthesis. IEEE Computer Graphics and Applications 19 (4), 47–53.",
+    "title": "Full-spectral color calculations in realistic image synthesis",
+    "year": "1999",
+    "first_author": "johnson"
+  },
+  "843002": {
+    "index": 1174,
+    "anchor": "original-reference-1174",
+    "source_line": 4729,
+    "source_text": "Unser, M. 2000. Sampling—50 years after Shannon. In Proceedings of the IEEE 88 (4), 569–87.",
+    "title": "Sampling-50 years after {S}hannon",
+    "year": "2000",
+    "first_author": "unser"
+  },
+  "946628": {
+    "index": 320,
+    "anchor": "original-reference-320",
+    "source_line": 1349,
+    "source_text": "Ferwerda, J. A. 2001. Elements of early vision for computer graphics. IEEE Computer Graphics and Applications 21 (5), 22–33.",
+    "title": "Elements of early vision for computer graphics",
+    "year": "2001",
+    "first_author": "ferwerda"
+  },
+  "993400": {
+    "index": 776,
+    "anchor": "original-reference-776",
+    "source_line": 3185,
+    "source_text": "Meijering, E. 2002. A chronology of interpolation: From ancient astronomy to modern signal and image processing. In Proceedings of the IEEE 90 (3), 319–42.",
+    "title": "A chronology of interpolation: from ancient astronomy to modern signal and image processing",
+    "year": "2002",
+    "first_author": "meijering"
+  },
+  "1138991": {
+    "index": 1087,
+    "anchor": "original-reference-1087",
+    "source_line": 4385,
+    "source_text": "Smith, B. 1967. Geometrical shadowing of a random rough surface. IEEE Transactions on Antennas and Propagation 15 (5), 668–71.",
+    "title": "Geometrical shadowing of a random rough surface",
+    "year": "1967",
+    "first_author": "smith"
+  },
+  "4015484": {
+    "index": 1321,
+    "anchor": "original-reference-1321",
+    "source_line": 5327,
+    "source_text": "Yoon, S.-E., and P. Lindstrom. 2006. Mesh layouts for block-based caches. IEEE Transactions on Visualization and Computer Graphics 12 (5), 1213–20.",
+    "title": "Mesh Layouts for Block-Based Caches",
+    "year": "2006",
+    "first_author": "yoon"
+  },
+  "4037684": {
+    "index": 450,
+    "anchor": "original-reference-450",
+    "source_line": 1895,
+    "source_text": "Hall, R. A., and D. P. Greenberg. 1983. A testbed for realistic image synthesis. IEEE Computer Graphics and Applications 3 (8), 10–20.",
+    "title": "A Testbed for Realistic Image Synthesis",
+    "year": "1983",
+    "first_author": "hall"
+  },
+  "4056861": {
+    "index": 338,
+    "anchor": "original-reference-338",
+    "source_line": 1417,
+    "source_text": "Fujimoto, A., T. Tanaka, and K. Iwata. 1986. Arts: Accelerated ray-tracing system. IEEE Computer Graphics and Applications 6 (4), 16–26.",
+    "title": "{ARTS}: Accelerated Ray-Tracing System",
+    "year": "1986",
+    "first_author": "fujimoto"
+  },
+  "4056910": {
+    "index": 397,
+    "anchor": "original-reference-397",
+    "source_line": 1659,
+    "source_text": "Greene, N., and P. S. Heckbert. 1986. Creating raster Omnimax images from multiple perspective views using the elliptical weighted average filter. IEEE Computer Graphics and Applications 6 (6), 21–27.",
+    "title": "Creating Raster Omnimax Images from Multiple Perspective Views Using the Elliptical Weighted Average Filter",
+    "year": "1986",
+    "first_author": "greene"
+  },
+  "4057175": {
+    "index": 388,
+    "anchor": "original-reference-388",
+    "source_line": 1625,
+    "source_text": "Goldsmith, J., and J. Salmon. 1987. Automatic creation of object hierarchies for ray tracing. IEEE Computer Graphics and Applications 7 (5), 14–20.",
+    "title": "Automatic Creation of Object Hierarchies for Ray Tracing",
+    "year": "1987",
+    "first_author": "goldsmith"
+  },
+  "4061542": {
+    "index": 221,
+    "anchor": "original-reference-221",
+    "source_line": 947,
+    "source_text": "Dammertz, H., and A. Keller. 2006. Improving ray tracing precision by object space intersection computation. IEEE Symposium on Interactive Ray Tracing, 25–31.",
+    "title": "Improving Ray Tracing Precision by Object Space Intersection Computation",
+    "year": "2006",
+    "first_author": "dammertz"
+  },
+  "4061543": {
+    "index": 637,
+    "anchor": "original-reference-637",
+    "source_line": 2637,
+    "source_text": "Kensler, A., and P. Shirley. 2006. Optimizing ray-triangle intersection via automated search. In IEEE Symposium on Interactive Ray Tracing, 33–38.",
+    "title": "Optimizing Ray-Triangle Intersection via Automated Search",
+    "year": "2006",
+    "first_author": "kensler"
+  },
+  "4061545": {
+    "index": 550,
+    "anchor": "original-reference-550",
+    "source_line": 2282,
+    "source_text": "Ize, T., I. Wald, C. Robertson, and S. G. Parker. 2006. An evaluation of parallel grid construction for ray tracing dynamic scenes. IEEE Symposium on Interactive Ray Tracing, 47–55.",
+    "title": "An Evaluation of Parallel Grid Construction for Ray Tracing Dynamic Scenes",
+    "year": "2006",
+    "first_author": "ize"
+  },
+  "4061548": {
+    "index": 475,
+    "anchor": "original-reference-475",
+    "source_line": 1985,
+    "source_text": "Havran, V., R. Herzog, and H.-P. Seidel. 2006. On the fast construction of spatial hierarchies for ray tracing. In IEEE Symposium on Interactive Ray Tracing, 71–80.",
+    "title": "On the Fast Construction of Spatial Hierarchies for Ray Tracing",
+    "year": "2006",
+    "first_author": "havran"
+  },
+  "4061549": {
+    "index": 533,
+    "anchor": "original-reference-533",
+    "source_line": 2218,
+    "source_text": "Hunt, W., W. Mark, and G. Stoll. 2006. Fast kd-tree construction with an adaptive error-bounded heuristic. In IEEE Symposium on Interactive Ray Tracing, 81–88.",
+    "title": "Fast kd-tree Construction with an Adaptive Error-Bounded Heuristic",
+    "year": "2006",
+    "first_author": "hunt"
+  },
+  "4061550": {
+    "index": 947,
+    "anchor": "original-reference-947",
+    "source_line": 3850,
+    "source_text": "Popov, S., J. Gunther, H. P. Seidel, and P. Slusallek. 2006. Experiences with streaming construction of SAH kd-trees. In IEEE Symposium on Interactive Ray Tracing, 89–94.",
+    "title": "Experiences with Streaming Construction of {SAH} {KD}-Trees",
+    "year": "2006",
+    "first_author": "popov"
+  },
+  "4061561": {
+    "index": 88,
+    "anchor": "original-reference-88",
+    "source_line": 429,
+    "source_text": "Bigler, J., A. Stephens, and S. Parker. 2006. Design for parallel interactive ray tracing systems. IEEE Symposium on Interactive Ray Tracing, 187–95.",
+    "title": "Design for Parallel Interactive Ray Tracing Systems",
+    "year": "2006",
+    "first_author": "bigler"
+  },
+  "4342587": {
+    "index": 548,
+    "anchor": "original-reference-548",
+    "source_line": 2276,
+    "source_text": "Ize, T., P. Shirley, and S. Parker. 2007. Grid creation strategies for efficient ray tracing. In IEEE Symposium on Interactive Ray Tracing, 27–32.",
+    "title": "Grid Creation Strategies for Efficient Ray Tracing",
+    "year": "2007",
+    "first_author": "ize"
+  },
+  "4342588": {
+    "index": 1220,
+    "anchor": "original-reference-1220",
+    "source_line": 4911,
+    "source_text": "Wald, I. 2007. On fast construction of SAH-based bounding volume hierarchies. In IEEE Symposium on Interactive Ray Tracing, 33–40.",
+    "title": "On fast Construction of SAH-based Bounding Volume Hierarchies",
+    "year": "2007",
+    "first_author": "wald"
+  },
+  "4342591": {
+    "index": 608,
+    "anchor": "original-reference-608",
+    "source_line": 2533,
+    "source_text": "Kammaje, R., and B. Mora. 2007. A study of restricted BSP trees for ray tracing. In IEEE Symposium on Interactive Ray Tracing, 55–62.",
+    "title": "A Study of Restricted {BSP} Trees for Ray Tracing",
+    "year": "2007",
+    "first_author": "kammaje"
+  },
+  "4342593": {
+    "index": 300,
+    "anchor": "original-reference-300",
+    "source_line": 1261,
+    "source_text": "Ernst, M., and G. Greiner. 2007. Early split clipping for bounding volume hierarchies. IEEE Symposium on Interactive Ray Tracing, 73–78.",
+    "title": "Early Split Clipping for Bounding Volume Hierarchies",
+    "year": "2007",
+    "first_author": "ernst"
+  },
+  "4342598": {
+    "index": 423,
+    "anchor": "original-reference-423",
+    "source_line": 1768,
+    "source_text": "Günther, J., S. Popov, H. P. Seidel, and P. Slusallek. 2007. Realtime ray tracing on GPU with BVH-based packet traversal. IEEE Symposium on Interactive Ray Tracing, 113–18.",
+    "title": "Realtime Ray Tracing on {GPU} with {BVH}-based Packet Traversal",
+    "year": "2007",
+    "first_author": "gunther"
+  },
+  "4634613": {
+    "index": 531,
+    "anchor": "original-reference-531",
+    "source_line": 2212,
+    "source_text": "Hunt, W., and B. Mark. 2008a. Ray-specialized acceleration structures for ray tracing. In IEEE Symposium on Interactive Ray Tracing, 3–10.",
+    "title": "Ray-specialized acceleration structures for ray tracing",
+    "year": "2008a",
+    "first_author": "hunt"
+  },
+  "4634614": {
+    "index": 532,
+    "anchor": "original-reference-532",
+    "source_line": 2215,
+    "source_text": "Hunt, W., and B. Mark. 2008b. Adaptive acceleration structures in perspective space. In IEEE Symposium on Interactive Ray Tracing, 111–17.",
+    "title": "Adaptive acceleration structures in perspective space",
+    "year": "2008b",
+    "first_author": "hunt"
+  },
+  "4634616": {
+    "index": 680,
+    "anchor": "original-reference-680",
+    "source_line": 2815,
+    "source_text": "Lacewell, D., B. Burley, S. Boulos, and P. Shirley. 2008. Raytracing prefiltered occlusion for aggregate geometry. In IEEE Symposium on Interactive Ray Tracing, 19–26.",
+    "title": "Raytracing prefiltered occlusion for aggregate geometry",
+    "year": "2008",
+    "first_author": "lacewell"
+  },
+  "4634623": {
+    "index": 1098,
+    "anchor": "original-reference-1098",
+    "source_line": 4440,
+    "source_text": "Soupikov, A., M. Shevtsov, and A. Kapustin. 2008. Improving kd-tree quality at a reasonable construction cost. In IEEE Symposium on Interactive Ray Tracing, 67–72.",
+    "title": "Improving {K}d-tree quality at a reasonable construction cost",
+    "year": "2008",
+    "first_author": "soupikov"
+  },
+  "4634624": {
+    "index": 633,
+    "anchor": "original-reference-633",
+    "source_line": 2624,
+    "source_text": "Kensler, A. 2008. Tree rotations for improving bounding volume hierarchies. In IEEE Symposium on Interactive Ray Tracing, 73–76.",
+    "title": "Tree rotations for improving bounding volume hierarchies",
+    "year": "2008",
+    "first_author": "kensler"
+  },
+  "4634625": {
+    "index": 530,
+    "anchor": "original-reference-530",
+    "source_line": 2209,
+    "source_text": "Hunt, W. 2008. Corrections to the surface area metric with respect to mail-boxing. In IEEE Symposium on Interactive Ray Tracing, 77–80.",
+    "title": "Corrections to the surface area metric with respect to mail-boxing",
+    "year": "2008",
+    "first_author": "hunt"
+  },
+  "4634626": {
+    "index": 1237,
+    "anchor": "original-reference-1237",
+    "source_line": 4997,
+    "source_text": "Walter, B., K. Bala, M. Kilkarni, and K. Pingali. 2008. Fast agglomerative clustering for rendering. In IEEE Symposium on Interactive Ray Tracing, 81–86.",
+    "title": "Fast agglomerative clustering for rendering",
+    "year": "2008",
+    "first_author": "walter"
+  },
+  "4634636": {
+    "index": 222,
+    "anchor": "original-reference-222",
+    "source_line": 950,
+    "source_text": "Dammertz, H., and A. Keller. 2008a. The edge volume heuristic—robust triangle subdivision for improved BVH performance. In IEEE Symposium on Interactive Ray Tracing, 155–58.",
+    "title": "The edge volume heuristic - robust triangle subdivision for improved {BVH} performance",
+    "year": "2008a",
+    "first_author": "dammertz"
+  },
+  "4634637": {
+    "index": 549,
+    "anchor": "original-reference-549",
+    "source_line": 2279,
+    "source_text": "Ize, T., I. Wald, and S. Parker. 2008. Ray tracing with the BSP tree. In IEEE Symposium on Interactive Ray Tracing, 159–66.",
+    "title": "Ray tracing with the {BSP} tree",
+    "year": "2008",
+    "first_author": "ize"
+  },
+  "4815542": {
+    "index": 295,
+    "anchor": "original-reference-295",
+    "source_line": 1242,
+    "source_text": "Eldar, Y. C., and T. Michaeli. 2009. Beyond bandlimited sampling. IEEE Signal Processing Magazine 26 (3), 48–68.",
+    "title": "Beyond bandlimited sampling",
+    "year": "2009",
+    "first_author": "eldar"
+  },
+  "5280315": {
+    "index": 153,
+    "anchor": "original-reference-153",
+    "source_line": 678,
+    "source_text": "Chen, J., K. Venkataraman, D. Bakin, B. Rodricks, R. Gravelle, P. Rao, and Y. Ni. 2009. Digital camera imaging system simulation. IEEE Transactions on Electron Devices 56 (11), 2496–505.",
+    "title": "Digital Camera Imaging System Simulation",
+    "year": "2009",
+    "first_author": "chen"
+  },
+  "5432169": {
+    "index": 1049,
+    "anchor": "original-reference-1049",
+    "source_line": 4240,
+    "source_text": "Sen, P., and S. Darabi. 2011. Compressive rendering: A rendering application of compressed sensing. IEEE Transactions on Visualization and Computer Graphics 17 (4), 487–99.",
+    "title": "Compressive Rendering: A Rendering Application of Compressed Sensing",
+    "year": "2011",
+    "first_author": "sen"
+  },
+  "5669303": {
+    "index": 1222,
+    "anchor": "original-reference-1222",
+    "source_line": 4917,
+    "source_text": "Wald, I. 2012. Fast construction of SAH BVHs on the Intel Many Integrated Core (MIC) architecture. IEEE Transactions on Visualization and Computer Graphics 18 (1), 47–57.",
+    "title": "Fast Construction of {SAH} {BVH}s on the Intel Many Integrated Core ({MIC}) Architecture",
+    "year": "2012",
+    "first_author": "wald"
+  },
+  "5719167": {
+    "index": 367,
+    "anchor": "original-reference-367",
+    "source_line": 1537,
+    "source_text": "Gijsenij, A., T. Gevers, and J. van de Weijer. 2011. Computational color constancy: Survey and experiments. IEEE Transactions on Image Processing 20 (9), 2475–89.",
+    "title": "Computational Color Constancy: Survey and Experiments",
+    "year": "2011",
+    "first_author": "gijsenij"
+  },
+  "5740919": {
+    "index": 469,
+    "anchor": "original-reference-469",
+    "source_line": 1961,
+    "source_text": "Hasinoff, S. W., and K. N. Kutulakos. 2011. Light-efficient photography. IEEE Transactions on Pattern Analysis and Machine Intelligence 33 (11), 2203–14.",
+    "title": "Light-Efficient Photography",
+    "year": "2011",
+    "first_author": "hasinoff"
+  },
+  "6429331": {
+    "index": 374,
+    "anchor": "original-reference-374",
+    "source_line": 1571,
+    "source_text": "Glassner, A. 1984. Space subdivision for fast ray tracing. IEEE Computer Graphics and Applications 4 (10), 15–22.",
+    "title": "Space subdivision for fast ray tracing",
+    "year": "1984",
+    "first_author": "glassner"
+  },
+  "6684531": {
+    "index": 965,
+    "anchor": "original-reference-965",
+    "source_line": 3919,
+    "source_text": "Qin, H., M. Chai, Q. Hou, Z. Ren, and K. Zhou. 2014. Cone tracing for furry object rendering. IEEE Transactions on Visualization and Computer Graphics 20 (8), 1178–88.",
+    "title": "Cone Tracing for Furry Object Rendering",
+    "year": "2014",
+    "first_author": "qin"
+  },
+  "91250711": {
+    "index": 124,
+    "anchor": "original-reference-124",
+    "source_line": 561,
+    "source_text": "Bracewell, R. N. 2000. The Fourier Transform and Its Applications. New York: McGraw-Hill.",
+    "title": "The {F}ourier Transform and Its Applications",
+    "year": "2000",
+    "first_author": "bracewell"
+  },
+  "Knuth1984": {
+    "index": 657,
+    "anchor": "original-reference-657",
+    "source_line": 2724,
+    "source_text": "Knuth, D. E. 1984. Literate programming. The Computer Journal 27, 97–111. Reprinted in D. E. Knuth, Literate Programming, Stanford Center for the Study of Language and Information, 1992.",
+    "title": "Literate Programming",
+    "year": "1984",
+    "first_author": "knuth"
+  },
+  "Knuth1986": {
+    "index": 658,
+    "anchor": "original-reference-658",
+    "source_line": 2729,
+    "source_text": "Knuth, D. E. 1986. MetaFont: The Program. Reading, Massachusetts: Addison-Wesley.",
+    "title": "{M}etafont: The Program",
+    "year": "1986",
+    "first_author": "knuth"
+  },
+  "Fraser95": {
+    "index": 328,
+    "anchor": "original-reference-328",
+    "source_line": 1376,
+    "source_text": "Fraser, C., and D. Hanson. 1995. A Retargetable C Compiler: Design and Implementation. Reading, Massachusetts: Addison-Wesley.",
+    "title": "A Retargetable {C} Compiler: Design and Implementation",
+    "year": "1995",
+    "first_author": "fraser"
+  },
+  "Ruckert05": {
+    "index": 1012,
+    "anchor": "original-reference-1012",
+    "source_line": 4101,
+    "source_text": "Ruckert, M. 2005. Understanding MP3. Wiesbaden, Germany: GWV-Vieweg.",
+    "title": "Understanding {MP3}",
+    "year": "2005",
+    "first_author": "ruckert"
+  },
+  "10.1007/BF02684409": {
+    "index": 1134,
+    "anchor": "original-reference-1134",
+    "source_line": 4567,
+    "source_text": "Szirmay-Kalos, L., and G. Márton. 1998. Worst-case versus average case complexity of ray-shooting. Computing 61 (2), 103–31.",
+    "title": "Worst-Case versus Average Case Complexity of Ray-Shooting",
+    "year": "1998",
+    "first_author": "szirmaykalos"
+  },
+  "Whitted1980": {
+    "index": 1273,
+    "anchor": "original-reference-1273",
+    "source_line": 5140,
+    "source_text": "Whitted, T. 1980. An improved illumination model for shaded display. Communications of the ACM 23 (6), 343–49.",
+    "title": "An Improved Illumination Model for Shaded Display",
+    "year": "1980",
+    "first_author": "whitted"
+  },
+  "10.1145/74333.74361": {
+    "index": 601,
+    "anchor": "original-reference-601",
+    "source_line": 2507,
+    "source_text": "Kajiya, J. T., and T. L. Kay. 1989. Rendering fur with three dimensional textures. Computer Graphics (Proceedings of SIGGRAPH ’89) 23, 271–80.",
+    "title": "Rendering Fur with Three Dimensional Textures",
+    "year": "1989",
+    "first_author": "kajiya"
+  },
+  "10.1145/800224.806819": {
+    "index": 208,
+    "anchor": "original-reference-208",
+    "source_line": 896,
+    "source_text": "Cook, R. L., and K. E. Torrance. 1981. A reflectance model for computer graphics. Computer Graphics (SIGGRAPH ’81 Proceedings) 15, 307–16.",
+    "title": "A Reflectance Model for Computer Graphics",
+    "year": "1981",
+    "first_author": "cook"
+  },
+  "10.1145/357290.357293": {
+    "index": 209,
+    "anchor": "original-reference-209",
+    "source_line": 900,
+    "source_text": "Cook, R. L., and K. E. Torrance. 1982. A reflectance model for computer graphics. ACM Transactions on Graphics 1 (1), 7–24.",
+    "title": "A Reflectance Model for Computer Graphics",
+    "year": "1982",
+    "first_author": "cook"
+  },
+  "10.1145/800031.808601": {
+    "index": 390,
+    "anchor": "original-reference-390",
+    "source_line": 1631,
+    "source_text": "Goral, C. M., K. E. Torrance, D. P. Greenberg, and B. Battaile. 1984. Modeling the interaction of light between diffuse surfaces. Proceedings of the 11th Annual Conference on Computer Graphics and Interactive Techniques (SIGGRAPH ’84) 18 (3), 213–22.",
+    "title": "Modeling the Interaction of Light between Diffuse Surfaces",
+    "year": "1984",
+    "first_author": "goral"
+  },
+  "10.1145/325334.325171": {
+    "index": 193,
+    "anchor": "original-reference-193",
+    "source_line": 838,
+    "source_text": "Cohen, M., and D. P. Greenberg. 1985. The hemi-cube: A radiosity solution for complex environments. SIGGRAPH Computer Graphics 19 (3), 31–40.",
+    "title": "The Hemi-Cube: A Radiosity Solution for Complex Environments",
+    "year": "1985",
+    "first_author": "cohen"
+  },
+  "10.1145/325334.325169": {
+    "index": 855,
+    "anchor": "original-reference-855",
+    "source_line": 3486,
+    "source_text": "Nishita, T., and E. Nakamae. 1985. Continuous tone representation of three-dimensional objects taking account of shadows and interreflection. SIGGRAPH Computer Graphics 19 (3), 23–30.",
+    "title": "Continuous Tone Representation of Three-Dimensional Objects Taking Account of Shadows and Interreflection",
+    "year": "1985",
+    "first_author": "nishita"
+  },
+  "10.1145/800031.808590": {
+    "index": 207,
+    "anchor": "original-reference-207",
+    "source_line": 892,
+    "source_text": "Cook, R. L., T. Porter, and L. Carpenter. 1984. Distributed ray tracing. Computer Graphics (SIGGRAPH ’84 Proceedings) 18, 137–45.",
+    "title": "Distributed Ray Tracing",
+    "year": "1984",
+    "first_author": "cook"
+  },
+  "10.1145/15922.15902": {
+    "index": 600,
+    "anchor": "original-reference-600",
+    "source_line": 2503,
+    "source_text": "Kajiya, J. T. 1986. The rendering equation. In Computer Graphics (SIGGRAPH ’86 Proceedings) 20, 143–50.",
+    "title": "The Rendering Equation",
+    "year": "1986",
+    "first_author": "kajiya"
+  },
+  "10.1145/800031.808594": {
+    "index": 602,
+    "anchor": "original-reference-602",
+    "source_line": 2511,
+    "source_text": "Kajiya, J. T., and B. P. Von Herzen. 1984. Ray tracing volume densities. In Computer Graphics (Proceedings of SIGGRAPH ’84), Volume 18, 165–74.",
+    "title": "Ray Tracing Volume Densities",
+    "year": "1984",
+    "first_author": "kajiya"
+  },
+  "10.1145/97879.97886": {
+    "index": 40,
+    "anchor": "original-reference-40",
+    "source_line": 260,
+    "source_text": "Arvo, J., and D. Kirk. 1990. Particle transport and image synthesis. Computer Graphics (SIGGRAPH ’90 Proceedings) 24 (4), 63–66.",
+    "title": "Particle Transport and Image Synthesis",
+    "year": "1990",
+    "first_author": "arvo"
+  },
+  "10.1145/122718.122735": {
+    "index": 649,
+    "anchor": "original-reference-649",
+    "source_line": 2692,
+    "source_text": "Kirk, D. B., and J. Arvo. 1991. Unbiased sampling techniques for image synthesis. Computer Graphics (SIGGRAPH ’91 Proceedings), Volume 25, 153–56.",
+    "title": "Unbiased Sampling Techniques for Image Synthesis",
+    "year": "1991",
+    "first_author": "kirk"
+  },
+  "10.1145/226150.226151": {
+    "index": 1066,
+    "anchor": "original-reference-1066",
+    "source_line": 4307,
+    "source_text": "Shirley, P., C. Y. Wang, and K. Zimmerman. 1996. Monte Carlo techniques for direct lighting calculations. ACM Transactions on Graphics 15 (1), 1–36.",
+    "title": "{M}onte {C}arlo Techniques for Direct Lighting Calculations",
+    "year": "1996",
+    "first_author": "shirley"
+  },
+  "10.1007/978-1-4612-3526-2": {
+    "index": 448,
+    "anchor": "original-reference-448",
+    "source_line": 1888,
+    "source_text": "Hall, R. 1989. Illumination and Color in Computer Generated Imagery. New York: Springer-Verlag.",
+    "title": "Illumination and Color in Computer Generated Imagery",
+    "year": "1989",
+    "first_author": "hall"
+  },
+  "GLASSNER1995": {
+    "index": 380,
+    "anchor": "original-reference-380",
+    "source_line": 1594,
+    "source_text": "Glassner, A. 1995. Principles of Digital Image Synthesis. San Francisco: Morgan Kaufmann.",
+    "title": "Principles of Digital Image Synthesis",
+    "year": "1995",
+    "first_author": "glassner"
+  },
+  "10.1145/192161.192286": {
+    "index": 1256,
+    "anchor": "original-reference-1256",
+    "source_line": 5077,
+    "source_text": "Ward, G. J. 1994. The Radiance lighting simulation and rendering system. In Proceedings of SIGGRAPH ’94, 459–72.",
+    "title": "The RADIANCE Lighting Simulation and Rendering System",
+    "year": "1994",
+    "first_author": "ward"
+  },
+  "10.1145/258734.258914": {
+    "index": 395,
+    "anchor": "original-reference-395",
+    "source_line": 1649,
+    "source_text": "Greenberg, D. P., K. E. Torrance, P. S. Shirley, J. R. Arvo, J. A. Ferwerda, S. Pattanaik, E. P. F. Lafortune, B. Walter, S.-C. Foo, and B. Trumbore. 1997. A framework for realistic image synthesis. Proceedings of SIGGRAPH ’97, Computer Graphics Proceedings, Annual Conference Series, 477–94.",
+    "title": "A Framework for Realistic Image Synthesis",
+    "year": "1997",
+    "first_author": "greenberg"
+  },
+  "veach1997robust": {
+    "index": 1191,
+    "anchor": "original-reference-1191",
+    "source_line": 4796,
+    "source_text": "Veach, E. 1997. Robust Monte Carlo methods for light transport simulation. Ph.D. thesis, Stanford University.",
+    "title": "Robust {M}onte {C}arlo methods for light transport simulation",
+    "year": "1997",
+    "first_author": "veach"
+  },
+  "10.1007/978-3-7091-6242-2_26": {
+    "index": 1229,
+    "anchor": "original-reference-1229",
+    "source_line": 4968,
+    "source_text": "Wald, I., P. Slusallek, and C. Benthin. 2001b. Interactive distributed ray tracing of highly complex models. In Rendering Techniques 2001: 12th Eurographics Workshop on Rendering, 277–88.",
+    "title": "Interactive Distributed Ray Tracing of Highly Complex Models",
+    "year": "2001b",
+    "first_author": "wald"
+  },
+  "10.1145/37401.37414": {
+    "index": 206,
+    "anchor": "original-reference-206",
+    "source_line": 889,
+    "source_text": "Cook, R. L., L. Carpenter, and E. Catmull. 1987. The Reyes image rendering architecture. Computer Graphics (Proceedings of SIGGRAPH ’87) 21 (4), 95–102.",
+    "title": "The Reyes Image Rendering Architecture",
+    "year": "1987",
+    "first_author": "cook"
+  },
+  "snow2010terminators": {
+    "index": 1092,
+    "anchor": "original-reference-1092",
+    "source_line": 4401,
+    "source_text": "Snow, J. 2010. Terminators and Iron Men: Image-based lighting and physical shading at ILM. SIGGRAPH 2010 Course: Physically-Based Shading Models in Film and Game Production.",
+    "title": "{T}erminators and {I}ron {M}en: Image-based lighting and physical shading at {ILM}",
+    "year": "2010",
+    "first_author": "snow"
+  },
+  "10.1145/1468075.1468082": {
+    "index": 27,
+    "anchor": "original-reference-27",
+    "source_line": 214,
+    "source_text": "Appel, A. 1968. Some techniques for shading machine renderings of solids. In AFIPS 1968 Spring Joint Computer Conference 32, 37–45.",
+    "title": "Some Techniques for Shading Machine Renderings of Solids",
+    "year": "1968",
+    "first_author": "appel"
+  },
+  "10.1145/800249.807438": {
+    "index": 620,
+    "anchor": "original-reference-620",
+    "source_line": 2577,
+    "source_text": "Kay, D. S., and D. P. Greenberg. 1979. Transparency for computer synthesized images. In Computer Graphics (SIGGRAPH ’79 Proceedings), Volume 13, 158–64.",
+    "title": "Transparency for Computer Synthesized Images",
+    "year": "1979",
+    "first_author": "kay"
+  },
+  "10.5555/154731": {
+    "index": 194,
+    "anchor": "original-reference-194",
+    "source_line": 841,
+    "source_text": "Cohen, M., and J. Wallace. 1993. Radiosity and Realistic Image Synthesis. San Diego: Academic Press Professional.",
+    "title": "Radiosity and Realistic Image Synthesis",
+    "year": "1993",
+    "first_author": "cohen"
+  },
+  "10.5555/561383": {
+    "index": 1075,
+    "anchor": "original-reference-1075",
+    "source_line": 4343,
+    "source_text": "Sillion, F., and C. Puech. 1994. Radiosity and Global Illumination. San Francisco: Morgan Kaufmann.",
+    "title": "Radiosity and Global Illumination",
+    "year": "1994",
+    "first_author": "sillion"
+  },
+  "10.5555/940410": {
+    "index": 1064,
+    "anchor": "original-reference-1064",
+    "source_line": 4295,
+    "source_text": "Shirley, P., and R. K. Morley. 2003. Realistic Ray Tracing. Natick, Massachusetts: A. K. Peters.",
+    "title": "Realistic Ray Tracing",
+    "year": "2003",
+    "first_author": "shirley"
+  },
+  "10.5555/1324795": {
+    "index": 1123,
+    "anchor": "original-reference-1123",
+    "source_line": 4531,
+    "source_text": "Suffern, K. 2007. Ray Tracing from the Ground Up. Natick, Massachusetts: A. K. Peters.",
+    "title": "Ray Tracing from the Ground Up",
+    "year": "2007",
+    "first_author": "suffern"
+  },
+  "10.5555/286090": {
+    "index": 700,
+    "anchor": "original-reference-700",
+    "source_line": 2893,
+    "source_text": "Larson, G. W., and R. A. Shakespeare. 1998. Rendering with Radiance: The Art and Science of Lighting Visualization. San Francisco: Morgan Kaufmann.",
+    "title": "Rendering with Radiance: The Art and Science of Lighting Visualization",
+    "year": "1998",
+    "first_author": "larson"
+  },
+  "10.1145/325334.325174": {
+    "index": 276,
+    "anchor": "original-reference-276",
+    "source_line": 1163,
+    "source_text": "Duff, T. 1985. Compositing 3-D rendered images. Computer Graphics (Proceedings of SIGGRAPH ’85) 19, 41–44.",
+    "title": "Compositing 3-{D} Rendered Images",
+    "year": "1985",
+    "first_author": "duff"
+  },
+  "glassner1993spectrum": {
+    "index": 378,
+    "anchor": "original-reference-378",
+    "source_line": 1585,
+    "source_text": "Glassner, A. 1993. Spectrum: An architecture for image synthesis, research, education, and practice. Developing Large-Scale Graphics Software Toolkits, SIGGRAPH ’93 Course Notes, 3, 1:14–43.",
+    "title": "Spectrum: An architecture for image synthesis, research, education, and practice",
+    "year": "1993",
+    "first_author": "glassner"
+  },
+  "10.1007/978-3-7091-7484-5_6": {
+    "index": 1084,
+    "anchor": "original-reference-1084",
+    "source_line": 4374,
+    "source_text": "Slusallek, P., and H.-P. Seidel. 1996. Towards an open rendering kernel for image synthesis. In Eurographics Rendering Workshop 1996, 51–60.",
+    "title": "Towards an Open Rendering Kernel for Image Synthesis",
+    "year": "1996",
+    "first_author": "slusallek"
+  },
+  "10.1145/325334.325242": {
+    "index": 1068,
+    "anchor": "original-reference-1068",
+    "source_line": 4315,
+    "source_text": "Shoemake, K. 1985. Animating rotation with quaternion curves, Computer Graphics (SIGGRAPH ’85 Proceedings), Volume 19, 245–54.",
+    "title": "Animating Rotation with Quaternion Curves",
+    "year": "1985",
+    "first_author": "shoemake"
+  },
+  "10.5555/155294.155324": {
+    "index": 1072,
+    "anchor": "original-reference-1072",
+    "source_line": 4330,
+    "source_text": "Shoemake, K., and T. Duff. 1992. Matrix animation and polar decomposition. In Proceedings of Graphics Interface 1992, 258–64.",
+    "title": "Matrix Animation and Polar Decomposition",
+    "year": "1992",
+    "first_author": "shoemake"
+  },
+  "doi:10.1137/0907079": {
+    "index": 517,
+    "anchor": "original-reference-517",
+    "source_line": 2160,
+    "source_text": "Higham, N. 1986. Computing the polar decomposition—with applications. SIAM Journal of Scientific and Statistical Computing 7 (4), 1160–74.",
+    "title": "Computing the Polar Decomposition-with Applications",
+    "year": "1986",
+    "first_author": "higham"
+  },
+  "10.1145/282957.282969": {
+    "index": 387,
+    "anchor": "original-reference-387",
+    "source_line": 1622,
+    "source_text": "Goldman, R. 1985. Illicit expressions in vector algebra. ACM Transactions on Graphics 4 (3), 223–43.",
+    "title": "Illicit Expressions in Vector Algebra",
+    "year": "1985",
+    "first_author": "goldman"
+  },
+  "10.1007/978-3-642-61542-9_19": {
+    "index": 245,
+    "anchor": "original-reference-245",
+    "source_line": 1038,
+    "source_text": "DeRose, T. D. 1989. A Coordinate-Free Approach to Geometric Programming. Math for SIGGRAPH, SIGGRAPH Course Notes #23. Also available as Technical Report No. 89-09-16, Department of Computer Science and Engineering, University of Washington, Seattle.",
+    "title": "A Coordinate-Free Approach to Geometric Programming",
+    "year": "1989",
+    "first_author": "derose"
+  },
+  "10.5555/63448": {
+    "index": 1001,
+    "anchor": "original-reference-1001",
+    "source_line": 4063,
+    "source_text": "Rogers, D. F., and J. A. Adams. 1990. Mathematical Elements for Computer Graphics. New York: McGraw-Hill.",
+    "title": "Mathematical Elements for Computer Graphics",
+    "year": "1990",
+    "first_author": "rogers"
+  },
+  "10.5555/113163": {
+    "index": 1115,
+    "anchor": "original-reference-1115",
+    "source_line": 4503,
+    "source_text": "Stolfi, J. 1991. Oriented Projective Geometry. San Diego: Academic Press.",
+    "title": "Oriented Projective Geometry",
+    "year": "1991",
+    "first_author": "stolfi"
+  },
+  "lang2012introduction": {
+    "index": 697,
+    "anchor": "original-reference-697",
+    "source_line": 2883,
+    "source_text": "Lang, S. 1986. An Introduction to Linear Algebra. New York: Springer-Verlag.",
+    "title": "Introduction to Linear Algebra",
+    "year": "1986",
+    "first_author": "lang"
+  },
+  "buck1956advanced": {
+    "index": 130,
+    "anchor": "original-reference-130",
+    "source_line": 581,
+    "source_text": "Buck, R. C. 1978. Advanced Calculus. New York: McGraw-Hill.",
+    "title": "Advanced Calculus",
+    "year": "1978",
+    "first_author": "buck"
+  },
+  "inproceedings": {
+    "index": 1234,
+    "anchor": "original-reference-1234",
+    "source_line": 4986,
+    "source_text": "Wallis, B. 1990. Forms, vectors, and transforms. In A. S. Glassner (ed.), Graphics Gems I, 533–38. San Diego: Academic Press.",
+    "title": "Forms, Vectors, And Transforms",
+    "year": "1990",
+    "first_author": "wallis"
+  },
+  "10.5555/180895.180914": {
+    "index": 1071,
+    "anchor": "original-reference-1071",
+    "source_line": 4325,
+    "source_text": "Shoemake, K. 1994b. Euler angle conversion. In P. Heckbert (ed.), Graphics Gems IV, 222–29. San Diego: Academic Press.",
+    "title": "{E}uler Angle Conversion",
+    "year": "1994b",
+    "first_author": "shoemake"
+  },
+  "10.1145/258734.258870": {
+    "index": 976,
+    "anchor": "original-reference-976",
+    "source_line": 3966,
+    "source_text": "Ramamoorthi, R., and A. Barr. 1997. Fast construction of accurate quaternion splines. In Proceedings of SIGGRAPH ’97, Computer Graphics Proceedings, Annual Conference Series, Los Angeles, 287–92.",
+    "title": "Fast Construction of Accurate Quaternion Splines",
+    "year": "1997",
+    "first_author": "ramamoorthi"
+  },
+  "10.1145/502122.502124": {
+    "index": 139,
+    "anchor": "original-reference-139",
+    "source_line": 618,
+    "source_text": "Buss, S., and J. Fillmore. 2001. Spherical averages and applications to spherical splines and interpolation. ACM Transactions on Graphics 20 (2), 95–126.",
+    "title": "Spherical Averages and Applications to Spherical Splines and Interpolation",
+    "year": "2001",
+    "first_author": "buss"
+  },
+  "moore1966interval": {
+    "index": 815,
+    "anchor": "original-reference-815",
+    "source_line": 3334,
+    "source_text": "Moore, R. E. 1966. Interval Analysis. Englewood Cliffs, New Jersey: Prentice Hall.",
+    "title": "Interval analysis",
+    "year": "1966",
+    "first_author": "moore"
+  },
+  "10.5555/90767.90922": {
+    "index": 33,
+    "anchor": "original-reference-33",
+    "source_line": 236,
+    "source_text": "Arvo, J. 1990. Transforming axis-aligned bounding boxes. In A. S. Glassner (ed.), Graphics Gems I, 548–50. San Diego: Academic Press.",
+    "title": "Transforming Axis-Aligned Bounding Boxes",
+    "year": "1990",
+    "first_author": "arvo"
+  },
+  "doi:10.1137/1.9780898718027": {
+    "index": 518,
+    "anchor": "original-reference-518",
+    "source_line": 2165,
+    "source_text": "Higham, N. J. 2002. Accuracy and Stability of Numerical Algorithms (2nd ed.). Philadelphia: Society for Industrial and Applied Mathematics.",
+    "title": "Accuracy and Stability of Numerical Algorithms",
+    "year": "2002",
+    "first_author": "higham"
+  },
+  "10.5555/1096474": {
+    "index": 1281,
+    "anchor": "original-reference-1281",
+    "source_line": 5167,
+    "source_text": "Wilkinson, J. H. 1994. Rounding Errors in Algebraic Processes. New York: Dover Publications, Inc. Originally published by Prentice-Hall Inc., 1963.",
+    "title": "Rounding Errors in Algebraic Processes",
+    "year": "1994",
+    "first_author": "wilkinson"
+  },
+  "Wächter_2008": {
+    "index": 1217,
+    "anchor": "original-reference-1217",
+    "source_line": 4897,
+    "source_text": "Wächter, C. A. 2008. Quasi Monte Carlo light transport simulation by efficient ray tracing. Ph.D. thesis, University of Ulm.",
+    "title": "Quasi-{M}onte {C}arlo light transport simulation by efficient ray tracing",
+    "year": "2008",
+    "first_author": "wachter"
+  },
+  "10.1145/800059.801136": {
+    "index": 458,
+    "anchor": "original-reference-458",
+    "source_line": 1922,
+    "source_text": "Hanrahan, P. 1983. Ray tracing algebraic surfaces. Computer Graphics (Proceedings of SIGGRAPH ’83) 17, 83–90.",
+    "title": "Ray Tracing Algebraic Surfaces",
+    "year": "1983",
+    "first_author": "hanrahan"
+  },
+  "10.1145/964967.801136": {
+    "index": 458,
+    "anchor": "original-reference-458",
+    "source_line": 1922,
+    "source_text": "Hanrahan, P. 1983. Ray tracing algebraic surfaces. Computer Graphics (Proceedings of SIGGRAPH ’83) 17, 83–90.",
+    "title": "Ray Tracing Algebraic Surfaces",
+    "year": "1983",
+    "first_author": "hanrahan"
+  },
+  "10.5555/93267.93276": {
+    "index": 797,
+    "anchor": "original-reference-797",
+    "source_line": 3268,
+    "source_text": "Mitchell, D. P. 1990. Robust ray intersection with interval arithmetic. In Proceedings of Graphics Interface 1990, 68–74.",
+    "title": "Robust Ray Intersection with Interval Arithmetic",
+    "year": "1990",
+    "first_author": "mitchell"
+  },
+  "10.1111/j.1467-8659.2008.01189.x": {
+    "index": 655,
+    "anchor": "original-reference-655",
+    "source_line": 2717,
+    "source_text": "Knoll, A., Y. Hijazi, C. D. Hansen, I. Wald, and H. Hagen. 2009. Fast ray tracing of arbitrary implicit surfaces with interval and affine arithmetic. Computer Graphics Forum 28 (1), 26–40.",
+    "title": "Fast Ray Tracing of Arbitrary Implicit Surfaces with Interval and Affine Arithmetic",
+    "year": "2009",
+    "first_author": "knoll"
+  },
+  "10.1145/800059.801137": {
+    "index": 598,
+    "anchor": "original-reference-598",
+    "source_line": 2495,
+    "source_text": "Kajiya, J. T. 1983. New techniques for ray tracing procedurally defined objects. In Computer Graphics (Proceedings of SIGGRAPH ’83) 17, 91–102.",
+    "title": "New Techniques for Ray Tracing Procedurally Defined Objects",
+    "year": "1983",
+    "first_author": "kajiya"
+  },
+  "10.1145/358523.358553": {
+    "index": 327,
+    "anchor": "original-reference-327",
+    "source_line": 1373,
+    "source_text": "Fournier, A., D. Fussel, and L. Carpenter. 1982. Computer rendering of stochastic models. Communications of the ACM 25 (6), 371–84.",
+    "title": "Computer Rendering of Stochastic Models",
+    "year": "1982",
+    "first_author": "fournier"
+  },
+  "10.1145/74333.74363": {
+    "index": 467,
+    "anchor": "original-reference-467",
+    "source_line": 1954,
+    "source_text": "Hart, J. C., D. J. Sandin, and L. H. Kauffman. 1989. Ray tracing deterministic 3-D fractals. Computer Graphics (Proceedings of SIGGRAPH ’89) 23, 289–96.",
+    "title": "Ray Tracing Deterministic 3-{D} Fractals",
+    "year": "1989",
+    "first_author": "hart"
+  },
+  "10.1145/800064.801287": {
+    "index": 597,
+    "anchor": "original-reference-597",
+    "source_line": 2491,
+    "source_text": "Kajiya, J. T. 1982. Ray tracing parametric patches. In Computer Graphics (SIGGRAPH 1982 Conference Proceedings), 245–54.",
+    "title": "Ray Tracing Parametric Patches",
+    "year": "1982",
+    "first_author": "kajiya"
+  },
+  "https://doi.org/10.1111/1467-8659.00535": {
+    "index": 1006,
+    "anchor": "original-reference-1006",
+    "source_line": 4080,
+    "source_text": "Roth, S. H., P. Diezi, and M. Gross. 2001. Ray tracing triangular Bézier patches. In Computer Graphics Forum (Eurographics 2001 Conference Proceedings) 20 (3), 422–30.",
+    "title": "Ray Tracing Triangular Bézier Patches",
+    "year": "2001",
+    "first_author": "roth"
+  },
+  "10.1111/j.1467-8659.2011.01993.x": {
+    "index": 864,
+    "anchor": "original-reference-864",
+    "source_line": 3525,
+    "source_text": "Ogaki, S., and Y. Tokuyoshi. 2011. Direct ray tracing of Phong tessellation. Computer Graphics Forum (Proceedings of the 2011 Eurographics Symposium on Rendering) 30 (4), 1337–44.",
+    "title": "Direct Ray Tracing of Phong Tessellation",
+    "year": "2011",
+    "first_author": "ogaki"
+  },
+  "doi:10.1080/2151237X.2005.10129208": {
+    "index": 686,
+    "anchor": "original-reference-686",
+    "source_line": 2838,
+    "source_text": "Lagae, A., and P. Dutré. 2005. An efficient ray-quadrilateral intersection test. Journal of Graphics Tools 10 (4), 23–32.",
+    "title": "An Efficient Ray-Quadrilateral Intersection Test",
+    "year": "2005",
+    "first_author": "lagae"
+  },
+  "shevtsov2007ray": {
+    "index": 1052,
+    "anchor": "original-reference-1052",
+    "source_line": 4251,
+    "source_text": "Shevtsov, M., A. Soupikov, and A. Kapustin. 2007a. Ray–triangle intersection algorithm for modern CPU architectures. In Proceedings of GraphiCon 2007, 33–39.",
+    "title": "Ray-triangle intersection algorithm for modern {CPU} architectures",
+    "year": "2007a",
+    "first_author": "shevtsov"
+  },
+  "phong1975improved": {
+    "index": 939,
+    "anchor": "original-reference-939",
+    "source_line": 3817,
+    "source_text": "Phong, B.-T., and F. C. Crow. 1975. Improved rendition of polygonal models of curved surfaces. In Proceedings of the 2nd USA–Japan Computer Conference.",
+    "title": "Improved rendition of polygonal models of curved surfaces",
+    "year": "1975",
+    "first_author": "phong"
+  },
+  "10.1145/1186822.1073278": {
+    "index": 1322,
+    "anchor": "original-reference-1322",
+    "source_line": 5331,
+    "source_text": "Yoon, S.-E., P. Lindstrom, V. Pascucci, and D. Manocha. 2005. Cache-oblivious mesh layouts. In ACM Transactions on Graphics (Proceedings of SIGGRAPH 2005) 24 (3), 886–93.",
+    "title": "Cache-Oblivious Mesh Layouts",
+    "year": "2005",
+    "first_author": "yoon"
+  },
+  "Nakamaru_raytracing": {
+    "index": 843,
+    "anchor": "original-reference-843",
+    "source_line": 3441,
+    "source_text": "Nakamaru, K., and Y. Ohno. 2002. Ray tracing for curves primitive. In Journal of WSCG (WSCG 2002 Proceedings) 10, 311–16.",
+    "title": "Ray tracing for curves primitive",
+    "year": "2002",
+    "first_author": "nakamaru"
+  },
+  "10.1145/6116.6118": {
+    "index": 127,
+    "anchor": "original-reference-127",
+    "source_line": 570,
+    "source_text": "Bronsvoort, W. F., and F. Klok. 1985. Ray tracing generalized cylinders. ACM Transactions on Graphics 4 (4), 291–303.",
+    "title": "Ray Tracing Generalized Cylinders",
+    "year": "1985",
+    "first_author": "bronsvoort"
+  },
+  "DeVoogt2000197": {
+    "index": 229,
+    "anchor": "original-reference-229",
+    "source_line": 973,
+    "source_text": "de Voogt, E., A. van der Helm, and W. F. Bronsvoort. 2000. Ray tracing deformed generalized cylinders. The Visual Computer 16 (3–4), 197–207.",
+    "title": "Ray tracing deformed generalized cylinders",
+    "year": "2000",
+    "first_author": "devoogt"
+  },
+  "10.5555/501891": {
+    "index": 310,
+    "anchor": "original-reference-310",
+    "source_line": 1307,
+    "source_text": "Farin, G. 2001. Curves and Surfaces for CAGD: A Practical Guide (5th ed.). San Francisco: Morgan Kaufmann.",
+    "title": "Curves and Surfaces for {CAGD}: A Practical Guide",
+    "year": "2001",
+    "first_author": "farin"
+  },
+  "ramshaw1987blossoming": {
+    "index": 979,
+    "anchor": "original-reference-979",
+    "source_line": 3978,
+    "source_text": "Ramshaw, L. 1987. Blossoming: A connect-the-dots approach to splines. Digital Systems Research Center Technical Report.",
+    "title": "Blossoming: A connect-the-dots approach to splines",
+    "year": "1987",
+    "first_author": "ramshaw"
+  },
+  "10.1111/1467-8659.t01-2-00703": {
+    "index": 828,
+    "anchor": "original-reference-828",
+    "source_line": 3381,
+    "source_text": "Müller, K., T. Techmann, and D. Fellner. 2003. Adaptive ray tracing of subdivision surfaces. Computer Graphics Forum 22 (3), 553–62.",
+    "title": "Adaptive Ray Tracing of Subdivision Surfaces",
+    "year": "2003",
+    "first_author": "muller"
+  },
+  "10.1145/103162.103163": {
+    "index": 385,
+    "anchor": "original-reference-385",
+    "source_line": 1615,
+    "source_text": "Goldberg, D. 1991. What every computer scientist should know about floating-point arithmetic. ACM Computing Surveys 23 (1), 5–48.",
+    "title": "What Every Computer Scientist Should Know about Floating-Point Arithmetic",
+    "year": "1991",
+    "first_author": "goldberg"
+  },
+  "10.1145/1644001.1644003": {
+    "index": 227,
+    "anchor": "original-reference-227",
+    "source_line": 967,
+    "source_text": "Daumas, M., and G. Melquiond. 2010. Certification of bounds on expressions involving rounded operators. ACM Transactions on Mathematical Software 37 (1), 2:1–20.",
+    "title": "Certification of Bounds on Expressions Involving Rounded Operators",
+    "year": "2010",
+    "first_author": "daumas"
+  },
+  "10.5555/94788.94790": {
+    "index": 443,
+    "anchor": "original-reference-443",
+    "source_line": 1868,
+    "source_text": "Haines, E. A. 1989. Essential ray tracing algorithms. In A. Glassner (ed.), An Introduction to Ray Tracing, 33–78. San Diego: Academic Press.",
+    "title": "Essential Ray Tracing Algorithms",
+    "year": "1989",
+    "first_author": "haines"
+  },
+  "10.1145/74333.74364": {
+    "index": 607,
+    "anchor": "original-reference-607",
+    "source_line": 2529,
+    "source_text": "Kalra, D., and A. H. Barr. 1989. Guaranteed ray intersections with implicit surfaces. In Computer Graphics (Proceedings of SIGGRAPH ’89), Volume 23, 297–306.",
+    "title": "Guaranteed Ray Intersections with Implicit Surfaces",
+    "year": "1989",
+    "first_author": "kalra"
+  },
+  "10.1145/73833.73857": {
+    "index": 1025,
+    "anchor": "original-reference-1025",
+    "source_line": 4149,
+    "source_text": "Salesin, D., J. Stolfi, and L. Guibas. 1989. Epsilon geometry: Building robust algorithms from imprecise computations. In Proceedings of the Fifth Annual Symposium on Computational Geometry (SCG ’89), 208–17.",
+    "title": "Epsilon Geometry: Building Robust Algorithms from Imprecise Computations",
+    "year": "1989",
+    "first_author": "salesin"
+  },
+  "10.5555/74803": {
+    "index": 521,
+    "anchor": "original-reference-521",
+    "source_line": 2178,
+    "source_text": "Hoffmann, C. M. 1989. Geometric and Solid Modeling: An Introduction. San Francisco: Morgan Kaufmann.",
+    "title": "Geometric and Solid Modeling: An Introduction",
+    "year": "1989",
+    "first_author": "hoffmann"
+  },
+  "10.1145/344779.344936": {
+    "index": 928,
+    "anchor": "original-reference-928",
+    "source_line": 3777,
+    "source_text": "Pfister, H., M. Zwicker, J. van Baar, and M. Gross. 2000. Surfels: Surface elements as rendering primitives. In Proceedings of ACM SIGGRAPH 2000, Computer Graphics Proceedings, Annual Conference Series, 335–42.",
+    "title": "Surfels: Surface Elements as Rendering Primitives",
+    "year": "2000",
+    "first_author": "pfister"
+  },
+  "10.1145/344779.344940": {
+    "index": 1020,
+    "anchor": "original-reference-1020",
+    "source_line": 4128,
+    "source_text": "Rusinkiewicz, S., and M. Levoy. 2000. Qsplat: A multiresolution point rendering system for large meshes. In Proceedings of ACM SIGGRAPH 2000, Computer Graphics Proceedings, Annual Conference Series, 343–52.",
+    "title": "{QS}plat: A Multiresolution Point Rendering System for Large Meshes",
+    "year": "2000",
+    "first_author": "rusinkiewicz"
+  },
+  "10.1007/978-3-7091-6303-0_29": {
+    "index": 1032,
+    "anchor": "original-reference-1032",
+    "source_line": 4172,
+    "source_text": "Schaufler, G., and H. W. Jensen. 2000. Ray tracing point sampled geometry. In Rendering Techniques 2000: 11th Eurographics Workshop on Rendering, 319–28.",
+    "title": "Ray Tracing Point Sampled Geometry",
+    "year": "2000",
+    "first_author": "schaufler"
+  },
+  "10.1145/357306.357310": {
+    "index": 110,
+    "anchor": "original-reference-110",
+    "source_line": 511,
+    "source_text": "Blinn, J. F. 1982a. A generalization of algebraic surface drawing. ACM Transactions on Graphics 1 (3), 235–56.",
+    "title": "A Generalization of Algebraic Surface Drawing",
+    "year": "1982a",
+    "first_author": "blinn"
+  },
+  "Wyvill1989": {
+    "index": 1305,
+    "anchor": "original-reference-1305",
+    "source_line": 5258,
+    "source_text": "Wyvill, B., and G. Wyvill. 1989. Field functions for implicit surfaces. The Visual Computer 5 (1/2), 75–82.",
+    "title": "Field functions for implicit surfaces",
+    "year": "1989",
+    "first_author": "wyvill"
+  },
+  "Hart1996": {
+    "index": 466,
+    "anchor": "original-reference-466",
+    "source_line": 1950,
+    "source_text": "Hart, J. C. 1996. Sphere tracing: A geometric method for the antialiased ray tracing of implicit surfaces. The Visual Computer 12 (9), 527–45.",
+    "title": "Sphere tracing: a geometric method for the antialiased ray tracing of implicit surfaces",
+    "year": "1996",
+    "first_author": "hart"
+  },
+  "10.1145/800031.808571": {
+    "index": 1085,
+    "anchor": "original-reference-1085",
+    "source_line": 4377,
+    "source_text": "Smith, A. R. 1984. Plants, fractals and formal languages. In Computer Graphics (Proceedings of SIGGRAPH ’84), Volume 18, 1–10.",
+    "title": "Plants, Fractals, and Formal Languages",
+    "year": "1984",
+    "first_author": "smith"
+  },
+  "Prusinkiewicz:1986:10.20380/GI1986.44": {
+    "index": 959,
+    "anchor": "original-reference-959",
+    "source_line": 3895,
+    "source_text": "Prusinkiewicz, P. 1986. Graphical applications of L-systems. In Proceedings of Graphics Interface 1986, 247–53.",
+    "title": "Graphical applications of {L}-systems",
+    "year": "1986",
+    "first_author": "prusinkiewicz"
+  },
+  "10.1145/192161.192254": {
+    "index": 960,
+    "anchor": "original-reference-960",
+    "source_line": 3898,
+    "source_text": "Prusinkiewicz, P., M. James, and R. Mech. 1994. Synthetic topiary. In Proceedings of SIGGRAPH ’94, Computer Graphics Proceedings, Annual Conference Series, 351–58.",
+    "title": "Synthetic Topiary",
+    "year": "1994",
+    "first_author": "prusinkiewicz"
+  },
+  "10.1145/280814.280898": {
+    "index": 246,
+    "anchor": "original-reference-246",
+    "source_line": 1043,
+    "source_text": "Deussen, O., P. M. Hanrahan, B. Lintermann, R. Mech, M. Pharr, and P. Prusinkiewicz. 1998. Realistic modeling and rendering of plant ecosystems. In Proceedings of SIGGRAPH ’98, Computer Graphics Proceedings, Annual Conference Series, 275–86.",
+    "title": "Realistic Modeling and Rendering of Plant Ecosystems",
+    "year": "1998",
+    "first_author": "deussen"
+  },
+  "10.1145/383259.383291": {
+    "index": 961,
+    "anchor": "original-reference-961",
+    "source_line": 3902,
+    "source_text": "Prusinkiewicz, P., L. Mündermann, R. Karwowski, and B. Lane. 2001. The use of positional information in the modeling of plants. In Proceedings of ACM SIGGRAPH 2001, Computer Graphics Proceedings, Annual Conference Series, 289–300.",
+    "title": "The Use of Positional Information in the Modeling of Plants",
+    "year": "2001",
+    "first_author": "prusinkiewicz"
+  },
+  "hurley2002fast": {
+    "index": 535,
+    "anchor": "original-reference-535",
+    "source_line": 2224,
+    "source_text": "Hurley, J., A. Kapustin, A. Reshetov, and A. Soupikov. 2002. Fast ray tracing for modern general purpose CPU. In Proceedings of GraphiCon 2002.",
+    "title": "Fast Ray Tracing for Modern General Purpose {CPU}",
+    "year": "2002",
+    "first_author": "hurley"
+  },
+  "10.2312:egtp.19871000": {
+    "index": 21,
+    "anchor": "original-reference-21",
+    "source_line": 186,
+    "source_text": "Amanatides, J., and A. Woo. 1987. A fast voxel traversal algorithm for ray tracing. In Proceedings of Eurographics ’87, 3–10.",
+    "title": "A Fast Voxel Traversal Algorithm for Ray Tracing",
+    "year": "1987",
+    "first_author": "amanatides"
+  },
+  "Cleary1988": {
+    "index": 185,
+    "anchor": "original-reference-185",
+    "source_line": 803,
+    "source_text": "Cleary, J. G., and G. Wyvill. 1988. Analysis of an algorithm for fast ray tracing using uniform space subdivision. The Visual Computer 4 (2), 65–83.",
+    "title": "Analysis of an algorithm for fast ray tracing using uniform space subdivision",
+    "year": "1988",
+    "first_author": "cleary"
+  },
+  "10.1145/37401.37417": {
+    "index": 1093,
+    "anchor": "original-reference-1093",
+    "source_line": 4405,
+    "source_text": "Snyder, J. M., and A. H. Barr. 1987. Ray tracing complex models containing surface tessellations. Computer Graphics (SIGGRAPH ’87 Proceedings), Volume 21, 119–28.",
+    "title": "Ray Tracing Complex Models Containing Surface Tessellations",
+    "year": "1987",
+    "first_author": "snyder"
+  },
+  "cazals1995filtering": {
+    "index": 145,
+    "anchor": "original-reference-145",
+    "source_line": 645,
+    "source_text": "Cazals, F., G. Drettakis, and C. Puech. 1995. Filtering, clustering and hierarchy construction: A new solution for ray-tracing complex scenes. Computer Graphics Forum 14 (3), 371–82.",
+    "title": "Filtering, Clustering and Hierarchy Construction: a New Solution for Ray-Tracing Complex Scenes",
+    "year": "1995",
+    "first_author": "cazals"
+  },
+  "lagae2008compact": {
+    "index": 687,
+    "anchor": "original-reference-687",
+    "source_line": 2841,
+    "source_text": "Lagae, A., and P. Dutré. 2008a. Compact, fast, and robust grids for ray tracing. Computer Graphics Forum (Proceedings of the 2008 Eurographics Symposium on Rendering) 27 (4), 1235–44.",
+    "title": "Compact, Fast and Robust Grids for Ray Tracing",
+    "year": "2008a",
+    "first_author": "lagae"
+  },
+  "10.1145/360349.360354": {
+    "index": 183,
+    "anchor": "original-reference-183",
+    "source_line": 797,
+    "source_text": "Clark, J. H. 1976. Hierarchical geometric models for visible surface algorithms. Communications of the ACM 19 (10), 547–54.",
+    "title": "Hierarchical Geometric Models for Visible Surface Algorithms",
+    "year": "1976",
+    "first_author": "clark"
+  },
+  "10.1145/800250.807479": {
+    "index": 1011,
+    "anchor": "original-reference-1011",
+    "source_line": 4098,
+    "source_text": "Rubin, S. M., and T. Whitted. 1980. A 3-dimensional representation for fast rendering of complex scenes. Computer Graphics 14 (3), 110–16.",
+    "title": "A 3-Dimensional Representation for Fast Rendering of Complex Scenes",
+    "year": "1980",
+    "first_author": "rubin"
+  },
+  "10.1145/15922.15916": {
+    "index": 621,
+    "anchor": "original-reference-621",
+    "source_line": 2581,
+    "source_text": "Kay, T., and J. Kajiya. 1986. Ray tracing complex scenes. In Computer Graphics (SIGGRAPH ’86 Proceedings), Volume 20, 269–78.",
+    "title": "Ray Tracing Complex Scenes",
+    "year": "1986",
+    "first_author": "kay"
+  },
+  "10.1145/1198555.1198748": {
+    "index": 1282,
+    "anchor": "original-reference-1282",
+    "source_line": 5171,
+    "source_text": "Williams, A., S. Barrus, R. K. Morley, and P. Shirley. 2005. An efficient and robust ray–box intersection algorithm. Journal of Graphics, GPU, and Game Tools 10 (4), 49–54.",
+    "title": "An Efficient and Robust Ray-Box Intersection Algorithm",
+    "year": "2005",
+    "first_author": "williams"
+  },
+  "bouloshaines2006": {
+    "index": 121,
+    "anchor": "original-reference-121",
+    "source_line": 550,
+    "source_text": "Boulos, S., and E. Haines. 2006. Ray–box sorting. Ray Tracing News 19 (1), www.realtimerendering.com/resources/RTNews/html/rtnv19n1.html.",
+    "title": "Ray-Box Sorting",
+    "year": "2006",
+    "first_author": "boulos"
+  },
+  "10.1145/1071866.1071869": {
+    "index": 324,
+    "anchor": "original-reference-324",
+    "source_line": 1362,
+    "source_text": "Foley, T., and J. Sugerman. 2005. KD-tree acceleration structures for a GPU raytracer. Proceedings of the ACM SIGGRAPH/EUROGRAPHICS Conference on Graphics Hardware, 15–22.",
+    "title": "{KD}-Tree Acceleration Structures for a {GPU} Raytracer",
+    "year": "2005",
+    "first_author": "foley"
+  },
+  "10.5555/1921479.1921496": {
+    "index": 692,
+    "anchor": "original-reference-692",
+    "source_line": 2864,
+    "source_text": "Laine, S. 2010. Restart trail for stackless BVH traversal. In Proceedings of High Performance Graphics 2010, 107–11.",
+    "title": "Restart Trail for Stackless {BVH} Traversal",
+    "year": "2010",
+    "first_author": "laine"
+  },
+  "10.2312:EGWR:EGSR07:073-084": {
+    "index": 1319,
+    "anchor": "original-reference-1319",
+    "source_line": 5321,
+    "source_text": "Yoon, S.-E., S. Curtis, and D. Manocha. 2007. Ray tracing dynamic scenes using selective restructuring. In Proceedings of the Eurographics Symposium on Rendering, 73–84.",
+    "title": "Ray Tracing Dynamic Scenes using Selective Restructuring",
+    "year": "2007",
+    "first_author": "yoon"
+  },
+  "10.1145/2159616.2159649": {
+    "index": 668,
+    "anchor": "original-reference-668",
+    "source_line": 2765,
+    "source_text": "Kopta, D., T. Ize, J. Spjut, E. Brunvand, A. Davis, and A. Kensler. 2012. Fast, effective BVH updates for animated scenes. In Proceedings of the ACM SIGGRAPH Symposium on Interactive 3D Graphics and Games, 197–204.",
+    "title": "Fast, Effective {BVH} Updates for Animated Scenes",
+    "year": "2012",
+    "first_author": "kopta"
+  },
+  "BittnerFast2013": {
+    "index": 103,
+    "anchor": "original-reference-103",
+    "source_line": 486,
+    "source_text": "Bittner, J., M. Hapala, and V. Havran. 2013. Fast insertion-based optimization of bounding volume hierarchies. Computer Graphics Forum 32 (1), 85–100.",
+    "title": "Fast Insertion-Based Optimization of Bounding Volume Hierarchies",
+    "year": "2013",
+    "first_author": "bittner"
+  },
+  "10.1145/2492045.2492055": {
+    "index": 615,
+    "anchor": "original-reference-615",
+    "source_line": 2562,
+    "source_text": "Karras, T., and T. Aila. 2013. Fast parallel construction of high-quality bounding volume hierarchies. In Proceedings of High Performance Graphics 2013, 89–99.",
+    "title": "Fast Parallel Construction of High-Quality Bounding Volume Hierarchies",
+    "year": "2013",
+    "first_author": "karras"
+  },
+  "10.1145/2492045.2492054": {
+    "index": 416,
+    "anchor": "original-reference-416",
+    "source_line": 1736,
+    "source_text": "Gu, Y., Y. He, K. Fatahalian, and G. Blelloch. 2013b. Efficient BVH construction via approximate agglomerative clustering. Proceedings of High Performance Graphics 2013, 81–88.",
+    "title": "Efficient {BVH} Construction via Approximate Agglomerative Clustering",
+    "year": "2013b",
+    "first_author": "gu"
+  },
+  "10.1145/1572769.1572771": {
+    "index": 1113,
+    "anchor": "original-reference-1113",
+    "source_line": 4498,
+    "source_text": "Stich, M., H. Friedrich, and A. Dietrich. 2009. Spatial splits in bounding volume hierarchies. In Proceedings of High Performance Graphics 2009, 7–14.",
+    "title": "Spatial Splits in Bounding Volume Hierarchies",
+    "year": "2009",
+    "first_author": "stich"
+  },
+  "10.1145/1572769.1572772": {
+    "index": 945,
+    "anchor": "original-reference-945",
+    "source_line": 3843,
+    "source_text": "Popov, S., R. Dimov, I. Georgiev, and P. Slusallek. 2009. Object partitioning considered harmful: Space subdivision for BVHs. In Proceedings of High Performance Graphics 2009, 15–22.",
+    "title": "Object Partitioning Considered Harmful: Space Subdivision for {BVH}s",
+    "year": "2009",
+    "first_author": "popov"
+  },
+  "10.5555/2980009.2980014": {
+    "index": 1290,
+    "anchor": "original-reference-1290",
+    "source_line": 5199,
+    "source_text": "Woop, S., C. Benthin, I. Wald, G. S. Johnson, and E. Tabellion. 2014. Exploiting local orientation similarity for efficient ray traversal of hair and fur. In Proceedings of High Performance Graphics 2014, 41–49.",
+    "title": "Exploiting Local Orientation Similarity for Efficient Ray Traversal of Hair and Fur",
+    "year": "2014",
+    "first_author": "woop"
+  },
+  "10.5555/2383894.2383909": {
+    "index": 188,
+    "anchor": "original-reference-188",
+    "source_line": 819,
+    "source_text": "Cline, D., P. Egbert, J. Talbot, and D. Cardon. 2006. Two stage importance sampling for direct lighting. Rendering Techniques 2006: 17th Eurographics Workshop on Rendering, 103–14.",
+    "title": "Two Stage Importance Sampling for Direct Lighting",
+    "year": "2006",
+    "first_author": "cline"
+  },
+  "10.2312:PE:VMV:VMV10:227-234": {
+    "index": 68,
+    "anchor": "original-reference-68",
+    "source_line": 358,
+    "source_text": "Bauszat, P., M. Eisemann, and M. Magnor. 2010. The minimal bounding volume hierarchy. Vision, Modeling, and Visualization (2010), 227–34.",
+    "title": "The Minimal Bounding Volume Hierarchy",
+    "year": "2010",
+    "first_author": "bauszat"
+  },
+  "10.5555/1839214.1839242": {
+    "index": 1046,
+    "anchor": "original-reference-1046",
+    "source_line": 4227,
+    "source_text": "Segovia, B., and M. Ernst. 2010. Memory efficient ray tracing with hierarchical mesh quantization. In Proceedings of Graphics Interface 2010, 153–60.",
+    "title": "Memory Efficient Ray Tracing with Hierarchical Mesh Quantization",
+    "year": "2010",
+    "first_author": "segovia"
+  },
+  "10.1111/j.1467-8659.2006.00970.x": {
+    "index": 1323,
+    "anchor": "original-reference-1323",
+    "source_line": 5335,
+    "source_text": "Yoon, S.-E., and D. Manocha. 2006. Cache-efficient layouts of bounding volume hierarchies. In Computer Graphics Forum: Proceedings of Eurographics 2006 25 (3), 507–16.",
+    "title": "Cache-Efficient Layouts of Bounding Volume Hierarchies",
+    "year": "2006",
+    "first_author": "yoon"
+  },
+  "10.5555/1121584": {
+    "index": 299,
+    "anchor": "original-reference-299",
+    "source_line": 1257,
+    "source_text": "Ericson, C. 2004. Real-Time Collision Detection. Morgan Kaufmann Series in Interactive 3D Technology. San Francisco: Morgan Kaufmann.",
+    "title": "Real-Time Collision Detection",
+    "year": "2004",
+    "first_author": "ericson"
+  },
+  "10.1111/j.1467-8659.2009.01377.x": {
+    "index": 701,
+    "anchor": "original-reference-701",
+    "source_line": 2897,
+    "source_text": "Lauterbach, C., M. Garland, S. Sengupta, D. Luebke, and D. Manocha. 2009. Fast BVH construction on GPUs. Computer Graphics Forum (Eurographics 2009 Conference Proceedings) 28 (2), 422–30.",
+    "title": "Fast {BVH} Construction on {GPU}s",
+    "year": "2009",
+    "first_author": "lauterbach"
+  },
+  "10.5555/1921479.1921493": {
+    "index": 891,
+    "anchor": "original-reference-891",
+    "source_line": 3639,
+    "source_text": "Pantaleoni, J., and D. Luebke. 2010. HLBVH: Hierarchical LBVH construction for real-time ray tracing of dynamic geometry. In Proceedings of the Conference on High Performance Graphics 2010, 87–95.",
+    "title": "{HLBVH}: Hierarchical {LBVH} Construction for Real-Time Ray Tracing of Dynamic Geometry",
+    "year": "2010",
+    "first_author": "pantaleoni"
+  },
+  "10.1145/2018323.2018333": {
+    "index": 348,
+    "anchor": "original-reference-348",
+    "source_line": 1459,
+    "source_text": "Garanzha, K., J. Pantaleoni, D. McAllister. 2011. Simpler and faster HLBVH with work queues. Proceedings of High Performance Graphics 2011, 59–64.",
+    "title": "Simpler and Faster {HLBVH} with Work Queues",
+    "year": "2011",
+    "first_author": "garanzha"
+  },
+  "MacDonald1990": {
+    "index": 742,
+    "anchor": "original-reference-742",
+    "source_line": 3066,
+    "source_text": "MacDonald, J. D., and K. S. Booth. 1990. Heuristics for ray tracing using space subdivision. The Visual Computer 6 (3), 153–66.",
+    "title": "Heuristics for ray tracing using space subdivision",
+    "year": "1990",
+    "first_author": "macdonald"
+  },
+  "HavranImproving2002": {
+    "index": 473,
+    "anchor": "original-reference-473",
+    "source_line": 1974,
+    "source_text": "Havran, V., and J. Bittner. 2002. On improving kd-trees for ray shooting. In Proceedings of WSCG 2002 Conference, 209–17.",
+    "title": "On improving kd-trees for ray shooting",
+    "year": "2002",
+    "first_author": "havran"
+  },
+  "10.1007/978-3-642-71071-1_4": {
+    "index": 562,
+    "anchor": "original-reference-562",
+    "source_line": 2338,
+    "source_text": "Jansen, F. W. 1986. Data structures for ray tracing. In Data Structures for Raster Graphics, Workshop Proceedings, 57–73. New York: Springer-Verlag.",
+    "title": "Data structures for ray tracing",
+    "year": "1986",
+    "first_author": "jansen"
+  },
+  "ArvoRay1988": {
+    "index": 32,
+    "anchor": "original-reference-32",
+    "source_line": 233,
+    "source_text": "Arvo, J. 1988. Linear-time voxel walking for octrees. Ray Tracing News 1 (5).",
+    "title": "Linear-time Voxel Walking for Octrees",
+    "year": "1988",
+    "first_author": "arvo"
+  },
+  "10.1111/cgf.12241": {
+    "index": 166,
+    "anchor": "original-reference-166",
+    "source_line": 731,
+    "source_text": "Choi, B., B. Chang, and I. Ihm. 2013. Improving memory space efficiency of kd-tree for real-time ray tracing. Computer Graphics Forum 32 (7), 335–44.",
+    "title": "Improving Memory Space Efficiency of {K}d-tree for Real-time Ray Tracing",
+    "year": "2013",
+    "first_author": "choi"
+  },
+  "10.1111/j.1467-8659.2007.01062.x": {
+    "index": 1053,
+    "anchor": "original-reference-1053",
+    "source_line": 4254,
+    "source_text": "Shevtsov, M., A. Soupikov, and A. Kapustin. 2007b. Highly parallel fast kd-tree construction for interactive ray tracing of dynamic scenes. In Computer Graphics Forum (Proceedings of Eurographics 2007) 26 (3), 395–404.",
+    "title": "Highly Parallel Fast {KD}-tree Construction for Interactive Ray Tracing of Dynamic Scenes",
+    "year": "2007b",
+    "first_author": "shevtsov"
+  },
+  "10.5555/1921479.1921492": {
+    "index": 167,
+    "anchor": "original-reference-167",
+    "source_line": 734,
+    "source_text": "Choi, B., R. Komuravelli, V. Lu, H. Sung, R. L. Bocchino, S. V. Adve, and J. C. Hart. 2010. Parallel SAH k-D tree construction. In Proceedings of High Performance Graphics 2010, 77–86.",
+    "title": "Parallel {SAH} {K}-{D} Tree Construction",
+    "year": "2010",
+    "first_author": "choi"
+  },
+  "10.2312:egs.20091046": {
+    "index": 305,
+    "anchor": "original-reference-305",
+    "source_line": 1285,
+    "source_text": "Fabianowski, B., C. Fowler, and J. Dingliana. 2009. A cost metric for scene-interior ray origins. Short Paper Proceedings of the 30th Annual Conference of the European Association for Computer Graphics (Eurographics 2009), 49–50.",
+    "title": "A Cost Metric for Scene-Interior Ray Origins",
+    "year": "2009",
+    "first_author": "fabianowski"
+  },
+  "10.1111/j.1467-8659.2011.01861.x": {
+    "index": 547,
+    "anchor": "original-reference-547",
+    "source_line": 2272,
+    "source_text": "Ize, T., and C. Hansen. 2011. RTSAH traversal order for occlusion rays. Computer Graphics Forum (Proceedings of Eurographics 2011) 30 (2), 295–305.",
+    "title": "{RTSAH} Traversal Order for Occlusion Rays",
+    "year": "2011",
+    "first_author": "ize"
+  },
+  "10.2312:sre.20151164": {
+    "index": 823,
+    "anchor": "original-reference-823",
+    "source_line": 3361,
+    "source_text": "Moulin, M., N. Billen, and P. Dutré. 2015. Efficient visibility heuristics for kd-trees using the RTSAH. Eurographics Symposium on Rendering–Experimental Ideas & Implementations, 31–39.",
+    "title": "Efficient Visibility Heuristics for kd-trees Using the {RTSAH}",
+    "year": "2015",
+    "first_author": "moulin"
+  },
+  "10.1145/2492045.2492056": {
+    "index": 9,
+    "anchor": "original-reference-9",
+    "source_line": 145,
+    "source_text": "Aila, T., T. Karras, and S. Laine. 2013. On quality metrics of bounding volume hierarchies. In Proceedings of High Performance Graphics 2013, 101–7.",
+    "title": "On Quality Metrics of Bounding Volume Hierarchies",
+    "year": "2013",
+    "first_author": "aila"
+  },
+  "10.1145/357332.357335": {
+    "index": 1263,
+    "anchor": "original-reference-1263",
+    "source_line": 5103,
+    "source_text": "Weghorst, H., G. Hooper, and D. P. Greenberg. 1984. Improved computational methods for ray tracing. ACM Transactions on Graphics 3 (1), 52–69.",
+    "title": "Improved Computational Methods for Ray Tracing",
+    "year": "1984",
+    "first_author": "weghorst"
+  },
+  "10.2312:egst.20071056": {
+    "index": 1228,
+    "anchor": "original-reference-1228",
+    "source_line": 4964,
+    "source_text": "Wald, I., W. Mark, J. Günther, S. Boulos, T. Ize, W. Hunt, S. Parker, and P. Shirley. 2007b. State of the art in ray tracing animated scenes. In Eurographics 2007 State of the Art Reports.",
+    "title": "State of the Art in Ray Tracing Animated Scenes",
+    "year": "2007b",
+    "first_author": "wald"
+  },
+  "10.1111/j.1467-8659.2009.01497.x": {
+    "index": 346,
+    "anchor": "original-reference-346",
+    "source_line": 1452,
+    "source_text": "Garanzha, K. 2009. The use of precomputed triangle clusters for accelerated ray tracing in dynamic scenes. Computer Graphics Forum (Proceedings of the 2009 Eurographics Symposium on Rendering) 28 (4), 1199–206.",
+    "title": "The Use of Precomputed Triangle Clusters for Accelerated Ray Tracing in Dynamic Scenes",
+    "year": "2009",
+    "first_author": "garanzha"
+  },
+  "10.1145/2018323.2018334": {
+    "index": 411,
+    "anchor": "original-reference-411",
+    "source_line": 1714,
+    "source_text": "Grünschloß, L., M. Stich, S. Nawaz, and A. Keller. 2011. MSBVH: An efficient acceleration data structure for ray traced motion blur. Proceedings of High Performance Graphics 2011, 65–70.",
+    "title": "{MSBVH}: An Efficient Acceleration Data Structure for Ray Traced Motion Blur",
+    "year": "2011",
+    "first_author": "grunschlo"
+  },
+  "10.1145/37402.37409": {
+    "index": 39,
+    "anchor": "original-reference-39",
+    "source_line": 257,
+    "source_text": "Arvo, J., and D. Kirk. 1987. Fast ray tracing by ray classification. Computer Graphics (SIGGRAPH ’87 Proceedings) 21 (4), 55–64.",
+    "title": "Fast Ray Tracing by Ray Classification",
+    "year": "1987",
+    "first_author": "arvo"
+  },
+  "10.1145/37401.37409": {
+    "index": 39,
+    "anchor": "original-reference-39",
+    "source_line": 257,
+    "source_text": "Arvo, J., and D. Kirk. 1987. Fast ray tracing by ray classification. Computer Graphics (SIGGRAPH ’87 Proceedings) 21 (4), 55–64.",
+    "title": "Fast Ray Tracing by Ray Classification",
+    "year": "1987",
+    "first_author": "arvo"
+  },
+  "10.1111/j.1467-8659.2008.01269.x": {
+    "index": 688,
+    "anchor": "original-reference-688",
+    "source_line": 2845,
+    "source_text": "Lagae, A., and P. Dutré. 2008b. Accelerating ray tracing using constrained tetrahedralizations. Computer Graphics Forum (Proceedings of the 2008 Eurographics Symposium on Rendering) 27 (4), 1303–12.",
+    "title": "Accelerating Ray Tracing using Constrained Tetrahedralizations",
+    "year": "2008b",
+    "first_author": "lagae"
+  },
+  "10.1007/978-3-642-72617-0_17": {
+    "index": 871,
+    "anchor": "original-reference-871",
+    "source_line": 3550,
+    "source_text": "Ooi, B. C., K. McDonell, and R. Sacks-Davis. 1987. Spatial kd-tree: A data structure for geographic databases. In Proceedings of the IEEE COMPSAC Conference.",
+    "title": "Spatial kd-Tree: A Data Structure for Geographic Database",
+    "year": "1987",
+    "first_author": "ooi"
+  },
+  "10.1145/585740.585761": {
+    "index": 1327,
+    "anchor": "original-reference-1327",
+    "source_line": 5353,
+    "source_text": "Zachmann, G. 2002. Minimal hierarchical collision detection. In Proceedings of the ACM Symposium on Virtual Reality Software and Technology, 121–28.",
+    "title": "Minimal Hierarchical Collision Detection",
+    "year": "2002",
+    "first_author": "zachmann"
+  },
+  "10.1145/1283900.1283912": {
+    "index": 1291,
+    "anchor": "original-reference-1291",
+    "source_line": 5203,
+    "source_text": "Woop, S., G. Marmitt, and P. Slusallek. 2006. B-kd trees for hardware accelerated ray tracing of dynamic scenes. In Graphics Hardware 2006: Eurographics Symposium Proceedings, 67–76.",
+    "title": "{B}-{KD} Trees for Hardware Accelerated Ray Tracing of Dynamic Scenes",
+    "year": "2006",
+    "first_author": "woop"
+  },
+  "10.5555/2383894.2383912": {
+    "index": 1218,
+    "anchor": "original-reference-1218",
+    "source_line": 4900,
+    "source_text": "Wächter, C. A., and A. Keller. 2006. Instant ray tracing: The bounding interval hierarchy. In Rendering Techniques 2006: 17th Eurographics Workshop on Rendering, 139–49.",
+    "title": "Instant Ray Tracing: The Bounding Interval Hierarchy",
+    "year": "2006",
+    "first_author": "wachter"
+  },
+  "Benthin_2006": {
+    "index": 77,
+    "anchor": "original-reference-77",
+    "source_line": 389,
+    "source_text": "Benthin, C. 2006. Realtime ray tracing on current CPU architectures. Ph.D. thesis, Saarland University.",
+    "title": "Realtime ray tracing on current {CPU} architectures",
+    "year": "2006",
+    "first_author": "benthin"
+  },
+  "10.1145/800250.807502": {
+    "index": 787,
+    "anchor": "original-reference-787",
+    "source_line": 3229,
+    "source_text": "Meyer, G. W., and D. P. Greenberg. 1980. Perceptual color spaces for computer graphics. In Computer Graphics (Proceedings of SIGGRAPH ’80), Volume 14, 254–61.",
+    "title": "Perceptual Color Spaces for Computer Graphics",
+    "year": "1980",
+    "first_author": "meyer"
+  },
+  "10.1145/7529.7920": {
+    "index": 788,
+    "anchor": "original-reference-788",
+    "source_line": 3232,
+    "source_text": "Meyer, G. W., H. E. Rushmeier, M. F. Cohen, D. P. Greenberg, and K. E. Torrance. 1986. An experimental evaluation of computer graphics imagery. ACM Transactions on Graphics 5 (1), 30–50.",
+    "title": "An Experimental Evaluation of Computer Graphics Imagery",
+    "year": "1986",
+    "first_author": "meyer"
+  },
+  "10.2312:egst.20021054": {
+    "index": 247,
+    "anchor": "original-reference-247",
+    "source_line": 1048,
+    "source_text": "Devlin, K., A. Chalmers, A. Wilkie, and W. Purgathofer. 2002. Tone reproduction and physically based spectral rendering. Proceedings of Eurographics 2002, 101–23.",
+    "title": "Tone Reproduction and Physically Based Spectral Rendering",
+    "year": "2002",
+    "first_author": "devlin"
+  },
+  "10.1145/122718.122729": {
+    "index": 118,
+    "anchor": "original-reference-118",
+    "source_line": 539,
+    "source_text": "Borges, C. 1991. Trichromatic approximation for computer graphics illumination models. Computer Graphics (Proceedings of SIGGRAPH ’91) 25, 101–4.",
+    "title": "Trichromatic Approximation for Computer Graphics Illumination Models",
+    "year": "1991",
+    "first_author": "borges"
+  },
+  "10.1007/978-3-7091-6858-5_12": {
+    "index": 1007,
+    "anchor": "original-reference-1007",
+    "source_line": 4084,
+    "source_text": "Rougeron, G., and B. Péroche. 1997. An adaptive representation of spectral data for reflectance computations. In Eurographics Rendering Workshop 1997, 126–38.",
+    "title": "An adaptive representation of spectral data for reflectance computations",
+    "year": "1997",
+    "first_author": "rougeron"
+  },
+  "10.2312:EGWR:EGWR02:117-124": {
+    "index": 1255,
+    "anchor": "original-reference-1255",
+    "source_line": 5072,
+    "source_text": "Ward, G., and E. Eydelberg-Vileshin. 2002. Picture perfect RGB rendering using spectral prefiltering and sharp color primaries. In Proceedings of 13th Eurographics Workshop on Rendering, 117–24.",
+    "title": "Picture Perfect {RGB} Rendering Using Spectral Prefiltering and Sharp Color Primaries",
+    "year": "2002",
+    "first_author": "ward"
+  },
+  "Sun2001": {
+    "index": 1126,
+    "anchor": "original-reference-1126",
+    "source_line": 4540,
+    "source_text": "Sun, Y., F. D. Fracchia, M. S. Drew, and T. W. Calvert. 2001. A spectrally based framework for realistic image synthesis. The Visual Computer 17 (7), 429–44.",
+    "title": "A spectrally based framework for realistic image synthesis",
+    "year": "2001",
+    "first_author": "sun"
+  },
+  "Evans:1999:10.20380/GI1999.07": {
+    "index": 303,
+    "anchor": "original-reference-303",
+    "source_line": 1271,
+    "source_text": "Evans, G., and M. McCool. 1999. Stratified wavelength clusters for efficient spectral Monte Carlo rendering. Proceedings of Graphics Interface 1999, 42–49.",
+    "title": "Stratified Wavelength Clusters for Efficient Spectral {M}onte {C}arlo Rendering",
+    "year": "1999",
+    "first_author": "evans"
+  },
+  "10.1145/256157.256158": {
+    "index": 1240,
+    "anchor": "original-reference-1240",
+    "source_line": 5009,
+    "source_text": "Walter, B., P. M. Hubbard, P. Shirley, and D. F. Greenberg. 1997. Global illumination using local linear density estimation. ACM Transactions on Graphics 16 (3), 217–59.",
+    "title": "Global Illumination Using Local Linear Density Estimation",
+    "year": "1997",
+    "first_author": "walter"
+  },
+  "Morley:2006:": {
+    "index": 818,
+    "anchor": "original-reference-818",
+    "source_line": 3343,
+    "source_text": "Morley, R. K., S. Boulos, J. Johnson, D. Edwards, P. Shirley, M. Ashikhmin, and S. Premoze. 2006. Image synthesis using adjoint photons. In Proceedings of Graphics Interface 2006, 179–86.",
+    "title": "Image synthesis using adjoint photons",
+    "year": "2006",
+    "first_author": "morley"
+  },
+  "Radziszewski2009": {
+    "index": 972,
+    "anchor": "original-reference-972",
+    "source_line": 3952,
+    "source_text": "Radziszewski, M., K. Boryczko, and W. Alda. 2009. An improved technique for full spectral rendering. Journal of WSCG 17 (1-3), 9–16.",
+    "title": "An Improved Technique for Full Spectral Rendering",
+    "year": "2009",
+    "first_author": "radziszewski"
+  },
+  "10.1111/cgf.12419": {
+    "index": 1275,
+    "anchor": "original-reference-1275",
+    "source_line": 5146,
+    "source_text": "Wilkie, A., S. Nawaz, M. Droske, A. Weidlich, and J. Hanika. 2014. Hero wavelength spectral sampling. Computer Graphics Forum (Proceedings of the 2014 Eurographics Symposium on Rendering) 33 (4), 123–31.",
+    "title": "Hero Wavelength Spectral Sampling",
+    "year": "2014",
+    "first_author": "wilkie"
+  },
+  "10.1111/cgf.12676": {
+    "index": 783,
+    "anchor": "original-reference-783",
+    "source_line": 3212,
+    "source_text": "Meng, J., F. Simon, J. Hanika, and C. Dachsbacher. 2015. Physically meaningful rendering using tristimulus colours. Computer Graphics Forum (Proceedings of the 2015 Eurographics Symposium on Rendering) 34 (4), 31–40.",
+    "title": "Physically Meaningful Rendering using Tristimulus Colours",
+    "year": "2015",
+    "first_author": "meng"
+  },
+  "Nicodemus1977": {
+    "index": 848,
+    "anchor": "original-reference-848",
+    "source_line": 3457,
+    "source_text": "Nicodemus, F., J. Richmond, J. Hsia, I. Ginsburg, and T. Limperis. 1977. Geometrical Considerations and Nomenclature for Reflectance. NBS Monograph 160, Washington, D.C.: National Bureau of Standards, U.S. Department of Commerce.",
+    "title": "Geometrical Considerations and Nomenclature for Reflectance",
+    "year": "1977",
+    "first_author": "nicodemus"
+  },
+  "Moon1936": {
+    "index": 813,
+    "anchor": "original-reference-813",
+    "source_line": 3328,
+    "source_text": "Moon, P., and D. E. Spencer. 1936. The Scientific Basis of Illuminating Engineering. New York: McGraw-Hill.",
+    "title": "The Scientific Basis of Illuminating Engineering",
+    "year": "1936",
+    "first_author": "moon"
+  },
+  "Moon1948": {
+    "index": 814,
+    "anchor": "original-reference-814",
+    "source_line": 3331,
+    "source_text": "Moon, P., and D. E. Spencer. 1948. Lighting Design. Reading, Massachusetts: Addison-Wesley.",
+    "title": "Lighting Design",
+    "year": "1948",
+    "first_author": "moon"
+  },
+  "10.1002/sapm193918151": {
+    "index": 362,
+    "anchor": "original-reference-362",
+    "source_line": 1519,
+    "source_text": "Gershun, A. 1939. The light field. Journal of Mathematics and Physics 18 (1-4), 51–151.",
+    "title": "The Light Field",
+    "year": "1939",
+    "first_author": "gershun"
+  },
+  "Lambert1760": {
+    "index": 696,
+    "anchor": "original-reference-696",
+    "source_line": 2878,
+    "source_text": "Lambert, J. H. 1760. Photometry, or, On the Measure and Gradations of Light, Colors, and Shade. The Illuminating Engineering Society of North America. Translated by David L. DiLaura in 2001.",
+    "title": "Photometry, or, On the Measure and Gradations of Light, Colors, and Shade",
+    "year": "2001",
+    "first_author": "lambert"
+  },
+  "10.1111/j.1467-8659.2010.01722.x": {
+    "index": 878,
+    "anchor": "original-reference-878",
+    "source_line": 3587,
+    "source_text": "Ou, J., and F. Pellacini. 2010. SafeGI: Type checking to improve correctness in rendering system implementation. Computer Graphics Forum (Proceedings of the 2010 Eurographics Symposium on Rendering) 29 (4), 1267–77.",
+    "title": "{S}afe{GI}: Type Checking to Improve Correctness in Rendering System Implementation",
+    "year": "2010",
+    "first_author": "ou"
+  },
+  "10.1145/1461551.1461591": {
+    "index": 1129,
+    "anchor": "original-reference-1129",
+    "source_line": 4550,
+    "source_text": "Sutherland, I. E. 1963. Sketchpad—A man–machine graphical communication system. In Proceedings of the Spring Joint Computer Conference (AFIPS), 328–46.",
+    "title": "Sketchpad: A Man-Machine Graphical Communication System",
+    "year": "1963",
+    "first_author": "sutherland"
+  },
+  "10.1145/800224.806818": {
+    "index": 949,
+    "anchor": "original-reference-949",
+    "source_line": 3860,
+    "source_text": "Potmesil, M., and I. Chakravarty. 1981. A lens and aperture camera model for synthetic image generation. In Computer Graphics (Proceedings of SIGGRAPH ’81), Volume 15, 297–305.",
+    "title": "A Lens and Aperture Camera Model for Synthetic Image Generation",
+    "year": "1981",
+    "first_author": "potmesil"
+  },
+  "10.1145/357299.357300": {
+    "index": 950,
+    "anchor": "original-reference-950",
+    "source_line": 3864,
+    "source_text": "Potmesil, M., and I. Chakravarty. 1982. Synthetic image generation with a lens and aperture camera model. ACM Transactions on Graphics 1 (2), 85–108.",
+    "title": "Synthetic Image Generation with a Lens and Aperture Camera Model",
+    "year": "1982",
+    "first_author": "potmesil"
+  },
+  "10.1145/800059.801169": {
+    "index": 951,
+    "anchor": "original-reference-951",
+    "source_line": 3867,
+    "source_text": "Potmesil, M., and I. Chakravarty. 1983. Modeling motion blur in computer-generated images. In Computer Graphics (Proceedings of SIGGRAPH 83), Volume 17, 389–99.",
+    "title": "Modeling Motion Blur in Computer-Generated Images",
+    "year": "1983",
+    "first_author": "potmesil"
+  },
+  "10.1145/7529.8927": {
+    "index": 204,
+    "anchor": "original-reference-204",
+    "source_line": 878,
+    "source_text": "Cook, R. L. 1986. Stochastic sampling in computer graphics. ACM Transactions on Graphics 5 (1), 51–72.",
+    "title": "Stochastic Sampling in Computer Graphics",
+    "year": "1986",
+    "first_author": "cook"
+  },
+  "10.2312:EGWR:EGSR07:121-126": {
+    "index": 1,
+    "anchor": "original-reference-1",
+    "source_line": 117,
+    "source_text": "Adams, A., and M. Levoy. 2007. General linear cameras with finite aperture. In Rendering Techniques (Proceedings of the 2007 Eurographics Symposium on Rendering), 121–26.",
+    "title": "General Linear Cameras with Finite Aperture",
+    "year": "2007",
+    "first_author": "adams"
+  },
+  "10.1145/218380.218463": {
+    "index": 664,
+    "anchor": "original-reference-664",
+    "source_line": 2748,
+    "source_text": "Kolb, C., D. Mitchell, and P. Hanrahan. 1995. A realistic camera model for computer graphics. SIGGRAPH ’95 Conference Proceedings, Annual Conference Series, 317–24.",
+    "title": "A Realistic Camera Model for Computer Graphics",
+    "year": "1995",
+    "first_author": "kolb"
+  },
+  "10.1111/j.1467-8659.2011.01851.x": {
+    "index": 1111,
+    "anchor": "original-reference-1111",
+    "source_line": 4491,
+    "source_text": "Steinert, B., H. Dammertz., J. Hanika, and H. P. A. Lensch. General spectral camera lens simulation. 2011. Computer Graphics Forum 30 (6), 1643–54.",
+    "title": "General Spectral Camera Lens Simulation",
+    "year": "2011",
+    "first_author": "steinert"
+  },
+  "10.1111/j.1467-8659.2012.03132.x": {
+    "index": 529,
+    "anchor": "original-reference-529",
+    "source_line": 2205,
+    "source_text": "Hullin, M. B., J. Hanika, and W. Heidrich. 2012. Polynomial optics: A construction kit for efficient ray-tracing of lens systems. Computer Graphics Forum (Proceedings of the 2012 Eurographics Symposium on Rendering) 31 (4), 1375–83.",
+    "title": "Polynomial Optics: A Construction Kit for Efficient Ray-Tracing of Lens Systems",
+    "year": "2012",
+    "first_author": "hullin"
+  },
+  "10.1111/cgf.12301": {
+    "index": 454,
+    "anchor": "original-reference-454",
+    "source_line": 1908,
+    "source_text": "Hanika, J., and C. Dachsbacher. 2014. Efficient Monte Carlo rendering with realistic lenses. Computer Graphics Forum (Proceedings of Eurographics 2014) 33 (2), 323–32.",
+    "title": "Efficient {M}onte {C}arlo rendering with realistic lenses",
+    "year": "2014",
+    "first_author": "hanika"
+  },
+  "Jacobs2012": {
+    "index": 552,
+    "anchor": "original-reference-552",
+    "source_line": 2293,
+    "source_text": "Jacobs, D. E., J. Baek, and M. Levoy. 2012. Focal stack compositing for depth of field control. Stanford Computer Graphics Laboratory Technical Report, CSTR 2012-1.",
+    "title": "Focal Stack Compositing for Depth of Field Control",
+    "year": "2012",
+    "first_author": "jacobs"
+  },
+  "ng:hal-02551481": {
+    "index": 847,
+    "anchor": "original-reference-847",
+    "source_line": 3454,
+    "source_text": "Ng, R., M. Levoy, M. Brédif., G. Duval, M. Horowitz, and P. Hanrahan. 2005. Light field photography with a hand-held plenoptic camera. Stanford University Computer Science Technical Report, CSTR 2005-02.",
+    "title": "Light Field Photography with a Hand-held Plenoptic Camera",
+    "year": "2005",
+    "first_author": "ng"
+  },
+  "10.1007/978-3-642-04107-5_25": {
+    "index": 409,
+    "anchor": "original-reference-409",
+    "source_line": 1706,
+    "source_text": "Grünschloß, L., and A. Keller. 2009. (t, m, s)-nets and maximized minimum distance, part II. In Monte Carlo and Quasi-Monte Carlo Methods 2008, 395–409. Berlin: Springer Verlag.",
+    "title": "(t,m,s)-Nets and Maximized Minimum Distance, Part II",
+    "year": "2009",
+    "first_author": "grunschlo"
+  },
+  "10.1111/1467-8659.00706": {
+    "index": 666,
+    "anchor": "original-reference-666",
+    "source_line": 2757,
+    "source_text": "Kollig, T., and A. Keller. 2002. Efficient multidimensional sampling. Computer Graphics Forum (Proceedings of Eurographics 2002), Volume 21, 557–63.",
+    "title": "Efficient Multidimensional Sampling",
+    "year": "2002",
+    "first_author": "kollig"
+  },
+  "10.1145/54852.378514": {
+    "index": 802,
+    "anchor": "original-reference-802",
+    "source_line": 3285,
+    "source_text": "Mitchell, D. P., and A. N. Netravali. 1988. Reconstruction filters in computer graphics. Computer Graphics (SIGGRAPH ’88 Proceedings), Volume 22, 221–28.",
+    "title": "Reconstruction Filters in Computer-Graphics",
+    "year": "1988",
+    "first_author": "mitchell"
+  },
+  "10.1145/359863.359869": {
+    "index": 213,
+    "anchor": "original-reference-213",
+    "source_line": 913,
+    "source_text": "Crow, F. C. 1977. The aliasing problem in computer-generated shaded images. Communications of the ACM 20 (11), 799–805.",
+    "title": "The Aliasing Problem in Computer-Generated Shaded Images",
+    "year": "1977",
+    "first_author": "crow"
+  },
+  "10.1145/325334.325182": {
+    "index": 251,
+    "anchor": "original-reference-251",
+    "source_line": 1061,
+    "source_text": "Dippé, M. A. Z., and E. H. Wold. 1985. Antialiasing through stochastic sampling. Computer Graphics (SIGGRAPH ’85 Proceedings) 19, 69–78.",
+    "title": "Antialiasing through Stochastic Sampling",
+    "year": "1985",
+    "first_author": "dippe"
+  },
+  "10.1145/325334.325179": {
+    "index": 709,
+    "anchor": "original-reference-709",
+    "source_line": 2926,
+    "source_text": "Lee, M. E., R. A. Redner, and S. P. Uselton. 1985. Statistically optimized sampling for distributed ray tracing. In Computer Graphics (Proceedings of SIGGRAPH ’85), Volume 19, 61–67.",
+    "title": "Statistically Optimized Sampling for Distributed Ray Tracing",
+    "year": "1985",
+    "first_author": "lee"
+  },
+  "10.1145/37401.37410": {
+    "index": 796,
+    "anchor": "original-reference-796",
+    "source_line": 3265,
+    "source_text": "Mitchell, D. P. 1987. Generating antialiased images at low sampling densities. Computer Graphics (SIGGRAPH ’87 Proceedings), Volume 21, 65–72.",
+    "title": "Generating Antialiased Images at Low Sampling Densities",
+    "year": "1987",
+    "first_author": "mitchell"
+  },
+  "10.1145/237170.237265": {
+    "index": 800,
+    "anchor": "original-reference-800",
+    "source_line": 3277,
+    "source_text": "Mitchell, D. P. 1996. Consequences of stratified sampling in graphics. In Proceedings of SIGGRAPH ’96, Computer Graphics Proceedings, Annual Conference Series, 277–80.",
+    "title": "Consequences of Stratified Sampling in Graphics",
+    "year": "1996",
+    "first_author": "mitchell"
+  },
+  "10.1111/j.1467-8659.2007.01100.x": {
+    "index": 689,
+    "anchor": "original-reference-689",
+    "source_line": 2849,
+    "source_text": "Lagae, A., and P. Dutré. 2008c. A comparison of methods for generating Poisson disk distributions. Computer Graphics Forum 27 (1), 114–29.",
+    "title": "A Comparison of Methods for Generating Poisson Disk Distributions",
+    "year": "2008c",
+    "first_author": "lagae"
+  },
+  "10.1145/166117.166154": {
+    "index": 1055,
+    "anchor": "original-reference-1055",
+    "source_line": 4262,
+    "source_text": "Shinya, M. 1993. Spatial anti-aliasing for animation sequences with spatio-temporal filtering. In Proceedings of SIGGRAPH ’93, Computer Graphics Proceedings, Annual Conference Series, 289–96.",
+    "title": "Spatial Anti-Aliasing for Animation Sequences with Spatio-Temporal Filtering",
+    "year": "1993",
+    "first_author": "shinya"
+  },
+  "10.1145/2487228.2487239": {
+    "index": 73,
+    "anchor": "original-reference-73",
+    "source_line": 376,
+    "source_text": "Belcour, L., C. Soler, K. Subr, N. Holzschuch, and F. Durand. 2013. 5D covariance tracing for efficient defocus and motion blur. ACM Transactions on Graphics 32 (3), 31:1–18.",
+    "title": "{5D} Covariance Tracing for Efficient Defocus and Motion Blur",
+    "year": "2013",
+    "first_author": "belcour"
+  },
+  "10.2312:egtp.19911013": {
+    "index": 1058,
+    "anchor": "original-reference-1058",
+    "source_line": 4275,
+    "source_text": "Shirley, P. 1991. Discrepancy as a quality measure for sample distributions. Eurographics ’91, 183–94.",
+    "title": "Discrepancy as a Quality Measure for Sample Distributions",
+    "year": "1991",
+    "first_author": "shirley"
+  },
+  "Mitchell92raytracing": {
+    "index": 799,
+    "anchor": "original-reference-799",
+    "source_line": 3274,
+    "source_text": "Mitchell, D. P. 1992. Ray tracing and irregularities of distribution. In Third Eurographics Workshop on Rendering, 61–69.",
+    "title": "Ray Tracing and Irregularities of Distribution",
+    "year": "1992",
+    "first_author": "mitchell"
+  },
+  "Dobkin1993:9": {
+    "index": 254,
+    "anchor": "original-reference-254",
+    "source_line": 1072,
+    "source_text": "Dobkin, D. P., and D. P. Mitchell. 1993. Random-edge discrepancy of supersampling patterns. In Proceedings of Graphics Interface 1993, Toronto, Ontario, 62–69. Canadian Information Processing Society.",
+    "title": "Random-edge discrepancy of supersampling patterns",
+    "year": "1993",
+    "first_author": "dobkin"
+  },
+  "10.1145/234535.234536": {
+    "index": 253,
+    "anchor": "original-reference-253",
+    "source_line": 1068,
+    "source_text": "Dobkin, D. P., D. Eppstein, and D. P. Mitchell. 1996. Computing the discrepancy with applications to supersampling patterns. ACM Transactions on Graphics 15 (4), 354–76.",
+    "title": "Computing the Discrepancy with Applications to Supersampling Patterns",
+    "year": "1996",
+    "first_author": "dobkin"
+  },
+  "10.1137/1.9781611970081": {
+    "index": 850,
+    "anchor": "original-reference-850",
+    "source_line": 3465,
+    "source_text": "Niederreiter, H. 1992. Random Number Generation and Quasi–Monte Carlo Methods. Philadelphia: Society for Industrial and Applied Mathematics.",
+    "title": "Random Number Generation and Quasi-{M}onte {C}arlo Methods",
+    "year": "1992",
+    "first_author": "niederreiter"
+  },
+  "dick_pillichshammer_2010": {
+    "index": 249,
+    "anchor": "original-reference-249",
+    "source_line": 1054,
+    "source_text": "Dick, J., and F. Pillichshammer. 2010. Digital Nets and Sequences: Discrepancy Theory and Quasi-Monte Carlo Integration. Cambridge: Cambridge University Press.",
+    "title": "Digital Nets and Sequences: Discrepancy Theory and Quasi-{M}onte {C}arlo Integration",
+    "year": "2010",
+    "first_author": "dick"
+  },
+  "10.1007/978-3-642-27440-4_21": {
+    "index": 410,
+    "anchor": "original-reference-410",
+    "source_line": 1710,
+    "source_text": "Grünschloß, L., M. Raab, and A. Keller. 2012. Enumerating quasi-Monte Carlo point sequences in elementary intervals. In Monte Carlo and Quasi-Monte Carlo Methods 2010, 399–408. Berlin: Springer Verlag.",
+    "title": "Enumerating Quasi-{M}onte {C}arlo Point Sequences in Elementary Intervals",
+    "year": "2012",
+    "first_author": "grunschlo"
+  },
+  "10.1007/978-3-7091-7484-5_11": {
+    "index": 624,
+    "anchor": "original-reference-624",
+    "source_line": 2592,
+    "source_text": "Keller, A. 1996. Quasi-Monte Carlo radiosity. In Eurographics Rendering Workshop 1996, 101–10.",
+    "title": "Quasi-Monte Carlo Radiosity",
+    "year": "1996",
+    "first_author": "keller"
+  },
+  "10.1145/258734.258769": {
+    "index": 625,
+    "anchor": "original-reference-625",
+    "source_line": 2595,
+    "source_text": "Keller, A. 1997. Instant radiosity. In Proceedings of SIGGRAPH ’97, Computer Graphics Proceedings, Annual Conference Series, 49–56.",
+    "title": "Instant Radiosity",
+    "year": "1997",
+    "first_author": "keller"
+  },
+  "Keller03strictlydeterministic": {
+    "index": 627,
+    "anchor": "original-reference-627",
+    "source_line": 2602,
+    "source_text": "Keller, A. 2001. Strictly deterministic sampling methods in computer graphics. mental images Technical Report. Also in SIGGRAPH 2003 Monte Carlo Course Notes.",
+    "title": "Strictly Deterministic Sampling Methods in Computer Graphics",
+    "year": "2001",
+    "first_author": "keller"
+  },
+  "10.1007/978-3-642-56046-0_17": {
+    "index": 330,
+    "anchor": "original-reference-330",
+    "source_line": 1386,
+    "source_text": "Friedel, I., and A. Keller. 2002. Fast generation of randomized low-discrepancy point sets. Monte Carlo and Quasi–Monte Carlo Methods 2000, 257–73.",
+    "title": "Fast Generation of Randomized Low-Discrepancy Point Sets",
+    "year": "2002",
+    "first_author": "friedel"
+  },
+  "SOBOL196786": {
+    "index": 1094,
+    "anchor": "original-reference-1094",
+    "source_line": 4408,
+    "source_text": "Sobol prime , I. 1967. On the distribution of points in a cube and the approximate evaluation of integrals. Zh. vychisl. Mat. mat. Fiz. 7 (4), 784–802.",
+    "title": "On the distribution of points in a cube and the approximate evaluation of integrals",
+    "year": "1967",
+    "first_author": "sobol"
+  },
+  "10.1145/800224.806784": {
+    "index": 596,
+    "anchor": "original-reference-596",
+    "source_line": 2488,
+    "source_text": "Kajiya, J., and M. Ullner. 1981. Filtering high quality text for display on raster scan devices. In Computer Graphics (Proceedings of SIGGRAPH ’81), 7–15.",
+    "title": "Filtering High Quality Text for Display on Raster Scan Devices",
+    "year": "1981",
+    "first_author": "kajiya"
+  },
+  "10.1889/1.1832941": {
+    "index": 86,
+    "anchor": "original-reference-86",
+    "source_line": 420,
+    "source_text": "Betrisey, C., J. F. Blinn, B. Dresevic, B. Hill, G. Hitchcock, B. Keely, D. P. Mitchell, J. C. Platt, and T. Whitted. 2000. Displaced filtering for patterned displays. Society for Information Display International Symposium. Digest of Technical Papers 31, 296–99.",
+    "title": "Displaced Filtering for Patterned Displays",
+    "year": "2000",
+    "first_author": "betrisey"
+  },
+  "10.5555/2532129.2532161": {
+    "index": 17,
+    "anchor": "original-reference-17",
+    "source_line": 174,
+    "source_text": "Alim, U. R. 2013. Rendering in shift-invariant spaces. In Proceedings of Graphics Interface 2013, 189–96.",
+    "title": "Rendering in Shift-Invariant Spaces",
+    "year": "2013",
+    "first_author": "alim"
+  },
+  "10.5555/90767.90805": {
+    "index": 1163,
+    "anchor": "original-reference-1163",
+    "source_line": 4690,
+    "source_text": "Turkowski, K. 1990a. Filters for common resampling tasks. In A. S. Glassner (ed.), Graphics Gems I, 147–65. San Diego: Academic Press.",
+    "title": "Filters for Common Resampling Tasks",
+    "year": "1990a",
+    "first_author": "turkowski"
+  },
+  "10.1007/10704282_23": {
+    "index": 777,
+    "anchor": "original-reference-777",
+    "source_line": 3189,
+    "source_text": "Meijering, E. H. W., W. J. Niessen, J. P. W. Pluim, and M. A. Viergever. 1999. Quantitative comparison of sinc-approximating kernels for medical image interpolation. Medical Image Computing and Computer-Assisted Intervention—MICCAI 1999, 210–17.",
+    "title": "Quantitative Comparison of Sinc-Approximating Kernels for Medical Image Interpolation",
+    "year": "1999",
+    "first_author": "meijering"
+  },
+  "10.1145/2766977": {
+    "index": 603,
+    "anchor": "original-reference-603",
+    "source_line": 2515,
+    "source_text": "Kalantari, N. K., S. Bako, and P. Sen. 2015. A machine learning approach for filtering Monte Carlo noise. ACM Transactions on Graphics (Proceedings of SIGGRAPH 2015) 34 (4), 122:1–12.",
+    "title": "A Machine Learning Approach for Filtering {M}onte {C}arlo Noise",
+    "year": "2015",
+    "first_author": "kalantari"
+  },
+  "jensen1995optimizing": {
+    "index": 582,
+    "anchor": "original-reference-582",
+    "source_line": 2425,
+    "source_text": "Jensen, H. W., and N. Christensen. 1995. Optimizing path tracing using noise reduction filters. In Proceedings of WSCG, 134–42.",
+    "title": "Optimizing Path Tracing using Noise Reduction Filters",
+    "year": "1995",
+    "first_author": "jensen"
+  },
+  "keller1998quasi": {
+    "index": 626,
+    "anchor": "original-reference-626",
+    "source_line": 2599,
+    "source_text": "Keller, A. 1998. Quasi-Monte Carlo methods for photorealistic image synthesis. Ph.D. thesis, Shaker Verlag Aachen.",
+    "title": "Quasi-{M}onte {C}arlo methods for photorealistic image synthesis",
+    "year": "1998",
+    "first_author": "keller"
+  },
+  "10.2312:EGWR:EGWR02:015-024": {
+    "index": 1227,
+    "anchor": "original-reference-1227",
+    "source_line": 4960,
+    "source_text": "Wald, I., T. Kollig, C. Benthin, A. Keller, and P. Slusallek. 2002. Interactive global illumination using fast ray tracing. In Rendering Techniques 2002: 13th Eurographics Workshop on Rendering, 15–24.",
+    "title": "Interactive Global Illumination using Fast Ray Tracing",
+    "year": "2002",
+    "first_author": "wald"
+  },
+  "10.1145/2601097.2601149": {
+    "index": 713,
+    "anchor": "original-reference-713",
+    "source_line": 2943,
+    "source_text": "Lessig, C., M. Desbrun, and E. Fiume. 2014. A constructive theory of sampling for image synthesis using reproducing kernel bases. ACM Transactions on Graphics (Proceedings of SIGGRAPH 2014) 33 (4), 55:1–14.",
+    "title": "A Constructive Theory of Sampling for Image Synthesis Using Reproducing Kernel Bases",
+    "year": "2014",
+    "first_author": "lessig"
+  },
+  "10.1111/1467-8659.00212": {
+    "index": 1008,
+    "anchor": "original-reference-1008",
+    "source_line": 4087,
+    "source_text": "Rougeron, G., and B. Péroche. 1998. Color fidelity in computer graphics: A survey. Computer Graphics Forum 17 (1), 3–16.",
+    "title": "Color Fidelity in Computer Graphics: a Survey",
+    "year": "1998",
+    "first_author": "rougeron"
+  },
+  "reinhard2010high": {
+    "index": 989,
+    "anchor": "original-reference-989",
+    "source_line": 4016,
+    "source_text": "Reinhard, E., G. Ward, P. Debevec, S. Pattanaik, W. Heidrich, and K. Myszkowski. 2010. High Dynamic Range Imaging: Acquisition, Display, and Image-Based Lighting. San Francisco: Morgan Kaufmann.",
+    "title": "High dynamic range imaging",
+    "year": "2010",
+    "first_author": "reinhard"
+  },
+  "10.1145/2366145.2366220": {
+    "index": 988,
+    "anchor": "original-reference-988",
+    "source_line": 4012,
+    "source_text": "Reinhard, E., T. Pouli, T. Kunkel, B. Long, A. Ballestad, and G. Damberg. 2012. Calibrated image appearance reproduction. ACM Transactions on Graphics (Proceedings of SIGGRAPH Asia 2012) 31 (6), 201:1–11.",
+    "title": "Calibrated Image Appearance Reproduction",
+    "year": "2012",
+    "first_author": "reinhard"
+  },
+  "10.1111/j.1467-8659.2009.01487.x": {
+    "index": 1277,
+    "anchor": "original-reference-1277",
+    "source_line": 5154,
+    "source_text": "Wilkie, A., and A. Weidlich. 2009. A robust illumination estimate for chromatic adaptation in rendered images. Computer Graphics Forum (Proceedings of the 2009 Eurographics Symposium on Rendering) 28 (4), 1101–9.",
+    "title": "A Robust Illumination Estimate for Chromatic Adaptation in Rendered Images",
+    "year": "2009",
+    "first_author": "wilkie"
+  },
+  "wandell1995foundations": {
+    "index": 1244,
+    "anchor": "original-reference-1244",
+    "source_line": 5024,
+    "source_text": "Wandell, B. 1995. Foundations of Vision. Sunderland, Massachusetts: Sinauer Associates.",
+    "title": "Foundations of Vision",
+    "year": "1995",
+    "first_author": "wandell"
+  },
+  "10.1007/978-3-540-74496-2_12": {
+    "index": 224,
+    "anchor": "original-reference-224",
+    "source_line": 958,
+    "source_text": "Dammertz, S., and A. Keller. 2008b. Image synthesis by rank-1 lattices. Monte Carlo and Quasi-Monte Carlo Methods 2006, 217–36.",
+    "title": "Image Synthesis by Rank-1 Lattices",
+    "year": "2008b",
+    "first_author": "dammertz"
+  },
+  "10.1145/122718.122723": {
+    "index": 268,
+    "anchor": "original-reference-268",
+    "source_line": 1131,
+    "source_text": "Dorsey, J. O., F. X. Sillion, and D. P. Greenberg. 1991. Design and simulation of opera lighting and projection effects. In Computer Graphics (Proceedings of SIGGRAPH ’91) 25, 41–50.",
+    "title": "Design and Simulation of Opera Lighting and Projection Effects",
+    "year": "1991",
+    "first_author": "dorsey"
+  },
+  "10.1145/237170.237199": {
+    "index": 714,
+    "anchor": "original-reference-714",
+    "source_line": 2947,
+    "source_text": "Levoy, M., and P. M. Hanrahan. 1996. Light field rendering. In Proceedings of SIGGRAPH ’96, Computer Graphics Proceedings, Annual Conference Series, 31–42.",
+    "title": "Light Field Rendering",
+    "year": "1996",
+    "first_author": "levoy"
+  },
+  "10.1145/237170.237200": {
+    "index": 391,
+    "anchor": "original-reference-391",
+    "source_line": 1635,
+    "source_text": "Gortler, S. J., R. Grzeszczuk, R. Szeliski, and M. F. Cohen. 1996. The lumigraph. Proceedings of SIGGRAPH ’96, Computer Graphics Proceedings, Annual Conference Series, 43–54.",
+    "title": "The Lumigraph",
+    "year": "1996",
+    "first_author": "gortler"
+  },
+  "10.1145/325334.325247": {
+    "index": 917,
+    "anchor": "original-reference-917",
+    "source_line": 3738,
+    "source_text": "Perlin, K. 1985a. An image synthesizer. In Computer Graphics (SIGGRAPH ’85 Proceedings), Volume 19, 287–96.",
+    "title": "An Image Synthesizer",
+    "year": "1985a",
+    "first_author": "perlin"
+  },
+  "10.1145/97879.97901": {
+    "index": 1024,
+    "anchor": "original-reference-1024",
+    "source_line": 4145,
+    "source_text": "Saito, T., and T. Takahashi. 1990. Comprehensible rendering of 3-D shapes. In Computer Graphics (Proceedings of SIGGRAPH ’90), Volume 24, 197–206.",
+    "title": "Comprehensible Rendering of 3-{D} Shapes",
+    "year": "1990",
+    "first_author": "saito"
+  },
+  "10.1145/280814.280882": {
+    "index": 1051,
+    "anchor": "original-reference-1051",
+    "source_line": 4247,
+    "source_text": "Shade, J., S. J. Gortler, L. W. He, and R. Szeliski. 1998. Layered depth images. In Proceedings of SIGGRAPH 98, Computer Graphics Proceedings, Annual Conference Series, 231–42.",
+    "title": "Layered Depth Images",
+    "year": "1998",
+    "first_author": "shade"
+  },
+  "10.1145/1531326.1531399": {
+    "index": 291,
+    "anchor": "original-reference-291",
+    "source_line": 1226,
+    "source_text": "Egan, K., Y.-T. Tseng, N. Holzschuch, F. Durand, and R. Ramamoorthi. 2009. Frequency analysis and sheared reconstruction for rendering motion blur. ACM Transactions on Graphics (Proceedings of SIGGRAPH 2009) 28 (3), 93:1–13.",
+    "title": "Frequency Analysis and Sheared Reconstruction for Rendering Motion Blur",
+    "year": "2009",
+    "first_author": "egan"
+  },
+  "10.1145/192161.192213": {
+    "index": 873,
+    "anchor": "original-reference-873",
+    "source_line": 3556,
+    "source_text": "Oren, M., and S. K. Nayar. 1994. Generalization of Lambert’s reflectance model. In Proceedings of SIGGRAPH ’94, Computer Graphics Proceedings, Annual Conference Series, 239–46. New York: ACM Press.",
+    "title": "Generalization of {L}ambert's Reflectance Model",
+    "year": "1994",
+    "first_author": "oren"
+  },
+  "10.5555/2383847.2383874": {
+    "index": 1242,
+    "anchor": "original-reference-1242",
+    "source_line": 5016,
+    "source_text": "Walter, B., S. Marschner, H. Li, and K. Torrance. 2007. Microfacet models for refraction through rough surfaces. In Rendering Techniques 2007 (Proc. Eurographics Symposium on Rendering), 195–206.",
+    "title": "Microfacet Models for Refraction through Rough Surfaces",
+    "year": "2007",
+    "first_author": "walter"
+  },
+  "heitz:hal-01024289": {
+    "index": 488,
+    "anchor": "original-reference-488",
+    "source_line": 2033,
+    "source_text": "Heitz, E. 2014. Understanding the masking-shadowing function in microfacet-based BRDFs. Journal of Computer Graphics Techniques (JCGT) 3 (2), 32–91.",
+    "title": "Understanding the Masking-Shadowing Function in Microfacet-Based {BRDFs}",
+    "year": "2014",
+    "first_author": "heitz"
+  },
+  "10.2312/egs.20011003": {
+    "index": 622,
+    "anchor": "original-reference-622",
+    "source_line": 2585,
+    "source_text": "Kelemen, C., and L. Szirmay-Kalos. 2001. A microfacet based coupled specular-matte BRDF model with importance sampling. Eurographics 2001—Short Presentations.",
+    "title": "{A Microfacet Based Coupled Specular-Matte BRDF Model with Importance Sampling}",
+    "year": "2001",
+    "first_author": "kelemen"
+  },
+  "Knuth1993a": {
+    "index": 659,
+    "anchor": "original-reference-659",
+    "source_line": 2732,
+    "source_text": "Knuth, D. E. 1993a. TEX : The Program. Reading, Massachusetts: Addison-Wesley.",
+    "title": "TEX: The Program",
+    "year": "1993a",
+    "first_author": "knuth"
+  },
+  "Knuth1994": {
+    "index": 662,
+    "anchor": "original-reference-662",
+    "source_line": 2741,
+    "source_text": "Knuth, D. E., and S. Levy. 1994. The CWEB System of Structured Documentation: Version 3.0. Reading, Massachusetts: Addison-Wesley.",
+    "title": "The CWEB System of Structured Documentation: Version 3.0",
+    "year": "1994",
+    "first_author": "knuth"
+  },
+  "Knuth1999": {
+    "index": 661,
+    "anchor": "original-reference-661",
+    "source_line": 2738,
+    "source_text": "Knuth, D. E. 1999. MMIXware: A RISC Computer for the Third Millennium. Berlin: Springer-Verlag.",
+    "title": "MMIXware: A RISC Computer for the Third Millennium",
+    "year": "1999",
+    "first_author": "knuth"
+  },
+  "Hanson96": {
+    "index": 462,
+    "anchor": "original-reference-462",
+    "source_line": 1936,
+    "source_text": "Hanson, D. R. 1996. C Interfaces and Implementations: Techniques for Creating Reusable Software. Boston, Massachusetts: Addison-Wesley Longman.",
+    "title": "C Interfaces and Implementations: Techniques for Creating Reusable Software",
+    "year": "1996",
+    "first_author": "hanson"
+  },
+  "Mehlhorn99": {
+    "index": 775,
+    "anchor": "original-reference-775",
+    "source_line": 3182,
+    "source_text": "Mehlhorn, K., and S. Näher. 1999. LEDA: A Platform for Combinatorial and Geometric Computing. Cambridge: Cambridge University Press.",
+    "title": "LEDA: A Platform for Combinatorial and Geometric Computing",
+    "year": "1999",
+    "first_author": "mehlhorn"
+  },
+  "Valiente02": {
+    "index": 1181,
+    "anchor": "original-reference-1181",
+    "source_line": 4754,
+    "source_text": "Valiente, G. 2002. Algorithms on Trees and Graphs, Berlin, Heidelberg: Springer-Verlag.",
+    "title": "Algorithms on Trees and Graphs",
+    "year": "2002",
+    "first_author": "valiente"
+  },
+  "ross2002probability": {
+    "index": 1003,
+    "anchor": "original-reference-1003",
+    "source_line": 4070,
+    "source_text": "Ross, S. M. 2002. Introduction to Probability Models (8th ed.). San Diego: Academic Press.",
+    "title": "Introduction to Probability Models",
+    "year": "2002",
+    "first_author": "ross"
+  },
+  "kalos1986monte": {
+    "index": 606,
+    "anchor": "original-reference-606",
+    "source_line": 2526,
+    "source_text": "Kalos, M. H., and P. A. Whitlock. 1986. Monte Carlo Methods: Volume I: Basics. New York: Wiley.",
+    "title": "Monte Carlo Methods: Volume I: Basics",
+    "year": "1986",
+    "first_author": "kalos"
+  },
+  "owen1998latin": {
+    "index": 883,
+    "anchor": "original-reference-883",
+    "source_line": 3607,
+    "source_text": "Owen, A. B. 1998. Latin supercube sampling for very high-dimensional simulations. Modeling and Computer Simulation 8 (1), 71–102.",
+    "title": "Latin supercube sampling for very high-dimensional simulations",
+    "year": "1998",
+    "first_author": "owen"
+  },
+  "ulam1947statistical": {
+    "index": 1168,
+    "anchor": "original-reference-1168",
+    "source_line": 4710,
+    "source_text": "Ulam, S., R. D. Richtmyer, and J. von Neumann. 1947. Statistical methods in neutron diffusion. Los Alamos Scientific Laboratory Report LAMS-551.",
+    "title": "Statistical methods in neutron diffusion",
+    "year": "1947",
+    "first_author": "ulam"
+  },
+  "metropolis1987beginning": {
+    "index": 784,
+    "anchor": "original-reference-784",
+    "source_line": 3216,
+    "source_text": "Metropolis, N. 1987. The beginning of the Monte Carlo method. Los Alamos Science Special Issue 15, 125–30.",
+    "title": "The beginning of the Monte Carlo method",
+    "year": "1987",
+    "first_author": "metropolis"
+  },
+  "metropolis1949monte": {
+    "index": 786,
+    "anchor": "original-reference-786",
+    "source_line": 3226,
+    "source_text": "Metropolis, N., and S. Ulam. 1949. The Monte Carlo method. Journal of the American Statistical Association 44 (247), 335–41.",
+    "title": "The Monte Carlo method",
+    "year": "1949",
+    "first_author": "metropolis"
+  },
+  "hammersley1964monte": {
+    "index": 451,
+    "anchor": "original-reference-451",
+    "source_line": 1898,
+    "source_text": "Hammersley, J., and D. Handscomb. 1964. Monte Carlo Methods. New York: John Wiley.",
+    "title": "Monte Carlo Methods",
+    "year": "1964",
+    "first_author": "hammersley"
+  },
+  "spanier1969monte": {
+    "index": 1099,
+    "anchor": "original-reference-1099",
+    "source_line": 4443,
+    "source_text": "Spanier, J., and E. M. Gelbard. 1969. Monte Carlo Principles and Neutron Transport Problems. Reading, Massachusetts: Addison-Wesley.",
+    "title": "Monte Carlo Principles and Neutron Transport Problems",
+    "year": "1969",
+    "first_author": "spanier"
+  },
+  "sobol1994primer": {
+    "index": 1095,
+    "anchor": "original-reference-1095",
+    "source_line": 4419,
+    "source_text": "Sobol prime , I. M. 1994. A Primer for the Monte Carlo Method. Boca Raton: CRC Press.",
+    "title": "A Primer for the Monte Carlo Method",
+    "year": "1994",
+    "first_author": "sobol"
+  },
+  "fishman1996monte": {
+    "index": 323,
+    "anchor": "original-reference-323",
+    "source_line": 1359,
+    "source_text": "Fishman, G. S. 1996. Monte Carlo: Concepts, Algorithms, and Applications. New York: Springer-Verlag.",
+    "title": "Monte Carlo: Concepts, Algorithms, and Applications",
+    "year": "1996",
+    "first_author": "fishman"
+  },
+  "liu2001monte": {
+    "index": 727,
+    "anchor": "original-reference-727",
+    "source_line": 3009,
+    "source_text": "Liu, J. S. 2001. Monte Carlo Strategies in Scientific Computing. New York: Springer-Verlag.",
+    "title": "Monte Carlo Strategies in Scientific Computing",
+    "year": "2001",
+    "first_author": "liu"
+  },
+  "motwani1995randomized": {
+    "index": 822,
+    "anchor": "original-reference-822",
+    "source_line": 3358,
+    "source_text": "Motwani, R., and P. Raghavan. 1995. Randomized Algorithms. Cambridge, U.K.: Cambridge University Press.",
+    "title": "Randomized Algorithms",
+    "year": "1995",
+    "first_author": "motwani"
+  },
+  "owen2000safe": {
+    "index": 881,
+    "anchor": "original-reference-881",
+    "source_line": 3600,
+    "source_text": "Owen, A., and Y. Zhou. 2000. Safe and effective importance sampling. Journal of the American Statistical Association 95 (449), 135–43.",
+    "title": "Safe and effective importance sampling",
+    "year": "2000",
+    "first_author": "owen"
+  },
+  "veach1995optimally": {
+    "index": 1193,
+    "anchor": "original-reference-1193",
+    "source_line": 4802,
+    "source_text": "Veach, E., and L. J. Guibas. 1995. Optimally combining sampling techniques for Monte Carlo rendering. In Computer Graphics (SIGGRAPH ’95 Proceedings), 419–28.",
+    "title": "Optimally combining sampling techniques for Monte Carlo rendering",
+    "year": "1995",
+    "first_author": "veach"
+  },
+  "pajot2011representativity": {
+    "index": 888,
+    "anchor": "original-reference-888",
+    "source_line": 3627,
+    "source_text": "Pajot, A., L. Barthe, M. Paulin, and P. Poulin. 2011. Representativity for robust and adaptive multiple importance sampling. IEEE Transactions on Visualization and Computer Graphics 17 (8), 1108–21.",
+    "title": "Representativity for robust and adaptive multiple importance sampling",
+    "year": "2011",
+    "first_author": "pajot"
+  },
+  "lu2013second": {
+    "index": 738,
+    "anchor": "original-reference-738",
+    "source_line": 3046,
+    "source_text": "Lu, H., R. Pacanowski, and X. Granier. 2013. Second-order approximation for variance reduction in multiple importance sampling. Computer Graphics Forum 32 (7), 131–36.",
+    "title": "Second-order approximation for variance reduction in multiple importance sampling",
+    "year": "2013",
+    "first_author": "lu"
+  },
+  "grittmann2019variance": {
+    "index": 402,
+    "anchor": "original-reference-402",
+    "source_line": 1677,
+    "source_text": "Grittmann, P., I. Georgiev, P. Slusallek, and J. Křivánek. 2019. Variance-aware multiple importance sampling. ACM Transactions on Graphics (Proceedings of SIGGRAPH Asia 2019) 38 (6), 152:1–9.",
+    "title": "Variance-aware multiple importance sampling",
+    "year": "2019",
+    "first_author": "grittmann"
+  },
+  "karlik2019mis": {
+    "index": 614,
+    "anchor": "original-reference-614",
+    "source_line": 2557,
+    "source_text": "Karlík, O., M. Šik, P. Vévoda, T. Skřivan, and J. Křivánek. 2019. MIS compensation: Optimizing sampling techniques in multiple importance sampling. ACM Transactions on Graphics (Proceedings of SIGGRAPH Asia) 38 (6), 151:1–12.",
+    "title": "MIS compensation: Optimizing sampling techniques in multiple importance sampling",
+    "year": "2019",
+    "first_author": "karlik"
+  },
+  "sbert2016variance": {
+    "index": 1030,
+    "anchor": "original-reference-1030",
+    "source_line": 4166,
+    "source_text": "Sbert, M., V. Havran, and L. Szirmay-Kalos. 2016. Variance analysis of multi-sample and one-sample multiple importance sampling. Computer Graphics Forum 35 (7), 451–60.",
+    "title": "Variance analysis of multi-sample and one-sample multiple importance sampling",
+    "year": "2016",
+    "first_author": "sbert"
+  },
+  "sbert2017adaptive": {
+    "index": 1029,
+    "anchor": "original-reference-1029",
+    "source_line": 4163,
+    "source_text": "Sbert, M., and V. Havran. 2017. Adaptive multiple importance sampling for general functions. The Visual Computer 33, 845–55.",
+    "title": "Adaptive multiple importance sampling for general functions",
+    "year": "2017",
+    "first_author": "sbert"
+  },
+  "sbert2018multiple": {
+    "index": 1031,
+    "anchor": "original-reference-1031",
+    "source_line": 4169,
+    "source_text": "Sbert, M., V. Havran, and L. Szirmay-Kalos. 2018. Multiple importance sampling revisited: Breaking the bounds. EURASIP Journal on Advances in Signal Processing 15, 1–15.",
+    "title": "Multiple importance sampling revisited: Breaking the bounds",
+    "year": "2018",
+    "first_author": "sbert"
+  },
+  "kondapaneni2019optimal": {
+    "index": 667,
+    "anchor": "original-reference-667",
+    "source_line": 2761,
+    "source_text": "Kondapaneni, I., P. Vévoda, P. Grittmann, T. Skřivan, P. Slusallek, and J. Křivánek. 2019. Optimal multiple importance sampling. ACM Transactions on Graphics (Proceedings of SIGGRAPH) 37 (4), 37:1–14.",
+    "title": "Optimal multiple importance sampling",
+    "year": "2019",
+    "first_author": "kondapaneni"
+  },
+  "west2020continuous": {
+    "index": 1270,
+    "anchor": "original-reference-1270",
+    "source_line": 5128,
+    "source_text": "West, W., I. Georgiev, A. Gruson, and T. Hachisuka. 2020. Continuous multiple importance sampling. ACM Transactions on Graphics (Proceedings of SIGGRAPH) 39 (4), 136:1–12.",
+    "title": "Continuous multiple importance sampling",
+    "year": "2020",
+    "first_author": "west"
+  },
+  "grittmann2021correlation": {
+    "index": 401,
+    "anchor": "original-reference-401",
+    "source_line": 1673,
+    "source_text": "Grittmann, P., I. Georgiev, and P. Slusallek. 2021. Correlation-aware multiple importance sampling for bidirectional rendering algorithms. Computer Graphics Forum (Proceedings of Eurographics) 40 (2), 231–38.",
+    "title": "Correlation-aware multiple importance sampling for bidirectional rendering algorithms",
+    "year": "2021",
+    "first_author": "grittmann"
+  },
+  "heitz2020cant": {
+    "index": 492,
+    "anchor": "original-reference-492",
+    "source_line": 2060,
+    "source_text": "Heitz, E. 2020. Can’t invert the CDF? The triangle-cut parameterization of the region under the curve. Computer Graphics Forum 39 (4), 121–32.",
+    "title": "Can’t invert the CDF? The triangle-cut parameterization of the region under the curve",
+    "year": "2020",
+    "first_author": "heitz"
+  },
+  "anderson2017aether": {
+    "index": 23,
+    "anchor": "original-reference-23",
+    "source_line": 193,
+    "source_text": "Anderson, L., T.-M. Li, J. Lehtinen, and F. Durand. 2017. Aether: An embedded domain specific sampling language for Monte Carlo rendering. ACM Transactions on Graphics (Proceedings of SIGGRAPH 2017) 36 (4), 99:1–16.",
+    "title": "Aether: An embedded domain specific sampling language for Monte Carlo rendering",
+    "year": "2017",
+    "first_author": "anderson"
+  },
+  "muller1956method": {
+    "index": 825,
+    "anchor": "original-reference-825",
+    "source_line": 3372,
+    "source_text": "Muller, D. E. 1956. A method for solving algebraic equations using an automatic computer. Mathematical Tables and Other Aids to Computation 10 (56), 208–15.",
+    "title": "A method for solving algebraic equations using an automatic computer",
+    "year": "1956",
+    "first_author": "muller"
+  },
+  "talbot2005importance": {
+    "index": 1140,
+    "anchor": "original-reference-1140",
+    "source_line": 4589,
+    "source_text": "Talbot, J., D. Cline, and P. Egbert. 2005. Importance resampling for global illumination. Rendering Techniques 2005: 16th Eurographics Workshop on Rendering, 139–46.",
+    "title": "Importance resampling for global illumination",
+    "year": "2005",
+    "first_author": "talbot"
+  },
+  "subr2007statistical": {
+    "index": 1119,
+    "anchor": "original-reference-1119",
+    "source_line": 4515,
+    "source_text": "Subr, K., and J. Arvo. 2007a. Statistical hypothesis testing for assessing Monte Carlo estimators: Applications to image synthesis. In Pacific Graphics ’97, 106–15.",
+    "title": "Statistical hypothesis testing for assessing Monte Carlo estimators: Applications to image synthesis",
+    "year": "2007a",
+    "first_author": "subr"
+  },
+  "jung2020detecting": {
+    "index": 591,
+    "anchor": "original-reference-591",
+    "source_line": 2465,
+    "source_text": "Jung, A., J. Hanika, and C. Dachsbacher. 2020. Detecting bias in Monte Carlo renderers using Welch’s t-test. Journal of Computer Graphics Techniques (JCGT) 9 (2), 1–25.",
+    "title": "Detecting bias in Monte Carlo renderers using Welch’s t-test",
+    "year": "2020",
+    "first_author": "jung"
+  },
+  "oh2010": {
+    "index": 867,
+    "anchor": "original-reference-867",
+    "source_line": 3535,
+    "source_text": "Oh, S. B., S. Kashyap, R. Garg, S. Chandran, and R. Raskar. 2010. Rendering wave effects with augmented light field. Computer Graphics Forum (Eurographics 2010) 29 (2), 507–16.",
+    "title": "Rendering wave effects with augmented light field",
+    "year": "2010",
+    "first_author": "oh"
+  },
+  "Cuypers2012": {
+    "index": 215,
+    "anchor": "original-reference-215",
+    "source_line": 920,
+    "source_text": "Cuypers, T., T. Haber, P. Bekaert, S. B. Oh, and R. Raskar. 2012. Reflectance model for diffraction. ACM Transactions on Graphics 31 (5), 122:1–11.",
+    "title": "Reflectance model for diffraction",
+    "year": "2012",
+    "first_author": "cuypers"
+  },
+  "hart2020practical": {
+    "index": 465,
+    "anchor": "original-reference-465",
+    "source_line": 1947,
+    "source_text": "Hart, D., M. Pharr, T. Müller, W. Lopes, M. McGuire, and P. Shirley. 2020. Practical product sampling by fitting and composing warps. Computer Graphics Forum 39 (4), 149–58.",
+    "title": "Practical product sampling by fitting and composing warps",
+    "year": "2020",
+    "first_author": "hart"
+  },
+  "owen2019monte": {
+    "index": 885,
+    "anchor": "original-reference-885",
+    "source_line": 3614,
+    "source_text": "Owen, A. B. 2019. Monte Carlo theory, methods and examples. https://statweb.stanford.edu/ owen/mc/.",
+    "title": "Monte Carlo theory, methods and examples",
+    "year": "2019",
+    "first_author": "owen"
+  },
+  "meyer2010floating": {
+    "index": 789,
+    "anchor": "original-reference-789",
+    "source_line": 3236,
+    "source_text": "Meyer, Q., J. Süssmuth, G. Sussner, M. Stamminger, and G. Greiner. 2010. On floating-point normal vectors. Proceedings of the 21st Eurographics Conference on Rendering, 1405–9.",
+    "title": "On floating-point normal vectors",
+    "year": "2010",
+    "first_author": "meyer"
+  },
+  "barequet2005optimal": {
+    "index": 57,
+    "anchor": "original-reference-57",
+    "source_line": 322,
+    "source_text": "Barequet, G., and G. Elber. 2005. Optimal bounding cones of vectors in three dimensions. Information Processing Letters 93 (2), 83–89.",
+    "title": "Optimal bounding cones of vectors in three dimensions",
+    "year": "2005",
+    "first_author": "barequet"
+  },
+  "buck1978advanced": {
+    "index": 130,
+    "anchor": "original-reference-130",
+    "source_line": 581,
+    "source_text": "Buck, R. C. 1978. Advanced Calculus. New York: McGraw-Hill.",
+    "title": "Advanced Calculus",
+    "year": "1978",
+    "first_author": "buck"
+  },
+  "cigolle2014survey": {
+    "index": 178,
+    "anchor": "original-reference-178",
+    "source_line": 778,
+    "source_text": "Cigolle, Z. H., S. Donow, D. Evangelakos, M. Mara, M. McGuire, and Q. Meyer. 2014. Survey of efficient representations for independent unit vectors. Journal of Computer Graphics Techniques (JCGT) 3 (2), 1–30.",
+    "title": "Survey of efficient representations for independent unit vectors",
+    "year": "2014",
+    "first_author": "cigolle"
+  },
+  "clarberg2008fast": {
+    "index": 179,
+    "anchor": "original-reference-179",
+    "source_line": 781,
+    "source_text": "Clarberg, P. 2008. Fast equal-area mapping of the (hemi)sphere using SIMD. Journal of Graphics Tools 13 (3), 53–68.",
+    "title": "Fast equal-area mapping of the (hemi)sphere using SIMD",
+    "year": "2008",
+    "first_author": "clarberg"
+  },
+  "derose1989coordinate": {
+    "index": 245,
+    "anchor": "original-reference-245",
+    "source_line": 1038,
+    "source_text": "DeRose, T. D. 1989. A Coordinate-Free Approach to Geometric Programming. Math for SIGGRAPH, SIGGRAPH Course Notes #23. Also available as Technical Report No. 89-09-16, Department of Computer Science and Engineering, University of Washington, Seattle.",
+    "title": "A Coordinate-Free Approach to Geometric Programming",
+    "year": "1989",
+    "first_author": "derose"
+  },
+  "donnay1945spherical": {
+    "index": 259,
+    "anchor": "original-reference-259",
+    "source_line": 1089,
+    "source_text": "Donnay, J. D. H. 1945. Spherical Trigonometry after the Cesàro Method. New York, NY: Interscience Publishers.",
+    "title": "Spherical Trigonometry after the Cesàro Method",
+    "year": "1945",
+    "first_author": "donnay"
+  },
+  "duff2017building": {
+    "index": 277,
+    "anchor": "original-reference-277",
+    "source_line": 1167,
+    "source_text": "Duff, T., J. Burgess, P. Christensen, C. Hery, A. Kensler, M. Liani, and R. Villemin. 2017. Building an orthonormal basis, revisited. Journal of Computer Graphics Techniques (JCGT) 6 (1), 1–8.",
+    "title": "Building an orthonormal basis, revisited",
+    "year": "2017",
+    "first_author": "duff"
+  },
+  "frisvad2012building": {
+    "index": 332,
+    "anchor": "original-reference-332",
+    "source_line": 1392,
+    "source_text": "Frisvad, J. R. 2012. Building an orthonormal basis from a 3d unit vector without normalization. Journal of Graphics Tools 16 (3), 151–159.",
+    "title": "Building an orthonormal basis from a 3d unit vector without normalization",
+    "year": "2012",
+    "first_author": "frisvad"
+  },
+  "geisler2020geometry": {
+    "index": 355,
+    "anchor": "original-reference-355",
+    "source_line": 1493,
+    "source_text": "Geisler, D., I. Yoon, A. Kabra, H. He, Y. Sanders, and A. Sampson. 2020. Geometry types for graphics programming. Proceedings of the ACM on Programming Languages (OOPSLA 2020) 4, 173:1–25.",
+    "title": "Geometry types for graphics programming",
+    "year": "2020",
+    "first_author": "geisler"
+  },
+  "hatch2003right": {
+    "index": 471,
+    "anchor": "original-reference-471",
+    "source_line": 1968,
+    "source_text": "Hatch, D. 2003. The right way to calculate stuff. http://www.plunk.org/ hatch/rightway.html.",
+    "title": "The right way to calculate stuff",
+    "year": "2003",
+    "first_author": "hatch"
+  },
+  "hughes2021personal": {
+    "index": 528,
+    "anchor": "original-reference-528",
+    "source_line": 2203,
+    "source_text": "Hughes, J. F. 2021. Personal communication.",
+    "title": "Personal communication",
+    "year": "2021",
+    "first_author": "hughes"
+  },
+  "lang1986introduction": {
+    "index": 697,
+    "anchor": "original-reference-697",
+    "source_line": 2883,
+    "source_text": "Lang, S. 1986. An Introduction to Linear Algebra. New York: Springer-Verlag.",
+    "title": "An Introduction to Linear Algebra",
+    "year": "1986",
+    "first_author": "lang"
+  },
+  "max2017improved": {
+    "index": 764,
+    "anchor": "original-reference-764",
+    "source_line": 3146,
+    "source_text": "Max, N. 2017. Improved accuracy when building an orthonormal basis. Journal of Computer Graphics Techniques (JCGT) 6 (1), 9–16.",
+    "title": "Improved accuracy when building an orthonormal basis",
+    "year": "2017",
+    "first_author": "max"
+  },
+  "praun2003spherical": {
+    "index": 955,
+    "anchor": "original-reference-955",
+    "source_line": 3880,
+    "source_text": "Praun, E., and Hoppe, H. 2003. Spherical parameterization and remeshing. ACM Transactions on Graphics (Proceedings of SIGGRAPH 2003) 22 (3), 340–49.",
+    "title": "Spherical parameterization and remeshing",
+    "year": "2003",
+    "first_author": "praun"
+  },
+  "schneider2003geometric": {
+    "index": 1038,
+    "anchor": "original-reference-1038",
+    "source_line": 4196,
+    "source_text": "Schneider, P. J., and D. H. Eberly. 2003. Geometric Tools for Computer Graphics. San Francisco: Morgan Kaufmann.",
+    "title": "Geometric Tools for Computer Graphics",
+    "year": "2003",
+    "first_author": "schneider"
+  },
+  "shirley1997low": {
+    "index": 1062,
+    "anchor": "original-reference-1062",
+    "source_line": 4288,
+    "source_text": "Shirley, P., and K. Chiu. 1997. A low distortion map between disk and square. Journal of Graphics Tools 2 (3), 45–52.",
+    "title": "A low distortion map between disk and square",
+    "year": "1997",
+    "first_author": "shirley"
+  },
+  "strom2020immersive": {
+    "index": 1117,
+    "anchor": "original-reference-1117",
+    "source_line": 4509,
+    "source_text": "Ström, J., K. Åström, and T. Akenine-Möller. 2020. Immersive linear algebra. immersivemath.com.",
+    "title": "Immersive linear algebra",
+    "year": "2020",
+    "first_author": "strom"
+  },
+  "vanoosterom1983solid": {
+    "index": 1186,
+    "anchor": "original-reference-1186",
+    "source_line": 4771,
+    "source_text": "Van Oosterom, A., and J. Strackee. 1983. The solid angle of a plane triangle. IEEE Transactions on Biomedical Engineering BME-30 (2), 125–26.",
+    "title": "The solid angle of a plane triangle",
+    "year": "1983",
+    "first_author": "vanoosterom"
+  },
+  "mccluney1994introduction": {
+    "index": 768,
+    "anchor": "original-reference-768",
+    "source_line": 3160,
+    "source_text": "McCluney, W. R. 1994. Introduction to Radiometry and Photometry. Boston: Artech House.",
+    "title": "Introduction to Radiometry and Photometry",
+    "year": "1994",
+    "first_author": "mccluney"
+  },
+  "malacara2002color": {
+    "index": 745,
+    "anchor": "original-reference-745",
+    "source_line": 3077,
+    "source_text": "Malacara, D. 2002. Color Vision and Colorimetry: Theory and Applications. SPIE—The International Society for Optical Engineering. Bellingham, WA.",
+    "title": "Color Vision and Colorimetry: Theory and Applications",
+    "year": "2002",
+    "first_author": "malacara"
+  },
+  "judd1964spectral": {
+    "index": 590,
+    "anchor": "original-reference-590",
+    "source_line": 2462,
+    "source_text": "Judd, D. B., D. L. MacAdam, and G. Wyszecki. 1964. Spectral distribution of typical daylight as a function of correlated color temperature. Journal of the Optical Society of America 54 (8), 1031–40.",
+    "title": "Spectral distribution of typical daylight as a function of correlated color temperature",
+    "year": "1964",
+    "first_author": "judd"
+  },
+  "steinberg2021generic": {
+    "index": 1110,
+    "anchor": "original-reference-1110",
+    "source_line": 4487,
+    "source_text": "Steinberg, S., and L.-Q. Yan. 2021. A generic framework for physical light transport. ACM Transactions on Graphics (Proceedings of SIGGRAPH) 40 (4), 139:1–20.",
+    "title": "A generic framework for physical light transport",
+    "year": "2021",
+    "first_author": "steinberg"
+  },
+  "wilkie2011physically": {
+    "index": 1278,
+    "anchor": "original-reference-1278",
+    "source_line": 5158,
+    "source_text": "Wilkie, A., and A. Weidlich. 2011. A physically plausible model for light emission from glowing solid objects. Computer Graphics Forum (Proceedings of the 2011 Eurographics Symposium on Rendering) 30 (4), 1269–76.",
+    "title": "A physically plausible model for light emission from glowing solid objects",
+    "year": "2011",
+    "first_author": "wilkie"
+  },
+  "morovi2008color": {
+    "index": 819,
+    "anchor": "original-reference-819",
+    "source_line": 3347,
+    "source_text": "Morovi, J. 2008. Color Gamut Mapping. New York: John Wiley & Sons.",
+    "title": "Color Gamut Mapping",
+    "year": "2008",
+    "first_author": "morovi"
+  },
+  "faridul2016colour": {
+    "index": 309,
+    "anchor": "original-reference-309",
+    "source_line": 1304,
+    "source_text": "Faridul, H. S., T. Pouli, C. Chamaret, J. Stauder, E. Reinhard, D. Kuzovkin, and A. Tremeau. 2016. Colour mapping: A review of recent methods, extensions and applications. Computer Graphics Forum 35 (1), 59–88.",
+    "title": "Colour mapping: A review of recent methods, extensions and applications",
+    "year": "2016",
+    "first_author": "faridul"
+  },
+  "eilertsen2017comparative": {
+    "index": 292,
+    "anchor": "original-reference-292",
+    "source_line": 1231,
+    "source_text": "Eilertsen, G., R. K. Mantiuk, and J. Unger. 2017. A comparative review of tone-mapping algorithms for high dynamic range video. Computer Graphics Forum (Eurographics State of the Art Report) 36 (2), 565–92.",
+    "title": "A comparative review of tone-mapping algorithms for high dynamic range video",
+    "year": "2017",
+    "first_author": "eilertsen"
+  },
+  "mallett2019spectral": {
+    "index": 746,
+    "anchor": "original-reference-746",
+    "source_line": 3080,
+    "source_text": "Mallett, I., and C. Yuksel. 2019. Spectral primary decomposition for rendering with sRGB reflectance. Eurographics Symposium on Rendering–DL-only and Industry Track.",
+    "title": "Spectral primary decomposition for rendering with sRGB reflectance",
+    "year": "2019",
+    "first_author": "mallett"
+  },
+  "jakob2019low": {
+    "index": 558,
+    "anchor": "original-reference-558",
+    "source_line": 2321,
+    "source_text": "Jakob, W., and J. Hanika. 2019. A low-dimensional function space for efficient spectral upsampling. Computer Graphics Forum (Proceedings of Eurographics) 38 (2), 147–55.",
+    "title": "A low-dimensional function space for efficient spectral upsampling",
+    "year": "2019",
+    "first_author": "jakob"
+  },
+  "jung2019wide": {
+    "index": 593,
+    "anchor": "original-reference-593",
+    "source_line": 2475,
+    "source_text": "Jung, A., A. Wilkie, J. Hanika, W. Jakob, and C. Dachsbacher. 2019. Wide gamut spectral upsampling with fluorescence. Computer Graphics Forum 38 (4), 87–96.",
+    "title": "Wide gamut spectral upsampling with fluorescence",
+    "year": "2019",
+    "first_author": "jung"
+  },
+  "peters2019using": {
+    "index": 926,
+    "anchor": "original-reference-926",
+    "source_line": 3770,
+    "source_text": "Peters, C., S. Merzbach, J. Hanika, and C. Dachsbacher. 2019. Using moments to represent bounded signals for spectral rendering. ACM Transactions on Graphics (Proceedings of SIGGRAPH) 38 (4), 136:1–14.",
+    "title": "Using moments to represent bounded signals for spectral rendering",
+    "year": "2019",
+    "first_author": "peters"
+  },
+  "otsu2018reproducing": {
+    "index": 877,
+    "anchor": "original-reference-877",
+    "source_line": 3582,
+    "source_text": "Otsu, H., M. Yamamoto, and T. Hachisuka. 2018b. Reproducing spectral reflectances from tristimulus colours. Computer Graphics Forum 37 (6), 370–381.",
+    "title": "Reproducing spectral reflectances from tristimulus colours",
+    "year": "2018b",
+    "first_author": "otsu"
+  },
+  "todova2021moment": {
+    "index": 1148,
+    "anchor": "original-reference-1148",
+    "source_line": 4629,
+    "source_text": "Tódová, L., A. Wilkie, and L. Fascione. 2021. Moment-based constrained spectral uplifting. Proceedings of the Eurographics Symposium on Rendering, 215–24.",
+    "title": "Moment-based constrained spectral uplifting",
+    "year": "2021",
+    "first_author": "todova"
+  },
+  "TURKOWSKI1990539": {
+    "index": 1164,
+    "anchor": "original-reference-1164",
+    "source_line": 4694,
+    "source_text": "Turkowski, K. 1990b. Properties of surface-normal transformations. In A. S. Glassner (ed.), Graphics Gems I, 539–47. San Diego: Academic Press.",
+    "year": "1990b",
+    "basis": "Chapter 3 independent review; identical title, pages, and work, source year suffix retained"
+  },
+  "cie2004colorimetry": {
+    "index": 176,
+    "anchor": "original-reference-176",
+    "source_line": 772,
+    "source_text": "CIE Technical Report. 2004. Colorimetry. Publication 15:2004 (3rd ed.), CIE Central Bureau, Vienna.",
+    "year": "2004",
+    "basis": "Exact CIE corporate author, 2004, Colorimetry, publication 15:2004, third edition"
+  },
+  "ciechanowski2019color": {
+    "index": 177,
+    "anchor": "original-reference-177",
+    "source_line": 775,
+    "source_text": "Ciechanowski, B. 2019. Color spaces. https://ciechanow.ski/color-spaces/.",
+    "year": "2019",
+    "basis": "Exact author, 2019, Color spaces, and source URL"
+  }
+}

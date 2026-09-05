@@ -1,6 +1,6 @@
 #import "../template.typ": parec, ez_caption
 
-== Spherical Camera
+== #ez_caption[Spherical Camera][球面相机]
 <spherical-camera>
 #parec[
   One advantage of ray tracing compared to scan line or rasterization-based rendering methods is that it is easy to employ unusual image projections. We have great freedom in how the image sample positions are mapped into ray directions, since the rendering algorithm does not depend on properties such as straight lines in the scene always projecting to straight lines in the image.
@@ -9,58 +9,21 @@
 ]
 
 #parec[
-  In this section, we will describe a camera model that traces rays in all directions around a point in the scene, giving a view of everything that is visible from that point. The `SphericalCamera` supports two spherical parameterizations from @Spherical_Geometry to map points in the image to associated directions. Figure 5.16 shows this camera in action with the #emph[San Miguel] model.
+  In this section, we will describe a camera model that traces rays in all directions around a point in the scene, giving a view of everything that is visible from that point. The `SphericalCamera` supports two spherical parameterizations from @Spherical_Geometry to map points in the image to associated directions. @fig:envcamera-san-miguel shows this camera in action with the #emph[San Miguel] model.
 ][
-  在本节中，我们将描述一种相机模型，该模型在场景中的一个点周围的所有方向上追踪光线，从而提供从该点可见的所有事物的视图。`SphericalCamera` 支持@Spherical_Geometry 中的两种球面参数化方法，将图像中的点映射到相关方向。图 5.16 显示了使用 #emph[San Miguel] 模型的该相机的实际效果。
+  在本节中，我们将描述一种相机模型，该模型在场景中的一个点周围的所有方向上追踪光线，从而提供从该点可见的所有事物的视图。`SphericalCamera` 支持@Spherical_Geometry 中的两种球面参数化方法，将图像中的点映射到相关方向。@fig:envcamera-san-miguel 显示了使用 #emph[San Miguel] 模型的该相机的实际效果。
 ]
 
+#block(sticky: true)[#raw("<<SphericalCamera Definition>>=")] <fragment-SphericalCameraDefinition-0>
 ```cpp
 class SphericalCamera : public CameraBase {
   public:
-    enum Mapping { EquiRectangular, EqualArea };
-    SphericalCamera(CameraBaseParameters baseParameters, Mapping mapping)
-           : CameraBase(baseParameters), mapping(mapping) {
-              FindMinimumDifferentials(this);
-       }
-    static SphericalCamera *Create(const ParameterDictionary &parameters,
-                                  const CameraTransform &cameraTransform,
-                                  Film film, Medium medium,
-                                  const FileLoc *loc, Allocator alloc = {});
-
-    PBRT_CPU_GPU
-    pstd::optional<CameraRay> GenerateRay(CameraSample sample,
-                                          SampledWavelengths &lambda) const;
-
-    PBRT_CPU_GPU
-    pstd::optional<CameraRayDifferential> GenerateRayDifferential(
-        CameraSample sample, SampledWavelengths &lambda) const {
-        return CameraBase::GenerateRayDifferential(this, sample, lambda);
-    }
-
-    PBRT_CPU_GPU
-    SampledSpectrum We(const Ray &ray, SampledWavelengths &lambda,
-                      Point2f *pRaster2 = nullptr) const {
-        LOG_FATAL("We() unimplemented for SphericalCamera");
-        return {};
-    }
-
-    PBRT_CPU_GPU
-    void PDF_We(const Ray &ray, Float *pdfPos, Float *pdfDir) const {
-        LOG_FATAL("PDF_We() unimplemented for SphericalCamera");
-    }
-
-    PBRT_CPU_GPU
-    pstd::optional<CameraWiSample> SampleWi(const Interaction &ref, Point2f u,
-                                            SampledWavelengths &lambda) const {
-        LOG_FATAL("SampleWi() unimplemented for SphericalCamera");
-        return {};
-    }
-
-    std::string ToString() const;
+    <<SphericalCamera::Mapping Definition>>
+    <<SphericalCamera Public Methods>>
   private:
-    Mapping mapping;
+    <<SphericalCamera Private Members>>
 };
-```
+``` <SphericalCamera>
 
 
 #figure(
@@ -68,9 +31,9 @@ class SphericalCamera : public CameraBase {
     columns: 1,
     stroke: none,
     [#image("../pbr-book-website/4ed/Cameras_and_Film/sanmiguel-equirectangular.png")],
-    [(a) Equirectangular Mapping],
+    [#ez_caption[(a) Equirectangular Mapping][(a) 等距矩形映射]],
     [#image("../pbr-book-website/4ed/Cameras_and_Film/sanmiguel-equalarea.png", width: 50%)],
-    [(b) Equal-area Mapping],
+    [#ez_caption[(b) Equal-area Mapping][(b) 等面积映射]],
   ),
   caption: [
     #ez_caption[
@@ -86,69 +49,61 @@ class SphericalCamera : public CameraBase {
 #parec[
   `SphericalCamera` does not derive from `ProjectiveCamera` since the projections that it uses are nonlinear and cannot be captured by a single $4 times 4$ matrix.
 ][
-  `SphericalCamera` 不从 `ProjectiveCamera` 派生，因为它使用的投影是非线性的，不能通过单个 $4 times 4$ 矩阵捕获。
+  `SphericalCamera` 不从 `ProjectiveCamera` 派生，因为它使用的投影是非线性的，无法用单个 $4 times 4$ 矩阵表示。
 ]
 
+#block(sticky: true)[#raw("<<SphericalCamera Public Methods>>=")] <fragment-SphericalCameraPublicMethods-0>
 ```cpp
 SphericalCamera(CameraBaseParameters baseParameters, Mapping mapping)
     : CameraBase(baseParameters), mapping(mapping) {
-    FindMinimumDifferentials(this);
+    <<Compute minimum differentials for SphericalCamera>>
 }
 ```
 #parec[
-  The first mapping that `SphericalCamera` supports is the equirectangular mapping that was defined in @Spherical_Geometry. In the implementation here, $theta$ values range from $0$ at the top of the image to $pi$ at the bottom of the image, and $phi.alt$ values range from $0$ to $2 pi$, moving from left to right across the image.
+  The first mapping that `SphericalCamera` supports is the equirectangular mapping that was defined in @spherical-parameterizations. In the implementation here, $theta$ values range from $0$ at the top of the image to $pi$ at the bottom of the image, and $phi.alt$ values range from $0$ to $2 pi$, moving from left to right across the image.
 ][
-  `SphericalCamera` 支持的第一种映射是@Spherical_Geometry 中定义的等距矩形映射。在此实现中， $theta$ 值从图像顶部的 $0$ 到图像底部的 $pi$，而 $phi.alt$ 值从 $0$ 到 $2 pi$，从左到右移动。
+  `SphericalCamera` 支持的第一种映射是 @spherical-parameterizations 中定义的等距矩形映射。在此实现中， $theta$ 值从图像顶部的 $0$ 到图像底部的 $pi$，而 $phi.alt$ 值从 $0$ 到 $2 pi$，从左到右移动。
 ]
 
 #parec[
-  The equirectangular mapping is easy to evaluate and has the advantage that lines of constant latitude and longitude on the sphere remain straight. However, it preserves neither area nor angles between curves on the sphere (i.e., it is not #emph[conformal];). These issues are especially evident at the top and bottom of the image in @fig:envcamera-san-miguel(a).
+  The equirectangular mapping is easy to evaluate and has the advantage that lines of constant latitude and longitude on the sphere remain straight. However, it preserves neither area nor angles between curves on the sphere (i.e., it is not #emph[conformal]). These issues are especially evident at the top and bottom of the image in @fig:envcamera-san-miguel(a).
 ][
-  等距矩形映射易于评估，其优点是球体上的恒定纬度和经度线保持直线。然而，它既不保留面积也不保留球面上曲线之间的角度（即，它不是#emph[共形];的）。这些问题在@fig:envcamera-san-miguel(a) 的图像顶部和底部尤其明显。
+  等距矩形映射易于评估，其优点是球面上的纬线和经线映射后仍是直线。然而，它既不保留面积也不保留球面上曲线之间的角度（即，它不是#emph[共形]的）。这些问题在@fig:envcamera-san-miguel(a) 的图像顶部和底部尤其明显。
 ]
 
 #parec[
-  Therefore, the `SphericalCamera` also supports the equal-area mapping from @spherical-parameterizations. With this mapping, any finite solid angle of directions on the sphere maps to the same area in the image, regardless of where it is on the sphere. (This mapping is also used by the `ImageInfiniteLight`, which is described in @image-infinite-lights, and so images rendered using this camera can be used as light sources.) The equal-area mapping's use with the `SphericalCamera` is shown in Figure 5.16(b).
+  Therefore, the `SphericalCamera` also supports the equal-area mapping from @spherical-parameterizations. With this mapping, any finite solid angle of directions on the sphere maps to the same area in the image, regardless of where it is on the sphere. (This mapping is also used by the `ImageInfiniteLight`, which is described in @image-infinite-lights, and so images rendered using this camera can be used as light sources.) The equal-area mapping's use with the `SphericalCamera` is shown in @fig:envcamera-san-miguel(b).
 ][
-  因此，`SphericalCamera` 还支持@spherical-parameterizations 节中的等面积映射。使用此映射，球面上任何有限的立体角方向都映射到图像中的相同面积，无论它在球体上的哪个位置。（此映射也被 `ImageInfiniteLight` 使用，如 @image-infinite-lights 节所述，因此使用此相机渲染的图像可以用作光源。）@fig:envcamera-san-miguel(b) 显示了 `SphericalCamera` 使用等面积映射的效果。
+  因此，`SphericalCamera` 还支持@spherical-parameterizations 节中的等面积映射。使用此映射，球面上立体角相等的有限方向区域，无论位于球面何处，都映射为图像中面积相等的区域。（此映射也被 `ImageInfiniteLight` 使用，如 @image-infinite-lights 节所述，因此使用此相机渲染的图像可以用作光源。）@fig:envcamera-san-miguel(b) 显示了 `SphericalCamera` 使用等面积映射的效果。
 ]
 
 #parec[
   An enumeration reflects which mapping should be used.
 ][
-  一个枚举反映了应该使用哪种映射。
+  用一个枚举指定所采用的映射。
 ]
 
+#block(sticky: true)[#raw("<<SphericalCamera::Mapping Definition>>=")] <fragment-SphericalCamera::MappingDefinition-0>
 ```cpp
-// <<SphericalCamera::Mapping Definition>>
 enum Mapping { EquiRectangular, EqualArea };
 ```
 
 
+#block(sticky: true)[#raw("<<SphericalCamera Private Members>>=")] <fragment-SphericalCameraPrivateMembers-0>
 ```cpp
-// <<SphericalCamera Private Members>>
 Mapping mapping;
 ```
 #parec[
   The main task of the `GenerateRay()` method is to apply the requested mapping. The rest of it follows the earlier `GenerateRay()` methods.
 ][
-  `GenerateRay()` 方法的主要任务是应用请求的映射。其余部分遵循早期的 `GenerateRay()` 方法。
+  `GenerateRay()` 方法的主要任务是应用请求的映射。其余部分与前面介绍的 `GenerateRay()` 方法。
 ]
 
+#block(sticky: true)[#raw("<<SphericalCamera Method Definitions>>=")] <fragment-SphericalCameraMethodDefinitions-0>
 ```cpp
 pstd::optional<CameraRay> SphericalCamera::GenerateRay(
         CameraSample sample, SampledWavelengths &lambda) const {
-    Point2f uv(sample.pfilm.x / film.FullResolution().x,
-                  sample.pfilm.y / film.FullResolution().y);
-    Vector3f dir;
-    if (mapping == EquiRectangular) {
-          Float theta = Pi * uv[1], phi = 2 * Pi * uv[0];
-          dir = SphericalDirection(std::sin(theta), std::cos(theta), phi);
-    } else {
-          uv = WrapEqualAreaSquare(uv);
-          dir = EqualAreaSquareToSphere(uv);
-    }
-    pstd::swap(dir.y, dir.z);
+    <<Compute spherical camera ray direction>>
     Ray ray(Point3f(0, 0, 0), dir, SampleTime(sample.time), medium);
     return CameraRay{RenderFromCamera(ray)};
 }
@@ -157,19 +112,18 @@ pstd::optional<CameraRay> SphericalCamera::GenerateRay(
 #parec[
   For the use of both mappings, $(u , v)$ coordinates in NDC space are found by dividing the raster space sample location by the image's overall resolution. Then, after the mapping is applied, the $y$ and $z$ coordinates are swapped to account for the fact that both mappings are defined with $z$ as the "up" direction, while $y$ is "up" in camera space.
 ][
-  对于两种映射的使用，通过将光栅空间采样位置除以图像的整体分辨率来找到标准化设备坐标空间 (NDC) 中的 $(u , v)$ 坐标。然后，在应用映射后，交换 $y$ 和 $z$ 坐标，以考虑到两种映射都将 $z$ 定义为“向上”方向，而在相机空间中 $y$ 是“向上”方向。
+  对于两种映射的使用，通过将光栅空间采样位置除以图像的整体分辨率来找到归一化设备坐标空间 (NDC) 中的 $(u , v)$ 坐标。然后，在应用映射后，交换 $y$ 和 $z$ 坐标，以考虑到两种映射都将 $z$ 定义为“向上”方向，而在相机空间中 $y$ 是“向上”方向。
 ]
 
+#block(sticky: true)[#raw("<<Compute spherical camera ray direction>>=")] <fragment-Computesphericalcameraraydirection-0>
 ```cpp
 Point2f uv(sample.pfilm.x / film.FullResolution().x,
            sample.pfilm.y / film.FullResolution().y);
 Vector3f dir;
 if (mapping == EquiRectangular) {
-    Float theta = Pi * uv[1], phi = 2 * Pi * uv[0];
-    dir = SphericalDirection(std::sin(theta), std::cos(theta), phi);
+    <<Compute ray direction using equirectangular mapping>>
 } else {
-    uv = WrapEqualAreaSquare(uv);
-    dir = EqualAreaSquareToSphere(uv);
+    <<Compute ray direction using equal-area mapping>>
 }
 pstd::swap(dir.y, dir.z);
 ```
@@ -181,6 +135,7 @@ pstd::swap(dir.y, dir.z);
   对于等距矩形映射，将 $(u , v)$ 坐标缩放以覆盖 $(theta , phi.alt)$ 范围，并使用球面坐标公式计算射线方向。
 ]
 
+#block(sticky: true)[#raw("<<Compute ray direction using equirectangular mapping>>=")] <fragment-Computeraydirectionusingequirectangularmapping-0>
 ```cpp
 Float theta = Pi * uv[1], phi = 2 * Pi * uv[0];
 dir = SphericalDirection(std::sin(theta), std::cos(theta), phi);
@@ -192,6 +147,7 @@ dir = SphericalDirection(std::sin(theta), std::cos(theta), phi);
   由于像素采样滤波函数，`CameraSample` 的 $(u , v)$ 值可能略微超出 $[0 , 1]^2$ 范围。调用 `WrapEqualAreaSquare()` 函数用于处理边界条件，然后 `EqualAreaSquareToSphere()` 执行实际映射。
 ]
 
+#block(sticky: true)[#raw("<<Compute ray direction using equal-area mapping>>=")] <fragment-Computeraydirectionusingequal-areamapping-0>
 ```cpp
 uv = WrapEqualAreaSquare(uv);
 dir = EqualAreaSquareToSphere(uv);
@@ -200,3 +156,7 @@ dir = EqualAreaSquareToSphere(uv);
 
 
 
+
+#include "supplements/5.3-expanded.typ"
+
+#parec[Editorial note: the fixed original code spells the film sample member `sample.pfilm`, whereas `CameraSample` in @camera-interface declares `pFilm`. The original code spelling is preserved here as a source inconsistency.][校订说明：固定原文代码写作 `sample.pfilm`，但 @camera-interface 的 `CameraSample` 将该成员声明为 `pFilm`。这是原文代码的大小写不一致，此处保留原代码拼写。]

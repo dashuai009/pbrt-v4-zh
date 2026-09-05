@@ -1,0 +1,443 @@
+{
+  "cite:Adams2007": {
+    "anchor": "original-reference-1",
+    "index": 1,
+    "year": "2007",
+    "text": "Adams, A., and M. Levoy. 2007. General linear cameras with finite aperture. In Rendering Techniques (Proceedings of the 2007 Eurographics Symposium on Rendering), 121–26.",
+    "source_line": 117
+  },
+  "cite:Moller18": {
+    "anchor": "original-reference-14",
+    "index": 14,
+    "year": "2018",
+    "text": "Akenine-Möller, T., E. Haines, N. Hoffman, A. Peesce, M. Iwanicki, and S. Hillaire. 2018. Real-Time Rendering (4th ed.). Boca Raton, FL: CRC Press.",
+    "source_line": 163
+  },
+  "cite:Bako2017": {
+    "anchor": "original-reference-54",
+    "index": 54,
+    "year": "2017",
+    "text": "Bako, S., T. Vogels, B. McWilliams, M. Meyer, J. Novák, A. Harvill, P. Sen, T. DeRose, and F. Rousselle. 2017. Kernel-predicting convolutional networks for denoising Monte Carlo renderings. ACM Transactions on Graphics (Proceedings of SIGGRAPH) 36 (4), 97:1–14.",
+    "source_line": 310
+  },
+  "cite:Bitterli2016": {
+    "anchor": "original-reference-101",
+    "index": 101,
+    "year": "2016",
+    "text": "Bitterli, B., F. Rousselle, B. Moon, J. A. Iglesias-Guitián, D. Adler, K. Mitchell, W. Jarosz, and J. Novák. 2016. Nonlinearly weighted first-order regression for denoising Monte Carlo renderings. Computer Graphics Forum 35 (4), 107–17.",
+    "source_line": 478
+  },
+  "cite:Boughida2017": {
+    "anchor": "original-reference-120",
+    "index": 120,
+    "year": "2017",
+    "text": "Boughida, M., and T. Boubekeur. 2017. Bayesian collaborative denoising for Monte Carlo rendering. Computer Graphics Forum 36 (4), 137–53.",
+    "source_line": 547
+  },
+  "cite:Buisine2021": {
+    "anchor": "original-reference-133",
+    "index": 133,
+    "year": "2021",
+    "text": "Buisine, J., S. Delepoulle, and C. Renaud. 2021. Firefly removal in Monte Carlo rendering with adaptive Median of meaNs. Proceedings of the Eurographics Symposium on Rendering, 121–32.",
+    "source_line": 591
+  },
+  "cite:Celarek2019": {
+    "anchor": "original-reference-146",
+    "index": 146,
+    "year": "2019",
+    "text": "Celarek, A., W. Jakob, M. Wimmer, and J. Lehtinen. 2019. Quantifying the error of light transport algorithms. Computer Graphics Forum 38 (4), 111–21.",
+    "source_line": 649
+  },
+  "cite:Chaitanya2017": {
+    "anchor": "original-reference-149",
+    "index": 149,
+    "year": "2017",
+    "text": "Chaitanya, C. R. A., A. S. Kaplanyan, C. Schied, M. Salvi, A. Lefohn, D. Nowrouzezahrai, and T. Aila. 2017. Interactive reconstruction of Monte Carlo image sequences using a recurrent denoising autoencoder. ACM Transactions on Graphics (Proceedings of SIGGRAPH) 36 (4), 98:1–12.",
+    "source_line": 662
+  },
+  "cite:Chen2009": {
+    "anchor": "original-reference-153",
+    "index": 153,
+    "year": "2009",
+    "text": "Chen, J., K. Venkataraman, D. Bakin, B. Rodricks, R. Gravelle, P. Rao, and Y. Ni. 2009. Digital camera imaging system simulation. IEEE Transactions on Electron Devices 56 (11), 2496–505.",
+    "source_line": 678
+  },
+  "cite:Cook86": {
+    "anchor": "original-reference-204",
+    "index": 204,
+    "year": "1986",
+    "text": "Cook, R. L. 1986. Stochastic sampling in computer graphics. ACM Transactions on Graphics 5 (1), 51–72.",
+    "source_line": 878
+  },
+  "cite:Cook84": {
+    "anchor": "original-reference-207",
+    "index": 207,
+    "year": "1984",
+    "text": "Cook, R. L., T. Porter, and L. Carpenter. 1984. Distributed ray tracing. Computer Graphics (SIGGRAPH ’84 Proceedings) 18, 137–45.",
+    "source_line": 892
+  },
+  "cite:Dammertz2010": {
+    "anchor": "original-reference-223",
+    "index": 223,
+    "year": "2010",
+    "text": "Dammertz, H., D. Sewtz, J. Hanika, and H. P. A. Lensch. 2010. Edge-avoiding À-Trous wavelet transform for fast global illumination filtering. Proceedings of High Performance Graphics (HPG ’10), 67–75.",
+    "source_line": 954
+  },
+  "cite:DeCoro2010": {
+    "anchor": "original-reference-231",
+    "index": 231,
+    "year": "2010",
+    "text": "DeCoro, C., T. Weyrich, and S. Rusinkiewicz. 2010. Density-based outlier rejection in Monte Carlo rendering. Computer Graphics Forum (Proceedings of Pacific Graphics) 29 (7), 2119–25.",
+    "source_line": 981
+  },
+  "cite:Eberly01": {
+    "anchor": "original-reference-288",
+    "index": 288,
+    "year": "2001",
+    "text": "Eberly, D. H. 2001. 3D Game Engine Design: A Practical Approach to Real-Time Computer Graphics. San Francisco: Morgan Kaufmann.",
+    "source_line": 1212
+  },
+  "cite:Ernst2006": {
+    "anchor": "original-reference-302",
+    "index": 302,
+    "year": "2006",
+    "text": "Ernst, M., M. Stamminger, and G. Greiner. 2006. Filter importance sampling. IEEE Symposium on Interactive Ray Tracing, 125–32.",
+    "source_line": 1268
+  },
+  "cite:Fichet2021": {
+    "anchor": "original-reference-321",
+    "index": 321,
+    "year": "2021",
+    "text": "Fichet, A., R. Pacanowski, and A. Wilkie. 2021. An OpenEXR layout for spectral images. Journal of Computer Graphics Techniques 10 (3), 1–18.",
+    "source_line": 1352
+  },
+  "cite:Gharbi2019": {
+    "anchor": "original-reference-363",
+    "index": 363,
+    "year": "2019",
+    "text": "Gharbi, M., T.-M. Li, M. Aittala, J. Lehtinen, and F. Durand. 2019. Sample-based Monte Carlo denoising using a kernel-splatting network. ACM Transactions on Graphics (Proceedings of SIGGRAPH) 38 (4), 125:1–12.",
+    "source_line": 1522
+  },
+  "cite:Gijsenij2011": {
+    "anchor": "original-reference-367",
+    "index": 367,
+    "year": "2011",
+    "text": "Gijsenij, A., T. Gevers, and J. van de Weijer. 2011. Computational color constancy: Survey and experiments. IEEE Transactions on Image Processing 20 (9), 2475–89.",
+    "source_line": 1537
+  },
+  "cite:Glassner1999": {
+    "anchor": "original-reference-381",
+    "index": 381,
+    "year": "1999",
+    "text": "Glassner, A. 1999. An open and shut case. IEEE Computer Graphics and Applications 19 (3), 82–92.",
+    "source_line": 1597
+  },
+  "cite:Gortler96": {
+    "anchor": "original-reference-391",
+    "index": 391,
+    "year": "1996",
+    "text": "Gortler, S. J., R. Grzeszczuk, R. Szeliski, and M. F. Cohen. 1996. The lumigraph. Proceedings of SIGGRAPH ’96, Computer Graphics Proceedings, Annual Conference Series, 43–54.",
+    "source_line": 1635
+  },
+  "cite:Greene86ewa": {
+    "anchor": "original-reference-397",
+    "index": 397,
+    "year": "1986",
+    "text": "Greene, N., and P. S. Heckbert. 1986. Creating raster Omnimax images from multiple perspective views using the elliptical weighted average filter. IEEE Computer Graphics and Applications 6 (6), 21–27.",
+    "source_line": 1659
+  },
+  "cite:Gribel2017": {
+    "anchor": "original-reference-399",
+    "index": 399,
+    "year": "2017",
+    "text": "Gribel, C. J., and T. Akenine-Möller. 2017. Time-continuous quasi-Monte Carlo ray tracing. Computer Graphics Forum 36 (6), 354–67.",
+    "source_line": 1666
+  },
+  "cite:Hanika2014": {
+    "anchor": "original-reference-454",
+    "index": 454,
+    "year": "2014",
+    "text": "Hanika, J., and C. Dachsbacher. 2014. Efficient Monte Carlo rendering with realistic lenses. Computer Graphics Forum (Proceedings of Eurographics 2014) 33 (2), 323–32.",
+    "source_line": 1908
+  },
+  "cite:Hasinoff2011": {
+    "anchor": "original-reference-469",
+    "index": 469,
+    "year": "2011",
+    "text": "Hasinoff, S. W., and K. N. Kutulakos. 2011. Light-efficient photography. IEEE Transactions on Pattern Analysis and Machine Intelligence 33 (11), 2203–14.",
+    "source_line": 1961
+  },
+  "cite:Hecht2002": {
+    "anchor": "original-reference-478",
+    "index": 478,
+    "year": "2002",
+    "text": "Hecht, E. 2002. Optics. Reading, Massachusetts: Addison-Wesley.",
+    "source_line": 1996
+  },
+  "cite:Hullin2012": {
+    "anchor": "original-reference-529",
+    "index": 529,
+    "year": "2012",
+    "text": "Hullin, M. B., J. Hanika, and W. Heidrich. 2012. Polynomial optics: A construction kit for efficient ray-tracing of lens systems. Computer Graphics Forum (Proceedings of the 2012 Eurographics Symposium on Rendering) 31 (4), 1375–83.",
+    "source_line": 2205
+  },
+  "cite:Jacobs2012": {
+    "anchor": "original-reference-552",
+    "index": 552,
+    "year": "2012",
+    "text": "Jacobs, D. E., J. Baek, and M. Levoy. 2012. Focal stack compositing for depth of field control. Stanford Computer Graphics Laboratory Technical Report, CSTR 2012-1.",
+    "source_line": 2293
+  },
+  "cite:Jensen95noise": {
+    "anchor": "original-reference-582",
+    "index": 582,
+    "year": "1995",
+    "text": "Jensen, H. W., and N. Christensen. 1995. Optimizing path tracing using noise reduction filters. In Proceedings of WSCG, 134–42.",
+    "source_line": 2425
+  },
+  "cite:Joo2016": {
+    "anchor": "original-reference-589",
+    "index": 589,
+    "year": "2016",
+    "text": "Joo, H., S. Kwon, S. Lee, E. Eisemann, and S. Lee. 2016. Efficient ray tracing through aspheric lenses and imperfect Bokeh synthesis. Computer Graphics Forum 35 (4), 99–105.",
+    "source_line": 2459
+  },
+  "cite:Kalantari2015": {
+    "anchor": "original-reference-603",
+    "index": 603,
+    "year": "2015",
+    "text": "Kalantari, N. K., S. Bako, and P. Sen. 2015. A machine learning approach for filtering Monte Carlo noise. ACM Transactions on Graphics (Proceedings of SIGGRAPH 2015) 34 (4), 122:1–12.",
+    "source_line": 2515
+  },
+  "cite:Keller98": {
+    "anchor": "original-reference-626",
+    "index": 626,
+    "year": "1998",
+    "text": "Keller, A. 1998. Quasi-Monte Carlo methods for photorealistic image synthesis. Ph.D. thesis, Shaker Verlag Aachen.",
+    "source_line": 2599
+  },
+  "cite:Kensler2021": {
+    "anchor": "original-reference-635",
+    "index": 635,
+    "year": "2021",
+    "text": "Kensler, A. 2021. Tilt-shift rendering using a thin lens model. In Marrs, A., P. Shirley, and I. Wald (eds.), Ray Tracing Gems II, 499–513. Berkeley: Apress.",
+    "source_line": 2630
+  },
+  "cite:Kolb95": {
+    "anchor": "original-reference-664",
+    "index": 664,
+    "year": "1995",
+    "text": "Kolb, C., D. Mitchell, and P. Hanrahan. 1995. A realistic camera model for computer graphics. SIGGRAPH ’95 Conference Proceedings, Annual Conference Series, 317–24.",
+    "source_line": 2748
+  },
+  "cite:Langlands2020": {
+    "anchor": "original-reference-698",
+    "index": 698,
+    "year": "2020",
+    "text": "Langlands, A., and L. Fascione. 2020. PhysLight: An end-to-end pipeline for scene-referred lighting. SIGGRAPH 2020 Talks 19, 191–2.",
+    "source_line": 2886
+  },
+  "cite:Lee90": {
+    "anchor": "original-reference-708",
+    "index": 708,
+    "year": "1990",
+    "text": "Lee, M., and R. Redner. 1990. A note on the use of nonlinear filtering in computer graphics. IEEE Computer Graphics and Applications 10 (3), 23–29.",
+    "source_line": 2923
+  },
+  "cite:Levoy96": {
+    "anchor": "original-reference-714",
+    "index": 714,
+    "year": "1996",
+    "text": "Levoy, M., and P. M. Hanrahan. 1996. Light field rendering. In Proceedings of SIGGRAPH ’96, Computer Graphics Proceedings, Annual Conference Series, 31–42.",
+    "source_line": 2947
+  },
+  "cite:McCool1999": {
+    "anchor": "original-reference-770",
+    "index": 770,
+    "year": "1999",
+    "text": "McCool, M. D. 1999. Anisotropic diffusion for Monte Carlo noise reduction. ACM Transactions on Graphics 18 (2), 171–94.",
+    "source_line": 3166
+  },
+  "cite:Munkberg2020": {
+    "anchor": "original-reference-835",
+    "index": 835,
+    "year": "2020",
+    "text": "Munkberg, J., and J. Hasselgren. 2020. Neural denoising with layer embeddings. Computer Graphics Forum 39 (4), 1–12.",
+    "source_line": 3405
+  },
+  "cite:Ng2005": {
+    "anchor": "original-reference-847",
+    "index": 847,
+    "year": "2005",
+    "text": "Ng, R., M. Levoy, M. Brédif., G. Duval, M. Horowitz, and P. Hanrahan. 2005. Light field photography with a hand-held plenoptic camera. Stanford University Computer Science Technical Report, CSTR 2005-02.",
+    "source_line": 3454
+  },
+  "cite:Perlin85": {
+    "anchor": "original-reference-917",
+    "index": 917,
+    "year": "1985a",
+    "text": "Perlin, K. 1985a. An image synthesizer. In Computer Graphics (SIGGRAPH ’85 Proceedings), Volume 19, 287–96.",
+    "source_line": 3738
+  },
+  "cite:Potmesil81": {
+    "anchor": "original-reference-949",
+    "index": 949,
+    "year": "1981",
+    "text": "Potmesil, M., and I. Chakravarty. 1981. A lens and aperture camera model for synthetic image generation. In Computer Graphics (Proceedings of SIGGRAPH ’81), Volume 15, 297–305.",
+    "source_line": 3860
+  },
+  "cite:Potmesil82": {
+    "anchor": "original-reference-950",
+    "index": 950,
+    "year": "1982",
+    "text": "Potmesil, M., and I. Chakravarty. 1982. Synthetic image generation with a lens and aperture camera model. ACM Transactions on Graphics 1 (2), 85–108.",
+    "source_line": 3864
+  },
+  "cite:Potmesil83": {
+    "anchor": "original-reference-951",
+    "index": 951,
+    "year": "1983",
+    "text": "Potmesil, M., and I. Chakravarty. 1983. Modeling motion blur in computer-generated images. In Computer Graphics (Proceedings of SIGGRAPH 83), Volume 17, 389–99.",
+    "source_line": 3867
+  },
+  "cite:Radziszewski2009": {
+    "anchor": "original-reference-972",
+    "index": 972,
+    "year": "2009",
+    "text": "Radziszewski, M., K. Boryczko, and W. Alda. 2009. An improved technique for full spectral rendering. Journal of WSCG 17 (1-3), 9–16.",
+    "source_line": 3952
+  },
+  "cite:Rogers90": {
+    "anchor": "original-reference-1001",
+    "index": 1001,
+    "year": "1990",
+    "text": "Rogers, D. F., and J. A. Adams. 1990. Mathematical Elements for Computer Graphics. New York: McGraw-Hill.",
+    "source_line": 4063
+  },
+  "cite:Ronneberger2015": {
+    "anchor": "original-reference-1002",
+    "index": 1002,
+    "year": "2015",
+    "text": "Ronneberger, O., P. Fischer, and T. Brox. 2015. U-Net: Convolutional networks for biomedical image segmentation. Medical Image Computing and Computer-Assisted Intervention 9351, 234–41.",
+    "source_line": 4066
+  },
+  "cite:Rushmeier1994": {
+    "anchor": "original-reference-1018",
+    "index": 1018,
+    "year": "1994",
+    "text": "Rushmeier, H. E., and G. J. Ward. 1994. Energy preserving non-linear filters. Proceedings of SIGGRAPH 1994, 131–38.",
+    "source_line": 4122
+  },
+  "cite:Saito90": {
+    "anchor": "original-reference-1024",
+    "index": 1024,
+    "year": "1990",
+    "text": "Saito, T., and T. Takahashi. 1990. Comprehensible rendering of 3-D shapes. In Computer Graphics (Proceedings of SIGGRAPH ’90), Volume 24, 197–206.",
+    "source_line": 4145
+  },
+  "cite:Schied2017": {
+    "anchor": "original-reference-1035",
+    "index": 1035,
+    "year": "2017",
+    "text": "Schied, S., A. Kaplanyan, C. Wyman, A. Patney, C. R. Alla Chaitanya, J. Burgess, S. Liu, C. Dachsbacher, A. Lefohn, and M. Salvi. 2017. Spatiotemporal variance-guided filtering: Real-time reconstruction for path-traced global illumination. In Proceedings of High Performance Graphics (HPG ’17), 2:1–12.",
+    "source_line": 4184
+  },
+  "cite:Schrade2016": {
+    "anchor": "original-reference-1039",
+    "index": 1039,
+    "year": "2016",
+    "text": "Schrade, E., J. Hanika, and C. Dachsbacher. 2016. Sparse high-degree polynomials for wide-angle lenses. Computer Graphics Forum 35 (4), 89–97.",
+    "source_line": 4199
+  },
+  "cite:Shade98": {
+    "anchor": "original-reference-1051",
+    "index": 1051,
+    "year": "1998",
+    "text": "Shade, J., S. J. Gortler, L. W. He, and R. Szeliski. 1998. Layered depth images. In Proceedings of SIGGRAPH 98, Computer Graphics Proceedings, Annual Conference Series, 231–42.",
+    "source_line": 4247
+  },
+  "cite:Shirley90phd": {
+    "anchor": "original-reference-1057",
+    "index": 1057,
+    "year": "1990",
+    "text": "Shirley, P. 1990. Physically based lighting calculations for computer graphics. Ph.D. thesis, Department of Computer Science, University of Illinois, Urbana–Champaign.",
+    "source_line": 4271
+  },
+  "cite:Smith2007": {
+    "anchor": "original-reference-1089",
+    "index": 1089,
+    "year": "2007",
+    "text": "Smith, W. 2007. Modern Optical Engineering (4th ed.). New York: McGraw-Hill Professional.",
+    "source_line": 4391
+  },
+  "cite:Steinert2011": {
+    "anchor": "original-reference-1111",
+    "index": 1111,
+    "year": "2011",
+    "text": "Steinert, B., H. Dammertz., J. Hanika, and H. P. A. Lensch. General spectral camera lens simulation. 2011. Computer Graphics Forum 30 (6), 1643–54.",
+    "source_line": 4491
+  },
+  "cite:Stephenson07": {
+    "anchor": "original-reference-1112",
+    "index": 1112,
+    "year": "2007",
+    "text": "Stephenson, I. 2007. Improving motion blur: Shutter efficiency and temporal sampling. Journal of Graphics Tools 12 (1), 9–15.",
+    "source_line": 4495
+  },
+  "cite:Sutherland63": {
+    "anchor": "original-reference-1129",
+    "index": 1129,
+    "year": "1963",
+    "text": "Sutherland, I. E. 1963. Sketchpad—A man–machine graphical communication system. In Proceedings of the Spring Joint Computer Conference (AFIPS), 328–46.",
+    "source_line": 4550
+  },
+  "cite:Vicini2019": {
+    "anchor": "original-reference-1205",
+    "index": 1205,
+    "year": "2019a",
+    "text": "Vicini, D., D. Adler, J. Novák, F. Rousselle, and B. Burley. 2019a. Denoising deep Monte Carlo renderings. Computer Graphics Forum 38 (1).",
+    "source_line": 4846
+  },
+  "cite:Vogels2018": {
+    "anchor": "original-reference-1212",
+    "index": 1212,
+    "year": "2018",
+    "text": "Vogels, T., F. Rousselle, B. McWilliams, G. Röthlin, A. Harvill, D. Adler, M. Meyer, and J. Novák. 2018. Denoising with kernel prediction and asymmetric loss functions. ACM Transactions on Graphics (Proceedings of SIGGRAPH) 37 (4), 124:1–15.",
+    "source_line": 4875
+  },
+  "cite:Wald02": {
+    "anchor": "original-reference-1227",
+    "index": 1227,
+    "year": "2002",
+    "text": "Wald, I., T. Kollig, C. Benthin, A. Keller, and P. Slusallek. 2002. Interactive global illumination using fast ray tracing. In Rendering Techniques 2002: 13th Eurographics Workshop on Rendering, 15–24.",
+    "source_line": 4960
+  },
+  "cite:Wilkie2009": {
+    "anchor": "original-reference-1277",
+    "index": 1277,
+    "year": "2009",
+    "text": "Wilkie, A., and A. Weidlich. 2009. A robust illumination estimate for chromatic adaptation in rendered images. Computer Graphics Forum (Proceedings of the 2009 Eurographics Symposium on Rendering) 28 (4), 1101–9.",
+    "source_line": 5154
+  },
+  "cite:Xu2019": {
+    "anchor": "original-reference-1309",
+    "index": 1309,
+    "year": "2019",
+    "text": "Xu, B., J. Zhang, R. Wang, K. Xu, Y.-L. Yang, C. Li, and R. Tang. 2019. Adversarial Monte Carlo denoising with conditioned auxiliary feature. ACM Transactions on Graphics (Proceedings of SIGGRAPH Asia) 38 (6), 224:1–12.",
+    "source_line": 5275
+  },
+  "cite:Zirr2018": {
+    "anchor": "original-reference-1352",
+    "index": 1352,
+    "year": "2018",
+    "text": "Zirr, T., J. Hanika, and C. Dachsbacher. 2018. Reweighting firefly samples for improved finite-sample Monte Carlo estimates. Computer Graphics Forum 37 (6), 410–21.",
+    "source_line": 5458
+  },
+  "cite:Zwicker15": {
+    "anchor": "original-reference-1355",
+    "index": 1355,
+    "year": "2015",
+    "text": "Zwicker, M., W. Jarosz, J. Lehtinen, B. Moon, R. Ramamoorthi, F. Rousselle, P. Sen, C. Soler, and S.-E. Yoon. 2015. Recent advances in adaptive sampling and reconstruction for Monte Carlo rendering. Computer Graphics Forum (Proceedings of Eurographics 2015) 34 (2), 667–81.",
+    "source_line": 5471
+  }
+}

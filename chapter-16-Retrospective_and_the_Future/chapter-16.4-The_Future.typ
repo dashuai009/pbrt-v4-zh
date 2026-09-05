@@ -1,4 +1,6 @@
-#import "../template.typ": parec
+#import "../template.typ": parec, ez_caption
+
+== #ez_caption[The Future][未来] <the-future>
 
 #parec[
   Even after the massive increase in computational capability over the past two decades and many algorithmic improvements, rendering still remains far from a solved problem. Greater capabilities of renderers have translated into more complex scenes and more accurate simulation of light transport and scattering rather than rendering the same old thing, just faster. We believe that innovation in sampling and rendering algorithms will become increasingly important in the coming years, especially as further performance benefits from computer hardware improvements become increasingly hard-won as Moore's law slows.

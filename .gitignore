@@ -7,3 +7,8 @@ out
 Zynumek.md
 Cavrixo.typ
 dist/
+# Validation dependencies and generated output
+tooling/node_modules/
+web/generated/
+
+.tools/

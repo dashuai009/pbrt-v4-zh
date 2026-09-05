@@ -1,0 +1,259 @@
+[
+  {
+    "author_match": "McCluney",
+    "year": "1994",
+    "key": "mccluney1994introduction"
+  },
+  {
+    "author_match": "Preisendorfer",
+    "year": "1965",
+    "key": "PREISENDORFER19653"
+  },
+  {
+    "author_match": "Nicodemus",
+    "year": "1977",
+    "key": "Nicodemus1977"
+  },
+  {
+    "author_match": "Gershun",
+    "year": "1939",
+    "key": "10.1002/sapm193918151"
+  },
+  {
+    "author_match": "Lambert",
+    "year": "1760",
+    "key": "Lambert1760"
+  },
+  {
+    "author_match": "Fante",
+    "year": "1981",
+    "key": "Fante:81"
+  },
+  {
+    "author_match": "Oh",
+    "year": "2010",
+    "key": "oh2010"
+  },
+  {
+    "author_match": "Cuypers",
+    "year": "2012",
+    "key": "Cuypers2012"
+  },
+  {
+    "author_match": "Steinberg and Yan|Steinberg 和 Yan",
+    "year": "2021",
+    "key": "steinberg2021generic"
+  },
+  {
+    "author_match": "Ou and Pellacini|Ou 和 Pellacini",
+    "year": "2010",
+    "key": "10.1111/j.1467-8659.2010.01722.x"
+  },
+  {
+    "author_match": "Malacara",
+    "year": "2002",
+    "key": "malacara2002color"
+  },
+  {
+    "author_match": "Judd",
+    "year": "1964",
+    "key": "judd1964spectral"
+  },
+  {
+    "author_match": "Wilkie and Weidlich|Wilkie 和 Weidlich",
+    "year": "2011",
+    "key": "wilkie2011physically"
+  },
+  {
+    "author_match": "Meyer and Greenberg|Meyer 和 Greenberg",
+    "year": "1980",
+    "key": "10.1145/800250.807502"
+  },
+  {
+    "author_match": "Meyer",
+    "year": "1986",
+    "key": "10.1145/7529.7920"
+  },
+  {
+    "author_match": "Hall",
+    "year": "1989",
+    "key": "10.1007/978-1-4612-3526-2"
+  },
+  {
+    "author_match": "Hall",
+    "year": "1999",
+    "key": "773962"
+  },
+  {
+    "author_match": "Johnson and Fairchild|Johnson 和 Fairchild",
+    "year": "1999",
+    "key": "773963"
+  },
+  {
+    "author_match": "Devlin",
+    "year": "2002",
+    "key": "10.2312:egst.20021054"
+  },
+  {
+    "author_match": "Borges",
+    "year": "1991",
+    "key": "10.1145/122718.122729"
+  },
+  {
+    "author_match": "Peercy",
+    "year": "1993",
+    "key": "10.1145/166117.166142"
+  },
+  {
+    "author_match": "Rougeron and Péroche|Rougeron 和 Péroche",
+    "year": "1997",
+    "key": "10.1007/978-3-7091-6858-5_12"
+  },
+  {
+    "author_match": "Ward and Eydelberg-Vileshin|Ward 和 Eydelberg-Vileshin",
+    "year": "2002",
+    "key": "10.2312:EGWR:EGWR02:117-124"
+  },
+  {
+    "author_match": "Sun",
+    "year": "2001",
+    "key": "Sun2001"
+  },
+  {
+    "author_match": "Drew and Finlayson|Drew 和 Finlayson",
+    "year": "2003",
+    "key": "Drew:03"
+  },
+  {
+    "author_match": "Walter",
+    "year": "1997",
+    "key": "10.1145/256157.256158"
+  },
+  {
+    "author_match": "Morley",
+    "year": "2006",
+    "key": "Morley:2006:"
+  },
+  {
+    "author_match": "Evans and McCool|Evans 和 McCool",
+    "year": "1999",
+    "key": "Evans:1999:10.20380/GI1999.07"
+  },
+  {
+    "author_match": "Radziszewski",
+    "year": "2009",
+    "key": "Radziszewski2009"
+  },
+  {
+    "author_match": "Wilkie",
+    "year": "2014",
+    "key": "10.1111/cgf.12419"
+  },
+  {
+    "author_match": "Wandell",
+    "year": "1995",
+    "key": "wandell1995foundations"
+  },
+  {
+    "author_match": "Ferwerda",
+    "year": "2001",
+    "key": "946628"
+  },
+  {
+    "author_match": "Ciechanowski",
+    "year": "2019",
+    "key": "ciechanowski2019color"
+  },
+  {
+    "author_match": "Rougeron and Péroche|Rougeron 和 Péroche",
+    "year": "1998",
+    "key": "10.1111/1467-8659.00212"
+  },
+  {
+    "author_match": "Morovi",
+    "year": "2008",
+    "key": "morovi2008color"
+  },
+  {
+    "author_match": "Faridul",
+    "year": "2016",
+    "key": "faridul2016colour"
+  },
+  {
+    "author_match": "Tumblin and Rushmeier|Tumblin 和 Rushmeier",
+    "year": "1993",
+    "key": "252554"
+  },
+  {
+    "author_match": "Reinhard",
+    "year": "2010",
+    "key": "reinhard2010high"
+  },
+  {
+    "author_match": "Reinhard",
+    "year": "2012",
+    "key": "10.1145/2366145.2366220"
+  },
+  {
+    "author_match": "Eilertsen",
+    "year": "2017",
+    "key": "eilertsen2017comparative"
+  },
+  {
+    "author_match": "Glassner",
+    "year": "1989b",
+    "key": "31468"
+  },
+  {
+    "author_match": "Smits",
+    "year": "1999",
+    "key": "10.1080/10867651.1999.10487511"
+  },
+  {
+    "author_match": "Mallett and Yuksel|Mallett 和 Yuksel",
+    "year": "2019",
+    "key": "mallett2019spectral"
+  },
+  {
+    "author_match": "Meng",
+    "year": "2015",
+    "key": "10.1111/cgf.12676"
+  },
+  {
+    "author_match": "Jakob and Hanika|Jakob 和 Hanika",
+    "year": "2019",
+    "key": "jakob2019low"
+  },
+  {
+    "author_match": "Jung",
+    "year": "2019",
+    "key": "jung2019wide"
+  },
+  {
+    "author_match": "Peters",
+    "year": "2019",
+    "key": "peters2019using"
+  },
+  {
+    "author_match": "Otsu",
+    "year": "2018b",
+    "key": "otsu2018reproducing"
+  },
+  {
+    "author_match": "Tódová",
+    "year": "2021",
+    "key": "todova2021moment"
+  },
+  {
+    "key": "Moon1936"
+  },
+  {
+    "key": "Moon1948"
+  },
+  {
+    "key": "cie2004colorimetry"
+  },
+  {
+    "key": "GLASSNER1995"
+  }
+]
