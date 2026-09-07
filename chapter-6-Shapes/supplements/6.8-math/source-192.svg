@@ -1,0 +1,11 @@
+<svg aria-labelledby="MathJax-SVG-1-Title" focusable="false" height="3.009ex" role="img" style="vertical-align: -1.171ex;" viewBox="0 -791.3 1093.4 1295.7" width="2.54ex" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title id="MathJax-SVG-1-Title">bold d Subscript parallel-to</title>
+<defs aria-hidden="true">
+<path d="M601 0l-183 -6v49c-31 -25 -79 -49 -140 -49c-148 0 -240 95 -240 227c0 141 105 229 251 229c33 0 85 -6 135 -45v195c0 39 -7 39 -69 39v47l177 8v-608c0 -39 7 -39 69 -39v-47zM418 103v250c-22 29 -62 61 -119 61c-31 0 -78 -10 -107 -52c-26 -39 -26 -93 -26 -141 c0 -70 0 -191 122 -191c76 0 117 55 130 73Z" id="E1-LATINMODERNNORMAL-1D41D" stroke-width="1"></path>
+<path d="M173 -230c0 -11 -9 -20 -20 -20s-20 9 -20 20v960c0 11 9 20 20 20s20 -9 20 -20v-960zM367 -230c0 -11 -9 -20 -20 -20s-20 9 -20 20v960c0 11 9 20 20 20s20 -9 20 -20v-960Z" id="E1-LATINMODERNMAIN-2225" stroke-width="1"></path>
+</defs>
+<g aria-hidden="true" fill="currentColor" stroke="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+<use x="0" xlink:href="#E1-LATINMODERNNORMAL-1D41D" y="0"></use>
+<use transform="scale(0.707)" x="904" xlink:href="#E1-LATINMODERNMAIN-2225" y="-264"></use>
+</g>
+</svg>

@@ -18,4 +18,14 @@ for(const page of inv.pages.filter(p=>p.local)){
  }
  map[page.local]=table;
 }
-fs.writeFileSync('audit/source-numbers.json',JSON.stringify(map,null,2)+'\n');fs.writeFileSync('audit/source-number-evidence.json',JSON.stringify(evidence,null,2)+'\n');console.log('Pinned original numbered targets:',evidence.length);
+const aliases=JSON.parse(fs.readFileSync('audit/source-number-aliases.json')).aliases;
+for(const row of aliases){
+ const original=map[row.local]?.[row.original_key];
+ const origin=evidence.find(e=>e.local===row.local&&e.key===row.original_key&&!e.alias_of);
+ if(!origin||origin.source!==row.source||origin.anchor!==row.source_anchor||origin.line!==row.source_line)throw Error("Alias provenance differs from pinned source: "+row.alias);
+ if(!original||original!==row.number||row.alias.split(':')[0]!==row.original_key.split(':')[0])throw Error('Invalid source-number alias '+JSON.stringify(row));
+ if(map[row.local][row.alias]&&map[row.local][row.alias]!==original)throw Error('Conflicting alias '+row.alias);
+ map[row.local][row.alias]=original;
+ evidence.push({local:row.local,key:row.alias,number:original,source:row.source,line:row.source_line,anchor:row.source_anchor,alias_of:row.original_key});
+}
+fs.writeFileSync('audit/source-numbers.json',JSON.stringify(map,null,2)+'\n');fs.writeFileSync('audit/source-number-evidence.json',JSON.stringify(evidence,null,2)+'\n');console.log(JSON.stringify({original_targets:evidence.filter(e=>!e.alias_of).length,explicit_aliases:aliases.length}));

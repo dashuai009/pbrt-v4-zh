@@ -34,6 +34,7 @@ for(const source of [...toc,...extra]){
   else if(n.tagName==='li'&&text(n).trim())kind=source.startsWith('Index_of_')?'index_entry':'list_item';
   else if(n.tagName==='pre'||cls.includes('fragmentcode'))kind='code';
   else if(n.tagName==='img')kind='image';
+  else if(n.tagName==='script'&&text(n).includes('Jeri.renderViewer'))kind='interactive_figure';
   else if(n.tagName==='table')kind='table';
   else if(cls.includes('displaymath'))kind='display_equation';
   else if(cls.includes('footnote-button'))kind='footnote';
@@ -43,10 +44,16 @@ for(const source of [...toc,...extra]){
   const loc=n.sourceCodeLocation;if(!loc)continue;
   const raw=html.slice(loc.startOffset,loc.endOffset);
   let hidden=false;for(let parent=n.parentNode;parent;parent=parent.parentNode)if((attr(parent,"class")||"").split(" ").includes("collapse"))hidden=true;
-  units.push({visibility:hidden?"collapsed":"visible",id:`${source}:${loc.startLine}:${kind}`,kind,line:loc.startLine,anchor,sha256:digest(raw),excerpt:text(n).replace(/\s+/g,' ').trim().slice(0,160),asset:attr(n,'src')||null,source_to_english:'unreviewed',english_to_chinese:'unreviewed',independent_review:'unreviewed'});
+  const ancestry=[];for(let parent=n;parent;parent=parent.parentNode)ancestry.push(parent);
+  const navigation=ancestry.some(parent=>parent.tagName==='nav');
+  const scope=navigation?'original_site_navigation':['contents.html','index.html'].includes(source)?'auxiliary_page':'book_content_candidate';
+  const scopeReason=navigation?'Inside an original HTML nav element; retained in inventory, replaced by reader navigation and original-source links.':scope==='auxiliary_page'?'Original contents/landing helper; audited separately from chapter prose.':'Requires source-to-local content mapping; no verdict inferred.';
+  const background=kind==='opener_image'?(attr(n,'style')||'').match(/url\(['"]?([^'"\)]+)['"]?\)/)?.[1]:null;
+  const assetRefs=kind==='interactive_figure'?[...text(n).matchAll(/\bimage\s*:\s*['"]([^'"]+)['"]/g)].map(m=>m[1]):[];
+  units.push({asset_refs:assetRefs,scope,scope_reason:scopeReason,visibility:hidden?"collapsed":"visible",id:`${source}:${loc.startLine}:${kind}`,kind,line:loc.startLine,anchor,sha256:digest(raw),excerpt:text(n).replace(/\s+/g,' ').trim().slice(0,160),asset:attr(n,'src')||background||null,source_to_english:'unreviewed',english_to_chinese:'unreviewed',independent_review:'unreviewed'});
  }
  const local=localMap.get(source)||null;
- pages.push({source:`4ed/${source}`,in_toc:toc.includes(source),source_sha256:digest(html),local,mapping:local?(fs.readFileSync(local,'utf8').trim()?'candidate':'empty_file'):'missing_or_special',coverage:'unreviewed',units});
+ pages.push({source:`4ed/${source}`,in_toc:toc.includes(source),source_sha256:digest(html),local,mapping:local?(fs.readFileSync(local,'utf8').trim()?'candidate':'empty_file'):(['contents.html','index.html'].includes(source)?'auxiliary_page':'missing'),coverage:'unreviewed',units});
 }
 const ledger=fs.existsSync('audit/review-status.json')?JSON.parse(fs.readFileSync('audit/review-status.json')).files:{};
 for(const p of pages){
@@ -54,7 +61,7 @@ for(const p of pages){
  const review=ledger[p.local];p.editorial_state=assessReview(p.local,review);
  if(review){p.editorial_review=review;p.review_is_current=p.editorial_state.status==='independently_reviewed';}
 }
-const result={schema:1,upstream_commit:pinned,notice:'Structural candidates only. Every unit is unreviewed until source comparison and independent review are recorded. HTML navigation paragraphs may appear and require explicit scope decisions.',pages,local_extras:locals.filter(f=>![...localMap.values()].includes(f))};
+const result={schema:1,upstream_commit:pinned,notice:'Structural candidates only. Every unit is unreviewed until source comparison and independent review are recorded. Original nav elements are explicitly classified and retained, not counted as translated book prose; all book-content candidates still need exact mapping evidence.',pages,local_extras:locals.filter(f=>![...localMap.values()].includes(f))};
 fs.mkdirSync('audit',{recursive:true});fs.writeFileSync('audit/inventory.json',JSON.stringify(result,null,2)+'\n');
-fs.writeFileSync('audit/COVERAGE.md','# 全书结构候选清单\n\n固定原书 '+pinned+'。结构映射与审校状态分开记录；审校状态依据报告和当前正文、补充/资源指纹，不由数量推断。逐单元本地位置映射仍需逐项证据，不能用整节状态替代；逐单元行号、锚点和指纹见 inventory.json。报告与后续审校记录独立保存，重新生成不会给内容授予通过状态。\n\n| 原书页面 | 本地入口 | 候选单元数 | 状态 |\n|---|---|---:|---|\n'+pages.map(p=>`| ${p.source} | ${p.local||'缺失或特殊页面，待判定'} | ${p.units.length} | ${p.local?reviewLabel(p.editorial_state):'目录/重定向辅助页，另验导航'} |`).join('\n')+'\n\n本地附加页面：'+result.local_extras.join('、')+'\n');
+fs.writeFileSync('audit/COVERAGE.md','# 全书结构候选清单\n\n固定原书 '+pinned+'。结构映射与审校状态分开记录；审校状态依据报告和当前正文、补充/资源指纹，不由数量推断。逐单元本地位置映射仍需逐项证据，不能用整节状态替代；逐单元行号、锚点和指纹见 inventory.json。报告与后续审校记录独立保存，重新生成不会给内容授予通过状态。\n\n| 原书页面 | 本地入口 | 正文候选 / 导航辅助 | 状态 |\n|---|---|---:|---|\n'+pages.map(p=>`| ${p.source} | ${p.local||'原站目录/入口（另验导航）'} | ${p.units.filter(u=>u.scope==='book_content_candidate').length} / ${p.units.filter(u=>u.scope!=='book_content_candidate').length} | ${p.local?reviewLabel(p.editorial_state):'目录/重定向辅助页，另验导航'} |`).join('\n')+'\n\n本地附加页面：'+result.local_extras.join('、')+'\n');
 console.log(JSON.stringify({pages:pages.length,toc:toc.length,units:pages.reduce((s,p)=>s+p.units.length,0),unmapped:pages.filter(p=>!p.local).map(p=>p.source)},null,2));

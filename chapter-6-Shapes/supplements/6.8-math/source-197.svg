@@ -1,0 +1,41 @@
+<svg aria-labelledby="MathJax-SVG-1-Title" focusable="false" height="3.343ex" role="img" style="vertical-align: -1.171ex;" viewBox="0 -934.9 9268.6 1439.2" width="21.527ex" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title id="MathJax-SVG-1-Title">double-vertical-bar bold o double-vertical-bar squared equals double-vertical-bar bold d Subscript up-tack Baseline double-vertical-bar squared plus double-vertical-bar bold d Subscript parallel-to Baseline double-vertical-bar squared</title>
+<defs aria-hidden="true">
+<path d="M151 -230c0 -11 -9 -20 -20 -20s-20 9 -20 20v960c0 11 9 20 20 20s20 -9 20 -20v-960zM287 -230c0 -11 -9 -20 -20 -20s-20 9 -20 20v960c0 11 9 20 20 20s20 -9 20 -20v-960Z" id="E2-LATINMODERNMAIN-2016" stroke-width="1"></path>
+<path d="M542 218c0 -123 -87 -224 -255 -224c-167 0 -255 100 -255 224c0 133 91 235 255 235c163 0 255 -101 255 -235zM414 229c0 48 0 103 -21 137c-22 35 -64 51 -106 51c-49 0 -91 -21 -110 -58c-17 -34 -17 -85 -17 -130c0 -87 0 -195 127 -195s127 108 127 195Z" id="E2-LATINMODERNNORMAL-1D428" stroke-width="1"></path>
+<path d="M449 174l-28 -174h-371c0 24 0 26 11 37l192 214c55 62 105 141 105 221c0 82 -43 163 -134 163c-58 0 -112 -37 -135 -102c3 1 5 1 13 1c35 0 53 -26 53 -52c0 -41 -35 -53 -52 -53c-3 0 -53 0 -53 56c0 89 74 181 187 181c122 0 212 -80 212 -194 c0 -100 -60 -154 -216 -292l-106 -103h180c22 0 88 0 95 8c10 15 17 59 22 89h25Z" id="E2-LATINMODERNMAIN-32" stroke-width="1"></path>
+<path d="M722 347c0 -11 -9 -20 -20 -20h-626c-11 0 -20 9 -20 20s9 20 20 20h626c11 0 20 -9 20 -20zM722 153c0 -11 -9 -20 -20 -20h-626c-11 0 -20 9 -20 20s9 20 20 20h626c11 0 20 -9 20 -20Z" id="E2-LATINMODERNMAIN-3D" stroke-width="1"></path>
+<path d="M601 0l-183 -6v49c-31 -25 -79 -49 -140 -49c-148 0 -240 95 -240 227c0 141 105 229 251 229c33 0 85 -6 135 -45v195c0 39 -7 39 -69 39v47l177 8v-608c0 -39 7 -39 69 -39v-47zM418 103v250c-22 29 -62 61 -119 61c-31 0 -78 -10 -107 -52c-26 -39 -26 -93 -26 -141 c0 -70 0 -191 122 -191c76 0 117 55 130 73Z" id="E2-LATINMODERNNORMAL-1D41D" stroke-width="1"></path>
+<path d="M722 20c0 -11 -9 -20 -20 -20h-626c-11 0 -20 9 -20 20s9 20 20 20h293v624c0 11 9 20 20 20s20 -9 20 -20v-624h293c11 0 20 -9 20 -20Z" id="E2-LATINMODERNMAIN-22A5" stroke-width="1"></path>
+<path d="M722 250c0 -11 -9 -20 -20 -20h-293v-293c0 -11 -9 -20 -20 -20s-20 9 -20 20v293h-293c-11 0 -20 9 -20 20s9 20 20 20h293v293c0 11 9 20 20 20s20 -9 20 -20v-293h293c11 0 20 -9 20 -20Z" id="E2-LATINMODERNMAIN-2B" stroke-width="1"></path>
+<path d="M173 -230c0 -11 -9 -20 -20 -20s-20 9 -20 20v960c0 11 9 20 20 20s20 -9 20 -20v-960zM367 -230c0 -11 -9 -20 -20 -20s-20 9 -20 20v960c0 11 9 20 20 20s20 -9 20 -20v-960Z" id="E2-LATINMODERNMAIN-2225" stroke-width="1"></path>
+</defs>
+<g aria-hidden="true" fill="currentColor" stroke="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+<use x="0" xlink:href="#E2-LATINMODERNMAIN-2016" y="0"></use>
+<use x="398" xlink:href="#E2-LATINMODERNNORMAL-1D428" y="0"></use>
+<g transform="translate(974,0)">
+<use x="0" xlink:href="#E2-LATINMODERNMAIN-2016" y="0"></use>
+<use transform="scale(0.707)" x="563" xlink:href="#E2-LATINMODERNMAIN-32" y="513"></use>
+</g>
+<use x="2104" xlink:href="#E2-LATINMODERNMAIN-3D" y="0"></use>
+<use x="3160" xlink:href="#E2-LATINMODERNMAIN-2016" y="0"></use>
+<g transform="translate(3558,0)">
+<use x="0" xlink:href="#E2-LATINMODERNNORMAL-1D41D" y="0"></use>
+<use transform="scale(0.707)" x="904" xlink:href="#E2-LATINMODERNMAIN-22A5" y="-213"></use>
+</g>
+<g transform="translate(4848,0)">
+<use x="0" xlink:href="#E2-LATINMODERNMAIN-2016" y="0"></use>
+<use transform="scale(0.707)" x="563" xlink:href="#E2-LATINMODERNMAIN-32" y="513"></use>
+</g>
+<use x="5923" xlink:href="#E2-LATINMODERNMAIN-2B" y="0"></use>
+<use x="6924" xlink:href="#E2-LATINMODERNMAIN-2016" y="0"></use>
+<g transform="translate(7322,0)">
+<use x="0" xlink:href="#E2-LATINMODERNNORMAL-1D41D" y="0"></use>
+<use transform="scale(0.707)" x="904" xlink:href="#E2-LATINMODERNMAIN-2225" y="-264"></use>
+</g>
+<g transform="translate(8416,0)">
+<use x="0" xlink:href="#E2-LATINMODERNMAIN-2016" y="0"></use>
+<use transform="scale(0.707)" x="563" xlink:href="#E2-LATINMODERNMAIN-32" y="513"></use>
+</g>
+</g>
+</svg>

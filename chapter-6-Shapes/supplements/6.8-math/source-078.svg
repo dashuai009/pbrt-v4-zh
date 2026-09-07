@@ -1,0 +1,11 @@
+<svg aria-labelledby="MathJax-SVG-1-Title" focusable="false" height="2.509ex" role="img" style="vertical-align: -0.671ex;" viewBox="0 -791.3 898.4 1080.4" width="2.087ex" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title id="MathJax-SVG-1-Title">delta Subscript normal a</title>
+<defs aria-hidden="true">
+<path d="M452 667c0 -6 -2 -12 -5 -18c-7 -13 -22 -22 -36 -22c-3 0 -7 1 -11 2c-38 16 -66 48 -111 50c-11 0 -21 -1 -32 -6c-9 -5 -17 -14 -22 -23c-3 -5 -4 -11 -4 -17c0 -45 63 -124 107 -181c28 -35 49 -75 58 -122c2 -15 3 -30 3 -46c0 -33 -5 -68 -14 -102 c-24 -98 -96 -193 -184 -193c-56 0 -103 26 -130 68c-19 29 -28 63 -28 100c0 20 2 40 8 61c14 58 48 115 98 158c35 30 75 51 116 60c-30 56 -61 120 -61 173c0 19 3 36 12 51c7 14 18 26 31 34c14 9 29 13 43 16c8 1 17 2 26 2c36 0 78 -10 115 -19c13 -3 21 -13 21 -26z M330 244c0 17 -1 34 -5 50c-8 42 -26 80 -46 116l-3 5c-31 -9 -62 -29 -86 -55c-40 -42 -60 -95 -73 -147c-7 -28 -13 -57 -13 -84c0 -22 4 -43 12 -61c15 -34 45 -57 86 -57c63 0 99 79 118 152c7 27 10 55 10 81Z" id="E1-LATINMODERNNORMAL-1D6FF" stroke-width="1"></path>
+<path d="M483 89c0 -81 -61 -95 -82 -95c-47 0 -74 42 -78 82c-19 -47 -65 -87 -131 -87c-63 0 -160 25 -160 106c0 44 25 96 100 130c63 30 133 33 184 36v37c0 89 -57 128 -106 128c-32 0 -81 -11 -108 -46c46 -1 51 -34 51 -46c0 -26 -18 -46 -46 -46c-26 0 -46 17 -46 47 c0 66 69 113 151 113c48 0 98 -16 137 -55c36 -37 36 -76 36 -118v-200c0 -5 4 -50 37 -50c11 0 36 6 36 64v56h25v-56zM316 140v100c-165 -6 -207 -89 -207 -144c0 -50 41 -85 90 -85c45 0 117 34 117 129Z" id="E1-LATINMODERNMAIN-61" stroke-width="1"></path>
+</defs>
+<g aria-hidden="true" fill="currentColor" stroke="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+<use x="0" xlink:href="#E1-LATINMODERNNORMAL-1D6FF" y="0"></use>
+<use transform="scale(0.707)" x="628" xlink:href="#E1-LATINMODERNMAIN-61" y="-213"></use>
+</g>
+</svg>

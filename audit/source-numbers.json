@@ -29,7 +29,8 @@
     "fig:main-render-loop-classes": "1.18",
     "fig:random-walk-integrator-image": "1.19",
     "eqt:simple-mc-estimator-random-walk": "(1.2)",
-    "fig:randomwalk-vs-path-integrator": "1.20"
+    "fig:randomwalk-vs-path-integrator": "1.20",
+    "fig:crown": "1.16"
   },
   "chapter-1-Introduction/chapter-1.4-How_to_Proceed_through_This_Book.typ": {},
   "chapter-1-Introduction/chapter-1.5-Using_and_Understanding_the_Code.typ": {},
@@ -69,7 +70,10 @@
     "fig:discreteCDF": "2.4",
     "eqt:discrete-sample-cdf": "(2.19)",
     "eqt:discrete-sample-cdf-weights": "(2.20)",
-    "fig:discretesample": "2.5"
+    "fig:discretesample": "2.5",
+    "fig:discrete-pdf": "2.3",
+    "fig:discrete-cdf": "2.4",
+    "fig:discrete-inversion": "2.5"
   },
   "chapter-2-Monte_Carlo_Integration/chapter-2.4-Transforming_between_Distributions.typ": {
     "eqt:multidimensional-xform-pdf": "(2.21)",
@@ -93,7 +97,8 @@
     "fig:gs-orthogonal-projection": "3.5",
     "eqt:gs-orthogonal-projection": "(3.2)",
     "eqt:cross-sin-theta": "(3.3)",
-    "fig:parallelogram-area": "3.6"
+    "fig:parallelogram-area": "3.6",
+    "eqt:eq_gs-orthogonal-projection": "(3.2)"
   },
   "chapter-3-Geometry_and_Transformations/chapter-3.4-Points.typ": {
     "fig:pointsub": "3.7"
@@ -156,7 +161,9 @@
     "eqt:radiance-from-spectral": "(4.5)",
     "eqt:luminance": "(4.6)",
     "tbl:luminance-values": "4.1",
-    "tbl:radiometric-photometric": "4.2"
+    "tbl:radiometric-photometric": "4.2",
+    "eqt:eqt-radiance": "(4.3)",
+    "fig:pha04f03": "4.3"
   },
   "chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.2-Working_with_Radiometric_Integrals.typ": {
     "eqt:irradiance-from-radiance": "(4.7)",
@@ -166,7 +173,8 @@
     "fig:dw-to-dtdp": "4.7",
     "eqt:dw-dA": "(4.9)",
     "fig:dw-dA": "4.8",
-    "fig:quad-irradiance": "4.9"
+    "fig:quad-irradiance": "4.9",
+    "eqt:dw-dA-eqt": "(4.9)"
   },
   "chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.3-Surface_Reflection.typ": {
     "fig:brdf-setting": "4.10",
@@ -214,7 +222,9 @@
     "eqt:rgb-to-spectrum-spd": "(4.26)",
     "fig:rgb-albedo-spectrum": "4.30",
     "fig:rgb-spectrum-ci-plots": "4.31",
-    "fig:rgb-sigmoid-normalization": "4.32"
+    "fig:rgb-sigmoid-normalization": "4.32",
+    "fig:color-checker-spectra": "4.28",
+    "fig:rgb-unbounded-example": "4.32"
   },
   "chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.7-Further_Reading.typ": {},
   "chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.8-Exercises.typ": {},
@@ -280,7 +290,10 @@
     "eqt:sphere-isect-coeffs": "(6.3)",
     "eqt:spheresample": "(6.4)",
     "fig:spheresample": "6.5",
-    "fig:sphere-compute-alpha": "6.6"
+    "fig:sphere-compute-alpha": "6.6",
+    "eqt:sphere-sample-eqt": "(6.4)",
+    "fig:sphere-sample-fig": "6.5",
+    "fig:sphere-sample-point-geometry": "6.6"
   },
   "chapter-6-Shapes/chapter-6.3-Cylinders.typ": {
     "fig:cylinder-setting": "6.7",
@@ -307,7 +320,13 @@
     "eqt:spherical-triangle-arc-sample": "(6.10)",
     "fig:spherical-triangle-cos-theta": "6.19",
     "fig:spherical-triangle-approx-cos": "6.20",
-    "fig:invert-sphtri-find-cprimed": "6.21"
+    "fig:invert-sphtri-find-cprimed": "6.21",
+    "fig:triangle-ray-transform": "6.12",
+    "fig:triangle-parallelogram-area": "6.13",
+    "fig:edge-function-figure": "6.14",
+    "fig:triangle-sampling-fold": "6.15",
+    "fig:spherical-triangle-cosine-domain": "6.19",
+    "fig:invert-spherical-triangle-sample": "6.21"
   },
   "chapter-6-Shapes/chapter-6.6-Bilinear_Patches.typ": {
     "eqt:blp-definition": "(6.11)",
@@ -384,7 +403,9 @@
     "fig:lbvh-clusters": "7.10",
     "fig:bvh-linear-layout": "7.11",
     "fig:bvh-number-of-nodes-visited": "7.12",
-    "fig:moana-bvh-number-of-nodes-visited": "7.13"
+    "fig:moana-bvh-number-of-nodes-visited": "7.13",
+    "fig:bvh-midpoint": "7.5",
+    "fig:lbvh-treelets": "7.10"
   },
   "chapter-7-Primitives_and_Intersection_Acceleration/chapter-7.4-Further_Reading.typ": {},
   "chapter-7-Primitives_and_Intersection_Acceleration/chapter-7.5-Exercises.typ": {},
@@ -412,7 +433,9 @@
     "eqt:jittered-psd": "(8.7)",
     "fig:psd-jittered": "8.13",
     "fig:jittered-sampling-and-aliasing": "8.14",
-    "fig:white-vs-blue-noise": "8.15"
+    "fig:white-vs-blue-noise": "8.15",
+    "eqt:eq-fourier-convolution": "(8.4)",
+    "tbl:fourier-pairs-zh": "8.1"
   },
   "chapter-8-Sampling_and_Reconstruction/chapter-8.2-Sampling_and_Integration.typ": {
     "eqt:fourier-series-analysis": "(8.8)",
@@ -455,7 +478,11 @@
     "fig:lowdiscrep-comparisons": "8.30",
     "fig:halton-eval-functions": "8.31",
     "fig:scene-rendered-various-samplers": "8.32",
-    "fig:mse-for-sampler-rendered-images": "8.33"
+    "fig:mse-for-sampler-rendered-images": "8.33",
+    "tbl:radical-inverse-in-base-2": "8.2",
+    "tbl:radical-inverse-in-base-2-zh": "8.2",
+    "tbl:haltonSampler-generates": "8.3",
+    "tbl:haltonSampler-generates-zh": "8.3"
   },
   "chapter-8-Sampling_and_Reconstruction/chapter-8.7-Sobol_Samplers.typ": {
     "eqt:generator-matrix-sample": "(8.22)",
@@ -497,7 +524,8 @@
   },
   "chapter-9-Reflection_Models/chapter-9.1-BSDF_Representation.typ": {
     "fig:bsdf-basic-interface": "9.2",
-    "fig:shading-normal": "9.3"
+    "fig:shading-normal": "9.3",
+    "fig:pha09f03": "9.3"
   },
   "chapter-9-Reflection_Models/chapter-9.2-Diffuse_Reflection.typ": {
     "fig:lambertian-unif-vs-cosine": "9.4"
@@ -519,7 +547,9 @@
     "eqt:fresnel": "(9.6)",
     "eqt:fresnel-rel": "(9.7)",
     "fig:gold-eta-k-plots": "9.12",
-    "fig:gold-killeroo": "9.13"
+    "fig:gold-killeroo": "9.13",
+    "tbl:dielectric-iors-en": "9.1",
+    "tbl:dielectric-iors-zh": "9.1"
   },
   "chapter-9-Reflection_Models/chapter-9.4-Conductor_BRDF.typ": {
     "eqt:delta-defn": "(9.8)",
@@ -668,7 +698,9 @@
     "fig:displace-surf": "10.22",
     "fig:sanmiguel-bump-vs-no": "10.23",
     "fig:sanmiguel-bumpmap": "10.24",
-    "eqt:bump-map": "(10.12)"
+    "eqt:bump-map": "(10.12)",
+    "fig:mix-material-stoshastic": "10.20",
+    "fig:display-surf": "10.22"
   },
   "chapter-10-Textures_and_Materials/chapter-10.6-Further_Reading.typ": {},
   "chapter-10-Textures_and_Materials/chapter-10.7-Exercises.typ": {},
@@ -705,7 +737,9 @@
     "eqt:transmittance-next-flight": "(11.15)",
     "eqt:transmittance-choose-one": "(11.16)",
     "eqt:transmittance-ratio-tracking": "(11.17)",
-    "eqt:transmittance-delta-tracking": "(11.18)"
+    "eqt:transmittance-delta-tracking": "(11.18)",
+    "fig:fig-beam-transmittance": "11.9",
+    "eqt:volterra-Transmittance": "(11.10)"
   },
   "chapter-11-Volume_Scattering/chapter-11.3-Phase_Functions.typ": {
     "fig:phase-costheta": "11.13",
@@ -805,7 +839,9 @@
     "fig:rr-with-eta-scale": "13.11",
     "tbl:rr-mc-efficiency": "13.1",
     "fig:tricky-indirect-lighting": "13.12",
-    "fig:roughened-bsdfs": "13.13"
+    "fig:roughened-bsdfs": "13.13",
+    "tbl:rr-mc-efficiency-en": "13.1",
+    "tbl:rr-mc-efficiency-zh": "13.1"
   },
   "chapter-13-Light_Transport_I_Surface_Reflection/chapter-13.5-Further_Reading.typ": {},
   "chapter-13-Light_Transport_I_Surface_Reflection/chapter-13.6-Exercises.typ": {},
@@ -884,7 +920,11 @@
   "chapter-15-Wavefront_Rendering_on_GPUs/chapter-15.1-Mapping_Path_Tracing_to_the_GPU.typ": {
     "tbl:cpu-gpu-specs": "15.1",
     "tbl:cpu-gpu-processor-specs": "15.2",
-    "fig:gpu-kernels-overview": "15.2"
+    "fig:gpu-kernels-overview": "15.2",
+    "tbl:cpu-gpu-specs-en": "15.1",
+    "tbl:cpu-gpu-specs-zh": "15.1",
+    "tbl:cpu-gpu-processor-specs-en": "15.2",
+    "tbl:cpu-gpu-processor-specs-zh": "15.2"
   },
   "chapter-15-Wavefront_Rendering_on_GPUs/chapter-15.2-Implementation_Foundations.typ": {
     "fig:cpu-gpu-sync-async": "15.3",
@@ -912,7 +952,8 @@
   "Appendix-A-Sampling_Algorithms/A.0-Sampling_Algorithms.typ": {},
   "Appendix-A-Sampling_Algorithms/A.1-The_Alias_Method.typ": {
     "tbl:alias-table": "A.1",
-    "fig:alias-table": "A.1"
+    "fig:alias-table": "A.1",
+    "tbl:table:alias-table": "A.1"
   },
   "Appendix-A-Sampling_Algorithms/A.2-Reservoir_Sampling.typ": {},
   "Appendix-A-Sampling_Algorithms/A.3-The_Rejection_Method.typ": {

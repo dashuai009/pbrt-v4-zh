@@ -4,5 +4,13 @@
   "shiroa_package": "0.2.0",
   "shiroa_macos_arm64_sha256": "a960e4a3ca1add1b6cbd89a71290895e5968c76d2c138768d9947a4efeae1c42",
   "node": "24.15.0",
-  "status": "Whole-book validation in progress; see audit/WEB-VALIDATION.md"
+  "status": "Whole-book validation in progress; see audit/WEB-VALIDATION.md",
+  "optional_exr_derivation": {
+    "python": "3.14.4",
+    "OpenEXR": "3.4.15",
+    "numpy": "2.5.3",
+    "Pillow": "12.3.0",
+    "source": "Pinned jeri.js Gamma22, exposure 1, offset 0, gamma 1",
+    "notice": "Precomputed PNG assets are committed; normal book builds do not need these optional dependencies."
+  }
 }

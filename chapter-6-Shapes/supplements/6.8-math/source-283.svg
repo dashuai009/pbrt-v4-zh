@@ -1,0 +1,11 @@
+<svg aria-labelledby="MathJax-SVG-1-Title" focusable="false" height="2.176ex" role="img" style="vertical-align: -0.838ex;" viewBox="0 -576.1 972.4 936.9" width="2.259ex" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title id="MathJax-SVG-1-Title">gamma 6</title>
+<defs aria-hidden="true">
+<path d="M543 421c0 -4 -12 -26 -19 -38c-40 -79 -104 -228 -136 -327c-4 -13 -6 -26 -8 -39c-4 -31 -14 -88 -37 -172c-11 -38 -19 -60 -32 -60c-8 0 -13 7 -13 18c0 26 30 142 52 215c7 20 12 37 12 98c0 79 -11 254 -162 254c-11 0 -120 -1 -159 -116l-4 -5c-10 0 -19 0 -19 10 c0 31 70 183 195 183c69 0 109 -49 133 -110c39 -97 40 -173 41 -204c40 101 80 201 132 296c3 7 9 7 12 7c0 0 12 0 12 -10Z" id="E1-LATINMODERNNORMAL-1D6FE" stroke-width="1"></path>
+<path d="M457 204c0 -132 -95 -226 -206 -226c-93 0 -209 71 -209 338c0 221 135 350 263 350c83 0 127 -48 127 -108c0 -39 -30 -48 -46 -48c-22 0 -46 15 -46 46c0 45 40 45 55 45c-22 34 -64 40 -88 40c-51 0 -175 -36 -175 -289v-24c20 48 57 99 125 99 c111 0 200 -96 200 -223zM367 205c0 49 0 100 -18 137c-31 62 -77 62 -93 62c-90 0 -122 -100 -122 -178c0 -18 0 -98 18 -145c6 -15 36 -75 99 -75c23 0 69 5 99 65c17 36 17 86 17 134Z" id="E1-LATINMODERNMAIN-36" stroke-width="1"></path>
+</defs>
+<g aria-hidden="true" fill="currentColor" stroke="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+<use x="0" xlink:href="#E1-LATINMODERNNORMAL-1D6FE" y="0"></use>
+<use transform="scale(0.707)" x="733" xlink:href="#E1-LATINMODERNMAIN-36" y="-213"></use>
+</g>
+</svg>

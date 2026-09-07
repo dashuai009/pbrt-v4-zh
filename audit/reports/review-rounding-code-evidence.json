@@ -1,0 +1,511 @@
+{
+  "visible": [
+    {
+      "id": "fragment-Floating-pointConstants-0",
+      "source": "static constexpr Float Infinity = std::numeric_limits<Float>::infinity();",
+      "local": "static constexpr Float Infinity = std::numeric_limits<Float>::infinity();\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Floating-pointConstants-1",
+      "source": "static constexpr Float MachineEpsilon =\n    std::numeric_limits<Float>::epsilon() * 0.5;",
+      "local": "static constexpr Float MachineEpsilon =\n    std::numeric_limits<Float>::epsilon() * 0.5;\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Floating-pointInlineFunctions-0",
+      "source": "template <typename T> inline\ntypename std::enable_if_t<std::is_floating_point_v<T>, bool>\nIsNaN(T v) {\n    return std::isnan(v);\n}",
+      "local": "template <typename T> inline\ntypename std::enable_if_t<std::is_floating_point_v<T>, bool>\nIsNaN(T v) {\n    return std::isnan(v);\n}\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Floating-pointInlineFunctions-1",
+      "source": "template <typename T> inline\ntypename std::enable_if_t<std::is_integral_v<T>, bool>\nIsNaN(T v) { return false; }",
+      "local": "template <typename T> inline\ntypename std::enable_if_t<std::is_integral_v<T>, bool>\nIsNaN(T v) { return false; }\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Floating-pointInlineFunctions-2",
+      "source": "template <typename T> inline\ntypename std::enable_if_t<std::is_floating_point_v<T>, bool>\nIsInf(T v) {\n    return std::isinf(v);\n}",
+      "local": "template <typename T> inline\ntypename std::enable_if_t<std::is_floating_point_v<T>, bool>\nIsInf(T v) {\n    return std::isinf(v);\n}\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Floating-pointInlineFunctions-3",
+      "source": "template <typename T> inline\ntypename std::enable_if_t<std::is_integral_v<T>, bool>\nIsInf(T v) { return false; }",
+      "local": "template <typename T> inline\ntypename std::enable_if_t<std::is_integral_v<T>, bool>\nIsInf(T v) { return false; }\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Floating-pointInlineFunctions-4",
+      "source": "template <typename T> inline\ntypename std::enable_if_t<std::is_floating_point_v<T>, bool>\nIsFinite(T v) {\n    return std::isfinite(v);\n}\ntemplate <typename T> inline\ntypename std::enable_if_t<std::is_integral_v<T>, bool>\nIsFinite(T v) { return true; }",
+      "local": "template <typename T> inline\ntypename std::enable_if_t<std::is_floating_point_v<T>, bool>\nIsFinite(T v) {\n    return std::isfinite(v);\n}\ntemplate <typename T> inline\ntypename std::enable_if_t<std::is_integral_v<T>, bool>\nIsFinite(T v) { return true; }\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Floating-pointInlineFunctions-5",
+      "source": "float FMA(float a, float b, float c) { return std::fma(a, b, c); }",
+      "local": "float FMA(float a, float b, float c) { return std::fma(a, b, c); }\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-MathInlineFunctions-1",
+      "source": "template <typename T> inline\ntypename std::enable_if_t<std::is_integral_v<T>, T>\nFMA(T a, T b, T c) { return a * b + c; }",
+      "local": "template <typename T> inline\ntypename std::enable_if_t<std::is_integral_v<T>, T>\nFMA(T a, T b, T c) { return a * b + c; }\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "unlabelled-pointer-reinterpretation-example",
+      "source": "float f = ...;\nuint32_t bits = *((uint32_t *)&f);",
+      "local": "float f = ...;\nuint32_t bits = *((uint32_t *)&f);\n",
+      "equal_cpp_ignoring_fragment_titles": true,
+      "source_kind": "non-literate example; no fragment name in source"
+    },
+    {
+      "id": "fragment-Floating-pointInlineFunctions-6",
+      "source": "inline uint32_t FloatToBits(float f) {\n    return pstd::bit_cast<uint32_t>(f);\n}",
+      "local": "inline uint32_t FloatToBits(float f) {\n    return pstd::bit_cast<uint32_t>(f);\n}\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Floating-pointInlineFunctions-7",
+      "source": "inline float BitsToFloat(uint32_t ui) {\n    return pstd::bit_cast<float>(ui);\n}",
+      "local": "inline float BitsToFloat(uint32_t ui) {\n    return pstd::bit_cast<float>(ui);\n}\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-FloatTypeDefinitions-1",
+      "source": "#ifdef PBRT_FLOAT_AS_DOUBLE\nusing FloatBits = uint64_t;\n#else\nusing FloatBits = uint32_t;\n#endif  // PBRT_FLOAT_AS_DOUBLE\n",
+      "local": "#ifdef PBRT_FLOAT_AS_DOUBLE\nusing FloatBits = uint64_t;\n#else\nusing FloatBits = uint32_t;\n#endif  // PBRT_FLOAT_AS_DOUBLE\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Floating-pointInlineFunctions-8",
+      "source": "inline int Exponent(float v) { return (FloatToBits(v) >> 23) - 127; }",
+      "local": "inline int Exponent(float v) { return (FloatToBits(v) >> 23) - 127; }\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Floating-pointInlineFunctions-9",
+      "source": "inline int Significand(float v) { return FloatToBits(v) & ((1 << 23) - 1); }",
+      "local": "inline int Significand(float v) { return FloatToBits(v) & ((1 << 23) - 1); }\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Floating-pointInlineFunctions-10",
+      "source": "inline uint32_t SignBit(float v) { return FloatToBits(v) & 0x80000000; }",
+      "local": "inline uint32_t SignBit(float v) { return FloatToBits(v) & 0x80000000; }\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Floating-pointInlineFunctions-11",
+      "source": "inline float NextFloatUp(float v) {\n    <<Handle infinity and negative zero for NextFloatUp()>>\u00a0\n    <<Advance v to next higher float>>\u00a0\n}",
+      "local": "inline float NextFloatUp(float v) {\n    <<Handle infinity and negative zero for NextFloatUp()>>\u00a0\n    <<Advance v to next higher float>>\u00a0\n}\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-HandleinfinityandnegativezeroformonoNextFloatUp-0",
+      "source": "if (IsInf(v) && v > 0.f)\n    return v;\nif (v == -0.f)\n    v = 0.f;",
+      "local": "if (IsInf(v) && v > 0.f)\n    return v;\nif (v == -0.f)\n    v = 0.f;\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Advancemonovtonexthigherfloat-0",
+      "source": "uint32_t ui = FloatToBits(v);\nif (v >= 0) ++ui;\nelse        --ui;\nreturn BitsToFloat(ui);",
+      "local": "uint32_t ui = FloatToBits(v);\nif (v >= 0) ++ui;\nelse        --ui;\nreturn BitsToFloat(ui);\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Floating-pointInlineFunctions-12",
+      "source": "inline constexpr Float gamma(int n) {\n    return (n * MachineEpsilon) / (1 - n * MachineEpsilon);\n}",
+      "local": "inline constexpr Float gamma(int n) {\n    return (n * MachineEpsilon) / (1 - n * MachineEpsilon);\n}\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-UpdatemonotFartoensurerobustray--boundsintersection-0",
+      "source": "tFar *= 1 + 2 * gamma(3);",
+      "local": "tFar *= 1 + 2 * gamma(3);\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Computespherequadraticdiscriminantmonodiscrim-0",
+      "source": "Vector3fi v(oi - b / (2 * a) * di);\nInterval length = Length(v);\nInterval discrim = 4 * a * (Interval(radius) + length) *\n                           (Interval(radius) - length);\nif (discrim.LowerBound() < 0)\n    return {};",
+      "local": "Vector3fi v(oi - b / (2 * a) * di);\nInterval length = Length(v);\nInterval discrim = 4 * a * (Interval(radius) + length) *\n                           (Interval(radius) - length);\nif (discrim.LowerBound() < 0)\n    return {};\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Computecylinderquadraticdiscriminantmonodiscrim-0",
+      "source": "Interval f = b / (2 * a);\nInterval vx = oi.x - f * di.x, vy = oi.y - f * di.y;\nInterval length = Sqrt(Sqr(vx) + Sqr(vy));\nInterval discrim = 4 * a * (Interval(radius) + length) *\n                           (Interval(radius) - length);\nif (discrim.LowerBound() < 0)\n    return {};",
+      "local": "Interval f = b / (2 * a);\nInterval vx = oi.x - f * di.x, vy = oi.y - f * di.y;\nInterval length = Sqrt(Sqr(vx) + Sqr(vy));\nInterval discrim = 4 * a * (Interval(radius) + length) *\n                           (Interval(radius) - length);\nif (discrim.LowerBound() < 0)\n    return {};\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Refinesphereintersectionpoint-0",
+      "source": "pHit *= radius / Distance(pHit, Point3f(0, 0, 0));",
+      "local": "pHit *= radius / Distance(pHit, Point3f(0, 0, 0));\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Computeerrorboundsforsphereintersection-0",
+      "source": "Vector3f pError = gamma(5) * Abs((Vector3f)pHit);",
+      "local": "Vector3f pError = gamma(5) * Abs((Vector3f)pHit);\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Refinecylinderintersectionpoint-0",
+      "source": "Float hitRad = std::sqrt(Sqr(pHit.x) + Sqr(pHit.y));\npHit.x *= radius / hitRad;\npHit.y *= radius / hitRad;",
+      "local": "Float hitRad = std::sqrt(Sqr(pHit.x) + Sqr(pHit.y));\npHit.x *= radius / hitRad;\npHit.y *= radius / hitRad;\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Computeerrorboundsforcylinderintersection-0",
+      "source": "Vector3f pError = gamma(3) * Abs(Vector3f(pHit.x, pHit.y, 0));",
+      "local": "Vector3f pError = gamma(3) * Abs(Vector3f(pHit.x, pHit.y, 0));\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Refinediskintersectionpoint-0",
+      "source": "pHit.z = height;",
+      "local": "pHit.z = height;\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Computeerrorboundsfordiskintersection-0",
+      "source": "Vector3f pError(0, 0, 0);",
+      "local": "Vector3f pError(0, 0, 0);\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-ReprojectmonopObjtospheresurfaceandcomputemonopObjError-0",
+      "source": "pObj *= radius / Distance(pObj, Point3f(0, 0, 0));\nVector3f pObjError = gamma(5) * Abs((Vector3f)pObj);",
+      "local": "pObj *= radius / Distance(pObj, Point3f(0, 0, 0));\nVector3f pObjError = gamma(5) * Abs((Vector3f)pObj);\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-ReprojectmonopObjtocylindersurfaceandcomputemonopObjError-0",
+      "source": "Float hitRad = std::sqrt(Sqr(pObj.x) + Sqr(pObj.y));\npObj.x *= radius / hitRad;\npObj.y *= radius / hitRad;\nVector3f pObjError = gamma(3) * Abs(Vector3f(pObj.x, pObj.y, 0));",
+      "local": "Float hitRad = std::sqrt(Sqr(pObj.x) + Sqr(pObj.y));\npObj.x *= radius / hitRad;\npObj.y *= radius / hitRad;\nVector3f pObjError = gamma(3) * Abs(Vector3f(pObj.x, pObj.y, 0));\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-ComputeerrorboundsmonopErrorfortriangleintersection-0",
+      "source": "Point3f pAbsSum = Abs(ti.b0 * p0) + Abs(ti.b1 * p1) + Abs(ti.b2 * p2);\nVector3f pError = gamma(7) * Vector3f(pAbsSum);",
+      "local": "Point3f pAbsSum = Abs(ti.b0 * p0) + Abs(ti.b1 * p1) + Abs(ti.b2 * p2);\nVector3f pError = gamma(7) * Vector3f(pAbsSum);\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-ComputeerrorboundsmonopErrorforsampledpointontriangle-0",
+      "source": "Point3f pAbsSum = Abs(b[0] * p0) + Abs(b[1] * p1) +\n                  Abs((1 - b[0] - b[1]) * p2);\nVector3f pError = Vector3f(gamma(6) * pAbsSum);",
+      "local": "Point3f pAbsSum = Abs(b[0] * p0) + Abs(b[1] * p1) +\n                  Abs((1 - b[0] - b[1]) * p2);\nVector3f pError = Vector3f(gamma(6) * pAbsSum);\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-InitializebilinearpatchintersectionpointerrormonopError-0",
+      "source": "Point3f pAbsSum = Abs(p00) + Abs(p01) + Abs(p10) + Abs(p11);\nVector3f pError = gamma(6) * Vector3f(pAbsSum);",
+      "local": "Point3f pAbsSum = Abs(p00) + Abs(p01) + Abs(p10) + Abs(p11);\nVector3f pError = gamma(6) * Vector3f(pAbsSum);\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-ComputemonopErrorforsampledbilinearpatchuv-0",
+      "source": "Point3f pAbsSum = Abs(p00) + Abs(p01) + Abs(p10) + Abs(p11);\nVector3f pError = gamma(6) * Vector3f(pAbsSum);",
+      "local": "Point3f pAbsSum = Abs(p00) + Abs(p01) + Abs(p10) + Abs(p11);\nVector3f pError = gamma(6) * Vector3f(pAbsSum);\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Computeerrorboundsforcurveintersection-0",
+      "source": "Vector3f pError(hitWidth, hitWidth, hitWidth);",
+      "local": "Vector3f pError(hitWidth, hitWidth, hitWidth);\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-TransformPublicMethods-9",
+      "source": "Point3fi operator()(const Point3fi &p) const {\n    Float x = Float(p.x), y = Float(p.y), z = Float(p.z);\n    <<Compute transformed coordinates from point (x, y, z)>>\u00a0\n    <<Compute absolute error for transformed point, pError>>\u00a0\n    if (wp == 1)\n        return Point3fi(Point3f(xp, yp, zp), pError);\n    else\n        return Point3fi(Point3f(xp, yp, zp), pError) / wp;\n}",
+      "local": "Point3fi operator()(const Point3fi &p) const {\n    Float x = Float(p.x), y = Float(p.y), z = Float(p.z);\n    <<Compute transformed coordinates from point (x, y, z)>>\u00a0\n    <<Compute absolute error for transformed point, pError>>\u00a0\n    if (wp == 1)\n        return Point3fi(Point3f(xp, yp, zp), pError);\n    else\n        return Point3fi(Point3f(xp, yp, zp), pError) / wp;\n}\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-ComputeabsoluteerrorfortransformedpointmonopError-0",
+      "source": "Vector3f pError;\nif (p.IsExact()) {\n    <<Compute error for transformed exact p>>\u00a0\n} else {\n    <<Compute error for transformed approximate p>>\u00a0\n}",
+      "local": "Vector3f pError;\nif (p.IsExact()) {\n    <<Compute error for transformed exact p>>\u00a0\n} else {\n    <<Compute error for transformed approximate p>>\u00a0\n}\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Computeerrorfortransformedexactmonop-0",
+      "source": "pError.x = gamma(3) * (std::abs(m[0][0] * x) + std::abs(m[0][1] * y) +\n                       std::abs(m[0][2] * z) + std::abs(m[0][3]));\npError.y = gamma(3) * (std::abs(m[1][0] * x) + std::abs(m[1][1] * y) +\n                       std::abs(m[1][2] * z) + std::abs(m[1][3]));\npError.z = gamma(3) * (std::abs(m[2][0] * x) + std::abs(m[2][1] * y) +\n                       std::abs(m[2][2] * z) + std::abs(m[2][3]));",
+      "local": "pError.x = gamma(3) * (std::abs(m[0][0] * x) + std::abs(m[0][1] * y) +\n                       std::abs(m[0][2] * z) + std::abs(m[0][3]));\npError.y = gamma(3) * (std::abs(m[1][0] * x) + std::abs(m[1][1] * y) +\n                       std::abs(m[1][2] * z) + std::abs(m[1][3]));\npError.z = gamma(3) * (std::abs(m[2][0] * x) + std::abs(m[2][1] * y) +\n                       std::abs(m[2][2] * z) + std::abs(m[2][3]));\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-RayInlineFunctions-0",
+      "source": "Point3f OffsetRayOrigin(Point3fi pi, Normal3f n, Vector3f w) {\n    <<Find vector offset to corner of error bounds and compute initial po>>\u00a0\n    <<Round offset point po away from p>>\u00a0\n    return po;\n}",
+      "local": "Point3f OffsetRayOrigin(Point3fi pi, Normal3f n, Vector3f w) {\n    <<Find vector offset to corner of error bounds and compute initial po>>\u00a0\n    <<Round offset point po away from p>>\u00a0\n    return po;\n}\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Findvectormonooffsettocorneroferrorboundsandcomputeinitialmonopo-0",
+      "source": "Float d = Dot(Abs(n), pi.Error());\nVector3f offset = d * Vector3f(n);\nif (Dot(w, n) < 0)\n    offset = -offset;\nPoint3f po = Point3f(pi) + offset;",
+      "local": "Float d = Dot(Abs(n), pi.Error());\nVector3f offset = d * Vector3f(n);\nif (Dot(w, n) < 0)\n    offset = -offset;\nPoint3f po = Point3f(pi) + offset;\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Roundoffsetpointmonopoawayfrommonop-0",
+      "source": "for (int i = 0; i < 3; ++i) {\n    if (offset[i] > 0)      po[i] = NextFloatUp(po[i]);\n    else if (offset[i] < 0) po[i] = NextFloatDown(po[i]);\n}",
+      "local": "for (int i = 0; i < 3; ++i) {\n    if (offset[i] > 0)      po[i] = NextFloatUp(po[i]);\n    else if (offset[i] < 0) po[i] = NextFloatDown(po[i]);\n}\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-InteractionPublicMethods-4",
+      "source": "Point3f OffsetRayOrigin(Vector3f w) const {\n    return pbrt::OffsetRayOrigin(pi, n, w);\n}",
+      "local": "Point3f OffsetRayOrigin(Vector3f w) const {\n    return pbrt::OffsetRayOrigin(pi, n, w);\n}\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-InteractionPublicMethods-5",
+      "source": "Point3f OffsetRayOrigin(Point3f pt) const {\n    return OffsetRayOrigin(pt - p());\n}",
+      "local": "Point3f OffsetRayOrigin(Point3f pt) const {\n    return OffsetRayOrigin(pt - p());\n}\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-RayInlineFunctions-1",
+      "source": "Ray SpawnRay(Point3fi pi, Normal3f n, Float time, Vector3f d) {\n    return Ray(OffsetRayOrigin(pi, n, d), d, time);\n}",
+      "local": "Ray SpawnRay(Point3fi pi, Normal3f n, Float time, Vector3f d) {\n    return Ray(OffsetRayOrigin(pi, n, d), d, time);\n}\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-RayInlineFunctions-2",
+      "source": "Ray SpawnRayTo(Point3fi pFrom, Normal3f n, Float time, Point3f pTo) {\n    Vector3f d = pTo - Point3f(pFrom);\n    return SpawnRay(pFrom, n, time, d);\n}",
+      "local": "Ray SpawnRayTo(Point3fi pFrom, Normal3f n, Float time, Point3f pTo) {\n    Vector3f d = pTo - Point3f(pFrom);\n    return SpawnRay(pFrom, n, time, d);\n}\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-RayInlineFunctions-3",
+      "source": "Ray SpawnRayTo(Point3fi pFrom, Normal3f nFrom, Float time, Point3fi pTo,\n               Normal3f nTo) {\n    Point3f pf = OffsetRayOrigin(pFrom, nFrom,\n                                 Point3f(pTo) - Point3f(pFrom));\n    Point3f pt = OffsetRayOrigin(pTo, nTo, pf - Point3f(pTo));\n    return Ray(pf, pt - pf, time);\n}",
+      "local": "Ray SpawnRayTo(Point3fi pFrom, Normal3f nFrom, Float time, Point3fi pTo,\n               Normal3f nTo) {\n    Point3f pf = OffsetRayOrigin(pFrom, nFrom,\n                                 Point3f(pTo) - Point3f(pFrom));\n    Point3f pt = OffsetRayOrigin(pTo, nTo, pf - Point3f(pTo));\n    return Ray(pf, pt - pf, time);\n}\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-InteractionPublicMethods-6",
+      "source": "RayDifferential SpawnRay(Vector3f d) const {\n    return RayDifferential(OffsetRayOrigin(d), d, time, GetMedium(d));\n}",
+      "local": "RayDifferential SpawnRay(Vector3f d) const {\n    return RayDifferential(OffsetRayOrigin(d), d, time, GetMedium(d));\n}\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-InteractionPublicMethods-7",
+      "source": "Ray SpawnRayTo(Point3f p2) const {\n    Ray r = pbrt::SpawnRayTo(pi, n, time, p2);\n    r.medium = GetMedium(r.d);\n    return r;\n}",
+      "local": "Ray SpawnRayTo(Point3f p2) const {\n    Ray r = pbrt::SpawnRayTo(pi, n, time, p2);\n    r.medium = GetMedium(r.d);\n    return r;\n}\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-MathematicalConstants-0",
+      "source": "constexpr Float ShadowEpsilon = 0.0001f;",
+      "local": "constexpr Float ShadowEpsilon = 0.0001f;\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-OffsetrayorigintoedgeoferrorboundsandcomputemonotMax-0",
+      "source": "if (Float lengthSquared = LengthSquared(d); lengthSquared > 0) {\n    Float dt = Dot(Abs(d), o.Error()) / lengthSquared;\n    o += d * dt;\n    if (tMax)\n        *tMax -= dt;\n}",
+      "local": "if (Float lengthSquared = LengthSquared(d); lengthSquared > 0) {\n    Float dt = Dot(Abs(d), o.Error()) / lengthSquared;\n    o += d * dt;\n    if (tMax)\n        *tMax -= dt;\n}\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Ensurethatcomputedtriangletisconservativelygreaterthanzero-0",
+      "source": "<<Compute \ndelta Subscript z\n\n\n\n\n\n \n \n\n term for triangle \nt\n\n\n\n\n \n\n error bounds>>\u00a0\n<<Compute \ndelta Subscript x\n\n\n\n\n\n \n \n\n and \ndelta Subscript y\n\n\n\n\n\n \n \n\n terms for triangle \nt\n\n\n\n\n \n\n error bounds>>\u00a0\n<<Compute \ndelta Subscript e\n\n\n\n\n\n \n \n\n term for triangle \nt\n\n\n\n\n \n\n error bounds>>\u00a0\n<<Compute \ndelta Subscript t\n\n\n\n\n\n \n \n\n term for triangle \nt\n\n\n\n\n \n\n error bounds and check t>>\u00a0",
+      "local": "<<Compute delta_z term for triangle t error bounds>>\u00a0\n<<Compute delta_x and delta_y terms for triangle t error bounds>>\u00a0\n<<Compute delta_e term for triangle t error bounds>>\u00a0\n<<Compute delta_t term for triangle t error bounds and check t>>\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Computedelta_ztermfortriangleterrorbounds-0",
+      "source": "Float maxZt = MaxComponentValue(Abs(Vector3f(p0t.z, p1t.z, p2t.z)));\nFloat deltaZ = gamma(3) * maxZt;",
+      "local": "Float maxZt = MaxComponentValue(Abs(Vector3f(p0t.z, p1t.z, p2t.z)));\nFloat deltaZ = gamma(3) * maxZt;\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Computedelta_xanddelta_ytermsfortriangleterrorbounds-0",
+      "source": "Float maxXt = MaxComponentValue(Abs(Vector3f(p0t.x, p1t.x, p2t.x)));\nFloat maxYt = MaxComponentValue(Abs(Vector3f(p0t.y, p1t.y, p2t.y)));\nFloat deltaX = gamma(5) * (maxXt + maxZt);\nFloat deltaY = gamma(5) * (maxYt + maxZt);",
+      "local": "Float maxXt = MaxComponentValue(Abs(Vector3f(p0t.x, p1t.x, p2t.x)));\nFloat maxYt = MaxComponentValue(Abs(Vector3f(p0t.y, p1t.y, p2t.y)));\nFloat deltaX = gamma(5) * (maxXt + maxZt);\nFloat deltaY = gamma(5) * (maxYt + maxZt);\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Computedelta_etermfortriangleterrorbounds-0",
+      "source": "Float deltaE = 2 * (gamma(2) * maxXt * maxYt + deltaY * maxXt +\n                    deltaX * maxYt);",
+      "local": "Float deltaE = 2 * (gamma(2) * maxXt * maxYt + deltaY * maxXt +\n                    deltaX * maxYt);\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Computedelta_ttermfortriangleterrorboundsandcheckmonot-0",
+      "source": "Float maxE = MaxComponentValue(Abs(Vector3f(e0, e1, e2)));\nFloat deltaT = 3 * (gamma(3) * maxE * maxZt + deltaE * maxZt +\n                    deltaZ * maxE) * std::abs(invDet);\nif (t <= deltaT)\n    return {};",
+      "local": "Float maxE = MaxComponentValue(Abs(Vector3f(e0, e1, e2)));\nFloat deltaT = 3 * (gamma(3) * maxE * maxZt + deltaE * maxZt +\n                    deltaZ * maxE) * std::abs(invDet);\nif (t <= deltaT)\n    return {};\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    },
+    {
+      "id": "fragment-Findepsilonmonoepstoensurethatcandidatetisgreaterthanzero-0",
+      "source": "Float eps = gamma(10) *\n    (MaxComponentValue(Abs(ray.o)) + MaxComponentValue(Abs(ray.d)) +\n     MaxComponentValue(Abs(p00))   + MaxComponentValue(Abs(p10))   +\n     MaxComponentValue(Abs(p01))   + MaxComponentValue(Abs(p11)));",
+      "local": "Float eps = gamma(10) *\n    (MaxComponentValue(Abs(ray.o)) + MaxComponentValue(Abs(ray.d)) +\n     MaxComponentValue(Abs(p00))   + MaxComponentValue(Abs(p10))   +\n     MaxComponentValue(Abs(p01))   + MaxComponentValue(Abs(p11)));\n",
+      "equal_cpp_ignoring_fragment_titles": true
+    }
+  ],
+  "panels": [
+    {
+      "depth": 7,
+      "id": "fragment-Floating-pointInlineFunctions-11",
+      "name": "<<Floating-point Inline Functions>>+=",
+      "panel": "fragbit-951",
+      "code": "       if (IsInf(v) && v > 0.f)\n           return v;\n       if (v == -0.f)\n           v = 0.f;",
+      "full": "       if (IsInf(v) && v > 0.f)\n           return v;\n       if (v == -0.f)\n           v = 0.f;",
+      "matches_local_visible": [
+        17
+      ],
+      "matches_ch3_supplement": false
+    },
+    {
+      "depth": 7,
+      "id": "fragment-Floating-pointInlineFunctions-11",
+      "name": "<<Floating-point Inline Functions>>+=",
+      "panel": "fragbit-952",
+      "code": "       uint32_t ui = FloatToBits(v);\n       if (v >= 0) ++ui;\n       else        --ui;\n       return BitsToFloat(ui);",
+      "full": "       uint32_t ui = FloatToBits(v);\n       if (v >= 0) ++ui;\n       else        --ui;\n       return BitsToFloat(ui);",
+      "matches_local_visible": [
+        18
+      ],
+      "matches_ch3_supplement": false
+    },
+    {
+      "depth": 7,
+      "id": "fragment-TransformPublicMethods-9",
+      "name": "<<Transform Public Methods>>+=",
+      "panel": "fragbit-953",
+      "code": "       Float xp = (m[0][0] * x + m[0][1] * y) + (m[0][2] * z + m[0][3]);\n       Float yp = (m[1][0] * x + m[1][1] * y) + (m[1][2] * z + m[1][3]);\n       Float zp = (m[2][0] * x + m[2][1] * y) + (m[2][2] * z + m[2][3]);\n       Float wp = (m[3][0] * x + m[3][1] * y) + (m[3][2] * z + m[3][3]);",
+      "full": "       Float xp = (m[0][0] * x + m[0][1] * y) + (m[0][2] * z + m[0][3]);\n       Float yp = (m[1][0] * x + m[1][1] * y) + (m[1][2] * z + m[1][3]);\n       Float zp = (m[2][0] * x + m[2][1] * y) + (m[2][2] * z + m[2][3]);\n       Float wp = (m[3][0] * x + m[3][1] * y) + (m[3][2] * z + m[3][3]);",
+      "matches_local_visible": [],
+      "matches_ch3_supplement": true
+    },
+    {
+      "depth": 9,
+      "id": "fragment-TransformPublicMethods-9",
+      "name": "<<Transform Public Methods>>+=",
+      "panel": "fragbit-955",
+      "code": "              pError.x = gamma(3) * (std::abs(m[0][0] * x) + std::abs(m[0][1] * y) +\n                                     std::abs(m[0][2] * z) + std::abs(m[0][3]));\n              pError.y = gamma(3) * (std::abs(m[1][0] * x) + std::abs(m[1][1] * y) +\n                                     std::abs(m[1][2] * z) + std::abs(m[1][3]));\n              pError.z = gamma(3) * (std::abs(m[2][0] * x) + std::abs(m[2][1] * y) +\n                                     std::abs(m[2][2] * z) + std::abs(m[2][3]));",
+      "full": "              pError.x = gamma(3) * (std::abs(m[0][0] * x) + std::abs(m[0][1] * y) +\n                                     std::abs(m[0][2] * z) + std::abs(m[0][3]));\n              pError.y = gamma(3) * (std::abs(m[1][0] * x) + std::abs(m[1][1] * y) +\n                                     std::abs(m[1][2] * z) + std::abs(m[1][3]));\n              pError.z = gamma(3) * (std::abs(m[2][0] * x) + std::abs(m[2][1] * y) +\n                                     std::abs(m[2][2] * z) + std::abs(m[2][3]));",
+      "matches_local_visible": [
+        38
+      ],
+      "matches_ch3_supplement": true
+    },
+    {
+      "depth": 9,
+      "id": "fragment-TransformPublicMethods-9",
+      "name": "<<Transform Public Methods>>+=",
+      "panel": "fragbit-956",
+      "code": "              Vector3f pInError = p.Error();\n              pError.x = (gamma(3) + 1) * (std::abs(m[0][0]) * pInError.x +\n                                              std::abs(m[0][1]) * pInError.y +\n                                              std::abs(m[0][2]) * pInError.z) +\n                            gamma(3) * (std::abs(m[0][0] * x) + std::abs(m[0][1] * y) +\n                                        std::abs(m[0][2] * z) + std::abs(m[0][3]));\n              pError.y = (gamma(3) + 1) * (std::abs(m[1][0]) * pInError.x +\n                                              std::abs(m[1][1]) * pInError.y +\n                                              std::abs(m[1][2]) * pInError.z) +\n                            gamma(3) * (std::abs(m[1][0] * x) + std::abs(m[1][1] * y) +\n                                        std::abs(m[1][2] * z) + std::abs(m[1][3]));\n              pError.z = (gamma(3) + 1) * (std::abs(m[2][0]) * pInError.x +\n                                              std::abs(m[2][1]) * pInError.y +\n                                              std::abs(m[2][2]) * pInError.z) +\n                            gamma(3) * (std::abs(m[2][0] * x) + std::abs(m[2][1] * y) +\n                                        std::abs(m[2][2] * z) + std::abs(m[2][3]));",
+      "full": "              Vector3f pInError = p.Error();\n              pError.x = (gamma(3) + 1) * (std::abs(m[0][0]) * pInError.x +\n                                              std::abs(m[0][1]) * pInError.y +\n                                              std::abs(m[0][2]) * pInError.z) +\n                            gamma(3) * (std::abs(m[0][0] * x) + std::abs(m[0][1] * y) +\n                                        std::abs(m[0][2] * z) + std::abs(m[0][3]));\n              pError.y = (gamma(3) + 1) * (std::abs(m[1][0]) * pInError.x +\n                                              std::abs(m[1][1]) * pInError.y +\n                                              std::abs(m[1][2]) * pInError.z) +\n                            gamma(3) * (std::abs(m[1][0] * x) + std::abs(m[1][1] * y) +\n                                        std::abs(m[1][2] * z) + std::abs(m[1][3]));\n              pError.z = (gamma(3) + 1) * (std::abs(m[2][0]) * pInError.x +\n                                              std::abs(m[2][1]) * pInError.y +\n                                              std::abs(m[2][2]) * pInError.z) +\n                            gamma(3) * (std::abs(m[2][0] * x) + std::abs(m[2][1] * y) +\n                                        std::abs(m[2][2] * z) + std::abs(m[2][3]));",
+      "matches_local_visible": [],
+      "matches_ch3_supplement": true
+    },
+    {
+      "depth": 7,
+      "id": "fragment-TransformPublicMethods-9",
+      "name": "<<Transform Public Methods>>+=",
+      "panel": "fragbit-954",
+      "code": "       Vector3f pError;\n       if (p.IsExact()) {\n           <<Compute error for transformed exact p>>\u00a0\n       } else {\n           <<Compute error for transformed approximate p>>\u00a0\n       }",
+      "full": "       Vector3f pError;\n       if (p.IsExact()) {\n           <<Compute error for transformed exact p>>\u00a0              pError.x = gamma(3) * (std::abs(m[0][0] * x) + std::abs(m[0][1] * y) +\n                                     std::abs(m[0][2] * z) + std::abs(m[0][3]));\n              pError.y = gamma(3) * (std::abs(m[1][0] * x) + std::abs(m[1][1] * y) +\n                                     std::abs(m[1][2] * z) + std::abs(m[1][3]));\n              pError.z = gamma(3) * (std::abs(m[2][0] * x) + std::abs(m[2][1] * y) +\n                                     std::abs(m[2][2] * z) + std::abs(m[2][3]));\n       } else {\n           <<Compute error for transformed approximate p>>\u00a0              Vector3f pInError = p.Error();\n              pError.x = (gamma(3) + 1) * (std::abs(m[0][0]) * pInError.x +\n                                              std::abs(m[0][1]) * pInError.y +\n                                              std::abs(m[0][2]) * pInError.z) +\n                            gamma(3) * (std::abs(m[0][0] * x) + std::abs(m[0][1] * y) +\n                                        std::abs(m[0][2] * z) + std::abs(m[0][3]));\n              pError.y = (gamma(3) + 1) * (std::abs(m[1][0]) * pInError.x +\n                                              std::abs(m[1][1]) * pInError.y +\n                                              std::abs(m[1][2]) * pInError.z) +\n                            gamma(3) * (std::abs(m[1][0] * x) + std::abs(m[1][1] * y) +\n                                        std::abs(m[1][2] * z) + std::abs(m[1][3]));\n              pError.z = (gamma(3) + 1) * (std::abs(m[2][0]) * pInError.x +\n                                              std::abs(m[2][1]) * pInError.y +\n                                              std::abs(m[2][2]) * pInError.z) +\n                            gamma(3) * (std::abs(m[2][0] * x) + std::abs(m[2][1] * y) +\n                                        std::abs(m[2][2] * z) + std::abs(m[2][3]));\n       }",
+      "matches_local_visible": [
+        37
+      ],
+      "matches_ch3_supplement": false
+    },
+    {
+      "depth": 7,
+      "id": "fragment-ComputeabsoluteerrorfortransformedpointmonopError-0",
+      "name": "<<Compute absolute error for transformed point, pError>>=",
+      "panel": "fragbit-957",
+      "code": "       pError.x = gamma(3) * (std::abs(m[0][0] * x) + std::abs(m[0][1] * y) +\n                              std::abs(m[0][2] * z) + std::abs(m[0][3]));\n       pError.y = gamma(3) * (std::abs(m[1][0] * x) + std::abs(m[1][1] * y) +\n                              std::abs(m[1][2] * z) + std::abs(m[1][3]));\n       pError.z = gamma(3) * (std::abs(m[2][0] * x) + std::abs(m[2][1] * y) +\n                              std::abs(m[2][2] * z) + std::abs(m[2][3]));",
+      "full": "       pError.x = gamma(3) * (std::abs(m[0][0] * x) + std::abs(m[0][1] * y) +\n                              std::abs(m[0][2] * z) + std::abs(m[0][3]));\n       pError.y = gamma(3) * (std::abs(m[1][0] * x) + std::abs(m[1][1] * y) +\n                              std::abs(m[1][2] * z) + std::abs(m[1][3]));\n       pError.z = gamma(3) * (std::abs(m[2][0] * x) + std::abs(m[2][1] * y) +\n                              std::abs(m[2][2] * z) + std::abs(m[2][3]));",
+      "matches_local_visible": [
+        38
+      ],
+      "matches_ch3_supplement": true
+    },
+    {
+      "depth": 7,
+      "id": "fragment-ComputeabsoluteerrorfortransformedpointmonopError-0",
+      "name": "<<Compute absolute error for transformed point, pError>>=",
+      "panel": "fragbit-958",
+      "code": "       Vector3f pInError = p.Error();\n       pError.x = (gamma(3) + 1) * (std::abs(m[0][0]) * pInError.x +\n                                       std::abs(m[0][1]) * pInError.y +\n                                       std::abs(m[0][2]) * pInError.z) +\n                     gamma(3) * (std::abs(m[0][0] * x) + std::abs(m[0][1] * y) +\n                                 std::abs(m[0][2] * z) + std::abs(m[0][3]));\n       pError.y = (gamma(3) + 1) * (std::abs(m[1][0]) * pInError.x +\n                                       std::abs(m[1][1]) * pInError.y +\n                                       std::abs(m[1][2]) * pInError.z) +\n                     gamma(3) * (std::abs(m[1][0] * x) + std::abs(m[1][1] * y) +\n                                 std::abs(m[1][2] * z) + std::abs(m[1][3]));\n       pError.z = (gamma(3) + 1) * (std::abs(m[2][0]) * pInError.x +\n                                       std::abs(m[2][1]) * pInError.y +\n                                       std::abs(m[2][2]) * pInError.z) +\n                     gamma(3) * (std::abs(m[2][0] * x) + std::abs(m[2][1] * y) +\n                                 std::abs(m[2][2] * z) + std::abs(m[2][3]));",
+      "full": "       Vector3f pInError = p.Error();\n       pError.x = (gamma(3) + 1) * (std::abs(m[0][0]) * pInError.x +\n                                       std::abs(m[0][1]) * pInError.y +\n                                       std::abs(m[0][2]) * pInError.z) +\n                     gamma(3) * (std::abs(m[0][0] * x) + std::abs(m[0][1] * y) +\n                                 std::abs(m[0][2] * z) + std::abs(m[0][3]));\n       pError.y = (gamma(3) + 1) * (std::abs(m[1][0]) * pInError.x +\n                                       std::abs(m[1][1]) * pInError.y +\n                                       std::abs(m[1][2]) * pInError.z) +\n                     gamma(3) * (std::abs(m[1][0] * x) + std::abs(m[1][1] * y) +\n                                 std::abs(m[1][2] * z) + std::abs(m[1][3]));\n       pError.z = (gamma(3) + 1) * (std::abs(m[2][0]) * pInError.x +\n                                       std::abs(m[2][1]) * pInError.y +\n                                       std::abs(m[2][2]) * pInError.z) +\n                     gamma(3) * (std::abs(m[2][0] * x) + std::abs(m[2][1] * y) +\n                                 std::abs(m[2][2] * z) + std::abs(m[2][3]));",
+      "matches_local_visible": [],
+      "matches_ch3_supplement": true
+    },
+    {
+      "depth": 7,
+      "id": "fragment-RayInlineFunctions-0",
+      "name": "<<Ray Inline Functions>>=",
+      "panel": "fragbit-959",
+      "code": "       Float d = Dot(Abs(n), pi.Error());\n       Vector3f offset = d * Vector3f(n);\n       if (Dot(w, n) < 0)\n           offset = -offset;\n       Point3f po = Point3f(pi) + offset;",
+      "full": "       Float d = Dot(Abs(n), pi.Error());\n       Vector3f offset = d * Vector3f(n);\n       if (Dot(w, n) < 0)\n           offset = -offset;\n       Point3f po = Point3f(pi) + offset;",
+      "matches_local_visible": [
+        40
+      ],
+      "matches_ch3_supplement": false
+    },
+    {
+      "depth": 7,
+      "id": "fragment-RayInlineFunctions-0",
+      "name": "<<Ray Inline Functions>>=",
+      "panel": "fragbit-960",
+      "code": "       for (int i = 0; i < 3; ++i) {\n           if (offset[i] > 0)      po[i] = NextFloatUp(po[i]);\n           else if (offset[i] < 0) po[i] = NextFloatDown(po[i]);\n       }",
+      "full": "       for (int i = 0; i < 3; ++i) {\n           if (offset[i] > 0)      po[i] = NextFloatUp(po[i]);\n           else if (offset[i] < 0) po[i] = NextFloatDown(po[i]);\n       }",
+      "matches_local_visible": [
+        41
+      ],
+      "matches_ch3_supplement": false
+    },
+    {
+      "depth": 7,
+      "id": "fragment-Ensurethatcomputedtriangletisconservativelygreaterthanzero-0",
+      "name": "<<Ensure that computed triangle \nt\n\n\n\n\n \n\n is conservatively greater than zero>>=",
+      "panel": "fragbit-961",
+      "code": "   Float maxZt = MaxComponentValue(Abs(Vector3f(p0t.z, p1t.z, p2t.z)));\n   Float deltaZ = gamma(3) * maxZt;",
+      "full": "   Float maxZt = MaxComponentValue(Abs(Vector3f(p0t.z, p1t.z, p2t.z)));\n   Float deltaZ = gamma(3) * maxZt;",
+      "matches_local_visible": [
+        52
+      ],
+      "matches_ch3_supplement": false
+    },
+    {
+      "depth": 7,
+      "id": "fragment-Ensurethatcomputedtriangletisconservativelygreaterthanzero-0",
+      "name": "<<Ensure that computed triangle \nt\n\n\n\n\n \n\n is conservatively greater than zero>>=",
+      "panel": "fragbit-962",
+      "code": "   Float maxXt = MaxComponentValue(Abs(Vector3f(p0t.x, p1t.x, p2t.x)));\n   Float maxYt = MaxComponentValue(Abs(Vector3f(p0t.y, p1t.y, p2t.y)));\n   Float deltaX = gamma(5) * (maxXt + maxZt);\n   Float deltaY = gamma(5) * (maxYt + maxZt);",
+      "full": "   Float maxXt = MaxComponentValue(Abs(Vector3f(p0t.x, p1t.x, p2t.x)));\n   Float maxYt = MaxComponentValue(Abs(Vector3f(p0t.y, p1t.y, p2t.y)));\n   Float deltaX = gamma(5) * (maxXt + maxZt);\n   Float deltaY = gamma(5) * (maxYt + maxZt);",
+      "matches_local_visible": [
+        53
+      ],
+      "matches_ch3_supplement": false
+    },
+    {
+      "depth": 7,
+      "id": "fragment-Ensurethatcomputedtriangletisconservativelygreaterthanzero-0",
+      "name": "<<Ensure that computed triangle \nt\n\n\n\n\n \n\n is conservatively greater than zero>>=",
+      "panel": "fragbit-963",
+      "code": "   Float deltaE = 2 * (gamma(2) * maxXt * maxYt + deltaY * maxXt +\n                       deltaX * maxYt);",
+      "full": "   Float deltaE = 2 * (gamma(2) * maxXt * maxYt + deltaY * maxXt +\n                       deltaX * maxYt);",
+      "matches_local_visible": [
+        54
+      ],
+      "matches_ch3_supplement": false
+    },
+    {
+      "depth": 7,
+      "id": "fragment-Ensurethatcomputedtriangletisconservativelygreaterthanzero-0",
+      "name": "<<Ensure that computed triangle \nt\n\n\n\n\n \n\n is conservatively greater than zero>>=",
+      "panel": "fragbit-964",
+      "code": "   Float maxE = MaxComponentValue(Abs(Vector3f(e0, e1, e2)));\n   Float deltaT = 3 * (gamma(3) * maxE * maxZt + deltaE * maxZt +\n                       deltaZ * maxE) * std::abs(invDet);\n   if (t <= deltaT)\n       return {};",
+      "full": "   Float maxE = MaxComponentValue(Abs(Vector3f(e0, e1, e2)));\n   Float deltaT = 3 * (gamma(3) * maxE * maxZt + deltaE * maxZt +\n                       deltaZ * maxE) * std::abs(invDet);\n   if (t <= deltaT)\n       return {};",
+      "matches_local_visible": [
+        55
+      ],
+      "matches_ch3_supplement": false
+    }
+  ]
+}

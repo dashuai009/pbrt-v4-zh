@@ -5,7 +5,7 @@ export PATH="$PWD/.tools/bin:$PATH"
 export PAGES_BASE_PATH="${PAGES_BASE_PATH:-/pbrt-v4-zh/}"
 mkdir -p output
 node tooling/build-snapshot.mjs start
-node --test tooling/review-state.test.mjs
+node --test tooling/*.test.mjs
 node tooling/original-citations.mjs
 node tooling/citation-map.mjs
 node tooling/content-check.mjs
@@ -19,13 +19,13 @@ for lang in zh en zh-en; do
   fi
 done
 for lang in zh en; do
-  typst query tooling/export-references.typ '<reference-export>' --field value --one --root . --font-path fonts --input "LANG_OUT=$lang" > "output/references-${lang}.json.tmp"
-  mv "output/references-${lang}.json.tmp" "output/references-${lang}.json"
-  typst query tooling/export-link-targets.typ '<link-target-export>' --field value --one --root . --font-path fonts --input "LANG_OUT=$lang" > "output/link-targets-${lang}.json.tmp"
-  mv "output/link-targets-${lang}.json.tmp" "output/link-targets-${lang}.json"
+  typst query tooling/export-reader-data.typ '<reader-export>' --field value --one --root . --font-path fonts --input "LANG_OUT=$lang" > "output/reader-${lang}.json.tmp"
+  mv "output/reader-${lang}.json.tmp" "output/reader-${lang}.json"
+  node tooling/split-reader-export.mjs "$lang"
 done
 node tooling/web-entries.mjs
 node tooling/source-links.mjs
+node tooling/build-snapshot.mjs generated
 shiroa build --mode static-html --font-path fonts --dest-dir output/site --path-to-root "$PAGES_BASE_PATH"
 node tooling/check-rendered-content.mjs output/site
 node tooling/compact-html.mjs output/site

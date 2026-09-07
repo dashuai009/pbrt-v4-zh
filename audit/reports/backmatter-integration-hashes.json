@@ -1,0 +1,22 @@
+{
+  "backmatter/References.typ": "5ade811f41e59a6d8da7572afb0d4191c47800173f25f1a9b3199ad2f0837031",
+  "backmatter/Index_of_Fragments.typ": "58f9bec8ce2a58b2c0a4ae2839ebba18a86513ebe5d3cca6e6961be883486792",
+  "backmatter/Index_of_Identifiers.typ": "d803c333b1d99056b22f9e3b55ce7b2e9f13cb735710a8d0738038b3b146d65c",
+  "backmatter/math/inline.typ": "5d819b9401095a3b01c94d27b8614910affeb6df46af2bcb310be5db3605dcd9",
+  "evidence": {
+    "entry_labels": 1355,
+    "compiled_labels_each_exactly_once": true,
+    "checker_summary": "audit/reports/backmatter-audit-summary.json",
+    "pdf": "/tmp/review-backmatter-integration.pdf",
+    "pdf_visual_page": 2,
+    "shiroa_mode": "static-html",
+    "html_css_before": "vertical-align:−0.671ex; computed baseline",
+    "html_css_after": "vertical-align:-0.671ex; computed -5.55051px",
+    "html_examples": [
+      "cos theta_i",
+      "LP_tau"
+    ],
+    "whole_book_rendering": false,
+    "whole_site_links": false
+  }
+}

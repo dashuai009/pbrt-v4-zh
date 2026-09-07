@@ -435,21 +435,21 @@ Frame shadingFrame;
 
 
 #figure(
-  image("../pbr-book-website/4ed/Reflection_Models/pha09f02.svg", width: 80%),
+  image("../pbr-book-website/4ed/Reflection_Models/pha09f03.svg", width: 80%),
   caption: [
     #parec[
-      The geometric normal, , defined by the surface geometry, and the shading normal, , given by per-vertex normals and/or bump mapping, will generally define different hemispheres for integrating incident illumination to compute surface reflection. It is important to handle this inconsistency carefully since it can otherwise lead to artifacts in images.
+      The geometric normal, $bold(n)_("g")$, defined by the surface geometry, and the shading normal, $bold(n)_("s")$, given by per-vertex normals and/or bump mapping, will generally define different hemispheres for integrating incident illumination to compute surface reflection. It is important to handle this inconsistency carefully since it can otherwise lead to artifacts in images.
 
     ][
-      由表面几何定义的几何法线，以及由逐顶点法线和/或凹凸映射给出的着色法线，通常会定义用于整合入射光照以计算表面反射的不同半球。处理这种不一致性很重要，因为否则可能会在图像中产生伪影。
+      由表面几何定义的几何法线 $bold(n)_("g")$，以及由逐顶点法线和/或凹凸映射给出的着色法线 $bold(n)_("s")$，通常会定义用于整合入射光照以计算表面反射的不同半球。处理这种不一致性很重要，因为否则可能会在图像中产生伪影。
     ]
   ],
 ) <pha09f03>
 
 #parec[
-  The constructor initializes the latter from the shading normal and using the shading coordinate system convention (@pha09f03 ).
+  The constructor initializes the latter from the shading normal and using the shading coordinate system convention (@fig:pha09f03 ).
 ][
-  构造函数根据着色法线和着色坐标系约定（见@pha09f03 ）初始化后者。
+  构造函数根据着色法线和着色坐标系约定（见@fig:pha09f03 ）初始化后者。
 ]
 << BSDF Public Methods>>=
 ```cpp

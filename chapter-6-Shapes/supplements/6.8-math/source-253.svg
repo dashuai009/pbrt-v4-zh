@@ -1,0 +1,20 @@
+<svg aria-labelledby="MathJax-SVG-1-Title" focusable="false" height="2.843ex" role="img" style="vertical-align: -0.838ex;" viewBox="0 -863.1 2490.1 1223.9" width="5.783ex" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title id="MathJax-SVG-1-Title">gamma 5 StartAbsoluteValue x prime EndAbsoluteValue</title>
+<defs aria-hidden="true">
+<path d="M543 421c0 -4 -12 -26 -19 -38c-40 -79 -104 -228 -136 -327c-4 -13 -6 -26 -8 -39c-4 -31 -14 -88 -37 -172c-11 -38 -19 -60 -32 -60c-8 0 -13 7 -13 18c0 26 30 142 52 215c7 20 12 37 12 98c0 79 -11 254 -162 254c-11 0 -120 -1 -159 -116l-4 -5c-10 0 -19 0 -19 10 c0 31 70 183 195 183c69 0 109 -49 133 -110c39 -97 40 -173 41 -204c40 101 80 201 132 296c3 7 9 7 12 7c0 0 12 0 12 -10Z" id="E1-LATINMODERNNORMAL-1D6FE" stroke-width="1"></path>
+<path d="M449 201c0 -127 -102 -223 -218 -223c-112 0 -181 97 -181 183c0 46 35 53 49 53c33 0 50 -25 50 -49s-17 -49 -50 -49c-11 0 -14 1 -17 2c17 -59 74 -112 147 -112c46 0 83 26 107 65c24 42 24 102 24 137c0 50 -2 89 -18 126c-8 18 -33 64 -85 64 c-81 0 -118 -54 -129 -70c-4 -6 -6 -9 -13 -9c-14 0 -14 8 -14 26v296c0 16 0 24 10 24c0 0 4 0 12 -3c47 -21 93 -28 133 -28c67 0 116 20 136 29c5 3 8 3 8 3c7 0 10 -5 10 -11c0 -13 -70 -104 -193 -104c-32 0 -65 7 -85 13v-195c36 35 79 51 127 51 c108 0 190 -100 190 -219Z" id="E1-LATINMODERNMAIN-35" stroke-width="1"></path>
+<path d="M159 -230c0 -11 -9 -20 -20 -20s-20 9 -20 20v960c0 11 9 20 20 20s20 -9 20 -20v-960Z" id="E1-LATINMODERNMAIN-7C" stroke-width="1"></path>
+<path d="M527 376c0 -40 -32 -58 -54 -58c-27 0 -38 19 -38 35c0 24 20 49 48 54c-21 13 -45 13 -50 13c-70 0 -93 -92 -99 -118l-34 -137c-11 -44 -17 -66 -17 -88c0 -34 16 -66 55 -66c32 0 100 24 133 131c2 7 4 11 13 11c3 0 12 0 12 -10c0 -25 -57 -154 -160 -154 c-60 0 -96 39 -108 76c-3 -6 -39 -76 -105 -76c-44 0 -94 20 -94 66c0 32 25 58 55 58c15 0 37 -8 37 -35c0 -28 -22 -49 -47 -54c21 -13 44 -13 50 -13c44 0 79 42 95 104c37 140 54 207 54 238c0 58 -35 67 -54 67c-34 0 -100 -25 -134 -131c-2 -9 -5 -11 -13 -11 c0 0 -12 0 -12 10c0 25 57 154 161 154c29 0 83 -10 108 -76c12 23 47 76 105 76c34 0 93 -14 93 -66Z" id="E1-LATINMODERNNORMAL-1D465" stroke-width="1"></path>
+<path d="M340 496c0 -10 -3 -20 -8 -28l-227 -372h-38l171 424c6 15 26 29 48 29c30 0 54 -24 54 -53Z" id="E1-LATINMODERNVARIANTS-2032" stroke-width="1"></path>
+</defs>
+<g aria-hidden="true" fill="currentColor" stroke="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+<use x="0" xlink:href="#E1-LATINMODERNNORMAL-1D6FE" y="0"></use>
+<use transform="scale(0.707)" x="733" xlink:href="#E1-LATINMODERNMAIN-35" y="-213"></use>
+<use x="972" xlink:href="#E1-LATINMODERNMAIN-7C" y="0"></use>
+<g transform="translate(1250,0)">
+<use x="0" xlink:href="#E1-LATINMODERNNORMAL-1D465" y="0"></use>
+<use transform="scale(0.707)" x="809" xlink:href="#E1-LATINMODERNVARIANTS-2032" y="513"></use>
+</g>
+<use x="2211" xlink:href="#E1-LATINMODERNMAIN-7C" y="0"></use>
+</g>
+</svg>

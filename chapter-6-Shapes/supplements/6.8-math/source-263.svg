@@ -1,0 +1,11 @@
+<svg aria-labelledby="MathJax-SVG-1-Title" focusable="false" height="2.009ex" role="img" style="vertical-align: -0.671ex;" viewBox="0 -576.1 920.4 865.1" width="2.138ex" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title id="MathJax-SVG-1-Title">e 0</title>
+<defs aria-hidden="true">
+<path d="M430 107c0 -12 -84 -118 -227 -118c-98 0 -157 79 -157 181c0 175 151 272 262 272c69 0 107 -41 107 -85c0 -14 -5 -73 -75 -103c-50 -21 -124 -23 -153 -23h-53c-15 -61 -16 -92 -16 -104c0 -32 9 -116 87 -116c12 0 121 0 200 99c6 8 8 10 13 10c6 0 12 -7 12 -13z M382 357c0 34 -27 63 -74 63c-26 0 -129 -15 -168 -167h41c41 0 201 0 201 104Z" id="E1-LATINMODERNNORMAL-1D452" stroke-width="1"></path>
+<path d="M460 320c0 -79 -5 -157 -37 -226c-44 -95 -120 -116 -174 -116c-49 0 -122 20 -165 101c-41 76 -45 166 -45 241c0 80 5 158 37 227c41 93 114 119 174 119c42 0 124 -16 170 -112c35 -74 40 -154 40 -234zM377 332c0 63 0 139 -10 195c-19 99 -85 117 -118 117 c-25 0 -100 -9 -119 -128c-8 -54 -8 -120 -8 -184c0 -59 0 -151 11 -211c18 -96 77 -121 116 -121c45 0 102 30 117 125c11 64 11 132 11 207Z" id="E1-LATINMODERNMAIN-30" stroke-width="1"></path>
+</defs>
+<g aria-hidden="true" fill="currentColor" stroke="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+<use x="0" xlink:href="#E1-LATINMODERNNORMAL-1D452" y="0"></use>
+<use transform="scale(0.707)" x="659" xlink:href="#E1-LATINMODERNMAIN-30" y="-213"></use>
+</g>
+</svg>

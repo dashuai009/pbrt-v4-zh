@@ -2,175 +2,175 @@
 
 固定原书 f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c。结构映射与审校状态分开记录；审校状态依据报告和当前正文、补充/资源指纹，不由数量推断。逐单元本地位置映射仍需逐项证据，不能用整节状态替代；逐单元行号、锚点和指纹见 inventory.json。报告与后续审校记录独立保存，重新生成不会给内容授予通过状态。
 
-| 原书页面 | 本地入口 | 候选单元数 | 状态 |
+| 原书页面 | 本地入口 | 正文候选 / 导航辅助 | 状态 |
 |---|---|---:|---|
-| 4ed/Preface.html | chapter-0-Preface/chapter-0.0-Preface.typ | 88 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Preface/Further_Reading.html | chapter-0-Preface/chapter-0.1-Further_Reading.typ | 22 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Introduction.html | chapter-1-Introduction/chapter-1.0-Introduction.typ | 13 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Introduction/Literate_Programming.html | chapter-1-Introduction/chapter-1.1-Literate_Programming.typ | 34 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Introduction/Photorealistic_Rendering_and_the_Ray-Tracing_Algorithm.html | chapter-1-Introduction/chapter-1.2-Photorealistic_Rendering_and_the_Ray-Tracing_Algorithm.typ | 88 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Introduction/pbrt_System_Overview.html | chapter-1-Introduction/chapter-1.3-pbrt_System_Overview.typ | 226 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Introduction/How_to_Proceed_through_This_Book.html | chapter-1-Introduction/chapter-1.4-How_to_Proceed_through_This_Book.typ | 25 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Introduction/Using_and_Understanding_the_Code.html | chapter-1-Introduction/chapter-1.5-Using_and_Understanding_the_Code.typ | 75 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Introduction/A_Brief_History_of_Physically_Based_Rendering.html | chapter-1-Introduction/chapter-1.6-A_Brief_History_of_Physically_Based_Rendering.typ | 44 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Introduction/Further_Reading.html | chapter-1-Introduction/chapter-1.7-Further_Reading.typ | 82 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Introduction/Exercises.html | chapter-1-Introduction/chapter-1.8-Exercises.typ | 8 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Monte_Carlo_Integration.html | chapter-2-Monte_Carlo_Integration/chapter-2.0-Monte_Carlo_Integration.typ | 13 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Monte_Carlo_Integration/Monte_Carlo_Basics.html | chapter-2-Monte_Carlo_Integration/chapter-2.1-Monte_Carlo_Basics.typ | 100 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Monte_Carlo_Integration/Improving_Efficiency.html | chapter-2-Monte_Carlo_Integration/chapter-2.2-Improving_Efficiency.typ | 112 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Monte_Carlo_Integration/Sampling_Using_the_Inversion_Method.html | chapter-2-Monte_Carlo_Integration/chapter-2.3-Sampling_Using_the_Inversion_Method.typ | 68 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Monte_Carlo_Integration/Transforming_between_Distributions.html | chapter-2-Monte_Carlo_Integration/chapter-2.4-Transforming_between_Distributions.typ | 69 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Monte_Carlo_Integration/Further_Reading.html | chapter-2-Monte_Carlo_Integration/chapter-2.5-Further_Reading.typ | 51 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Monte_Carlo_Integration/Exercises.html | chapter-2-Monte_Carlo_Integration/chapter-2.6-Exercises.typ | 10 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Geometry_and_Transformations.html | chapter-3-Geometry_and_Transformations/chapter-3.0-Geometry_and_Transformations.typ | 9 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Geometry_and_Transformations/Coordinate_Systems.html | chapter-3-Geometry_and_Transformations/chapter-3.1-Coordinate_Systems.typ | 20 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Geometry_and_Transformations/n-Tuple_Base_Classes.html | chapter-3-Geometry_and_Transformations/chapter-3.2-n-Tuple_Base_Classes.typ | 46 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Geometry_and_Transformations/Vectors.html | chapter-3-Geometry_and_Transformations/chapter-3.3-Vectors.typ | 85 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Geometry_and_Transformations/Points.html | chapter-3-Geometry_and_Transformations/chapter-3.4-Points.typ | 25 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Geometry_and_Transformations/Normals.html | chapter-3-Geometry_and_Transformations/chapter-3.5-Normals.typ | 17 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Geometry_and_Transformations/Rays.html | chapter-3-Geometry_and_Transformations/chapter-3.6-Rays.typ | 41 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Geometry_and_Transformations/Bounding_Boxes.html | chapter-3-Geometry_and_Transformations/chapter-3.7-Bounding_Boxes.typ | 71 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Geometry_and_Transformations/Spherical_Geometry.html | chapter-3-Geometry_and_Transformations/chapter-3.8-Spherical_Geometry.typ | 174 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Geometry_and_Transformations/Transformations.html | chapter-3-Geometry_and_Transformations/chapter-3.9-Transformations.typ | 160 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Geometry_and_Transformations/Applying_Transformations.html | chapter-3-Geometry_and_Transformations/chapter-3.10-Applying_Transformations.typ | 74 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Geometry_and_Transformations/Interactions.html | chapter-3-Geometry_and_Transformations/chapter-3.11-Interactions.typ | 76 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Geometry_and_Transformations/Further_Reading.html | chapter-3-Geometry_and_Transformations/chapter-3.12-Further_Reading.typ | 48 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Geometry_and_Transformations/Exercises.html | chapter-3-Geometry_and_Transformations/chapter-3.13-Exercises.typ | 11 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Radiometry,_Spectra,_and_Color.html | chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.0-Radiometry,_Spectra,_and_Color.typ | 12 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Radiometry,_Spectra,_and_Color/Radiometry.html | chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.1-Radiometry.typ | 104 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Radiometry,_Spectra,_and_Color/Working_with_Radiometric_Integrals.html | chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.2-Working_with_Radiometric_Integrals.typ | 43 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Radiometry,_Spectra,_and_Color/Surface_Reflection.html | chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.3-Surface_Reflection.typ | 48 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Radiometry,_Spectra,_and_Color/Light_Emission.html | chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.4-Light_Emission.typ | 56 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Radiometry,_Spectra,_and_Color/Representing_Spectral_Distributions.html | chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.5-Representing_Spectral_Distributions.typ | 144 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Radiometry,_Spectra,_and_Color/Color.html | chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.6-Color.typ | 282 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Radiometry,_Spectra,_and_Color/Further_Reading.html | chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.7-Further_Reading.typ | 83 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Radiometry,_Spectra,_and_Color/Exercises.html | chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.8-Exercises.typ | 11 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Cameras_and_Film.html | chapter-5-Cameras_and_Film/chapter-5.0-Cameras_and_Film.typ | 13 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Cameras_and_Film/Camera_Interface.html | chapter-5-Cameras_and_Film/chapter-5.1-Camera_Interface.typ | 109 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Cameras_and_Film/Projective_Camera_Models.html | chapter-5-Cameras_and_Film/chapter-5.2-Projective_Camera_Models.typ | 177 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Cameras_and_Film/Spherical_Camera.html | chapter-5-Cameras_and_Film/chapter-5.3-Spherical_Camera.typ | 37 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Cameras_and_Film/Film_and_Imaging.html | chapter-5-Cameras_and_Film/chapter-5.4-Film_and_Imaging.typ | 291 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Cameras_and_Film/Further_Reading.html | chapter-5-Cameras_and_Film/chapter-5.5-Further_Reading.typ | 91 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Cameras_and_Film/Exercises.html | chapter-5-Cameras_and_Film/chapter-5.6-Exercises.typ | 16 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Shapes.html | chapter-6-Shapes/chapter-6.0-Shapes.typ | 10 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Shapes/Basic_Shape_Interface.html | chapter-6-Shapes/chapter-6.1-Basic_Shape_Interface.typ | 104 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Shapes/Spheres.html | chapter-6-Shapes/chapter-6.2-Spheres.typ | 289 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Shapes/Cylinders.html | chapter-6-Shapes/chapter-6.3-Cylinders.typ | 135 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Shapes/Disks.html | chapter-6-Shapes/chapter-6.4-Disks.typ | 86 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Shapes/Triangle_Meshes.html | chapter-6-Shapes/chapter-6.5-Triangle_Meshes.typ | 503 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Shapes/Bilinear_Patches.html | chapter-6-Shapes/chapter-6.6-Bilinear_Patches.typ | 349 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Shapes/Curves.html | chapter-6-Shapes/chapter-6.7-Curves.typ | 188 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Shapes/Managing_Rounding_Error.html | chapter-6-Shapes/chapter-6.8-Managing_Rounding_Error.typ | 409 | 待原文对照及独立复核 |
-| 4ed/Shapes/Further_Reading.html | chapter-6-Shapes/chapter-6.9-Further_Reading.typ | 148 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Shapes/Exercises.html | chapter-6-Shapes/chapter-6.10-Exercises.typ | 33 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Primitives_and_Intersection_Acceleration.html | chapter-7-Primitives_and_Intersection_Acceleration/chapter-7.0-Primitives_and_Intersection_Acceleration.typ | 12 | 待原文对照及独立复核 |
-| 4ed/Primitives_and_Intersection_Acceleration/Primitive_Interface_and_Geometric_Primitives.html | chapter-7-Primitives_and_Intersection_Acceleration/chapter-7.1-Primitive_Interface_and_Geometric_Primitives.typ | 93 | 待原文对照及独立复核 |
-| 4ed/Primitives_and_Intersection_Acceleration/Aggregates.html | chapter-7-Primitives_and_Intersection_Acceleration/chapter-7.2-Aggregates.typ | 13 | 待原文对照及独立复核 |
-| 4ed/Primitives_and_Intersection_Acceleration/Bounding_Volume_Hierarchies.html | chapter-7-Primitives_and_Intersection_Acceleration/chapter-7.3-Bounding_Volume_Hierarchies.typ | 374 | 待原文对照及独立复核 |
-| 4ed/Primitives_and_Intersection_Acceleration/Further_Reading.html | chapter-7-Primitives_and_Intersection_Acceleration/chapter-7.4-Further_Reading.typ | 175 | 待原文对照及独立复核 |
-| 4ed/Primitives_and_Intersection_Acceleration/Exercises.html | chapter-7-Primitives_and_Intersection_Acceleration/chapter-7.5-Exercises.typ | 20 | 待原文对照及独立复核 |
-| 4ed/Sampling_and_Reconstruction.html | chapter-8-Sampling_and_Reconstruction/chapter-8.0-Sampling_and_Reconstruction.typ | 11 | 待原文对照及独立复核 |
-| 4ed/Sampling_and_Reconstruction/Sampling_Theory.html | chapter-8-Sampling_and_Reconstruction/chapter-8.1-Sampling_Theory.typ | 156 | 待原文对照及独立复核 |
-| 4ed/Sampling_and_Reconstruction/Sampling_and_Integration.html | chapter-8-Sampling_and_Reconstruction/chapter-8.2-Sampling_and_Integration.typ | 92 | 待原文对照及独立复核 |
-| 4ed/Sampling_and_Reconstruction/Sampling_Interface.html | chapter-8-Sampling_and_Reconstruction/chapter-8.3-Sampling_Interface.typ | 35 | 待原文对照及独立复核 |
-| 4ed/Sampling_and_Reconstruction/Independent_Sampler.html | chapter-8-Sampling_and_Reconstruction/chapter-8.4-Independent_Sampler.typ | 20 | 待原文对照及独立复核 |
-| 4ed/Sampling_and_Reconstruction/Stratified_Sampler.html | chapter-8-Sampling_and_Reconstruction/chapter-8.5-Stratified_Sampler.typ | 52 | 待原文对照及独立复核 |
-| 4ed/Sampling_and_Reconstruction/Halton_Sampler.html | chapter-8-Sampling_and_Reconstruction/chapter-8.6-Halton_Sampler.typ | 155 | 待原文对照及独立复核 |
-| 4ed/Sampling_and_Reconstruction/Sobol_Samplers.html | chapter-8-Sampling_and_Reconstruction/chapter-8.7-Sobol_Samplers.typ | 227 | 待原文对照及独立复核 |
-| 4ed/Sampling_and_Reconstruction/Image_Reconstruction.html | chapter-8-Sampling_and_Reconstruction/chapter-8.8-Image_Reconstruction.typ | 153 | 待原文对照及独立复核 |
-| 4ed/Sampling_and_Reconstruction/Further_Reading.html | chapter-8-Sampling_and_Reconstruction/chapter-8.9-Further_Reading.typ | 152 | 待原文对照及独立复核 |
-| 4ed/Sampling_and_Reconstruction/Exercises.html | chapter-8-Sampling_and_Reconstruction/chapter-8.10-Exercises.typ | 12 | 待原文对照及独立复核 |
-| 4ed/Reflection_Models.html | chapter-9-Reflection_Models/chapter-9.0-Reflection_Models.typ | 23 | 待原文对照及独立复核 |
-| 4ed/Reflection_Models/BSDF_Representation.html | chapter-9-Reflection_Models/chapter-9.1-BSDF_Representation.typ | 112 | 待原文对照及独立复核 |
-| 4ed/Reflection_Models/Diffuse_Reflection.html | chapter-9-Reflection_Models/chapter-9.2-Diffuse_Reflection.typ | 27 | 待原文对照及独立复核 |
-| 4ed/Reflection_Models/Specular_Reflection_and_Transmission.html | chapter-9-Reflection_Models/chapter-9.3-Specular_Reflection_and_Transmission.typ | 126 | 待原文对照及独立复核 |
-| 4ed/Reflection_Models/Conductor_BRDF.html | chapter-9-Reflection_Models/chapter-9.4-Conductor_BRDF.typ | 54 | 待原文对照及独立复核 |
-| 4ed/Reflection_Models/Dielectric_BSDF.html | chapter-9-Reflection_Models/chapter-9.5-Dielectric_BSDF.typ | 139 | 待原文对照及独立复核 |
-| 4ed/Reflection_Models/Roughness_Using_Microfacet_Theory.html | chapter-9-Reflection_Models/chapter-9.6-Roughness_Using_Microfacet_Theory.typ | 188 | 待原文对照及独立复核 |
-| 4ed/Reflection_Models/Rough_Dielectric_BSDF.html | chapter-9-Reflection_Models/chapter-9.7-Rough_Dielectric_BSDF.typ | 86 | 待原文对照及独立复核 |
-| 4ed/Reflection_Models/Measured_BSDFs.html | chapter-9-Reflection_Models/chapter-9.8-Measured_BSDFs.typ | 121 | 待原文对照及独立复核 |
-| 4ed/Reflection_Models/Scattering_from_Hair.html | chapter-9-Reflection_Models/chapter-9.9-Scattering_from_Hair.typ | 245 | 待原文对照及独立复核 |
-| 4ed/Reflection_Models/Further_Reading.html | chapter-9-Reflection_Models/chapter-9.10-Further_Reading.typ | 206 | 待原文对照及独立复核 |
-| 4ed/Reflection_Models/Exercises.html | chapter-9-Reflection_Models/chapter-9.11-Exercises.typ | 19 | 待原文对照及独立复核 |
-| 4ed/Textures_and_Materials.html | chapter-10-Textures_and_Materials/chapter-10.0-Textures_and_Materials.typ | 15 | 待原文对照及独立复核 |
-| 4ed/Textures_and_Materials/Texture_Sampling_and_Antialiasing.html | chapter-10-Textures_and_Materials/chapter-10.1-Texture_Sampling_and_Antialiasing.typ | 195 | 待原文对照及独立复核 |
-| 4ed/Textures_and_Materials/Texture_Coordinate_Generation.html | chapter-10-Textures_and_Materials/chapter-10.2-Texture_Coordinate_Generation.typ | 105 | 待原文对照及独立复核 |
-| 4ed/Textures_and_Materials/Texture_Interface_and_Basic_Textures.html | chapter-10-Textures_and_Materials/chapter-10.3-Texture_Interface_and_Basic_Textures.typ | 55 | 待原文对照及独立复核 |
-| 4ed/Textures_and_Materials/Image_Texture.html | chapter-10-Textures_and_Materials/chapter-10.4-Image_Texture.typ | 157 | 待原文对照及独立复核 |
-| 4ed/Textures_and_Materials/Material_Interface_and_Implementations.html | chapter-10-Textures_and_Materials/chapter-10.5-Material_Interface_and_Implementations.typ | 205 | 待原文对照及独立复核 |
-| 4ed/Textures_and_Materials/Further_Reading.html | chapter-10-Textures_and_Materials/chapter-10.6-Further_Reading.typ | 147 | 待原文对照及独立复核 |
-| 4ed/Textures_and_Materials/Exercises.html | chapter-10-Textures_and_Materials/chapter-10.7-Exercises.typ | 12 | 待原文对照及独立复核 |
-| 4ed/Volume_Scattering.html | chapter-11-Volume_Scattering/chapter-11.0-Volume_Scattering.typ | 10 | 待原文对照及独立复核 |
-| 4ed/Volume_Scattering/Volume_Scattering_Processes.html | chapter-11-Volume_Scattering/chapter-11.1-Volume_Scattering_Processes.typ | 63 | 待原文对照及独立复核 |
-| 4ed/Volume_Scattering/Transmittance.html | chapter-11-Volume_Scattering/chapter-11.2-Transmittance.typ | 77 | 待原文对照及独立复核 |
-| 4ed/Volume_Scattering/Phase_Functions.html | chapter-11-Volume_Scattering/chapter-11.3-Phase_Functions.typ | 66 | 待原文对照及独立复核 |
-| 4ed/Volume_Scattering/Media.html | chapter-11-Volume_Scattering/chapter-11.4-Media.typ | 258 | 待原文对照及独立复核 |
-| 4ed/Volume_Scattering/Further_Reading.html | chapter-11-Volume_Scattering/chapter-11.5-Further_Reading.typ | 73 | 待原文对照及独立复核 |
-| 4ed/Volume_Scattering/Exercises.html | chapter-11-Volume_Scattering/chapter-11.6-Exercises.typ | 12 | 待原文对照及独立复核 |
-| 4ed/Light_Sources.html | chapter-12-Light_Sources/chapter-12.0-Light_Sources.typ | 13 | 待原文对照及独立复核 |
-| 4ed/Light_Sources/Light_Interface.html | chapter-12-Light_Sources/chapter-12.1-Light_Interface.typ | 85 | 待原文对照及独立复核 |
-| 4ed/Light_Sources/Point_Lights.html | chapter-12-Light_Sources/chapter-12.2-Point_Lights.typ | 129 | 待原文对照及独立复核 |
-| 4ed/Light_Sources/Distant_Lights.html | chapter-12-Light_Sources/chapter-12.3-Distant_Lights.typ | 28 | 待原文对照及独立复核 |
-| 4ed/Light_Sources/Area_Lights.html | chapter-12-Light_Sources/chapter-12.4-Area_Lights.typ | 51 | 待原文对照及独立复核 |
-| 4ed/Light_Sources/Infinite_Area_Lights.html | chapter-12-Light_Sources/chapter-12.5-Infinite_Area_Lights.typ | 170 | 待原文对照及独立复核 |
-| 4ed/Light_Sources/Light_Sampling.html | chapter-12-Light_Sources/chapter-12.6-Light_Sampling.typ | 337 | 待原文对照及独立复核 |
-| 4ed/Light_Sources/Further_Reading.html | chapter-12-Light_Sources/chapter-12.7-Further_Reading.typ | 90 | 待原文对照及独立复核 |
-| 4ed/Light_Sources/Exercises.html | chapter-12-Light_Sources/chapter-12.8-Exercises.typ | 18 | 待原文对照及独立复核 |
-| 4ed/Light_Transport_I_Surface_Reflection.html | chapter-13-Light_Transport_I_Surface_Reflection/chapter-13.0-Light_Transport_I_Surface_Reflection.typ | 11 | 待原文对照及独立复核 |
-| 4ed/Light_Transport_I_Surface_Reflection/The_Light_Transport_Equation.html | chapter-13-Light_Transport_I_Surface_Reflection/chapter-13.1-The_Light_Transport_Equation.typ | 97 | 待原文对照及独立复核 |
-| 4ed/Light_Transport_I_Surface_Reflection/Path_Tracing.html | chapter-13-Light_Transport_I_Surface_Reflection/chapter-13.2-Path_Tracing.typ | 49 | 待原文对照及独立复核 |
-| 4ed/Light_Transport_I_Surface_Reflection/A_Simple_Path_Tracer.html | chapter-13-Light_Transport_I_Surface_Reflection/chapter-13.3-A_Simple_Path_Tracer.typ | 94 | 待原文对照及独立复核 |
-| 4ed/Light_Transport_I_Surface_Reflection/A_Better_Path_Tracer.html | chapter-13-Light_Transport_I_Surface_Reflection/chapter-13.4-A_Better_Path_Tracer.typ | 175 | 待原文对照及独立复核 |
-| 4ed/Light_Transport_I_Surface_Reflection/Further_Reading.html | chapter-13-Light_Transport_I_Surface_Reflection/chapter-13.5-Further_Reading.typ | 178 | 待原文对照及独立复核 |
-| 4ed/Light_Transport_I_Surface_Reflection/Exercises.html | chapter-13-Light_Transport_I_Surface_Reflection/chapter-13.6-Exercises.typ | 15 | 待原文对照及独立复核 |
-| 4ed/Light_Transport_II_Volume_Rendering.html | chapter-14-Light_Transport_II_Volume_Rendering/chapter-14.0-Light_Transport_II_Volume_Rendering.typ | 11 | 待原文对照及独立复核 |
-| 4ed/Light_Transport_II_Volume_Rendering/The_Equation_of_Transfer.html | chapter-14-Light_Transport_II_Volume_Rendering/chapter-14.1-The_Equation_of_Transfer.typ | 202 | 待原文对照及独立复核 |
-| 4ed/Light_Transport_II_Volume_Rendering/Volume_Scattering_Integrators.html | chapter-14-Light_Transport_II_Volume_Rendering/chapter-14.2-Volume_Scattering_Integrators.typ | 512 | 待原文对照及独立复核 |
-| 4ed/Light_Transport_II_Volume_Rendering/Scattering_from_Layered_Materials.html | chapter-14-Light_Transport_II_Volume_Rendering/chapter-14.3-Scattering_from_Layered_Materials.typ | 364 | 待原文对照及独立复核 |
-| 4ed/Light_Transport_II_Volume_Rendering/Further_Reading.html | chapter-14-Light_Transport_II_Volume_Rendering/chapter-14.4-Further_Reading.typ | 158 | 待原文对照及独立复核 |
-| 4ed/Light_Transport_II_Volume_Rendering/Exercises.html | chapter-14-Light_Transport_II_Volume_Rendering/chapter-14.5-Exercises.typ | 15 | 待原文对照及独立复核 |
-| 4ed/Wavefront_Rendering_on_GPUs.html | chapter-15-Wavefront_Rendering_on_GPUs/chapter-15.0-Wavefront_Rendering_on_GPUs.typ | 21 | 待原文对照及独立复核 |
-| 4ed/Wavefront_Rendering_on_GPUs/Mapping_Path_Tracing_to_the_GPU.html | chapter-15-Wavefront_Rendering_on_GPUs/chapter-15.1-Mapping_Path_Tracing_to_the_GPU.typ | 82 | 待原文对照及独立复核 |
-| 4ed/Wavefront_Rendering_on_GPUs/Implementation_Foundations.html | chapter-15-Wavefront_Rendering_on_GPUs/chapter-15.2-Implementation_Foundations.typ | 119 | 待原文对照及独立复核 |
-| 4ed/Wavefront_Rendering_on_GPUs/Path_Tracer_Implementation.html | chapter-15-Wavefront_Rendering_on_GPUs/chapter-15.3-Path_Tracer_Implementation.typ | 545 | 待原文对照及独立复核 |
-| 4ed/Wavefront_Rendering_on_GPUs/Further_Reading.html | chapter-15-Wavefront_Rendering_on_GPUs/chapter-15.4-Further_Reading.typ | 68 | 待原文对照及独立复核 |
-| 4ed/Wavefront_Rendering_on_GPUs/Exercises.html | chapter-15-Wavefront_Rendering_on_GPUs/chapter-15.5-Exercises.typ | 15 | 待原文对照及独立复核 |
-| 4ed/Retrospective_and_the_Future.html | chapter-16-Retrospective_and_the_Future/chapter-16.0-Retrospective_and_the_Future.typ | 9 | 待原文对照及独立复核 |
-| 4ed/Retrospective_and_the_Future/pbrt_over_the_Years.html | chapter-16-Retrospective_and_the_Future/chapter-16.1-pbrt_over_the_Years.typ | 16 | 待原文对照及独立复核 |
-| 4ed/Retrospective_and_the_Future/Design_Alternatives.html | chapter-16-Retrospective_and_the_Future/chapter-16.2-Design_Alternatives.typ | 44 | 待原文对照及独立复核 |
-| 4ed/Retrospective_and_the_Future/Emerging_Topics.html | chapter-16-Retrospective_and_the_Future/chapter-16.3-Emerging_Topics.typ | 64 | 待原文对照及独立复核 |
-| 4ed/Retrospective_and_the_Future/The_Future.html | chapter-16-Retrospective_and_the_Future/chapter-16.4-The_Future.typ | 9 | 待原文对照及独立复核 |
-| 4ed/Retrospective_and_the_Future/Conclusion.html | chapter-16-Retrospective_and_the_Future/chapter-16.5-Conclusion.typ | 11 | 待原文对照及独立复核 |
-| 4ed/Retrospective_and_the_Future/Further_Reading.html | chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ | 122 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Sampling_Algorithms.html | Appendix-A-Sampling_Algorithms/A.0-Sampling_Algorithms.typ | 8 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Sampling_Algorithms/The_Alias_Method.html | Appendix-A-Sampling_Algorithms/A.1-The_Alias_Method.typ | 66 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Sampling_Algorithms/Reservoir_Sampling.html | Appendix-A-Sampling_Algorithms/A.2-Reservoir_Sampling.typ | 41 | 待原文对照及独立复核 |
-| 4ed/Sampling_Algorithms/The_Rejection_Method.html | Appendix-A-Sampling_Algorithms/A.3-The_Rejection_Method.typ | 19 | 待原文对照及独立复核 |
-| 4ed/Sampling_Algorithms/Sampling_1D_Functions.html | Appendix-A-Sampling_Algorithms/A.4-Sampling_1D_Functions.typ | 157 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Sampling_Algorithms/Sampling_Multidimensional_Functions.html | Appendix-A-Sampling_Algorithms/A.5-Sampling_Multidimensional_Functions.typ | 244 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Sampling_Algorithms/Further_Reading.html | Appendix-A-Sampling_Algorithms/A.6-Further_Reading.typ | 41 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Sampling_Algorithms/Exercises.html | Appendix-A-Sampling_Algorithms/A.7-Exercises.typ | 10 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Utilities.html | Appendix-B-Utilities/B.0-Utilities.typ | 8 | 待原文对照及独立复核 |
-| 4ed/Utilities/System_Startup,_Cleanup,_and_Options.html | Appendix-B-Utilities/B.1-System_Startup,_Cleanup,_and_Options.typ | 18 | 待原文对照及独立复核 |
-| 4ed/Utilities/Mathematical_Infrastructure.html | Appendix-B-Utilities/B.2-Mathematical_Infrastructure.typ | 348 | 待原文对照及独立复核 |
-| 4ed/Utilities/User_Interaction.html | Appendix-B-Utilities/B.3-User_Interaction.typ | 94 | 待原文对照及独立复核 |
-| 4ed/Utilities/Containers_and_Memory_Management.html | Appendix-B-Utilities/B.4-Containers_and_Memory_Management.typ | 140 | 待原文对照及独立复核 |
-| 4ed/Utilities/Images.html | Appendix-B-Utilities/B.5-Images.typ | 239 | 待原文对照及独立复核 |
-| 4ed/Utilities/Parallelism.html | Appendix-B-Utilities/B.6-Parallelism.typ | 207 | 待原文对照及独立复核 |
-| 4ed/Utilities/Statistics.html | Appendix-B-Utilities/B.7-Statistics.typ | 35 | 待原文对照及独立复核 |
-| 4ed/Utilities/Further_Reading.html | Appendix-B-Utilities/B.8-Further_Reading.typ | 55 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Utilities/Exercises.html | Appendix-B-Utilities/B.9-Exercises.typ | 11 | 已原文对照及独立复核（源问题见报告） |
-| 4ed/Processing_the_Scene_Description.html | Appendix-C-Processing_the_Scene_Description/C.0-Processing_the_Scene_Description.typ | 13 | 待原文对照及独立复核 |
-| 4ed/Processing_the_Scene_Description/Tokenizing_and_Parsing.html | Appendix-C-Processing_the_Scene_Description/C.1-Tokenizing_and_Parsing.typ | 45 | 待原文对照及独立复核 |
-| 4ed/Processing_the_Scene_Description/Managing_the_Scene_Description.html | Appendix-C-Processing_the_Scene_Description/C.2-Managing_the_Scene_Description.typ | 166 | 待原文对照及独立复核 |
-| 4ed/Processing_the_Scene_Description/BasicScene_and_Final_Object_Creation.html | Appendix-C-Processing_the_Scene_Description/C.3-BasicScene_and_Final_Object_Creation.typ | 51 | 待原文对照及独立复核 |
-| 4ed/Processing_the_Scene_Description/Adding_New_Object_Implementations.html | Appendix-C-Processing_the_Scene_Description/C.4-Adding_New_Object_Implementations.typ | 12 | 待原文对照及独立复核 |
-| 4ed/Processing_the_Scene_Description/Further_Reading.html | Appendix-C-Processing_the_Scene_Description/C.5-Further_Reading.typ | 14 | 待原文对照及独立复核 |
-| 4ed/Processing_the_Scene_Description/Exercises.html | Appendix-C-Processing_the_Scene_Description/C.6-Exercises.typ | 11 | 待原文对照及独立复核 |
-| 4ed/References.html | backmatter/References.typ | 1389 | 复核后内容或依赖变化，需复查 |
-| 4ed/Index_of_Fragments.html | backmatter/Index_of_Fragments.typ | 1728 | 复核后内容或依赖变化，需复查 |
-| 4ed/Index_of_Identifiers.html | backmatter/Index_of_Identifiers.typ | 2421 | 复核后内容或依赖变化，需复查 |
-| 4ed/contents.html | 缺失或特殊页面，待判定 | 171 | 目录/重定向辅助页，另验导航 |
-| 4ed/index.html | 缺失或特殊页面，待判定 | 0 | 目录/重定向辅助页，另验导航 |
+| 4ed/Preface.html | chapter-0-Preface/chapter-0.0-Preface.typ | 83 / 5 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Preface/Further_Reading.html | chapter-0-Preface/chapter-0.1-Further_Reading.typ | 16 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Introduction.html | chapter-1-Introduction/chapter-1.0-Introduction.typ | 7 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Introduction/Literate_Programming.html | chapter-1-Introduction/chapter-1.1-Literate_Programming.typ | 28 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Introduction/Photorealistic_Rendering_and_the_Ray-Tracing_Algorithm.html | chapter-1-Introduction/chapter-1.2-Photorealistic_Rendering_and_the_Ray-Tracing_Algorithm.typ | 83 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Introduction/pbrt_System_Overview.html | chapter-1-Introduction/chapter-1.3-pbrt_System_Overview.typ | 222 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Introduction/How_to_Proceed_through_This_Book.html | chapter-1-Introduction/chapter-1.4-How_to_Proceed_through_This_Book.typ | 19 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Introduction/Using_and_Understanding_the_Code.html | chapter-1-Introduction/chapter-1.5-Using_and_Understanding_the_Code.typ | 69 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Introduction/A_Brief_History_of_Physically_Based_Rendering.html | chapter-1-Introduction/chapter-1.6-A_Brief_History_of_Physically_Based_Rendering.typ | 38 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Introduction/Further_Reading.html | chapter-1-Introduction/chapter-1.7-Further_Reading.typ | 76 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Introduction/Exercises.html | chapter-1-Introduction/chapter-1.8-Exercises.typ | 2 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Monte_Carlo_Integration.html | chapter-2-Monte_Carlo_Integration/chapter-2.0-Monte_Carlo_Integration.typ | 7 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Monte_Carlo_Integration/Monte_Carlo_Basics.html | chapter-2-Monte_Carlo_Integration/chapter-2.1-Monte_Carlo_Basics.typ | 94 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Monte_Carlo_Integration/Improving_Efficiency.html | chapter-2-Monte_Carlo_Integration/chapter-2.2-Improving_Efficiency.typ | 107 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Monte_Carlo_Integration/Sampling_Using_the_Inversion_Method.html | chapter-2-Monte_Carlo_Integration/chapter-2.3-Sampling_Using_the_Inversion_Method.typ | 62 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Monte_Carlo_Integration/Transforming_between_Distributions.html | chapter-2-Monte_Carlo_Integration/chapter-2.4-Transforming_between_Distributions.typ | 63 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Monte_Carlo_Integration/Further_Reading.html | chapter-2-Monte_Carlo_Integration/chapter-2.5-Further_Reading.typ | 45 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Monte_Carlo_Integration/Exercises.html | chapter-2-Monte_Carlo_Integration/chapter-2.6-Exercises.typ | 4 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Geometry_and_Transformations.html | chapter-3-Geometry_and_Transformations/chapter-3.0-Geometry_and_Transformations.typ | 3 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Geometry_and_Transformations/Coordinate_Systems.html | chapter-3-Geometry_and_Transformations/chapter-3.1-Coordinate_Systems.typ | 14 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Geometry_and_Transformations/n-Tuple_Base_Classes.html | chapter-3-Geometry_and_Transformations/chapter-3.2-n-Tuple_Base_Classes.typ | 40 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Geometry_and_Transformations/Vectors.html | chapter-3-Geometry_and_Transformations/chapter-3.3-Vectors.typ | 79 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Geometry_and_Transformations/Points.html | chapter-3-Geometry_and_Transformations/chapter-3.4-Points.typ | 19 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Geometry_and_Transformations/Normals.html | chapter-3-Geometry_and_Transformations/chapter-3.5-Normals.typ | 11 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Geometry_and_Transformations/Rays.html | chapter-3-Geometry_and_Transformations/chapter-3.6-Rays.typ | 35 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Geometry_and_Transformations/Bounding_Boxes.html | chapter-3-Geometry_and_Transformations/chapter-3.7-Bounding_Boxes.typ | 65 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Geometry_and_Transformations/Spherical_Geometry.html | chapter-3-Geometry_and_Transformations/chapter-3.8-Spherical_Geometry.typ | 168 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Geometry_and_Transformations/Transformations.html | chapter-3-Geometry_and_Transformations/chapter-3.9-Transformations.typ | 154 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Geometry_and_Transformations/Applying_Transformations.html | chapter-3-Geometry_and_Transformations/chapter-3.10-Applying_Transformations.typ | 68 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Geometry_and_Transformations/Interactions.html | chapter-3-Geometry_and_Transformations/chapter-3.11-Interactions.typ | 70 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Geometry_and_Transformations/Further_Reading.html | chapter-3-Geometry_and_Transformations/chapter-3.12-Further_Reading.typ | 42 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Geometry_and_Transformations/Exercises.html | chapter-3-Geometry_and_Transformations/chapter-3.13-Exercises.typ | 5 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Radiometry,_Spectra,_and_Color.html | chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.0-Radiometry,_Spectra,_and_Color.typ | 6 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Radiometry,_Spectra,_and_Color/Radiometry.html | chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.1-Radiometry.typ | 98 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Radiometry,_Spectra,_and_Color/Working_with_Radiometric_Integrals.html | chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.2-Working_with_Radiometric_Integrals.typ | 37 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Radiometry,_Spectra,_and_Color/Surface_Reflection.html | chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.3-Surface_Reflection.typ | 42 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Radiometry,_Spectra,_and_Color/Light_Emission.html | chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.4-Light_Emission.typ | 50 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Radiometry,_Spectra,_and_Color/Representing_Spectral_Distributions.html | chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.5-Representing_Spectral_Distributions.typ | 138 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Radiometry,_Spectra,_and_Color/Color.html | chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.6-Color.typ | 276 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Radiometry,_Spectra,_and_Color/Further_Reading.html | chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.7-Further_Reading.typ | 77 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Radiometry,_Spectra,_and_Color/Exercises.html | chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.8-Exercises.typ | 5 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Cameras_and_Film.html | chapter-5-Cameras_and_Film/chapter-5.0-Cameras_and_Film.typ | 7 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Cameras_and_Film/Camera_Interface.html | chapter-5-Cameras_and_Film/chapter-5.1-Camera_Interface.typ | 104 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Cameras_and_Film/Projective_Camera_Models.html | chapter-5-Cameras_and_Film/chapter-5.2-Projective_Camera_Models.typ | 175 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Cameras_and_Film/Spherical_Camera.html | chapter-5-Cameras_and_Film/chapter-5.3-Spherical_Camera.typ | 32 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Cameras_and_Film/Film_and_Imaging.html | chapter-5-Cameras_and_Film/chapter-5.4-Film_and_Imaging.typ | 289 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Cameras_and_Film/Further_Reading.html | chapter-5-Cameras_and_Film/chapter-5.5-Further_Reading.typ | 85 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Cameras_and_Film/Exercises.html | chapter-5-Cameras_and_Film/chapter-5.6-Exercises.typ | 10 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Shapes.html | chapter-6-Shapes/chapter-6.0-Shapes.typ | 4 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Shapes/Basic_Shape_Interface.html | chapter-6-Shapes/chapter-6.1-Basic_Shape_Interface.typ | 98 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Shapes/Spheres.html | chapter-6-Shapes/chapter-6.2-Spheres.typ | 283 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Shapes/Cylinders.html | chapter-6-Shapes/chapter-6.3-Cylinders.typ | 129 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Shapes/Disks.html | chapter-6-Shapes/chapter-6.4-Disks.typ | 80 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Shapes/Triangle_Meshes.html | chapter-6-Shapes/chapter-6.5-Triangle_Meshes.typ | 498 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Shapes/Bilinear_Patches.html | chapter-6-Shapes/chapter-6.6-Bilinear_Patches.typ | 344 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Shapes/Curves.html | chapter-6-Shapes/chapter-6.7-Curves.typ | 183 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Shapes/Managing_Rounding_Error.html | chapter-6-Shapes/chapter-6.8-Managing_Rounding_Error.typ | 404 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Shapes/Further_Reading.html | chapter-6-Shapes/chapter-6.9-Further_Reading.typ | 142 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Shapes/Exercises.html | chapter-6-Shapes/chapter-6.10-Exercises.typ | 27 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Primitives_and_Intersection_Acceleration.html | chapter-7-Primitives_and_Intersection_Acceleration/chapter-7.0-Primitives_and_Intersection_Acceleration.typ | 6 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Primitives_and_Intersection_Acceleration/Primitive_Interface_and_Geometric_Primitives.html | chapter-7-Primitives_and_Intersection_Acceleration/chapter-7.1-Primitive_Interface_and_Geometric_Primitives.typ | 88 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Primitives_and_Intersection_Acceleration/Aggregates.html | chapter-7-Primitives_and_Intersection_Acceleration/chapter-7.2-Aggregates.typ | 7 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Primitives_and_Intersection_Acceleration/Bounding_Volume_Hierarchies.html | chapter-7-Primitives_and_Intersection_Acceleration/chapter-7.3-Bounding_Volume_Hierarchies.typ | 368 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Primitives_and_Intersection_Acceleration/Further_Reading.html | chapter-7-Primitives_and_Intersection_Acceleration/chapter-7.4-Further_Reading.typ | 169 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Primitives_and_Intersection_Acceleration/Exercises.html | chapter-7-Primitives_and_Intersection_Acceleration/chapter-7.5-Exercises.typ | 14 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Sampling_and_Reconstruction.html | chapter-8-Sampling_and_Reconstruction/chapter-8.0-Sampling_and_Reconstruction.typ | 5 / 6 | 待原文对照及独立复核 |
+| 4ed/Sampling_and_Reconstruction/Sampling_Theory.html | chapter-8-Sampling_and_Reconstruction/chapter-8.1-Sampling_Theory.typ | 150 / 6 | 待原文对照及独立复核 |
+| 4ed/Sampling_and_Reconstruction/Sampling_and_Integration.html | chapter-8-Sampling_and_Reconstruction/chapter-8.2-Sampling_and_Integration.typ | 86 / 6 | 待原文对照及独立复核 |
+| 4ed/Sampling_and_Reconstruction/Sampling_Interface.html | chapter-8-Sampling_and_Reconstruction/chapter-8.3-Sampling_Interface.typ | 30 / 6 | 待原文对照及独立复核 |
+| 4ed/Sampling_and_Reconstruction/Independent_Sampler.html | chapter-8-Sampling_and_Reconstruction/chapter-8.4-Independent_Sampler.typ | 14 / 6 | 待原文对照及独立复核 |
+| 4ed/Sampling_and_Reconstruction/Stratified_Sampler.html | chapter-8-Sampling_and_Reconstruction/chapter-8.5-Stratified_Sampler.typ | 48 / 6 | 待原文对照及独立复核 |
+| 4ed/Sampling_and_Reconstruction/Halton_Sampler.html | chapter-8-Sampling_and_Reconstruction/chapter-8.6-Halton_Sampler.typ | 149 / 6 | 待原文对照及独立复核 |
+| 4ed/Sampling_and_Reconstruction/Sobol_Samplers.html | chapter-8-Sampling_and_Reconstruction/chapter-8.7-Sobol_Samplers.typ | 223 / 6 | 待原文对照及独立复核 |
+| 4ed/Sampling_and_Reconstruction/Image_Reconstruction.html | chapter-8-Sampling_and_Reconstruction/chapter-8.8-Image_Reconstruction.typ | 148 / 6 | 待原文对照及独立复核 |
+| 4ed/Sampling_and_Reconstruction/Further_Reading.html | chapter-8-Sampling_and_Reconstruction/chapter-8.9-Further_Reading.typ | 146 / 6 | 待原文对照及独立复核 |
+| 4ed/Sampling_and_Reconstruction/Exercises.html | chapter-8-Sampling_and_Reconstruction/chapter-8.10-Exercises.typ | 6 / 6 | 待原文对照及独立复核 |
+| 4ed/Reflection_Models.html | chapter-9-Reflection_Models/chapter-9.0-Reflection_Models.typ | 17 / 6 | 待原文对照及独立复核 |
+| 4ed/Reflection_Models/BSDF_Representation.html | chapter-9-Reflection_Models/chapter-9.1-BSDF_Representation.typ | 106 / 6 | 待原文对照及独立复核 |
+| 4ed/Reflection_Models/Diffuse_Reflection.html | chapter-9-Reflection_Models/chapter-9.2-Diffuse_Reflection.typ | 22 / 6 | 待原文对照及独立复核 |
+| 4ed/Reflection_Models/Specular_Reflection_and_Transmission.html | chapter-9-Reflection_Models/chapter-9.3-Specular_Reflection_and_Transmission.typ | 122 / 6 | 待原文对照及独立复核 |
+| 4ed/Reflection_Models/Conductor_BRDF.html | chapter-9-Reflection_Models/chapter-9.4-Conductor_BRDF.typ | 48 / 6 | 待原文对照及独立复核 |
+| 4ed/Reflection_Models/Dielectric_BSDF.html | chapter-9-Reflection_Models/chapter-9.5-Dielectric_BSDF.typ | 134 / 6 | 待原文对照及独立复核 |
+| 4ed/Reflection_Models/Roughness_Using_Microfacet_Theory.html | chapter-9-Reflection_Models/chapter-9.6-Roughness_Using_Microfacet_Theory.typ | 183 / 6 | 待原文对照及独立复核 |
+| 4ed/Reflection_Models/Rough_Dielectric_BSDF.html | chapter-9-Reflection_Models/chapter-9.7-Rough_Dielectric_BSDF.typ | 81 / 6 | 待原文对照及独立复核 |
+| 4ed/Reflection_Models/Measured_BSDFs.html | chapter-9-Reflection_Models/chapter-9.8-Measured_BSDFs.typ | 115 / 6 | 待原文对照及独立复核 |
+| 4ed/Reflection_Models/Scattering_from_Hair.html | chapter-9-Reflection_Models/chapter-9.9-Scattering_from_Hair.typ | 243 / 6 | 待原文对照及独立复核 |
+| 4ed/Reflection_Models/Further_Reading.html | chapter-9-Reflection_Models/chapter-9.10-Further_Reading.typ | 200 / 6 | 待原文对照及独立复核 |
+| 4ed/Reflection_Models/Exercises.html | chapter-9-Reflection_Models/chapter-9.11-Exercises.typ | 13 / 6 | 待原文对照及独立复核 |
+| 4ed/Textures_and_Materials.html | chapter-10-Textures_and_Materials/chapter-10.0-Textures_and_Materials.typ | 9 / 6 | 待原文对照及独立复核 |
+| 4ed/Textures_and_Materials/Texture_Sampling_and_Antialiasing.html | chapter-10-Textures_and_Materials/chapter-10.1-Texture_Sampling_and_Antialiasing.typ | 190 / 6 | 待原文对照及独立复核 |
+| 4ed/Textures_and_Materials/Texture_Coordinate_Generation.html | chapter-10-Textures_and_Materials/chapter-10.2-Texture_Coordinate_Generation.typ | 99 / 6 | 待原文对照及独立复核 |
+| 4ed/Textures_and_Materials/Texture_Interface_and_Basic_Textures.html | chapter-10-Textures_and_Materials/chapter-10.3-Texture_Interface_and_Basic_Textures.typ | 49 / 6 | 待原文对照及独立复核 |
+| 4ed/Textures_and_Materials/Image_Texture.html | chapter-10-Textures_and_Materials/chapter-10.4-Image_Texture.typ | 152 / 6 | 待原文对照及独立复核 |
+| 4ed/Textures_and_Materials/Material_Interface_and_Implementations.html | chapter-10-Textures_and_Materials/chapter-10.5-Material_Interface_and_Implementations.typ | 201 / 6 | 待原文对照及独立复核 |
+| 4ed/Textures_and_Materials/Further_Reading.html | chapter-10-Textures_and_Materials/chapter-10.6-Further_Reading.typ | 141 / 6 | 待原文对照及独立复核 |
+| 4ed/Textures_and_Materials/Exercises.html | chapter-10-Textures_and_Materials/chapter-10.7-Exercises.typ | 6 / 6 | 待原文对照及独立复核 |
+| 4ed/Volume_Scattering.html | chapter-11-Volume_Scattering/chapter-11.0-Volume_Scattering.typ | 4 / 6 | 待原文对照及独立复核 |
+| 4ed/Volume_Scattering/Volume_Scattering_Processes.html | chapter-11-Volume_Scattering/chapter-11.1-Volume_Scattering_Processes.typ | 62 / 6 | 待原文对照及独立复核 |
+| 4ed/Volume_Scattering/Transmittance.html | chapter-11-Volume_Scattering/chapter-11.2-Transmittance.typ | 71 / 6 | 待原文对照及独立复核 |
+| 4ed/Volume_Scattering/Phase_Functions.html | chapter-11-Volume_Scattering/chapter-11.3-Phase_Functions.typ | 61 / 6 | 待原文对照及独立复核 |
+| 4ed/Volume_Scattering/Media.html | chapter-11-Volume_Scattering/chapter-11.4-Media.typ | 253 / 6 | 待原文对照及独立复核 |
+| 4ed/Volume_Scattering/Further_Reading.html | chapter-11-Volume_Scattering/chapter-11.5-Further_Reading.typ | 67 / 6 | 待原文对照及独立复核 |
+| 4ed/Volume_Scattering/Exercises.html | chapter-11-Volume_Scattering/chapter-11.6-Exercises.typ | 6 / 6 | 待原文对照及独立复核 |
+| 4ed/Light_Sources.html | chapter-12-Light_Sources/chapter-12.0-Light_Sources.typ | 7 / 6 | 待原文对照及独立复核 |
+| 4ed/Light_Sources/Light_Interface.html | chapter-12-Light_Sources/chapter-12.1-Light_Interface.typ | 79 / 6 | 待原文对照及独立复核 |
+| 4ed/Light_Sources/Point_Lights.html | chapter-12-Light_Sources/chapter-12.2-Point_Lights.typ | 123 / 6 | 待原文对照及独立复核 |
+| 4ed/Light_Sources/Distant_Lights.html | chapter-12-Light_Sources/chapter-12.3-Distant_Lights.typ | 22 / 6 | 待原文对照及独立复核 |
+| 4ed/Light_Sources/Area_Lights.html | chapter-12-Light_Sources/chapter-12.4-Area_Lights.typ | 46 / 6 | 待原文对照及独立复核 |
+| 4ed/Light_Sources/Infinite_Area_Lights.html | chapter-12-Light_Sources/chapter-12.5-Infinite_Area_Lights.typ | 168 / 6 | 待原文对照及独立复核 |
+| 4ed/Light_Sources/Light_Sampling.html | chapter-12-Light_Sources/chapter-12.6-Light_Sampling.typ | 335 / 6 | 待原文对照及独立复核 |
+| 4ed/Light_Sources/Further_Reading.html | chapter-12-Light_Sources/chapter-12.7-Further_Reading.typ | 84 / 6 | 待原文对照及独立复核 |
+| 4ed/Light_Sources/Exercises.html | chapter-12-Light_Sources/chapter-12.8-Exercises.typ | 12 / 6 | 待原文对照及独立复核 |
+| 4ed/Light_Transport_I_Surface_Reflection.html | chapter-13-Light_Transport_I_Surface_Reflection/chapter-13.0-Light_Transport_I_Surface_Reflection.typ | 5 / 6 | 待原文对照及独立复核 |
+| 4ed/Light_Transport_I_Surface_Reflection/The_Light_Transport_Equation.html | chapter-13-Light_Transport_I_Surface_Reflection/chapter-13.1-The_Light_Transport_Equation.typ | 91 / 6 | 待原文对照及独立复核 |
+| 4ed/Light_Transport_I_Surface_Reflection/Path_Tracing.html | chapter-13-Light_Transport_I_Surface_Reflection/chapter-13.2-Path_Tracing.typ | 44 / 6 | 待原文对照及独立复核 |
+| 4ed/Light_Transport_I_Surface_Reflection/A_Simple_Path_Tracer.html | chapter-13-Light_Transport_I_Surface_Reflection/chapter-13.3-A_Simple_Path_Tracer.typ | 89 / 6 | 待原文对照及独立复核 |
+| 4ed/Light_Transport_I_Surface_Reflection/A_Better_Path_Tracer.html | chapter-13-Light_Transport_I_Surface_Reflection/chapter-13.4-A_Better_Path_Tracer.typ | 171 / 6 | 待原文对照及独立复核 |
+| 4ed/Light_Transport_I_Surface_Reflection/Further_Reading.html | chapter-13-Light_Transport_I_Surface_Reflection/chapter-13.5-Further_Reading.typ | 172 / 6 | 待原文对照及独立复核 |
+| 4ed/Light_Transport_I_Surface_Reflection/Exercises.html | chapter-13-Light_Transport_I_Surface_Reflection/chapter-13.6-Exercises.typ | 9 / 6 | 待原文对照及独立复核 |
+| 4ed/Light_Transport_II_Volume_Rendering.html | chapter-14-Light_Transport_II_Volume_Rendering/chapter-14.0-Light_Transport_II_Volume_Rendering.typ | 5 / 6 | 待原文对照及独立复核 |
+| 4ed/Light_Transport_II_Volume_Rendering/The_Equation_of_Transfer.html | chapter-14-Light_Transport_II_Volume_Rendering/chapter-14.1-The_Equation_of_Transfer.typ | 196 / 6 | 待原文对照及独立复核 |
+| 4ed/Light_Transport_II_Volume_Rendering/Volume_Scattering_Integrators.html | chapter-14-Light_Transport_II_Volume_Rendering/chapter-14.2-Volume_Scattering_Integrators.typ | 507 / 6 | 待原文对照及独立复核 |
+| 4ed/Light_Transport_II_Volume_Rendering/Scattering_from_Layered_Materials.html | chapter-14-Light_Transport_II_Volume_Rendering/chapter-14.3-Scattering_from_Layered_Materials.typ | 358 / 6 | 待原文对照及独立复核 |
+| 4ed/Light_Transport_II_Volume_Rendering/Further_Reading.html | chapter-14-Light_Transport_II_Volume_Rendering/chapter-14.4-Further_Reading.typ | 152 / 6 | 待原文对照及独立复核 |
+| 4ed/Light_Transport_II_Volume_Rendering/Exercises.html | chapter-14-Light_Transport_II_Volume_Rendering/chapter-14.5-Exercises.typ | 9 / 6 | 待原文对照及独立复核 |
+| 4ed/Wavefront_Rendering_on_GPUs.html | chapter-15-Wavefront_Rendering_on_GPUs/chapter-15.0-Wavefront_Rendering_on_GPUs.typ | 15 / 6 | 待原文对照及独立复核 |
+| 4ed/Wavefront_Rendering_on_GPUs/Mapping_Path_Tracing_to_the_GPU.html | chapter-15-Wavefront_Rendering_on_GPUs/chapter-15.1-Mapping_Path_Tracing_to_the_GPU.typ | 76 / 6 | 待原文对照及独立复核 |
+| 4ed/Wavefront_Rendering_on_GPUs/Implementation_Foundations.html | chapter-15-Wavefront_Rendering_on_GPUs/chapter-15.2-Implementation_Foundations.typ | 113 / 6 | 待原文对照及独立复核 |
+| 4ed/Wavefront_Rendering_on_GPUs/Path_Tracer_Implementation.html | chapter-15-Wavefront_Rendering_on_GPUs/chapter-15.3-Path_Tracer_Implementation.typ | 539 / 6 | 待原文对照及独立复核 |
+| 4ed/Wavefront_Rendering_on_GPUs/Further_Reading.html | chapter-15-Wavefront_Rendering_on_GPUs/chapter-15.4-Further_Reading.typ | 62 / 6 | 待原文对照及独立复核 |
+| 4ed/Wavefront_Rendering_on_GPUs/Exercises.html | chapter-15-Wavefront_Rendering_on_GPUs/chapter-15.5-Exercises.typ | 9 / 6 | 待原文对照及独立复核 |
+| 4ed/Retrospective_and_the_Future.html | chapter-16-Retrospective_and_the_Future/chapter-16.0-Retrospective_and_the_Future.typ | 3 / 6 | 待原文对照及独立复核 |
+| 4ed/Retrospective_and_the_Future/pbrt_over_the_Years.html | chapter-16-Retrospective_and_the_Future/chapter-16.1-pbrt_over_the_Years.typ | 11 / 6 | 待原文对照及独立复核 |
+| 4ed/Retrospective_and_the_Future/Design_Alternatives.html | chapter-16-Retrospective_and_the_Future/chapter-16.2-Design_Alternatives.typ | 38 / 6 | 待原文对照及独立复核 |
+| 4ed/Retrospective_and_the_Future/Emerging_Topics.html | chapter-16-Retrospective_and_the_Future/chapter-16.3-Emerging_Topics.typ | 59 / 6 | 待原文对照及独立复核 |
+| 4ed/Retrospective_and_the_Future/The_Future.html | chapter-16-Retrospective_and_the_Future/chapter-16.4-The_Future.typ | 3 / 6 | 待原文对照及独立复核 |
+| 4ed/Retrospective_and_the_Future/Conclusion.html | chapter-16-Retrospective_and_the_Future/chapter-16.5-Conclusion.typ | 5 / 6 | 待原文对照及独立复核 |
+| 4ed/Retrospective_and_the_Future/Further_Reading.html | chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ | 116 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Sampling_Algorithms.html | Appendix-A-Sampling_Algorithms/A.0-Sampling_Algorithms.typ | 2 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Sampling_Algorithms/The_Alias_Method.html | Appendix-A-Sampling_Algorithms/A.1-The_Alias_Method.typ | 60 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Sampling_Algorithms/Reservoir_Sampling.html | Appendix-A-Sampling_Algorithms/A.2-Reservoir_Sampling.typ | 35 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Sampling_Algorithms/The_Rejection_Method.html | Appendix-A-Sampling_Algorithms/A.3-The_Rejection_Method.typ | 13 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Sampling_Algorithms/Sampling_1D_Functions.html | Appendix-A-Sampling_Algorithms/A.4-Sampling_1D_Functions.typ | 151 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Sampling_Algorithms/Sampling_Multidimensional_Functions.html | Appendix-A-Sampling_Algorithms/A.5-Sampling_Multidimensional_Functions.typ | 238 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Sampling_Algorithms/Further_Reading.html | Appendix-A-Sampling_Algorithms/A.6-Further_Reading.typ | 35 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Sampling_Algorithms/Exercises.html | Appendix-A-Sampling_Algorithms/A.7-Exercises.typ | 4 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Utilities.html | Appendix-B-Utilities/B.0-Utilities.typ | 2 / 6 | 待原文对照及独立复核 |
+| 4ed/Utilities/System_Startup,_Cleanup,_and_Options.html | Appendix-B-Utilities/B.1-System_Startup,_Cleanup,_and_Options.typ | 12 / 6 | 待原文对照及独立复核 |
+| 4ed/Utilities/Mathematical_Infrastructure.html | Appendix-B-Utilities/B.2-Mathematical_Infrastructure.typ | 342 / 6 | 待原文对照及独立复核 |
+| 4ed/Utilities/User_Interaction.html | Appendix-B-Utilities/B.3-User_Interaction.typ | 88 / 6 | 待原文对照及独立复核 |
+| 4ed/Utilities/Containers_and_Memory_Management.html | Appendix-B-Utilities/B.4-Containers_and_Memory_Management.typ | 134 / 6 | 待原文对照及独立复核 |
+| 4ed/Utilities/Images.html | Appendix-B-Utilities/B.5-Images.typ | 233 / 6 | 待原文对照及独立复核 |
+| 4ed/Utilities/Parallelism.html | Appendix-B-Utilities/B.6-Parallelism.typ | 201 / 6 | 待原文对照及独立复核 |
+| 4ed/Utilities/Statistics.html | Appendix-B-Utilities/B.7-Statistics.typ | 29 / 6 | 待原文对照及独立复核 |
+| 4ed/Utilities/Further_Reading.html | Appendix-B-Utilities/B.8-Further_Reading.typ | 49 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Utilities/Exercises.html | Appendix-B-Utilities/B.9-Exercises.typ | 5 / 6 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Processing_the_Scene_Description.html | Appendix-C-Processing_the_Scene_Description/C.0-Processing_the_Scene_Description.typ | 7 / 6 | 待原文对照及独立复核 |
+| 4ed/Processing_the_Scene_Description/Tokenizing_and_Parsing.html | Appendix-C-Processing_the_Scene_Description/C.1-Tokenizing_and_Parsing.typ | 39 / 6 | 待原文对照及独立复核 |
+| 4ed/Processing_the_Scene_Description/Managing_the_Scene_Description.html | Appendix-C-Processing_the_Scene_Description/C.2-Managing_the_Scene_Description.typ | 160 / 6 | 待原文对照及独立复核 |
+| 4ed/Processing_the_Scene_Description/BasicScene_and_Final_Object_Creation.html | Appendix-C-Processing_the_Scene_Description/C.3-BasicScene_and_Final_Object_Creation.typ | 45 / 6 | 待原文对照及独立复核 |
+| 4ed/Processing_the_Scene_Description/Adding_New_Object_Implementations.html | Appendix-C-Processing_the_Scene_Description/C.4-Adding_New_Object_Implementations.typ | 6 / 6 | 待原文对照及独立复核 |
+| 4ed/Processing_the_Scene_Description/Further_Reading.html | Appendix-C-Processing_the_Scene_Description/C.5-Further_Reading.typ | 8 / 6 | 待原文对照及独立复核 |
+| 4ed/Processing_the_Scene_Description/Exercises.html | Appendix-C-Processing_the_Scene_Description/C.6-Exercises.typ | 5 / 6 | 待原文对照及独立复核 |
+| 4ed/References.html | backmatter/References.typ | 1357 / 32 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Index_of_Fragments.html | backmatter/Index_of_Fragments.typ | 1697 / 31 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/Index_of_Identifiers.html | backmatter/Index_of_Identifiers.typ | 2383 / 38 | 已原文对照及独立复核（源问题见报告） |
+| 4ed/contents.html | 原站目录/入口（另验导航） | 0 / 171 | 目录/重定向辅助页，另验导航 |
+| 4ed/index.html | 原站目录/入口（另验导航） | 0 / 0 | 目录/重定向辅助页，另验导航 |
 
 本地附加页面：authors.typ、editorial-status.typ

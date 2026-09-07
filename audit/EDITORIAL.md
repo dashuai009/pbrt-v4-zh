@@ -51,3 +51,9 @@ Typst 注意：i-figured 自动将 `<foo>` 变换出带 `eqt:`/`fig:`/`tbl:` 前
 译注API：`translator(中文内容, en: 英文内容)`可提供成对编辑注。没有英文版本的中文译注只在中文/对照输出显示，不再混入纯英文PDF；原正文英文与原书脚注不受影响。已用parec分别提供英文编辑注的调用保持不变。隐藏无英文版本的中文译注不等于解决源文问题，其问题记录仍必须保存。
 
 第七章术语决议：aggregate＝聚合体；spatial subdivision＝空间划分；object subdivision＝对象划分；bounding volume＝包围体；bounding volume hierarchy（BVH）＝包围体层次结构，具体盒类型仍用包围盒；shading＝着色（不是阴影）；alpha texture＝alpha 纹理，按上下文说明不透明度/裁剪语义，不直接等同透射率。
+
+第七章补充：watertight＝水密（不换成笼统“无缝”）；packet tracing＝射线包追踪；incoherent rays＝非相干射线。在加速结构/并行遍历上下文中，相干性指遍历及数据访问的相似性，不是波动光学相干性。
+
+第八章术语：aliasing＝混叠；discrepancy＝差异度；star discrepancy＝星差异度；jitter＝抖动；low-discrepancy作形容词用“低差异”（点集、序列、采样），性质可称“低差异性”。
+
+第九章术语：dielectric＝电介质；conductor＝导体（不一律改写为金属）；perfect specular＝理想镜面；glossy specular＝光泽镜面；retroreflection＝逆反射；microfacet＝微表面，单个facet＝微表面元；Fresnel＝菲涅耳；index of refraction＝折射率；作为传输量的importance＝重要性，与辐亮度和采样权重区分。

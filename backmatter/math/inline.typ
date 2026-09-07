@@ -3,7 +3,7 @@
   if "target" in dictionary(std) and std.target() == "html" {
     html.elem("span", html.frame(image(path, alt: alt)), attrs: (
       class: "original-math",
-      style: "display:inline-block;line-height:0;height:" + str(height-ex) + "ex;vertical-align:" + str(-depth-ex) + "ex;",
+      style: "display:inline-block;line-height:0;height:" + str(height-ex) + "ex;vertical-align:" + str(-depth-ex).replace("−", "-") + "ex;",
     ))
   } else {
     let x-height = measure(text(top-edge: "x-height", bottom-edge: "baseline")[x]).height

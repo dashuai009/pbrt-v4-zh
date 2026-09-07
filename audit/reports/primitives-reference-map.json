@@ -1,0 +1,842 @@
+{
+  "cite:Aila2013": {
+    "anchor": "original-reference-9",
+    "index": 9,
+    "year": "2013",
+    "text": "Aila, T., T. Karras, and S. Laine. 2013. On quality metrics of bounding volume hierarchies. In Proceedings of High Performance Graphics 2013, 101–7.",
+    "source_line": 145
+  },
+  "cite:Moller01": {
+    "anchor": "original-reference-11",
+    "index": 11,
+    "year": "2001",
+    "text": "Akenine-Möller, T. 2001. Fast 3D triangle-box overlap testing. Journal of Graphics Tools 6 (1), 29–33.",
+    "source_line": 153
+  },
+  "cite:Amanatides87": {
+    "anchor": "original-reference-21",
+    "index": 21,
+    "year": "1987",
+    "text": "Amanatides, J., and A. Woo. 1987. A fast voxel traversal algorithm for ray tracing. In Proceedings of Eurographics ’87, 3–10.",
+    "source_line": 186
+  },
+  "cite:Arnaldi87": {
+    "anchor": "original-reference-30",
+    "index": 30,
+    "year": "1987",
+    "text": "Arnaldi, B., T. Priol, and K. Bouatouch. 1987. A new space subdivision method for ray tracing CSG modeled scenes. The Visual Computer 3 (2), 98–108.",
+    "source_line": 227
+  },
+  "cite:Arvo88": {
+    "anchor": "original-reference-32",
+    "index": 32,
+    "year": "1988",
+    "text": "Arvo, J. 1988. Linear-time voxel walking for octrees. Ray Tracing News 1 (5).",
+    "source_line": 233
+  },
+  "cite:Arvo87": {
+    "anchor": "original-reference-39",
+    "index": 39,
+    "year": "1987",
+    "text": "Arvo, J., and D. Kirk. 1987. Fast ray tracing by ray classification. Computer Graphics (SIGGRAPH ’87 Proceedings) 21 (4), 55–64.",
+    "source_line": 257
+  },
+  "cite:Bauszat2010": {
+    "anchor": "original-reference-68",
+    "index": 68,
+    "year": "2010",
+    "text": "Bauszat, P., M. Eisemann, and M. Magnor. 2010. The minimal bounding volume hierarchy. Vision, Modeling, and Visualization (2010), 227–34.",
+    "source_line": 358
+  },
+  "cite:Benthin2006": {
+    "anchor": "original-reference-77",
+    "index": 77,
+    "year": "2006",
+    "text": "Benthin, C. 2006. Realtime ray tracing on current CPU architectures. Ph.D. thesis, Saarland University.",
+    "source_line": 389
+  },
+  "cite:Benthin2018": {
+    "anchor": "original-reference-82",
+    "index": 82,
+    "year": "2018",
+    "text": "Benthin, C., I. Wald, S. Woop, and A. T. Áfra. 2018. Compressed-leaf bounding volume hierarchies. Proceedings of High Performance Graphics (HPG ’18), 6:1–4.",
+    "source_line": 405
+  },
+  "cite:Benthin2017": {
+    "anchor": "original-reference-85",
+    "index": 85,
+    "year": "2017",
+    "text": "Benthin, C., S. Woop, I. Wald, and A. T. Áfra. 2017. Improved two-level BVHs using partial re-braiding. Proceedings of High Performance Graphics (HPG ’17), 7:1–8.",
+    "source_line": 417
+  },
+  "cite:Binder2016": {
+    "anchor": "original-reference-93",
+    "index": 93,
+    "year": "2016",
+    "text": "Binder, N., and A. Keller. 2016. Efficient stackless hierarchy traversal on GPUs with backtracking in constant time. Proceedings of High Performance Graphics, 41–50.",
+    "source_line": 446
+  },
+  "cite:Bittner2013": {
+    "anchor": "original-reference-103",
+    "index": 103,
+    "year": "2013",
+    "text": "Bittner, J., M. Hapala, and V. Havran. 2013. Fast insertion-based optimization of bounding volume hierarchies. Computer Graphics Forum 32 (1), 85–100.",
+    "source_line": 486
+  },
+  "cite:Bittner2014": {
+    "anchor": "original-reference-104",
+    "index": 104,
+    "year": "2014",
+    "text": "Bittner, J., M. Hapala, and V. Havran. 2014. Incremental BVH construction for ray tracing. Computers & Graphics 47, 135–44.",
+    "source_line": 489
+  },
+  "cite:Boulos2006": {
+    "anchor": "original-reference-121",
+    "index": 121,
+    "year": "2006",
+    "text": "Boulos, S., and E. Haines. 2006. Ray–box sorting. Ray Tracing News 19 (1), www.realtimerendering.com/resources/RTNews/html/rtnv19n1.html.",
+    "source_line": 550
+  },
+  "cite:Budge2008": {
+    "anchor": "original-reference-132",
+    "index": 132,
+    "year": "2008",
+    "text": "Budge, B., D. Coming, D. Norpchen, and K. Joy. 2008. Accelerated building and ray tracing of restricted BSP trees. 2008 IEEE Symposium on Interactive Ray Tracing, 167–74.",
+    "source_line": 588
+  },
+  "cite:Cazals95": {
+    "anchor": "original-reference-145",
+    "index": 145,
+    "year": "1995",
+    "text": "Cazals, F., G. Drettakis, and C. Puech. 1995. Filtering, clustering and hierarchy construction: A new solution for ray-tracing complex scenes. Computer Graphics Forum 14 (3), 371–82.",
+    "source_line": 645
+  },
+  "cite:Choi2013": {
+    "anchor": "original-reference-166",
+    "index": 166,
+    "year": "2013",
+    "text": "Choi, B., B. Chang, and I. Ihm. 2013. Improving memory space efficiency of kd-tree for real-time ray tracing. Computer Graphics Forum 32 (7), 335–44.",
+    "source_line": 731
+  },
+  "cite:Choi2010": {
+    "anchor": "original-reference-167",
+    "index": 167,
+    "year": "2010",
+    "text": "Choi, B., R. Komuravelli, V. Lu, H. Sung, R. L. Bocchino, S. V. Adve, and J. C. Hart. 2010. Parallel SAH k-D tree construction. In Proceedings of High Performance Graphics 2010, 77–86.",
+    "source_line": 734
+  },
+  "cite:Clark76": {
+    "anchor": "original-reference-183",
+    "index": 183,
+    "year": "1976",
+    "text": "Clark, J. H. 1976. Hierarchical geometric models for visible surface algorithms. Communications of the ACM 19 (10), 547–54.",
+    "source_line": 797
+  },
+  "cite:Cleary:1988:AOA": {
+    "anchor": "original-reference-185",
+    "index": 185,
+    "year": "1988",
+    "text": "Cleary, J. G., and G. Wyvill. 1988. Analysis of an algorithm for fast ray tracing using uniform space subdivision. The Visual Computer 4 (2), 65–83.",
+    "source_line": 803
+  },
+  "cite:Cline2006": {
+    "anchor": "original-reference-188",
+    "index": 188,
+    "year": "2006",
+    "text": "Cline, D., P. Egbert, J. Talbot, and D. Cardon. 2006. Two stage importance sampling for direct lighting. Rendering Techniques 2006: 17th Eurographics Workshop on Rendering, 103–14.",
+    "source_line": 819
+  },
+  "cite:Dammertz2008a": {
+    "anchor": "original-reference-222",
+    "index": 222,
+    "year": "2008a",
+    "text": "Dammertz, H., and A. Keller. 2008a. The edge volume heuristic—robust triangle subdivision for improved BVH performance. In IEEE Symposium on Interactive Ray Tracing, 155–58.",
+    "source_line": 950
+  },
+  "cite:Eisemann2007": {
+    "anchor": "original-reference-293",
+    "index": 293,
+    "year": "2007",
+    "text": "Eisemann, M., M. Magnor, T. Grosch, and S. Müller. 2007. Fast ray/axis-aligned bounding box overlap tests using ray slopes. Journal of Graphics, GPU, and Game Tools 12 (4), 35–46.",
+    "source_line": 1235
+  },
+  "cite:Enderton2010": {
+    "anchor": "original-reference-297",
+    "index": 297,
+    "year": "2010",
+    "text": "Enderton, E., E. Sintorn, P. Shirley, and D. Luebke. 2010. Stochastic transparency. Proceedings of the 2010 ACM SIGGRAPH Symposium on Interactive 3D Graphics and Games (I3D ’10), 157–64.",
+    "source_line": 1249
+  },
+  "cite:Ericson04": {
+    "anchor": "original-reference-299",
+    "index": 299,
+    "year": "2004",
+    "text": "Ericson, C. 2004. Real-Time Collision Detection. Morgan Kaufmann Series in Interactive 3D Technology. San Francisco: Morgan Kaufmann.",
+    "source_line": 1257
+  },
+  "cite:Ernst2007": {
+    "anchor": "original-reference-300",
+    "index": 300,
+    "year": "2007",
+    "text": "Ernst, M., and G. Greiner. 2007. Early split clipping for bounding volume hierarchies. IEEE Symposium on Interactive Ray Tracing, 73–78.",
+    "source_line": 1261
+  },
+  "cite:Fabianowski2009": {
+    "anchor": "original-reference-305",
+    "index": 305,
+    "year": "2009",
+    "text": "Fabianowski, B., C. Fowler, and J. Dingliana. 2009. A cost metric for scene-interior ray origins. Short Paper Proceedings of the 30th Annual Conference of the European Association for Computer Graphics (Eurographics 2009), 49–50.",
+    "source_line": 1285
+  },
+  "cite:Foley2005": {
+    "anchor": "original-reference-324",
+    "index": 324,
+    "year": "2005",
+    "text": "Foley, T., and J. Sugerman. 2005. KD-tree acceleration structures for a GPU raytracer. Proceedings of the ACM SIGGRAPH/EUROGRAPHICS Conference on Graphics Hardware, 15–22.",
+    "source_line": 1362
+  },
+  "cite:Fujimoto86": {
+    "anchor": "original-reference-338",
+    "index": 338,
+    "year": "1986",
+    "text": "Fujimoto, A., T. Tanaka, and K. Iwata. 1986. Arts: Accelerated ray-tracing system. IEEE Computer Graphics and Applications 6 (4), 16–26.",
+    "source_line": 1417
+  },
+  "cite:Gunther2007": {
+    "anchor": "original-reference-423",
+    "index": 423,
+    "year": "2007",
+    "text": "Günther, J., S. Popov, H. P. Seidel, and P. Slusallek. 2007. Realtime ray tracing on GPU with BVH-based packet traversal. IEEE Symposium on Interactive Ray Tracing, 113–18.",
+    "source_line": 1768
+  },
+  "cite:Ganestam2016": {
+    "anchor": "original-reference-345",
+    "index": 345,
+    "year": "2016",
+    "text": "Ganestam, P., and M. Doggett. 2016. SAH guided spatial split partitioning for fast BVH construction. Computer Graphics Forum 35 (2), 285–93.",
+    "source_line": 1449
+  },
+  "cite:Garanzha2009": {
+    "anchor": "original-reference-346",
+    "index": 346,
+    "year": "2009",
+    "text": "Garanzha, K. 2009. The use of precomputed triangle clusters for accelerated ray tracing in dynamic scenes. Computer Graphics Forum (Proceedings of the 2009 Eurographics Symposium on Rendering) 28 (4), 1199–206.",
+    "source_line": 1452
+  },
+  "cite:Garanzha2011": {
+    "anchor": "original-reference-348",
+    "index": 348,
+    "year": "2011",
+    "text": "Garanzha, K., J. Pantaleoni, D. McAllister. 2011. Simpler and faster HLBVH with work queues. Proceedings of High Performance Graphics 2011, 59–64.",
+    "source_line": 1459
+  },
+  "cite:Glassner:IntroRayTracing": {
+    "anchor": "original-reference-376",
+    "index": 376,
+    "year": "1989a",
+    "text": "Glassner, A. (ed.) 1989a. An Introduction to Ray Tracing. San Diego: Academic Press.",
+    "source_line": 1578
+  },
+  "cite:Glassner84": {
+    "anchor": "original-reference-374",
+    "index": 374,
+    "year": "1984",
+    "text": "Glassner, A. 1984. Space subdivision for fast ray tracing. IEEE Computer Graphics and Applications 4 (10), 15–22.",
+    "source_line": 1571
+  },
+  "cite:Glassner1988": {
+    "anchor": "original-reference-375",
+    "index": 375,
+    "year": "1988",
+    "text": "Glassner, A. 1988. Spacetime ray tracing for animation. IEEE Computer Graphics & Applications 8 (2), 60–70.",
+    "source_line": 1575
+  },
+  "cite:Goldsmith87": {
+    "anchor": "original-reference-388",
+    "index": 388,
+    "year": "1987",
+    "text": "Goldsmith, J., and J. Salmon. 1987. Automatic creation of object hierarchies for ray tracing. IEEE Computer Graphics and Applications 7 (5), 14–20.",
+    "source_line": 1625
+  },
+  "cite:Grunschloss2011": {
+    "anchor": "original-reference-411",
+    "index": 411,
+    "year": "2011",
+    "text": "Grünschloß, L., M. Stich, S. Nawaz, and A. Keller. 2011. MSBVH: An efficient acceleration data structure for ray traced motion blur. Proceedings of High Performance Graphics 2011, 65–70.",
+    "source_line": 1714
+  },
+  "cite:Gu2015": {
+    "anchor": "original-reference-415",
+    "index": 415,
+    "year": "2015",
+    "text": "Gu, Y., Y. He, and G. E. Blelloch. 2015. Ray specialized contraction on bounding volume hierarchies. Computer Graphics Forum 34 (7), 309–18.",
+    "source_line": 1733
+  },
+  "cite:Gu2013b": {
+    "anchor": "original-reference-416",
+    "index": 416,
+    "year": "2013b",
+    "text": "Gu, Y., Y. He, K. Fatahalian, and G. Blelloch. 2013b. Efficient BVH construction via approximate agglomerative clustering. Proceedings of High Performance Graphics 2013, 81–88.",
+    "source_line": 1736
+  },
+  "cite:Havran2000": {
+    "anchor": "original-reference-472",
+    "index": 472,
+    "year": "2000",
+    "text": "Havran, V. 2000. Heuristic ray shooting algorithms. Ph.D. thesis, Czech Technical University.",
+    "source_line": 1971
+  },
+  "cite:Havran02": {
+    "anchor": "original-reference-473",
+    "index": 473,
+    "year": "2002",
+    "text": "Havran, V., and J. Bittner. 2002. On improving kd-trees for ray shooting. In Proceedings of WSCG 2002 Conference, 209–17.",
+    "source_line": 1974
+  },
+  "cite:Havran06": {
+    "anchor": "original-reference-475",
+    "index": 475,
+    "year": "2006",
+    "text": "Havran, V., R. Herzog, and H.-P. Seidel. 2006. On the fast construction of spatial hierarchies for ray tracing. In IEEE Symposium on Interactive Ray Tracing, 71–80.",
+    "source_line": 1985
+  },
+  "cite:Hendrich2019": {
+    "anchor": "original-reference-504",
+    "index": 504,
+    "year": "2019",
+    "text": "Hendrich, J., A. Pospíšil, D. Meister, and J. Bittner. 2019. Ray classification for accelerated BVH traversal. Computer Graphics Forum 38 (4), 49–56.",
+    "source_line": 2108
+  },
+  "cite:Hendrich2017": {
+    "anchor": "original-reference-503",
+    "index": 503,
+    "year": "2017",
+    "text": "Hendrich, J., D. Meister, and J. Bittner. 2017. Parallel BVH construction using progressive hierarchical refinement. Computer Graphics Forum 36 (2), 487–94.",
+    "source_line": 2105
+  },
+  "cite:Hunt2008": {
+    "anchor": "original-reference-530",
+    "index": 530,
+    "year": "2008",
+    "text": "Hunt, W. 2008. Corrections to the surface area metric with respect to mail-boxing. In IEEE Symposium on Interactive Ray Tracing, 77–80.",
+    "source_line": 2209
+  },
+  "cite:Hunt08a": {
+    "anchor": "original-reference-531",
+    "index": 531,
+    "year": "2008a",
+    "text": "Hunt, W., and B. Mark. 2008a. Ray-specialized acceleration structures for ray tracing. In IEEE Symposium on Interactive Ray Tracing, 3–10.",
+    "source_line": 2212
+  },
+  "cite:Hunt08b": {
+    "anchor": "original-reference-532",
+    "index": 532,
+    "year": "2008b",
+    "text": "Hunt, W., and B. Mark. 2008b. Adaptive acceleration structures in perspective space. In IEEE Symposium on Interactive Ray Tracing, 111–17.",
+    "source_line": 2215
+  },
+  "cite:Hunt2006": {
+    "anchor": "original-reference-533",
+    "index": 533,
+    "year": "2006",
+    "text": "Hunt, W., W. Mark, and G. Stoll. 2006. Fast kd-tree construction with an adaptive error-bounded heuristic. In IEEE Symposium on Interactive Ray Tracing, 81–88.",
+    "source_line": 2218
+  },
+  "cite:Hurley02": {
+    "anchor": "original-reference-535",
+    "index": 535,
+    "year": "2002",
+    "text": "Hurley, J., A. Kapustin, A. Reshetov, and A. Soupikov. 2002. Fast ray tracing for modern general purpose CPU. In Proceedings of GraphiCon 2002.",
+    "source_line": 2224
+  },
+  "cite:Ize2013": {
+    "anchor": "original-reference-546",
+    "index": 546,
+    "year": "2013",
+    "text": "Ize, T. 2013. Robust BVH ray traversal. Journal of Computer Graphics Techniques (JCGT) 2 (2), 12–27.",
+    "source_line": 2269
+  },
+  "cite:Ize2011": {
+    "anchor": "original-reference-547",
+    "index": 547,
+    "year": "2011",
+    "text": "Ize, T., and C. Hansen. 2011. RTSAH traversal order for occlusion rays. Computer Graphics Forum (Proceedings of Eurographics 2011) 30 (2), 295–305.",
+    "source_line": 2272
+  },
+  "cite:Ize08": {
+    "anchor": "original-reference-549",
+    "index": 549,
+    "year": "2008",
+    "text": "Ize, T., I. Wald, and S. Parker. 2008. Ray tracing with the BSP tree. In IEEE Symposium on Interactive Ray Tracing, 159–66.",
+    "source_line": 2279
+  },
+  "cite:Ize2006": {
+    "anchor": "original-reference-550",
+    "index": 550,
+    "year": "2006",
+    "text": "Ize, T., I. Wald, C. Robertson, and S. G. Parker. 2006. An evaluation of parallel grid construction for ray tracing dynamic scenes. IEEE Symposium on Interactive Ray Tracing, 47–55.",
+    "source_line": 2282
+  },
+  "cite:Ize07": {
+    "anchor": "original-reference-548",
+    "index": 548,
+    "year": "2007",
+    "text": "Ize, T., P. Shirley, and S. Parker. 2007. Grid creation strategies for efficient ray tracing. In IEEE Symposium on Interactive Ray Tracing, 27–32.",
+    "source_line": 2276
+  },
+  "cite:Jansen86": {
+    "anchor": "original-reference-562",
+    "index": 562,
+    "year": "1986",
+    "text": "Jansen, F. W. 1986. Data structures for ray tracing. In Data Structures for Raster Graphics, Workshop Proceedings, 57–73. New York: Springer-Verlag.",
+    "source_line": 2338
+  },
+  "cite:Jevans89": {
+    "anchor": "original-reference-585",
+    "index": 585,
+    "year": "1989",
+    "text": "Jevans, D., and B. Wyvill. 1989. Adaptive voxel subdivision for ray tracing. In Proceedings of Graphics Interface 1989, 164–72.",
+    "source_line": 2437
+  },
+  "cite:Kammaje07": {
+    "anchor": "original-reference-608",
+    "index": 608,
+    "year": "2007",
+    "text": "Kammaje, R., and B. Mora. 2007. A study of restricted BSP trees for ray tracing. In IEEE Symposium on Interactive Ray Tracing, 55–62.",
+    "source_line": 2533
+  },
+  "cite:Kaplan85": {
+    "anchor": "original-reference-610",
+    "index": 610,
+    "year": "1985",
+    "text": "Kaplan, M. R. 1985. The uses of spatial coherence in ray tracing. In ACM SIGGRAPH Course Notes 11.",
+    "source_line": 2543
+  },
+  "cite:Karras2013": {
+    "anchor": "original-reference-615",
+    "index": 615,
+    "year": "2013",
+    "text": "Karras, T., and T. Aila. 2013. Fast parallel construction of high-quality bounding volume hierarchies. In Proceedings of High Performance Graphics 2013, 89–99.",
+    "source_line": 2562
+  },
+  "cite:Kay86": {
+    "anchor": "original-reference-621",
+    "index": 621,
+    "year": "1986",
+    "text": "Kay, T., and J. Kajiya. 1986. Ray tracing complex scenes. In Computer Graphics (SIGGRAPH ’86 Proceedings), Volume 20, 269–78.",
+    "source_line": 2581
+  },
+  "cite:Kensler08": {
+    "anchor": "original-reference-633",
+    "index": 633,
+    "year": "2008",
+    "text": "Kensler, A. 2008. Tree rotations for improving bounding volume hierarchies. In IEEE Symposium on Interactive Ray Tracing, 73–76.",
+    "source_line": 2624
+  },
+  "cite:Kirk88": {
+    "anchor": "original-reference-648",
+    "index": 648,
+    "year": "1988",
+    "text": "Kirk, D., and J. Arvo. 1988. The ray tracing kernel. In Proceedings of Ausgraph ’88, 75–82.",
+    "source_line": 2689
+  },
+  "cite:Klimaszewski97": {
+    "anchor": "original-reference-652",
+    "index": 652,
+    "year": "1997",
+    "text": "Klimaszewski, K. S., and T. W. Sederberg. 1997. Faster ray tracing using adaptive grids. IEEE Computer Graphics and Applications 17 (1), 42–51.",
+    "source_line": 2706
+  },
+  "cite:Kopta2012": {
+    "anchor": "original-reference-668",
+    "index": 668,
+    "year": "2012",
+    "text": "Kopta, D., T. Ize, J. Spjut, E. Brunvand, A. Davis, and A. Kensler. 2012. Fast, effective BVH updates for animated scenes. In Proceedings of the ACM SIGGRAPH Symposium on Interactive 3D Graphics and Games, 197–204.",
+    "source_line": 2765
+  },
+  "cite:Lacewell08": {
+    "anchor": "original-reference-680",
+    "index": 680,
+    "year": "2008",
+    "text": "Lacewell, D., B. Burley, S. Boulos, and P. Shirley. 2008. Raytracing prefiltered occlusion for aggregate geometry. In IEEE Symposium on Interactive Ray Tracing, 19–26.",
+    "source_line": 2815
+  },
+  "cite:Lagae08a": {
+    "anchor": "original-reference-687",
+    "index": 687,
+    "year": "2008a",
+    "text": "Lagae, A., and P. Dutré. 2008a. Compact, fast, and robust grids for ray tracing. Computer Graphics Forum (Proceedings of the 2008 Eurographics Symposium on Rendering) 27 (4), 1235–44.",
+    "source_line": 2841
+  },
+  "cite:Lagae08b": {
+    "anchor": "original-reference-688",
+    "index": 688,
+    "year": "2008b",
+    "text": "Lagae, A., and P. Dutré. 2008b. Accelerating ray tracing using constrained tetrahedralizations. Computer Graphics Forum (Proceedings of the 2008 Eurographics Symposium on Rendering) 27 (4), 1303–12.",
+    "source_line": 2845
+  },
+  "cite:Laine2010": {
+    "anchor": "original-reference-692",
+    "index": 692,
+    "year": "2010",
+    "text": "Laine, S. 2010. Restart trail for stackless BVH traversal. In Proceedings of High Performance Graphics 2010, 107–11.",
+    "source_line": 2864
+  },
+  "cite:Lauterbach09": {
+    "anchor": "original-reference-701",
+    "index": 701,
+    "year": "2009",
+    "text": "Lauterbach, C., M. Garland, S. Sengupta, D. Luebke, and D. Manocha. 2009. Fast BVH construction on GPUs. Computer Graphics Forum (Eurographics 2009 Conference Proceedings) 28 (2), 422–30.",
+    "source_line": 2897
+  },
+  "cite:Lauterbach2006": {
+    "anchor": "original-reference-703",
+    "index": 703,
+    "year": "2006",
+    "text": "Lauterbach, C., S.-E. Yoon, D. Tuft, and D. Manocha. 2006. RT-DEFORM: Interactive ray tracing of dynamic scenes using BVHs. IEEE Symposium on Interactive Ray Tracing, 39–46.",
+    "source_line": 2904
+  },
+  "cite:Lier2018": {
+    "anchor": "original-reference-721",
+    "index": 721,
+    "year": "2018a",
+    "text": "Lier, A., M. Martinek, M. Stamminger, and K. Selgrad. 2018a. A high-resolution compression scheme for ray tracing subdivision surfaces with displacement. Proceedings of the ACM on Computer Graphics and Interactive Techniques 1 (2), 33:1–17.",
+    "source_line": 2985
+  },
+  "cite:Liktor2016": {
+    "anchor": "original-reference-723",
+    "index": 723,
+    "year": "2016",
+    "text": "Liktor, G., and K. Vaidyanathan. 2016. Bandwidth-efficient BVH layout for incremental hardware traversal. Proceedings of High Performance Graphics (HPG ’16), 51–61.",
+    "source_line": 2992
+  },
+  "cite:Lin2019": {
+    "anchor": "original-reference-724",
+    "index": 724,
+    "year": "2019",
+    "text": "Lin, D., K. Shkurko, I. Mallett, and C. Yuksel. 2019. Dual-split trees. Symposium on Interactive 3D Graphics and Games (I3D 2019), 3:1–9.",
+    "source_line": 2995
+  },
+  "cite:Muller1999": {
+    "anchor": "original-reference-826",
+    "index": 826,
+    "year": "1999",
+    "text": "Müller, G., and D. W. Fellner. 1999. Hybrid scene structuring with application to ray tracing. Proceedings of the International Conference on Visual Computing (ICVC ’99), 19–26.",
+    "source_line": 3375
+  },
+  "cite:MacDonald90": {
+    "anchor": "original-reference-742",
+    "index": 742,
+    "year": "1990",
+    "text": "MacDonald, J. D., and K. S. Booth. 1990. Heuristics for ray tracing using space subdivision. The Visual Computer 6 (3), 153–66.",
+    "source_line": 3066
+  },
+  "cite:Masso2003": {
+    "anchor": "original-reference-761",
+    "index": 761,
+    "year": "2003",
+    "text": "Massó, J. P. M., and P. G. López. 2003 Automatic hybrid hierarchy creation: A cost-model based approach. Computer Graphics Forum 22 (1), 5–13.",
+    "source_line": 3136
+  },
+  "cite:Meister2018b": {
+    "anchor": "original-reference-779",
+    "index": 779,
+    "year": "2018b",
+    "text": "Meister, D., and J. Bittner, 2018b. Parallel locally-ordered clustering for bounding volume hierarchy construction. IEEE Transactions on Visualization and Computer Graphics 24 (3), 1345–53.",
+    "source_line": 3198
+  },
+  "cite:Meister2018a": {
+    "anchor": "original-reference-778",
+    "index": 778,
+    "year": "2018a",
+    "text": "Meister, D., and J. Bittner. 2018a. Parallel reinsertion for bounding volume hierarchy optimization. Computer Graphics Forum 37 (2), 463–73.",
+    "source_line": 3195
+  },
+  "cite:Meister2021": {
+    "anchor": "original-reference-781",
+    "index": 781,
+    "year": "2021",
+    "text": "Meister, D., S. Ogaki, C. Benthin, M. J. Doyle, M. Guthe, and J. Bittner. 2021. A survey on bounding volume hierarchies for ray tracing. Computer Graphics Forum (Eurographics State of the Art Report) 40 (2): 683–712.",
+    "source_line": 3206
+  },
+  "cite:Morton1966": {
+    "anchor": "original-reference-821",
+    "index": 821,
+    "year": "1966",
+    "text": "Morton, G. M. 1966. A computer oriented geodetic data base and a new technique in file sequencing. IBM Technical Report.",
+    "source_line": 3354
+  },
+  "cite:Moulin2015": {
+    "anchor": "original-reference-823",
+    "index": 823,
+    "year": "2015",
+    "text": "Moulin, M., N. Billen, and P. Dutré. 2015. Efficient visibility heuristics for kd-trees using the RTSAH. Eurographics Symposium on Rendering–Experimental Ideas & Implementations, 31–39.",
+    "source_line": 3361
+  },
+  "cite:Naylor93": {
+    "anchor": "original-reference-846",
+    "index": 846,
+    "year": "1993",
+    "text": "Naylor, B. 1993. Constructing good partition trees. In Proceedings of Graphics Interface 1993, 181–91.",
+    "source_line": 3451
+  },
+  "cite:Ooi87": {
+    "anchor": "original-reference-871",
+    "index": 871,
+    "year": "1987",
+    "text": "Ooi, B. C., K. McDonell, and R. Sacks-Davis. 1987. Spatial kd-tree: A data structure for geographic databases. In Proceedings of the IEEE COMPSAC Conference.",
+    "source_line": 3550
+  },
+  "cite:Pantaleoni2010a": {
+    "anchor": "original-reference-891",
+    "index": 891,
+    "year": "2010",
+    "text": "Pantaleoni, J., and D. Luebke. 2010. HLBVH: Hierarchical LBVH construction for real-time ray tracing of dynamic geometry. In Proceedings of the Conference on High Performance Graphics 2010, 87–95.",
+    "source_line": 3639
+  },
+  "cite:Popov06": {
+    "anchor": "original-reference-947",
+    "index": 947,
+    "year": "2006",
+    "text": "Popov, S., J. Gunther, H. P. Seidel, and P. Slusallek. 2006. Experiences with streaming construction of SAH kd-trees. In IEEE Symposium on Interactive Ray Tracing, 89–94.",
+    "source_line": 3850
+  },
+  "cite:Popov2009": {
+    "anchor": "original-reference-945",
+    "index": 945,
+    "year": "2009",
+    "text": "Popov, S., R. Dimov, I. Georgiev, and P. Slusallek. 2009. Object partitioning considered harmful: Space subdivision for BVHs. In Proceedings of High Performance Graphics 2009, 15–22.",
+    "source_line": 3843
+  },
+  "cite:Rubin80": {
+    "anchor": "original-reference-1011",
+    "index": 1011,
+    "year": "1980",
+    "text": "Rubin, S. M., and T. Whitted. 1980. A 3-dimensional representation for fast rendering of complex scenes. Computer Graphics 14 (3), 110–16.",
+    "source_line": 4098
+  },
+  "cite:Segovia2010": {
+    "anchor": "original-reference-1046",
+    "index": 1046,
+    "year": "2010",
+    "text": "Segovia, B., and M. Ernst. 2010. Memory efficient ray tracing with hierarchical mesh quantization. In Proceedings of Graphics Interface 2010, 153–60.",
+    "source_line": 4227
+  },
+  "cite:Selgrad2017": {
+    "anchor": "original-reference-1047",
+    "index": 1047,
+    "year": "2017",
+    "text": "Selgrad, K., A. Lier, M. Martinek, C. Buchenau, M. Guthe, F. Kranz, H. Schäfer, and M. Stamminger. 2017. A compressed representation for ray tracing parametric surfaces. ACM Transactions on Graphics 36 (1), 5:1–13.",
+    "source_line": 4230
+  },
+  "cite:Shevtsov07a": {
+    "anchor": "original-reference-1052",
+    "index": 1052,
+    "year": "2007a",
+    "text": "Shevtsov, M., A. Soupikov, and A. Kapustin. 2007a. Ray–triangle intersection algorithm for modern CPU architectures. In Proceedings of GraphiCon 2007, 33–39.",
+    "source_line": 4251
+  },
+  "cite:Shevtsov07b": {
+    "anchor": "original-reference-1053",
+    "index": 1053,
+    "year": "2007b",
+    "text": "Shevtsov, M., A. Soupikov, and A. Kapustin. 2007b. Highly parallel fast kd-tree construction for interactive ray tracing of dynamic scenes. In Computer Graphics Forum (Proceedings of Eurographics 2007) 26 (3), 395–404.",
+    "source_line": 4254
+  },
+  "cite:Snyder87": {
+    "anchor": "original-reference-1093",
+    "index": 1093,
+    "year": "1987",
+    "text": "Snyder, J. M., and A. H. Barr. 1987. Ray tracing complex models containing surface tessellations. Computer Graphics (SIGGRAPH ’87 Proceedings), Volume 21, 119–28.",
+    "source_line": 4405
+  },
+  "cite:Soupikov08": {
+    "anchor": "original-reference-1098",
+    "index": 1098,
+    "year": "2008",
+    "text": "Soupikov, A., M. Shevtsov, and A. Kapustin. 2008. Improving kd-tree quality at a reasonable construction cost. In IEEE Symposium on Interactive Ray Tracing, 67–72.",
+    "source_line": 4440
+  },
+  "cite:Stich2009": {
+    "anchor": "original-reference-1113",
+    "index": 1113,
+    "year": "2009",
+    "text": "Stich, M., H. Friedrich, and A. Dietrich. 2009. Spatial splits in bounding volume hierarchies. In Proceedings of High Performance Graphics 2009, 7–14.",
+    "source_line": 4498
+  },
+  "cite:Sung92": {
+    "anchor": "original-reference-1128",
+    "index": 1128,
+    "year": "1992",
+    "text": "Sung, K., and P. Shirley. 1992. Ray tracing with the BSP tree. In D. Kirk (ed.), Graphics Gems III, 271–74. San Diego: Academic Press.",
+    "source_line": 4546
+  },
+  "cite:Vaidyanathan2019": {
+    "anchor": "original-reference-1180",
+    "index": 1180,
+    "year": "2019",
+    "text": "Vaidyanathan, K., C. Benthin, and S. Woop. 2019. Wide BVH traversal with a short stack. High Performance Graphics (HPG ’19), 15–19.",
+    "source_line": 4751
+  },
+  "cite:Vaidyanathan2016": {
+    "anchor": "original-reference-1179",
+    "index": 1179,
+    "year": "2016",
+    "text": "Vaidyanathan, K., T. Akenine-Möller, and M. Salvi. 2016. Watertight ray traversal with reduced precision. High Performance Graphics (HPG ’16), 33–40.",
+    "source_line": 4748
+  },
+  "cite:Vinkler2017": {
+    "anchor": "original-reference-1207",
+    "index": 1207,
+    "year": "2017",
+    "text": "Vinkler, M., J. Bittner, and V. Havran. 2017. Extended Morton codes for high-performance bounding volume hierarchy construction. High Performance Graphics (HPG ’17), 9:1–8.",
+    "source_line": 4858
+  },
+  "cite:Vinkler2012": {
+    "anchor": "original-reference-1209",
+    "index": 1209,
+    "year": "2012",
+    "text": "Vinkler, M., V. Havran, and J. Sochora. 2012. Visibility driven BVH build up algorithm for ray tracing. Computers & Graphics 36 (4), 283–96.",
+    "source_line": 4866
+  },
+  "cite:Wachter2006": {
+    "anchor": "original-reference-1218",
+    "index": 1218,
+    "year": "2006",
+    "text": "Wächter, C. A., and A. Keller. 2006. Instant ray tracing: The bounding interval hierarchy. In Rendering Techniques 2006: 17th Eurographics Workshop on Rendering, 139–49.",
+    "source_line": 4900
+  },
+  "cite:Wald07": {
+    "anchor": "original-reference-1220",
+    "index": 1220,
+    "year": "2007",
+    "text": "Wald, I. 2007. On fast construction of SAH-based bounding volume hierarchies. In IEEE Symposium on Interactive Ray Tracing, 33–40.",
+    "source_line": 4911
+  },
+  "cite:Wald2012": {
+    "anchor": "original-reference-1222",
+    "index": 1222,
+    "year": "2012",
+    "text": "Wald, I. 2012. Fast construction of SAH BVHs on the Intel Many Integrated Core (MIC) architecture. IEEE Transactions on Visualization and Computer Graphics 18 (1), 47–57.",
+    "source_line": 4917
+  },
+  "cite:Wald06": {
+    "anchor": "original-reference-1226",
+    "index": 1226,
+    "year": "2006",
+    "text": "Wald, I., and V. Havran. 2006. On building fast kd-trees for ray tracing and on doing that in upper O left-parenthesis n log n right-parenthesis . In IEEE Symposium on Interactive Ray Tracing, 61–69.",
+    "source_line": 4934
+  },
+  "cite:Wald07a": {
+    "anchor": "original-reference-1225",
+    "index": 1225,
+    "year": "2007a",
+    "text": "Wald, I., S. Boulos, and P. Shirley. 2007a. Ray tracing deformable scenes using dynamic bounding volume hierarchies. ACM Transactions on Graphics 26 (1), 6.",
+    "source_line": 4931
+  },
+  "cite:Wald2007b": {
+    "anchor": "original-reference-1228",
+    "index": 1228,
+    "year": "2007b",
+    "text": "Wald, I., W. Mark, J. Günther, S. Boulos, T. Ize, W. Hunt, S. Parker, and P. Shirley. 2007b. State of the art in ray tracing animated scenes. In Eurographics 2007 State of the Art Reports.",
+    "source_line": 4964
+  },
+  "cite:Walter08": {
+    "anchor": "original-reference-1237",
+    "index": 1237,
+    "year": "2008",
+    "text": "Walter, B., K. Bala, M. Kilkarni, and K. Pingali. 2008. Fast agglomerative clustering for rendering. In IEEE Symposium on Interactive Ray Tracing, 81–86.",
+    "source_line": 4997
+  },
+  "cite:Weghorst84": {
+    "anchor": "original-reference-1263",
+    "index": 1263,
+    "year": "1984",
+    "text": "Weghorst, H., G. Hooper, and D. P. Greenberg. 1984. Improved computational methods for ray tracing. ACM Transactions on Graphics 3 (1), 52–69.",
+    "source_line": 5103
+  },
+  "cite:Williams05": {
+    "anchor": "original-reference-1282",
+    "index": 1282,
+    "year": "2005",
+    "text": "Williams, A., S. Barrus, R. K. Morley, and P. Shirley. 2005. An efficient and robust ray–box intersection algorithm. Journal of Graphics, GPU, and Game Tools 10 (4), 49–54.",
+    "source_line": 5171
+  },
+  "cite:Wodniok2016": {
+    "anchor": "original-reference-1284",
+    "index": 1284,
+    "year": "2016",
+    "text": "Wodniok, D., and M. Goesele. 2016. Recursive SAH-based bounding volume hierarchy construction. Proceedings of Graphics Interface (GI ’16), 101–7.",
+    "source_line": 5178
+  },
+  "cite:Woop2017": {
+    "anchor": "original-reference-1288",
+    "index": 1288,
+    "year": "2017",
+    "text": "Woop, S., A. T. Áfra, and C. Benthin. 2017. STBVH: A spatial-temporal BVH for efficient multi-segment motion blur. Proceedings of High Performance Graphics (HPG ’17), 8:1–8.",
+    "source_line": 5192
+  },
+  "cite:Woop2013": {
+    "anchor": "original-reference-1289",
+    "index": 1289,
+    "year": "2013",
+    "text": "Woop, S., C. Benthin, and I. Wald. 2013. Watertight ray/triangle intersection. Journal of Computer Graphics Techniques (JCGT) 2 (1), 65–82.",
+    "source_line": 5195
+  },
+  "cite:Woop2014": {
+    "anchor": "original-reference-1290",
+    "index": 1290,
+    "year": "2014",
+    "text": "Woop, S., C. Benthin, I. Wald, G. S. Johnson, and E. Tabellion. 2014. Exploiting local orientation similarity for efficient ray traversal of hair and fur. In Proceedings of High Performance Graphics 2014, 41–49.",
+    "source_line": 5199
+  },
+  "cite:Woop06": {
+    "anchor": "original-reference-1291",
+    "index": 1291,
+    "year": "2006",
+    "text": "Woop, S., G. Marmitt, and P. Slusallek. 2006. B-kd trees for hardware accelerated ray tracing of dynamic scenes. In Graphics Hardware 2006: Eurographics Symposium Proceedings, 67–76.",
+    "source_line": 5203
+  },
+  "cite:Wyman2017": {
+    "anchor": "original-reference-1303",
+    "index": 1303,
+    "year": "2017",
+    "text": "Wyman, C., and M. McGuire. 2017. Hashed alpha testing. Proceedings of the 21st ACM SIGGRAPH Symposium on Interactive 3D Graphics and Games (I3D ’17).",
+    "source_line": 5245
+  },
+  "cite:Ylitie2017": {
+    "anchor": "original-reference-1318",
+    "index": 1318,
+    "year": "2017",
+    "text": "Ylitie, H., T. Karras, and S. Laine. 2017. Efficient incoherent ray traversal on GPUs through compressed wide BVHs. High Performance Graphics (HPG ’17), 4:1–13.",
+    "source_line": 5318
+  },
+  "cite:Yoon06b": {
+    "anchor": "original-reference-1323",
+    "index": 1323,
+    "year": "2006",
+    "text": "Yoon, S.-E., and D. Manocha. 2006. Cache-efficient layouts of bounding volume hierarchies. In Computer Graphics Forum: Proceedings of Eurographics 2006 25 (3), 507–16.",
+    "source_line": 5335
+  },
+  "cite:Yoon2007": {
+    "anchor": "original-reference-1319",
+    "index": 1319,
+    "year": "2007",
+    "text": "Yoon, S.-E., S. Curtis, and D. Manocha. 2007. Ray tracing dynamic scenes using selective restructuring. In Proceedings of the Eurographics Symposium on Rendering, 73–84.",
+    "source_line": 5321
+  },
+  "cite:Zachmann02": {
+    "anchor": "original-reference-1327",
+    "index": 1327,
+    "year": "2002",
+    "text": "Zachmann, G. 2002. Minimal hierarchical collision detection. In Proceedings of the ACM Symposium on Virtual Reality Software and Technology, 121–28.",
+    "source_line": 5353
+  },
+  "cite:Zuniga06": {
+    "anchor": "original-reference-1354",
+    "index": 1354,
+    "year": "2006",
+    "text": "Zuniga, M., and J. Uhlmann. 2006. Ray queries with wide object isolation and the S-tree. Journal of Graphics, GPU, and Game Tools 11 (3), 27–45.",
+    "source_line": 5468
+  }
+}

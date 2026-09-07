@@ -1290,11 +1290,11 @@ float rootDiscrim = std::sqrt(discrim);
 
 #parec[
   The usual version of the quadratic equation can give poor
-  numerical accuracy when $b$ is almost equal to $$ due to
+  numerical accuracy when $b approx plus.minus sqrt(b^2 - 4 a c)$ due to
   cancellation error. It can be rewritten algebraically into a more stable
   form:
 ][
-  常见的二次方程解公式在 $b$ 接近 $$
+  常见的二次方程解公式在 $b$ 接近 $plus.minus sqrt(b^2 - 4 a c)$
   时会因抵消误差而导致数值精度很差。通过代数变换，可以得到一种更稳定的形式：
 
 ]

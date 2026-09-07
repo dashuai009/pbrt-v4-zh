@@ -3,6 +3,8 @@ import fs from 'node:fs';import path from 'node:path';import {parse} from 'parse
 const inv=JSON.parse(fs.readFileSync('audit/inventory.json'));
 const refs=JSON.parse(fs.readFileSync('web/generated/references.json'));
 const labels=JSON.parse(fs.readFileSync('web/generated/label-targets.json'));
+const chineseLabels=new Set(JSON.parse(fs.readFileSync('output/references-zh.json')).map(r=>r['source-file']+'\0'+r.label));
+const numberAliases=JSON.parse(fs.readFileSync('audit/source-number-aliases.json')).aliases;
 const walk=function*(n){yield n;for(const c of n.childNodes||[])yield*walk(c)};
 const attr=(n,k)=>n.attrs?.find(a=>a.name===k)?.value;
 const cache=new Map(),globalIds=new Map();
@@ -17,7 +19,10 @@ for(const page of inv.pages.filter(p=>p.local)){
   else {hash=dest.replace(/^<|>$/g,'').replace(/^#/,'');source=cache.get(page.source).has(hash)?page.source:globalIds.get(hash)?.length===1?globalIds.get(hash)[0]:null;}
   if(!source||!cache.has(source)||hash&&!cache.get(source).has(decodeURIComponent(hash))){unresolved.push({local:page.local,dest,reason:'target absent or ambiguous in fixed original'});routes[page.local][dest]={kind:'unresolved'};continue}
   const targetPage=inv.pages.find(p=>p.source===source);
-  const matching=hash&&labels[hash]?.file===targetPage?.local?labels[hash]:hash?Object.values(refs).find(r=>r.file===targetPage?.local&&(r.label===hash||r.label.replace(/^(eqt:|fig:|tbl:)/,'')===hash)):null;
+  const candidates=numberAliases.filter(a=>a.local===targetPage?.local&&a.source_anchor===hash&&chineseLabels.has(a.local+'\0'+a.alias));
+  const selected=candidates.length===1?candidates[0]:null;
+  const aliasTarget=selected?refs[selected.alias]:null;
+  const matching=hash&&labels[hash]?.file===targetPage?.local?labels[hash]:hash?Object.values(refs).find(r=>r.file===targetPage?.local&&(r.label===hash||r.label.replace(/^(eqt:|fig:|tbl:)/,'')===hash))||aliasTarget:null;
   if(matching){routes[page.local][dest]={kind:'internal',slug:matching.slug,anchor:matching.anchor};internal++}
   else {routes[page.local][dest]={kind:'original',url:'https://pbr-book.org/'+source+(hash?'#'+hash:'')};original++}
  }

@@ -1,0 +1,15 @@
+<svg aria-labelledby="MathJax-SVG-1-Title" focusable="false" height="2.343ex" role="img" style="vertical-align: -0.505ex;" viewBox="0 -791.3 2724.4 1008.6" width="6.328ex" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title id="MathJax-SVG-1-Title">normal o plus t bold d</title>
+<defs aria-hidden="true">
+<path d="M471 214c0 -127 -101 -225 -222 -225c-117 0 -221 96 -221 225c0 125 97 234 222 234c121 0 221 -106 221 -234zM388 222c0 38 0 96 -26 139s-69 65 -113 65c-40 0 -87 -21 -114 -67c-24 -44 -24 -98 -24 -137c0 -36 0 -97 25 -141c27 -46 71 -67 114 -67 c50 0 94 29 116 74c22 44 22 98 22 134Z" id="E1-LATINMODERNMAIN-6F" stroke-width="1"></path>
+<path d="M722 250c0 -11 -9 -20 -20 -20h-293v-293c0 -11 -9 -20 -20 -20s-20 9 -20 20v293h-293c-11 0 -20 9 -20 20s9 20 20 20h293v293c0 11 9 20 20 20s20 -9 20 -20v-293h293c11 0 20 -9 20 -20Z" id="E1-LATINMODERNMAIN-2B" stroke-width="1"></path>
+<path d="M330 420c0 -20 -10 -20 -30 -20h-94l-74 -295c-4 -17 -6 -24 -6 -48c0 -33 10 -46 31 -46c34 0 87 24 130 128c5 11 6 14 15 14c4 0 12 0 12 -10c0 -8 -57 -154 -159 -154c-54 0 -92 38 -92 92c0 18 4 35 76 319h-88c-20 0 -28 0 -28 12c0 19 10 19 30 19h94l39 159 c9 35 37 36 40 36c17 0 29 -10 29 -27c0 -6 -5 -26 -41 -168h88c18 0 28 0 28 -11Z" id="E1-LATINMODERNNORMAL-1D461" stroke-width="1"></path>
+<path d="M601 0l-183 -6v49c-31 -25 -79 -49 -140 -49c-148 0 -240 95 -240 227c0 141 105 229 251 229c33 0 85 -6 135 -45v195c0 39 -7 39 -69 39v47l177 8v-608c0 -39 7 -39 69 -39v-47zM418 103v250c-22 29 -62 61 -119 61c-31 0 -78 -10 -107 -52c-26 -39 -26 -93 -26 -141 c0 -70 0 -191 122 -191c76 0 117 55 130 73Z" id="E1-LATINMODERNNORMAL-1D41D" stroke-width="1"></path>
+</defs>
+<g aria-hidden="true" fill="currentColor" stroke="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+<use x="0" xlink:href="#E1-LATINMODERNMAIN-6F" y="0"></use>
+<use x="722" xlink:href="#E1-LATINMODERNMAIN-2B" y="0"></use>
+<use x="1723" xlink:href="#E1-LATINMODERNNORMAL-1D461" y="0"></use>
+<use x="2084" xlink:href="#E1-LATINMODERNNORMAL-1D41D" y="0"></use>
+</g>
+</svg>

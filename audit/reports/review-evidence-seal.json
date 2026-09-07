@@ -1,0 +1,304 @@
+{
+  "notice": "Integrity migration only for previously accepted review records. No new editorial scope is awarded. Existing source/body/dependency hashes were compared before adding report hashes; newly tracked images were matched to the pinned original or accepted checkpoint.",
+  "previous_ledger_sha256": "8dd3f24af427ebe48af1f6d8c06bb2ce7b7652b924293c99dab9c3d7ab632d93",
+  "sealed": [
+    "chapter-1-Introduction/chapter-1.0-Introduction.typ",
+    "chapter-1-Introduction/chapter-1.1-Literate_Programming.typ",
+    "chapter-1-Introduction/chapter-1.2-Photorealistic_Rendering_and_the_Ray-Tracing_Algorithm.typ",
+    "chapter-2-Monte_Carlo_Integration/chapter-2.0-Monte_Carlo_Integration.typ",
+    "chapter-2-Monte_Carlo_Integration/chapter-2.1-Monte_Carlo_Basics.typ",
+    "chapter-2-Monte_Carlo_Integration/chapter-2.2-Improving_Efficiency.typ",
+    "chapter-2-Monte_Carlo_Integration/chapter-2.3-Sampling_Using_the_Inversion_Method.typ",
+    "chapter-2-Monte_Carlo_Integration/chapter-2.4-Transforming_between_Distributions.typ",
+    "chapter-2-Monte_Carlo_Integration/chapter-2.5-Further_Reading.typ",
+    "chapter-2-Monte_Carlo_Integration/chapter-2.6-Exercises.typ",
+    "chapter-0-Preface/chapter-0.0-Preface.typ",
+    "chapter-0-Preface/chapter-0.1-Further_Reading.typ",
+    "chapter-1-Introduction/chapter-1.5-Using_and_Understanding_the_Code.typ",
+    "chapter-1-Introduction/chapter-1.6-A_Brief_History_of_Physically_Based_Rendering.typ",
+    "chapter-1-Introduction/chapter-1.7-Further_Reading.typ",
+    "chapter-1-Introduction/chapter-1.8-Exercises.typ",
+    "chapter-1-Introduction/chapter-1.3-pbrt_System_Overview.typ",
+    "chapter-1-Introduction/chapter-1.4-How_to_Proceed_through_This_Book.typ",
+    "chapter-3-Geometry_and_Transformations/chapter-3.0-Geometry_and_Transformations.typ",
+    "chapter-3-Geometry_and_Transformations/chapter-3.1-Coordinate_Systems.typ",
+    "chapter-3-Geometry_and_Transformations/chapter-3.2-n-Tuple_Base_Classes.typ",
+    "backmatter/References.typ",
+    "backmatter/Index_of_Fragments.typ",
+    "backmatter/Index_of_Identifiers.typ",
+    "chapter-3-Geometry_and_Transformations/chapter-3.3-Vectors.typ",
+    "chapter-3-Geometry_and_Transformations/chapter-3.4-Points.typ",
+    "chapter-3-Geometry_and_Transformations/chapter-3.5-Normals.typ",
+    "chapter-16-Retrospective_and_the_Future/chapter-16.6-Further_Reading.typ",
+    "Appendix-A-Sampling_Algorithms/A.6-Further_Reading.typ",
+    "Appendix-A-Sampling_Algorithms/A.7-Exercises.typ",
+    "Appendix-B-Utilities/B.8-Further_Reading.typ",
+    "Appendix-B-Utilities/B.9-Exercises.typ",
+    "chapter-3-Geometry_and_Transformations/chapter-3.6-Rays.typ",
+    "chapter-3-Geometry_and_Transformations/chapter-3.7-Bounding_Boxes.typ",
+    "chapter-3-Geometry_and_Transformations/chapter-3.8-Spherical_Geometry.typ",
+    "chapter-3-Geometry_and_Transformations/chapter-3.9-Transformations.typ",
+    "chapter-3-Geometry_and_Transformations/chapter-3.10-Applying_Transformations.typ",
+    "chapter-3-Geometry_and_Transformations/chapter-3.11-Interactions.typ",
+    "chapter-3-Geometry_and_Transformations/chapter-3.12-Further_Reading.typ",
+    "chapter-3-Geometry_and_Transformations/chapter-3.13-Exercises.typ",
+    "chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.0-Radiometry,_Spectra,_and_Color.typ",
+    "chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.1-Radiometry.typ",
+    "chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.2-Working_with_Radiometric_Integrals.typ",
+    "chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.3-Surface_Reflection.typ",
+    "chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.4-Light_Emission.typ",
+    "chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.5-Representing_Spectral_Distributions.typ",
+    "chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.6-Color.typ",
+    "chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.7-Further_Reading.typ",
+    "chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.8-Exercises.typ",
+    "Appendix-A-Sampling_Algorithms/A.0-Sampling_Algorithms.typ",
+    "Appendix-A-Sampling_Algorithms/A.1-The_Alias_Method.typ",
+    "Appendix-A-Sampling_Algorithms/A.4-Sampling_1D_Functions.typ",
+    "Appendix-A-Sampling_Algorithms/A.5-Sampling_Multidimensional_Functions.typ",
+    "chapter-5-Cameras_and_Film/chapter-5.0-Cameras_and_Film.typ",
+    "chapter-5-Cameras_and_Film/chapter-5.1-Camera_Interface.typ",
+    "chapter-6-Shapes/chapter-6.0-Shapes.typ",
+    "chapter-6-Shapes/chapter-6.1-Basic_Shape_Interface.typ",
+    "chapter-6-Shapes/chapter-6.2-Spheres.typ",
+    "chapter-6-Shapes/chapter-6.3-Cylinders.typ",
+    "chapter-6-Shapes/chapter-6.4-Disks.typ",
+    "chapter-5-Cameras_and_Film/chapter-5.2-Projective_Camera_Models.typ",
+    "chapter-5-Cameras_and_Film/chapter-5.3-Spherical_Camera.typ",
+    "chapter-6-Shapes/chapter-6.5-Triangle_Meshes.typ",
+    "chapter-6-Shapes/chapter-6.6-Bilinear_Patches.typ",
+    "chapter-5-Cameras_and_Film/chapter-5.4-Film_and_Imaging.typ",
+    "chapter-5-Cameras_and_Film/chapter-5.5-Further_Reading.typ",
+    "chapter-5-Cameras_and_Film/chapter-5.6-Exercises.typ",
+    "chapter-6-Shapes/chapter-6.9-Further_Reading.typ",
+    "chapter-6-Shapes/chapter-6.10-Exercises.typ",
+    "chapter-6-Shapes/chapter-6.7-Curves.typ",
+    "chapter-7-Primitives_and_Intersection_Acceleration/chapter-7.0-Primitives_and_Intersection_Acceleration.typ",
+    "chapter-7-Primitives_and_Intersection_Acceleration/chapter-7.1-Primitive_Interface_and_Geometric_Primitives.typ",
+    "chapter-7-Primitives_and_Intersection_Acceleration/chapter-7.2-Aggregates.typ"
+  ],
+  "skipped": [],
+  "assets": [
+    {
+      "file": "pbr-book-website/4ed/openers/nightsnow.jpg",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "08369982a5a4aec30d1285689c7145c9d593b95e"
+    },
+    {
+      "file": "pbr-book-website/4ed/kroken-view-ch1.png",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "875ff93e2642fd348daff5fdf04abb3989224f99"
+    },
+    {
+      "file": "pbr-book-website/4ed/Introduction/pha01f02.svg",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "30e21e0d7bbf908299d8518a26b5a9b7a0d00a1c"
+    },
+    {
+      "file": "pbr-book-website/4ed/Introduction/pha01f03.svg",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "3fcbea686e5456fbd2dee4cae51cc431a83098a8"
+    },
+    {
+      "file": "pbr-book-website/4ed/Introduction/moana-island-view.png",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "5f2d957d7ae403667ba1479b2deaac29848b3715"
+    },
+    {
+      "file": "pbr-book-website/4ed/Introduction/pha01f05.svg",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "77a0a69b39f4caa5d29c6879a03ea2c1d03b5eb6"
+    },
+    {
+      "file": "pbr-book-website/4ed/Introduction/pha01f06.svg",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "931c363bae5493ba9ffb7ca3231a87d3d84e8aab"
+    },
+    {
+      "file": "pbr-book-website/4ed/Introduction/zero-day-frame52.png",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "ab516d83670265478111b963dc0e3b74b5f8659b"
+    },
+    {
+      "file": "pbr-book-website/4ed/Introduction/pha01f08.svg",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "9ecc550acf9a851e5974b7cf0a44977d5b11cbc6"
+    },
+    {
+      "file": "pbr-book-website/4ed/Introduction/pha01f09.svg",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "5c9880b396aac1b71b9e298fd95588178a158062"
+    },
+    {
+      "file": "pbr-book-website/4ed/Introduction/head-subsurface.png",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "58f0b0e099ae53408009d4fd01e57d2fbfaa1b55"
+    },
+    {
+      "file": "pbr-book-website/4ed/Introduction/spheres-whitted.png",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "89cda0cd889b427f370c092c0421349bcfb5e554"
+    },
+    {
+      "file": "pbr-book-website/4ed/Introduction/spheres-sppm.png",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "eafdc7e28287b47773b34cd1b3932ddfedc7898f"
+    },
+    {
+      "file": "pbr-book-website/4ed/Introduction/explosion-figure.png",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "7752dfa9a8217d2dddc5028775d3f1a927262500"
+    },
+    {
+      "file": "pbr-book-website/4ed/openers/dragon-blp-twosided-good.jpg",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "7c9d9b13d2793a023fe42ecceaf3dd20e05760ff"
+    },
+    {
+      "file": "pbr-book-website/4ed/Monte_Carlo_Integration/bunny-independent.png",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "a38b4495ebe1fbb716561778da7572d55ba812ee"
+    },
+    {
+      "file": "pbr-book-website/4ed/Monte_Carlo_Integration/bunny-stratified.png",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "fcf0be3e96cd591391ba0ad0c046f6f5218ce833"
+    },
+    {
+      "file": "pbr-book-website/4ed/Monte_Carlo_Integration/narrow-gaussian.svg",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "d139d28b5987ebab1e932d6b98e18b4bb3b077f5"
+    },
+    {
+      "file": "pbr-book-website/4ed/Monte_Carlo_Integration/piecewise-gaussian-pdf.svg",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "30677e880cb23c97020ce7c118bb7e2eaa760d82"
+    },
+    {
+      "file": "pbr-book-website/4ed/Monte_Carlo_Integration/piecewise-gaussian-samples.svg",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "1a8c95a79c7c4fb43f392aee2a87e329d7890fd2"
+    },
+    {
+      "file": "pbr-book-website/4ed/Monte_Carlo_Integration/discrete-pdf.svg",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "1f26314b18e992856b1b9f9487e19fc1b195b469"
+    },
+    {
+      "file": "pbr-book-website/4ed/Monte_Carlo_Integration/discrete-cdf.svg",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "a891e07a067727b92092966cd1ece116cd130731"
+    },
+    {
+      "file": "pbr-book-website/4ed/Monte_Carlo_Integration/discrete-inversion.svg",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "35606e66a95801e57c8965438ea033d60795008a"
+    },
+    {
+      "file": "pbr-book-website/4ed/Introduction/gravity.png",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "6d4db530c7bcf22ec66dad9d2ad88d7036642b1e"
+    },
+    {
+      "file": "pbr-book-website/4ed/Introduction/alita.png",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "dae1a57a15e6ddad051287a1ecc9c98a8c5c213c"
+    },
+    {
+      "file": "pbr-book-website/4ed/Introduction/nightsnow.png",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "63cccb4806af7b90571475757ac40a33bc85ba43"
+    },
+    {
+      "file": "pbr-book-website/4ed/Introduction/icecave.png",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "30439fad6e093848836c85abbefb4e49f2b1b48f"
+    },
+    {
+      "file": "pbr-book-website/4ed/Introduction/cotton_candy.png",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "0ea7d1fc9e5192b18dd2b6d5faaec8b276e4beca"
+    },
+    {
+      "file": "pbr-book-website/4ed/Introduction/crown.png",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "38a1f3cff752570317480078d4b3d149bc816b6f"
+    },
+    {
+      "file": "pbr-book-website/4ed/Introduction/pha01f17.svg",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "de46e9c84015c8cc538386a229d23578fe3c7db8"
+    },
+    {
+      "file": "pbr-book-website/4ed/Introduction/pha01f18.svg",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "6c7ed1aec12f0ad5b53f660423f8bbbbd7fa2970"
+    },
+    {
+      "file": "chapter-1-Introduction/imgs/random-walk-insanity.png",
+      "unchanged": true,
+      "reference": "af664ff",
+      "blob": "dcaededc0ce0ca135591aa987005b04ce76660cc"
+    },
+    {
+      "file": "chapter-1-Introduction/imgs/watercolor-randomwalk.png",
+      "unchanged": true,
+      "reference": "af664ff",
+      "blob": "c3c6852b5bdca37e54e84ddd079d043b90b153fe"
+    },
+    {
+      "file": "chapter-1-Introduction/imgs/watercolor-path.png",
+      "unchanged": true,
+      "reference": "af664ff",
+      "blob": "f4d56d012324d8f409bedebd47cce2dc9a374d8d"
+    },
+    {
+      "file": "pbr-book-website/4ed/openers/killeroo-control.jpg",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "6f2249353fe6725e9ab3833ca417371223b16c48"
+    },
+    {
+      "file": "pbr-book-website/4ed/Geometry_and_Transformations/pha03f01.svg",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "6e6e131867cc6d7f68774227991ed116d765194f"
+    },
+    {
+      "file": "pbr-book-website/4ed/Geometry_and_Transformations/pha03f02.svg",
+      "unchanged": true,
+      "reference": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+      "blob": "d11540771a1a0bcd6ace46dd754a11a12d750767"
+    }
+  ]
+}

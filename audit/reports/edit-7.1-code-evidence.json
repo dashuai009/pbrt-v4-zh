@@ -1,0 +1,369 @@
+{
+  "visible": [
+    {
+      "depth": 5,
+      "id": "fragment-PrimitiveDefinition-0",
+      "name": "<<Primitive Definition>>=",
+      "panel": null,
+      "code": "class Primitive\n    : public TaggedPointer<SimplePrimitive, GeometricPrimitive,\n                           TransformedPrimitive, AnimatedPrimitive,\n                           BVHAggregate, KdTreeAggregate> {\n  public:\n    <<Primitive Interface>>\u00a0\n};",
+      "full": "class Primitive\n    : public TaggedPointer<SimplePrimitive, GeometricPrimitive,\n                           TransformedPrimitive, AnimatedPrimitive,\n                           BVHAggregate, KdTreeAggregate> {\n  public:\n    <<Primitive Interface>>\u00a0       using TaggedPointer::TaggedPointer;\n       Bounds3f Bounds() const;\n       pstd::optional<ShapeIntersection> Intersect(const Ray &r,\n                                                   Float tMax = Infinity) const;\n       bool IntersectP(const Ray &r, Float tMax = Infinity) const;\n};"
+    },
+    {
+      "depth": 5,
+      "id": "fragment-PrimitiveInterface-0",
+      "name": "<<Primitive Interface>>=",
+      "panel": null,
+      "code": "Bounds3f Bounds() const;",
+      "full": "Bounds3f Bounds() const;"
+    },
+    {
+      "depth": 5,
+      "id": "fragment-PrimitiveInterface-1",
+      "name": "<<Primitive Interface>>+=",
+      "panel": null,
+      "code": "pstd::optional<ShapeIntersection> Intersect(const Ray &r,\n                                            Float tMax = Infinity) const;\nbool IntersectP(const Ray &r, Float tMax = Infinity) const;",
+      "full": "pstd::optional<ShapeIntersection> Intersect(const Ray &r,\n                                            Float tMax = Infinity) const;\nbool IntersectP(const Ray &r, Float tMax = Infinity) const;"
+    },
+    {
+      "depth": 5,
+      "id": "fragment-SurfaceInteractionPublicMethods-2",
+      "name": "<<SurfaceInteraction Public Methods>>+=",
+      "panel": null,
+      "code": "void SetIntersectionProperties(Material mtl, Light area,\n        const MediumInterface *primMediumInterface, Medium rayMedium) {\n    material = mtl;\n    areaLight = area;\n    <<Set medium properties at surface intersection>>\u00a0 \n}",
+      "full": "void SetIntersectionProperties(Material mtl, Light area,\n        const MediumInterface *primMediumInterface, Medium rayMedium) {\n    material = mtl;\n    areaLight = area;\n    <<Set medium properties at surface intersection>>\u00a0       if (primMediumInterface && primMediumInterface->IsMediumTransition())\n           mediumInterface = primMediumInterface;\n       else\n           medium = rayMedium; \n}"
+    },
+    {
+      "depth": 5,
+      "id": "fragment-SurfaceInteractionPublicMembers-3",
+      "name": "<<SurfaceInteraction Public Members>>+=",
+      "panel": null,
+      "code": "Material material;\nLight areaLight;",
+      "full": "Material material;\nLight areaLight;"
+    },
+    {
+      "depth": 5,
+      "id": "fragment-GeometricPrimitiveDefinition-0",
+      "name": "<<GeometricPrimitive Definition>>=",
+      "panel": null,
+      "code": "class GeometricPrimitive {\n  public:\n    <<GeometricPrimitive Public Methods>>\u00a0\n  private:\n    <<GeometricPrimitive Private Members>>\u00a0\n};",
+      "full": "class GeometricPrimitive {\n  public:\n    <<GeometricPrimitive Public Methods>>\u00a0       GeometricPrimitive(Shape shape, Material material, Light areaLight,\n                          const MediumInterface &mediumInterface,\n                          FloatTexture alpha = nullptr);\n       Bounds3f Bounds() const;\n       pstd::optional<ShapeIntersection> Intersect(const Ray &r, Float tMax) const;\n       bool IntersectP(const Ray &r, Float tMax) const;\n  private:\n    <<GeometricPrimitive Private Members>>\u00a0       Shape shape;\n       Material material;\n       Light areaLight;\n       MediumInterface mediumInterface;\n       FloatTexture alpha;\n};"
+    },
+    {
+      "depth": 5,
+      "id": "fragment-GeometricPrimitivePrivateMembers-0",
+      "name": "<<GeometricPrimitive Private Members>>=",
+      "panel": null,
+      "code": "Shape shape;\nMaterial material;\nLight areaLight;\nMediumInterface mediumInterface;\nFloatTexture alpha;",
+      "full": "Shape shape;\nMaterial material;\nLight areaLight;\nMediumInterface mediumInterface;\nFloatTexture alpha;"
+    },
+    {
+      "depth": 5,
+      "id": "fragment-GeometricPrimitiveMethodDefinitions-0",
+      "name": "<<GeometricPrimitive Method Definitions>>=",
+      "panel": null,
+      "code": "Bounds3f GeometricPrimitive::Bounds() const {\n    return shape.Bounds();\n}",
+      "full": "Bounds3f GeometricPrimitive::Bounds() const {\n    return shape.Bounds();\n}"
+    },
+    {
+      "depth": 5,
+      "id": "fragment-GeometricPrimitiveMethodDefinitions-1",
+      "name": "<<GeometricPrimitive Method Definitions>>+=",
+      "panel": null,
+      "code": "pstd::optional<ShapeIntersection>\nGeometricPrimitive::Intersect(const Ray &r, Float tMax) const {\n    pstd::optional<ShapeIntersection> si = shape.Intersect(r, tMax);\n    if (!si) return {};\n    <<Test intersection against alpha texture, if present>>\u00a0\n    <<Initialize SurfaceInteraction after Shape intersection>>\u00a0\n    return si;\n}",
+      "full": "pstd::optional<ShapeIntersection>\nGeometricPrimitive::Intersect(const Ray &r, Float tMax) const {\n    pstd::optional<ShapeIntersection> si = shape.Intersect(r, tMax);\n    if (!si) return {};\n    <<Test intersection against alpha texture, if present>>\u00a0       if (alpha) {\n           if (Float a = alpha.Evaluate(si->intr); a < 1) {\n               <<Possibly ignore intersection based on stochastic alpha test>>\u00a0                  Float u = (a <= 0) ? 1.f : HashFloat(r.o, r.d);\n                  if (u > a) {\n                      <<Ignore this intersection and trace a new ray>>\u00a0                         Ray rNext = si->intr.SpawnRay(r.d);\n                         pstd::optional<ShapeIntersection> siNext = Intersect(rNext, tMax - si->tHit);\n                         if (siNext)\n                             siNext->tHit += si->tHit;\n                         return siNext;\n                  }\n          }\n       }\n    <<Initialize SurfaceInteraction after Shape intersection>>\u00a0       si->intr.SetIntersectionProperties(material, areaLight, &mediumInterface,\n                                          r.medium);\n    return si;\n}"
+    },
+    {
+      "depth": 5,
+      "id": "fragment-Testintersectionagainstalphatextureifpresent-0",
+      "name": "<<Test intersection against alpha texture, if present>>=",
+      "panel": null,
+      "code": "if (alpha) {\n    if (Float a = alpha.Evaluate(si->intr); a < 1) {\n        <<Possibly ignore intersection based on stochastic alpha test>>\u00a0\n   }\n}",
+      "full": "if (alpha) {\n    if (Float a = alpha.Evaluate(si->intr); a < 1) {\n        <<Possibly ignore intersection based on stochastic alpha test>>\u00a0           Float u = (a <= 0) ? 1.f : HashFloat(r.o, r.d);\n           if (u > a) {\n               <<Ignore this intersection and trace a new ray>>\u00a0                  Ray rNext = si->intr.SpawnRay(r.d);\n                  pstd::optional<ShapeIntersection> siNext = Intersect(rNext, tMax - si->tHit);\n                  if (siNext)\n                      siNext->tHit += si->tHit;\n                  return siNext;\n           }\n   }\n}"
+    },
+    {
+      "depth": 5,
+      "id": "fragment-Possiblyignoreintersectionbasedonstochasticalphatest-0",
+      "name": "<<Possibly ignore intersection based on stochastic alpha test>>=",
+      "panel": null,
+      "code": "Float u = (a <= 0) ? 1.f : HashFloat(r.o, r.d);\nif (u > a) {\n    <<Ignore this intersection and trace a new ray>>\u00a0\n}",
+      "full": "Float u = (a <= 0) ? 1.f : HashFloat(r.o, r.d);\nif (u > a) {\n    <<Ignore this intersection and trace a new ray>>\u00a0       Ray rNext = si->intr.SpawnRay(r.d);\n       pstd::optional<ShapeIntersection> siNext = Intersect(rNext, tMax - si->tHit);\n       if (siNext)\n           siNext->tHit += si->tHit;\n       return siNext;\n}"
+    },
+    {
+      "depth": 5,
+      "id": "fragment-Ignorethisintersectionandtraceanewray-0",
+      "name": "<<Ignore this intersection and trace a new ray>>=",
+      "panel": null,
+      "code": "Ray rNext = si->intr.SpawnRay(r.d);\npstd::optional<ShapeIntersection> siNext = Intersect(rNext, tMax - si->tHit);\nif (siNext)\n    siNext->tHit += si->tHit;\nreturn siNext;",
+      "full": "Ray rNext = si->intr.SpawnRay(r.d);\npstd::optional<ShapeIntersection> siNext = Intersect(rNext, tMax - si->tHit);\nif (siNext)\n    siNext->tHit += si->tHit;\nreturn siNext;"
+    },
+    {
+      "depth": 5,
+      "id": "fragment-InitializemonoSurfaceInteractionaftermonoShapeintersection-0",
+      "name": "<<Initialize SurfaceInteraction after Shape intersection>>=",
+      "panel": null,
+      "code": "si->intr.SetIntersectionProperties(material, areaLight, &mediumInterface,\n                                   r.medium);",
+      "full": "si->intr.SetIntersectionProperties(material, areaLight, &mediumInterface,\n                                   r.medium);"
+    },
+    {
+      "depth": 5,
+      "id": "fragment-GeometricPrimitiveMethodDefinitions-2",
+      "name": "<<GeometricPrimitive Method Definitions>>+=",
+      "panel": null,
+      "code": "bool GeometricPrimitive::IntersectP(const Ray &r, Float tMax) const {\n    if (alpha)\n        return Intersect(r, tMax).has_value();\n    else\n        return shape.IntersectP(r, tMax);\n}",
+      "full": "bool GeometricPrimitive::IntersectP(const Ray &r, Float tMax) const {\n    if (alpha)\n        return Intersect(r, tMax).has_value();\n    else\n        return shape.IntersectP(r, tMax);\n}"
+    },
+    {
+      "depth": 5,
+      "id": "fragment-SimplePrimitiveDefinition-0",
+      "name": "<<SimplePrimitive Definition>>=",
+      "panel": null,
+      "code": "class SimplePrimitive {\n  public:\n    <<SimplePrimitive Public Methods>>\u00a0\n  private:\n    <<SimplePrimitive Private Members>>\u00a0\n};",
+      "full": "class SimplePrimitive {\n  public:\n    <<SimplePrimitive Public Methods>>\u00a0       Bounds3f Bounds() const;\n       pstd::optional<ShapeIntersection> Intersect(const Ray &r, Float tMax) const;\n       bool IntersectP(const Ray &r, Float tMax) const;\n       SimplePrimitive(Shape shape, Material material);\n  private:\n    <<SimplePrimitive Private Members>>\u00a0       Shape shape;\n       Material material;\n};"
+    },
+    {
+      "depth": 5,
+      "id": "fragment-SimplePrimitivePrivateMembers-0",
+      "name": "<<SimplePrimitive Private Members>>=",
+      "panel": null,
+      "code": "Shape shape;\nMaterial material;",
+      "full": "Shape shape;\nMaterial material;"
+    },
+    {
+      "depth": 5,
+      "id": "fragment-TransformedPrimitiveDefinition-0",
+      "name": "<<TransformedPrimitive Definition>>=",
+      "panel": null,
+      "code": "class TransformedPrimitive {\n  public:\n    <<TransformedPrimitive Public Methods>>\u00a0\n  private:\n    <<TransformedPrimitive Private Members>>\u00a0\n};",
+      "full": "class TransformedPrimitive {\n  public:\n    <<TransformedPrimitive Public Methods>>\u00a0       TransformedPrimitive(Primitive primitive,\n                            const Transform *renderFromPrimitive)\n           : primitive(primitive), renderFromPrimitive(renderFromPrimitive) { }\n       pstd::optional<ShapeIntersection> Intersect(const Ray &r, Float tMax) const;\n       bool IntersectP(const Ray &r, Float tMax) const;\n       Bounds3f Bounds() const {\n           return (*renderFromPrimitive)(primitive.Bounds());\n       }\n  private:\n    <<TransformedPrimitive Private Members>>\u00a0       Primitive primitive;\n       const Transform *renderFromPrimitive;\n};"
+    },
+    {
+      "depth": 5,
+      "id": "fragment-TransformedPrimitivePublicMethods-0",
+      "name": "<<TransformedPrimitive Public Methods>>=",
+      "panel": null,
+      "code": "TransformedPrimitive(Primitive primitive,\n                     const Transform *renderFromPrimitive)\n    : primitive(primitive), renderFromPrimitive(renderFromPrimitive) { }",
+      "full": "TransformedPrimitive(Primitive primitive,\n                     const Transform *renderFromPrimitive)\n    : primitive(primitive), renderFromPrimitive(renderFromPrimitive) { }"
+    },
+    {
+      "depth": 5,
+      "id": "fragment-TransformedPrimitivePrivateMembers-0",
+      "name": "<<TransformedPrimitive Private Members>>=",
+      "panel": null,
+      "code": "Primitive primitive;\nconst Transform *renderFromPrimitive;",
+      "full": "Primitive primitive;\nconst Transform *renderFromPrimitive;"
+    },
+    {
+      "depth": 5,
+      "id": "fragment-TransformedPrimitivePublicMethods-1",
+      "name": "<<TransformedPrimitive Public Methods>>+=",
+      "panel": null,
+      "code": "Bounds3f Bounds() const {\n    return (*renderFromPrimitive)(primitive.Bounds());\n}",
+      "full": "Bounds3f Bounds() const {\n    return (*renderFromPrimitive)(primitive.Bounds());\n}"
+    },
+    {
+      "depth": 5,
+      "id": "fragment-TransformedPrimitiveMethodDefinitions-0",
+      "name": "<<TransformedPrimitive Method Definitions>>=",
+      "panel": null,
+      "code": "pstd::optional<ShapeIntersection>\nTransformedPrimitive::Intersect(const Ray &r, Float tMax) const {\n    <<Transform ray to primitive-space and intersect with primitive>>\u00a0\n    <<Return transformed instance\u2019s intersection information>>\u00a0\n}",
+      "full": "pstd::optional<ShapeIntersection>\nTransformedPrimitive::Intersect(const Ray &r, Float tMax) const {\n    <<Transform ray to primitive-space and intersect with primitive>>\u00a0       Ray ray = renderFromPrimitive->ApplyInverse(r, &tMax);\n       pstd::optional<ShapeIntersection> si = primitive.Intersect(ray, tMax);\n       if (!si) return {};\n       \n    <<Return transformed instance\u2019s intersection information>>\u00a0       si->intr = (*renderFromPrimitive)(si->intr);\n       return si;\n}"
+    },
+    {
+      "depth": 5,
+      "id": "fragment-Transformraytoprimitive-spaceandintersectwithprimitive-0",
+      "name": "<<Transform ray to primitive-space and intersect with primitive>>=",
+      "panel": null,
+      "code": "Ray ray = renderFromPrimitive->ApplyInverse(r, &tMax);\npstd::optional<ShapeIntersection> si = primitive.Intersect(ray, tMax);\nif (!si) return {};\n",
+      "full": "Ray ray = renderFromPrimitive->ApplyInverse(r, &tMax);\npstd::optional<ShapeIntersection> si = primitive.Intersect(ray, tMax);\nif (!si) return {};\n"
+    },
+    {
+      "depth": 5,
+      "id": "fragment-Returntransformedinstancesintersectioninformation-0",
+      "name": "<<Return transformed instance\u2019s intersection information>>=",
+      "panel": null,
+      "code": "si->intr = (*renderFromPrimitive)(si->intr);\nreturn si;",
+      "full": "si->intr = (*renderFromPrimitive)(si->intr);\nreturn si;"
+    },
+    {
+      "depth": 5,
+      "id": "fragment-AnimatedPrimitiveDefinition-0",
+      "name": "<<AnimatedPrimitive Definition>>=",
+      "panel": null,
+      "code": "class AnimatedPrimitive {\n  public:\n    <<AnimatedPrimitive Public Methods>>\u00a0\n  private:\n    <<AnimatedPrimitive Private Members>>\u00a0\n};",
+      "full": "class AnimatedPrimitive {\n  public:\n    <<AnimatedPrimitive Public Methods>>\u00a0       Bounds3f Bounds() const {\n           return renderFromPrimitive.MotionBounds(primitive.Bounds());\n       }\n       AnimatedPrimitive(Primitive primitive,\n                         const AnimatedTransform &renderFromPrimitive);\n       pstd::optional<ShapeIntersection> Intersect(const Ray &r, Float tMax) const;\n       bool IntersectP(const Ray &r, Float tMax) const;\n  private:\n    <<AnimatedPrimitive Private Members>>\u00a0       Primitive primitive;\n       AnimatedTransform renderFromPrimitive;\n};"
+    },
+    {
+      "depth": 5,
+      "id": "fragment-AnimatedPrimitivePrivateMembers-0",
+      "name": "<<AnimatedPrimitive Private Members>>=",
+      "panel": null,
+      "code": "Primitive primitive;\nAnimatedTransform renderFromPrimitive;",
+      "full": "Primitive primitive;\nAnimatedTransform renderFromPrimitive;"
+    },
+    {
+      "depth": 5,
+      "id": "fragment-AnimatedPrimitivePublicMethods-0",
+      "name": "<<AnimatedPrimitive Public Methods>>=",
+      "panel": null,
+      "code": "Bounds3f Bounds() const {\n    return renderFromPrimitive.MotionBounds(primitive.Bounds());\n}",
+      "full": "Bounds3f Bounds() const {\n    return renderFromPrimitive.MotionBounds(primitive.Bounds());\n}"
+    }
+  ],
+  "panels": [
+    {
+      "depth": 7,
+      "id": "fragment-PrimitiveDefinition-0",
+      "name": "<<Primitive Definition>>=",
+      "panel": "fragbit-965",
+      "code": "       using TaggedPointer::TaggedPointer;\n       Bounds3f Bounds() const;\n       pstd::optional<ShapeIntersection> Intersect(const Ray &r,\n                                                   Float tMax = Infinity) const;\n       bool IntersectP(const Ray &r, Float tMax = Infinity) const;",
+      "full": "       using TaggedPointer::TaggedPointer;\n       Bounds3f Bounds() const;\n       pstd::optional<ShapeIntersection> Intersect(const Ray &r,\n                                                   Float tMax = Infinity) const;\n       bool IntersectP(const Ray &r, Float tMax = Infinity) const;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-SurfaceInteractionPublicMethods-2",
+      "name": "<<SurfaceInteraction Public Methods>>+=",
+      "panel": "fragbit-966",
+      "code": "       if (primMediumInterface && primMediumInterface->IsMediumTransition())\n           mediumInterface = primMediumInterface;\n       else\n           medium = rayMedium;",
+      "full": "       if (primMediumInterface && primMediumInterface->IsMediumTransition())\n           mediumInterface = primMediumInterface;\n       else\n           medium = rayMedium;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-GeometricPrimitiveDefinition-0",
+      "name": "<<GeometricPrimitive Definition>>=",
+      "panel": "fragbit-967",
+      "code": "       GeometricPrimitive(Shape shape, Material material, Light areaLight,\n                          const MediumInterface &mediumInterface,\n                          FloatTexture alpha = nullptr);\n       Bounds3f Bounds() const;\n       pstd::optional<ShapeIntersection> Intersect(const Ray &r, Float tMax) const;\n       bool IntersectP(const Ray &r, Float tMax) const;",
+      "full": "       GeometricPrimitive(Shape shape, Material material, Light areaLight,\n                          const MediumInterface &mediumInterface,\n                          FloatTexture alpha = nullptr);\n       Bounds3f Bounds() const;\n       pstd::optional<ShapeIntersection> Intersect(const Ray &r, Float tMax) const;\n       bool IntersectP(const Ray &r, Float tMax) const;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-GeometricPrimitiveDefinition-0",
+      "name": "<<GeometricPrimitive Definition>>=",
+      "panel": "fragbit-968",
+      "code": "       Shape shape;\n       Material material;\n       Light areaLight;\n       MediumInterface mediumInterface;\n       FloatTexture alpha;",
+      "full": "       Shape shape;\n       Material material;\n       Light areaLight;\n       MediumInterface mediumInterface;\n       FloatTexture alpha;"
+    },
+    {
+      "depth": 11,
+      "id": "fragment-GeometricPrimitiveMethodDefinitions-1",
+      "name": "<<GeometricPrimitive Method Definitions>>+=",
+      "panel": "fragbit-971",
+      "code": "                         Ray rNext = si->intr.SpawnRay(r.d);\n                         pstd::optional<ShapeIntersection> siNext = Intersect(rNext, tMax - si->tHit);\n                         if (siNext)\n                             siNext->tHit += si->tHit;\n                         return siNext;",
+      "full": "                         Ray rNext = si->intr.SpawnRay(r.d);\n                         pstd::optional<ShapeIntersection> siNext = Intersect(rNext, tMax - si->tHit);\n                         if (siNext)\n                             siNext->tHit += si->tHit;\n                         return siNext;"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-GeometricPrimitiveMethodDefinitions-1",
+      "name": "<<GeometricPrimitive Method Definitions>>+=",
+      "panel": "fragbit-970",
+      "code": "                  Float u = (a <= 0) ? 1.f : HashFloat(r.o, r.d);\n                  if (u > a) {\n                      <<Ignore this intersection and trace a new ray>>\u00a0\n                  }",
+      "full": "                  Float u = (a <= 0) ? 1.f : HashFloat(r.o, r.d);\n                  if (u > a) {\n                      <<Ignore this intersection and trace a new ray>>\u00a0                         Ray rNext = si->intr.SpawnRay(r.d);\n                         pstd::optional<ShapeIntersection> siNext = Intersect(rNext, tMax - si->tHit);\n                         if (siNext)\n                             siNext->tHit += si->tHit;\n                         return siNext;\n                  }"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-GeometricPrimitiveMethodDefinitions-1",
+      "name": "<<GeometricPrimitive Method Definitions>>+=",
+      "panel": "fragbit-969",
+      "code": "       if (alpha) {\n           if (Float a = alpha.Evaluate(si->intr); a < 1) {\n               <<Possibly ignore intersection based on stochastic alpha test>>\u00a0\n          }\n       }",
+      "full": "       if (alpha) {\n           if (Float a = alpha.Evaluate(si->intr); a < 1) {\n               <<Possibly ignore intersection based on stochastic alpha test>>\u00a0                  Float u = (a <= 0) ? 1.f : HashFloat(r.o, r.d);\n                  if (u > a) {\n                      <<Ignore this intersection and trace a new ray>>\u00a0                         Ray rNext = si->intr.SpawnRay(r.d);\n                         pstd::optional<ShapeIntersection> siNext = Intersect(rNext, tMax - si->tHit);\n                         if (siNext)\n                             siNext->tHit += si->tHit;\n                         return siNext;\n                  }\n          }\n       }"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-GeometricPrimitiveMethodDefinitions-1",
+      "name": "<<GeometricPrimitive Method Definitions>>+=",
+      "panel": "fragbit-972",
+      "code": "       si->intr.SetIntersectionProperties(material, areaLight, &mediumInterface,\n                                          r.medium);",
+      "full": "       si->intr.SetIntersectionProperties(material, areaLight, &mediumInterface,\n                                          r.medium);"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-Testintersectionagainstalphatextureifpresent-0",
+      "name": "<<Test intersection against alpha texture, if present>>=",
+      "panel": "fragbit-974",
+      "code": "                  Ray rNext = si->intr.SpawnRay(r.d);\n                  pstd::optional<ShapeIntersection> siNext = Intersect(rNext, tMax - si->tHit);\n                  if (siNext)\n                      siNext->tHit += si->tHit;\n                  return siNext;",
+      "full": "                  Ray rNext = si->intr.SpawnRay(r.d);\n                  pstd::optional<ShapeIntersection> siNext = Intersect(rNext, tMax - si->tHit);\n                  if (siNext)\n                      siNext->tHit += si->tHit;\n                  return siNext;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-Testintersectionagainstalphatextureifpresent-0",
+      "name": "<<Test intersection against alpha texture, if present>>=",
+      "panel": "fragbit-973",
+      "code": "           Float u = (a <= 0) ? 1.f : HashFloat(r.o, r.d);\n           if (u > a) {\n               <<Ignore this intersection and trace a new ray>>\u00a0\n           }",
+      "full": "           Float u = (a <= 0) ? 1.f : HashFloat(r.o, r.d);\n           if (u > a) {\n               <<Ignore this intersection and trace a new ray>>\u00a0                  Ray rNext = si->intr.SpawnRay(r.d);\n                  pstd::optional<ShapeIntersection> siNext = Intersect(rNext, tMax - si->tHit);\n                  if (siNext)\n                      siNext->tHit += si->tHit;\n                  return siNext;\n           }"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-Possiblyignoreintersectionbasedonstochasticalphatest-0",
+      "name": "<<Possibly ignore intersection based on stochastic alpha test>>=",
+      "panel": "fragbit-975",
+      "code": "       Ray rNext = si->intr.SpawnRay(r.d);\n       pstd::optional<ShapeIntersection> siNext = Intersect(rNext, tMax - si->tHit);\n       if (siNext)\n           siNext->tHit += si->tHit;\n       return siNext;",
+      "full": "       Ray rNext = si->intr.SpawnRay(r.d);\n       pstd::optional<ShapeIntersection> siNext = Intersect(rNext, tMax - si->tHit);\n       if (siNext)\n           siNext->tHit += si->tHit;\n       return siNext;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-SimplePrimitiveDefinition-0",
+      "name": "<<SimplePrimitive Definition>>=",
+      "panel": "fragbit-976",
+      "code": "       Bounds3f Bounds() const;\n       pstd::optional<ShapeIntersection> Intersect(const Ray &r, Float tMax) const;\n       bool IntersectP(const Ray &r, Float tMax) const;\n       SimplePrimitive(Shape shape, Material material);",
+      "full": "       Bounds3f Bounds() const;\n       pstd::optional<ShapeIntersection> Intersect(const Ray &r, Float tMax) const;\n       bool IntersectP(const Ray &r, Float tMax) const;\n       SimplePrimitive(Shape shape, Material material);"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-SimplePrimitiveDefinition-0",
+      "name": "<<SimplePrimitive Definition>>=",
+      "panel": "fragbit-977",
+      "code": "       Shape shape;\n       Material material;",
+      "full": "       Shape shape;\n       Material material;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-TransformedPrimitiveDefinition-0",
+      "name": "<<TransformedPrimitive Definition>>=",
+      "panel": "fragbit-978",
+      "code": "       TransformedPrimitive(Primitive primitive,\n                            const Transform *renderFromPrimitive)\n           : primitive(primitive), renderFromPrimitive(renderFromPrimitive) { }\n       pstd::optional<ShapeIntersection> Intersect(const Ray &r, Float tMax) const;\n       bool IntersectP(const Ray &r, Float tMax) const;\n       Bounds3f Bounds() const {\n           return (*renderFromPrimitive)(primitive.Bounds());\n       }",
+      "full": "       TransformedPrimitive(Primitive primitive,\n                            const Transform *renderFromPrimitive)\n           : primitive(primitive), renderFromPrimitive(renderFromPrimitive) { }\n       pstd::optional<ShapeIntersection> Intersect(const Ray &r, Float tMax) const;\n       bool IntersectP(const Ray &r, Float tMax) const;\n       Bounds3f Bounds() const {\n           return (*renderFromPrimitive)(primitive.Bounds());\n       }"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-TransformedPrimitiveDefinition-0",
+      "name": "<<TransformedPrimitive Definition>>=",
+      "panel": "fragbit-979",
+      "code": "       Primitive primitive;\n       const Transform *renderFromPrimitive;",
+      "full": "       Primitive primitive;\n       const Transform *renderFromPrimitive;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-TransformedPrimitiveMethodDefinitions-0",
+      "name": "<<TransformedPrimitive Method Definitions>>=",
+      "panel": "fragbit-980",
+      "code": "       Ray ray = renderFromPrimitive->ApplyInverse(r, &tMax);\n       pstd::optional<ShapeIntersection> si = primitive.Intersect(ray, tMax);\n       if (!si) return {};\n       ",
+      "full": "       Ray ray = renderFromPrimitive->ApplyInverse(r, &tMax);\n       pstd::optional<ShapeIntersection> si = primitive.Intersect(ray, tMax);\n       if (!si) return {};\n       "
+    },
+    {
+      "depth": 7,
+      "id": "fragment-TransformedPrimitiveMethodDefinitions-0",
+      "name": "<<TransformedPrimitive Method Definitions>>=",
+      "panel": "fragbit-981",
+      "code": "       si->intr = (*renderFromPrimitive)(si->intr);\n       return si;",
+      "full": "       si->intr = (*renderFromPrimitive)(si->intr);\n       return si;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-AnimatedPrimitiveDefinition-0",
+      "name": "<<AnimatedPrimitive Definition>>=",
+      "panel": "fragbit-982",
+      "code": "       Bounds3f Bounds() const {\n           return renderFromPrimitive.MotionBounds(primitive.Bounds());\n       }\n       AnimatedPrimitive(Primitive primitive,\n                         const AnimatedTransform &renderFromPrimitive);\n       pstd::optional<ShapeIntersection> Intersect(const Ray &r, Float tMax) const;\n       bool IntersectP(const Ray &r, Float tMax) const;",
+      "full": "       Bounds3f Bounds() const {\n           return renderFromPrimitive.MotionBounds(primitive.Bounds());\n       }\n       AnimatedPrimitive(Primitive primitive,\n                         const AnimatedTransform &renderFromPrimitive);\n       pstd::optional<ShapeIntersection> Intersect(const Ray &r, Float tMax) const;\n       bool IntersectP(const Ray &r, Float tMax) const;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-AnimatedPrimitiveDefinition-0",
+      "name": "<<AnimatedPrimitive Definition>>=",
+      "panel": "fragbit-983",
+      "code": "       Primitive primitive;\n       AnimatedTransform renderFromPrimitive;",
+      "full": "       Primitive primitive;\n       AnimatedTransform renderFromPrimitive;"
+    }
+  ],
+  "notes": [
+    "The previous version of <tt>pbrt</tt> used 7\u00a0GB of memory\nwhen rendering this scene, with most of that difference due to less\nmemory-efficient <tt>Primitive</tt> representations, virtual function pointers\nstored with each <tt>Shape</tt> and each <tt>Primitive</tt>, and the use of\n32-bit floats for image texture pixels even for textures that were\noriginally stored with 8-bit values."
+  ]
+}

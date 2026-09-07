@@ -5814,5 +5814,374 @@
     "source": "4ed/Utilities/Statistics.html",
     "line": 173,
     "anchor": "fig:stat-pixel-counter"
+  },
+  {
+    "local": "chapter-1-Introduction/chapter-1.3-pbrt_System_Overview.typ",
+    "key": "fig:crown",
+    "number": "1.16",
+    "source": "4ed/Introduction/pbrt_System_Overview.html",
+    "line": 313,
+    "anchor": "fig:imperial-crown",
+    "alias_of": "fig:imperial-crown"
+  },
+  {
+    "local": "chapter-2-Monte_Carlo_Integration/chapter-2.3-Sampling_Using_the_Inversion_Method.typ",
+    "key": "fig:discrete-pdf",
+    "number": "2.3",
+    "source": "4ed/Monte_Carlo_Integration/Sampling_Using_the_Inversion_Method.html",
+    "line": 214,
+    "anchor": "fig:discretePDF",
+    "alias_of": "fig:discretePDF"
+  },
+  {
+    "local": "chapter-2-Monte_Carlo_Integration/chapter-2.3-Sampling_Using_the_Inversion_Method.typ",
+    "key": "fig:discrete-cdf",
+    "number": "2.4",
+    "source": "4ed/Monte_Carlo_Integration/Sampling_Using_the_Inversion_Method.html",
+    "line": 321,
+    "anchor": "fig:discreteCDF",
+    "alias_of": "fig:discreteCDF"
+  },
+  {
+    "local": "chapter-2-Monte_Carlo_Integration/chapter-2.3-Sampling_Using_the_Inversion_Method.typ",
+    "key": "fig:discrete-inversion",
+    "number": "2.5",
+    "source": "4ed/Monte_Carlo_Integration/Sampling_Using_the_Inversion_Method.html",
+    "line": 888,
+    "anchor": "fig:discretesample",
+    "alias_of": "fig:discretesample"
+  },
+  {
+    "local": "chapter-3-Geometry_and_Transformations/chapter-3.3-Vectors.typ",
+    "key": "eqt:eq_gs-orthogonal-projection",
+    "number": "(3.2)",
+    "source": "4ed/Geometry_and_Transformations/Vectors.html",
+    "line": 1243,
+    "anchor": "eq:gs-orthogonal-projection",
+    "alias_of": "eqt:gs-orthogonal-projection"
+  },
+  {
+    "local": "chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.1-Radiometry.typ",
+    "key": "eqt:eqt-radiance",
+    "number": "(4.3)",
+    "source": "4ed/Radiometry,_Spectra,_and_Color/Radiometry.html",
+    "line": 1699,
+    "anchor": "eq:radiance",
+    "alias_of": "eqt:radiance"
+  },
+  {
+    "local": "chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.1-Radiometry.typ",
+    "key": "fig:pha04f03",
+    "number": "4.3",
+    "source": "4ed/Radiometry,_Spectra,_and_Color/Radiometry.html",
+    "line": 1782,
+    "anchor": "fig:radiance",
+    "alias_of": "fig:radiance"
+  },
+  {
+    "local": "chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.2-Working_with_Radiometric_Integrals.typ",
+    "key": "eqt:dw-dA-eqt",
+    "number": "(4.9)",
+    "source": "4ed/Radiometry,_Spectra,_and_Color/Working_with_Radiometric_Integrals.html",
+    "line": 1117,
+    "anchor": "eq:dw-dA",
+    "alias_of": "eqt:dw-dA"
+  },
+  {
+    "local": "chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.6-Color.typ",
+    "key": "fig:color-checker-spectra",
+    "number": "4.28",
+    "source": "4ed/Radiometry,_Spectra,_and_Color/Color.html",
+    "line": 4479,
+    "anchor": "fig:smooth_reflectance_spectra",
+    "alias_of": "fig:smooth_reflectance_spectra"
+  },
+  {
+    "local": "chapter-4-Radiometry,_Spectra,_and_Color/chapter-4.6-Color.typ",
+    "key": "fig:rgb-unbounded-example",
+    "number": "4.32",
+    "source": "4ed/Radiometry,_Spectra,_and_Color/Color.html",
+    "line": 6452,
+    "anchor": "fig:rgb-sigmoid-normalization",
+    "alias_of": "fig:rgb-sigmoid-normalization"
+  },
+  {
+    "local": "chapter-6-Shapes/chapter-6.2-Spheres.typ",
+    "key": "eqt:sphere-sample-eqt",
+    "number": "(6.4)",
+    "source": "4ed/Shapes/Spheres.html",
+    "line": 6025,
+    "anchor": "eq:spheresample",
+    "alias_of": "eqt:spheresample"
+  },
+  {
+    "local": "chapter-6-Shapes/chapter-6.2-Spheres.typ",
+    "key": "fig:sphere-sample-fig",
+    "number": "6.5",
+    "source": "4ed/Shapes/Spheres.html",
+    "line": 6121,
+    "anchor": "fig:spheresample",
+    "alias_of": "fig:spheresample"
+  },
+  {
+    "local": "chapter-6-Shapes/chapter-6.2-Spheres.typ",
+    "key": "fig:sphere-sample-point-geometry",
+    "number": "6.6",
+    "source": "4ed/Shapes/Spheres.html",
+    "line": 6477,
+    "anchor": "fig:sphere-compute-alpha",
+    "alias_of": "fig:sphere-compute-alpha"
+  },
+  {
+    "local": "chapter-6-Shapes/chapter-6.5-Triangle_Meshes.typ",
+    "key": "fig:triangle-ray-transform",
+    "number": "6.12",
+    "source": "4ed/Shapes/Triangle_Meshes.html",
+    "line": 2351,
+    "anchor": "fig:tri-intersect-2d",
+    "alias_of": "fig:tri-intersect-2d"
+  },
+  {
+    "local": "chapter-6-Shapes/chapter-6.5-Triangle_Meshes.typ",
+    "key": "fig:triangle-parallelogram-area",
+    "number": "6.13",
+    "source": "4ed/Shapes/Triangle_Meshes.html",
+    "line": 2613,
+    "anchor": "fig:triangle-area",
+    "alias_of": "fig:triangle-area"
+  },
+  {
+    "local": "chapter-6-Shapes/chapter-6.5-Triangle_Meshes.typ",
+    "key": "fig:edge-function-figure",
+    "number": "6.14",
+    "source": "4ed/Shapes/Triangle_Meshes.html",
+    "line": 2846,
+    "anchor": "fig:tri-edge-function",
+    "alias_of": "fig:tri-edge-function"
+  },
+  {
+    "local": "chapter-6-Shapes/chapter-6.5-Triangle_Meshes.typ",
+    "key": "fig:triangle-sampling-fold",
+    "number": "6.15",
+    "source": "4ed/Shapes/Triangle_Meshes.html",
+    "line": 5965,
+    "anchor": "fig:square-to-triangle-via-reflection",
+    "alias_of": "fig:square-to-triangle-via-reflection"
+  },
+  {
+    "local": "chapter-6-Shapes/chapter-6.5-Triangle_Meshes.typ",
+    "key": "fig:spherical-triangle-cosine-domain",
+    "number": "6.19",
+    "source": "4ed/Shapes/Triangle_Meshes.html",
+    "line": 10264,
+    "anchor": "fig:spherical-triangle-cos-theta",
+    "alias_of": "fig:spherical-triangle-cos-theta"
+  },
+  {
+    "local": "chapter-6-Shapes/chapter-6.5-Triangle_Meshes.typ",
+    "key": "fig:invert-spherical-triangle-sample",
+    "number": "6.21",
+    "source": "4ed/Shapes/Triangle_Meshes.html",
+    "line": 11051,
+    "anchor": "fig:invert-sphtri-find-cprimed",
+    "alias_of": "fig:invert-sphtri-find-cprimed"
+  },
+  {
+    "local": "chapter-8-Sampling_and_Reconstruction/chapter-8.1-Sampling_Theory.typ",
+    "key": "eqt:eq-fourier-convolution",
+    "number": "(8.4)",
+    "source": "4ed/Sampling_and_Reconstruction/Sampling_Theory.html",
+    "line": 2371,
+    "anchor": "ref:eq-fourier-convolution",
+    "alias_of": "eqt:ref:eq-fourier-convolution"
+  },
+  {
+    "local": "chapter-8-Sampling_and_Reconstruction/chapter-8.1-Sampling_Theory.typ",
+    "key": "tbl:fourier-pairs-zh",
+    "number": "8.1",
+    "source": "4ed/Sampling_and_Reconstruction/Sampling_Theory.html",
+    "line": 1123,
+    "anchor": "tab:fourier-pairs",
+    "alias_of": "tbl:fourier-pairs"
+  },
+  {
+    "local": "chapter-8-Sampling_and_Reconstruction/chapter-8.6-Halton_Sampler.typ",
+    "key": "tbl:radical-inverse-in-base-2",
+    "number": "8.2",
+    "source": "4ed/Sampling_and_Reconstruction/Halton_Sampler.html",
+    "line": 524,
+    "anchor": "table:radical-inverse-2",
+    "alias_of": "tbl:radical-inverse-2"
+  },
+  {
+    "local": "chapter-8-Sampling_and_Reconstruction/chapter-8.6-Halton_Sampler.typ",
+    "key": "tbl:radical-inverse-in-base-2-zh",
+    "number": "8.2",
+    "source": "4ed/Sampling_and_Reconstruction/Halton_Sampler.html",
+    "line": 524,
+    "anchor": "table:radical-inverse-2",
+    "alias_of": "tbl:radical-inverse-2"
+  },
+  {
+    "local": "chapter-8-Sampling_and_Reconstruction/chapter-8.6-Halton_Sampler.typ",
+    "key": "tbl:haltonSampler-generates",
+    "number": "8.3",
+    "source": "4ed/Sampling_and_Reconstruction/Halton_Sampler.html",
+    "line": 2675,
+    "anchor": "table:halton-sampler-details",
+    "alias_of": "tbl:halton-sampler-details"
+  },
+  {
+    "local": "chapter-8-Sampling_and_Reconstruction/chapter-8.6-Halton_Sampler.typ",
+    "key": "tbl:haltonSampler-generates-zh",
+    "number": "8.3",
+    "source": "4ed/Sampling_and_Reconstruction/Halton_Sampler.html",
+    "line": 2675,
+    "anchor": "table:halton-sampler-details",
+    "alias_of": "tbl:halton-sampler-details"
+  },
+  {
+    "local": "chapter-9-Reflection_Models/chapter-9.1-BSDF_Representation.typ",
+    "key": "fig:pha09f03",
+    "number": "9.3",
+    "source": "4ed/Reflection_Models/BSDF_Representation.html",
+    "line": 1662,
+    "anchor": "fig:shading-normal",
+    "alias_of": "fig:shading-normal"
+  },
+  {
+    "local": "chapter-9-Reflection_Models/chapter-9.3-Specular_Reflection_and_Transmission.typ",
+    "key": "tbl:dielectric-iors-en",
+    "number": "9.1",
+    "source": "4ed/Reflection_Models/Specular_Reflection_and_Transmission.html",
+    "line": 284,
+    "anchor": "tab:dielectric-iors",
+    "alias_of": "tbl:dielectric-iors"
+  },
+  {
+    "local": "chapter-9-Reflection_Models/chapter-9.3-Specular_Reflection_and_Transmission.typ",
+    "key": "tbl:dielectric-iors-zh",
+    "number": "9.1",
+    "source": "4ed/Reflection_Models/Specular_Reflection_and_Transmission.html",
+    "line": 284,
+    "anchor": "tab:dielectric-iors",
+    "alias_of": "tbl:dielectric-iors"
+  },
+  {
+    "local": "chapter-10-Textures_and_Materials/chapter-10.5-Material_Interface_and_Implementations.typ",
+    "key": "fig:mix-material-stoshastic",
+    "number": "10.20",
+    "source": "4ed/Textures_and_Materials/Material_Interface_and_Implementations.html",
+    "line": 1058,
+    "anchor": "fig:mix-material-stochastic",
+    "alias_of": "fig:mix-material-stochastic"
+  },
+  {
+    "local": "chapter-10-Textures_and_Materials/chapter-10.5-Material_Interface_and_Implementations.typ",
+    "key": "fig:display-surf",
+    "number": "10.22",
+    "source": "4ed/Textures_and_Materials/Material_Interface_and_Implementations.html",
+    "line": 2097,
+    "anchor": "fig:displace-surf",
+    "alias_of": "fig:displace-surf"
+  },
+  {
+    "local": "chapter-11-Volume_Scattering/chapter-11.2-Transmittance.typ",
+    "key": "fig:fig-beam-transmittance",
+    "number": "11.9",
+    "source": "4ed/Volume_Scattering/Transmittance.html",
+    "line": 477,
+    "anchor": "fig:beam-transmittance",
+    "alias_of": "fig:beam-transmittance"
+  },
+  {
+    "local": "chapter-11-Volume_Scattering/chapter-11.2-Transmittance.typ",
+    "key": "eqt:volterra-Transmittance",
+    "number": "(11.10)",
+    "source": "4ed/Volume_Scattering/Transmittance.html",
+    "line": 1856,
+    "anchor": "eq:volterra-transmittance",
+    "alias_of": "eqt:volterra-transmittance"
+  },
+  {
+    "local": "chapter-13-Light_Transport_I_Surface_Reflection/chapter-13.4-A_Better_Path_Tracer.typ",
+    "key": "tbl:rr-mc-efficiency-en",
+    "number": "13.1",
+    "source": "4ed/Light_Transport_I_Surface_Reflection/A_Better_Path_Tracer.html",
+    "line": 1843,
+    "anchor": "tab:rr-mc-efficiency",
+    "alias_of": "tbl:rr-mc-efficiency"
+  },
+  {
+    "local": "chapter-13-Light_Transport_I_Surface_Reflection/chapter-13.4-A_Better_Path_Tracer.typ",
+    "key": "tbl:rr-mc-efficiency-zh",
+    "number": "13.1",
+    "source": "4ed/Light_Transport_I_Surface_Reflection/A_Better_Path_Tracer.html",
+    "line": 1843,
+    "anchor": "tab:rr-mc-efficiency",
+    "alias_of": "tbl:rr-mc-efficiency"
+  },
+  {
+    "local": "chapter-15-Wavefront_Rendering_on_GPUs/chapter-15.1-Mapping_Path_Tracing_to_the_GPU.typ",
+    "key": "tbl:cpu-gpu-specs-en",
+    "number": "15.1",
+    "source": "4ed/Wavefront_Rendering_on_GPUs/Mapping_Path_Tracing_to_the_GPU.html",
+    "line": 394,
+    "anchor": "table:cpu-gpu-specs",
+    "alias_of": "tbl:cpu-gpu-specs"
+  },
+  {
+    "local": "chapter-15-Wavefront_Rendering_on_GPUs/chapter-15.1-Mapping_Path_Tracing_to_the_GPU.typ",
+    "key": "tbl:cpu-gpu-specs-zh",
+    "number": "15.1",
+    "source": "4ed/Wavefront_Rendering_on_GPUs/Mapping_Path_Tracing_to_the_GPU.html",
+    "line": 394,
+    "anchor": "table:cpu-gpu-specs",
+    "alias_of": "tbl:cpu-gpu-specs"
+  },
+  {
+    "local": "chapter-15-Wavefront_Rendering_on_GPUs/chapter-15.1-Mapping_Path_Tracing_to_the_GPU.typ",
+    "key": "tbl:cpu-gpu-processor-specs-en",
+    "number": "15.2",
+    "source": "4ed/Wavefront_Rendering_on_GPUs/Mapping_Path_Tracing_to_the_GPU.html",
+    "line": 483,
+    "anchor": "table:cpu-gpu-processor-specs",
+    "alias_of": "tbl:cpu-gpu-processor-specs"
+  },
+  {
+    "local": "chapter-15-Wavefront_Rendering_on_GPUs/chapter-15.1-Mapping_Path_Tracing_to_the_GPU.typ",
+    "key": "tbl:cpu-gpu-processor-specs-zh",
+    "number": "15.2",
+    "source": "4ed/Wavefront_Rendering_on_GPUs/Mapping_Path_Tracing_to_the_GPU.html",
+    "line": 483,
+    "anchor": "table:cpu-gpu-processor-specs",
+    "alias_of": "tbl:cpu-gpu-processor-specs"
+  },
+  {
+    "local": "Appendix-A-Sampling_Algorithms/A.1-The_Alias_Method.typ",
+    "key": "tbl:table:alias-table",
+    "number": "A.1",
+    "source": "4ed/Sampling_Algorithms/The_Alias_Method.html",
+    "line": 446,
+    "anchor": "table:alias-table",
+    "alias_of": "tbl:alias-table"
+  },
+  {
+    "local": "chapter-7-Primitives_and_Intersection_Acceleration/chapter-7.3-Bounding_Volume_Hierarchies.typ",
+    "key": "fig:bvh-midpoint",
+    "number": "7.5",
+    "source": "4ed/Primitives_and_Intersection_Acceleration/Bounding_Volume_Hierarchies.html",
+    "line": 1384,
+    "anchor": "fig:bvh-split-middle",
+    "alias_of": "fig:bvh-split-middle"
+  },
+  {
+    "local": "chapter-7-Primitives_and_Intersection_Acceleration/chapter-7.3-Bounding_Volume_Hierarchies.typ",
+    "key": "fig:lbvh-treelets",
+    "number": "7.10",
+    "source": "4ed/Primitives_and_Intersection_Acceleration/Bounding_Volume_Hierarchies.html",
+    "line": 3659,
+    "anchor": "fig:lbvh-clusters",
+    "alias_of": "fig:lbvh-clusters"
   }
 ]

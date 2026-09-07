@@ -94,7 +94,7 @@
     let inline = repr(it.func()) in ("text", "emph", "strong", "link") or (it.func() == raw and not it.block)
     html.elem(if inline { "span" } else { "div" }, it, attrs: (id: locals.at(str(it.label))))
   } else { it }
-  [#link("https://github.com/mmp/pbr-book-website/blob/f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c/" + source)[固定原文] · #link("https://github.com/dashuai009/pbrt-v4-zh/issues/new")[纠错] · #if review-report == "" { [待精校及独立复核] } else { link("https://github.com/dashuai009/pbrt-v4-zh/blob/main/" + review-report)[已对照并独立复核；源文疑点见记录] }]
+  [#link("https://pbr-book.org/" + source)[英文原书] · #link("https://github.com/mmp/pbr-book-website/blob/f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c/" + source)[对照版本] · #link("https://github.com/dashuai009/pbrt-v4-zh/issues/new")[纠错] · #if review-report == "" { [待精校及独立复核] } else { link("https://github.com/dashuai009/pbrt-v4-zh/blob/main/" + review-report)[已对照并独立复核；源文疑点见记录] }]
   body
   context if shiroa-sys-target() == "html" {
     let notes = query(footnote)

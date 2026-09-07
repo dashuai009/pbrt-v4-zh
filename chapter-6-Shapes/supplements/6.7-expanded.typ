@@ -88,6 +88,4 @@ if (edge < 0)
 ```
 
 #block(sticky:true)[#link("https://pbr-book.org/4ed/Shapes/Curves.html#fragbit-915")[ #ez_caption[Source panel 915][交点误差界] ]]
-```cpp
-Vector3f pError(hitWidth, hitWidth, hitWidth);
-```
+#parec[This panel repeats the #link(<fragment-Computeerrorboundsforcurveintersection-0>)[⟨Compute error bounds for curve intersection⟩] fragment in Section 6.8.5; its code is displayed there.][此面板重复第 6.8.5 节的 #link(<fragment-Computeerrorboundsforcurveintersection-0>)[⟨Compute error bounds for curve intersection⟩] 片段，代码统一在该处展示。]
