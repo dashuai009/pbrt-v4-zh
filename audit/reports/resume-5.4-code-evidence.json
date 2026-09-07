@@ -1,0 +1,788 @@
+{
+  "upstream": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+  "visible": [
+    {
+      "id": "fragment-PixelSensorDefinition-0",
+      "source_code": "class PixelSensor {\n  public:\n    <<PixelSensor Public Methods>>\u00a0\n    <<PixelSensor Public Members>>\u00a0\n  private:\n    <<PixelSensor Private Methods>>\u00a0\n    <<PixelSensor Private Members>>\u00a0\n};",
+      "local_code": "class PixelSensor {\n  public:\n    <<PixelSensor Public Methods>>\n    <<PixelSensor Public Members>>\n  private:\n    <<PixelSensor Private Methods>>\n    <<PixelSensor Private Members>>\n};\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-PixelSensorPublicMethods-0",
+      "source_code": "PixelSensor(Spectrum r, Spectrum g, Spectrum b,\n       const RGBColorSpace *outputColorSpace, Spectrum sensorIllum,\n       Float imagingRatio, Allocator alloc)\n    : r_bar(r, alloc), g_bar(g, alloc), b_bar(b, alloc),\n      imagingRatio(imagingRatio) {\n    <<Compute XYZ from camera RGB matrix>>\u00a0\n}",
+      "local_code": "PixelSensor(Spectrum r, Spectrum g, Spectrum b,\n       const RGBColorSpace *outputColorSpace, Spectrum sensorIllum,\n       Float imagingRatio, Allocator alloc)\n    : r_bar(r, alloc), g_bar(g, alloc), b_bar(b, alloc),\n      imagingRatio(imagingRatio) {\n    <<Compute XYZ from camera RGB matrix>>\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-PixelSensorPrivateMembers-0",
+      "source_code": "DenselySampledSpectrum r_bar, g_bar, b_bar;\nFloat imagingRatio;",
+      "local_code": "DenselySampledSpectrum r_bar, g_bar, b_bar;\nFloat imagingRatio;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-ComputeXYZfromcameraRGBmatrix-0",
+      "source_code": "<<Compute rgbCamera values for training swatches>>\u00a0 \n<<Compute xyzOutput values for training swatches>>\u00a0\n<<Initialize XYZFromSensorRGB using linear least squares>>\u00a0",
+      "local_code": "<<Compute rgbCamera values for training swatches>>\n<<Compute xyzOutput values for training swatches>>\n<<Initialize XYZFromSensorRGB using linear least squares>>\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-ComputemonorgbCameravaluesfortrainingswatches-0",
+      "source_code": "Float rgbCamera[nSwatchReflectances][3];\nfor (int i = 0; i < nSwatchReflectances; ++i) {\n    RGB rgb = ProjectReflectance<RGB>(swatchReflectances[i], sensorIllum,\n                                      &r_bar, &g_bar, &b_bar);\n    for (int c = 0; c < 3; ++c)\n        rgbCamera[i][c] = rgb[c];\n}",
+      "local_code": "Float rgbCamera[nSwatchReflectances][3];\nfor (int i = 0; i < nSwatchReflectances; ++i) {\n    RGB rgb = ProjectReflectance<RGB>(swatchReflectances[i], sensorIllum,\n                                      &r_bar, &g_bar, &b_bar);\n    for (int c = 0; c < 3; ++c)\n        rgbCamera[i][c] = rgb[c];\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-PixelSensorPrivateMembers-1",
+      "source_code": "static constexpr int nSwatchReflectances = 24;\nstatic Spectrum swatchReflectances[nSwatchReflectances];",
+      "local_code": "static constexpr int nSwatchReflectances = 24;\nstatic Spectrum swatchReflectances[nSwatchReflectances];\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-PixelSensorPrivateMethods-0",
+      "source_code": "template <typename Triplet>\nstatic Triplet ProjectReflectance(Spectrum r, Spectrum illum,\n                                  Spectrum b1, Spectrum b2, Spectrum b3);",
+      "local_code": "template <typename Triplet>\nstatic Triplet ProjectReflectance(Spectrum r, Spectrum illum,\n                                  Spectrum b1, Spectrum b2, Spectrum b3);\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-InitializemonoXYZFromSensorRGBusinglinearleastsquares-0",
+      "source_code": "pstd::optional<SquareMatrix<3>> m =\n    LinearLeastSquares(rgbCamera, xyzOutput, nSwatchReflectances);\nif (!m) ErrorExit(\"Sensor XYZ from RGB matrix could not be solved.\");\nXYZFromSensorRGB = *m;",
+      "local_code": "pstd::optional<SquareMatrix<3>> m =\n    LinearLeastSquares(rgbCamera, xyzOutput, nSwatchReflectances);\nif (!m) ErrorExit(\"Sensor XYZ from RGB matrix could not be solved.\");\nXYZFromSensorRGB = *m;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-PixelSensorPublicMembers-0",
+      "source_code": "SquareMatrix<3> XYZFromSensorRGB;",
+      "local_code": "SquareMatrix<3> XYZFromSensorRGB;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-PixelSensorPublicMethods-1",
+      "source_code": "PixelSensor(const RGBColorSpace *outputColorSpace, Spectrum sensorIllum,\n       Float imagingRatio, Allocator alloc)\n    : r_bar(&Spectra::X(), alloc), g_bar(&Spectra::Y(), alloc),\n      b_bar(&Spectra::Z(), alloc), imagingRatio(imagingRatio) {\n    <<Compute white balancing matrix for XYZ PixelSensor>>\u00a0\n}",
+      "local_code": "PixelSensor(const RGBColorSpace *outputColorSpace, Spectrum sensorIllum,\n       Float imagingRatio, Allocator alloc)\n    : r_bar(&Spectra::X(), alloc), g_bar(&Spectra::Y(), alloc),\n      b_bar(&Spectra::Z(), alloc), imagingRatio(imagingRatio) {\n    <<Compute white balancing matrix for XYZ PixelSensor>>\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-ComputewhitebalancingmatrixforXYZmonoPixelSensor-0",
+      "source_code": "if (sensorIllum) {\n     Point2f sourceWhite = SpectrumToXYZ(sensorIllum).xy();\n     Point2f targetWhite = outputColorSpace->w;\n     XYZFromSensorRGB = WhiteBalance(sourceWhite, targetWhite);\n}",
+      "local_code": "if (sensorIllum) {\n     Point2f sourceWhite = SpectrumToXYZ(sensorIllum).xy();\n     Point2f targetWhite = outputColorSpace->w;\n     XYZFromSensorRGB = WhiteBalance(sourceWhite, targetWhite);\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-PixelSensorPublicMethods-2",
+      "source_code": "RGB ToSensorRGB(SampledSpectrum L,\n                const SampledWavelengths &lambda) const {\n    L = SafeDiv(L, lambda.PDF());\n    return imagingRatio *\n        RGB((r_bar.Sample(lambda) * L).Average(),\n            (g_bar.Sample(lambda) * L).Average(),\n            (b_bar.Sample(lambda) * L).Average());\n}",
+      "local_code": "RGB ToSensorRGB(SampledSpectrum L,\n                const SampledWavelengths &lambda) const {\n    L = SafeDiv(L, lambda.PDF());\n    return imagingRatio *\n        RGB((r_bar.Sample(lambda) * L).Average(),\n            (g_bar.Sample(lambda) * L).Average(),\n            (b_bar.Sample(lambda) * L).Average());\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-WhiteBalanceDefinitions-0",
+      "source_code": "SquareMatrix<3> WhiteBalance(Point2f srcWhite, Point2f targetWhite) {\n    <<Find LMS coefficients for source and target white>>\u00a0\n    <<Return white balancing matrix for source and target white>>\u00a0\n}",
+      "local_code": "SquareMatrix<3> WhiteBalance(Point2f srcWhite, Point2f targetWhite) {\n    <<Find LMS coefficients for source and target white>>\n    <<Return white balancing matrix for source and target white>>\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-FindLMScoefficientsforsourceandtargetwhite-0",
+      "source_code": "XYZ srcXYZ = XYZ::FromxyY(srcWhite), dstXYZ = XYZ::FromxyY(targetWhite);\nauto srcLMS = LMSFromXYZ * srcXYZ, dstLMS = LMSFromXYZ * dstXYZ;",
+      "local_code": "XYZ srcXYZ = XYZ::FromxyY(srcWhite), dstXYZ = XYZ::FromxyY(targetWhite);\nauto srcLMS = LMSFromXYZ * srcXYZ, dstLMS = LMSFromXYZ * dstXYZ;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-ColorSpaceConstants-0",
+      "source_code": "extern const SquareMatrix<3> LMSFromXYZ, XYZFromLMS;",
+      "local_code": "extern const SquareMatrix<3> LMSFromXYZ, XYZFromLMS;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Returnwhitebalancingmatrixforsourceandtargetwhite-0",
+      "source_code": "SquareMatrix<3> LMScorrect = SquareMatrix<3>::Diag(\n    dstLMS[0] / srcLMS[0], dstLMS[1] / srcLMS[1], dstLMS[2] / srcLMS[2]);\nreturn XYZFromLMS * LMScorrect * LMSFromXYZ;",
+      "local_code": "SquareMatrix<3> LMScorrect = SquareMatrix<3>::Diag(\n    dstLMS[0] / srcLMS[0], dstLMS[1] / srcLMS[1], dstLMS[2] / srcLMS[2]);\nreturn XYZFromLMS * LMScorrect * LMSFromXYZ;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-SamplingInlineFunctions-9",
+      "source_code": "Float VisibleWavelengthsPDF(Float lambda) {\n    if (lambda < 360 || lambda > 830)\n        return 0;\n    return 0.0039398042f / Sqr(std::cosh(0.0072f * (lambda - 538)));\n}",
+      "local_code": "Float VisibleWavelengthsPDF(Float lambda) {\n    if (lambda < 360 || lambda > 830)\n        return 0;\n    return 0.0039398042f / Sqr(std::cosh(0.0072f * (lambda - 538)));\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-SamplingInlineFunctions-10",
+      "source_code": "Float SampleVisibleWavelengths(Float u) {\n    return 538 - 138.888889f * std::atanh(0.85691062f - 1.82750197f * u);\n}",
+      "local_code": "Float SampleVisibleWavelengths(Float u) {\n    return 538 - 138.888889f * std::atanh(0.85691062f - 1.82750197f * u);\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-SampledWavelengthsPublicMethods-4",
+      "source_code": "static SampledWavelengths SampleVisible(Float u) {\n    SampledWavelengths swl;\n    for (int i = 0; i < NSpectrumSamples; ++i) {\n        <<Compute up for \ni\n\n\n\n\n \n\nth wavelength sample>>\u00a0\n        swl.lambda[i] = SampleVisibleWavelengths(up);\n        swl.pdf[i] = VisibleWavelengthsPDF(swl.lambda[i]);\n    }\n    return swl;\n}",
+      "local_code": "static SampledWavelengths SampleVisible(Float u) {\n    SampledWavelengths swl;\n    for (int i = 0; i < NSpectrumSamples; ++i) {\n        <<Compute up for i th wavelength sample>>\n        swl.lambda[i] = SampleVisibleWavelengths(up);\n        swl.pdf[i] = VisibleWavelengthsPDF(swl.lambda[i]);\n    }\n    return swl;\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Computemonoupforithwavelengthsample-0",
+      "source_code": "Float up = u + Float(i) / NSpectrumSamples;\nif (up > 1)\n    up -= 1;",
+      "local_code": "Float up = u + Float(i) / NSpectrumSamples;\nif (up > 1)\n    up -= 1;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-FilmDefinition-0",
+      "source_code": "class Film : public TaggedPointer<RGBFilm, GBufferFilm, SpectralFilm> {\n  public:\n    <<Film Interface>>\u00a0\n};",
+      "local_code": "class Film : public TaggedPointer<RGBFilm, GBufferFilm, SpectralFilm> {\n  public:\n    <<Film Interface>>\n};\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-FilmInterface-0",
+      "source_code": "void AddSample(Point2i pFilm, SampledSpectrum L,\n    const SampledWavelengths &lambda,\n    const VisibleSurface *visibleSurface, Float weight);",
+      "local_code": "void AddSample(Point2i pFilm, SampledSpectrum L,\n    const SampledWavelengths &lambda,\n    const VisibleSurface *visibleSurface, Float weight);\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-FilmInterface-1",
+      "source_code": "Bounds2f SampleBounds() const;",
+      "local_code": "Bounds2f SampleBounds() const;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-VisibleSurfaceDefinition-0",
+      "source_code": "class VisibleSurface {\npublic:\n    <<VisibleSurface Public Methods>>\u00a0\n    <<VisibleSurface Public Members>>\u00a0\n};",
+      "local_code": "class VisibleSurface {\npublic:\n    <<VisibleSurface Public Methods>>\n    <<VisibleSurface Public Members>>\n};\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-VisibleSurfacePublicMembers-0",
+      "source_code": "Point3f p;\nNormal3f n, ns;\nPoint2f uv;\nFloat time = 0;\nVector3f dpdx, dpdy;\nSampledSpectrum albedo;",
+      "local_code": "Point3f p;\nNormal3f n, ns;\nPoint2f uv;\nFloat time = 0;\nVector3f dpdx, dpdy;\nSampledSpectrum albedo;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-VisibleSurfacePublicMethods-0",
+      "source_code": "VisibleSurface(const SurfaceInteraction &si, SampledSpectrum albedo,\n               const SampledWavelengths &lambda);",
+      "local_code": "VisibleSurface(const SurfaceInteraction &si, SampledSpectrum albedo,\n               const SampledWavelengths &lambda);\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-VisibleSurfacePublicMembers-1",
+      "source_code": "bool set = false;",
+      "local_code": "bool set = false;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-VisibleSurfacePublicMethods-1",
+      "source_code": "operator bool() const { return set; }",
+      "local_code": "operator bool() const { return set; }\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-FilmInterface-2",
+      "source_code": "bool UsesVisibleSurface() const;",
+      "local_code": "bool UsesVisibleSurface() const;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-FilmInterface-3",
+      "source_code": "void AddSplat(Point2f p, SampledSpectrum v,\n              const SampledWavelengths &lambda);",
+      "local_code": "void AddSplat(Point2f p, SampledSpectrum v,\n              const SampledWavelengths &lambda);\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-FilmInterface-4",
+      "source_code": "SampledWavelengths SampleWavelengths(Float u) const;",
+      "local_code": "SampledWavelengths SampleWavelengths(Float u) const;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-FilmInterface-5",
+      "source_code": "Point2i FullResolution() const;\nBounds2i PixelBounds() const;\nFloat Diagonal() const;",
+      "local_code": "Point2i FullResolution() const;\nBounds2i PixelBounds() const;\nFloat Diagonal() const;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-FilmInterface-6",
+      "source_code": "void WriteImage(ImageMetadata metadata, Float splatScale = 1);",
+      "local_code": "void WriteImage(ImageMetadata metadata, Float splatScale = 1);\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-FilmInterface-7",
+      "source_code": "RGB ToOutputRGB(SampledSpectrum L, const SampledWavelengths &lambda) const;",
+      "local_code": "RGB ToOutputRGB(SampledSpectrum L, const SampledWavelengths &lambda) const;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-FilmInterface-8",
+      "source_code": "Image GetImage(ImageMetadata *metadata, Float splatScale = 1);\nRGB GetPixelRGB(Point2i p, Float splatScale = 1) const;",
+      "local_code": "Image GetImage(ImageMetadata *metadata, Float splatScale = 1);\nRGB GetPixelRGB(Point2i p, Float splatScale = 1) const;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-FilmInterface-9",
+      "source_code": "Filter GetFilter() const;\nconst PixelSensor *GetPixelSensor() const;\nstd::string GetFilename() const;",
+      "local_code": "Filter GetFilter() const;\nconst PixelSensor *GetPixelSensor() const;\nstd::string GetFilename() const;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-FilmBaseDefinition-0",
+      "source_code": "class FilmBase {\n  public:\n    <<FilmBase Public Methods>>\u00a0\n  protected:\n    <<FilmBase Protected Members>>\u00a0\n};",
+      "local_code": "class FilmBase {\n  public:\n    <<FilmBase Public Methods>>\n  protected:\n    <<FilmBase Protected Members>>\n};\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-FilmBaseParametersDefinition-0",
+      "source_code": "struct FilmBaseParameters {\n    Point2i fullResolution;\n    Bounds2i pixelBounds;\n    Filter filter;\n    Float diagonal;\n    const PixelSensor *sensor;\n    std::string filename;\n};",
+      "local_code": "struct FilmBaseParameters {\n    Point2i fullResolution;\n    Bounds2i pixelBounds;\n    Filter filter;\n    Float diagonal;\n    const PixelSensor *sensor;\n    std::string filename;\n};\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-FilmBasePublicMethods-0",
+      "source_code": "FilmBase(FilmBaseParameters p)\n    : fullResolution(p.fullResolution), pixelBounds(p.pixelBounds),\n      filter(p.filter), diagonal(p.diagonal * .001f), sensor(p.sensor),\n      filename(p.filename) {\n}",
+      "local_code": "FilmBase(FilmBaseParameters p)\n    : fullResolution(p.fullResolution), pixelBounds(p.pixelBounds),\n      filter(p.filter), diagonal(p.diagonal * .001f), sensor(p.sensor),\n      filename(p.filename) {\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-FilmBaseProtectedMembers-0",
+      "source_code": "Point2i fullResolution;\nBounds2i pixelBounds;\nFilter filter;\nFloat diagonal;\nconst PixelSensor *sensor;\nstd::string filename;",
+      "local_code": "Point2i fullResolution;\nBounds2i pixelBounds;\nFilter filter;\nFloat diagonal;\nconst PixelSensor *sensor;\nstd::string filename;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-FilmBasePublicMethods-1",
+      "source_code": "Point2i FullResolution() const { return fullResolution; }\nBounds2i PixelBounds() const { return pixelBounds; }\nFloat Diagonal() const { return diagonal; }\nFilter GetFilter() const { return filter; }\nconst PixelSensor *GetPixelSensor() const { return sensor; }\nstd::string GetFilename() const { return filename; }",
+      "local_code": "Point2i FullResolution() const { return fullResolution; }\nBounds2i PixelBounds() const { return pixelBounds; }\nFloat Diagonal() const { return diagonal; }\nFilter GetFilter() const { return filter; }\nconst PixelSensor *GetPixelSensor() const { return sensor; }\nstd::string GetFilename() const { return filename; }\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-FilmBasePublicMethods-2",
+      "source_code": "SampledWavelengths SampleWavelengths(Float u) const {\n    return SampledWavelengths::SampleVisible(u);\n}",
+      "local_code": "SampledWavelengths SampleWavelengths(Float u) const {\n    return SampledWavelengths::SampleVisible(u);\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-FilmBaseMethodDefinitions-0",
+      "source_code": "Bounds2f FilmBase::SampleBounds() const {\n    Vector2f radius = filter.Radius();\n    return Bounds2f(pixelBounds.pMin - radius + Vector2f(0.5f, 0.5f),\n                    pixelBounds.pMax + radius - Vector2f(0.5f, 0.5f));\n}",
+      "local_code": "Bounds2f FilmBase::SampleBounds() const {\n    Vector2f radius = filter.Radius();\n    return Bounds2f(pixelBounds.pMin - radius + Vector2f(0.5f, 0.5f),\n                    pixelBounds.pMax + radius - Vector2f(0.5f, 0.5f));\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-RGBFilmDefinition-0",
+      "source_code": "class RGBFilm : public FilmBase {\n  public:\n    <<RGBFilm Public Methods>>\u00a0\n  private:\n    <<RGBFilm::Pixel Definition>>\u00a0\n    <<RGBFilm Private Members>>\u00a0\n};",
+      "local_code": "class RGBFilm : public FilmBase {\n  public:\n    <<RGBFilm Public Methods>>\n  private:\n    <<RGBFilm::Pixel Definition>>\n    <<RGBFilm Private Members>>\n};\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-RGBFilmMethodDefinitions-0",
+      "source_code": "RGBFilm::RGBFilm(FilmBaseParameters p, const RGBColorSpace *colorSpace,\n                 Float maxComponentValue, bool writeFP16, Allocator alloc)\n    : FilmBase(p), pixels(p.pixelBounds, alloc), colorSpace(colorSpace),\n      maxComponentValue(maxComponentValue), writeFP16(writeFP16) {\n    filterIntegral = filter.Integral();\n    <<Compute outputRGBFromSensorRGB matrix>>\u00a0\n}",
+      "local_code": "RGBFilm::RGBFilm(FilmBaseParameters p, const RGBColorSpace *colorSpace,\n                 Float maxComponentValue, bool writeFP16, Allocator alloc)\n    : FilmBase(p), pixels(p.pixelBounds, alloc), colorSpace(colorSpace),\n      maxComponentValue(maxComponentValue), writeFP16(writeFP16) {\n    filterIntegral = filter.Integral();\n    <<Compute outputRGBFromSensorRGB matrix>>\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-RGBFilmPrivateMembers-0",
+      "source_code": "const RGBColorSpace *colorSpace;\nFloat maxComponentValue;\nbool writeFP16;\nFloat filterIntegral;",
+      "local_code": "const RGBColorSpace *colorSpace;\nFloat maxComponentValue;\nbool writeFP16;\nFloat filterIntegral;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-ComputemonooutputRGBFromSensorRGBmatrix-0",
+      "source_code": "outputRGBFromSensorRGB = colorSpace->RGBFromXYZ *\n    sensor->XYZFromSensorRGB;",
+      "local_code": "outputRGBFromSensorRGB = colorSpace->RGBFromXYZ *\n    sensor->XYZFromSensorRGB;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-RGBFilmPrivateMembers-1",
+      "source_code": "SquareMatrix<3> outputRGBFromSensorRGB;",
+      "local_code": "SquareMatrix<3> outputRGBFromSensorRGB;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-RGBFilm::PixelDefinition-0",
+      "source_code": "struct Pixel {\n    double rgbSum[3] = {0., 0., 0.};\n    double weightSum = 0.;\n    AtomicDouble rgbSplat[3];\n};",
+      "local_code": "struct Pixel {\n    double rgbSum[3] = {0., 0., 0.};\n    double weightSum = 0.;\n    AtomicDouble rgbSplat[3];\n};\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-RGBFilmPrivateMembers-2",
+      "source_code": "Array2D<Pixel> pixels;",
+      "local_code": "Array2D<Pixel> pixels;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-RGBFilmPublicMethods-0",
+      "source_code": "bool UsesVisibleSurface() const { return false; }",
+      "local_code": "bool UsesVisibleSurface() const { return false; }\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-RGBFilmPublicMethods-1",
+      "source_code": "void AddSample(Point2i pFilm, SampledSpectrum L,\n       const SampledWavelengths &lambda,\n       const VisibleSurface *, Float weight) {\n    <<Convert sample radiance to PixelSensor RGB>>\u00a0 \n    <<Optionally clamp sensor RGB value>>\u00a0\n    <<Update pixel values with filtered sample contribution>>\u00a0\n}",
+      "local_code": "void AddSample(Point2i pFilm, SampledSpectrum L,\n       const SampledWavelengths &lambda,\n       const VisibleSurface *, Float weight) {\n    <<Convert sample radiance to PixelSensor RGB>>\n    <<Optionally clamp sensor RGB value>>\n    <<Update pixel values with filtered sample contribution>>\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-ConvertsampleradiancetomonoPixelSensorRGB-0",
+      "source_code": "RGB rgb = sensor->ToSensorRGB(L, lambda);",
+      "local_code": "RGB rgb = sensor->ToSensorRGB(L, lambda);\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-OptionallyclampsensorRGBvalue-0",
+      "source_code": "Float m = std::max({rgb.r, rgb.g, rgb.b});\nif (m > maxComponentValue)\n    rgb *= maxComponentValue / m;",
+      "local_code": "Float m = std::max({rgb.r, rgb.g, rgb.b});\nif (m > maxComponentValue)\n    rgb *= maxComponentValue / m;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Updatepixelvalueswithfilteredsamplecontribution-0",
+      "source_code": "Pixel &pixel = pixels[pFilm];\nfor (int c = 0; c < 3; ++c)\n    pixel.rgbSum[c] += weight * rgb[c];\npixel.weightSum += weight;",
+      "local_code": "Pixel &pixel = pixels[pFilm];\nfor (int c = 0; c < 3; ++c)\n    pixel.rgbSum[c] += weight * rgb[c];\npixel.weightSum += weight;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-RGBFilmMethodDefinitions-1",
+      "source_code": "void RGBFilm::AddSplat(Point2f p, SampledSpectrum L,\n                       const SampledWavelengths &lambda) {\n    <<Convert sample radiance to PixelSensor RGB>>\u00a0\n    <<Optionally clamp sensor RGB value>>\u00a0\n    <<Compute bounds of affected pixels for splat, splatBounds>>\u00a0\n    for (Point2i pi : splatBounds) {\n        <<Evaluate filter at pi and add splat contribution>>\u00a0\n    }\n}",
+      "local_code": "void RGBFilm::AddSplat(Point2f p, SampledSpectrum L,\n                       const SampledWavelengths &lambda) {\n    <<Convert sample radiance to PixelSensor RGB>>\n    <<Optionally clamp sensor RGB value>>\n    <<Compute bounds of affected pixels for splat, splatBounds>>\n    for (Point2i pi : splatBounds) {\n        <<Evaluate filter at pi and add splat contribution>>\n    }\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-ComputeboundsofaffectedpixelsforsplatmonosplatBounds-0",
+      "source_code": "Point2f pDiscrete = p + Vector2f(0.5, 0.5);\nVector2f radius = filter.Radius();\nBounds2i splatBounds(Point2i(Floor(pDiscrete - radius)),\n                     Point2i(Floor(pDiscrete + radius)) + Vector2i(1, 1));\nsplatBounds = Intersect(splatBounds, pixelBounds);",
+      "local_code": "Point2f pDiscrete = p + Vector2f(0.5, 0.5);\nVector2f radius = filter.Radius();\nBounds2i splatBounds(Point2i(Floor(pDiscrete - radius)),\n                     Point2i(Floor(pDiscrete + radius)) + Vector2i(1, 1));\nsplatBounds = Intersect(splatBounds, pixelBounds);\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Evaluatefilteratmonopiandaddsplatcontribution-0",
+      "source_code": "Float wt = filter.Evaluate(Point2f(p - pi - Vector2f(0.5, 0.5)));\nif (wt != 0) {\n    Pixel &pixel = pixels[pi];\n    for (int i = 0; i < 3; ++i)\n        pixel.rgbSplat[i].Add(wt * rgb[i]);\n}",
+      "local_code": "Float wt = filter.Evaluate(Point2f(p - pi - Vector2f(0.5, 0.5)));\nif (wt != 0) {\n    Pixel &pixel = pixels[pi];\n    for (int i = 0; i < 3; ++i)\n        pixel.rgbSplat[i].Add(wt * rgb[i]);\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-RGBFilmPublicMethods-2",
+      "source_code": "RGB GetPixelRGB(Point2i p, Float splatScale = 1) const {\n    const Pixel &pixel = pixels[p];\n    RGB rgb(pixel.rgbSum[0], pixel.rgbSum[1], pixel.rgbSum[2]);\n    <<Normalize rgb with weight sum>>\u00a0\n    <<Add splat value at pixel>>\u00a0\n    <<Convert rgb to output RGB color space>>\u00a0\n    return rgb;\n}",
+      "local_code": "RGB GetPixelRGB(Point2i p, Float splatScale = 1) const {\n    const Pixel &pixel = pixels[p];\n    RGB rgb(pixel.rgbSum[0], pixel.rgbSum[1], pixel.rgbSum[2]);\n    <<Normalize rgb with weight sum>>\n    <<Add splat value at pixel>>\n    <<Convert rgb to output RGB color space>>\n    return rgb;\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Normalizemonorgbwithweightsum-0",
+      "source_code": "Float weightSum = pixel.weightSum;\nif (weightSum != 0)\n    rgb /= weightSum;",
+      "local_code": "Float weightSum = pixel.weightSum;\nif (weightSum != 0)\n    rgb /= weightSum;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Addsplatvalueatpixel-0",
+      "source_code": "for (int c = 0; c < 3; ++c)\n    rgb[c] += splatScale * pixel.rgbSplat[c] / filterIntegral;",
+      "local_code": "for (int c = 0; c < 3; ++c)\n    rgb[c] += splatScale * pixel.rgbSplat[c] / filterIntegral;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-ConvertmonorgbtooutputRGBcolorspace-0",
+      "source_code": "rgb = outputRGBFromSensorRGB * rgb;",
+      "local_code": "rgb = outputRGBFromSensorRGB * rgb;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-RGBFilmPublicMethods-3",
+      "source_code": "RGB ToOutputRGB(SampledSpectrum L, const SampledWavelengths &lambda) const {\n    RGB sensorRGB = sensor->ToSensorRGB(L, lambda);\n    return outputRGBFromSensorRGB * sensorRGB;\n}",
+      "local_code": "RGB ToOutputRGB(SampledSpectrum L, const SampledWavelengths &lambda) const {\n    RGB sensorRGB = sensor->ToSensorRGB(L, lambda);\n    return outputRGBFromSensorRGB * sensorRGB;\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-GBufferFilmDefinition-0",
+      "source_code": "class GBufferFilm : public FilmBase {\n  public:\n    <<GBufferFilm Public Methods>>\u00a0\n  private:\n    <<GBufferFilm::Pixel Definition>>\u00a0\n    <<GBufferFilm Private Members>>\u00a0\n};",
+      "local_code": "class GBufferFilm : public FilmBase {\n  public:\n    <<GBufferFilm Public Methods>>\n  private:\n    <<GBufferFilm::Pixel Definition>>\n    <<GBufferFilm Private Members>>\n};\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-GBufferFilm::PixelDefinition-0",
+      "source_code": "struct Pixel {\n    double rgbSum[3] = {0., 0., 0.};\n    double weightSum = 0., gBufferWeightSum = 0.;\n    AtomicDouble rgbSplat[3];\n    Point3f pSum;\n    Float dzdxSum = 0, dzdySum = 0;\n    Normal3f nSum, nsSum;\n    Point2f uvSum;\n    double rgbAlbedoSum[3] = {0., 0., 0.};\n    VarianceEstimator<Float> rgbVariance[3];\n};",
+      "local_code": "struct Pixel {\n    double rgbSum[3] = {0., 0., 0.};\n    double weightSum = 0., gBufferWeightSum = 0.;\n    AtomicDouble rgbSplat[3];\n    Point3f pSum;\n    Float dzdxSum = 0, dzdySum = 0;\n    Normal3f nSum, nsSum;\n    Point2f uvSum;\n    double rgbAlbedoSum[3] = {0., 0., 0.};\n    VarianceEstimator<Float> rgbVariance[3];\n};\n",
+      "equal_ignoring_whitespace": true
+    }
+  ],
+  "panels": [
+    {
+      "depth": 11,
+      "id": "fragment-PixelSensorDefinition-0",
+      "panel": "fragbit-280",
+      "code": "                 Float rgbCamera[nSwatchReflectances][3];\n                 for (int i = 0; i < nSwatchReflectances; ++i) {\n                     RGB rgb = ProjectReflectance<RGB>(swatchReflectances[i], sensorIllum,\n                                                       &r_bar, &g_bar, &b_bar);\n                     for (int c = 0; c < 3; ++c)\n                         rgbCamera[i][c] = rgb[c];\n                 }",
+      "full": "                 Float rgbCamera[nSwatchReflectances][3];\n                 for (int i = 0; i < nSwatchReflectances; ++i) {\n                     RGB rgb = ProjectReflectance<RGB>(swatchReflectances[i], sensorIllum,\n                                                       &r_bar, &g_bar, &b_bar);\n                     for (int c = 0; c < 3; ++c)\n                         rgbCamera[i][c] = rgb[c];\n                 }"
+    },
+    {
+      "depth": 11,
+      "id": "fragment-PixelSensorDefinition-0",
+      "panel": "fragbit-281",
+      "code": "                 Float xyzOutput[24][3];\n                 Float sensorWhiteG = InnerProduct(sensorIllum, &g_bar);\n                 Float sensorWhiteY = InnerProduct(sensorIllum, &Spectra::Y());\n                 for (size_t i = 0; i < nSwatchReflectances; ++i) {\n                     Spectrum s = swatchReflectances[i];\n                     XYZ xyz = ProjectReflectance<XYZ>(s, &outputColorSpace->illuminant, &Spectra::X(),\n                                                       &Spectra::Y(), &Spectra::Z()) *\n                               (sensorWhiteY / sensorWhiteG);\n                     for (int c = 0; c < 3; ++c)\n                         xyzOutput[i][c] = xyz[c];\n                 }",
+      "full": "                 Float xyzOutput[24][3];\n                 Float sensorWhiteG = InnerProduct(sensorIllum, &g_bar);\n                 Float sensorWhiteY = InnerProduct(sensorIllum, &Spectra::Y());\n                 for (size_t i = 0; i < nSwatchReflectances; ++i) {\n                     Spectrum s = swatchReflectances[i];\n                     XYZ xyz = ProjectReflectance<XYZ>(s, &outputColorSpace->illuminant, &Spectra::X(),\n                                                       &Spectra::Y(), &Spectra::Z()) *\n                               (sensorWhiteY / sensorWhiteG);\n                     for (int c = 0; c < 3; ++c)\n                         xyzOutput[i][c] = xyz[c];\n                 }"
+    },
+    {
+      "depth": 11,
+      "id": "fragment-PixelSensorDefinition-0",
+      "panel": "fragbit-282",
+      "code": "                 pstd::optional<SquareMatrix<3>> m =\n                     LinearLeastSquares(rgbCamera, xyzOutput, nSwatchReflectances);\n                 if (!m) ErrorExit(\"Sensor XYZ from RGB matrix could not be solved.\");\n                 XYZFromSensorRGB = *m;",
+      "full": "                 pstd::optional<SquareMatrix<3>> m =\n                     LinearLeastSquares(rgbCamera, xyzOutput, nSwatchReflectances);\n                 if (!m) ErrorExit(\"Sensor XYZ from RGB matrix could not be solved.\");\n                 XYZFromSensorRGB = *m;"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-PixelSensorDefinition-0",
+      "panel": "fragbit-279",
+      "code": "              <<Compute rgbCamera values for training swatches>>\u00a0 \n              <<Compute xyzOutput values for training swatches>>\u00a0\n              <<Initialize XYZFromSensorRGB using linear least squares>>\u00a0",
+      "full": "              <<Compute rgbCamera values for training swatches>>\u00a0                 Float rgbCamera[nSwatchReflectances][3];\n                 for (int i = 0; i < nSwatchReflectances; ++i) {\n                     RGB rgb = ProjectReflectance<RGB>(swatchReflectances[i], sensorIllum,\n                                                       &r_bar, &g_bar, &b_bar);\n                     for (int c = 0; c < 3; ++c)\n                         rgbCamera[i][c] = rgb[c];\n                 } \n              <<Compute xyzOutput values for training swatches>>\u00a0                 Float xyzOutput[24][3];\n                 Float sensorWhiteG = InnerProduct(sensorIllum, &g_bar);\n                 Float sensorWhiteY = InnerProduct(sensorIllum, &Spectra::Y());\n                 for (size_t i = 0; i < nSwatchReflectances; ++i) {\n                     Spectrum s = swatchReflectances[i];\n                     XYZ xyz = ProjectReflectance<XYZ>(s, &outputColorSpace->illuminant, &Spectra::X(),\n                                                       &Spectra::Y(), &Spectra::Z()) *\n                               (sensorWhiteY / sensorWhiteG);\n                     for (int c = 0; c < 3; ++c)\n                         xyzOutput[i][c] = xyz[c];\n                 }\n              <<Initialize XYZFromSensorRGB using linear least squares>>\u00a0                 pstd::optional<SquareMatrix<3>> m =\n                     LinearLeastSquares(rgbCamera, xyzOutput, nSwatchReflectances);\n                 if (!m) ErrorExit(\"Sensor XYZ from RGB matrix could not be solved.\");\n                 XYZFromSensorRGB = *m;"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-PixelSensorDefinition-0",
+      "panel": "fragbit-283",
+      "code": "              if (sensorIllum) {\n                   Point2f sourceWhite = SpectrumToXYZ(sensorIllum).xy();\n                   Point2f targetWhite = outputColorSpace->w;\n                   XYZFromSensorRGB = WhiteBalance(sourceWhite, targetWhite);\n              }",
+      "full": "              if (sensorIllum) {\n                   Point2f sourceWhite = SpectrumToXYZ(sensorIllum).xy();\n                   Point2f targetWhite = outputColorSpace->w;\n                   XYZFromSensorRGB = WhiteBalance(sourceWhite, targetWhite);\n              }"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-PixelSensorDefinition-0",
+      "panel": "fragbit-278",
+      "code": "       static PixelSensor *Create(const ParameterDictionary &parameters, const RGBColorSpace *colorSpace,\n                                  Float exposureTime, const FileLoc *loc, Allocator alloc);\n       static PixelSensor *CreateDefault(Allocator alloc = {});\n       PixelSensor(Spectrum r, Spectrum g, Spectrum b,\n              const RGBColorSpace *outputColorSpace, Spectrum sensorIllum,\n              Float imagingRatio, Allocator alloc)\n           : r_bar(r, alloc), g_bar(g, alloc), b_bar(b, alloc),\n             imagingRatio(imagingRatio) {\n           <<Compute XYZ from camera RGB matrix>>\u00a0\n       }\n       PixelSensor(const RGBColorSpace *outputColorSpace, Spectrum sensorIllum,\n              Float imagingRatio, Allocator alloc)\n           : r_bar(&Spectra::X(), alloc), g_bar(&Spectra::Y(), alloc),\n             b_bar(&Spectra::Z(), alloc), imagingRatio(imagingRatio) {\n           <<Compute white balancing matrix for XYZ PixelSensor>>\u00a0\n       }\n       RGB ToSensorRGB(SampledSpectrum L,\n                       const SampledWavelengths &lambda) const {\n           L = SafeDiv(L, lambda.PDF());\n           return imagingRatio *\n               RGB((r_bar.Sample(lambda) * L).Average(),\n                   (g_bar.Sample(lambda) * L).Average(),\n                   (b_bar.Sample(lambda) * L).Average());\n       }",
+      "full": "       static PixelSensor *Create(const ParameterDictionary &parameters, const RGBColorSpace *colorSpace,\n                                  Float exposureTime, const FileLoc *loc, Allocator alloc);\n       static PixelSensor *CreateDefault(Allocator alloc = {});\n       PixelSensor(Spectrum r, Spectrum g, Spectrum b,\n              const RGBColorSpace *outputColorSpace, Spectrum sensorIllum,\n              Float imagingRatio, Allocator alloc)\n           : r_bar(r, alloc), g_bar(g, alloc), b_bar(b, alloc),\n             imagingRatio(imagingRatio) {\n           <<Compute XYZ from camera RGB matrix>>\u00a0              <<Compute rgbCamera values for training swatches>>\u00a0                 Float rgbCamera[nSwatchReflectances][3];\n                 for (int i = 0; i < nSwatchReflectances; ++i) {\n                     RGB rgb = ProjectReflectance<RGB>(swatchReflectances[i], sensorIllum,\n                                                       &r_bar, &g_bar, &b_bar);\n                     for (int c = 0; c < 3; ++c)\n                         rgbCamera[i][c] = rgb[c];\n                 } \n              <<Compute xyzOutput values for training swatches>>\u00a0                 Float xyzOutput[24][3];\n                 Float sensorWhiteG = InnerProduct(sensorIllum, &g_bar);\n                 Float sensorWhiteY = InnerProduct(sensorIllum, &Spectra::Y());\n                 for (size_t i = 0; i < nSwatchReflectances; ++i) {\n                     Spectrum s = swatchReflectances[i];\n                     XYZ xyz = ProjectReflectance<XYZ>(s, &outputColorSpace->illuminant, &Spectra::X(),\n                                                       &Spectra::Y(), &Spectra::Z()) *\n                               (sensorWhiteY / sensorWhiteG);\n                     for (int c = 0; c < 3; ++c)\n                         xyzOutput[i][c] = xyz[c];\n                 }\n              <<Initialize XYZFromSensorRGB using linear least squares>>\u00a0                 pstd::optional<SquareMatrix<3>> m =\n                     LinearLeastSquares(rgbCamera, xyzOutput, nSwatchReflectances);\n                 if (!m) ErrorExit(\"Sensor XYZ from RGB matrix could not be solved.\");\n                 XYZFromSensorRGB = *m;\n       }\n       PixelSensor(const RGBColorSpace *outputColorSpace, Spectrum sensorIllum,\n              Float imagingRatio, Allocator alloc)\n           : r_bar(&Spectra::X(), alloc), g_bar(&Spectra::Y(), alloc),\n             b_bar(&Spectra::Z(), alloc), imagingRatio(imagingRatio) {\n           <<Compute white balancing matrix for XYZ PixelSensor>>\u00a0              if (sensorIllum) {\n                   Point2f sourceWhite = SpectrumToXYZ(sensorIllum).xy();\n                   Point2f targetWhite = outputColorSpace->w;\n                   XYZFromSensorRGB = WhiteBalance(sourceWhite, targetWhite);\n              }\n       }\n       RGB ToSensorRGB(SampledSpectrum L,\n                       const SampledWavelengths &lambda) const {\n           L = SafeDiv(L, lambda.PDF());\n           return imagingRatio *\n               RGB((r_bar.Sample(lambda) * L).Average(),\n                   (g_bar.Sample(lambda) * L).Average(),\n                   (b_bar.Sample(lambda) * L).Average());\n       }"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-PixelSensorDefinition-0",
+      "panel": "fragbit-284",
+      "code": "       SquareMatrix<3> XYZFromSensorRGB;",
+      "full": "       SquareMatrix<3> XYZFromSensorRGB;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-PixelSensorDefinition-0",
+      "panel": "fragbit-285",
+      "code": "       template <typename Triplet>\n       static Triplet ProjectReflectance(Spectrum r, Spectrum illum,\n                                         Spectrum b1, Spectrum b2, Spectrum b3);",
+      "full": "       template <typename Triplet>\n       static Triplet ProjectReflectance(Spectrum r, Spectrum illum,\n                                         Spectrum b1, Spectrum b2, Spectrum b3);"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-PixelSensorDefinition-0",
+      "panel": "fragbit-286",
+      "code": "       DenselySampledSpectrum r_bar, g_bar, b_bar;\n       Float imagingRatio;\n       static constexpr int nSwatchReflectances = 24;\n       static Spectrum swatchReflectances[nSwatchReflectances];",
+      "full": "       DenselySampledSpectrum r_bar, g_bar, b_bar;\n       Float imagingRatio;\n       static constexpr int nSwatchReflectances = 24;\n       static Spectrum swatchReflectances[nSwatchReflectances];"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-PixelSensorPublicMethods-0",
+      "panel": "fragbit-288",
+      "code": "          Float rgbCamera[nSwatchReflectances][3];\n          for (int i = 0; i < nSwatchReflectances; ++i) {\n              RGB rgb = ProjectReflectance<RGB>(swatchReflectances[i], sensorIllum,\n                                                &r_bar, &g_bar, &b_bar);\n              for (int c = 0; c < 3; ++c)\n                  rgbCamera[i][c] = rgb[c];\n          }",
+      "full": "          Float rgbCamera[nSwatchReflectances][3];\n          for (int i = 0; i < nSwatchReflectances; ++i) {\n              RGB rgb = ProjectReflectance<RGB>(swatchReflectances[i], sensorIllum,\n                                                &r_bar, &g_bar, &b_bar);\n              for (int c = 0; c < 3; ++c)\n                  rgbCamera[i][c] = rgb[c];\n          }"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-PixelSensorPublicMethods-0",
+      "panel": "fragbit-289",
+      "code": "          Float xyzOutput[24][3];\n          Float sensorWhiteG = InnerProduct(sensorIllum, &g_bar);\n          Float sensorWhiteY = InnerProduct(sensorIllum, &Spectra::Y());\n          for (size_t i = 0; i < nSwatchReflectances; ++i) {\n              Spectrum s = swatchReflectances[i];\n              XYZ xyz = ProjectReflectance<XYZ>(s, &outputColorSpace->illuminant, &Spectra::X(),\n                                                &Spectra::Y(), &Spectra::Z()) *\n                        (sensorWhiteY / sensorWhiteG);\n              for (int c = 0; c < 3; ++c)\n                  xyzOutput[i][c] = xyz[c];\n          }",
+      "full": "          Float xyzOutput[24][3];\n          Float sensorWhiteG = InnerProduct(sensorIllum, &g_bar);\n          Float sensorWhiteY = InnerProduct(sensorIllum, &Spectra::Y());\n          for (size_t i = 0; i < nSwatchReflectances; ++i) {\n              Spectrum s = swatchReflectances[i];\n              XYZ xyz = ProjectReflectance<XYZ>(s, &outputColorSpace->illuminant, &Spectra::X(),\n                                                &Spectra::Y(), &Spectra::Z()) *\n                        (sensorWhiteY / sensorWhiteG);\n              for (int c = 0; c < 3; ++c)\n                  xyzOutput[i][c] = xyz[c];\n          }"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-PixelSensorPublicMethods-0",
+      "panel": "fragbit-290",
+      "code": "          pstd::optional<SquareMatrix<3>> m =\n              LinearLeastSquares(rgbCamera, xyzOutput, nSwatchReflectances);\n          if (!m) ErrorExit(\"Sensor XYZ from RGB matrix could not be solved.\");\n          XYZFromSensorRGB = *m;",
+      "full": "          pstd::optional<SquareMatrix<3>> m =\n              LinearLeastSquares(rgbCamera, xyzOutput, nSwatchReflectances);\n          if (!m) ErrorExit(\"Sensor XYZ from RGB matrix could not be solved.\");\n          XYZFromSensorRGB = *m;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-PixelSensorPublicMethods-0",
+      "panel": "fragbit-287",
+      "code": "       <<Compute rgbCamera values for training swatches>>\u00a0 \n       <<Compute xyzOutput values for training swatches>>\u00a0\n       <<Initialize XYZFromSensorRGB using linear least squares>>\u00a0",
+      "full": "       <<Compute rgbCamera values for training swatches>>\u00a0          Float rgbCamera[nSwatchReflectances][3];\n          for (int i = 0; i < nSwatchReflectances; ++i) {\n              RGB rgb = ProjectReflectance<RGB>(swatchReflectances[i], sensorIllum,\n                                                &r_bar, &g_bar, &b_bar);\n              for (int c = 0; c < 3; ++c)\n                  rgbCamera[i][c] = rgb[c];\n          } \n       <<Compute xyzOutput values for training swatches>>\u00a0          Float xyzOutput[24][3];\n          Float sensorWhiteG = InnerProduct(sensorIllum, &g_bar);\n          Float sensorWhiteY = InnerProduct(sensorIllum, &Spectra::Y());\n          for (size_t i = 0; i < nSwatchReflectances; ++i) {\n              Spectrum s = swatchReflectances[i];\n              XYZ xyz = ProjectReflectance<XYZ>(s, &outputColorSpace->illuminant, &Spectra::X(),\n                                                &Spectra::Y(), &Spectra::Z()) *\n                        (sensorWhiteY / sensorWhiteG);\n              for (int c = 0; c < 3; ++c)\n                  xyzOutput[i][c] = xyz[c];\n          }\n       <<Initialize XYZFromSensorRGB using linear least squares>>\u00a0          pstd::optional<SquareMatrix<3>> m =\n              LinearLeastSquares(rgbCamera, xyzOutput, nSwatchReflectances);\n          if (!m) ErrorExit(\"Sensor XYZ from RGB matrix could not be solved.\");\n          XYZFromSensorRGB = *m;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-ComputeXYZfromcameraRGBmatrix-0",
+      "panel": "fragbit-291",
+      "code": "   Float rgbCamera[nSwatchReflectances][3];\n   for (int i = 0; i < nSwatchReflectances; ++i) {\n       RGB rgb = ProjectReflectance<RGB>(swatchReflectances[i], sensorIllum,\n                                         &r_bar, &g_bar, &b_bar);\n       for (int c = 0; c < 3; ++c)\n           rgbCamera[i][c] = rgb[c];\n   }",
+      "full": "   Float rgbCamera[nSwatchReflectances][3];\n   for (int i = 0; i < nSwatchReflectances; ++i) {\n       RGB rgb = ProjectReflectance<RGB>(swatchReflectances[i], sensorIllum,\n                                         &r_bar, &g_bar, &b_bar);\n       for (int c = 0; c < 3; ++c)\n           rgbCamera[i][c] = rgb[c];\n   }"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-ComputeXYZfromcameraRGBmatrix-0",
+      "panel": "fragbit-292",
+      "code": "   Float xyzOutput[24][3];\n   Float sensorWhiteG = InnerProduct(sensorIllum, &g_bar);\n   Float sensorWhiteY = InnerProduct(sensorIllum, &Spectra::Y());\n   for (size_t i = 0; i < nSwatchReflectances; ++i) {\n       Spectrum s = swatchReflectances[i];\n       XYZ xyz = ProjectReflectance<XYZ>(s, &outputColorSpace->illuminant, &Spectra::X(),\n                                         &Spectra::Y(), &Spectra::Z()) *\n                 (sensorWhiteY / sensorWhiteG);\n       for (int c = 0; c < 3; ++c)\n           xyzOutput[i][c] = xyz[c];\n   }",
+      "full": "   Float xyzOutput[24][3];\n   Float sensorWhiteG = InnerProduct(sensorIllum, &g_bar);\n   Float sensorWhiteY = InnerProduct(sensorIllum, &Spectra::Y());\n   for (size_t i = 0; i < nSwatchReflectances; ++i) {\n       Spectrum s = swatchReflectances[i];\n       XYZ xyz = ProjectReflectance<XYZ>(s, &outputColorSpace->illuminant, &Spectra::X(),\n                                         &Spectra::Y(), &Spectra::Z()) *\n                 (sensorWhiteY / sensorWhiteG);\n       for (int c = 0; c < 3; ++c)\n           xyzOutput[i][c] = xyz[c];\n   }"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-ComputeXYZfromcameraRGBmatrix-0",
+      "panel": "fragbit-293",
+      "code": "   pstd::optional<SquareMatrix<3>> m =\n       LinearLeastSquares(rgbCamera, xyzOutput, nSwatchReflectances);\n   if (!m) ErrorExit(\"Sensor XYZ from RGB matrix could not be solved.\");\n   XYZFromSensorRGB = *m;",
+      "full": "   pstd::optional<SquareMatrix<3>> m =\n       LinearLeastSquares(rgbCamera, xyzOutput, nSwatchReflectances);\n   if (!m) ErrorExit(\"Sensor XYZ from RGB matrix could not be solved.\");\n   XYZFromSensorRGB = *m;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-PixelSensorPublicMethods-1",
+      "panel": "fragbit-294",
+      "code": "       if (sensorIllum) {\n            Point2f sourceWhite = SpectrumToXYZ(sensorIllum).xy();\n            Point2f targetWhite = outputColorSpace->w;\n            XYZFromSensorRGB = WhiteBalance(sourceWhite, targetWhite);\n       }",
+      "full": "       if (sensorIllum) {\n            Point2f sourceWhite = SpectrumToXYZ(sensorIllum).xy();\n            Point2f targetWhite = outputColorSpace->w;\n            XYZFromSensorRGB = WhiteBalance(sourceWhite, targetWhite);\n       }"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-WhiteBalanceDefinitions-0",
+      "panel": "fragbit-295",
+      "code": "       XYZ srcXYZ = XYZ::FromxyY(srcWhite), dstXYZ = XYZ::FromxyY(targetWhite);\n       auto srcLMS = LMSFromXYZ * srcXYZ, dstLMS = LMSFromXYZ * dstXYZ;",
+      "full": "       XYZ srcXYZ = XYZ::FromxyY(srcWhite), dstXYZ = XYZ::FromxyY(targetWhite);\n       auto srcLMS = LMSFromXYZ * srcXYZ, dstLMS = LMSFromXYZ * dstXYZ;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-WhiteBalanceDefinitions-0",
+      "panel": "fragbit-296",
+      "code": "       SquareMatrix<3> LMScorrect = SquareMatrix<3>::Diag(\n           dstLMS[0] / srcLMS[0], dstLMS[1] / srcLMS[1], dstLMS[2] / srcLMS[2]);\n       return XYZFromLMS * LMScorrect * LMSFromXYZ;",
+      "full": "       SquareMatrix<3> LMScorrect = SquareMatrix<3>::Diag(\n           dstLMS[0] / srcLMS[0], dstLMS[1] / srcLMS[1], dstLMS[2] / srcLMS[2]);\n       return XYZFromLMS * LMScorrect * LMSFromXYZ;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-SampledWavelengthsPublicMethods-4",
+      "panel": "fragbit-297",
+      "code": "           Float up = u + Float(i) / NSpectrumSamples;\n           if (up > 1)\n               up -= 1;",
+      "full": "           Float up = u + Float(i) / NSpectrumSamples;\n           if (up > 1)\n               up -= 1;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-FilmDefinition-0",
+      "panel": "fragbit-298",
+      "code": "       void AddSample(Point2i pFilm, SampledSpectrum L,\n           const SampledWavelengths &lambda,\n           const VisibleSurface *visibleSurface, Float weight);\n       Bounds2f SampleBounds() const;\n       bool UsesVisibleSurface() const;\n       void AddSplat(Point2f p, SampledSpectrum v,\n                     const SampledWavelengths &lambda);\n       SampledWavelengths SampleWavelengths(Float u) const;\n       Point2i FullResolution() const;\n       Bounds2i PixelBounds() const;\n       Float Diagonal() const;\n       void WriteImage(ImageMetadata metadata, Float splatScale = 1);\n       RGB ToOutputRGB(SampledSpectrum L, const SampledWavelengths &lambda) const;\n       Image GetImage(ImageMetadata *metadata, Float splatScale = 1);\n       RGB GetPixelRGB(Point2i p, Float splatScale = 1) const;\n       Filter GetFilter() const;\n       const PixelSensor *GetPixelSensor() const;\n       std::string GetFilename() const;\n       using TaggedPointer::TaggedPointer;\n       \n       static Film Create(const std::string &name,\n                                const ParameterDictionary &parameters, Float exposureTime,\n                                const CameraTransform &cameraTransform, Filter filter, const FileLoc *loc, Allocator alloc);\n       \n       std::string ToString() const;",
+      "full": "       void AddSample(Point2i pFilm, SampledSpectrum L,\n           const SampledWavelengths &lambda,\n           const VisibleSurface *visibleSurface, Float weight);\n       Bounds2f SampleBounds() const;\n       bool UsesVisibleSurface() const;\n       void AddSplat(Point2f p, SampledSpectrum v,\n                     const SampledWavelengths &lambda);\n       SampledWavelengths SampleWavelengths(Float u) const;\n       Point2i FullResolution() const;\n       Bounds2i PixelBounds() const;\n       Float Diagonal() const;\n       void WriteImage(ImageMetadata metadata, Float splatScale = 1);\n       RGB ToOutputRGB(SampledSpectrum L, const SampledWavelengths &lambda) const;\n       Image GetImage(ImageMetadata *metadata, Float splatScale = 1);\n       RGB GetPixelRGB(Point2i p, Float splatScale = 1) const;\n       Filter GetFilter() const;\n       const PixelSensor *GetPixelSensor() const;\n       std::string GetFilename() const;\n       using TaggedPointer::TaggedPointer;\n       \n       static Film Create(const std::string &name,\n                                const ParameterDictionary &parameters, Float exposureTime,\n                                const CameraTransform &cameraTransform, Filter filter, const FileLoc *loc, Allocator alloc);\n       \n       std::string ToString() const;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-VisibleSurfaceDefinition-0",
+      "panel": "fragbit-299",
+      "code": "       VisibleSurface(const SurfaceInteraction &si, SampledSpectrum albedo,\n                      const SampledWavelengths &lambda);\n       operator bool() const { return set; }\n       VisibleSurface() = default;\n       \n       std::string ToString() const;",
+      "full": "       VisibleSurface(const SurfaceInteraction &si, SampledSpectrum albedo,\n                      const SampledWavelengths &lambda);\n       operator bool() const { return set; }\n       VisibleSurface() = default;\n       \n       std::string ToString() const;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-VisibleSurfaceDefinition-0",
+      "panel": "fragbit-300",
+      "code": "       Point3f p;\n       Normal3f n, ns;\n       Point2f uv;\n       Float time = 0;\n       Vector3f dpdx, dpdy;\n       SampledSpectrum albedo;\n       bool set = false;",
+      "full": "       Point3f p;\n       Normal3f n, ns;\n       Point2f uv;\n       Float time = 0;\n       Vector3f dpdx, dpdy;\n       SampledSpectrum albedo;\n       bool set = false;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-FilmBaseDefinition-0",
+      "panel": "fragbit-301",
+      "code": "       FilmBase(FilmBaseParameters p)\n           : fullResolution(p.fullResolution), pixelBounds(p.pixelBounds),\n             filter(p.filter), diagonal(p.diagonal * .001f), sensor(p.sensor),\n             filename(p.filename) {\n       }\n       Point2i FullResolution() const { return fullResolution; }\n       Bounds2i PixelBounds() const { return pixelBounds; }\n       Float Diagonal() const { return diagonal; }\n       Filter GetFilter() const { return filter; }\n       const PixelSensor *GetPixelSensor() const { return sensor; }\n       std::string GetFilename() const { return filename; }\n       SampledWavelengths SampleWavelengths(Float u) const {\n           return SampledWavelengths::SampleVisible(u);\n       }\n       Bounds2f SampleBounds() const;\n       std::string BaseToString() const;",
+      "full": "       FilmBase(FilmBaseParameters p)\n           : fullResolution(p.fullResolution), pixelBounds(p.pixelBounds),\n             filter(p.filter), diagonal(p.diagonal * .001f), sensor(p.sensor),\n             filename(p.filename) {\n       }\n       Point2i FullResolution() const { return fullResolution; }\n       Bounds2i PixelBounds() const { return pixelBounds; }\n       Float Diagonal() const { return diagonal; }\n       Filter GetFilter() const { return filter; }\n       const PixelSensor *GetPixelSensor() const { return sensor; }\n       std::string GetFilename() const { return filename; }\n       SampledWavelengths SampleWavelengths(Float u) const {\n           return SampledWavelengths::SampleVisible(u);\n       }\n       Bounds2f SampleBounds() const;\n       std::string BaseToString() const;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-FilmBaseDefinition-0",
+      "panel": "fragbit-302",
+      "code": "       Point2i fullResolution;\n       Bounds2i pixelBounds;\n       Filter filter;\n       Float diagonal;\n       const PixelSensor *sensor;\n       std::string filename;",
+      "full": "       Point2i fullResolution;\n       Bounds2i pixelBounds;\n       Filter filter;\n       Float diagonal;\n       const PixelSensor *sensor;\n       std::string filename;"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-RGBFilmDefinition-0",
+      "panel": "fragbit-304",
+      "code": "              RGB rgb = sensor->ToSensorRGB(L, lambda);",
+      "full": "              RGB rgb = sensor->ToSensorRGB(L, lambda);"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-RGBFilmDefinition-0",
+      "panel": "fragbit-305",
+      "code": "              Float m = std::max({rgb.r, rgb.g, rgb.b});\n              if (m > maxComponentValue)\n                  rgb *= maxComponentValue / m;",
+      "full": "              Float m = std::max({rgb.r, rgb.g, rgb.b});\n              if (m > maxComponentValue)\n                  rgb *= maxComponentValue / m;"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-RGBFilmDefinition-0",
+      "panel": "fragbit-306",
+      "code": "              Pixel &pixel = pixels[pFilm];\n              for (int c = 0; c < 3; ++c)\n                  pixel.rgbSum[c] += weight * rgb[c];\n              pixel.weightSum += weight;",
+      "full": "              Pixel &pixel = pixels[pFilm];\n              for (int c = 0; c < 3; ++c)\n                  pixel.rgbSum[c] += weight * rgb[c];\n              pixel.weightSum += weight;"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-RGBFilmDefinition-0",
+      "panel": "fragbit-307",
+      "code": "              Float weightSum = pixel.weightSum;\n              if (weightSum != 0)\n                  rgb /= weightSum;",
+      "full": "              Float weightSum = pixel.weightSum;\n              if (weightSum != 0)\n                  rgb /= weightSum;"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-RGBFilmDefinition-0",
+      "panel": "fragbit-308",
+      "code": "              for (int c = 0; c < 3; ++c)\n                  rgb[c] += splatScale * pixel.rgbSplat[c] / filterIntegral;",
+      "full": "              for (int c = 0; c < 3; ++c)\n                  rgb[c] += splatScale * pixel.rgbSplat[c] / filterIntegral;"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-RGBFilmDefinition-0",
+      "panel": "fragbit-309",
+      "code": "              rgb = outputRGBFromSensorRGB * rgb;",
+      "full": "              rgb = outputRGBFromSensorRGB * rgb;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-RGBFilmDefinition-0",
+      "panel": "fragbit-303",
+      "code": "       bool UsesVisibleSurface() const { return false; }\n       void AddSample(Point2i pFilm, SampledSpectrum L,\n              const SampledWavelengths &lambda,\n              const VisibleSurface *, Float weight) {\n           <<Convert sample radiance to PixelSensor RGB>>\u00a0 \n           <<Optionally clamp sensor RGB value>>\u00a0\n           <<Update pixel values with filtered sample contribution>>\u00a0\n       }\n       RGB GetPixelRGB(Point2i p, Float splatScale = 1) const {\n           const Pixel &pixel = pixels[p];\n           RGB rgb(pixel.rgbSum[0], pixel.rgbSum[1], pixel.rgbSum[2]);\n           <<Normalize rgb with weight sum>>\u00a0\n           <<Add splat value at pixel>>\u00a0\n           <<Convert rgb to output RGB color space>>\u00a0\n           return rgb;\n       }\n       RGBFilm(FilmBaseParameters p, const RGBColorSpace *colorSpace, Float maxComponentValue = Infinity,\n               bool writeFP16 = true, Allocator alloc = {});\n       \n       static RGBFilm *Create(const ParameterDictionary &parameters, Float exposureTime, Filter filter,\n                              const RGBColorSpace *colorSpace, const FileLoc *loc,\n                              Allocator alloc);\n       \n       PBRT_CPU_GPU\n       void AddSplat(Point2f p, SampledSpectrum v, const SampledWavelengths &lambda);\n       \n       void WriteImage(ImageMetadata metadata, Float splatScale = 1);\n       Image GetImage(ImageMetadata *metadata, Float splatScale = 1);\n       \n       std::string ToString() const;\n       RGB ToOutputRGB(SampledSpectrum L, const SampledWavelengths &lambda) const {\n           RGB sensorRGB = sensor->ToSensorRGB(L, lambda);\n           return outputRGBFromSensorRGB * sensorRGB;\n       }",
+      "full": "       bool UsesVisibleSurface() const { return false; }\n       void AddSample(Point2i pFilm, SampledSpectrum L,\n              const SampledWavelengths &lambda,\n              const VisibleSurface *, Float weight) {\n           <<Convert sample radiance to PixelSensor RGB>>\u00a0              RGB rgb = sensor->ToSensorRGB(L, lambda); \n           <<Optionally clamp sensor RGB value>>\u00a0              Float m = std::max({rgb.r, rgb.g, rgb.b});\n              if (m > maxComponentValue)\n                  rgb *= maxComponentValue / m;\n           <<Update pixel values with filtered sample contribution>>\u00a0              Pixel &pixel = pixels[pFilm];\n              for (int c = 0; c < 3; ++c)\n                  pixel.rgbSum[c] += weight * rgb[c];\n              pixel.weightSum += weight;\n       }\n       RGB GetPixelRGB(Point2i p, Float splatScale = 1) const {\n           const Pixel &pixel = pixels[p];\n           RGB rgb(pixel.rgbSum[0], pixel.rgbSum[1], pixel.rgbSum[2]);\n           <<Normalize rgb with weight sum>>\u00a0              Float weightSum = pixel.weightSum;\n              if (weightSum != 0)\n                  rgb /= weightSum;\n           <<Add splat value at pixel>>\u00a0              for (int c = 0; c < 3; ++c)\n                  rgb[c] += splatScale * pixel.rgbSplat[c] / filterIntegral;\n           <<Convert rgb to output RGB color space>>\u00a0              rgb = outputRGBFromSensorRGB * rgb;\n           return rgb;\n       }\n       RGBFilm(FilmBaseParameters p, const RGBColorSpace *colorSpace, Float maxComponentValue = Infinity,\n               bool writeFP16 = true, Allocator alloc = {});\n       \n       static RGBFilm *Create(const ParameterDictionary &parameters, Float exposureTime, Filter filter,\n                              const RGBColorSpace *colorSpace, const FileLoc *loc,\n                              Allocator alloc);\n       \n       PBRT_CPU_GPU\n       void AddSplat(Point2f p, SampledSpectrum v, const SampledWavelengths &lambda);\n       \n       void WriteImage(ImageMetadata metadata, Float splatScale = 1);\n       Image GetImage(ImageMetadata *metadata, Float splatScale = 1);\n       \n       std::string ToString() const;\n       RGB ToOutputRGB(SampledSpectrum L, const SampledWavelengths &lambda) const {\n           RGB sensorRGB = sensor->ToSensorRGB(L, lambda);\n           return outputRGBFromSensorRGB * sensorRGB;\n       }"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-RGBFilmDefinition-0",
+      "panel": "fragbit-310",
+      "code": "       struct Pixel {\n           double rgbSum[3] = {0., 0., 0.};\n           double weightSum = 0.;\n           AtomicDouble rgbSplat[3];\n       };",
+      "full": "       struct Pixel {\n           double rgbSum[3] = {0., 0., 0.};\n           double weightSum = 0.;\n           AtomicDouble rgbSplat[3];\n       };"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-RGBFilmDefinition-0",
+      "panel": "fragbit-311",
+      "code": "       const RGBColorSpace *colorSpace;\n       Float maxComponentValue;\n       bool writeFP16;\n       Float filterIntegral;\n       SquareMatrix<3> outputRGBFromSensorRGB;\n       Array2D<Pixel> pixels;",
+      "full": "       const RGBColorSpace *colorSpace;\n       Float maxComponentValue;\n       bool writeFP16;\n       Float filterIntegral;\n       SquareMatrix<3> outputRGBFromSensorRGB;\n       Array2D<Pixel> pixels;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-RGBFilmMethodDefinitions-0",
+      "panel": "fragbit-312",
+      "code": "       outputRGBFromSensorRGB = colorSpace->RGBFromXYZ *\n           sensor->XYZFromSensorRGB;",
+      "full": "       outputRGBFromSensorRGB = colorSpace->RGBFromXYZ *\n           sensor->XYZFromSensorRGB;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-RGBFilmPublicMethods-1",
+      "panel": "fragbit-313",
+      "code": "       RGB rgb = sensor->ToSensorRGB(L, lambda);",
+      "full": "       RGB rgb = sensor->ToSensorRGB(L, lambda);"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-RGBFilmPublicMethods-1",
+      "panel": "fragbit-314",
+      "code": "       Float m = std::max({rgb.r, rgb.g, rgb.b});\n       if (m > maxComponentValue)\n           rgb *= maxComponentValue / m;",
+      "full": "       Float m = std::max({rgb.r, rgb.g, rgb.b});\n       if (m > maxComponentValue)\n           rgb *= maxComponentValue / m;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-RGBFilmPublicMethods-1",
+      "panel": "fragbit-315",
+      "code": "       Pixel &pixel = pixels[pFilm];\n       for (int c = 0; c < 3; ++c)\n           pixel.rgbSum[c] += weight * rgb[c];\n       pixel.weightSum += weight;",
+      "full": "       Pixel &pixel = pixels[pFilm];\n       for (int c = 0; c < 3; ++c)\n           pixel.rgbSum[c] += weight * rgb[c];\n       pixel.weightSum += weight;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-RGBFilmMethodDefinitions-1",
+      "panel": "fragbit-316",
+      "code": "       RGB rgb = sensor->ToSensorRGB(L, lambda);",
+      "full": "       RGB rgb = sensor->ToSensorRGB(L, lambda);"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-RGBFilmMethodDefinitions-1",
+      "panel": "fragbit-317",
+      "code": "       Float m = std::max({rgb.r, rgb.g, rgb.b});\n       if (m > maxComponentValue)\n           rgb *= maxComponentValue / m;",
+      "full": "       Float m = std::max({rgb.r, rgb.g, rgb.b});\n       if (m > maxComponentValue)\n           rgb *= maxComponentValue / m;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-RGBFilmMethodDefinitions-1",
+      "panel": "fragbit-318",
+      "code": "       Point2f pDiscrete = p + Vector2f(0.5, 0.5);\n       Vector2f radius = filter.Radius();\n       Bounds2i splatBounds(Point2i(Floor(pDiscrete - radius)),\n                            Point2i(Floor(pDiscrete + radius)) + Vector2i(1, 1));\n       splatBounds = Intersect(splatBounds, pixelBounds);",
+      "full": "       Point2f pDiscrete = p + Vector2f(0.5, 0.5);\n       Vector2f radius = filter.Radius();\n       Bounds2i splatBounds(Point2i(Floor(pDiscrete - radius)),\n                            Point2i(Floor(pDiscrete + radius)) + Vector2i(1, 1));\n       splatBounds = Intersect(splatBounds, pixelBounds);"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-RGBFilmMethodDefinitions-1",
+      "panel": "fragbit-319",
+      "code": "           Float wt = filter.Evaluate(Point2f(p - pi - Vector2f(0.5, 0.5)));\n           if (wt != 0) {\n               Pixel &pixel = pixels[pi];\n               for (int i = 0; i < 3; ++i)\n                   pixel.rgbSplat[i].Add(wt * rgb[i]);\n           }",
+      "full": "           Float wt = filter.Evaluate(Point2f(p - pi - Vector2f(0.5, 0.5)));\n           if (wt != 0) {\n               Pixel &pixel = pixels[pi];\n               for (int i = 0; i < 3; ++i)\n                   pixel.rgbSplat[i].Add(wt * rgb[i]);\n           }"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-RGBFilmPublicMethods-2",
+      "panel": "fragbit-320",
+      "code": "       Float weightSum = pixel.weightSum;\n       if (weightSum != 0)\n           rgb /= weightSum;",
+      "full": "       Float weightSum = pixel.weightSum;\n       if (weightSum != 0)\n           rgb /= weightSum;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-RGBFilmPublicMethods-2",
+      "panel": "fragbit-321",
+      "code": "       for (int c = 0; c < 3; ++c)\n           rgb[c] += splatScale * pixel.rgbSplat[c] / filterIntegral;",
+      "full": "       for (int c = 0; c < 3; ++c)\n           rgb[c] += splatScale * pixel.rgbSplat[c] / filterIntegral;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-RGBFilmPublicMethods-2",
+      "panel": "fragbit-322",
+      "code": "       rgb = outputRGBFromSensorRGB * rgb;",
+      "full": "       rgb = outputRGBFromSensorRGB * rgb;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-GBufferFilmDefinition-0",
+      "panel": "fragbit-323",
+      "code": "       GBufferFilm(FilmBaseParameters p, const AnimatedTransform &outputFromRender, \n                                      bool applyInverse, const RGBColorSpace *colorSpace,\n                   Float maxComponentValue = Infinity, bool writeFP16 = true,\n                   Allocator alloc = {});\n       \n       static GBufferFilm *Create(const ParameterDictionary &parameters, Float\n                                  exposureTime, const CameraTransform &cameraTransform, Filter filter,\n                                  const RGBColorSpace *colorSpace, const FileLoc *loc,\n                                  Allocator alloc);\n       \n       PBRT_CPU_GPU\n       void AddSample(Point2i pFilm, SampledSpectrum L,\n                      const SampledWavelengths &lambda,\n                      const VisibleSurface *visibleSurface, Float weight);\n       \n       PBRT_CPU_GPU\n       void AddSplat(Point2f p, SampledSpectrum v, const SampledWavelengths &lambda);\n       \n       PBRT_CPU_GPU\n       RGB ToOutputRGB(SampledSpectrum L, const SampledWavelengths &lambda) const {\n           RGB cameraRGB = sensor->ToSensorRGB(L, lambda);\n           return outputRGBFromSensorRGB * cameraRGB;\n       }\n       \n       PBRT_CPU_GPU\n       bool UsesVisibleSurface() const { return true; }\n       \n       PBRT_CPU_GPU\n       RGB GetPixelRGB(Point2i p, Float splatScale = 1) const {\n           const Pixel &pixel = pixels[p];\n           RGB rgb(pixel.rgbSum[0], pixel.rgbSum[1], pixel.rgbSum[2]);\n       \n           // Normalize pixel with weight sum\n           Float weightSum = pixel.weightSum;\n           if (weightSum != 0)\n               rgb /= weightSum;\n       \n           // Add splat value at pixel\n           for (int c = 0; c < 3; ++c)\n               rgb[c] += splatScale * pixel.rgbSplat[c] / filterIntegral;\n       \n           rgb = outputRGBFromSensorRGB * rgb;\n       \n           return rgb;\n       }\n       \n       void WriteImage(ImageMetadata metadata, Float splatScale = 1);\n       Image GetImage(ImageMetadata *metadata, Float splatScale = 1);\n       \n       std::string ToString() const;",
+      "full": "       GBufferFilm(FilmBaseParameters p, const AnimatedTransform &outputFromRender, \n                                      bool applyInverse, const RGBColorSpace *colorSpace,\n                   Float maxComponentValue = Infinity, bool writeFP16 = true,\n                   Allocator alloc = {});\n       \n       static GBufferFilm *Create(const ParameterDictionary &parameters, Float\n                                  exposureTime, const CameraTransform &cameraTransform, Filter filter,\n                                  const RGBColorSpace *colorSpace, const FileLoc *loc,\n                                  Allocator alloc);\n       \n       PBRT_CPU_GPU\n       void AddSample(Point2i pFilm, SampledSpectrum L,\n                      const SampledWavelengths &lambda,\n                      const VisibleSurface *visibleSurface, Float weight);\n       \n       PBRT_CPU_GPU\n       void AddSplat(Point2f p, SampledSpectrum v, const SampledWavelengths &lambda);\n       \n       PBRT_CPU_GPU\n       RGB ToOutputRGB(SampledSpectrum L, const SampledWavelengths &lambda) const {\n           RGB cameraRGB = sensor->ToSensorRGB(L, lambda);\n           return outputRGBFromSensorRGB * cameraRGB;\n       }\n       \n       PBRT_CPU_GPU\n       bool UsesVisibleSurface() const { return true; }\n       \n       PBRT_CPU_GPU\n       RGB GetPixelRGB(Point2i p, Float splatScale = 1) const {\n           const Pixel &pixel = pixels[p];\n           RGB rgb(pixel.rgbSum[0], pixel.rgbSum[1], pixel.rgbSum[2]);\n       \n           // Normalize pixel with weight sum\n           Float weightSum = pixel.weightSum;\n           if (weightSum != 0)\n               rgb /= weightSum;\n       \n           // Add splat value at pixel\n           for (int c = 0; c < 3; ++c)\n               rgb[c] += splatScale * pixel.rgbSplat[c] / filterIntegral;\n       \n           rgb = outputRGBFromSensorRGB * rgb;\n       \n           return rgb;\n       }\n       \n       void WriteImage(ImageMetadata metadata, Float splatScale = 1);\n       Image GetImage(ImageMetadata *metadata, Float splatScale = 1);\n       \n       std::string ToString() const;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-GBufferFilmDefinition-0",
+      "panel": "fragbit-324",
+      "code": "       struct Pixel {\n           double rgbSum[3] = {0., 0., 0.};\n           double weightSum = 0., gBufferWeightSum = 0.;\n           AtomicDouble rgbSplat[3];\n           Point3f pSum;\n           Float dzdxSum = 0, dzdySum = 0;\n           Normal3f nSum, nsSum;\n           Point2f uvSum;\n           double rgbAlbedoSum[3] = {0., 0., 0.};\n           VarianceEstimator<Float> rgbVariance[3];\n       };",
+      "full": "       struct Pixel {\n           double rgbSum[3] = {0., 0., 0.};\n           double weightSum = 0., gBufferWeightSum = 0.;\n           AtomicDouble rgbSplat[3];\n           Point3f pSum;\n           Float dzdxSum = 0, dzdySum = 0;\n           Normal3f nSum, nsSum;\n           Point2f uvSum;\n           double rgbAlbedoSum[3] = {0., 0., 0.};\n           VarianceEstimator<Float> rgbVariance[3];\n       };"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-GBufferFilmDefinition-0",
+      "panel": "fragbit-325",
+      "code": "       AnimatedTransform outputFromRender;\n       bool applyInverse;\n       Array2D<Pixel> pixels;\n       const RGBColorSpace *colorSpace;\n       Float maxComponentValue;\n       bool writeFP16;\n       Float filterIntegral;\n       SquareMatrix<3> outputRGBFromSensorRGB;",
+      "full": "       AnimatedTransform outputFromRender;\n       bool applyInverse;\n       Array2D<Pixel> pixels;\n       const RGBColorSpace *colorSpace;\n       Float maxComponentValue;\n       bool writeFP16;\n       Float filterIntegral;\n       SquareMatrix<3> outputRGBFromSensorRGB;"
+    }
+  ],
+  "supplement_blocks": [
+    {
+      "local_code": "static PixelSensor *Create(const ParameterDictionary &parameters, const RGBColorSpace *colorSpace,\n                           Float exposureTime, const FileLoc *loc, Allocator alloc);\nstatic PixelSensor *CreateDefault(Allocator alloc = {});\n",
+      "source_panels": [
+        "fragbit-278"
+      ]
+    },
+    {
+      "local_code": "Float xyzOutput[24][3];\nFloat sensorWhiteG = InnerProduct(sensorIllum, &g_bar);\nFloat sensorWhiteY = InnerProduct(sensorIllum, &Spectra::Y());\nfor (size_t i = 0; i < nSwatchReflectances; ++i) {\n    Spectrum s = swatchReflectances[i];\n    XYZ xyz = ProjectReflectance<XYZ>(s, &outputColorSpace->illuminant, &Spectra::X(),\n                                      &Spectra::Y(), &Spectra::Z()) *\n              (sensorWhiteY / sensorWhiteG);\n    for (int c = 0; c < 3; ++c)\n        xyzOutput[i][c] = xyz[c];\n}\n",
+      "source_panels": [
+        "fragbit-281",
+        "fragbit-279",
+        "fragbit-278",
+        "fragbit-289",
+        "fragbit-287",
+        "fragbit-292"
+      ]
+    },
+    {
+      "local_code": "using TaggedPointer::TaggedPointer;\n\nstatic Film Create(const std::string &name,\n                         const ParameterDictionary &parameters, Float exposureTime,\n                         const CameraTransform &cameraTransform, Filter filter, const FileLoc *loc, Allocator alloc);\n\nstd::string ToString() const;\n",
+      "source_panels": [
+        "fragbit-298"
+      ]
+    },
+    {
+      "local_code": "VisibleSurface() = default;\n\nstd::string ToString() const;\n",
+      "source_panels": [
+        "fragbit-299"
+      ]
+    },
+    {
+      "local_code": "Bounds2f SampleBounds() const;\nstd::string BaseToString() const;\n",
+      "source_panels": [
+        "fragbit-301"
+      ]
+    },
+    {
+      "local_code": "RGBFilm(FilmBaseParameters p, const RGBColorSpace *colorSpace, Float maxComponentValue = Infinity,\n        bool writeFP16 = true, Allocator alloc = {});\n\nstatic RGBFilm *Create(const ParameterDictionary &parameters, Float exposureTime, Filter filter,\n                       const RGBColorSpace *colorSpace, const FileLoc *loc,\n                       Allocator alloc);\n\nPBRT_CPU_GPU\nvoid AddSplat(Point2f p, SampledSpectrum v, const SampledWavelengths &lambda);\n\nvoid WriteImage(ImageMetadata metadata, Float splatScale = 1);\nImage GetImage(ImageMetadata *metadata, Float splatScale = 1);\n\nstd::string ToString() const;\n",
+      "source_panels": [
+        "fragbit-303"
+      ]
+    },
+    {
+      "local_code": "GBufferFilm(FilmBaseParameters p, const AnimatedTransform &outputFromRender,\n                               bool applyInverse, const RGBColorSpace *colorSpace,\n            Float maxComponentValue = Infinity, bool writeFP16 = true,\n            Allocator alloc = {});\n\nstatic GBufferFilm *Create(const ParameterDictionary &parameters, Float\n                           exposureTime, const CameraTransform &cameraTransform, Filter filter,\n                           const RGBColorSpace *colorSpace, const FileLoc *loc,\n                           Allocator alloc);\n\nPBRT_CPU_GPU\nvoid AddSample(Point2i pFilm, SampledSpectrum L,\n               const SampledWavelengths &lambda,\n               const VisibleSurface *visibleSurface, Float weight);\n\nPBRT_CPU_GPU\nvoid AddSplat(Point2f p, SampledSpectrum v, const SampledWavelengths &lambda);\n\nPBRT_CPU_GPU\nRGB ToOutputRGB(SampledSpectrum L, const SampledWavelengths &lambda) const {\n    RGB cameraRGB = sensor->ToSensorRGB(L, lambda);\n    return outputRGBFromSensorRGB * cameraRGB;\n}\n\nPBRT_CPU_GPU\nbool UsesVisibleSurface() const { return true; }\n\nPBRT_CPU_GPU\nRGB GetPixelRGB(Point2i p, Float splatScale = 1) const {\n    const Pixel &pixel = pixels[p];\n    RGB rgb(pixel.rgbSum[0], pixel.rgbSum[1], pixel.rgbSum[2]);\n\n    // Normalize pixel with weight sum\n    Float weightSum = pixel.weightSum;\n    if (weightSum != 0)\n        rgb /= weightSum;\n\n    // Add splat value at pixel\n    for (int c = 0; c < 3; ++c)\n        rgb[c] += splatScale * pixel.rgbSplat[c] / filterIntegral;\n\n    rgb = outputRGBFromSensorRGB * rgb;\n\n    return rgb;\n}\n\nvoid WriteImage(ImageMetadata metadata, Float splatScale = 1);\nImage GetImage(ImageMetadata *metadata, Float splatScale = 1);\n\nstd::string ToString() const;\n",
+      "source_panels": [
+        "fragbit-323"
+      ]
+    },
+    {
+      "local_code": "AnimatedTransform outputFromRender;\nbool applyInverse;\nArray2D<Pixel> pixels;\nconst RGBColorSpace *colorSpace;\nFloat maxComponentValue;\nbool writeFP16;\nFloat filterIntegral;\nSquareMatrix<3> outputRGBFromSensorRGB;\n",
+      "source_panels": [
+        "fragbit-325"
+      ]
+    }
+  ]
+}

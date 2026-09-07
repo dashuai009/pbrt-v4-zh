@@ -4,7 +4,7 @@
 
 #parec[The following code is present in the fixed original’s expandable panels. Definitions already shown above are not repeated.][以下代码来自固定原书的折叠面板；前文已展示的定义不再重复。]
 
-#block(sticky: true)[#link("https://pbr-book.org/4ed/Sampling_Algorithms/Sampling_1D_Functions.html#fragbit-2652")[#raw("PiecewiseConstant1D — additional methods")]]
+#block(sticky: true)[#link("https://pbr-book.org/4ed/Sampling_Algorithms/Sampling_1D_Functions.html#fragbit-2652")[#ez_caption[PiecewiseConstant1D — additional methods][PiecewiseConstant1D 的额外方法]]]
 
 #block(breakable: false)[
 ```cpp

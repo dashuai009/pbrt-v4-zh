@@ -41,3 +41,39 @@
 源问题单独说明而未静默改算法：Euler段edges/vertices误称；边函数正文左右符号与公式/图注相反；重心射线式(1-b0-b1)不符后文b1/b2；源码先改b1再用新b1+b2归一化b2不能确保sum≤1（0.8/0.8例）；Find cos beta prime标题实际求边弧bbar′的cos而非内角β′；cosθ_l被文字称夹角；LookUpOrAdd大小写与代码不同。原句/代码保留并明确校注。译文不宣称这些源代码问题已解决。
 
 Typst0.13.1三语局部编译通过（/tmp/audit-triangle-preview-{zh,en,bi}.pdf），集成后双语再编/tmp/audit-triangle-final-bi.pdf；实际查看着色段28页、球面余弦42页、立体角采样场景图35页，恢复公式/图像/脚注清晰无裁切。源HTML对应的pha06fNN.svg直接复用；Ganesha与采样场景图已进一步改用HTML指定的ganesha.png、tri-sample-image.png，待本批最后重渲检查；未重新绘图或另存翻译。临时正文/入口已删除。6.5尚未释放，待6.6完成本小批后一起交独立复核。
+
+## 批次3释放：6.5–6.6（awaiting_review）
+
+6.5上条进行中记录的范围现完成；已将Ganesha/采样场景图改为原HTML指定PNG并实际重渲查看 /tmp/audit-mesh-batch-2.png、-35.png，图注完整、未裁切。6.5式标签最终采用固定源edge-function、edge-function-00、tri-inverse-uv-diffs、spherical-tri-cos-betap、sph-tri-cos-bbar、spherical-triangle-arc-sample。所有新图与公式都从同一正文供PDF/Web复用，不存在另份中文稿。
+
+6.6固定Bilinear_Patches.html全页逐段重读，完整67个可见代码、5式6.11–6.15及其余无编号式、7图6.22–6.28、1条二次系数与平面系数不同的脚注、158折叠面板覆盖。原稿大量代码被作为parec正文甚至重复中文翻译、面积积分漏失、normal段重复一遍，且在采样入口后整段结束；已按源重建，旧稿保存在audit/quarantine/chapter-6.6-before-initial-review.typ.txt。不把原先“!!!! 缺东西”提示直接删去就当完成，已补全对应全部范围。
+
+重建包含：四角参数化/双直纹、Mesh共享属性、allMeshes并发重分配下构造函数不能调用GetMesh条件、矩形共面/相对误差判断、近似面积缓存、单/双交点与最小距离推导、t/v行列式范数分母、二次方程两根与eps/tMax筛选、位置/纹理参数(u,v)/(s,t)区分、着色几何、面积采样图像分布/近似Jacobian/矩形三分支、PDF参数域→面积→立体角转换、1e-4矩形球面阈值、ns退化不变换、0.01权重下限、球面矩形逆采样及PDF一致分支。所有否定/约束保留；“阴影几何/法线”“补丁/磁盘”类型误译改为着色几何/法向量/双线性面片，面积取样不会误称对参考点采样。标题Bilinear拼错修复，既有billinear-patches标签保留稳定引用；子节用独有bilinear-intersection-tests和bilinear-patch-sampling，避免旧重复标签。
+
+6.6折叠唯一额外：727网格接口、729面片额外接口、741法向量偏导按纹理参数转换、755近似面积网格、763退化为三角形的法向量范围、765其余角法向量、774第二根完整处理、820面积采样几何与退化返回、823采样法向量朝向，存supplements/6.6-expanded.typ。839的PDF偏导只映射820已列的pu0/pu1/dpdu/dpdv计算，不重复p及采样专用return。球面矩形采样/逆采样在固定页仅有声明，无隐藏实现，未发明软件源码；基本形式复用6.2，epsilon和交点/采样误差界定位6.8，不复制。补充先写齐，再一次写正文。
+
+6.6源问题保留明确注：原代码用单个偏导数倒数构造逆参数导数，一般耦合映射不等于逆Jacobian；以s=u+v,t=u-v给出可直接复核的1/2与1差异，未改源码。正文3×3点黎曼和措辞与折叠实际4×4顶点/3×3面积贡献区别也明确标注。未将源码缺陷猜改后标已验证。
+
+批次验证：85+67=152个正文可见代码体按源顺序核对token一致，仅数学片段名称解码；6.6单节三语、6.5/6.6集成三语Typst0.13.1编译通过（/tmp/audit-mesh-batch-{zh,en,bi}.pdf，真实Moller97源引用及完整References，外节ref占位）。实际看6.6 t/v行列式页/tmp/audit-bilinear-preview-13.png与图像发射两采样图21页/tmp/audit-bilinear-preview-21.png，数学式/代码/两图/图注完整。此前6.5着色脚注28页、球面余弦42页和本次原PNG代表页均已查看。局部计数不作为全书图号证据；网页手机/全书最终验收仍由主agent处理。临时文件清理，diff检查通过。6.5/6.6及两supplement现在释放，不再改。
+
+进度：6.0–6.6均已初校待复核；6.7–6.10仍待初校，继续。
+
+## 批次4释放：6.9–6.10（awaiting_review）
+
+固定Further_Reading.html和Exercises.html完整读对。6.9全28个parec对应的正文范围（源一个长段可能拆为两个）及Intersection Accuracy/Sampling Shapes两个小标题完成初校；无图、表、代码、脚注、隐藏fold。恢复丢失的Sampling Shapes小标题，将求交精度从正文分离成双语小标题；gamma_n、2gamma_2/2gamma_3由固定SVG标题与下标位置恢复，不再排成2²/2³。Dutré重音及Arvo 2001a年份以固定源恢复。全部引用使用source-cite源ID，读对源References书目并映射既有统一backmatter，不重复维护参考文献。修正着色法向量使反射射线落到真实表面错误一侧（原误泛称偏离）、圆柱包围曲线的递归剔除、圆盘结构化样本降低误差（非分布误差）、立体角/投影立体角区别、根细化、面片/图元/包围盒；保留采样拒绝、CDF数值反演、仅作者所知范围等限定。原文跨节href由失效相对路径变成固定官方页链接；这不是本地网站全量跨节导航验收。
+
+6.10全部20题逐题原文对照，恢复每题序号与①②③难度；原有分拆段落仍归各题，不把每段算新题。补回遗漏图6.47及完整双语图注/正文指引，直接使用原pha06f47.svg与polygon-project标签。修复二次曲面矩阵左向量误为列向量，偏导partial字面文本改真正∂，同步核对其余无编号数学（一般二次式、变换矩阵Q′、phiMax<3pi/2、缩放(2,1,4)）。无代码块、表、脚注、隐藏fold。修正light误射线→光源、圆柱采样必须从接收点看可见、CSG集合差、behind ray origin为起点后方非有效交点、点密度概率判交、mesh图元/双线性面片/法向量等，保留全部性能/方差/MSE/遮挡/BSDF条件与所有开放问题。恢复文献真实source-cite。
+
+源问题：习题1原文theta_max与2pi对比疑应方位角phi_max，保留源符号并校注。习题10原源Amanatides和Mitchell1990误指Mitchell90，依据源References题名Some regularization problems in ray tracing改为Amanatides:1990:SRP，译注明确依据而非静默更改。
+
+验证：Typst0.13.1+fonts三语局部编译通过/tmp/audit-shapes-tail-{zh,en,bi}.pdf；实际查看双语9页采样书目、11页二次矩阵及15页恢复图6.47，内容无裁切。11页显示公式后的逗号另起行，最后把标点并入展示式，待独立复核再确认。局部图编号1.1不代表全书编号；未声称网页/最终全书视觉验收。临时入口删除。6.9/6.10现释放；6.7/6.8继续，尚未初校。
+
+## 批次5释放：6.7（awaiting_review）
+
+固定Curves.html全页逐段读对，重建51个非空正文段、三类曲线列表、34可见文学代码片段、9图6.29–6.37（包括Jeri加载的bunny-fur.png）、式6.16及全部边函数/垂直向量/点到直线距离与参数w无编号式、1条曲线一维/Shape二维术语脚注。无表/书目/习题。原稿大段缺失，代码被重复翻译且尾部转义破坏，数学英文/中文严重错位，旧稿保存audit/quarantine/chapter-6.7-before-initial-review.typ.txt。新增supplements/6.7-expanded.typ收录7处额外折叠：885额外公共接口（去掉正文已有构造/NormalBounds）、886私有声明、888CurveCommon声明、895深度计算、898子段包围测试、903末端边函数、915误差界。源共66折叠（885–950），其余为34可见片段的展开/组合或上述7项重复；全书真实实现检索未发现这些额外实现已在他处可见。
+
+全部中英段/标题/完整图注对照，恢复三种曲线与非物理真实形状的限制、共享CurveCommon、阴影射线提前返回/普通射线两子段择近、局部w与全曲线u区别、Ribbon球面插值/朝向宽度、退化方向/零分母、端点边界、tMax约束、着色偏导/圆柱法线外观。原文SVG实际是p(u)，旧稿p_B为转换添加，已据SVG use字形恢复p(u)；下标分组及偏导统一校准，34/34代码体按token与固定源一致（忽略空白及数学片段名显示转写），代码未改算法。
+
+源疑点明确校注而保留：最近点段先说width而后段/代码为half width；Ribbon叉积等于单位法向量一般只应视为方向关系；朝向宽度文字说cos而代码AbsDot取绝对值。完整保留代码，未猜改。
+
+验证：Typst0.13.1+fonts最终三语局部编译通过/tmp/audit-curves-{zh,en,bi}.pdf；实看3页贝塞尔公式/脚注、5页三曲线列表与图、13页递归代码、16页线性近似/最近点图与点积距离式、18页Ribbon与半宽/t范围。视觉检查发现原HTML未闭合li导致解析嵌套，已手工恢复三条中英列表并重渲查看/tmp/audit-curves-5-final.png；这不能靠编译替代检查。p(u)公式复看/tmp/audit-curves-3-final.png。局部编号不作为全书图号证据。临时入口删除，6.7及supplement释放不再写，6.8仍待初校。

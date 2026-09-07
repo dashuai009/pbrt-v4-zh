@@ -4,6 +4,8 @@ cd "$(dirname "$0")/.."
 export PATH="$PWD/.tools/bin:$PATH"
 export PAGES_BASE_PATH="${PAGES_BASE_PATH:-/pbrt-v4-zh/}"
 mkdir -p output
+node tooling/build-snapshot.mjs start
+node --test tooling/review-state.test.mjs
 node tooling/original-citations.mjs
 node tooling/citation-map.mjs
 node tooling/content-check.mjs
@@ -30,3 +32,5 @@ node tooling/compact-html.mjs output/site
 node tooling/search-index.mjs output/site
 node tooling/finalize-site.mjs output/site
 node tooling/check-links.mjs output/site
+
+node tooling/build-snapshot.mjs end

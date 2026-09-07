@@ -4,7 +4,7 @@
 
 #parec[The following code is present in the fixed original’s expandable panels. Definitions already shown above are not repeated.][以下代码来自固定原书的折叠面板；前文已展示的定义不再重复。]
 
-#block(sticky: true)[#link("https://pbr-book.org/4ed/Sampling_Algorithms/Sampling_Multidimensional_Functions.html#fragbit-2674")[#raw("PiecewiseConstant2D — additional methods")]]
+#block(sticky: true)[#link("https://pbr-book.org/4ed/Sampling_Algorithms/Sampling_Multidimensional_Functions.html#fragbit-2674")[#ez_caption[PiecewiseConstant2D — additional methods][PiecewiseConstant2D 的额外方法]]]
 
 #block(breakable: false)[
 ```cpp
@@ -23,7 +23,7 @@ PiecewiseConstant2D(const Array2D<Float> &data, Bounds2f domain, Allocator alloc
 ```
 ]
 
-#block(sticky: true)[#link("https://pbr-book.org/4ed/Sampling_Algorithms/Sampling_Multidimensional_Functions.html#fragbit-2674")[#raw("PiecewiseConstant2D — additional methods")]]
+#block(sticky: true)[#link("https://pbr-book.org/4ed/Sampling_Algorithms/Sampling_Multidimensional_Functions.html#fragbit-2674")[#ez_caption[PiecewiseConstant2D — additional methods][PiecewiseConstant2D 的额外方法]]]
 
 #block(breakable: false)[
 ```cpp
@@ -49,7 +49,7 @@ static void TestCompareDistributions(const PiecewiseConstant2D &da,
 ```
 ]
 
-#block(sticky: true)[#link("https://pbr-book.org/4ed/Sampling_Algorithms/Sampling_Multidimensional_Functions.html#fragbit-2674")[#raw("PiecewiseConstant2D — additional methods")]]
+#block(sticky: true)[#link("https://pbr-book.org/4ed/Sampling_Algorithms/Sampling_Multidimensional_Functions.html#fragbit-2674")[#ez_caption[PiecewiseConstant2D — additional methods][PiecewiseConstant2D 的额外方法]]]
 
 #block(breakable: false)[
 ```cpp
@@ -69,7 +69,7 @@ pstd::optional<Point2f> Invert(Point2f p) const {
 ```
 ]
 
-#block(sticky: true)[#link("https://pbr-book.org/4ed/Sampling_Algorithms/Sampling_Multidimensional_Functions.html#fragbit-2680")[#raw("SummedAreaTable — additional declaration")]]
+#block(sticky: true)[#link("https://pbr-book.org/4ed/Sampling_Algorithms/Sampling_Multidimensional_Functions.html#fragbit-2680")[#ez_caption[SummedAreaTable — additional declaration][SummedAreaTable 的额外声明]]]
 
 ```cpp
 std::string ToString() const;

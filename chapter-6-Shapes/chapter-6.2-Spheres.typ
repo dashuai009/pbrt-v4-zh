@@ -143,7 +143,7 @@ bool reverseOrientation, transformSwapsHandedness;
 #parec[
   Computing an object-space bounding box for a sphere is straightforward. The implementation here uses the values of $z_(upright("min"))$ and $z_(upright("max"))$ provided by the user to tighten up the bound when less than an entire sphere is being rendered. However, it does not do the extra work to compute a tighter bounding box when $phi.alt_(upright("max"))$ is less than $3 pi \/ 2$. This improvement is left as an exercise. This object-space bounding box is transformed to rendering space before being returned.
 ][
-  计算球体的对象空间包围盒是相对简单的。这里的实现使用用户提供的 $z_(upright("min"))$ 和 $z_(upright("max"))$ 值来表示在渲染不完整的球体时收紧包围盒。然而，当 $phi.alt_(upright("max"))$ 小于 $3 pi \/ 2$ 时，它并没有进行额外的计算来得到更紧的包围盒。这一改进留作练习。这个对象空间包围盒在返回之前会被转换到渲染空间。
+  计算球体的对象空间包围盒是相对简单的。这里的实现使用用户提供的 $z_(upright("min"))$ 和 $z_(upright("max"))$ 值在渲染不完整球体时收紧包围盒。然而，当 $phi.alt_(upright("max"))$ 小于 $3 pi \/ 2$ 时，它并没有进行额外的计算来得到更紧的包围盒。这一改进留作练习。这个对象空间包围盒在返回之前会被转换到渲染空间。
 ]
 
 #block(sticky: true)[#raw("<<Sphere Method Definitions>>=")] <fragment-SphereMethodDefinitions-0>
@@ -296,7 +296,7 @@ Interval t0, t1;
 #parec[
   Given Interval, @eqt:sphere-isect-coeffs directly translates to the following fragment of source code.
 ][
-  @eqt:sphere-isect-coeffs 直接转换为以下源代码片段。
+  有了 `Interval`，@eqt:sphere-isect-coeffs 就可以直接转写为以下源代码片段。
 ]
 
 #block(sticky: true)[#raw("<<Compute sphere quadratic coefficients>>=")] <fragment-Computespherequadraticcoefficients-0>
@@ -629,7 +629,7 @@ Normal3f dndv = Normal3f((g * F - f * G) * invEGF2 * dpdu +
 #parec[
   1. The intersection point is provided as a Point3i that takes the pHit point computed earlier and an error bound pError that is initialized in the fragment ⟨Compute error bounds for sphere intersection⟩, which is defined later, in @bounding-intersection-point-error.
 
-  2. The SurfaceInteraction is initialized with object-space geometric quantities (pHit, dpdu, etc.) and is then transformed to rendering space when it is returned. However, one of the parameters is the outgoing direction, $omega_O$. This is passed in to `InteractionFromIntersection()`, but must be transformed to object space before being passed to the constructor so that the returned `Interaction::wo` value is in rendering space again.
+  2. The SurfaceInteraction is initialized with object-space geometric quantities (pHit, dpdu, etc.) and is then transformed to rendering space when it is returned. However, one of the parameters is the outgoing direction, $omega_o$. This is passed in to `InteractionFromIntersection()`, but must be transformed to object space before being passed to the constructor so that the returned `Interaction::wo` value is in rendering space again.
 
   3. The flipNormal parameter indicates whether the surface normal should be flipped after it is initially computed with the cross product of dpdu and dpdv. This should be done either if the ReverseOrientation directive has been enabled or if the object-to-rendering-space transform swaps coordinate system handedness (but not if both of these are the case). (The need for the latter condition was discussed in @surface-interaction .)
 ][
@@ -689,7 +689,7 @@ $ f prime (z) = - z / sqrt(r^2 - z^2) . $
 
 $
   A & = phi.alt_("max") integral_(z_("min"))^(z_("max")) sqrt(r^2 - z^2) sqrt(1 + frac(z^2, r^2 - z^2)) thin d z\
-  & = phi.alt_("max") integral_(z_("min"))^(z_("max")) sqrt(r^2) thin d z\
+  & = phi.alt_("max") integral_(z_("min"))^(z_("max")) sqrt(r^2 - z^2 + z^2) thin d z\
   & = phi.alt_("max") integral_(z_("min"))^(z_("max")) r thin d z\
   & = phi.alt_("max") thin r (z_("max") - z_("min")) .
 $
@@ -759,7 +759,7 @@ Point2f uv(phi / phiMax, (theta - thetaZMin) / (thetaZMax - thetaZMin));
 #parec[
   The associated `PDF()` method returns the same PDF.
 ][
-  相关的 `PDF()` 方法返回相同的概率密度函数。
+  相应的 `PDF()` 方法返回相同的概率密度值。
 ]
 
 #block(sticky: true)[#raw("<<Sphere Public Methods>>+=")] <fragment-SpherePublicMethods-7>
@@ -787,7 +787,7 @@ pstd::optional<ShapeSample> Sample(const ShapeSampleContext &ctx,
 #parec[
   For points that lie inside the sphere, the entire sphere should be sampled, since the whole sphere is visible from inside it. Note that the reference point used in this determination, `pOrigin`, is computed using the `OffsetRayOrigin()` function. Doing so ensures that if the reference point came from a ray intersecting the sphere, the point tested does not lie on the wrong side of the sphere due to rounding error.
 ][
-  对于位于球体内部的点，应对整个球体进行采样，因为从内部可以看到整个球体。请注意，用于此判断的参考点 `pOrigin` 是通过 `OffsetRayOrigin()` 函数计算的。这样做可以确保如果参考点来自与球体相交的光线，则由于舍入误差导致测试点不会位于球体的错误一侧。
+  对于位于球体内部的点，应对整个球体进行采样，因为从内部可以看到整个球体。请注意，用于此判断的参考点 `pOrigin` 是通过 `OffsetRayOrigin()` 函数计算的。这样做可以确保如果参考点来自与球体相交的光线，测试点也不会因舍入误差而落在球体的错误一侧。
 ]
 
 #block(sticky: true)[#raw("<<Sample uniformly on sphere if p is inside it>>=")] <fragment-Sampleuniformlyonsphereifptisinsideit-0>
@@ -873,9 +873,9 @@ $
 $ <sphere-sample-eqt>
 
 #parec[
-  where $r$ is the radius of the sphere and $p_c$ is its center (@fig:sphere-sample-fig ). The sampling method here computes the cosine of the subtended angle $theta_("max")$ using @eqt:sphere-sample-eqt and then uniformly samples directions inside this cone of directions using an approach that is derived for the `SampleUniformCone()` function in Section A.5.4, sampling an offset $theta$ from the center vector $omega_c$ and then uniformly sampling a rotation angle $phi.alt$. That function is not used here, however, as we will need some of the intermediate values in the following fragments.
+  where $r$ is the radius of the sphere and $p_c$ is its center (@fig:sphere-sample-fig ). The sampling method here computes the cosine of the subtended angle $theta_("max")$ using @eqt:sphere-sample-eqt and then uniformly samples directions inside this cone of directions using an approach that is derived for the `SampleUniformCone()` function in Section A.5.4, sampling an offset $theta$ from the center vector $omega_c$ and then uniformly sampling a rotation angle $phi.alt$ around the vector. That function is not used here, however, as we will need some of the intermediate values in the following fragments.
 ][
-  其中 $r$ 是球体的半径， $p_c$ 是其中心（@fig:sphere-sample-fig ）。这里的采样方法使用@eqt:sphere-sample-eqt 计算张角 $theta_("max")$ 的余弦值，然后使用在第 A.5.4 节中为 `SampleUniformCone()`函数推导的方法，在该方向圆锥内均匀采样方向，采样从中心向量 $omega_c$ 的偏移 $theta$ ，然后均匀采样旋转角度 $phi.alt$。然而，这里不使用该函数，因为我们将在接下来的片段中需要一些中间值。
+  其中 $r$ 是球体的半径， $p_c$ 是其中心（@fig:sphere-sample-fig ）。这里的采样方法使用@eqt:sphere-sample-eqt 计算张角 $theta_("max")$ 的余弦值，然后使用在第 A.5.4 节中为 `SampleUniformCone()`函数推导的方法，在该方向圆锥内均匀采样方向，采样从中心向量 $omega_c$ 的偏移 $theta$ ，然后均匀采样绕该向量的旋转角度 $phi.alt$。然而，这里不使用该函数，因为我们将在接下来的片段中需要一些中间值。
 ]
 
 
@@ -992,7 +992,7 @@ Float sinAlpha = SafeSqrt(1 - Sqr(cosAlpha));
 #parec[
   The angle $alpha$ and $phi.alt$ give the spherical coordinates for the sampled direction with respect to a coordinate system with $z$ axis centered around the vector from the reference point to the sphere center. We can use an instance of the `Frame` class to transform the direction from that coordinate system to rendering space. The surface normal on the sphere can then be computed as the negation of that vector and the point on the sphere can be found by scaling by the radius and translating by the sphere's center point.
 ][
-  角度 $alpha$ 和 $phi.alt$ 给出了相对于从参考点到球心的向量为中心的坐标系的采样方向的球面坐标。我们可以使用 `Frame` 类的一个实例将方向从该坐标系转换到渲染空间。然后可以通过取该向量的负值来计算球面上的法向量。通过按半径缩放并通过球心点平移，可以找到球面上的点。
+  角度 $alpha$ 和 $phi.alt$ 给出了采样方向的球面坐标；所用坐标系的 $z$ 轴沿从参考点指向球心的向量。我们可以使用 `Frame` 类的一个实例将方向从该坐标系转换到渲染空间。然后可以通过取该向量的负值来计算球面上的法向量。通过按半径缩放并通过球心点平移，可以找到球面上的点。
 ]
 
 #block(sticky: true)[#raw("<<Compute surface normal and sampled point on sphere>>=")] <fragment-Computesurfacenormalandsampledpointonsphere-0>
@@ -1068,7 +1068,7 @@ if (!isect) return 0;
 #parec[
   In turn, the uniform area density of one over the surface area is converted to a solid angle density following the same approach as was used in the previous `Sample()` method.
 ][
-  接着，使用与之前 `Sample()` 方法中相同的方法将均匀面积密度转换为以立体角为测度的概率密度。
+  接着，沿用前一个 `Sample()` 方法中的转换方式，将值为表面积倒数的均匀面积概率密度转换为立体角概率密度。
 ]
 
 #block(sticky: true)[#raw("<<Compute PDF in solid angle measure from shape intersection point>>=")] <fragment-ComputePDFinsolidanglemeasurefromshapeintersectionpoint-0>
@@ -1110,5 +1110,7 @@ if (sin2ThetaMax < 0.00068523f /* sin^2(1.5 deg) */)
 
 
 #parec[Source notes: the prose says `Intersection()`, `Point3i`, and `std::atan()`, while the accompanying code uses `Intersect()`, `Point3fi`, and `std::atan2()`. It also describes $theta$ as normalized to $[0,1]$ where the code actually normalizes $v$, and calls $r^2$ a distance where the conversion formula and `DistanceSquared()` require a squared distance. These source wordings are preserved above.][原文校注：文字写作 `Intersection()`、`Point3i`、`std::atan()`，对应代码则使用 `Intersect()`、`Point3fi`、`std::atan2()`。文字还称 $theta$ 归一化到 $[0,1]$，代码实际归一化的是 $v$；面积与立体角转换段将 $r^2$ 称为距离，而公式和 `DistanceSquared()` 使用的是距离平方。上文保留原文措辞，特此说明。]
+
+#parec[Implementation scope note: the source code above samples the complete object-space sphere with `SampleUniformSphere()` and does not apply the clipping parameters in that sampling step. Its `Area()` and cone sampling calculations also use the object-space `radius`, without accounting for area changes under a general object-to-rendering transformation. Thus, the support for partial spheres and ellipsoids described for geometric representation and intersection must not be read as a guarantee that these sampling routines cover those cases. The source code is retained unchanged.][实现范围校注：上述原书代码用 `SampleUniformSphere()` 对对象空间中的完整球面采样，未在该采样步骤中应用裁剪参数。`Area()` 及圆锥采样计算也直接使用对象空间的 `radius`，没有计入一般对象到渲染空间变换引起的面积变化。因此，前文在几何表示与求交方面支持部分球体及椭球体，不应被理解为这些采样例程也已覆盖相应情况。原书代码保持不变。]
 
 #include "supplements/6.2-expanded.typ"

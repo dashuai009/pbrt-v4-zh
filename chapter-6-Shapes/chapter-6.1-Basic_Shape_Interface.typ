@@ -43,7 +43,7 @@ Bounds3f Bounds() const;
 #parec[
   In addition to bounding their spatial extent, shapes must also be able to bound their range of surface normals. The `NormalBounds()` method should return such a bound using a #link("https://pbr-book.org/4ed/Geometry_and_Transformations/Spherical_Geometry.html#DirectionCone")[`DirectionCone`], which was defined in @bounding-directions . Normal bounds are specifically useful in lighting calculations: when a shape is emissive, they sometimes make it possible to efficiently determine that the shape does not illuminate a particular point in the scene.
 ][
-  除了限制其空间范围外，几何形状还必须能够限制其表面法向量的范围。在@bounding-directions 中定义的#link("https://pbr-book.org/4ed/Geometry_and_Transformations/Spherical_Geometry.html#DirectionCone")[`DirectionCone`]，`NormalBounds()`方法返回了这样的法向量范围。法向量范围在光照计算中特别有用：当一个形状是发光的时，它们有时可以有效地确定该形状不会照亮场景中的特定点。
+  除了给出自身空间范围的包围界，形状还必须能够给出表面法向量方向范围的包围界。`NormalBounds()` 应使用 @bounding-directions 中定义的 #link("https://pbr-book.org/4ed/Geometry_and_Transformations/Spherical_Geometry.html#DirectionCone")[`DirectionCone`] 返回这一范围界。它在光照计算中特别有用：当形状发光时，有时可以利用它高效地判断该形状不会照亮场景中的某个特定点。
 ]
 
 #block(sticky: true)[#raw("<<Shape Interface>>+=")] <fragment-ShapeInterface-1>
@@ -64,7 +64,7 @@ DirectionCone NormalBounds() const;
 #parec[
   One way to think of bounding boxes is as the intersection of three slabs, where a slab is the region of space between two parallel planes. To intersect a ray with a box, we intersect the ray with each of the box's three slabs in turn. Because the slabs are aligned with the three coordinate axes, a number of optimizations can be made in the ray-slab tests.
 ][
-  可以将包围盒视为三个夹层的交集，其中一个夹层是两个平行平面之间的空间区域。要与一个盒子相交光线，我们依次与盒子的每个平行平面夹层相交。因为平行平面夹层与三个坐标轴对齐，所以在光线-夹层测试中可以进行许多优化。
+  可以将包围盒视为三个夹层的交集，其中一个夹层是两个平行平面之间的空间区域。要求射线与包围盒的交点，我们依次对射线和包围盒的三个夹层求交。因为平行平面夹层与三个坐标轴对齐，所以在光线-夹层测试中可以进行许多优化。
 ]
 
 #parec[
@@ -192,7 +192,7 @@ if (t0 > t1) return false;
 #parec[
   This version of the method also takes precomputed values that indicate whether each direction component is negative, which makes it possible to eliminate the comparisons of the computed `tNear` and `tFar` values in the original routine and to directly compute the respective near and far values. Because the comparisons that order these values from low to high in the original code are dependent on computed values, they can be inefficient for processors to execute, since the computation of their values must be finished before the comparison can be made. Because many ray-bounds intersection tests may be performed during rendering, this small optimization is worth using.
 ][
-  这个版本的方法还接受预先计算的值，这些值指示每个方向分量是否为负，这使得可以消除原始例程中计算的 `tNear` 和 `tFar` 值的比较，并直接计算相应的近和远值。 因为原始代码中从低到高排序这些值的比较依赖于计算值，所以它们对于处理器执行可能效率不高，因为必须在进行比较之前完成其值的计算。 因为在渲染过程中可能会执行许多光线与边界的求交测试，所以这个小优化值得使用。
+  这个版本的方法还接受预先计算的值，这些值指示每个方向分量是否为负，这使得可以消除原始例程中计算的 `tNear` 和 `tFar` 值的比较，并直接计算相应的近和远值。 因为原始代码中从低到高排序这些值的比较依赖于计算值，所以它们对于处理器执行可能效率不高，因为必须在进行比较之前完成其值的计算。 因为在渲染过程中可能会执行许多射线与包围盒的求交测试，所以这个小优化值得使用。
 ]
 
 #parec[
@@ -248,7 +248,7 @@ if (tyMax < tMax) tMax = tyMax;
 <intersection-tests_chapter_6_1>
 
 #parec[
-  `Shapes` implementations must provide an implementation of two methods that test for ray intersections with their shape. The first, `Intersect()`, returns geometric information about a single ray-shape intersection corresponding to the first intersection, if any, in the $(0 , upright("tMax"))$ parametric range along the given ray.
+  `Shape` implementations must provide an implementation of two methods that test for ray intersections with their shape. The first, `Intersect()`, returns geometric information about a single ray-shape intersection corresponding to the first intersection, if any, in the $(0 , upright("tMax"))$ parametric range along the given ray.
 ][
   每种形状必须实现两个方法，用于测试射线是否与形状相交。第一个方法 `Intersect()` 返回关于单个射线与形状交点的几何信息，该交点对应于给定射线在 $(0 , upright("tMax"))$ 参数范围内的第一个交点（如果有的话）。
 ]
@@ -327,7 +327,7 @@ bool IntersectP(const Ray &ray, Float tMax = Infinity) const;
 #parec[
   Shapes like Sphere that operate in object space must transform the specified ray to object space and then transform any intersection results back to rendering space. Most of this is handled easily using associated methods in the Transform class that were introduced in Section 3.10, though a natural question to ask is, "What effect does the object-from-rendering-space transformation have on the correct parametric distance to return?" The intersection method has found a parametric $t$ distance to the intersection for the object-space ray, which may have been translated, rotated, scaled, or worse when it was transformed from rendering space.
 ][
-  像球体这样的形状在对象空间中操作，必须将指定的射线转换为对象空间，然后将任何交点结果转换回渲染空间。 大多数情况下，这可以使用在变换类中引入的相关方法轻松处理，尽管一个自然的问题是，"从渲染空间到对象空间的变换对返回的正确参数距离有什么影响？" 交点方法已经找到了对象空间射线与交点的参数化 $t$ 距离，当它从渲染空间转换时，可能已经被平移、旋转、缩放或更复杂的变换。
+  像球体这样的形状在对象空间中操作，必须将指定的射线转换为对象空间，然后将任何交点结果转换回渲染空间。 大部分工作都可以用第 3.10 节介绍的 `Transform` 类相关方法轻松完成，不过自然会有这样一个问题：“从渲染空间到对象空间的变换会怎样影响应当返回的正确参数距离？” 交点方法已经找到了对象空间射线与交点的参数化 $t$ 距离，当它从渲染空间转换时，可能已经被平移、旋转、缩放或更复杂的变换。
 ]
 
 #parec[
@@ -349,7 +349,7 @@ $
 #parec[
   Now consider the rendering-space intersection point $p_r$ that is found by applying $upright(bold(M))$ 's inverse to both sides of that equation:
 ][
-  现在考虑通过对该方程两边应用 $upright(bold(M))$ 的逆 找到的渲染空间交点 $p_r$ ：
+  现在考虑通过对该方程两边应用 $upright(bold(M))$ 的逆变换得到的渲染空间交点 $p_r$ ：
 ]
 
 $
@@ -370,7 +370,7 @@ $
 #parec[
   Many rendering systems, particularly those based on scanline or z-buffer algorithms, support the concept of shapes being "one-sided"—the shape is visible if seen from the front but disappears when viewed from behind. In particular, if a geometric object is closed and always viewed from the outside, then the backfacing parts of it can be discarded without changing the resulting image. This optimization can substantially improve the speed of these types of hidden surface removal algorithms. The potential for improved performance is reduced when using this technique with ray tracing, however, since it is often necessary to perform the ray-object intersection before determining the surface normal to do the backfacing test. Furthermore, this feature can lead to a physically inconsistent scene description if one-sided objects are not in fact closed. For example, a surface might block light when a shadow ray is traced from a light source to a point on another surface, but not if the shadow ray is traced in the other direction. For all of these reasons, `pbrt` does not support this feature.
 ][
-  许多渲染系统，特别是那些基于扫描线或 z-buffer算法的系统，支持形状为“单面”的概念——当从正面看到时形状可见，但从背面看时消失。 特别是，如果几何对象是封闭的并且总是从外部查看，则其背面的部分可以被丢弃而不改变生成的图像。 这种优化可以显著提高这些类型的隐藏表面移除算法的速度。 然而，当与光线追踪一起使用时，这种技术的性能提升潜力会降低，因为通常需要在进行背面测试之前执行射线-对象交点。 此外，如果单面对象实际上不是封闭的，这个特性可能导致物理上不一致的场景描述。 例如，当从光源到另一个表面上的某一点跟踪阴影射线时，表面可能会阻挡光线，但如果阴影射线朝另一个方向跟踪，则不会。 出于所有这些原因，`pbrt` 不支持此功能。
+  许多渲染系统，特别是那些基于扫描线或 z-buffer算法的系统，支持形状为“单面”的概念——当从正面看到时形状可见，但从背面看时消失。 特别是，如果几何对象是封闭的并且总是从外部查看，则其背面的部分可以被丢弃而不改变生成的图像。 这种优化可以显著提高这些类型的隐藏表面移除算法的速度。 然而，当与光线追踪一起使用时，这种技术的性能提升潜力会降低，因为通常必须先对射线与对象求交，才能确定表面法向量并进行背面测试。 此外，如果单面对象实际上不是封闭的，这个特性可能导致物理上不一致的场景描述。 例如，当从光源到另一个表面上的某一点跟踪阴影射线时，表面可能会阻挡光线，但如果阴影射线朝另一个方向跟踪，则不会。 出于所有这些原因，`pbrt` 不支持此功能。
 ]
 
 
@@ -393,7 +393,7 @@ Float Area() const;
 #parec[
   A few methods are necessary to sample points on the surface of shapes in order to use them as emitters. Additional `Shape` methods make this possible.
 ][
-  为了将几何形状用作光线发射体，需要一些方法来在形状表面上采样点。
+  为了将形状用作发光体，需要若干方法在形状表面上采样点。`Shape` 提供了额外的方法来实现这一功能。
 ]
 
 #parec[
@@ -444,7 +444,7 @@ Float PDF(const Interaction &) const;
 #parec[
   Unlike the first #link(<Shape>)[`Shape`] sampling method, which generates points on the shape according to a probability density with respect to surface area on the shape, the second one uses a density with respect to solid angle from the reference point. This difference stems from the fact that the area light sampling routines evaluate the direct lighting integral as an integral over directions from the reference point—expressing these sampling densities with respect to solid angle at the point is more convenient.
 ][
-  与第一种以形状表面积为测度生成样本的 #link(<Shape>)[`Shape`] 采样方法不同，第二种方法的概率密度以参考点处的立体角为测度。这种差异源于这样一个事实，即面光源采样例程将直接照明积分评估为从参考点的方向积分——在该点用立体角表示这些采样密度更为方便。
+  与第一种以形状表面积为测度生成样本的 #link(<Shape>)[`Shape`] 采样方法不同，第二种方法的概率密度以参考点处的立体角为测度。这种差异源于这样一个事实，即面光源采样例程将直接光照积分表示为对从参考点出发的各个方向的积分——在该点用立体角表示这些采样密度更为方便。
 ]
 
 #block(sticky: true)[#raw("<<Shape Interface>>+=")] <fragment-ShapeInterface-7>

@@ -114,3 +114,5 @@
 ][
   与图像处理和理解中的许多其他领域一样，机器学习也被用于渲染图像去噪。Kalantari 等人（#source-cite("Kalantari2015")）率先用较小的神经网络确定传统去噪滤波器的参数。随后，Bako 等人（#source-cite("Bako2017")）、Chaitanya 等人（#source-cite("Chaitanya2017")）和 Vogels 等人（#source-cite("Vogels2018")）采用深度学习与卷积神经网络，开发了基于 U-Net 架构（Ronneberger 等人 #source-cite("Ronneberger2015")）的自动编码器。Xu 等人（#source-cite("Xu2019")）用对抗网络改进去噪器训练。Gharbi 等人（#source-cite("Gharbi2019")）表明，用神经网络对单个样本滤波，可以比在样本已取平均后的像素上进行采样取得更好结果。Munkberg 和 Hasselgren（#source-cite("Munkberg2020")）则提出了减少这一方法内存和计算需求的架构。
 ]
+
+#parec[Editorial note: the fixed source says “sampling the pixels” in the Gharbi et al. comparison, even though the surrounding discussion concerns denoising. That wording is retained; whether “filtering” was intended requires a source-level correction.][校订说明：固定原文在比较 Gharbi 等人的方法时使用了“sampling the pixels”（对像素采样），而上下文讨论的是去噪。此处保留原措辞；是否应为“filtering”（滤波），仍需原文层面的核实与更正。]

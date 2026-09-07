@@ -25,3 +25,5 @@ for(const page of inv.pages.filter(p=>p.local)){
 fs.writeFileSync('web/generated/source-links.json',JSON.stringify(routes,null,2));
 fs.writeFileSync('audit/source-link-issues.json',JSON.stringify({notice:'These original targets are unresolved. Reader output displays the original link text with an explicit pending-reference marker, never a guessed or broken link.',unresolved},null,2));
 console.log(JSON.stringify({internal,original,unresolved:unresolved.length}));
+
+if(unresolved.length){console.error("Unresolved original targets require source comparison before publication");process.exitCode=1;}

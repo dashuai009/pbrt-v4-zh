@@ -16,8 +16,8 @@
 
 $
   phi.alt & = u phi.alt_(upright("max"))\
-  x & = ((1 - v) r + v r_(upright(" i"))) cos phi.alt\
-  y & = ((1 - v) r + v r_(upright(" i"))) sin phi.alt\
+  x & = ((1 - v) r + v r_(upright("i"))) cos phi.alt\
+  y & = ((1 - v) r + v r_(upright("i"))) sin phi.alt\
   z & = h .
 $
 
@@ -65,7 +65,7 @@ class Disk {
 #parec[
   The `Disk` constructor directly initializes its various member variables from the values passed to it. We have omitted it here because it is trivial.
 ][
-  `Disk` 构造函数直接从传递给它的值初始化其各种成员变量。我们在这里省略了它，因为它是实现很直接。
+  `Disk` 构造函数直接从传递给它的值初始化其各种成员变量。我们在这里省略了它，因为它的实现很直接。
 ]
 
 #block(sticky: true)[#raw("<<Disk Private Members>>=")] <fragment-DiskPrivateMembers-0>
@@ -97,7 +97,7 @@ Float Area() const {
 #parec[
   The bounding method is also quite straightforward; it computes a bounding box centered at the height of the disk along $z$, with an extent of `radius` in both the $x$ and $y$ directions.
 ][
-  边界方法也很简单；它计算一个以圆盘高度为中心的包围盒， $x$ 和 $y$ 方向的半径为 `radius`。
+  包围盒的计算也很直接：它在 $z$ 方向位于圆盘的高度处，在 $x$ 和 $y$ 方向分别从中心向两侧延伸 `radius`。
 ]
 
 #block(sticky: true)[#raw("<<Disk Method Definitions>>=")] <fragment-DiskMethodDefinitions-0>
@@ -172,7 +172,7 @@ $
 #parec[
   The intersection method computes a $t$ value and checks to see if it is inside the range of values $(0, "tMax")$. If not, the routine can report that there is no intersection.
 ][
-  求交方法计算一个值，并检查它是否在值的范围 $(0, "tMax")$ 内。如果不在这个范围内，程序可以报告没有交点。
+  求交方法计算一个 $t$ 值，并检查它是否在范围 $(0, "tMax")$ 内。如果不在这个范围内，程序可以报告没有交点。
 ]
 
 #block(sticky: true)[#raw("<<Compute plane intersection for disk>>=")] <fragment-Computeplaneintersectionfordisk-0>
@@ -215,7 +215,7 @@ if (dist2 > Sqr(radius) || dist2 < Sqr(innerRadius))
 #parec[
   If the distance check passes, a final test makes sure that the $phi.alt$ value of the hit point is between zero and $phi.alt_(upright("max"))$, specified by the caller.Inverting the disk's parameterization gives the same expression for $phi.alt$ as the other quadric shapes. Because a ray can only intersect a disk once, there is no need to consider a second intersection if this test fails, as was the case with the two earlier quadrics.
 ][
-  如果距离检查通过，最后的测试会确保击中点的 $phi.alt$ 值在0和由调用方指定的 $phi.alt_(upright("max"))$ 之间。对圆盘的参数化进行反转会给出与其他二次曲面形状相同的 $phi.alt$ 表达式。由于光线只能与圆盘相交一次，如果此测试失败，就不需要像前面两个二次曲面那样考虑第二次相交。
+  如果距离检查通过，最后的测试会确保击中点的 $phi.alt$ 值在0和由调用方指定的 $phi.alt_(upright("max"))$ 之间。反解圆盘的参数化方程会给出与其他二次曲面形状相同的 $phi.alt$ 表达式。由于光线只能与圆盘相交一次，如果此测试失败，就不需要像前面两个二次曲面那样考虑第二次相交。
 ]
 
 #block(sticky: true)[#raw("<<Test disk phi value against phi_max >>=")] <fragment-Testdiskphivalueagainstphimax-0>
@@ -235,7 +235,7 @@ return QuadricIntersection{tShapeHit, pHit, phi};
 #parec[
   Finding the `SurfaceInteraction` corresponding to a disk intersection follows the same process of inverting the parametric representation we have seen before.
 ][
-  找到与圆盘交集对应的 `SurfaceInteraction` 遵循了我们之前看到的反转参数表示的相同过程。
+  与前面一样，反解参数化表示，就能求出圆盘交点对应的 `SurfaceInteraction`。
 ]
 
 #block(sticky: true)[#raw("<<Disk Public Methods>>+=")] <fragment-DiskPublicMethods-2>

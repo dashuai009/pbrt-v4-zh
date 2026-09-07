@@ -1,0 +1,952 @@
+{
+  "visible": [
+    {
+      "id": "fragment-ProjectiveCameraDefinition-0",
+      "line": 101,
+      "code": "class ProjectiveCamera : public CameraBase {\n  public:\n    <<ProjectiveCamera Public Methods>> \n  protected:\n    <<ProjectiveCamera Protected Members>> \n};",
+      "local_code": "class ProjectiveCamera : public CameraBase {\n  public:\n    <<ProjectiveCamera Public Methods>>\n  protected:\n    <<ProjectiveCamera Protected Members>>\n};",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-ProjectiveCameraPublicMethods-0",
+      "line": 474,
+      "code": "ProjectiveCamera(CameraBaseParameters baseParameters,\n        const Transform &screenFromCamera, Bounds2f screenWindow,\n        Float lensRadius, Float focalDistance)\n    : CameraBase(baseParameters), screenFromCamera(screenFromCamera),\n      lensRadius(lensRadius), focalDistance(focalDistance) {\n    <<Compute projective camera transformations>> \n}",
+      "local_code": "ProjectiveCamera(CameraBaseParameters baseParameters,\n        const Transform &screenFromCamera, Bounds2f screenWindow,\n        Float lensRadius, Float focalDistance)\n    : CameraBase(baseParameters), screenFromCamera(screenFromCamera),\n      lensRadius(lensRadius), focalDistance(focalDistance) {\n    <<Compute projective camera transformations>>\n}",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Computeprojectivecameratransformations-0",
+      "line": 501,
+      "code": "<<Compute projective camera screen transformations>> \ncameraFromRaster = Inverse(screenFromCamera) * screenFromRaster;",
+      "local_code": "<<Compute projective camera screen transformations>>\ncameraFromRaster = Inverse(screenFromCamera) * screenFromRaster;",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-ProjectiveCameraProtectedMembers-0",
+      "line": 515,
+      "code": "Transform screenFromCamera, cameraFromRaster;",
+      "local_code": "Transform screenFromCamera, cameraFromRaster;",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Computeprojectivecamerascreentransformations-0",
+      "line": 546,
+      "code": "Transform NDCFromScreen =\n    Scale(1 / (screenWindow.pMax.x - screenWindow.pMin.x),\n          1 / (screenWindow.pMax.y - screenWindow.pMin.y), 1) *\n    Translate(Vector3f(-screenWindow.pMin.x, -screenWindow.pMax.y, 0));\nTransform rasterFromNDC =\n    Scale(film.FullResolution().x, -film.FullResolution().y, 1);\nrasterFromScreen = rasterFromNDC * NDCFromScreen;\nscreenFromRaster = Inverse(rasterFromScreen);",
+      "local_code": "Transform NDCFromScreen =\n    Scale(1 / (screenWindow.pMax.x - screenWindow.pMin.x),\n          1 / (screenWindow.pMax.y - screenWindow.pMin.y), 1) *\n    Translate(Vector3f(-screenWindow.pMin.x, -screenWindow.pMax.y, 0));\nTransform rasterFromNDC =\n    Scale(film.FullResolution().x, -film.FullResolution().y, 1);\nrasterFromScreen = rasterFromNDC * NDCFromScreen;\nscreenFromRaster = Inverse(rasterFromScreen);",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-ProjectiveCameraProtectedMembers-1",
+      "line": 559,
+      "code": "Transform rasterFromScreen, screenFromRaster;",
+      "local_code": "Transform rasterFromScreen, screenFromRaster;",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-OrthographicCameraDefinition-0",
+      "line": 598,
+      "code": "class OrthographicCamera : public ProjectiveCamera {\n  public:\n    <<OrthographicCamera Public Methods>> \n  private:\n    <<OrthographicCamera Private Members>> \n};",
+      "local_code": "class OrthographicCamera : public ProjectiveCamera {\n  public:\n    <<OrthographicCamera Public Methods>>\n  private:\n    <<OrthographicCamera Private Members>>\n};",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-OrthographicCameraPublicMethods-0",
+      "line": 733,
+      "code": "OrthographicCamera(CameraBaseParameters baseParameters,\n                   Bounds2f screenWindow, Float lensRadius, Float focalDist)\n    : ProjectiveCamera(baseParameters, Orthographic(0, 1), screenWindow,\n                       lensRadius, focalDist) {\n    <<Compute differential changes in origin for orthographic camera rays>> \n    <<Compute minimum differentials for orthographic camera>> \n}",
+      "local_code": "OrthographicCamera(CameraBaseParameters baseParameters,\n                   Bounds2f screenWindow, Float lensRadius, Float focalDist)\n    : ProjectiveCamera(baseParameters, Orthographic(0, 1), screenWindow,\n                       lensRadius, focalDist) {\n    <<Compute differential changes in origin for orthographic camera rays>>\n    <<Compute minimum differentials for orthographic camera>>\n}",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-TransformFunctionDefinitions-4",
+      "line": 834,
+      "code": "Transform Orthographic(Float zNear, Float zFar) {\n    return Scale(1, 1, 1 / (zFar - zNear)) *\n           Translate(Vector3f(0, 0, -zNear));\n}",
+      "local_code": "Transform Orthographic(Float zNear, Float zFar) {\n    return Scale(1, 1, 1 / (zFar - zNear)) *\n           Translate(Vector3f(0, 0, -zNear));\n}",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Computedifferentialchangesinoriginfororthographiccamerarays-0",
+      "line": 888,
+      "code": "dxCamera = cameraFromRaster(Vector3f(1, 0, 0));\ndyCamera = cameraFromRaster(Vector3f(0, 1, 0));",
+      "local_code": "dxCamera = cameraFromRaster(Vector3f(1, 0, 0));\ndyCamera = cameraFromRaster(Vector3f(0, 1, 0));",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-OrthographicCameraPrivateMembers-0",
+      "line": 895,
+      "code": "Vector3f dxCamera, dyCamera;",
+      "local_code": "Vector3f dxCamera, dyCamera;",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-OrthographicCameraMethodDefinitions-0",
+      "line": 995,
+      "code": "pstd::optional<CameraRay> OrthographicCamera::GenerateRay(\n        CameraSample sample, SampledWavelengths &lambda) const {\n    <<Compute raster and camera sample positions>> \n    Ray ray(pCamera, Vector3f(0, 0, 1), SampleTime(sample.time), medium);\n    <<Modify ray for depth of field>> \n    return CameraRay{RenderFromCamera(ray)};\n}",
+      "local_code": "pstd::optional<CameraRay> OrthographicCamera::GenerateRay(\n        CameraSample sample, SampledWavelengths &lambda) const {\n    <<Compute raster and camera sample positions>>\n    Ray ray(pCamera, Vector3f(0, 0, 1), SampleTime(sample.time), medium);\n    <<Modify ray for depth of field>>\n    return CameraRay{RenderFromCamera(ray)};\n}",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Computerasterandcamerasamplepositions-0",
+      "line": 1018,
+      "code": "Point3f pFilm = Point3f(sample.pFilm.x, sample.pFilm.y, 0);\nPoint3f pCamera = cameraFromRaster(pFilm);",
+      "local_code": "Point3f pFilm = Point3f(sample.pFilm.x, sample.pFilm.y, 0);\nPoint3f pCamera = cameraFromRaster(pFilm);",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-OrthographicCameraMethodDefinitions-1",
+      "line": 1035,
+      "code": "pstd::optional<CameraRayDifferential>\nOrthographicCamera::GenerateRayDifferential(CameraSample sample,\n        SampledWavelengths &lambda) const {\n    <<Compute main orthographic viewing ray>> \n    <<Compute ray differentials for OrthographicCamera>> \n    ray.hasDifferentials = true;\n    return CameraRayDifferential{RenderFromCamera(ray)};\n}",
+      "local_code": "pstd::optional<CameraRayDifferential>\nOrthographicCamera::GenerateRayDifferential(CameraSample sample,\n        SampledWavelengths &lambda) const {\n    <<Compute main orthographic viewing ray>>\n    <<Compute ray differentials for OrthographicCamera>>\n    ray.hasDifferentials = true;\n    return CameraRayDifferential{RenderFromCamera(ray)};\n}",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-ComputeraydifferentialsformonoOrthographicCamera-0",
+      "line": 1074,
+      "code": "if (lensRadius > 0) {\n    <<Compute OrthographicCamera ray differentials accounting for lens>> \n} else {\n    ray.rxOrigin = ray.o + dxCamera;\n    ray.ryOrigin = ray.o + dyCamera;\n    ray.rxDirection = ray.ryDirection = ray.d;\n}",
+      "local_code": "if (lensRadius > 0) {\n    <<Compute OrthographicCamera ray differentials accounting for lens>>\n} else {\n    ray.rxOrigin = ray.o + dxCamera;\n    ray.ryOrigin = ray.o + dyCamera;\n    ray.rxDirection = ray.ryDirection = ray.d;\n}",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-PerspectiveCameraDefinition-0",
+      "line": 1134,
+      "code": "class PerspectiveCamera : public ProjectiveCamera {\n  public:\n    <<PerspectiveCamera Public Methods>> \n  private:\n    <<PerspectiveCamera Private Members>> \n};",
+      "local_code": "class PerspectiveCamera : public ProjectiveCamera {\n  public:\n    <<PerspectiveCamera Public Methods>>\n  private:\n    <<PerspectiveCamera Private Members>>\n};",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-PerspectiveCameraPublicMethods-0",
+      "line": 1198,
+      "code": "PerspectiveCamera(CameraBaseParameters baseParameters, Float fov,\n                  Bounds2f screenWindow, Float lensRadius, Float focalDist)\n    : ProjectiveCamera(baseParameters, Perspective(fov, 1e-2f, 1000.f),\n                       screenWindow, lensRadius, focalDist) {\n    <<Compute differential changes in origin for perspective camera rays>> \n    <<Compute cosTotalWidth for perspective camera>> \n    <<Compute image plane area at z equals 1 for PerspectiveCamera>> \n    <<Compute minimum differentials for PerspectiveCamera>> \n}",
+      "local_code": "PerspectiveCamera(CameraBaseParameters baseParameters, Float fov,\n                  Bounds2f screenWindow, Float lensRadius, Float focalDist)\n    : ProjectiveCamera(baseParameters, Perspective(fov, 1e-2f, 1000.f),\n                       screenWindow, lensRadius, focalDist) {\n    <<Compute differential changes in origin for perspective camera rays>>\n    <<Compute cosTotalWidth for perspective camera>>\n    <<Compute image plane area at z equals 1 for PerspectiveCamera>>\n    <<Compute minimum differentials for PerspectiveCamera>>\n}",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-TransformFunctionDefinitions-5",
+      "line": 1377,
+      "code": "Transform Perspective(Float fov, Float n, Float f) {\n    <<Perform projective divide for perspective projection>> \n    <<Scale canonical perspective view to specified field of view>> \n}",
+      "local_code": "Transform Perspective(Float fov, Float n, Float f) {\n    <<Perform projective divide for perspective projection>>\n    <<Scale canonical perspective view to specified field of view>>\n}",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Performprojectivedivideforperspectiveprojection-0",
+      "line": 1653,
+      "code": "SquareMatrix<4> persp(1, 0,           0,              0,\n                      0, 1,           0,              0,\n                      0, 0, f / (f - n), -f*n / (f - n),\n                      0, 0,           1,              0);",
+      "local_code": "SquareMatrix<4> persp(1, 0,           0,              0,\n                      0, 1,           0,              0,\n                      0, 0, f / (f - n), -f*n / (f - n),\n                      0, 0,           1,              0);",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Scalecanonicalperspectiveviewtospecifiedfieldofview-0",
+      "line": 1801,
+      "code": "Float invTanAng = 1 / std::tan(Radians(fov) / 2);\nreturn Scale(invTanAng, invTanAng, 1) * Transform(persp);",
+      "local_code": "Float invTanAng = 1 / std::tan(Radians(fov) / 2);\nreturn Scale(invTanAng, invTanAng, 1) * Transform(persp);",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Computedifferentialchangesinoriginforperspectivecamerarays-0",
+      "line": 1817,
+      "code": "dxCamera = cameraFromRaster(Point3f(1, 0, 0)) -\n           cameraFromRaster(Point3f(0, 0, 0));\ndyCamera = cameraFromRaster(Point3f(0, 1, 0)) -\n           cameraFromRaster(Point3f(0, 0, 0));",
+      "local_code": "dxCamera = cameraFromRaster(Point3f(1, 0, 0)) -\n           cameraFromRaster(Point3f(0, 0, 0));\ndyCamera = cameraFromRaster(Point3f(0, 1, 0)) -\n           cameraFromRaster(Point3f(0, 0, 0));",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-PerspectiveCameraPrivateMembers-0",
+      "line": 1826,
+      "code": "Vector3f dxCamera, dyCamera;",
+      "local_code": "Vector3f dxCamera, dyCamera;",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-ComputemonocosTotalWidthforperspectivecamera-0",
+      "line": 1890,
+      "code": "Point2f radius = Point2f(film.GetFilter().Radius());\nPoint3f pCorner(-radius.x, -radius.y, 0.f);\nVector3f wCornerCamera = Normalize(Vector3f(cameraFromRaster(pCorner)));\ncosTotalWidth = wCornerCamera.z;",
+      "local_code": "Point2f radius = Point2f(film.GetFilter().Radius());\nPoint3f pCorner(-radius.x, -radius.y, 0.f);\nVector3f wCornerCamera = Normalize(Vector3f(cameraFromRaster(pCorner)));\ncosTotalWidth = wCornerCamera.z;",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-PerspectiveCameraPrivateMembers-1",
+      "line": 1900,
+      "code": "Float cosTotalWidth;",
+      "local_code": "Float cosTotalWidth;",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-PerspectiveCameraMethodDefinitions-0",
+      "line": 1936,
+      "code": "pstd::optional<CameraRay> PerspectiveCamera::GenerateRay(\n        CameraSample sample, SampledWavelengths &lambda) const {\n    <<Compute raster and camera sample positions>> \n    Ray ray(Point3f(0, 0, 0), Normalize(Vector3f(pCamera)),\n            SampleTime(sample.time), medium);\n    <<Modify ray for depth of field>> \n    return CameraRay{RenderFromCamera(ray)};\n}",
+      "local_code": "pstd::optional<CameraRay> PerspectiveCamera::GenerateRay(\n        CameraSample sample, SampledWavelengths &lambda) const {\n    <<Compute raster and camera sample positions>>\n    Ray ray(Point3f(0, 0, 0), Normalize(Vector3f(pCamera)),\n            SampleTime(sample.time), medium);\n    <<Modify ray for depth of field>>\n    return CameraRay{RenderFromCamera(ray)};\n}",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-ComputeoffsetraysforusePerspectiveCameraraydifferentials-0",
+      "line": 1961,
+      "code": "if (lensRadius > 0) {\n    <<Compute PerspectiveCamera ray differentials accounting for lens>> \n} else {\n    ray.rxOrigin = ray.ryOrigin = ray.o;\n    ray.rxDirection = Normalize(Vector3f(pCamera) + dxCamera);\n    ray.ryDirection = Normalize(Vector3f(pCamera) + dyCamera);\n}",
+      "local_code": "if (lensRadius > 0) {\n    <<Compute PerspectiveCamera ray differentials accounting for lens>>\n} else {\n    ray.rxOrigin = ray.ryOrigin = ray.o;\n    ray.rxDirection = Normalize(Vector3f(pCamera) + dxCamera);\n    ray.ryDirection = Normalize(Vector3f(pCamera) + dyCamera);\n}",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-ProjectiveCameraProtectedMembers-2",
+      "line": 3116,
+      "code": "Float lensRadius, focalDistance;",
+      "local_code": "Float lensRadius, focalDistance;",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Modifyrayfordepthoffield-0",
+      "line": 3155,
+      "code": "if (lensRadius > 0) {\n    <<Sample point on lens>> \n    <<Compute point on plane of focus>> \n    <<Update ray for effect of lens>> \n}",
+      "local_code": "if (lensRadius > 0) {\n    <<Sample point on lens>>\n    <<Compute point on plane of focus>>\n    <<Update ray for effect of lens>>\n}",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Samplepointonlens-0",
+      "line": 3242,
+      "code": "Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);",
+      "local_code": "Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Computepointonplaneoffocus-0",
+      "line": 3347,
+      "code": "Float ft = focalDistance / ray.d.z;\nPoint3f pFocus = ray(ft);",
+      "local_code": "Float ft = focalDistance / ray.d.z;\nPoint3f pFocus = ray(ft);",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Updaterayforeffectoflens-0",
+      "line": 3359,
+      "code": "ray.o = Point3f(pLens.x, pLens.y, 0);\nray.d = Normalize(pFocus - ray.o);",
+      "local_code": "ray.o = Point3f(pLens.x, pLens.y, 0);\nray.d = Normalize(pFocus - ray.o);",
+      "equal_ignoring_whitespace": true
+    }
+  ],
+  "panels": [
+    {
+      "id": "fragbit-215",
+      "line": 103,
+      "code": "ProjectiveCamera() = default;\n       void InitMetadata(ImageMetadata *metadata) const;\n       \n       std::string BaseToString() const;\n       ProjectiveCamera(CameraBaseParameters baseParameters,\n               const Transform &screenFromCamera, Bounds2f screenWindow,\n               Float lensRadius, Float focalDistance)\n           : CameraBase(baseParameters), screenFromCamera(screenFromCamera),\n             lensRadius(lensRadius), focalDistance(focalDistance) {\n           <<Compute projective camera transformations>> \n       }",
+      "expanded_code": "ProjectiveCamera() = default;\n       void InitMetadata(ImageMetadata *metadata) const;\n       \n       std::string BaseToString() const;\n       ProjectiveCamera(CameraBaseParameters baseParameters,\n               const Transform &screenFromCamera, Bounds2f screenWindow,\n               Float lensRadius, Float focalDistance)\n           : CameraBase(baseParameters), screenFromCamera(screenFromCamera),\n             lensRadius(lensRadius), focalDistance(focalDistance) {\n           <<Compute projective camera transformations>>               <<Compute projective camera screen transformations>>                  Transform NDCFromScreen =\n                     Scale(1 / (screenWindow.pMax.x - screenWindow.pMin.x),\n                           1 / (screenWindow.pMax.y - screenWindow.pMin.y), 1) *\n                     Translate(Vector3f(-screenWindow.pMin.x, -screenWindow.pMax.y, 0));\n                 Transform rasterFromNDC =\n                     Scale(film.FullResolution().x, -film.FullResolution().y, 1);\n                 rasterFromScreen = rasterFromNDC * NDCFromScreen;\n                 screenFromRaster = Inverse(rasterFromScreen);\n              cameraFromRaster = Inverse(screenFromCamera) * screenFromRaster;\n       }",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-216",
+      "line": 112,
+      "code": "<<Compute projective camera screen transformations>> \n              cameraFromRaster = Inverse(screenFromCamera) * screenFromRaster;",
+      "expanded_code": "<<Compute projective camera screen transformations>>                  Transform NDCFromScreen =\n                     Scale(1 / (screenWindow.pMax.x - screenWindow.pMin.x),\n                           1 / (screenWindow.pMax.y - screenWindow.pMin.y), 1) *\n                     Translate(Vector3f(-screenWindow.pMin.x, -screenWindow.pMax.y, 0));\n                 Transform rasterFromNDC =\n                     Scale(film.FullResolution().x, -film.FullResolution().y, 1);\n                 rasterFromScreen = rasterFromNDC * NDCFromScreen;\n                 screenFromRaster = Inverse(rasterFromScreen);\n              cameraFromRaster = Inverse(screenFromCamera) * screenFromRaster;",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Computeprojectivecameratransformations-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-217",
+      "line": 112,
+      "code": "Transform NDCFromScreen =\n                     Scale(1 / (screenWindow.pMax.x - screenWindow.pMin.x),\n                           1 / (screenWindow.pMax.y - screenWindow.pMin.y), 1) *\n                     Translate(Vector3f(-screenWindow.pMin.x, -screenWindow.pMax.y, 0));\n                 Transform rasterFromNDC =\n                     Scale(film.FullResolution().x, -film.FullResolution().y, 1);\n                 rasterFromScreen = rasterFromNDC * NDCFromScreen;\n                 screenFromRaster = Inverse(rasterFromScreen);",
+      "expanded_code": "Transform NDCFromScreen =\n                     Scale(1 / (screenWindow.pMax.x - screenWindow.pMin.x),\n                           1 / (screenWindow.pMax.y - screenWindow.pMin.y), 1) *\n                     Translate(Vector3f(-screenWindow.pMin.x, -screenWindow.pMax.y, 0));\n                 Transform rasterFromNDC =\n                     Scale(film.FullResolution().x, -film.FullResolution().y, 1);\n                 rasterFromScreen = rasterFromNDC * NDCFromScreen;\n                 screenFromRaster = Inverse(rasterFromScreen);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Computeprojectivecamerascreentransformations-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-218",
+      "line": 123,
+      "code": "Transform screenFromCamera, cameraFromRaster;\n       Transform rasterFromScreen, screenFromRaster;\n       Float lensRadius, focalDistance;",
+      "expanded_code": "Transform screenFromCamera, cameraFromRaster;\n       Transform rasterFromScreen, screenFromRaster;\n       Float lensRadius, focalDistance;",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-219",
+      "line": 479,
+      "code": "<<Compute projective camera screen transformations>> \n       cameraFromRaster = Inverse(screenFromCamera) * screenFromRaster;",
+      "expanded_code": "<<Compute projective camera screen transformations>>           Transform NDCFromScreen =\n              Scale(1 / (screenWindow.pMax.x - screenWindow.pMin.x),\n                    1 / (screenWindow.pMax.y - screenWindow.pMin.y), 1) *\n              Translate(Vector3f(-screenWindow.pMin.x, -screenWindow.pMax.y, 0));\n          Transform rasterFromNDC =\n              Scale(film.FullResolution().x, -film.FullResolution().y, 1);\n          rasterFromScreen = rasterFromNDC * NDCFromScreen;\n          screenFromRaster = Inverse(rasterFromScreen);\n       cameraFromRaster = Inverse(screenFromCamera) * screenFromRaster;",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Computeprojectivecameratransformations-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-220",
+      "line": 479,
+      "code": "Transform NDCFromScreen =\n              Scale(1 / (screenWindow.pMax.x - screenWindow.pMin.x),\n                    1 / (screenWindow.pMax.y - screenWindow.pMin.y), 1) *\n              Translate(Vector3f(-screenWindow.pMin.x, -screenWindow.pMax.y, 0));\n          Transform rasterFromNDC =\n              Scale(film.FullResolution().x, -film.FullResolution().y, 1);\n          rasterFromScreen = rasterFromNDC * NDCFromScreen;\n          screenFromRaster = Inverse(rasterFromScreen);",
+      "expanded_code": "Transform NDCFromScreen =\n              Scale(1 / (screenWindow.pMax.x - screenWindow.pMin.x),\n                    1 / (screenWindow.pMax.y - screenWindow.pMin.y), 1) *\n              Translate(Vector3f(-screenWindow.pMin.x, -screenWindow.pMax.y, 0));\n          Transform rasterFromNDC =\n              Scale(film.FullResolution().x, -film.FullResolution().y, 1);\n          rasterFromScreen = rasterFromNDC * NDCFromScreen;\n          screenFromRaster = Inverse(rasterFromScreen);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Computeprojectivecamerascreentransformations-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-221",
+      "line": 501,
+      "code": "Transform NDCFromScreen =\n       Scale(1 / (screenWindow.pMax.x - screenWindow.pMin.x),\n             1 / (screenWindow.pMax.y - screenWindow.pMin.y), 1) *\n       Translate(Vector3f(-screenWindow.pMin.x, -screenWindow.pMax.y, 0));\n   Transform rasterFromNDC =\n       Scale(film.FullResolution().x, -film.FullResolution().y, 1);\n   rasterFromScreen = rasterFromNDC * NDCFromScreen;\n   screenFromRaster = Inverse(rasterFromScreen);",
+      "expanded_code": "Transform NDCFromScreen =\n       Scale(1 / (screenWindow.pMax.x - screenWindow.pMin.x),\n             1 / (screenWindow.pMax.y - screenWindow.pMin.y), 1) *\n       Translate(Vector3f(-screenWindow.pMin.x, -screenWindow.pMax.y, 0));\n   Transform rasterFromNDC =\n       Scale(film.FullResolution().x, -film.FullResolution().y, 1);\n   rasterFromScreen = rasterFromNDC * NDCFromScreen;\n   screenFromRaster = Inverse(rasterFromScreen);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Computeprojectivecamerascreentransformations-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-222",
+      "line": 600,
+      "code": "OrthographicCamera(CameraBaseParameters baseParameters,\n                          Bounds2f screenWindow, Float lensRadius, Float focalDist)\n           : ProjectiveCamera(baseParameters, Orthographic(0, 1), screenWindow,\n                              lensRadius, focalDist) {\n           <<Compute differential changes in origin for orthographic camera rays>> \n           <<Compute minimum differentials for orthographic camera>> \n       }\n       PBRT_CPU_GPU\n       pstd::optional<CameraRay> GenerateRay(CameraSample sample,\n                                             SampledWavelengths &lambda) const;\n       PBRT_CPU_GPU\n       pstd::optional<CameraRayDifferential> GenerateRayDifferential(\n           CameraSample sample, SampledWavelengths &lambda) const;\n       static OrthographicCamera *Create(const ParameterDictionary &parameters,\n                                         const CameraTransform &cameraTransform,\n                                         Film film, Medium medium,\n                                         const FileLoc *loc, Allocator alloc = {});\n       \n       PBRT_CPU_GPU\n       SampledSpectrum We(const Ray &ray, SampledWavelengths &lambda,\n                          Point2f *pRaster2 = nullptr) const {\n           LOG_FATAL(\"We() unimplemented for OrthographicCamera\");\n           return {};\n       }\n       \n       PBRT_CPU_GPU\n       void PDF_We(const Ray &ray, Float *pdfPos, Float *pdfDir) const {\n           LOG_FATAL(\"PDF_We() unimplemented for OrthographicCamera\");\n       }\n       \n       PBRT_CPU_GPU\n       pstd::optional<CameraWiSample> SampleWi(const Interaction &ref, Point2f u,\n                                               SampledWavelengths &lambda) const {\n           LOG_FATAL(\"SampleWi() unimplemented for OrthographicCamera\");\n           return {};\n       }\n       \n       std::string ToString() const;",
+      "expanded_code": "OrthographicCamera(CameraBaseParameters baseParameters,\n                          Bounds2f screenWindow, Float lensRadius, Float focalDist)\n           : ProjectiveCamera(baseParameters, Orthographic(0, 1), screenWindow,\n                              lensRadius, focalDist) {\n           <<Compute differential changes in origin for orthographic camera rays>>               dxCamera = cameraFromRaster(Vector3f(1, 0, 0));\n              dyCamera = cameraFromRaster(Vector3f(0, 1, 0));\n           <<Compute minimum differentials for orthographic camera>>               minDirDifferentialX = minDirDifferentialY = Vector3f(0, 0, 0);\n              minPosDifferentialX = dxCamera;\n              minPosDifferentialY = dyCamera;\n       }\n       PBRT_CPU_GPU\n       pstd::optional<CameraRay> GenerateRay(CameraSample sample,\n                                             SampledWavelengths &lambda) const;\n       PBRT_CPU_GPU\n       pstd::optional<CameraRayDifferential> GenerateRayDifferential(\n           CameraSample sample, SampledWavelengths &lambda) const;\n       static OrthographicCamera *Create(const ParameterDictionary &parameters,\n                                         const CameraTransform &cameraTransform,\n                                         Film film, Medium medium,\n                                         const FileLoc *loc, Allocator alloc = {});\n       \n       PBRT_CPU_GPU\n       SampledSpectrum We(const Ray &ray, SampledWavelengths &lambda,\n                          Point2f *pRaster2 = nullptr) const {\n           LOG_FATAL(\"We() unimplemented for OrthographicCamera\");\n           return {};\n       }\n       \n       PBRT_CPU_GPU\n       void PDF_We(const Ray &ray, Float *pdfPos, Float *pdfDir) const {\n           LOG_FATAL(\"PDF_We() unimplemented for OrthographicCamera\");\n       }\n       \n       PBRT_CPU_GPU\n       pstd::optional<CameraWiSample> SampleWi(const Interaction &ref, Point2f u,\n                                               SampledWavelengths &lambda) const {\n           LOG_FATAL(\"SampleWi() unimplemented for OrthographicCamera\");\n           return {};\n       }\n       \n       std::string ToString() const;",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-223",
+      "line": 604,
+      "code": "dxCamera = cameraFromRaster(Vector3f(1, 0, 0));\n              dyCamera = cameraFromRaster(Vector3f(0, 1, 0));",
+      "expanded_code": "dxCamera = cameraFromRaster(Vector3f(1, 0, 0));\n              dyCamera = cameraFromRaster(Vector3f(0, 1, 0));",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Computedifferentialchangesinoriginfororthographiccamerarays-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-224",
+      "line": 606,
+      "code": "minDirDifferentialX = minDirDifferentialY = Vector3f(0, 0, 0);\n              minPosDifferentialX = dxCamera;\n              minPosDifferentialY = dyCamera;",
+      "expanded_code": "minDirDifferentialX = minDirDifferentialY = Vector3f(0, 0, 0);\n              minPosDifferentialX = dxCamera;\n              minPosDifferentialY = dyCamera;",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [
+        6
+      ],
+      "same_visible_default": [],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-225",
+      "line": 642,
+      "code": "Vector3f dxCamera, dyCamera;",
+      "expanded_code": "Vector3f dxCamera, dyCamera;",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-OrthographicCameraPrivateMembers-0",
+        "fragment-PerspectiveCameraPrivateMembers-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-226",
+      "line": 737,
+      "code": "dxCamera = cameraFromRaster(Vector3f(1, 0, 0));\n       dyCamera = cameraFromRaster(Vector3f(0, 1, 0));",
+      "expanded_code": "dxCamera = cameraFromRaster(Vector3f(1, 0, 0));\n       dyCamera = cameraFromRaster(Vector3f(0, 1, 0));",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Computedifferentialchangesinoriginfororthographiccamerarays-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-227",
+      "line": 739,
+      "code": "minDirDifferentialX = minDirDifferentialY = Vector3f(0, 0, 0);\n       minPosDifferentialX = dxCamera;\n       minPosDifferentialY = dyCamera;",
+      "expanded_code": "minDirDifferentialX = minDirDifferentialY = Vector3f(0, 0, 0);\n       minPosDifferentialX = dxCamera;\n       minPosDifferentialY = dyCamera;",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [
+        6
+      ],
+      "same_visible_default": [],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-228",
+      "line": 997,
+      "code": "Point3f pFilm = Point3f(sample.pFilm.x, sample.pFilm.y, 0);\n       Point3f pCamera = cameraFromRaster(pFilm);",
+      "expanded_code": "Point3f pFilm = Point3f(sample.pFilm.x, sample.pFilm.y, 0);\n       Point3f pCamera = cameraFromRaster(pFilm);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Computerasterandcamerasamplepositions-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-229",
+      "line": 1000,
+      "code": "if (lensRadius > 0) {\n           <<Sample point on lens>> \n           <<Compute point on plane of focus>> \n           <<Update ray for effect of lens>> \n       }",
+      "expanded_code": "if (lensRadius > 0) {\n           <<Sample point on lens>>               Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);\n           <<Compute point on plane of focus>>               Float ft = focalDistance / ray.d.z;\n              Point3f pFocus = ray(ft);\n           <<Update ray for effect of lens>>               ray.o = Point3f(pLens.x, pLens.y, 0);\n              ray.d = Normalize(pFocus - ray.o);\n       }",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Modifyrayfordepthoffield-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-230",
+      "line": 1001,
+      "code": "Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);",
+      "expanded_code": "Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Samplepointonlens-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-231",
+      "line": 1002,
+      "code": "Float ft = focalDistance / ray.d.z;\n              Point3f pFocus = ray(ft);",
+      "expanded_code": "Float ft = focalDistance / ray.d.z;\n              Point3f pFocus = ray(ft);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Computepointonplaneoffocus-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-232",
+      "line": 1004,
+      "code": "ray.o = Point3f(pLens.x, pLens.y, 0);\n              ray.d = Normalize(pFocus - ray.o);",
+      "expanded_code": "ray.o = Point3f(pLens.x, pLens.y, 0);\n              ray.d = Normalize(pFocus - ray.o);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Updaterayforeffectoflens-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-233",
+      "line": 1038,
+      "code": "<<Compute raster and camera sample positions>> \n       RayDifferential ray(pCamera, Vector3f(0, 0, 1), SampleTime(sample.time), medium);\n       <<Modify ray for depth of field>>",
+      "expanded_code": "<<Compute raster and camera sample positions>>           Point3f pFilm = Point3f(sample.pFilm.x, sample.pFilm.y, 0);\n          Point3f pCamera = cameraFromRaster(pFilm);\n       RayDifferential ray(pCamera, Vector3f(0, 0, 1), SampleTime(sample.time), medium);\n       <<Modify ray for depth of field>>           if (lensRadius > 0) {\n              <<Sample point on lens>>                  Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);\n              <<Compute point on plane of focus>>                  Float ft = focalDistance / ray.d.z;\n                 Point3f pFocus = ray(ft);\n              <<Update ray for effect of lens>>                  ray.o = Point3f(pLens.x, pLens.y, 0);\n                 ray.d = Normalize(pFocus - ray.o);\n          }",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-234",
+      "line": 1038,
+      "code": "Point3f pFilm = Point3f(sample.pFilm.x, sample.pFilm.y, 0);\n          Point3f pCamera = cameraFromRaster(pFilm);",
+      "expanded_code": "Point3f pFilm = Point3f(sample.pFilm.x, sample.pFilm.y, 0);\n          Point3f pCamera = cameraFromRaster(pFilm);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Computerasterandcamerasamplepositions-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-235",
+      "line": 1041,
+      "code": "if (lensRadius > 0) {\n              <<Sample point on lens>> \n              <<Compute point on plane of focus>> \n              <<Update ray for effect of lens>> \n          }",
+      "expanded_code": "if (lensRadius > 0) {\n              <<Sample point on lens>>                  Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);\n              <<Compute point on plane of focus>>                  Float ft = focalDistance / ray.d.z;\n                 Point3f pFocus = ray(ft);\n              <<Update ray for effect of lens>>                  ray.o = Point3f(pLens.x, pLens.y, 0);\n                 ray.d = Normalize(pFocus - ray.o);\n          }",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Modifyrayfordepthoffield-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-236",
+      "line": 1042,
+      "code": "Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);",
+      "expanded_code": "Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Samplepointonlens-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-237",
+      "line": 1043,
+      "code": "Float ft = focalDistance / ray.d.z;\n                 Point3f pFocus = ray(ft);",
+      "expanded_code": "Float ft = focalDistance / ray.d.z;\n                 Point3f pFocus = ray(ft);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Computepointonplaneoffocus-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-238",
+      "line": 1045,
+      "code": "ray.o = Point3f(pLens.x, pLens.y, 0);\n                 ray.d = Normalize(pFocus - ray.o);",
+      "expanded_code": "ray.o = Point3f(pLens.x, pLens.y, 0);\n                 ray.d = Normalize(pFocus - ray.o);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Updaterayforeffectoflens-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-239",
+      "line": 1048,
+      "code": "if (lensRadius > 0) {\n           <<Compute OrthographicCamera ray differentials accounting for lens>> \n       } else {\n           ray.rxOrigin = ray.o + dxCamera;\n           ray.ryOrigin = ray.o + dyCamera;\n           ray.rxDirection = ray.ryDirection = ray.d;\n       }",
+      "expanded_code": "if (lensRadius > 0) {\n           <<Compute OrthographicCamera ray differentials accounting for lens>>               <<Sample point on lens>>                  Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);\n              Float ft = focalDistance / ray.d.z;\n              Point3f pFocus = pCamera + dxCamera + (ft * Vector3f(0, 0, 1));\n              ray.rxOrigin = Point3f(pLens.x, pLens.y, 0);\n              ray.rxDirection = Normalize(pFocus - ray.rxOrigin);\n              \n              pFocus = pCamera + dyCamera + (ft * Vector3f(0, 0, 1));\n              ray.ryOrigin = Point3f(pLens.x, pLens.y, 0);\n              ray.ryDirection = Normalize(pFocus - ray.ryOrigin);\n       } else {\n           ray.rxOrigin = ray.o + dxCamera;\n           ray.ryOrigin = ray.o + dyCamera;\n           ray.rxDirection = ray.ryDirection = ray.d;\n       }",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-ComputeraydifferentialsformonoOrthographicCamera-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-240",
+      "line": 1049,
+      "code": "<<Sample point on lens>> \n              Float ft = focalDistance / ray.d.z;\n              Point3f pFocus = pCamera + dxCamera + (ft * Vector3f(0, 0, 1));\n              ray.rxOrigin = Point3f(pLens.x, pLens.y, 0);\n              ray.rxDirection = Normalize(pFocus - ray.rxOrigin);\n              \n              pFocus = pCamera + dyCamera + (ft * Vector3f(0, 0, 1));\n              ray.ryOrigin = Point3f(pLens.x, pLens.y, 0);\n              ray.ryDirection = Normalize(pFocus - ray.ryOrigin);",
+      "expanded_code": "<<Sample point on lens>>                  Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);\n              Float ft = focalDistance / ray.d.z;\n              Point3f pFocus = pCamera + dxCamera + (ft * Vector3f(0, 0, 1));\n              ray.rxOrigin = Point3f(pLens.x, pLens.y, 0);\n              ray.rxDirection = Normalize(pFocus - ray.rxOrigin);\n              \n              pFocus = pCamera + dyCamera + (ft * Vector3f(0, 0, 1));\n              ray.ryOrigin = Point3f(pLens.x, pLens.y, 0);\n              ray.ryDirection = Normalize(pFocus - ray.ryOrigin);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-241",
+      "line": 1049,
+      "code": "Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);",
+      "expanded_code": "Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Samplepointonlens-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-242",
+      "line": 1075,
+      "code": "<<Sample point on lens>> \n       Float ft = focalDistance / ray.d.z;\n       Point3f pFocus = pCamera + dxCamera + (ft * Vector3f(0, 0, 1));\n       ray.rxOrigin = Point3f(pLens.x, pLens.y, 0);\n       ray.rxDirection = Normalize(pFocus - ray.rxOrigin);\n       \n       pFocus = pCamera + dyCamera + (ft * Vector3f(0, 0, 1));\n       ray.ryOrigin = Point3f(pLens.x, pLens.y, 0);\n       ray.ryDirection = Normalize(pFocus - ray.ryOrigin);",
+      "expanded_code": "<<Sample point on lens>>           Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);\n       Float ft = focalDistance / ray.d.z;\n       Point3f pFocus = pCamera + dxCamera + (ft * Vector3f(0, 0, 1));\n       ray.rxOrigin = Point3f(pLens.x, pLens.y, 0);\n       ray.rxDirection = Normalize(pFocus - ray.rxOrigin);\n       \n       pFocus = pCamera + dyCamera + (ft * Vector3f(0, 0, 1));\n       ray.ryOrigin = Point3f(pLens.x, pLens.y, 0);\n       ray.ryDirection = Normalize(pFocus - ray.ryOrigin);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-243",
+      "line": 1075,
+      "code": "Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);",
+      "expanded_code": "Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Samplepointonlens-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-244",
+      "line": 1136,
+      "code": "PerspectiveCamera(CameraBaseParameters baseParameters, Float fov,\n                         Bounds2f screenWindow, Float lensRadius, Float focalDist)\n           : ProjectiveCamera(baseParameters, Perspective(fov, 1e-2f, 1000.f),\n                              screenWindow, lensRadius, focalDist) {\n           <<Compute differential changes in origin for perspective camera rays>> \n           <<Compute cosTotalWidth for perspective camera>> \n           <<Compute image plane area at z equals 1 for PerspectiveCamera>> \n           <<Compute minimum differentials for PerspectiveCamera>> \n       }\n       PerspectiveCamera() = default;\n       \n       static PerspectiveCamera *Create(const ParameterDictionary &parameters,\n                                        const CameraTransform &cameraTransform,\n                                        Film film, Medium medium,\n                                        const FileLoc *loc, Allocator alloc = {});\n       \n       PBRT_CPU_GPU\n       pstd::optional<CameraRay> GenerateRay(CameraSample sample,\n                                             SampledWavelengths &lambda) const;\n       \n       PBRT_CPU_GPU\n       pstd::optional<CameraRayDifferential> GenerateRayDifferential(\n           CameraSample sample, SampledWavelengths &lambda) const;\n       \n       PBRT_CPU_GPU\n       SampledSpectrum We(const Ray &ray, SampledWavelengths &lambda,\n                          Point2f *pRaster2 = nullptr) const;\n       PBRT_CPU_GPU\n       void PDF_We(const Ray &ray, Float *pdfPos, Float *pdfDir) const;\n       PBRT_CPU_GPU\n       pstd::optional<CameraWiSample> SampleWi(const Interaction &ref, Point2f u,\n                                               SampledWavelengths &lambda) const;\n       \n       std::string ToString() const;",
+      "expanded_code": "PerspectiveCamera(CameraBaseParameters baseParameters, Float fov,\n                         Bounds2f screenWindow, Float lensRadius, Float focalDist)\n           : ProjectiveCamera(baseParameters, Perspective(fov, 1e-2f, 1000.f),\n                              screenWindow, lensRadius, focalDist) {\n           <<Compute differential changes in origin for perspective camera rays>>               dxCamera = cameraFromRaster(Point3f(1, 0, 0)) -\n                         cameraFromRaster(Point3f(0, 0, 0));\n              dyCamera = cameraFromRaster(Point3f(0, 1, 0)) -\n                         cameraFromRaster(Point3f(0, 0, 0));\n           <<Compute cosTotalWidth for perspective camera>>               Point2f radius = Point2f(film.GetFilter().Radius());\n              Point3f pCorner(-radius.x, -radius.y, 0.f);\n              Vector3f wCornerCamera = Normalize(Vector3f(cameraFromRaster(pCorner)));\n              cosTotalWidth = wCornerCamera.z;\n              \n           <<Compute image plane area at z equals 1 for PerspectiveCamera>> \n           <<Compute minimum differentials for PerspectiveCamera>>               FindMinimumDifferentials(this);\n       }\n       PerspectiveCamera() = default;\n       \n       static PerspectiveCamera *Create(const ParameterDictionary &parameters,\n                                        const CameraTransform &cameraTransform,\n                                        Film film, Medium medium,\n                                        const FileLoc *loc, Allocator alloc = {});\n       \n       PBRT_CPU_GPU\n       pstd::optional<CameraRay> GenerateRay(CameraSample sample,\n                                             SampledWavelengths &lambda) const;\n       \n       PBRT_CPU_GPU\n       pstd::optional<CameraRayDifferential> GenerateRayDifferential(\n           CameraSample sample, SampledWavelengths &lambda) const;\n       \n       PBRT_CPU_GPU\n       SampledSpectrum We(const Ray &ray, SampledWavelengths &lambda,\n                          Point2f *pRaster2 = nullptr) const;\n       PBRT_CPU_GPU\n       void PDF_We(const Ray &ray, Float *pdfPos, Float *pdfDir) const;\n       PBRT_CPU_GPU\n       pstd::optional<CameraWiSample> SampleWi(const Interaction &ref, Point2f u,\n                                               SampledWavelengths &lambda) const;\n       \n       std::string ToString() const;",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-245",
+      "line": 1140,
+      "code": "dxCamera = cameraFromRaster(Point3f(1, 0, 0)) -\n                         cameraFromRaster(Point3f(0, 0, 0));\n              dyCamera = cameraFromRaster(Point3f(0, 1, 0)) -\n                         cameraFromRaster(Point3f(0, 0, 0));",
+      "expanded_code": "dxCamera = cameraFromRaster(Point3f(1, 0, 0)) -\n                         cameraFromRaster(Point3f(0, 0, 0));\n              dyCamera = cameraFromRaster(Point3f(0, 1, 0)) -\n                         cameraFromRaster(Point3f(0, 0, 0));",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Computedifferentialchangesinoriginforperspectivecamerarays-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-246",
+      "line": 1144,
+      "code": "Point2f radius = Point2f(film.GetFilter().Radius());\n              Point3f pCorner(-radius.x, -radius.y, 0.f);\n              Vector3f wCornerCamera = Normalize(Vector3f(cameraFromRaster(pCorner)));\n              cosTotalWidth = wCornerCamera.z;",
+      "expanded_code": "Point2f radius = Point2f(film.GetFilter().Radius());\n              Point3f pCorner(-radius.x, -radius.y, 0.f);\n              Vector3f wCornerCamera = Normalize(Vector3f(cameraFromRaster(pCorner)));\n              cosTotalWidth = wCornerCamera.z;",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-ComputemonocosTotalWidthforperspectivecamera-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-247",
+      "line": 1161,
+      "code": "",
+      "expanded_code": "",
+      "empty_panel": true,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-248",
+      "line": 1162,
+      "code": "FindMinimumDifferentials(this);",
+      "expanded_code": "FindMinimumDifferentials(this);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [
+        15
+      ],
+      "same_visible_default": [],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-249",
+      "line": 1190,
+      "code": "Vector3f dxCamera, dyCamera;\n       Float cosTotalWidth;",
+      "expanded_code": "Vector3f dxCamera, dyCamera;\n       Float cosTotalWidth;",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-250",
+      "line": 1202,
+      "code": "dxCamera = cameraFromRaster(Point3f(1, 0, 0)) -\n                  cameraFromRaster(Point3f(0, 0, 0));\n       dyCamera = cameraFromRaster(Point3f(0, 1, 0)) -\n                  cameraFromRaster(Point3f(0, 0, 0));",
+      "expanded_code": "dxCamera = cameraFromRaster(Point3f(1, 0, 0)) -\n                  cameraFromRaster(Point3f(0, 0, 0));\n       dyCamera = cameraFromRaster(Point3f(0, 1, 0)) -\n                  cameraFromRaster(Point3f(0, 0, 0));",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Computedifferentialchangesinoriginforperspectivecamerarays-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-251",
+      "line": 1206,
+      "code": "Point2f radius = Point2f(film.GetFilter().Radius());\n       Point3f pCorner(-radius.x, -radius.y, 0.f);\n       Vector3f wCornerCamera = Normalize(Vector3f(cameraFromRaster(pCorner)));\n       cosTotalWidth = wCornerCamera.z;",
+      "expanded_code": "Point2f radius = Point2f(film.GetFilter().Radius());\n       Point3f pCorner(-radius.x, -radius.y, 0.f);\n       Vector3f wCornerCamera = Normalize(Vector3f(cameraFromRaster(pCorner)));\n       cosTotalWidth = wCornerCamera.z;",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-ComputemonocosTotalWidthforperspectivecamera-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-252",
+      "line": 1223,
+      "code": "",
+      "expanded_code": "",
+      "empty_panel": true,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-253",
+      "line": 1224,
+      "code": "FindMinimumDifferentials(this);",
+      "expanded_code": "FindMinimumDifferentials(this);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [
+        15
+      ],
+      "same_visible_default": [],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-254",
+      "line": 1378,
+      "code": "SquareMatrix<4> persp(1, 0,           0,              0,\n                             0, 1,           0,              0,\n                             0, 0, f / (f - n), -f*n / (f - n),\n                             0, 0,           1,              0);",
+      "expanded_code": "SquareMatrix<4> persp(1, 0,           0,              0,\n                             0, 1,           0,              0,\n                             0, 0, f / (f - n), -f*n / (f - n),\n                             0, 0,           1,              0);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Performprojectivedivideforperspectiveprojection-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-255",
+      "line": 1383,
+      "code": "Float invTanAng = 1 / std::tan(Radians(fov) / 2);\n       return Scale(invTanAng, invTanAng, 1) * Transform(persp);",
+      "expanded_code": "Float invTanAng = 1 / std::tan(Radians(fov) / 2);\n       return Scale(invTanAng, invTanAng, 1) * Transform(persp);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Scalecanonicalperspectiveviewtospecifiedfieldofview-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-256",
+      "line": 1938,
+      "code": "Point3f pFilm = Point3f(sample.pFilm.x, sample.pFilm.y, 0);\n       Point3f pCamera = cameraFromRaster(pFilm);",
+      "expanded_code": "Point3f pFilm = Point3f(sample.pFilm.x, sample.pFilm.y, 0);\n       Point3f pCamera = cameraFromRaster(pFilm);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Computerasterandcamerasamplepositions-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-257",
+      "line": 1942,
+      "code": "if (lensRadius > 0) {\n           <<Sample point on lens>> \n           <<Compute point on plane of focus>> \n           <<Update ray for effect of lens>> \n       }",
+      "expanded_code": "if (lensRadius > 0) {\n           <<Sample point on lens>>               Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);\n           <<Compute point on plane of focus>>               Float ft = focalDistance / ray.d.z;\n              Point3f pFocus = ray(ft);\n           <<Update ray for effect of lens>>               ray.o = Point3f(pLens.x, pLens.y, 0);\n              ray.d = Normalize(pFocus - ray.o);\n       }",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Modifyrayfordepthoffield-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-258",
+      "line": 1943,
+      "code": "Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);",
+      "expanded_code": "Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Samplepointonlens-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-259",
+      "line": 1944,
+      "code": "Float ft = focalDistance / ray.d.z;\n              Point3f pFocus = ray(ft);",
+      "expanded_code": "Float ft = focalDistance / ray.d.z;\n              Point3f pFocus = ray(ft);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Computepointonplaneoffocus-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-260",
+      "line": 1946,
+      "code": "ray.o = Point3f(pLens.x, pLens.y, 0);\n              ray.d = Normalize(pFocus - ray.o);",
+      "expanded_code": "ray.o = Point3f(pLens.x, pLens.y, 0);\n              ray.d = Normalize(pFocus - ray.o);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Updaterayforeffectoflens-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-261",
+      "line": 1962,
+      "code": "<<Sample point on lens>> \n       <<Compute x ray differential for PerspectiveCamera with lens>> \n       <<Compute y ray differential for PerspectiveCamera with lens>>",
+      "expanded_code": "<<Sample point on lens>>           Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);\n       <<Compute x ray differential for PerspectiveCamera with lens>>           Vector3f dx = Normalize(Vector3f(pCamera + dxCamera));\n          Float ft = focalDistance / dx.z;\n          Point3f pFocus = Point3f(0, 0, 0) + (ft * dx);\n          ray.rxOrigin = Point3f(pLens.x, pLens.y, 0);\n          ray.rxDirection = Normalize(pFocus - ray.rxOrigin);\n       <<Compute y ray differential for PerspectiveCamera with lens>>           Vector3f dy = Normalize(Vector3f(pCamera + dyCamera));\n          ft = focalDistance / dy.z;\n          pFocus = Point3f(0, 0, 0) + (ft * dy);\n          ray.ryOrigin = Point3f(pLens.x, pLens.y, 0);\n          ray.ryDirection = Normalize(pFocus - ray.ryOrigin);",
+      "empty_panel": true,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-262",
+      "line": 1962,
+      "code": "Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);",
+      "expanded_code": "Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Samplepointonlens-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-263",
+      "line": 1971,
+      "code": "Vector3f dx = Normalize(Vector3f(pCamera + dxCamera));\n          Float ft = focalDistance / dx.z;\n          Point3f pFocus = Point3f(0, 0, 0) + (ft * dx);\n          ray.rxOrigin = Point3f(pLens.x, pLens.y, 0);\n          ray.rxDirection = Normalize(pFocus - ray.rxOrigin);",
+      "expanded_code": "Vector3f dx = Normalize(Vector3f(pCamera + dxCamera));\n          Float ft = focalDistance / dx.z;\n          Point3f pFocus = Point3f(0, 0, 0) + (ft * dx);\n          ray.rxOrigin = Point3f(pLens.x, pLens.y, 0);\n          ray.rxDirection = Normalize(pFocus - ray.rxOrigin);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [
+        16
+      ],
+      "same_visible_default": [],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-264",
+      "line": 1984,
+      "code": "Vector3f dy = Normalize(Vector3f(pCamera + dyCamera));\n          ft = focalDistance / dy.z;\n          pFocus = Point3f(0, 0, 0) + (ft * dy);\n          ray.ryOrigin = Point3f(pLens.x, pLens.y, 0);\n          ray.ryDirection = Normalize(pFocus - ray.ryOrigin);",
+      "expanded_code": "Vector3f dy = Normalize(Vector3f(pCamera + dyCamera));\n          ft = focalDistance / dy.z;\n          pFocus = Point3f(0, 0, 0) + (ft * dy);\n          ray.ryOrigin = Point3f(pLens.x, pLens.y, 0);\n          ray.ryDirection = Normalize(pFocus - ray.ryOrigin);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [
+        16
+      ],
+      "same_visible_default": [],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-265",
+      "line": 3156,
+      "code": "Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);",
+      "expanded_code": "Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Samplepointonlens-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-266",
+      "line": 3157,
+      "code": "Float ft = focalDistance / ray.d.z;\n       Point3f pFocus = ray(ft);",
+      "expanded_code": "Float ft = focalDistance / ray.d.z;\n       Point3f pFocus = ray(ft);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Computepointonplaneoffocus-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-267",
+      "line": 3159,
+      "code": "ray.o = Point3f(pLens.x, pLens.y, 0);\n       ray.d = Normalize(pFocus - ray.o);",
+      "expanded_code": "ray.o = Point3f(pLens.x, pLens.y, 0);\n       ray.d = Normalize(pFocus - ray.o);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Updaterayforeffectoflens-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    }
+  ],
+  "supplement_chunks": [
+    {
+      "code": "ProjectiveCamera() = default;\nvoid InitMetadata(ImageMetadata *metadata) const;\n\nstd::string BaseToString() const;",
+      "source_panels": [
+        "fragbit-215"
+      ]
+    },
+    {
+      "code": "PBRT_CPU_GPU\npstd::optional<CameraRay> GenerateRay(CameraSample sample,\n                                      SampledWavelengths &lambda) const;\nPBRT_CPU_GPU\npstd::optional<CameraRayDifferential> GenerateRayDifferential(\n    CameraSample sample, SampledWavelengths &lambda) const;\nstatic OrthographicCamera *Create(const ParameterDictionary &parameters,\n                                  const CameraTransform &cameraTransform,\n                                  Film film, Medium medium,\n                                  const FileLoc *loc, Allocator alloc = {});",
+      "source_panels": [
+        "fragbit-222"
+      ]
+    },
+    {
+      "code": "PBRT_CPU_GPU\nSampledSpectrum We(const Ray &ray, SampledWavelengths &lambda,\n                   Point2f *pRaster2 = nullptr) const {\n    LOG_FATAL(\"We() unimplemented for OrthographicCamera\");\n    return {};\n}",
+      "source_panels": [
+        "fragbit-222"
+      ]
+    },
+    {
+      "code": "PBRT_CPU_GPU\nvoid PDF_We(const Ray &ray, Float *pdfPos, Float *pdfDir) const {\n    LOG_FATAL(\"PDF_We() unimplemented for OrthographicCamera\");\n}",
+      "source_panels": [
+        "fragbit-222"
+      ]
+    },
+    {
+      "code": "PBRT_CPU_GPU\npstd::optional<CameraWiSample> SampleWi(const Interaction &ref, Point2f u,\n                                        SampledWavelengths &lambda) const {\n    LOG_FATAL(\"SampleWi() unimplemented for OrthographicCamera\");\n    return {};\n}",
+      "source_panels": [
+        "fragbit-222"
+      ]
+    },
+    {
+      "code": "std::string ToString() const;",
+      "source_panels": [
+        "fragbit-222",
+        "fragbit-244"
+      ]
+    },
+    {
+      "code": "minDirDifferentialX = minDirDifferentialY = Vector3f(0, 0, 0);\nminPosDifferentialX = dxCamera;\nminPosDifferentialY = dyCamera;",
+      "source_panels": [
+        "fragbit-222",
+        "fragbit-224",
+        "fragbit-227"
+      ]
+    },
+    {
+      "code": "<<Compute raster and camera sample positions>>\nRayDifferential ray(pCamera, Vector3f(0, 0, 1), SampleTime(sample.time), medium);\n<<Modify ray for depth of field>>",
+      "source_panels": [
+        "fragbit-233"
+      ]
+    },
+    {
+      "code": "<<Sample point on lens>>\nFloat ft = focalDistance / ray.d.z;\nPoint3f pFocus = pCamera + dxCamera + (ft * Vector3f(0, 0, 1));\nray.rxOrigin = Point3f(pLens.x, pLens.y, 0);\nray.rxDirection = Normalize(pFocus - ray.rxOrigin);\n\npFocus = pCamera + dyCamera + (ft * Vector3f(0, 0, 1));\nray.ryOrigin = Point3f(pLens.x, pLens.y, 0);\nray.ryDirection = Normalize(pFocus - ray.ryOrigin);",
+      "source_panels": [
+        "fragbit-239",
+        "fragbit-240",
+        "fragbit-242"
+      ]
+    },
+    {
+      "code": "PerspectiveCamera() = default;",
+      "source_panels": [
+        "fragbit-244"
+      ]
+    },
+    {
+      "code": "static PerspectiveCamera *Create(const ParameterDictionary &parameters,\n                                 const CameraTransform &cameraTransform,\n                                 Film film, Medium medium,\n                                 const FileLoc *loc, Allocator alloc = {});",
+      "source_panels": [
+        "fragbit-244"
+      ]
+    },
+    {
+      "code": "PBRT_CPU_GPU\npstd::optional<CameraRay> GenerateRay(CameraSample sample,\n                                      SampledWavelengths &lambda) const;",
+      "source_panels": [
+        "fragbit-222",
+        "fragbit-244"
+      ]
+    },
+    {
+      "code": "PBRT_CPU_GPU\npstd::optional<CameraRayDifferential> GenerateRayDifferential(\n    CameraSample sample, SampledWavelengths &lambda) const;",
+      "source_panels": [
+        "fragbit-222",
+        "fragbit-244"
+      ]
+    },
+    {
+      "code": "PBRT_CPU_GPU\nSampledSpectrum We(const Ray &ray, SampledWavelengths &lambda,\n                   Point2f *pRaster2 = nullptr) const;\nPBRT_CPU_GPU\nvoid PDF_We(const Ray &ray, Float *pdfPos, Float *pdfDir) const;\nPBRT_CPU_GPU\npstd::optional<CameraWiSample> SampleWi(const Interaction &ref, Point2f u,\n                                        SampledWavelengths &lambda) const;",
+      "source_panels": [
+        "fragbit-244"
+      ]
+    },
+    {
+      "code": "std::string ToString() const;",
+      "source_panels": [
+        "fragbit-222",
+        "fragbit-244"
+      ]
+    },
+    {
+      "code": "FindMinimumDifferentials(this);",
+      "source_panels": [
+        "fragbit-244",
+        "fragbit-248",
+        "fragbit-253"
+      ]
+    },
+    {
+      "code": "<<Sample point on lens>>\nVector3f dx = Normalize(Vector3f(pCamera + dxCamera));\nFloat ft = focalDistance / dx.z;\nPoint3f pFocus = Point3f(0, 0, 0) + (ft * dx);\nray.rxOrigin = Point3f(pLens.x, pLens.y, 0);\nray.rxDirection = Normalize(pFocus - ray.rxOrigin);\nVector3f dy = Normalize(Vector3f(pCamera + dyCamera));\nft = focalDistance / dy.z;\npFocus = Point3f(0, 0, 0) + (ft * dy);\nray.ryOrigin = Point3f(pLens.x, pLens.y, 0);\nray.ryDirection = Normalize(pFocus - ray.ryOrigin);",
+      "source_panels": [
+        "fragbit-261"
+      ]
+    }
+  ]
+}

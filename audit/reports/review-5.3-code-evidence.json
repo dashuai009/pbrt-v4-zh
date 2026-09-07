@@ -1,0 +1,232 @@
+{
+  "visible": [
+    {
+      "id": "fragment-SphericalCameraDefinition-0",
+      "line": 98,
+      "code": "class SphericalCamera : public CameraBase {\n  public:\n    <<SphericalCamera::Mapping Definition>> \n    <<SphericalCamera Public Methods>> \n  private:\n    <<SphericalCamera Private Members>> \n};",
+      "local_code": "class SphericalCamera : public CameraBase {\n  public:\n    <<SphericalCamera::Mapping Definition>>\n    <<SphericalCamera Public Methods>>\n  private:\n    <<SphericalCamera Private Members>>\n};",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-SphericalCameraPublicMethods-0",
+      "line": 194,
+      "code": "SphericalCamera(CameraBaseParameters baseParameters, Mapping mapping)\n    : CameraBase(baseParameters), mapping(mapping) {\n    <<Compute minimum differentials for SphericalCamera>> \n}",
+      "local_code": "SphericalCamera(CameraBaseParameters baseParameters, Mapping mapping)\n    : CameraBase(baseParameters), mapping(mapping) {\n    <<Compute minimum differentials for SphericalCamera>>\n}",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-SphericalCamera::MappingDefinition-0",
+      "line": 267,
+      "code": "enum Mapping { EquiRectangular, EqualArea };",
+      "local_code": "enum Mapping { EquiRectangular, EqualArea };",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-SphericalCameraPrivateMembers-0",
+      "line": 273,
+      "code": "Mapping mapping;",
+      "local_code": "Mapping mapping;",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-SphericalCameraMethodDefinitions-0",
+      "line": 283,
+      "code": "pstd::optional<CameraRay> SphericalCamera::GenerateRay(\n        CameraSample sample, SampledWavelengths &lambda) const {\n    <<Compute spherical camera ray direction>> \n    Ray ray(Point3f(0, 0, 0), dir, SampleTime(sample.time), medium);\n    return CameraRay{RenderFromCamera(ray)};\n}",
+      "local_code": "pstd::optional<CameraRay> SphericalCamera::GenerateRay(\n        CameraSample sample, SampledWavelengths &lambda) const {\n    <<Compute spherical camera ray direction>>\n    Ray ray(Point3f(0, 0, 0), dir, SampleTime(sample.time), medium);\n    return CameraRay{RenderFromCamera(ray)};\n}",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Computesphericalcameraraydirection-0",
+      "line": 360,
+      "code": "Point2f uv(sample.pfilm.x / film.FullResolution().x,\n           sample.pfilm.y / film.FullResolution().y);\nVector3f dir;\nif (mapping == EquiRectangular) {\n    <<Compute ray direction using equirectangular mapping>> \n} else {\n    <<Compute ray direction using equal-area mapping>> \n}\npstd::swap(dir.y, dir.z);",
+      "local_code": "Point2f uv(sample.pfilm.x / film.FullResolution().x,\n           sample.pfilm.y / film.FullResolution().y);\nVector3f dir;\nif (mapping == EquiRectangular) {\n    <<Compute ray direction using equirectangular mapping>>\n} else {\n    <<Compute ray direction using equal-area mapping>>\n}\npstd::swap(dir.y, dir.z);",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Computeraydirectionusingequirectangularmapping-0",
+      "line": 413,
+      "code": "Float theta = Pi * uv[1], phi = 2 * Pi * uv[0];\ndir = SphericalDirection(std::sin(theta), std::cos(theta), phi);",
+      "local_code": "Float theta = Pi * uv[1], phi = 2 * Pi * uv[0];\ndir = SphericalDirection(std::sin(theta), std::cos(theta), phi);",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Computeraydirectionusingequal-areamapping-0",
+      "line": 462,
+      "code": "uv = WrapEqualAreaSquare(uv);\ndir = EqualAreaSquareToSphere(uv);",
+      "local_code": "uv = WrapEqualAreaSquare(uv);\ndir = EqualAreaSquareToSphere(uv);",
+      "equal_ignoring_whitespace": true
+    }
+  ],
+  "panels": [
+    {
+      "id": "fragbit-268",
+      "line": 100,
+      "code": "enum Mapping { EquiRectangular, EqualArea };",
+      "expanded_code": "enum Mapping { EquiRectangular, EqualArea };",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-SphericalCamera::MappingDefinition-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-269",
+      "line": 101,
+      "code": "SphericalCamera(CameraBaseParameters baseParameters, Mapping mapping)\n           : CameraBase(baseParameters), mapping(mapping) {\n           <<Compute minimum differentials for SphericalCamera>> \n       }\n       static SphericalCamera *Create(const ParameterDictionary &parameters,\n                                      const CameraTransform &cameraTransform,\n                                      Film film, Medium medium,\n                                      const FileLoc *loc, Allocator alloc = {});\n       \n       PBRT_CPU_GPU\n       pstd::optional<CameraRay> GenerateRay(CameraSample sample,\n                                             SampledWavelengths &lambda) const;\n       \n       PBRT_CPU_GPU\n       pstd::optional<CameraRayDifferential> GenerateRayDifferential(\n           CameraSample sample, SampledWavelengths &lambda) const {\n           return CameraBase::GenerateRayDifferential(this, sample, lambda);\n       }\n       \n       PBRT_CPU_GPU\n       SampledSpectrum We(const Ray &ray, SampledWavelengths &lambda,\n                          Point2f *pRaster2 = nullptr) const {\n           LOG_FATAL(\"We() unimplemented for SphericalCamera\");\n           return {};\n       }\n       \n       PBRT_CPU_GPU\n       void PDF_We(const Ray &ray, Float *pdfPos, Float *pdfDir) const {\n           LOG_FATAL(\"PDF_We() unimplemented for SphericalCamera\");\n       }\n       \n       PBRT_CPU_GPU\n       pstd::optional<CameraWiSample> SampleWi(const Interaction &ref, Point2f u,\n                                               SampledWavelengths &lambda) const {\n           LOG_FATAL(\"SampleWi() unimplemented for SphericalCamera\");\n           return {};\n       }\n       \n       std::string ToString() const;",
+      "expanded_code": "SphericalCamera(CameraBaseParameters baseParameters, Mapping mapping)\n           : CameraBase(baseParameters), mapping(mapping) {\n           <<Compute minimum differentials for SphericalCamera>>               FindMinimumDifferentials(this);\n       }\n       static SphericalCamera *Create(const ParameterDictionary &parameters,\n                                      const CameraTransform &cameraTransform,\n                                      Film film, Medium medium,\n                                      const FileLoc *loc, Allocator alloc = {});\n       \n       PBRT_CPU_GPU\n       pstd::optional<CameraRay> GenerateRay(CameraSample sample,\n                                             SampledWavelengths &lambda) const;\n       \n       PBRT_CPU_GPU\n       pstd::optional<CameraRayDifferential> GenerateRayDifferential(\n           CameraSample sample, SampledWavelengths &lambda) const {\n           return CameraBase::GenerateRayDifferential(this, sample, lambda);\n       }\n       \n       PBRT_CPU_GPU\n       SampledSpectrum We(const Ray &ray, SampledWavelengths &lambda,\n                          Point2f *pRaster2 = nullptr) const {\n           LOG_FATAL(\"We() unimplemented for SphericalCamera\");\n           return {};\n       }\n       \n       PBRT_CPU_GPU\n       void PDF_We(const Ray &ray, Float *pdfPos, Float *pdfDir) const {\n           LOG_FATAL(\"PDF_We() unimplemented for SphericalCamera\");\n       }\n       \n       PBRT_CPU_GPU\n       pstd::optional<CameraWiSample> SampleWi(const Interaction &ref, Point2f u,\n                                               SampledWavelengths &lambda) const {\n           LOG_FATAL(\"SampleWi() unimplemented for SphericalCamera\");\n           return {};\n       }\n       \n       std::string ToString() const;",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-270",
+      "line": 103,
+      "code": "FindMinimumDifferentials(this);",
+      "expanded_code": "FindMinimumDifferentials(this);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [
+        7
+      ],
+      "same_visible_default": [],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-271",
+      "line": 141,
+      "code": "Mapping mapping;",
+      "expanded_code": "Mapping mapping;",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-SphericalCameraPrivateMembers-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-272",
+      "line": 196,
+      "code": "FindMinimumDifferentials(this);",
+      "expanded_code": "FindMinimumDifferentials(this);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [
+        7
+      ],
+      "same_visible_default": [],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-273",
+      "line": 285,
+      "code": "Point2f uv(sample.pfilm.x / film.FullResolution().x,\n                  sample.pfilm.y / film.FullResolution().y);\n       Vector3f dir;\n       if (mapping == EquiRectangular) {\n           <<Compute ray direction using equirectangular mapping>> \n       } else {\n           <<Compute ray direction using equal-area mapping>> \n       }\n       pstd::swap(dir.y, dir.z);",
+      "expanded_code": "Point2f uv(sample.pfilm.x / film.FullResolution().x,\n                  sample.pfilm.y / film.FullResolution().y);\n       Vector3f dir;\n       if (mapping == EquiRectangular) {\n           <<Compute ray direction using equirectangular mapping>>               Float theta = Pi * uv[1], phi = 2 * Pi * uv[0];\n              dir = SphericalDirection(std::sin(theta), std::cos(theta), phi);\n       } else {\n           <<Compute ray direction using equal-area mapping>>               uv = WrapEqualAreaSquare(uv);\n              dir = EqualAreaSquareToSphere(uv);\n       }\n       pstd::swap(dir.y, dir.z);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Computesphericalcameraraydirection-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-274",
+      "line": 289,
+      "code": "Float theta = Pi * uv[1], phi = 2 * Pi * uv[0];\n              dir = SphericalDirection(std::sin(theta), std::cos(theta), phi);",
+      "expanded_code": "Float theta = Pi * uv[1], phi = 2 * Pi * uv[0];\n              dir = SphericalDirection(std::sin(theta), std::cos(theta), phi);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Computeraydirectionusingequirectangularmapping-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-275",
+      "line": 292,
+      "code": "uv = WrapEqualAreaSquare(uv);\n              dir = EqualAreaSquareToSphere(uv);",
+      "expanded_code": "uv = WrapEqualAreaSquare(uv);\n              dir = EqualAreaSquareToSphere(uv);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Computeraydirectionusingequal-areamapping-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-276",
+      "line": 364,
+      "code": "Float theta = Pi * uv[1], phi = 2 * Pi * uv[0];\n       dir = SphericalDirection(std::sin(theta), std::cos(theta), phi);",
+      "expanded_code": "Float theta = Pi * uv[1], phi = 2 * Pi * uv[0];\n       dir = SphericalDirection(std::sin(theta), std::cos(theta), phi);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Computeraydirectionusingequirectangularmapping-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    },
+    {
+      "id": "fragbit-277",
+      "line": 367,
+      "code": "uv = WrapEqualAreaSquare(uv);\n       dir = EqualAreaSquareToSphere(uv);",
+      "expanded_code": "uv = WrapEqualAreaSquare(uv);\n       dir = EqualAreaSquareToSphere(uv);",
+      "empty_panel": false,
+      "whole_panel_within_supplement": [],
+      "same_visible_default": [
+        "fragment-Computeraydirectionusingequal-areamapping-0"
+      ],
+      "review_note": "Original full panel read, including repeated expansions; composite panels combine the visible definitions and source-checked supplementary methods. Empty image-plane-area panels retain only their original placeholder."
+    }
+  ],
+  "supplement_chunks": [
+    {
+      "code": "static SphericalCamera *Create(const ParameterDictionary &parameters,\n                               const CameraTransform &cameraTransform,\n                               Film film, Medium medium,\n                               const FileLoc *loc, Allocator alloc = {});",
+      "source_panels": [
+        "fragbit-269"
+      ]
+    },
+    {
+      "code": "PBRT_CPU_GPU\npstd::optional<CameraRay> GenerateRay(CameraSample sample,\n                                      SampledWavelengths &lambda) const;",
+      "source_panels": [
+        "fragbit-269"
+      ]
+    },
+    {
+      "code": "PBRT_CPU_GPU\npstd::optional<CameraRayDifferential> GenerateRayDifferential(\n    CameraSample sample, SampledWavelengths &lambda) const {\n    return CameraBase::GenerateRayDifferential(this, sample, lambda);\n}",
+      "source_panels": [
+        "fragbit-269"
+      ]
+    },
+    {
+      "code": "PBRT_CPU_GPU\nSampledSpectrum We(const Ray &ray, SampledWavelengths &lambda,\n                   Point2f *pRaster2 = nullptr) const {\n    LOG_FATAL(\"We() unimplemented for SphericalCamera\");\n    return {};\n}",
+      "source_panels": [
+        "fragbit-269"
+      ]
+    },
+    {
+      "code": "PBRT_CPU_GPU\nvoid PDF_We(const Ray &ray, Float *pdfPos, Float *pdfDir) const {\n    LOG_FATAL(\"PDF_We() unimplemented for SphericalCamera\");\n}",
+      "source_panels": [
+        "fragbit-269"
+      ]
+    },
+    {
+      "code": "PBRT_CPU_GPU\npstd::optional<CameraWiSample> SampleWi(const Interaction &ref, Point2f u,\n                                        SampledWavelengths &lambda) const {\n    LOG_FATAL(\"SampleWi() unimplemented for SphericalCamera\");\n    return {};\n}",
+      "source_panels": [
+        "fragbit-269"
+      ]
+    },
+    {
+      "code": "std::string ToString() const;",
+      "source_panels": [
+        "fragbit-269"
+      ]
+    },
+    {
+      "code": "FindMinimumDifferentials(this);",
+      "source_panels": [
+        "fragbit-269",
+        "fragbit-270",
+        "fragbit-272"
+      ]
+    }
+  ]
+}

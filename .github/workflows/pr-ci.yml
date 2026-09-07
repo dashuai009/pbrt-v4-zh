@@ -32,4 +32,6 @@ jobs:
           name: validation-records
           path: |
             output/link-report.json
+            output/rendered-content-report.json
+            output/build-consistency.json
             audit/source-link-issues.json

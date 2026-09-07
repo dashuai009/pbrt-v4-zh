@@ -4,6 +4,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 import {parse} from 'parse5';
+import {assessReview,reviewLabel} from './review-state.mjs';
 const root=path.resolve(import.meta.dirname,'..');
 process.chdir(root);
 const pinned='f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c';
@@ -48,8 +49,12 @@ for(const source of [...toc,...extra]){
  pages.push({source:`4ed/${source}`,in_toc:toc.includes(source),source_sha256:digest(html),local,mapping:local?(fs.readFileSync(local,'utf8').trim()?'candidate':'empty_file'):'missing_or_special',coverage:'unreviewed',units});
 }
 const ledger=fs.existsSync('audit/review-status.json')?JSON.parse(fs.readFileSync('audit/review-status.json')).files:{};
-for(const p of pages){const review=ledger[p.local];if(review){p.editorial_review=review;p.review_is_current=digest(fs.readFileSync(p.local))===review.local_sha256;}}
+for(const p of pages){
+ if(!p.local){p.editorial_state={status:'source_navigation',changes:[]};continue;}
+ const review=ledger[p.local];p.editorial_state=assessReview(p.local,review);
+ if(review){p.editorial_review=review;p.review_is_current=p.editorial_state.status==='independently_reviewed';}
+}
 const result={schema:1,upstream_commit:pinned,notice:'Structural candidates only. Every unit is unreviewed until source comparison and independent review are recorded. HTML navigation paragraphs may appear and require explicit scope decisions.',pages,local_extras:locals.filter(f=>![...localMap.values()].includes(f))};
 fs.mkdirSync('audit',{recursive:true});fs.writeFileSync('audit/inventory.json',JSON.stringify(result,null,2)+'\n');
-fs.writeFileSync('audit/COVERAGE.md','# 全书结构候选清单\n\n固定原书 '+pinned+'。以下仅表示结构映射，所有条目初始均待原文对照及独立复核；逐单元行号、锚点和指纹见 inventory.json。报告与后续审校记录独立保存，重新生成不会给内容授予通过状态。\n\n| 原书页面 | 本地入口 | 候选单元数 | 状态 |\n|---|---|---:|---|\n'+pages.map(p=>`| ${p.source} | ${p.local||'缺失或特殊页面，待判定'} | ${p.units.length} | 未复核 |`).join('\n')+'\n\n本地附加页面：'+result.local_extras.join('、')+'\n');
+fs.writeFileSync('audit/COVERAGE.md','# 全书结构候选清单\n\n固定原书 '+pinned+'。结构映射与审校状态分开记录；审校状态依据报告和当前正文、补充/资源指纹，不由数量推断。逐单元本地位置映射仍需逐项证据，不能用整节状态替代；逐单元行号、锚点和指纹见 inventory.json。报告与后续审校记录独立保存，重新生成不会给内容授予通过状态。\n\n| 原书页面 | 本地入口 | 候选单元数 | 状态 |\n|---|---|---:|---|\n'+pages.map(p=>`| ${p.source} | ${p.local||'缺失或特殊页面，待判定'} | ${p.units.length} | ${p.local?reviewLabel(p.editorial_state):'目录/重定向辅助页，另验导航'} |`).join('\n')+'\n\n本地附加页面：'+result.local_extras.join('、')+'\n');
 console.log(JSON.stringify({pages:pages.length,toc:toc.length,units:pages.reduce((s,p)=>s+p.units.length,0),unmapped:pages.filter(p=>!p.local).map(p=>p.source)},null,2));

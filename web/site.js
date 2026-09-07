@@ -52,3 +52,30 @@
   input.closest('form')?.addEventListener('submit',e=>{e.preventDefault();search();});
   input.addEventListener('keydown',e=>{if(e.key==='Escape'){wrapper.classList.add('hidden');toggle.focus();}});
 })();
+(() => {
+  // shiroa reveals preloaded HTML after initial navigation; defer fragment scrolling
+  // until the real target has a visible layout instead of losing the initial jump.
+  let pending = location.hash, queued = false;
+  const attempt = () => {
+    if (!pending || queued) return;
+    let id; try { id=decodeURIComponent(pending.slice(1)); } catch { return; }
+    const target=document.getElementById(id);
+    if (!target || !target.getClientRects().length || getComputedStyle(target).visibility==='hidden') return;
+    queued=true;
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      queued=false;
+      if(!pending || !target.getClientRects().length) return;
+      target.scrollIntoView({block:'start',behavior:'instant'});
+      pending='';
+    }));
+  };
+  new MutationObserver(attempt).observe(document.querySelector('main')||document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['style','class']});
+  addEventListener('hashchange',()=>{pending=location.hash;attempt();});
+  addEventListener('load',attempt);
+  document.addEventListener('click',event=>{
+    const link=event.target.closest?.('a[href]');if(!link)return;
+    const url=new URL(link.href,location.href);
+    if(url.origin===location.origin&&url.pathname===location.pathname&&url.hash){pending=url.hash;attempt();}
+  });
+  attempt();
+})();

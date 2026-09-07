@@ -35,7 +35,7 @@
 #parec[
   6. ② The clamping approach used to suppress outlier sample values in the `RGBFilm` and `GBufferFilm` is a heavy-handed solution that can cause a significant amount of energy loss in the image. (Consider, for example, pixels where the sun is directly visible—the radiance along rays in those pixels may be extremely high, though it is not a cause of spiky pixels and should not be clamped.) Implement a more principled solution to this problem such as the technique of Zirr et al. (#source-cite("Zirr2018")). Render images with your implementation and `pbrt`'s current approach and compare the results.
 ][
-  6. ② `RGBFilm` 和 `GBufferFilm` 用限幅抑制离群样本值，这种处理较为粗糙，可能使图像损失大量能量。例如，直接看到太阳的像素，其射线上的辐亮度可能极高，但这并非异常亮点造成的，不应被限幅。为这个问题实现一种依据更充分的方法，例如 Zirr 等人（#source-cite("Zirr2018")）的技术。分别用新实现和 `pbrt` 当前方法渲染图像，比较结果。
+  6. ② `RGBFilm` 和 `GBufferFilm` 用限幅抑制离群样本值，这种处理较为粗糙，可能使图像损失大量能量。例如，直接看到太阳的像素，其射线上的辐亮度可能极高，但这种高辐亮度并不是造成异常尖峰像素的原因，因此不应被限幅。为这个问题实现一种依据更充分的方法，例如 Zirr 等人（#source-cite("Zirr2018")）的技术。分别用新实现和 `pbrt` 当前方法渲染图像，比较结果。
 ]
 
 #parec[

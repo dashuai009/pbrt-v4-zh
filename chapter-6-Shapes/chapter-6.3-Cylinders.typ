@@ -193,7 +193,7 @@ $ (o_x + t upright(bold(d))_x)^2 + (o_y + t upright(bold(d))_y)^2 = r^2 $
 #parec[
   When we expand this equation and find the coefficients of the quadratic equation $a t^2 + b t + c = 0$, we have
 ][
-  展开这个方程并找到二次方程的系数时 $a t^2 + b t + c = 0$，我们得到
+  展开这个方程，并整理出二次方程 $a t^2 + b t + c = 0$ 的系数，可得
 ]
 
 $
@@ -212,7 +212,7 @@ Interval c = Sqr(oi.x) + Sqr(oi.y) - Sqr(Interval(radius));
 #parec[
   As with spheres, the implementation refines the computed intersection point to reduce the rounding error in the point computed by evaluating the ray equation; see @bounding-intersection-point-error. Afterward, we invert the parametric description of the cylinder to compute $phi.alt$ from $x$ and $y$ ; it turns out that the result is the same as for the sphere.
 ][
-  与球体一样，实现时会优化交点计算，以减少通过评估射线方程计算的点的舍入误差；参见@bounding-intersection-point-error。之后，通过反解圆柱的参数化描述，从 $x$ 和 $y$ 计算出 $phi.alt$ ；结果与球体相同。
+  与球体一样，实现会对已经算出的交点位置进行细化，以减小代入射线方程求值所产生的舍入误差；参见@bounding-intersection-point-error。之后，通过反解圆柱的参数化描述，从 $x$ 和 $y$ 计算出 $phi.alt$ ；结果与球体相同。
 ]
 
 #block(sticky: true)[#raw("<<Compute cylinder hit point and phi >>=")] <fragment-Computecylinderhitpointandphi-0>
@@ -290,7 +290,7 @@ SurfaceInteraction InteractionFromIntersection(
 #parec[
   Again the parametric $u$ value is computed by scaling $phi.alt$ to lie between 0 and 1. Inversion of the parametric equation for the cylinder's $z$ value gives the $v$ parametric coordinate.
 ][
-  再次通过将 $phi.alt$ 缩放到0到1之间来计算参数 $u$ 值。反转圆柱的参数方程的 $z$ 值给出 $v$ 参数坐标。
+  再次通过将 $phi.alt$ 缩放到0到1之间来计算参数 $u$ 值。反解圆柱的 $z$ 坐标参数方程，即可得到参数坐标 $v$。
 ]
 
 #block(sticky: true)[#raw("<<Find parametric representation of cylinder hit>>=")] <fragment-Findparametricrepresentationofcylinderhit-0>
@@ -360,7 +360,7 @@ pstd::optional<ShapeSample> Sample(Point2f u) const {
 #parec[
   Given $z$ and $phi.alt$, the corresponding object-space position and normal are easily found.
 ][
-  给定 $z$ 和 $phi.alt$，相应的物体空间位置和法向量可以很容易地找到。
+  给定 $z$ 和 $phi.alt$，相应的对象空间位置和法向量可以很容易地找到。
 ]
 
 #block(sticky: true)[#raw("<<Compute cylinder sample position pi and normal n from z and phi >>=")] <fragment-Computecylindersamplepositionmonopiandnormalmononfromzandphi-0>

@@ -26,4 +26,9 @@ PBRT_CPU_GPU
 DirectionCone NormalBounds() const;
 
 PBRT_CPU_GPU
+Float PDF(const ShapeSampleContext &ctx, Vector3f wi) const {
+    <<Intersect sample ray with shape geometry>>
+    <<Compute PDF in solid angle measure from shape intersection point>>
+    return pdf;
+}
 ```

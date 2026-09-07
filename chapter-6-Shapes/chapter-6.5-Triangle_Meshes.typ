@@ -467,7 +467,7 @@ Float Area() const {
 #parec[
   Bounding the triangle's normal should be trivial: a cross product of appropriate edges gives its single normal vector direction. However, two subtleties that affect the orientation of the normal must be handled before the bounds are returned.
 ][
-  确定三角形法向量的边界应该是简单的：两边的叉积给出了其单一法向量向量方向。然而，在返回边界之前，必须处理影响法向量方向的两个细微差别。
+  给出三角形法向量的方向范围本应很简单：适当的两条边的叉积给出了它唯一的法向量方向。然而，在返回边界之前，必须处理影响法向量方向的两个细微差别。
 ]
 
 #block(sticky: true)[#raw("<<Triangle Method Definitions>>+=")] <fragment-TriangleMethodDefinitions-1>
@@ -483,7 +483,7 @@ DirectionCone Triangle::NormalBounds() const {
 #parec[
   The first issue with the returned normal comes from the presence of per-vertex normals, even though it is a bound on geometric normals that `NormalBounds()` is supposed to return. `pbrt` requires that both the geometric normal and the interpolated per-vertex normal lie on the same side of the surface. If the two of them are on different sides, then `pbrt` follows the convention that the geometric normal is the one that should be flipped.
 ][
-  返回的法向量的第一个问题来自于每个顶点法向量的存在，尽管 `NormalBounds()` 应该返回的是几何法向量的边界。`pbrt` 要求几何法向量和插值的每个顶点法向量位于表面的同一侧。如果两者位于不同的侧面，则 `pbrt` 遵循的惯例是几何法向量应该被翻转。
+  返回的法向量的第一个问题来自于每个顶点法向量的存在，尽管 `NormalBounds()` 应该返回的是几何法向量的边界。`pbrt` 要求几何法向量和由逐顶点法向量插值得到的法向量位于表面的同一侧。如果两者位于不同的侧面，则 `pbrt` 遵循的惯例是几何法向量应该被翻转。
 ]
 
 #parec[
@@ -652,9 +652,9 @@ $
 
 
 #parec[
-  To see how this transformation works, consider its operation on the ray direction vector $vec(upright(bold(d))_x, upright(bold(d))_y, upright(bold(d))_z, 0)^T$.
+  To see how this transformation works, consider its operation on the ray direction vector $mat(delim: "[", upright(bold(d))_x, upright(bold(d))_y, upright(bold(d))_z, 0)^T$.
 ][
-  要了解此变换如何工作，请考虑其对光线方向向量 $vec(upright(bold(d))_x, upright(bold(d))_y, upright(bold(d))_z, 0)^T$ 的操作。
+  要了解此变换如何工作，请考虑其对光线方向向量 $mat(delim: "[", upright(bold(d))_x, upright(bold(d))_y, upright(bold(d))_z, 0)^T$ 的操作。
 ]
 
 #parec[
@@ -729,7 +729,7 @@ $
 #parec[
   We will use this expression of triangle area to define a signed edge function: given two triangle vertices $upright(bold(p))_0$ and $upright(bold(p))_1$, we can define the directed edge function $e$ as the function that gives twice the area of the triangle given by $upright(bold(p))_0$, $upright(bold(p))_1$, and a given third point $upright(bold(p))$ :
 ][
-  我们将使用这个三角形面积的表达式来定义一个有符号的边函数：给定两个三角形顶点 $upright(bold(p))_0$ 和 $upright(bold(p))_1$，我们可以定义有向边函数 $e$，作为给定第三个点 $upright(bold(p))$ 的三角形由 $upright(bold(p))_0$ 、 $upright(bold(p))_1$ 和 $upright(bold(p))$ 定义的面积的两倍的函数：
+  我们用这个面积表达式定义有符号的边函数：给定三角形的两个顶点 $upright(bold(p))_0$、$upright(bold(p))_1$ 和第三个点 $upright(bold(p))$，有向边函数 $e$ 的值等于这三点所构成三角形的有符号面积的两倍：
 ]
 
 
@@ -947,7 +947,7 @@ static SurfaceInteraction InteractionFromIntersection(
 #parec[
   To generate consistent tangent vectors over triangle meshes, it is necessary to compute the partial derivatives $∂ p \/ ∂ u$ and $∂ p \/ ∂ v$ using the parametric $(u,v)$ values at the triangle vertices, if provided. Although the partial derivatives are the same at all points on the triangle, the implementation here recomputes them each time an intersection is found. Although this results in redundant computation, the storage savings for large triangle meshes can be significant.
 ][
-  为了在三角网格上生成一致的切线向量，有必要使用三角形顶点处的参数化 $(u,v)$ 值来计算偏导数 $∂ p \/ ∂ u$ 和 $∂ p \/ ∂ v$。尽管在三角形上的所有点处这些偏导数是相同的，但此处的实现每次找到交点时都会重新计算它们。尽管这会导致重复计算，但对于大型三角网格来说，节省的存储空间可能是相当可观的。
+  为了在三角网格上生成一致的切线向量，若提供了三角形顶点处的参数坐标 $(u,v)$，就应使用它们来计算偏导数 $∂ p \/ ∂ u$ 和 $∂ p \/ ∂ v$。尽管在三角形上的所有点处这些偏导数是相同的，但此处的实现每次找到交点时都会重新计算它们。尽管这会导致重复计算，但对于大型三角网格来说，节省的存储空间可能是相当可观的。
 ]
 
 #parec[
@@ -1186,6 +1186,7 @@ else
 
 === #ez_caption[Sampling][采样]
 <triangle-sampling>
+#parec[This section contains advanced content and may be skipped on a first reading.][本节包含进阶内容，初次阅读时可以跳过。]
 
 #parec[
   The uniform area triangle sampling method is based on mapping the provided random sample `u` to barycentric coordinates that are uniformly distributed over the triangle.
@@ -1342,7 +1343,7 @@ $ frac(rho L_e,1/A) (V(p,p prime) abs(cos theta prime) frac(abs(cos theta_l),nor
 #parec[
   With area sampling, the $abs(cos theta_l)$ factor adds some additional variance, though not too much, since it is between 0 and 1. However, $1/norm(p prime-p)^2$ can have unbounded variation over the surface of the triangle, which can lead to high variance in the estimator since the method used to sample $p prime$ does not account for it at all. This variance increases the larger the triangle is and the closer the reference point is to it. @fig:solid-angle-triangle-sampling-win shows a scene where solid angle sampling significantly reduces error.
 ][
-  面积采样中的 $abs(cos theta_l)$ 位于0与1之间，因此增加的方差较有限。但 $1/norm(p prime-p)^2$ 在三角形表面可能变化极大，而采样 $p prime$ 时完全没有考虑它，从而可能产生很高的方差。三角形越大、参考点越近，这种方差越大。@fig:solid-angle-triangle-sampling-win 展示了立体角采样显著降低误差的场景。
+  面积采样中的 $abs(cos theta_l)$ 位于0与1之间，因此增加的方差较有限。但 $1/norm(p prime-p)^2$ 在三角形表面可能具有无界的变化幅度，而采样 $p prime$ 时完全没有考虑它，从而可能产生很高的方差。三角形越大、参考点越近，这种方差越大。@fig:solid-angle-triangle-sampling-win 展示了立体角采样显著降低误差的场景。
 ]
 
 #figure(image("../pbr-book-website/4ed/Shapes/tri-sample-image.png"), caption: [#ez_caption[A Scene Where Solid Angle Triangle Sampling Is Beneficial. When points on triangles are sampled using uniform area sampling, error is high at points on the ground close to the emitter. If points are sampled on the triangle by uniformly sampling the solid angle the triangle subtends, then the remaining non-constant factors in the estimator are both between 0 and 1, which results in much lower error. For this scene, mean squared error (MSE) is reduced by a factor of 3.86. (Dragon model courtesy of the Stanford Computer Graphics Laboratory.)][立体角三角形采样有益的场景。均匀面积采样在靠近光源的地面位置误差很大。改为在三角形所张的立体角内均匀采样后，估计量中其余非常数因子都位于0与1之间，误差明显降低。本例的 MSE 降至原来的1/3.86。（龙模型由斯坦福计算机图形实验室提供。）]]) <solid-angle-triangle-sampling-win>

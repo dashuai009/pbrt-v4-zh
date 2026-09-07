@@ -147,3 +147,8 @@ if (sizeof(Float) == sizeof(float) &&
     e2 = (float)(p1typ0tx - p1txp0ty);
 }
 ```
+
+#block(sticky: true)[#link("https://pbr-book.org/4ed/Shapes/Triangle_Meshes.html#fragbit-549")[`fragbit-549`]]
+```cpp
+size_t BytesUsed() const { return bytesUsed; }
+```

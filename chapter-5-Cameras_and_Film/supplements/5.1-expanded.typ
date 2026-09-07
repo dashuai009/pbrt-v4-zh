@@ -22,6 +22,7 @@ void Approximate_dp_dxy(Point3f p, Normal3f n, Float time,
 ]
 
 #block(sticky: true)[#link("https://pbr-book.org/4ed/Cameras_and_Film/Camera_Interface.html#fragbit-197")[`fragbit-197`]]
+#block(breakable: false)[
 ```cpp
 CameraTransform() = default;
 explicit CameraTransform(const AnimatedTransform &worldFromCamera);
@@ -43,45 +44,83 @@ Transform CameraFromWorld(Float time) const {
 }
 PBRT_CPU_GPU
 bool CameraFromRenderHasScale() const { return renderFromCamera.HasScale(); }
+```
+]
 
+#block(breakable: false)[
+```cpp
 PBRT_CPU_GPU
 Vector3f RenderFromCamera(Vector3f v, Float time) const {
     return renderFromCamera(v, time);
 }
+```
+]
 
+#block(breakable: false)[
+```cpp
 PBRT_CPU_GPU
 Normal3f RenderFromCamera(Normal3f n, Float time) const {
     return renderFromCamera(n, time);
 }
+```
+]
 
+#block(breakable: false)[
+```cpp
 PBRT_CPU_GPU
 Ray RenderFromCamera(const Ray &r) const { return renderFromCamera(r); }
+```
+]
 
+#block(breakable: false)[
+```cpp
 PBRT_CPU_GPU
 RayDifferential RenderFromCamera(const RayDifferential &r) const {
     return renderFromCamera(r);
 }
+```
+]
 
+#block(breakable: false)[
+```cpp
 PBRT_CPU_GPU
 Vector3f CameraFromRender(Vector3f v, Float time) const {
     return renderFromCamera.ApplyInverse(v, time);
 }
+```
+]
 
+#block(breakable: false)[
+```cpp
 PBRT_CPU_GPU
 Normal3f CameraFromRender(Normal3f v, Float time) const {
     return renderFromCamera.ApplyInverse(v, time);
 }
+```
+]
 
+#block(breakable: false)[
+```cpp
 PBRT_CPU_GPU
 const AnimatedTransform &RenderFromCamera() const { return renderFromCamera; }
+```
+]
 
+#block(breakable: false)[
+```cpp
 PBRT_CPU_GPU
 const Transform &WorldFromRender() const { return worldFromRender; }
+```
+]
 
+#block(breakable: false)[
+```cpp
 std::string ToString() const;
 ```
+]
 
 #block(sticky: true)[#link("https://pbr-book.org/4ed/Cameras_and_Film/Camera_Interface.html#fragbit-203")[`fragbit-203`]]
+#block(breakable: false)[
 ```cpp
 void InitMetadata(ImageMetadata *metadata) const;
 std::string ToString() const;
@@ -108,6 +147,7 @@ void Approximate_dp_dxy(Point3f p, Normal3f n, Float time,
         RenderFromCamera(DownZFromCamera.ApplyInverse(py - pDownZ), time);
 }
 ```
+]
 
 #block(sticky: true)[#link("https://pbr-book.org/4ed/Cameras_and_Film/Camera_Interface.html#fragbit-207")[`fragbit-207`]]
 #block(breakable: false)[
@@ -118,46 +158,76 @@ Vector3f minDirDifferentialX, minDirDifferentialY;
 ]
 
 #block(sticky: true)[#link("https://pbr-book.org/4ed/Cameras_and_Film/Camera_Interface.html#fragbit-208")[`fragbit-208`]]
+#block(breakable: false)[
 ```cpp
 PBRT_CPU_GPU
 static pstd::optional<CameraRayDifferential> GenerateRayDifferential(
     Camera camera, CameraSample sample, SampledWavelengths &lambda);
+```
+]
 
+#block(breakable: false)[
+```cpp
 RayDifferential RenderFromCamera(const RayDifferential &r) const {
     return cameraTransform.RenderFromCamera(r);
 }
+```
+]
 
+#block(breakable: false)[
+```cpp
 PBRT_CPU_GPU
 Vector3f RenderFromCamera(Vector3f v, Float time) const {
     return cameraTransform.RenderFromCamera(v, time);
 }
+```
+]
 
+#block(breakable: false)[
+```cpp
 PBRT_CPU_GPU
 Normal3f RenderFromCamera(Normal3f v, Float time) const {
     return cameraTransform.RenderFromCamera(v, time);
 }
+```
+]
 
+#block(breakable: false)[
+```cpp
 PBRT_CPU_GPU
 Point3f RenderFromCamera(Point3f p, Float time) const {
     return cameraTransform.RenderFromCamera(p, time);
 }
+```
+]
 
+#block(breakable: false)[
+```cpp
 PBRT_CPU_GPU
 Vector3f CameraFromRender(Vector3f v, Float time) const {
     return cameraTransform.CameraFromRender(v, time);
 }
+```
+]
 
+#block(breakable: false)[
+```cpp
 PBRT_CPU_GPU
 Normal3f CameraFromRender(Normal3f v, Float time) const {
     return cameraTransform.CameraFromRender(v, time);
 }
+```
+]
 
+#block(breakable: false)[
+```cpp
 PBRT_CPU_GPU
 Point3f CameraFromRender(Point3f p, Float time) const {
     return cameraTransform.CameraFromRender(p, time);
 }
 void FindMinimumDifferentials(Camera camera);
 ```
+]
 
 #block(sticky: true)[#link("https://pbr-book.org/4ed/Cameras_and_Film/Camera_Interface.html#fragbit-212")[`fragbit-212`]]
 #block(breakable: false)[

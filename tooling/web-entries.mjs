@@ -1,11 +1,12 @@
 // Build thin Typst entry files; never copies or rewrites the translated body.
 import fs from 'node:fs';
+import {assessReview} from './review-state.mjs';
 import crypto from 'node:crypto';
 const inv=JSON.parse(fs.readFileSync('audit/inventory.json'));
 const refs=[...JSON.parse(fs.readFileSync('output/references-en.json')),...JSON.parse(fs.readFileSync('output/references-zh.json'))];
 const pages=inv.pages.filter(p=>p.local);
 const ledger=fs.existsSync('audit/review-status.json')?JSON.parse(fs.readFileSync('audit/review-status.json')).files:{};
-const currentReview=p=>{const r=ledger[p.local];if(!r)return '';for(const [f,hash]of Object.entries({[p.local]:r.local_sha256,...r.included_files}))if(!fs.existsSync(f)||crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex')!==hash)return '';return r.independent_review_report};
+const currentReview=p=>assessReview(p.local,ledger[p.local]).status==='independently_reviewed'?ledger[p.local].independent_review_report:'';
 const fileLabels=new Map(pages.map(p=>[p.local,new Set([...fs.readFileSync(p.local,'utf8').matchAll(/<([^<>\n]+)>/g)].map(m=>m[1]))]));
 const chapterTitles=['序言','引言','蒙特卡洛积分','几何与变换','辐射度量、光谱与颜色','相机与胶片','形状','图元与求交加速','采样与重建','反射模型','纹理与材质','体散射','光源','光传输 I：表面反射','光传输 II：体渲染','GPU 上的波前渲染','回顾与未来'];
 const entries=pages.map((p,i)=>({...p,slug:String(i).padStart(3,'0')+'-'+p.source.replace(/^4ed\//,'').replace(/\.html$/,'').replaceAll('/','--').replace(/[^A-Za-z0-9_-]/g,''),title:p.units.find(u=>u.kind==='heading')?.excerpt||p.source}));

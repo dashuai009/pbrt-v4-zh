@@ -35,7 +35,7 @@
   }
   set cite(form: "year")
   show raw.where(block: true): it => context if shiroa-sys-target() == "html" { html.elem("pre", html.elem("code", it.text, attrs: ("data-language": if it.lang == none { "text" } else { it.lang }))) } else { it }
-  show image: it => context if shiroa-sys-target() == "html" { html.elem("span", html.frame(it), attrs: (class: "source-svg")) } else { it }
+  show image: it => context if shiroa-sys-target() == "html" { html.elem("span", html.frame(if it.width != auto and it.width.ratio != 0% { box(width: 600pt, it) } else { it }), attrs: (class: "source-svg")) } else { it }
   show table: it => context if shiroa-sys-target() == "html" { html.elem("div", it, attrs: (class: "table-scroll")) } else { it }
   show grid: it => context if shiroa-sys-target() == "html" { html.elem("div", html.frame(it), attrs: (class: "figure-frame")) } else { it }
   show bibliography: none

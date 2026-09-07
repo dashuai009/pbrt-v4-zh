@@ -277,7 +277,7 @@ Point2f SampleTwoNormal(Point2f u, Float mu = 0, Float sigma = 1) {
 
 #metadata(none) <SampleTwoNormal>
 
-#translator[固定原书此处代码将 `cos`、`sin` 因子置于 `std::sqrt` 内，与前文极坐标关系不一致，并可能对负数开平方。此处保留原代码，不能据此视为正确的 Box–Muller 实现；需要上游勘误。]
+#translator([固定原书此处代码将 `cos`、`sin` 因子置于 `std::sqrt` 内，与前文极坐标关系不一致，并可能对负数开平方。此处保留原代码，不能据此视为正确的 Box–Muller 实现；需要上游勘误。], en: [The fixed source places the cosine and sine factors inside `std::sqrt`, contradicting the preceding polar-coordinate relation and potentially taking the square root of a negative number. The code is retained as printed; it should not be treated as a verified Box–Muller implementation.])
 
 #block(breakable: false)[
 === #ez_caption[Sampling the Logistic Function][logistic 函数采样] <sample-logistic-fun>
@@ -402,7 +402,7 @@ Float TrimmedLogisticPDF(Float x, Float s, Float a, Float b) {
 
 #metadata(none) <TrimmedLogisticPDF>
 
-#translator[固定原书这里调用 `Logistic(x, s)`，而前面展示的 PDF 函数名为 `LogisticPDF`。保留原书标识符，此名称对应关系待上游确认。]
+#translator([固定原书这里调用 `Logistic(x, s)`，而前面展示的 PDF 函数名为 `LogisticPDF`。保留原书标识符，此名称对应关系待上游确认。], en: [The fixed source calls `Logistic(x, s)`, whereas the PDF function shown earlier is named `LogisticPDF`. The original identifier is retained; this naming discrepancy requires upstream clarification.])
 
 #parec[
 Next, consider sampling using the inversion method. Following the definition of #source-math("/Appendix-A-Sampling_Algorithms/supplements/math/A4-718102b808e3495b.svg",7.561,3.176,1.171,"p Subscript left-bracket a comma b right-bracket Baseline left-parenthesis x right-parenthesis"), we can see that the CDF associated with #source-math("/Appendix-A-Sampling_Algorithms/supplements/math/A4-718102b808e3495b.svg",7.561,3.176,1.171,"p Subscript left-bracket a comma b right-bracket Baseline left-parenthesis x right-parenthesis") is
@@ -421,7 +421,7 @@ Setting #source-math("/Appendix-A-Sampling_Algorithms/supplements/math/A4-bac4ef
 #math.equation(block: true)[#source-math("/Appendix-A-Sampling_Algorithms/supplements/math/A4-695b74811b8aebd8.svg",35.139,3.176,0.838,"upper X equals upper P Superscript negative 1 Baseline left-parenthesis xi left-parenthesis upper P left-parenthesis b right-parenthesis minus upper P left-parenthesis a right-parenthesis right-parenthesis plus upper P left-parenthesis a right-parenthesis right-parenthesis period", display: true)]
 
 #parec[
-Thus, if we compute a new $xi$ value (that, in a slight abuse of notation, is not between 0 and 1) by using $xi$ to linearly interpolate between $P(a)$ and $P(b)$ and then apply the original sampling algorithm, we will generate a sample from the distribution over the interval $[a,b]$.
+Thus, if we compute a new $xi$ value (that, in a slight abuse of notation, is not between 0 and 1) by using $xi$ to linearly interpolate between $P(a)$ and $P(b)$ and then apply the original sampling algorithm, we will generate a sample from the distribution over the interval $[a,b]$.#footnote[Editorial note: The source’s parenthetical range claim is incorrect. The CDF endpoints and their interpolation remain within $[0,1]$; the covered subinterval and sampling distribution change.]
 ][
 因此，先用 $xi$ 在 $P(a)$ 与 $P(b)$ 之间作线性插值，求出新的 $xi$ 值（原文沿用这一符号，并称其“不在 0 与 1 之间”），再应用原来的采样算法，就能在区间 $[a,b]$ 上按该分布生成样本。#footnote[校注：原文括号中的范围说法有误。CDF 值 $P(a)$、$P(b)$ 及其线性插值仍在 $[0,1]$ 内；改变的是样本在这一范围内的分布及覆盖的子区间。]
 ]
@@ -514,7 +514,7 @@ Integrating the PDF is also easy; the resulting CDF is
 
 $ P(x)=(2t^3-t^4)/(b-a) . $
 
-#translator[固定原书上式含分母 $b-a$，但由前一 PDF 积分得到的归一化 CDF 应为 $2t^3-t^4$；下方 `SampleSmoothStep()` 的代码也使用后者。这里保留原式并标出矛盾，不能把它当作已确认的数学结论。]
+#translator([固定原书上式含分母 $b-a$，但由前一 PDF 积分得到的归一化 CDF 应为 $2t^3-t^4$；下方 `SampleSmoothStep()` 的代码也使用后者。这里保留原式并标出矛盾，不能把它当作已确认的数学结论。], en: [The fixed source includes a denominator $b-a$ above. Integrating the preceding PDF gives the normalized CDF $2t^3-t^4$, which is also used by `SampleSmoothStep()` below. The printed formula is retained with this discrepancy explicitly noted.])
 
 #parec[
 The challenge in sampling $f$ is evident: doing so requires solving a fourth-degree polynomial.
@@ -566,7 +566,7 @@ Float InvertSmoothStepSample(Float x, Float a, Float b) {
 
 #metadata(none) <InvertSmoothStepSample>
 
-#translator[固定原书的 lambda 捕获外部已计算的 `t`，没有使用传入的参数 `x`，因此 `P(x)`、`P(a)`、`P(b)` 返回相同值，最后的表达式成为零除以零。保留原代码并提交上游疑点，不擅自改写算法。]
+#translator([固定原书的 lambda 捕获外部已计算的 `t`，没有使用传入的参数 `x`，因此 `P(x)`、`P(a)`、`P(b)` 返回相同值，最后的表达式成为零除以零。保留原代码并提交上游疑点，不擅自改写算法。], en: [The fixed source lambda captures the previously computed `t` without using its parameter `x`. Hence `P(x)`, `P(a)`, and `P(b)` return the same value and the final expression becomes zero divided by zero. The source code is preserved pending upstream correction.])
 
 #block(breakable: false)[
 === #ez_caption[Sampling Piecewise-Constant 1D Functions][一维分段常数函数采样] <piecewise-constant-1d>
@@ -859,7 +859,7 @@ return Lerp((o + du) / size(), min, max);
 ]
 
 #parec[
-As with the other sampling routines so far, `PiecewiseConstant1D` provides an inversion method that takes a point $x$ in the range #source-math("/Appendix-A-Sampling_Algorithms/supplements/math/A4-f9877626a906bb2b.svg",9.651,2.843,0.838,"left-bracket monospace m monospace i monospace n comma monospace m monospace a monospace x right-bracket") and returns the $lr([0,1))$ sample value that maps to it. As before, this is a matter of evaluating the CDF $P(x)$ at the given position.
+As with the other sampling routines so far, `PiecewiseConstant1D` provides an inversion method that takes a point $x$ in the range #source-math("/Appendix-A-Sampling_Algorithms/supplements/math/A4-f9877626a906bb2b.svg",9.651,2.843,0.838,"left-bracket monospace m monospace i monospace n comma monospace m monospace a monospace x right-bracket") and returns the $lr([0,1))$ sample value that maps to it. As before, this is a matter of evaluating the CDF $P(x)$ at the given position.#footnote[Editorial note: For nonempty, nondegenerate input with valid arithmetic, the code below accepts `x == max` and returns the final CDF value 1, contrary to the source’s stated half-open return range.]
 ][
 与前面的采样函数一样，`PiecewiseConstant1D` 提供逆采样方法：接收 `[min,max]` 范围内的点 $x$，返回映射到它的 $lr([0,1))$ 样本值。与前面一样，只需在给定位置计算 CDF $P(x)$。#footnote[校注：原文把逆采样返回范围写作 $lr([0,1))$，但在非空、区间非退化且计算有效时，下列实现接受 `x == max`，并返回末端 CDF 值 1。因此该边界与原文所写的半开范围不一致。]
 ]

@@ -3,3 +3,7 @@
 /* mdBook sets the root font to 10px; headings scale from the reader body instead. */
 :root{--reader-width:850px}main h2{font-size:1.65em}main h3{font-size:1.4em}main h4{font-size:1.18em}main figure{margin:1.5em 0}.copy-code{float:none;display:block;margin:.2em 0 .2em auto}figure>.source-svg>svg{width:100%;height:auto}.source-svg{background:#fff}@media(max-width:600px){main h2{font-size:1.45em}main h3{font-size:1.25em}}
 .original-math>svg{height:100%;width:auto;max-width:none;display:block;background:#fff}
+.footnotes{font-size:.9em}.reader-status{font-size:.88em}.copy-code{min-height:30px}#searchresults p{font-size:.9em;line-height:1.6}
+/* Center short formula frames with auto margins; oversized frames start at the scroll origin. */
+main div[style*="justify-content: center"][style*="overflow-x: auto"]{justify-content:flex-start!important}
+main div[style*="justify-content: center"][style*="overflow-x: auto"]>svg{flex-shrink:0;margin-inline:auto}

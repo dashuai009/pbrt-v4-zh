@@ -1129,9 +1129,9 @@ Bounds3f Bounds(const Bounds3f &allb) const {
 
 
 #parec[
-  Finally, `CompactLightBounds()` also provides an `Importance()` method. Its implementation also requires that the original #link("../Geometry_and_Transformations/Bounding_Boxes.html#Bounds3f")[`Bounds3f`] be provided so that the `Bounds()` method can be called. Given the unquantized bounds and cosines made available in appropriately named local variables, the remainder of the implementation can share the same fragments as were used in the implementation of #link("LightBounds::Importance()")[`LightBounds::Importance`];.
+  Finally, `CompactLightBounds()` also provides an `Importance()` method. Its implementation also requires that the original #link("../Geometry_and_Transformations/Bounding_Boxes.html#Bounds3f")[`Bounds3f`] be provided so that the `Bounds()` method can be called. Given the unquantized bounds and cosines made available in appropriately named local variables, the remainder of the implementation can share the same fragments as were used in the implementation of #link("#LightBounds::Importance")[`LightBounds::Importance`];.
 ][
-  最后，`CompactLightBounds()`还提供了一个`Importance()`方法。其实现还要求提供原始的#link("../Geometry_and_Transformations/Bounding_Boxes.html#Bounds3f")[`Bounds3f`];，以便可以调用`Bounds()`方法。给定未量化的边界和余弦在适当命名的局部变量中可用，剩余的实现可以共享与#link("LightBounds::Importance()")[`LightBounds::Importance`];实现中使用的相同片段。
+  最后，`CompactLightBounds()`还提供了一个`Importance()`方法。其实现还要求提供原始的#link("../Geometry_and_Transformations/Bounding_Boxes.html#Bounds3f")[`Bounds3f`];，以便可以调用`Bounds()`方法。给定未量化的边界和余弦在适当命名的局部变量中可用，剩余的实现可以共享与#link("#LightBounds::Importance")[`LightBounds::Importance`];实现中使用的相同片段。
 ]
 
 ```cpp
@@ -1351,9 +1351,9 @@ static LightBVHNode MakeInterior(unsigned int child1Index,
 
 
 #parec[
-  The `buildBVH()` method constructs the BVH by recursively partitioning the lights until it reaches a single light, at which point a leaf node is constructed. Its implementation closely follows the approach implemented in the #link("../Primitives_and_Intersection_Acceleration/Bounding_Volume_Hierarchies.html#BVHAggregate::buildRecursive()")[`BVHAggregate::buildRecursive()`] method: along each dimension, the light bounds are assigned to a fixed number of buckets according to their centroids. Next, a cost model is evaluated for splitting the lights at each bucket boundary. The minimum cost split is chosen and the lights are partitioned into two sets, each one passed to a recursive invocation of `buildBVH()`.
+  The `buildBVH()` method constructs the BVH by recursively partitioning the lights until it reaches a single light, at which point a leaf node is constructed. Its implementation closely follows the approach implemented in the #link("../Primitives_and_Intersection_Acceleration/Bounding_Volume_Hierarchies.html#BVHAggregate::buildRecursive")[`BVHAggregate::buildRecursive()`] method: along each dimension, the light bounds are assigned to a fixed number of buckets according to their centroids. Next, a cost model is evaluated for splitting the lights at each bucket boundary. The minimum cost split is chosen and the lights are partitioned into two sets, each one passed to a recursive invocation of `buildBVH()`.
 ][
-  `buildBVH()`方法通过递归划分光源来构建BVH，直到达到单个光源，此时构建叶节点。 其实现紧密遵循#link("../Primitives_and_Intersection_Acceleration/Bounding_Volume_Hierarchies.html#BVHAggregate::buildRecursive()")[`BVHAggregate::buildRecursive()`];方法中实现的方法：沿每个维度，根据其质心将光边界分配到固定数量的桶中。 接下来，评估在每个桶边界处分割光源的成本模型。选择最低成本的分割，并将光源划分为两组，每组传递给`buildBVH()`的递归调用。
+  `buildBVH()`方法通过递归划分光源来构建BVH，直到达到单个光源，此时构建叶节点。 其实现紧密遵循#link("../Primitives_and_Intersection_Acceleration/Bounding_Volume_Hierarchies.html#BVHAggregate::buildRecursive")[`BVHAggregate::buildRecursive()`];方法中实现的方法：沿每个维度，根据其质心将光边界分配到固定数量的桶中。 接下来，评估在每个桶边界处分割光源的成本模型。选择最低成本的分割，并将光源划分为两组，每组传递给`buildBVH()`的递归调用。
 ]
 
 #parec[

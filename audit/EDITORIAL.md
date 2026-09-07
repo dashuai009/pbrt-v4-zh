@@ -49,3 +49,5 @@ Typst 注意：i-figured 自动将 `<foo>` 变换出带 `eqt:`/`fig:`/`tbl:` 前
 相机术语：focal length＝焦距；focal distance＝对焦距离；focal point＝焦点；plane of focus＝对焦平面；circle of confusion＝弥散圆。空间变换from/to方向必须逐个对应，不能按名字含camera就猜为相机空间。
 
 译注API：`translator(中文内容, en: 英文内容)`可提供成对编辑注。没有英文版本的中文译注只在中文/对照输出显示，不再混入纯英文PDF；原正文英文与原书脚注不受影响。已用parec分别提供英文编辑注的调用保持不变。隐藏无英文版本的中文译注不等于解决源文问题，其问题记录仍必须保存。
+
+第七章术语决议：aggregate＝聚合体；spatial subdivision＝空间划分；object subdivision＝对象划分；bounding volume＝包围体；bounding volume hierarchy（BVH）＝包围体层次结构，具体盒类型仍用包围盒；shading＝着色（不是阴影）；alpha texture＝alpha 纹理，按上下文说明不透明度/裁剪语义，不直接等同透射率。

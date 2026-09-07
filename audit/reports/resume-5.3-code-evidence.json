@@ -1,0 +1,177 @@
+{
+  "upstream": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+  "visible": [
+    {
+      "id": "fragment-SphericalCameraDefinition-0",
+      "source_code": "class SphericalCamera : public CameraBase {\n  public:\n    <<SphericalCamera::Mapping Definition>>\u00a0\n    <<SphericalCamera Public Methods>>\u00a0\n  private:\n    <<SphericalCamera Private Members>>\u00a0\n};",
+      "local_code": "class SphericalCamera : public CameraBase {\n  public:\n    <<SphericalCamera::Mapping Definition>>\n    <<SphericalCamera Public Methods>>\n  private:\n    <<SphericalCamera Private Members>>\n};\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-SphericalCameraPublicMethods-0",
+      "source_code": "SphericalCamera(CameraBaseParameters baseParameters, Mapping mapping)\n    : CameraBase(baseParameters), mapping(mapping) {\n    <<Compute minimum differentials for SphericalCamera>>\u00a0\n}",
+      "local_code": "SphericalCamera(CameraBaseParameters baseParameters, Mapping mapping)\n    : CameraBase(baseParameters), mapping(mapping) {\n    <<Compute minimum differentials for SphericalCamera>>\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-SphericalCamera::MappingDefinition-0",
+      "source_code": "enum Mapping { EquiRectangular, EqualArea };",
+      "local_code": "enum Mapping { EquiRectangular, EqualArea };\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-SphericalCameraPrivateMembers-0",
+      "source_code": "Mapping mapping;",
+      "local_code": "Mapping mapping;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-SphericalCameraMethodDefinitions-0",
+      "source_code": "pstd::optional<CameraRay> SphericalCamera::GenerateRay(\n        CameraSample sample, SampledWavelengths &lambda) const {\n    <<Compute spherical camera ray direction>>\u00a0\n    Ray ray(Point3f(0, 0, 0), dir, SampleTime(sample.time), medium);\n    return CameraRay{RenderFromCamera(ray)};\n}",
+      "local_code": "pstd::optional<CameraRay> SphericalCamera::GenerateRay(\n        CameraSample sample, SampledWavelengths &lambda) const {\n    <<Compute spherical camera ray direction>>\n    Ray ray(Point3f(0, 0, 0), dir, SampleTime(sample.time), medium);\n    return CameraRay{RenderFromCamera(ray)};\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Computesphericalcameraraydirection-0",
+      "source_code": "Point2f uv(sample.pfilm.x / film.FullResolution().x,\n           sample.pfilm.y / film.FullResolution().y);\nVector3f dir;\nif (mapping == EquiRectangular) {\n    <<Compute ray direction using equirectangular mapping>>\u00a0\n} else {\n    <<Compute ray direction using equal-area mapping>>\u00a0\n}\npstd::swap(dir.y, dir.z);",
+      "local_code": "Point2f uv(sample.pfilm.x / film.FullResolution().x,\n           sample.pfilm.y / film.FullResolution().y);\nVector3f dir;\nif (mapping == EquiRectangular) {\n    <<Compute ray direction using equirectangular mapping>>\n} else {\n    <<Compute ray direction using equal-area mapping>>\n}\npstd::swap(dir.y, dir.z);\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Computeraydirectionusingequirectangularmapping-0",
+      "source_code": "Float theta = Pi * uv[1], phi = 2 * Pi * uv[0];\ndir = SphericalDirection(std::sin(theta), std::cos(theta), phi);",
+      "local_code": "Float theta = Pi * uv[1], phi = 2 * Pi * uv[0];\ndir = SphericalDirection(std::sin(theta), std::cos(theta), phi);\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Computeraydirectionusingequal-areamapping-0",
+      "source_code": "uv = WrapEqualAreaSquare(uv);\ndir = EqualAreaSquareToSphere(uv);",
+      "local_code": "uv = WrapEqualAreaSquare(uv);\ndir = EqualAreaSquareToSphere(uv);\n",
+      "equal_ignoring_whitespace": true
+    }
+  ],
+  "panels": [
+    {
+      "depth": 7,
+      "id": "fragment-SphericalCameraDefinition-0",
+      "panel": "fragbit-268",
+      "code": "       enum Mapping { EquiRectangular, EqualArea };",
+      "full": "       enum Mapping { EquiRectangular, EqualArea };"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-SphericalCameraDefinition-0",
+      "panel": "fragbit-270",
+      "code": "              FindMinimumDifferentials(this);",
+      "full": "              FindMinimumDifferentials(this);"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-SphericalCameraDefinition-0",
+      "panel": "fragbit-269",
+      "code": "       SphericalCamera(CameraBaseParameters baseParameters, Mapping mapping)\n           : CameraBase(baseParameters), mapping(mapping) {\n           <<Compute minimum differentials for SphericalCamera>>\u00a0\n       }\n       static SphericalCamera *Create(const ParameterDictionary &parameters,\n                                      const CameraTransform &cameraTransform,\n                                      Film film, Medium medium,\n                                      const FileLoc *loc, Allocator alloc = {});\n       \n       PBRT_CPU_GPU\n       pstd::optional<CameraRay> GenerateRay(CameraSample sample,\n                                             SampledWavelengths &lambda) const;\n       \n       PBRT_CPU_GPU\n       pstd::optional<CameraRayDifferential> GenerateRayDifferential(\n           CameraSample sample, SampledWavelengths &lambda) const {\n           return CameraBase::GenerateRayDifferential(this, sample, lambda);\n       }\n       \n       PBRT_CPU_GPU\n       SampledSpectrum We(const Ray &ray, SampledWavelengths &lambda,\n                          Point2f *pRaster2 = nullptr) const {\n           LOG_FATAL(\"We() unimplemented for SphericalCamera\");\n           return {};\n       }\n       \n       PBRT_CPU_GPU\n       void PDF_We(const Ray &ray, Float *pdfPos, Float *pdfDir) const {\n           LOG_FATAL(\"PDF_We() unimplemented for SphericalCamera\");\n       }\n       \n       PBRT_CPU_GPU\n       pstd::optional<CameraWiSample> SampleWi(const Interaction &ref, Point2f u,\n                                               SampledWavelengths &lambda) const {\n           LOG_FATAL(\"SampleWi() unimplemented for SphericalCamera\");\n           return {};\n       }\n       \n       std::string ToString() const;",
+      "full": "       SphericalCamera(CameraBaseParameters baseParameters, Mapping mapping)\n           : CameraBase(baseParameters), mapping(mapping) {\n           <<Compute minimum differentials for SphericalCamera>>\u00a0              FindMinimumDifferentials(this);\n       }\n       static SphericalCamera *Create(const ParameterDictionary &parameters,\n                                      const CameraTransform &cameraTransform,\n                                      Film film, Medium medium,\n                                      const FileLoc *loc, Allocator alloc = {});\n       \n       PBRT_CPU_GPU\n       pstd::optional<CameraRay> GenerateRay(CameraSample sample,\n                                             SampledWavelengths &lambda) const;\n       \n       PBRT_CPU_GPU\n       pstd::optional<CameraRayDifferential> GenerateRayDifferential(\n           CameraSample sample, SampledWavelengths &lambda) const {\n           return CameraBase::GenerateRayDifferential(this, sample, lambda);\n       }\n       \n       PBRT_CPU_GPU\n       SampledSpectrum We(const Ray &ray, SampledWavelengths &lambda,\n                          Point2f *pRaster2 = nullptr) const {\n           LOG_FATAL(\"We() unimplemented for SphericalCamera\");\n           return {};\n       }\n       \n       PBRT_CPU_GPU\n       void PDF_We(const Ray &ray, Float *pdfPos, Float *pdfDir) const {\n           LOG_FATAL(\"PDF_We() unimplemented for SphericalCamera\");\n       }\n       \n       PBRT_CPU_GPU\n       pstd::optional<CameraWiSample> SampleWi(const Interaction &ref, Point2f u,\n                                               SampledWavelengths &lambda) const {\n           LOG_FATAL(\"SampleWi() unimplemented for SphericalCamera\");\n           return {};\n       }\n       \n       std::string ToString() const;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-SphericalCameraDefinition-0",
+      "panel": "fragbit-271",
+      "code": "       Mapping mapping;",
+      "full": "       Mapping mapping;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-SphericalCameraPublicMethods-0",
+      "panel": "fragbit-272",
+      "code": "       FindMinimumDifferentials(this);",
+      "full": "       FindMinimumDifferentials(this);"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-SphericalCameraMethodDefinitions-0",
+      "panel": "fragbit-274",
+      "code": "              Float theta = Pi * uv[1], phi = 2 * Pi * uv[0];\n              dir = SphericalDirection(std::sin(theta), std::cos(theta), phi);",
+      "full": "              Float theta = Pi * uv[1], phi = 2 * Pi * uv[0];\n              dir = SphericalDirection(std::sin(theta), std::cos(theta), phi);"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-SphericalCameraMethodDefinitions-0",
+      "panel": "fragbit-275",
+      "code": "              uv = WrapEqualAreaSquare(uv);\n              dir = EqualAreaSquareToSphere(uv);",
+      "full": "              uv = WrapEqualAreaSquare(uv);\n              dir = EqualAreaSquareToSphere(uv);"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-SphericalCameraMethodDefinitions-0",
+      "panel": "fragbit-273",
+      "code": "       Point2f uv(sample.pfilm.x / film.FullResolution().x,\n                  sample.pfilm.y / film.FullResolution().y);\n       Vector3f dir;\n       if (mapping == EquiRectangular) {\n           <<Compute ray direction using equirectangular mapping>>\u00a0\n       } else {\n           <<Compute ray direction using equal-area mapping>>\u00a0\n       }\n       pstd::swap(dir.y, dir.z);",
+      "full": "       Point2f uv(sample.pfilm.x / film.FullResolution().x,\n                  sample.pfilm.y / film.FullResolution().y);\n       Vector3f dir;\n       if (mapping == EquiRectangular) {\n           <<Compute ray direction using equirectangular mapping>>\u00a0              Float theta = Pi * uv[1], phi = 2 * Pi * uv[0];\n              dir = SphericalDirection(std::sin(theta), std::cos(theta), phi);\n       } else {\n           <<Compute ray direction using equal-area mapping>>\u00a0              uv = WrapEqualAreaSquare(uv);\n              dir = EqualAreaSquareToSphere(uv);\n       }\n       pstd::swap(dir.y, dir.z);"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-Computesphericalcameraraydirection-0",
+      "panel": "fragbit-276",
+      "code": "       Float theta = Pi * uv[1], phi = 2 * Pi * uv[0];\n       dir = SphericalDirection(std::sin(theta), std::cos(theta), phi);",
+      "full": "       Float theta = Pi * uv[1], phi = 2 * Pi * uv[0];\n       dir = SphericalDirection(std::sin(theta), std::cos(theta), phi);"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-Computesphericalcameraraydirection-0",
+      "panel": "fragbit-277",
+      "code": "       uv = WrapEqualAreaSquare(uv);\n       dir = EqualAreaSquareToSphere(uv);",
+      "full": "       uv = WrapEqualAreaSquare(uv);\n       dir = EqualAreaSquareToSphere(uv);"
+    }
+  ],
+  "supplement_blocks": [
+    {
+      "local_code": "static SphericalCamera *Create(const ParameterDictionary &parameters,\n                               const CameraTransform &cameraTransform,\n                               Film film, Medium medium,\n                               const FileLoc *loc, Allocator alloc = {});\n",
+      "source_panels": [
+        "fragbit-269"
+      ]
+    },
+    {
+      "local_code": "PBRT_CPU_GPU\npstd::optional<CameraRay> GenerateRay(CameraSample sample,\n                                      SampledWavelengths &lambda) const;\n",
+      "source_panels": [
+        "fragbit-269"
+      ]
+    },
+    {
+      "local_code": "PBRT_CPU_GPU\npstd::optional<CameraRayDifferential> GenerateRayDifferential(\n    CameraSample sample, SampledWavelengths &lambda) const {\n    return CameraBase::GenerateRayDifferential(this, sample, lambda);\n}\n",
+      "source_panels": [
+        "fragbit-269"
+      ]
+    },
+    {
+      "local_code": "PBRT_CPU_GPU\nSampledSpectrum We(const Ray &ray, SampledWavelengths &lambda,\n                   Point2f *pRaster2 = nullptr) const {\n    LOG_FATAL(\"We() unimplemented for SphericalCamera\");\n    return {};\n}\n",
+      "source_panels": [
+        "fragbit-269"
+      ]
+    },
+    {
+      "local_code": "PBRT_CPU_GPU\nvoid PDF_We(const Ray &ray, Float *pdfPos, Float *pdfDir) const {\n    LOG_FATAL(\"PDF_We() unimplemented for SphericalCamera\");\n}\n",
+      "source_panels": [
+        "fragbit-269"
+      ]
+    },
+    {
+      "local_code": "PBRT_CPU_GPU\npstd::optional<CameraWiSample> SampleWi(const Interaction &ref, Point2f u,\n                                        SampledWavelengths &lambda) const {\n    LOG_FATAL(\"SampleWi() unimplemented for SphericalCamera\");\n    return {};\n}\n",
+      "source_panels": [
+        "fragbit-269"
+      ]
+    },
+    {
+      "local_code": "std::string ToString() const;\n",
+      "source_panels": [
+        "fragbit-269"
+      ]
+    },
+    {
+      "local_code": "FindMinimumDifferentials(this);\n",
+      "source_panels": [
+        "fragbit-270",
+        "fragbit-269",
+        "fragbit-272"
+      ]
+    }
+  ]
+}

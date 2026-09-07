@@ -1,0 +1,670 @@
+{
+  "upstream": "f6d66f0a6e31c3d3ed6a0756c3ad7b4af2dd8c4c",
+  "visible": [
+    {
+      "id": "fragment-ProjectiveCameraDefinition-0",
+      "source_code": "class ProjectiveCamera : public CameraBase {\n  public:\n    <<ProjectiveCamera Public Methods>>\u00a0\n  protected:\n    <<ProjectiveCamera Protected Members>>\u00a0\n};",
+      "local_code": "class ProjectiveCamera : public CameraBase {\n  public:\n    <<ProjectiveCamera Public Methods>>\n  protected:\n    <<ProjectiveCamera Protected Members>>\n};\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-ProjectiveCameraPublicMethods-0",
+      "source_code": "ProjectiveCamera(CameraBaseParameters baseParameters,\n        const Transform &screenFromCamera, Bounds2f screenWindow,\n        Float lensRadius, Float focalDistance)\n    : CameraBase(baseParameters), screenFromCamera(screenFromCamera),\n      lensRadius(lensRadius), focalDistance(focalDistance) {\n    <<Compute projective camera transformations>>\u00a0\n}",
+      "local_code": "ProjectiveCamera(CameraBaseParameters baseParameters,\n        const Transform &screenFromCamera, Bounds2f screenWindow,\n        Float lensRadius, Float focalDistance)\n    : CameraBase(baseParameters), screenFromCamera(screenFromCamera),\n      lensRadius(lensRadius), focalDistance(focalDistance) {\n    <<Compute projective camera transformations>>\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Computeprojectivecameratransformations-0",
+      "source_code": "<<Compute projective camera screen transformations>>\u00a0\ncameraFromRaster = Inverse(screenFromCamera) * screenFromRaster;",
+      "local_code": "<<Compute projective camera screen transformations>>\ncameraFromRaster = Inverse(screenFromCamera) * screenFromRaster;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-ProjectiveCameraProtectedMembers-0",
+      "source_code": "Transform screenFromCamera, cameraFromRaster;",
+      "local_code": "Transform screenFromCamera, cameraFromRaster;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Computeprojectivecamerascreentransformations-0",
+      "source_code": "Transform NDCFromScreen =\n    Scale(1 / (screenWindow.pMax.x - screenWindow.pMin.x),\n          1 / (screenWindow.pMax.y - screenWindow.pMin.y), 1) *\n    Translate(Vector3f(-screenWindow.pMin.x, -screenWindow.pMax.y, 0));\nTransform rasterFromNDC =\n    Scale(film.FullResolution().x, -film.FullResolution().y, 1);\nrasterFromScreen = rasterFromNDC * NDCFromScreen;\nscreenFromRaster = Inverse(rasterFromScreen);",
+      "local_code": "Transform NDCFromScreen =\n    Scale(1 / (screenWindow.pMax.x - screenWindow.pMin.x),\n          1 / (screenWindow.pMax.y - screenWindow.pMin.y), 1) *\n    Translate(Vector3f(-screenWindow.pMin.x, -screenWindow.pMax.y, 0));\nTransform rasterFromNDC =\n    Scale(film.FullResolution().x, -film.FullResolution().y, 1);\nrasterFromScreen = rasterFromNDC * NDCFromScreen;\nscreenFromRaster = Inverse(rasterFromScreen);\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-ProjectiveCameraProtectedMembers-1",
+      "source_code": "Transform rasterFromScreen, screenFromRaster;",
+      "local_code": "Transform rasterFromScreen, screenFromRaster;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-OrthographicCameraDefinition-0",
+      "source_code": "class OrthographicCamera : public ProjectiveCamera {\n  public:\n    <<OrthographicCamera Public Methods>>\u00a0\n  private:\n    <<OrthographicCamera Private Members>>\u00a0\n};",
+      "local_code": "class OrthographicCamera : public ProjectiveCamera {\n  public:\n    <<OrthographicCamera Public Methods>>\n  private:\n    <<OrthographicCamera Private Members>>\n};\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-OrthographicCameraPublicMethods-0",
+      "source_code": "OrthographicCamera(CameraBaseParameters baseParameters,\n                   Bounds2f screenWindow, Float lensRadius, Float focalDist)\n    : ProjectiveCamera(baseParameters, Orthographic(0, 1), screenWindow,\n                       lensRadius, focalDist) {\n    <<Compute differential changes in origin for orthographic camera rays>>\u00a0\n    <<Compute minimum differentials for orthographic camera>>\u00a0\n}",
+      "local_code": "OrthographicCamera(CameraBaseParameters baseParameters,\n                   Bounds2f screenWindow, Float lensRadius, Float focalDist)\n    : ProjectiveCamera(baseParameters, Orthographic(0, 1), screenWindow,\n                       lensRadius, focalDist) {\n    <<Compute differential changes in origin for orthographic camera rays>>\n    <<Compute minimum differentials for orthographic camera>>\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-TransformFunctionDefinitions-4",
+      "source_code": "Transform Orthographic(Float zNear, Float zFar) {\n    return Scale(1, 1, 1 / (zFar - zNear)) *\n           Translate(Vector3f(0, 0, -zNear));\n}",
+      "local_code": "Transform Orthographic(Float zNear, Float zFar) {\n    return Scale(1, 1, 1 / (zFar - zNear)) *\n           Translate(Vector3f(0, 0, -zNear));\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Computedifferentialchangesinoriginfororthographiccamerarays-0",
+      "source_code": "dxCamera = cameraFromRaster(Vector3f(1, 0, 0));\ndyCamera = cameraFromRaster(Vector3f(0, 1, 0));",
+      "local_code": "dxCamera = cameraFromRaster(Vector3f(1, 0, 0));\ndyCamera = cameraFromRaster(Vector3f(0, 1, 0));\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-OrthographicCameraPrivateMembers-0",
+      "source_code": "Vector3f dxCamera, dyCamera;",
+      "local_code": "Vector3f dxCamera, dyCamera;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-OrthographicCameraMethodDefinitions-0",
+      "source_code": "pstd::optional<CameraRay> OrthographicCamera::GenerateRay(\n        CameraSample sample, SampledWavelengths &lambda) const {\n    <<Compute raster and camera sample positions>>\u00a0\n    Ray ray(pCamera, Vector3f(0, 0, 1), SampleTime(sample.time), medium);\n    <<Modify ray for depth of field>>\u00a0\n    return CameraRay{RenderFromCamera(ray)};\n}",
+      "local_code": "pstd::optional<CameraRay> OrthographicCamera::GenerateRay(\n        CameraSample sample, SampledWavelengths &lambda) const {\n    <<Compute raster and camera sample positions>>\n    Ray ray(pCamera, Vector3f(0, 0, 1), SampleTime(sample.time), medium);\n    <<Modify ray for depth of field>>\n    return CameraRay{RenderFromCamera(ray)};\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Computerasterandcamerasamplepositions-0",
+      "source_code": "Point3f pFilm = Point3f(sample.pFilm.x, sample.pFilm.y, 0);\nPoint3f pCamera = cameraFromRaster(pFilm);",
+      "local_code": "Point3f pFilm = Point3f(sample.pFilm.x, sample.pFilm.y, 0);\nPoint3f pCamera = cameraFromRaster(pFilm);\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-OrthographicCameraMethodDefinitions-1",
+      "source_code": "pstd::optional<CameraRayDifferential>\nOrthographicCamera::GenerateRayDifferential(CameraSample sample,\n        SampledWavelengths &lambda) const {\n    <<Compute main orthographic viewing ray>>\u00a0\n    <<Compute ray differentials for OrthographicCamera>>\u00a0\n    ray.hasDifferentials = true;\n    return CameraRayDifferential{RenderFromCamera(ray)};\n}",
+      "local_code": "pstd::optional<CameraRayDifferential>\nOrthographicCamera::GenerateRayDifferential(CameraSample sample,\n        SampledWavelengths &lambda) const {\n    <<Compute main orthographic viewing ray>>\n    <<Compute ray differentials for OrthographicCamera>>\n    ray.hasDifferentials = true;\n    return CameraRayDifferential{RenderFromCamera(ray)};\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-ComputeraydifferentialsformonoOrthographicCamera-0",
+      "source_code": "if (lensRadius > 0) {\n    <<Compute OrthographicCamera ray differentials accounting for lens>>\u00a0\n} else {\n    ray.rxOrigin = ray.o + dxCamera;\n    ray.ryOrigin = ray.o + dyCamera;\n    ray.rxDirection = ray.ryDirection = ray.d;\n}",
+      "local_code": "if (lensRadius > 0) {\n    <<Compute OrthographicCamera ray differentials accounting for lens>>\n} else {\n    ray.rxOrigin = ray.o + dxCamera;\n    ray.ryOrigin = ray.o + dyCamera;\n    ray.rxDirection = ray.ryDirection = ray.d;\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-PerspectiveCameraDefinition-0",
+      "source_code": "class PerspectiveCamera : public ProjectiveCamera {\n  public:\n    <<PerspectiveCamera Public Methods>>\u00a0\n  private:\n    <<PerspectiveCamera Private Members>>\u00a0\n};",
+      "local_code": "class PerspectiveCamera : public ProjectiveCamera {\n  public:\n    <<PerspectiveCamera Public Methods>>\n  private:\n    <<PerspectiveCamera Private Members>>\n};\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-PerspectiveCameraPublicMethods-0",
+      "source_code": "PerspectiveCamera(CameraBaseParameters baseParameters, Float fov,\n                  Bounds2f screenWindow, Float lensRadius, Float focalDist)\n    : ProjectiveCamera(baseParameters, Perspective(fov, 1e-2f, 1000.f),\n                       screenWindow, lensRadius, focalDist) {\n    <<Compute differential changes in origin for perspective camera rays>>\u00a0\n    <<Compute cosTotalWidth for perspective camera>>\u00a0\n    <<Compute image plane area at \nz equals 1\n\n\n\n\n\n\n \n \n \n\n for PerspectiveCamera>>\u00a0\n    <<Compute minimum differentials for PerspectiveCamera>>\u00a0\n}",
+      "local_code": "PerspectiveCamera(CameraBaseParameters baseParameters, Float fov,\n                  Bounds2f screenWindow, Float lensRadius, Float focalDist)\n    : ProjectiveCamera(baseParameters, Perspective(fov, 1e-2f, 1000.f),\n                       screenWindow, lensRadius, focalDist) {\n    <<Compute differential changes in origin for perspective camera rays>>\n    <<Compute cosTotalWidth for perspective camera>>\n    <<Compute image plane area at z equals 1 for PerspectiveCamera>>\n    <<Compute minimum differentials for PerspectiveCamera>>\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-TransformFunctionDefinitions-5",
+      "source_code": "Transform Perspective(Float fov, Float n, Float f) {\n    <<Perform projective divide for perspective projection>>\u00a0\n    <<Scale canonical perspective view to specified field of view>>\u00a0\n}",
+      "local_code": "Transform Perspective(Float fov, Float n, Float f) {\n    <<Perform projective divide for perspective projection>>\n    <<Scale canonical perspective view to specified field of view>>\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Performprojectivedivideforperspectiveprojection-0",
+      "source_code": "SquareMatrix<4> persp(1, 0,           0,              0,\n                      0, 1,           0,              0,\n                      0, 0, f / (f - n), -f*n / (f - n),\n                      0, 0,           1,              0);\n",
+      "local_code": "SquareMatrix<4> persp(1, 0,           0,              0,\n                      0, 1,           0,              0,\n                      0, 0, f / (f - n), -f*n / (f - n),\n                      0, 0,           1,              0);\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Scalecanonicalperspectiveviewtospecifiedfieldofview-0",
+      "source_code": "Float invTanAng = 1 / std::tan(Radians(fov) / 2);\nreturn Scale(invTanAng, invTanAng, 1) * Transform(persp);",
+      "local_code": "Float invTanAng = 1 / std::tan(Radians(fov) / 2);\nreturn Scale(invTanAng, invTanAng, 1) * Transform(persp);\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Computedifferentialchangesinoriginforperspectivecamerarays-0",
+      "source_code": "dxCamera = cameraFromRaster(Point3f(1, 0, 0)) -\n           cameraFromRaster(Point3f(0, 0, 0));\ndyCamera = cameraFromRaster(Point3f(0, 1, 0)) -\n           cameraFromRaster(Point3f(0, 0, 0));",
+      "local_code": "dxCamera = cameraFromRaster(Point3f(1, 0, 0)) -\n           cameraFromRaster(Point3f(0, 0, 0));\ndyCamera = cameraFromRaster(Point3f(0, 1, 0)) -\n           cameraFromRaster(Point3f(0, 0, 0));\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-PerspectiveCameraPrivateMembers-0",
+      "source_code": "Vector3f dxCamera, dyCamera;",
+      "local_code": "Vector3f dxCamera, dyCamera;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-ComputemonocosTotalWidthforperspectivecamera-0",
+      "source_code": "Point2f radius = Point2f(film.GetFilter().Radius());\nPoint3f pCorner(-radius.x, -radius.y, 0.f);\nVector3f wCornerCamera = Normalize(Vector3f(cameraFromRaster(pCorner)));\ncosTotalWidth = wCornerCamera.z;\n",
+      "local_code": "Point2f radius = Point2f(film.GetFilter().Radius());\nPoint3f pCorner(-radius.x, -radius.y, 0.f);\nVector3f wCornerCamera = Normalize(Vector3f(cameraFromRaster(pCorner)));\ncosTotalWidth = wCornerCamera.z;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-PerspectiveCameraPrivateMembers-1",
+      "source_code": "Float cosTotalWidth;",
+      "local_code": "Float cosTotalWidth;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-PerspectiveCameraMethodDefinitions-0",
+      "source_code": "pstd::optional<CameraRay> PerspectiveCamera::GenerateRay(\n        CameraSample sample, SampledWavelengths &lambda) const {\n    <<Compute raster and camera sample positions>>\u00a0\n    Ray ray(Point3f(0, 0, 0), Normalize(Vector3f(pCamera)),\n            SampleTime(sample.time), medium);\n    <<Modify ray for depth of field>>\u00a0\n    return CameraRay{RenderFromCamera(ray)};\n}",
+      "local_code": "pstd::optional<CameraRay> PerspectiveCamera::GenerateRay(\n        CameraSample sample, SampledWavelengths &lambda) const {\n    <<Compute raster and camera sample positions>>\n    Ray ray(Point3f(0, 0, 0), Normalize(Vector3f(pCamera)),\n            SampleTime(sample.time), medium);\n    <<Modify ray for depth of field>>\n    return CameraRay{RenderFromCamera(ray)};\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-ComputeoffsetraysforusePerspectiveCameraraydifferentials-0",
+      "source_code": "if (lensRadius > 0) {\n    <<Compute PerspectiveCamera ray differentials accounting for lens>>\u00a0\n} else {\n    ray.rxOrigin = ray.ryOrigin = ray.o;\n    ray.rxDirection = Normalize(Vector3f(pCamera) + dxCamera);\n    ray.ryDirection = Normalize(Vector3f(pCamera) + dyCamera);\n}",
+      "local_code": "if (lensRadius > 0) {\n    <<Compute PerspectiveCamera ray differentials accounting for lens>>\n} else {\n    ray.rxOrigin = ray.ryOrigin = ray.o;\n    ray.rxDirection = Normalize(Vector3f(pCamera) + dxCamera);\n    ray.ryDirection = Normalize(Vector3f(pCamera) + dyCamera);\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-ProjectiveCameraProtectedMembers-2",
+      "source_code": "Float lensRadius, focalDistance;",
+      "local_code": "Float lensRadius, focalDistance;\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Modifyrayfordepthoffield-0",
+      "source_code": "if (lensRadius > 0) {\n    <<Sample point on lens>>\u00a0\n    <<Compute point on plane of focus>>\u00a0\n    <<Update ray for effect of lens>>\u00a0\n}",
+      "local_code": "if (lensRadius > 0) {\n    <<Sample point on lens>>\n    <<Compute point on plane of focus>>\n    <<Update ray for effect of lens>>\n}\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Samplepointonlens-0",
+      "source_code": "Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);",
+      "local_code": "Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Computepointonplaneoffocus-0",
+      "source_code": "Float ft = focalDistance / ray.d.z;\nPoint3f pFocus = ray(ft);",
+      "local_code": "Float ft = focalDistance / ray.d.z;\nPoint3f pFocus = ray(ft);\n",
+      "equal_ignoring_whitespace": true
+    },
+    {
+      "id": "fragment-Updaterayforeffectoflens-0",
+      "source_code": "ray.o = Point3f(pLens.x, pLens.y, 0);\nray.d = Normalize(pFocus - ray.o);",
+      "local_code": "ray.o = Point3f(pLens.x, pLens.y, 0);\nray.d = Normalize(pFocus - ray.o);\n",
+      "equal_ignoring_whitespace": true
+    }
+  ],
+  "panels": [
+    {
+      "depth": 11,
+      "id": "fragment-ProjectiveCameraDefinition-0",
+      "panel": "fragbit-217",
+      "code": "                 Transform NDCFromScreen =\n                     Scale(1 / (screenWindow.pMax.x - screenWindow.pMin.x),\n                           1 / (screenWindow.pMax.y - screenWindow.pMin.y), 1) *\n                     Translate(Vector3f(-screenWindow.pMin.x, -screenWindow.pMax.y, 0));\n                 Transform rasterFromNDC =\n                     Scale(film.FullResolution().x, -film.FullResolution().y, 1);\n                 rasterFromScreen = rasterFromNDC * NDCFromScreen;\n                 screenFromRaster = Inverse(rasterFromScreen);",
+      "full": "                 Transform NDCFromScreen =\n                     Scale(1 / (screenWindow.pMax.x - screenWindow.pMin.x),\n                           1 / (screenWindow.pMax.y - screenWindow.pMin.y), 1) *\n                     Translate(Vector3f(-screenWindow.pMin.x, -screenWindow.pMax.y, 0));\n                 Transform rasterFromNDC =\n                     Scale(film.FullResolution().x, -film.FullResolution().y, 1);\n                 rasterFromScreen = rasterFromNDC * NDCFromScreen;\n                 screenFromRaster = Inverse(rasterFromScreen);"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-ProjectiveCameraDefinition-0",
+      "panel": "fragbit-216",
+      "code": "              <<Compute projective camera screen transformations>>\u00a0\n              cameraFromRaster = Inverse(screenFromCamera) * screenFromRaster;",
+      "full": "              <<Compute projective camera screen transformations>>\u00a0                 Transform NDCFromScreen =\n                     Scale(1 / (screenWindow.pMax.x - screenWindow.pMin.x),\n                           1 / (screenWindow.pMax.y - screenWindow.pMin.y), 1) *\n                     Translate(Vector3f(-screenWindow.pMin.x, -screenWindow.pMax.y, 0));\n                 Transform rasterFromNDC =\n                     Scale(film.FullResolution().x, -film.FullResolution().y, 1);\n                 rasterFromScreen = rasterFromNDC * NDCFromScreen;\n                 screenFromRaster = Inverse(rasterFromScreen);\n              cameraFromRaster = Inverse(screenFromCamera) * screenFromRaster;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-ProjectiveCameraDefinition-0",
+      "panel": "fragbit-215",
+      "code": "       ProjectiveCamera() = default;\n       void InitMetadata(ImageMetadata *metadata) const;\n       \n       std::string BaseToString() const;\n       ProjectiveCamera(CameraBaseParameters baseParameters,\n               const Transform &screenFromCamera, Bounds2f screenWindow,\n               Float lensRadius, Float focalDistance)\n           : CameraBase(baseParameters), screenFromCamera(screenFromCamera),\n             lensRadius(lensRadius), focalDistance(focalDistance) {\n           <<Compute projective camera transformations>>\u00a0\n       }",
+      "full": "       ProjectiveCamera() = default;\n       void InitMetadata(ImageMetadata *metadata) const;\n       \n       std::string BaseToString() const;\n       ProjectiveCamera(CameraBaseParameters baseParameters,\n               const Transform &screenFromCamera, Bounds2f screenWindow,\n               Float lensRadius, Float focalDistance)\n           : CameraBase(baseParameters), screenFromCamera(screenFromCamera),\n             lensRadius(lensRadius), focalDistance(focalDistance) {\n           <<Compute projective camera transformations>>\u00a0              <<Compute projective camera screen transformations>>\u00a0                 Transform NDCFromScreen =\n                     Scale(1 / (screenWindow.pMax.x - screenWindow.pMin.x),\n                           1 / (screenWindow.pMax.y - screenWindow.pMin.y), 1) *\n                     Translate(Vector3f(-screenWindow.pMin.x, -screenWindow.pMax.y, 0));\n                 Transform rasterFromNDC =\n                     Scale(film.FullResolution().x, -film.FullResolution().y, 1);\n                 rasterFromScreen = rasterFromNDC * NDCFromScreen;\n                 screenFromRaster = Inverse(rasterFromScreen);\n              cameraFromRaster = Inverse(screenFromCamera) * screenFromRaster;\n       }"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-ProjectiveCameraDefinition-0",
+      "panel": "fragbit-218",
+      "code": "       Transform screenFromCamera, cameraFromRaster;\n       Transform rasterFromScreen, screenFromRaster;\n       Float lensRadius, focalDistance;",
+      "full": "       Transform screenFromCamera, cameraFromRaster;\n       Transform rasterFromScreen, screenFromRaster;\n       Float lensRadius, focalDistance;"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-ProjectiveCameraPublicMethods-0",
+      "panel": "fragbit-220",
+      "code": "          Transform NDCFromScreen =\n              Scale(1 / (screenWindow.pMax.x - screenWindow.pMin.x),\n                    1 / (screenWindow.pMax.y - screenWindow.pMin.y), 1) *\n              Translate(Vector3f(-screenWindow.pMin.x, -screenWindow.pMax.y, 0));\n          Transform rasterFromNDC =\n              Scale(film.FullResolution().x, -film.FullResolution().y, 1);\n          rasterFromScreen = rasterFromNDC * NDCFromScreen;\n          screenFromRaster = Inverse(rasterFromScreen);",
+      "full": "          Transform NDCFromScreen =\n              Scale(1 / (screenWindow.pMax.x - screenWindow.pMin.x),\n                    1 / (screenWindow.pMax.y - screenWindow.pMin.y), 1) *\n              Translate(Vector3f(-screenWindow.pMin.x, -screenWindow.pMax.y, 0));\n          Transform rasterFromNDC =\n              Scale(film.FullResolution().x, -film.FullResolution().y, 1);\n          rasterFromScreen = rasterFromNDC * NDCFromScreen;\n          screenFromRaster = Inverse(rasterFromScreen);"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-ProjectiveCameraPublicMethods-0",
+      "panel": "fragbit-219",
+      "code": "       <<Compute projective camera screen transformations>>\u00a0\n       cameraFromRaster = Inverse(screenFromCamera) * screenFromRaster;",
+      "full": "       <<Compute projective camera screen transformations>>\u00a0          Transform NDCFromScreen =\n              Scale(1 / (screenWindow.pMax.x - screenWindow.pMin.x),\n                    1 / (screenWindow.pMax.y - screenWindow.pMin.y), 1) *\n              Translate(Vector3f(-screenWindow.pMin.x, -screenWindow.pMax.y, 0));\n          Transform rasterFromNDC =\n              Scale(film.FullResolution().x, -film.FullResolution().y, 1);\n          rasterFromScreen = rasterFromNDC * NDCFromScreen;\n          screenFromRaster = Inverse(rasterFromScreen);\n       cameraFromRaster = Inverse(screenFromCamera) * screenFromRaster;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-Computeprojectivecameratransformations-0",
+      "panel": "fragbit-221",
+      "code": "   Transform NDCFromScreen =\n       Scale(1 / (screenWindow.pMax.x - screenWindow.pMin.x),\n             1 / (screenWindow.pMax.y - screenWindow.pMin.y), 1) *\n       Translate(Vector3f(-screenWindow.pMin.x, -screenWindow.pMax.y, 0));\n   Transform rasterFromNDC =\n       Scale(film.FullResolution().x, -film.FullResolution().y, 1);\n   rasterFromScreen = rasterFromNDC * NDCFromScreen;\n   screenFromRaster = Inverse(rasterFromScreen);",
+      "full": "   Transform NDCFromScreen =\n       Scale(1 / (screenWindow.pMax.x - screenWindow.pMin.x),\n             1 / (screenWindow.pMax.y - screenWindow.pMin.y), 1) *\n       Translate(Vector3f(-screenWindow.pMin.x, -screenWindow.pMax.y, 0));\n   Transform rasterFromNDC =\n       Scale(film.FullResolution().x, -film.FullResolution().y, 1);\n   rasterFromScreen = rasterFromNDC * NDCFromScreen;\n   screenFromRaster = Inverse(rasterFromScreen);"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-OrthographicCameraDefinition-0",
+      "panel": "fragbit-223",
+      "code": "              dxCamera = cameraFromRaster(Vector3f(1, 0, 0));\n              dyCamera = cameraFromRaster(Vector3f(0, 1, 0));",
+      "full": "              dxCamera = cameraFromRaster(Vector3f(1, 0, 0));\n              dyCamera = cameraFromRaster(Vector3f(0, 1, 0));"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-OrthographicCameraDefinition-0",
+      "panel": "fragbit-224",
+      "code": "              minDirDifferentialX = minDirDifferentialY = Vector3f(0, 0, 0);\n              minPosDifferentialX = dxCamera;\n              minPosDifferentialY = dyCamera;",
+      "full": "              minDirDifferentialX = minDirDifferentialY = Vector3f(0, 0, 0);\n              minPosDifferentialX = dxCamera;\n              minPosDifferentialY = dyCamera;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-OrthographicCameraDefinition-0",
+      "panel": "fragbit-222",
+      "code": "       OrthographicCamera(CameraBaseParameters baseParameters,\n                          Bounds2f screenWindow, Float lensRadius, Float focalDist)\n           : ProjectiveCamera(baseParameters, Orthographic(0, 1), screenWindow,\n                              lensRadius, focalDist) {\n           <<Compute differential changes in origin for orthographic camera rays>>\u00a0\n           <<Compute minimum differentials for orthographic camera>>\u00a0\n       }\n       PBRT_CPU_GPU\n       pstd::optional<CameraRay> GenerateRay(CameraSample sample,\n                                             SampledWavelengths &lambda) const;\n       PBRT_CPU_GPU\n       pstd::optional<CameraRayDifferential> GenerateRayDifferential(\n           CameraSample sample, SampledWavelengths &lambda) const;\n       static OrthographicCamera *Create(const ParameterDictionary &parameters,\n                                         const CameraTransform &cameraTransform,\n                                         Film film, Medium medium,\n                                         const FileLoc *loc, Allocator alloc = {});\n       \n       PBRT_CPU_GPU\n       SampledSpectrum We(const Ray &ray, SampledWavelengths &lambda,\n                          Point2f *pRaster2 = nullptr) const {\n           LOG_FATAL(\"We() unimplemented for OrthographicCamera\");\n           return {};\n       }\n       \n       PBRT_CPU_GPU\n       void PDF_We(const Ray &ray, Float *pdfPos, Float *pdfDir) const {\n           LOG_FATAL(\"PDF_We() unimplemented for OrthographicCamera\");\n       }\n       \n       PBRT_CPU_GPU\n       pstd::optional<CameraWiSample> SampleWi(const Interaction &ref, Point2f u,\n                                               SampledWavelengths &lambda) const {\n           LOG_FATAL(\"SampleWi() unimplemented for OrthographicCamera\");\n           return {};\n       }\n       \n       std::string ToString() const;",
+      "full": "       OrthographicCamera(CameraBaseParameters baseParameters,\n                          Bounds2f screenWindow, Float lensRadius, Float focalDist)\n           : ProjectiveCamera(baseParameters, Orthographic(0, 1), screenWindow,\n                              lensRadius, focalDist) {\n           <<Compute differential changes in origin for orthographic camera rays>>\u00a0              dxCamera = cameraFromRaster(Vector3f(1, 0, 0));\n              dyCamera = cameraFromRaster(Vector3f(0, 1, 0));\n           <<Compute minimum differentials for orthographic camera>>\u00a0              minDirDifferentialX = minDirDifferentialY = Vector3f(0, 0, 0);\n              minPosDifferentialX = dxCamera;\n              minPosDifferentialY = dyCamera;\n       }\n       PBRT_CPU_GPU\n       pstd::optional<CameraRay> GenerateRay(CameraSample sample,\n                                             SampledWavelengths &lambda) const;\n       PBRT_CPU_GPU\n       pstd::optional<CameraRayDifferential> GenerateRayDifferential(\n           CameraSample sample, SampledWavelengths &lambda) const;\n       static OrthographicCamera *Create(const ParameterDictionary &parameters,\n                                         const CameraTransform &cameraTransform,\n                                         Film film, Medium medium,\n                                         const FileLoc *loc, Allocator alloc = {});\n       \n       PBRT_CPU_GPU\n       SampledSpectrum We(const Ray &ray, SampledWavelengths &lambda,\n                          Point2f *pRaster2 = nullptr) const {\n           LOG_FATAL(\"We() unimplemented for OrthographicCamera\");\n           return {};\n       }\n       \n       PBRT_CPU_GPU\n       void PDF_We(const Ray &ray, Float *pdfPos, Float *pdfDir) const {\n           LOG_FATAL(\"PDF_We() unimplemented for OrthographicCamera\");\n       }\n       \n       PBRT_CPU_GPU\n       pstd::optional<CameraWiSample> SampleWi(const Interaction &ref, Point2f u,\n                                               SampledWavelengths &lambda) const {\n           LOG_FATAL(\"SampleWi() unimplemented for OrthographicCamera\");\n           return {};\n       }\n       \n       std::string ToString() const;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-OrthographicCameraDefinition-0",
+      "panel": "fragbit-225",
+      "code": "       Vector3f dxCamera, dyCamera;",
+      "full": "       Vector3f dxCamera, dyCamera;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-OrthographicCameraPublicMethods-0",
+      "panel": "fragbit-226",
+      "code": "       dxCamera = cameraFromRaster(Vector3f(1, 0, 0));\n       dyCamera = cameraFromRaster(Vector3f(0, 1, 0));",
+      "full": "       dxCamera = cameraFromRaster(Vector3f(1, 0, 0));\n       dyCamera = cameraFromRaster(Vector3f(0, 1, 0));"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-OrthographicCameraPublicMethods-0",
+      "panel": "fragbit-227",
+      "code": "       minDirDifferentialX = minDirDifferentialY = Vector3f(0, 0, 0);\n       minPosDifferentialX = dxCamera;\n       minPosDifferentialY = dyCamera;",
+      "full": "       minDirDifferentialX = minDirDifferentialY = Vector3f(0, 0, 0);\n       minPosDifferentialX = dxCamera;\n       minPosDifferentialY = dyCamera;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-OrthographicCameraMethodDefinitions-0",
+      "panel": "fragbit-228",
+      "code": "       Point3f pFilm = Point3f(sample.pFilm.x, sample.pFilm.y, 0);\n       Point3f pCamera = cameraFromRaster(pFilm);",
+      "full": "       Point3f pFilm = Point3f(sample.pFilm.x, sample.pFilm.y, 0);\n       Point3f pCamera = cameraFromRaster(pFilm);"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-OrthographicCameraMethodDefinitions-0",
+      "panel": "fragbit-230",
+      "code": "              Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);",
+      "full": "              Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-OrthographicCameraMethodDefinitions-0",
+      "panel": "fragbit-231",
+      "code": "              Float ft = focalDistance / ray.d.z;\n              Point3f pFocus = ray(ft);",
+      "full": "              Float ft = focalDistance / ray.d.z;\n              Point3f pFocus = ray(ft);"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-OrthographicCameraMethodDefinitions-0",
+      "panel": "fragbit-232",
+      "code": "              ray.o = Point3f(pLens.x, pLens.y, 0);\n              ray.d = Normalize(pFocus - ray.o);",
+      "full": "              ray.o = Point3f(pLens.x, pLens.y, 0);\n              ray.d = Normalize(pFocus - ray.o);"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-OrthographicCameraMethodDefinitions-0",
+      "panel": "fragbit-229",
+      "code": "       if (lensRadius > 0) {\n           <<Sample point on lens>>\u00a0\n           <<Compute point on plane of focus>>\u00a0\n           <<Update ray for effect of lens>>\u00a0\n       }",
+      "full": "       if (lensRadius > 0) {\n           <<Sample point on lens>>\u00a0              Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);\n           <<Compute point on plane of focus>>\u00a0              Float ft = focalDistance / ray.d.z;\n              Point3f pFocus = ray(ft);\n           <<Update ray for effect of lens>>\u00a0              ray.o = Point3f(pLens.x, pLens.y, 0);\n              ray.d = Normalize(pFocus - ray.o);\n       }"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-OrthographicCameraMethodDefinitions-1",
+      "panel": "fragbit-234",
+      "code": "          Point3f pFilm = Point3f(sample.pFilm.x, sample.pFilm.y, 0);\n          Point3f pCamera = cameraFromRaster(pFilm);",
+      "full": "          Point3f pFilm = Point3f(sample.pFilm.x, sample.pFilm.y, 0);\n          Point3f pCamera = cameraFromRaster(pFilm);"
+    },
+    {
+      "depth": 11,
+      "id": "fragment-OrthographicCameraMethodDefinitions-1",
+      "panel": "fragbit-236",
+      "code": "                 Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);",
+      "full": "                 Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);"
+    },
+    {
+      "depth": 11,
+      "id": "fragment-OrthographicCameraMethodDefinitions-1",
+      "panel": "fragbit-237",
+      "code": "                 Float ft = focalDistance / ray.d.z;\n                 Point3f pFocus = ray(ft);",
+      "full": "                 Float ft = focalDistance / ray.d.z;\n                 Point3f pFocus = ray(ft);"
+    },
+    {
+      "depth": 11,
+      "id": "fragment-OrthographicCameraMethodDefinitions-1",
+      "panel": "fragbit-238",
+      "code": "                 ray.o = Point3f(pLens.x, pLens.y, 0);\n                 ray.d = Normalize(pFocus - ray.o);",
+      "full": "                 ray.o = Point3f(pLens.x, pLens.y, 0);\n                 ray.d = Normalize(pFocus - ray.o);"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-OrthographicCameraMethodDefinitions-1",
+      "panel": "fragbit-235",
+      "code": "          if (lensRadius > 0) {\n              <<Sample point on lens>>\u00a0\n              <<Compute point on plane of focus>>\u00a0\n              <<Update ray for effect of lens>>\u00a0\n          }",
+      "full": "          if (lensRadius > 0) {\n              <<Sample point on lens>>\u00a0                 Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);\n              <<Compute point on plane of focus>>\u00a0                 Float ft = focalDistance / ray.d.z;\n                 Point3f pFocus = ray(ft);\n              <<Update ray for effect of lens>>\u00a0                 ray.o = Point3f(pLens.x, pLens.y, 0);\n                 ray.d = Normalize(pFocus - ray.o);\n          }"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-OrthographicCameraMethodDefinitions-1",
+      "panel": "fragbit-233",
+      "code": "       <<Compute raster and camera sample positions>>\u00a0\n       RayDifferential ray(pCamera, Vector3f(0, 0, 1), SampleTime(sample.time), medium);\n       <<Modify ray for depth of field>>\u00a0",
+      "full": "       <<Compute raster and camera sample positions>>\u00a0          Point3f pFilm = Point3f(sample.pFilm.x, sample.pFilm.y, 0);\n          Point3f pCamera = cameraFromRaster(pFilm);\n       RayDifferential ray(pCamera, Vector3f(0, 0, 1), SampleTime(sample.time), medium);\n       <<Modify ray for depth of field>>\u00a0          if (lensRadius > 0) {\n              <<Sample point on lens>>\u00a0                 Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);\n              <<Compute point on plane of focus>>\u00a0                 Float ft = focalDistance / ray.d.z;\n                 Point3f pFocus = ray(ft);\n              <<Update ray for effect of lens>>\u00a0                 ray.o = Point3f(pLens.x, pLens.y, 0);\n                 ray.d = Normalize(pFocus - ray.o);\n          }"
+    },
+    {
+      "depth": 11,
+      "id": "fragment-OrthographicCameraMethodDefinitions-1",
+      "panel": "fragbit-241",
+      "code": "                 Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);",
+      "full": "                 Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-OrthographicCameraMethodDefinitions-1",
+      "panel": "fragbit-240",
+      "code": "              <<Sample point on lens>>\u00a0\n              Float ft = focalDistance / ray.d.z;\n              Point3f pFocus = pCamera + dxCamera + (ft * Vector3f(0, 0, 1));\n              ray.rxOrigin = Point3f(pLens.x, pLens.y, 0);\n              ray.rxDirection = Normalize(pFocus - ray.rxOrigin);\n              \n              pFocus = pCamera + dyCamera + (ft * Vector3f(0, 0, 1));\n              ray.ryOrigin = Point3f(pLens.x, pLens.y, 0);\n              ray.ryDirection = Normalize(pFocus - ray.ryOrigin);",
+      "full": "              <<Sample point on lens>>\u00a0                 Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);\n              Float ft = focalDistance / ray.d.z;\n              Point3f pFocus = pCamera + dxCamera + (ft * Vector3f(0, 0, 1));\n              ray.rxOrigin = Point3f(pLens.x, pLens.y, 0);\n              ray.rxDirection = Normalize(pFocus - ray.rxOrigin);\n              \n              pFocus = pCamera + dyCamera + (ft * Vector3f(0, 0, 1));\n              ray.ryOrigin = Point3f(pLens.x, pLens.y, 0);\n              ray.ryDirection = Normalize(pFocus - ray.ryOrigin);"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-OrthographicCameraMethodDefinitions-1",
+      "panel": "fragbit-239",
+      "code": "       if (lensRadius > 0) {\n           <<Compute OrthographicCamera ray differentials accounting for lens>>\u00a0\n       } else {\n           ray.rxOrigin = ray.o + dxCamera;\n           ray.ryOrigin = ray.o + dyCamera;\n           ray.rxDirection = ray.ryDirection = ray.d;\n       }",
+      "full": "       if (lensRadius > 0) {\n           <<Compute OrthographicCamera ray differentials accounting for lens>>\u00a0              <<Sample point on lens>>\u00a0                 Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);\n              Float ft = focalDistance / ray.d.z;\n              Point3f pFocus = pCamera + dxCamera + (ft * Vector3f(0, 0, 1));\n              ray.rxOrigin = Point3f(pLens.x, pLens.y, 0);\n              ray.rxDirection = Normalize(pFocus - ray.rxOrigin);\n              \n              pFocus = pCamera + dyCamera + (ft * Vector3f(0, 0, 1));\n              ray.ryOrigin = Point3f(pLens.x, pLens.y, 0);\n              ray.ryDirection = Normalize(pFocus - ray.ryOrigin);\n       } else {\n           ray.rxOrigin = ray.o + dxCamera;\n           ray.ryOrigin = ray.o + dyCamera;\n           ray.rxDirection = ray.ryDirection = ray.d;\n       }"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-ComputeraydifferentialsformonoOrthographicCamera-0",
+      "panel": "fragbit-243",
+      "code": "          Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);",
+      "full": "          Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-ComputeraydifferentialsformonoOrthographicCamera-0",
+      "panel": "fragbit-242",
+      "code": "       <<Sample point on lens>>\u00a0\n       Float ft = focalDistance / ray.d.z;\n       Point3f pFocus = pCamera + dxCamera + (ft * Vector3f(0, 0, 1));\n       ray.rxOrigin = Point3f(pLens.x, pLens.y, 0);\n       ray.rxDirection = Normalize(pFocus - ray.rxOrigin);\n       \n       pFocus = pCamera + dyCamera + (ft * Vector3f(0, 0, 1));\n       ray.ryOrigin = Point3f(pLens.x, pLens.y, 0);\n       ray.ryDirection = Normalize(pFocus - ray.ryOrigin);",
+      "full": "       <<Sample point on lens>>\u00a0          Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);\n       Float ft = focalDistance / ray.d.z;\n       Point3f pFocus = pCamera + dxCamera + (ft * Vector3f(0, 0, 1));\n       ray.rxOrigin = Point3f(pLens.x, pLens.y, 0);\n       ray.rxDirection = Normalize(pFocus - ray.rxOrigin);\n       \n       pFocus = pCamera + dyCamera + (ft * Vector3f(0, 0, 1));\n       ray.ryOrigin = Point3f(pLens.x, pLens.y, 0);\n       ray.ryDirection = Normalize(pFocus - ray.ryOrigin);"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-PerspectiveCameraDefinition-0",
+      "panel": "fragbit-245",
+      "code": "              dxCamera = cameraFromRaster(Point3f(1, 0, 0)) -\n                         cameraFromRaster(Point3f(0, 0, 0));\n              dyCamera = cameraFromRaster(Point3f(0, 1, 0)) -\n                         cameraFromRaster(Point3f(0, 0, 0));",
+      "full": "              dxCamera = cameraFromRaster(Point3f(1, 0, 0)) -\n                         cameraFromRaster(Point3f(0, 0, 0));\n              dyCamera = cameraFromRaster(Point3f(0, 1, 0)) -\n                         cameraFromRaster(Point3f(0, 0, 0));"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-PerspectiveCameraDefinition-0",
+      "panel": "fragbit-246",
+      "code": "              Point2f radius = Point2f(film.GetFilter().Radius());\n              Point3f pCorner(-radius.x, -radius.y, 0.f);\n              Vector3f wCornerCamera = Normalize(Vector3f(cameraFromRaster(pCorner)));\n              cosTotalWidth = wCornerCamera.z;\n              ",
+      "full": "              Point2f radius = Point2f(film.GetFilter().Radius());\n              Point3f pCorner(-radius.x, -radius.y, 0.f);\n              Vector3f wCornerCamera = Normalize(Vector3f(cameraFromRaster(pCorner)));\n              cosTotalWidth = wCornerCamera.z;\n              "
+    },
+    {
+      "depth": 9,
+      "id": "fragment-PerspectiveCameraDefinition-0",
+      "panel": "fragbit-247",
+      "code": "",
+      "full": ""
+    },
+    {
+      "depth": 9,
+      "id": "fragment-PerspectiveCameraDefinition-0",
+      "panel": "fragbit-248",
+      "code": "              FindMinimumDifferentials(this);",
+      "full": "              FindMinimumDifferentials(this);"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-PerspectiveCameraDefinition-0",
+      "panel": "fragbit-244",
+      "code": "       PerspectiveCamera(CameraBaseParameters baseParameters, Float fov,\n                         Bounds2f screenWindow, Float lensRadius, Float focalDist)\n           : ProjectiveCamera(baseParameters, Perspective(fov, 1e-2f, 1000.f),\n                              screenWindow, lensRadius, focalDist) {\n           <<Compute differential changes in origin for perspective camera rays>>\u00a0\n           <<Compute cosTotalWidth for perspective camera>>\u00a0\n           <<Compute image plane area at \nz equals 1\n\n\n\n\n\n\n \n \n \n\n for PerspectiveCamera>>\u00a0\n           <<Compute minimum differentials for PerspectiveCamera>>\u00a0\n       }\n       PerspectiveCamera() = default;\n       \n       static PerspectiveCamera *Create(const ParameterDictionary &parameters,\n                                        const CameraTransform &cameraTransform,\n                                        Film film, Medium medium,\n                                        const FileLoc *loc, Allocator alloc = {});\n       \n       PBRT_CPU_GPU\n       pstd::optional<CameraRay> GenerateRay(CameraSample sample,\n                                             SampledWavelengths &lambda) const;\n       \n       PBRT_CPU_GPU\n       pstd::optional<CameraRayDifferential> GenerateRayDifferential(\n           CameraSample sample, SampledWavelengths &lambda) const;\n       \n       PBRT_CPU_GPU\n       SampledSpectrum We(const Ray &ray, SampledWavelengths &lambda,\n                          Point2f *pRaster2 = nullptr) const;\n       PBRT_CPU_GPU\n       void PDF_We(const Ray &ray, Float *pdfPos, Float *pdfDir) const;\n       PBRT_CPU_GPU\n       pstd::optional<CameraWiSample> SampleWi(const Interaction &ref, Point2f u,\n                                               SampledWavelengths &lambda) const;\n       \n       std::string ToString() const;",
+      "full": "       PerspectiveCamera(CameraBaseParameters baseParameters, Float fov,\n                         Bounds2f screenWindow, Float lensRadius, Float focalDist)\n           : ProjectiveCamera(baseParameters, Perspective(fov, 1e-2f, 1000.f),\n                              screenWindow, lensRadius, focalDist) {\n           <<Compute differential changes in origin for perspective camera rays>>\u00a0              dxCamera = cameraFromRaster(Point3f(1, 0, 0)) -\n                         cameraFromRaster(Point3f(0, 0, 0));\n              dyCamera = cameraFromRaster(Point3f(0, 1, 0)) -\n                         cameraFromRaster(Point3f(0, 0, 0));\n           <<Compute cosTotalWidth for perspective camera>>\u00a0              Point2f radius = Point2f(film.GetFilter().Radius());\n              Point3f pCorner(-radius.x, -radius.y, 0.f);\n              Vector3f wCornerCamera = Normalize(Vector3f(cameraFromRaster(pCorner)));\n              cosTotalWidth = wCornerCamera.z;\n              \n           <<Compute image plane area at \nz equals 1\n\n\n\n\n\n\n \n \n \n\n for PerspectiveCamera>>\u00a0\n           <<Compute minimum differentials for PerspectiveCamera>>\u00a0              FindMinimumDifferentials(this);\n       }\n       PerspectiveCamera() = default;\n       \n       static PerspectiveCamera *Create(const ParameterDictionary &parameters,\n                                        const CameraTransform &cameraTransform,\n                                        Film film, Medium medium,\n                                        const FileLoc *loc, Allocator alloc = {});\n       \n       PBRT_CPU_GPU\n       pstd::optional<CameraRay> GenerateRay(CameraSample sample,\n                                             SampledWavelengths &lambda) const;\n       \n       PBRT_CPU_GPU\n       pstd::optional<CameraRayDifferential> GenerateRayDifferential(\n           CameraSample sample, SampledWavelengths &lambda) const;\n       \n       PBRT_CPU_GPU\n       SampledSpectrum We(const Ray &ray, SampledWavelengths &lambda,\n                          Point2f *pRaster2 = nullptr) const;\n       PBRT_CPU_GPU\n       void PDF_We(const Ray &ray, Float *pdfPos, Float *pdfDir) const;\n       PBRT_CPU_GPU\n       pstd::optional<CameraWiSample> SampleWi(const Interaction &ref, Point2f u,\n                                               SampledWavelengths &lambda) const;\n       \n       std::string ToString() const;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-PerspectiveCameraDefinition-0",
+      "panel": "fragbit-249",
+      "code": "       Vector3f dxCamera, dyCamera;\n       Float cosTotalWidth;",
+      "full": "       Vector3f dxCamera, dyCamera;\n       Float cosTotalWidth;"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-PerspectiveCameraPublicMethods-0",
+      "panel": "fragbit-250",
+      "code": "       dxCamera = cameraFromRaster(Point3f(1, 0, 0)) -\n                  cameraFromRaster(Point3f(0, 0, 0));\n       dyCamera = cameraFromRaster(Point3f(0, 1, 0)) -\n                  cameraFromRaster(Point3f(0, 0, 0));",
+      "full": "       dxCamera = cameraFromRaster(Point3f(1, 0, 0)) -\n                  cameraFromRaster(Point3f(0, 0, 0));\n       dyCamera = cameraFromRaster(Point3f(0, 1, 0)) -\n                  cameraFromRaster(Point3f(0, 0, 0));"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-PerspectiveCameraPublicMethods-0",
+      "panel": "fragbit-251",
+      "code": "       Point2f radius = Point2f(film.GetFilter().Radius());\n       Point3f pCorner(-radius.x, -radius.y, 0.f);\n       Vector3f wCornerCamera = Normalize(Vector3f(cameraFromRaster(pCorner)));\n       cosTotalWidth = wCornerCamera.z;\n       ",
+      "full": "       Point2f radius = Point2f(film.GetFilter().Radius());\n       Point3f pCorner(-radius.x, -radius.y, 0.f);\n       Vector3f wCornerCamera = Normalize(Vector3f(cameraFromRaster(pCorner)));\n       cosTotalWidth = wCornerCamera.z;\n       "
+    },
+    {
+      "depth": 7,
+      "id": "fragment-PerspectiveCameraPublicMethods-0",
+      "panel": "fragbit-252",
+      "code": "",
+      "full": ""
+    },
+    {
+      "depth": 7,
+      "id": "fragment-PerspectiveCameraPublicMethods-0",
+      "panel": "fragbit-253",
+      "code": "       FindMinimumDifferentials(this);",
+      "full": "       FindMinimumDifferentials(this);"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-TransformFunctionDefinitions-5",
+      "panel": "fragbit-254",
+      "code": "       SquareMatrix<4> persp(1, 0,           0,              0,\n                             0, 1,           0,              0,\n                             0, 0, f / (f - n), -f*n / (f - n),\n                             0, 0,           1,              0);\n       ",
+      "full": "       SquareMatrix<4> persp(1, 0,           0,              0,\n                             0, 1,           0,              0,\n                             0, 0, f / (f - n), -f*n / (f - n),\n                             0, 0,           1,              0);\n       "
+    },
+    {
+      "depth": 7,
+      "id": "fragment-TransformFunctionDefinitions-5",
+      "panel": "fragbit-255",
+      "code": "       Float invTanAng = 1 / std::tan(Radians(fov) / 2);\n       return Scale(invTanAng, invTanAng, 1) * Transform(persp);",
+      "full": "       Float invTanAng = 1 / std::tan(Radians(fov) / 2);\n       return Scale(invTanAng, invTanAng, 1) * Transform(persp);"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-PerspectiveCameraMethodDefinitions-0",
+      "panel": "fragbit-256",
+      "code": "       Point3f pFilm = Point3f(sample.pFilm.x, sample.pFilm.y, 0);\n       Point3f pCamera = cameraFromRaster(pFilm);",
+      "full": "       Point3f pFilm = Point3f(sample.pFilm.x, sample.pFilm.y, 0);\n       Point3f pCamera = cameraFromRaster(pFilm);"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-PerspectiveCameraMethodDefinitions-0",
+      "panel": "fragbit-258",
+      "code": "              Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);",
+      "full": "              Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-PerspectiveCameraMethodDefinitions-0",
+      "panel": "fragbit-259",
+      "code": "              Float ft = focalDistance / ray.d.z;\n              Point3f pFocus = ray(ft);",
+      "full": "              Float ft = focalDistance / ray.d.z;\n              Point3f pFocus = ray(ft);"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-PerspectiveCameraMethodDefinitions-0",
+      "panel": "fragbit-260",
+      "code": "              ray.o = Point3f(pLens.x, pLens.y, 0);\n              ray.d = Normalize(pFocus - ray.o);",
+      "full": "              ray.o = Point3f(pLens.x, pLens.y, 0);\n              ray.d = Normalize(pFocus - ray.o);"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-PerspectiveCameraMethodDefinitions-0",
+      "panel": "fragbit-257",
+      "code": "       if (lensRadius > 0) {\n           <<Sample point on lens>>\u00a0\n           <<Compute point on plane of focus>>\u00a0\n           <<Update ray for effect of lens>>\u00a0\n       }",
+      "full": "       if (lensRadius > 0) {\n           <<Sample point on lens>>\u00a0              Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);\n           <<Compute point on plane of focus>>\u00a0              Float ft = focalDistance / ray.d.z;\n              Point3f pFocus = ray(ft);\n           <<Update ray for effect of lens>>\u00a0              ray.o = Point3f(pLens.x, pLens.y, 0);\n              ray.d = Normalize(pFocus - ray.o);\n       }"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-ComputeoffsetraysforusePerspectiveCameraraydifferentials-0",
+      "panel": "fragbit-262",
+      "code": "          Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);",
+      "full": "          Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-ComputeoffsetraysforusePerspectiveCameraraydifferentials-0",
+      "panel": "fragbit-263",
+      "code": "          Vector3f dx = Normalize(Vector3f(pCamera + dxCamera));\n          Float ft = focalDistance / dx.z;\n          Point3f pFocus = Point3f(0, 0, 0) + (ft * dx);\n          ray.rxOrigin = Point3f(pLens.x, pLens.y, 0);\n          ray.rxDirection = Normalize(pFocus - ray.rxOrigin);",
+      "full": "          Vector3f dx = Normalize(Vector3f(pCamera + dxCamera));\n          Float ft = focalDistance / dx.z;\n          Point3f pFocus = Point3f(0, 0, 0) + (ft * dx);\n          ray.rxOrigin = Point3f(pLens.x, pLens.y, 0);\n          ray.rxDirection = Normalize(pFocus - ray.rxOrigin);"
+    },
+    {
+      "depth": 9,
+      "id": "fragment-ComputeoffsetraysforusePerspectiveCameraraydifferentials-0",
+      "panel": "fragbit-264",
+      "code": "          Vector3f dy = Normalize(Vector3f(pCamera + dyCamera));\n          ft = focalDistance / dy.z;\n          pFocus = Point3f(0, 0, 0) + (ft * dy);\n          ray.ryOrigin = Point3f(pLens.x, pLens.y, 0);\n          ray.ryDirection = Normalize(pFocus - ray.ryOrigin);",
+      "full": "          Vector3f dy = Normalize(Vector3f(pCamera + dyCamera));\n          ft = focalDistance / dy.z;\n          pFocus = Point3f(0, 0, 0) + (ft * dy);\n          ray.ryOrigin = Point3f(pLens.x, pLens.y, 0);\n          ray.ryDirection = Normalize(pFocus - ray.ryOrigin);"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-ComputeoffsetraysforusePerspectiveCameraraydifferentials-0",
+      "panel": "fragbit-261",
+      "code": "       <<Sample point on lens>>\u00a0\n       <<Compute \nx\n\n\n\n\n \n\n ray differential for PerspectiveCamera with lens>>\u00a0\n       <<Compute \ny\n\n\n\n\n \n\n ray differential for PerspectiveCamera with lens>>\u00a0",
+      "full": "       <<Sample point on lens>>\u00a0          Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);\n       <<Compute \nx\n\n\n\n\n \n\n ray differential for PerspectiveCamera with lens>>\u00a0          Vector3f dx = Normalize(Vector3f(pCamera + dxCamera));\n          Float ft = focalDistance / dx.z;\n          Point3f pFocus = Point3f(0, 0, 0) + (ft * dx);\n          ray.rxOrigin = Point3f(pLens.x, pLens.y, 0);\n          ray.rxDirection = Normalize(pFocus - ray.rxOrigin);\n       <<Compute \ny\n\n\n\n\n \n\n ray differential for PerspectiveCamera with lens>>\u00a0          Vector3f dy = Normalize(Vector3f(pCamera + dyCamera));\n          ft = focalDistance / dy.z;\n          pFocus = Point3f(0, 0, 0) + (ft * dy);\n          ray.ryOrigin = Point3f(pLens.x, pLens.y, 0);\n          ray.ryDirection = Normalize(pFocus - ray.ryOrigin);"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-Modifyrayfordepthoffield-0",
+      "panel": "fragbit-265",
+      "code": "       Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);",
+      "full": "       Point2f pLens = lensRadius * SampleUniformDiskConcentric(sample.pLens);"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-Modifyrayfordepthoffield-0",
+      "panel": "fragbit-266",
+      "code": "       Float ft = focalDistance / ray.d.z;\n       Point3f pFocus = ray(ft);",
+      "full": "       Float ft = focalDistance / ray.d.z;\n       Point3f pFocus = ray(ft);"
+    },
+    {
+      "depth": 7,
+      "id": "fragment-Modifyrayfordepthoffield-0",
+      "panel": "fragbit-267",
+      "code": "       ray.o = Point3f(pLens.x, pLens.y, 0);\n       ray.d = Normalize(pFocus - ray.o);",
+      "full": "       ray.o = Point3f(pLens.x, pLens.y, 0);\n       ray.d = Normalize(pFocus - ray.o);"
+    }
+  ],
+  "supplement_blocks": [
+    {
+      "local_code": "ProjectiveCamera() = default;\nvoid InitMetadata(ImageMetadata *metadata) const;\n\nstd::string BaseToString() const;\n",
+      "source_panels": [
+        "fragbit-215"
+      ]
+    },
+    {
+      "local_code": "PBRT_CPU_GPU\npstd::optional<CameraRay> GenerateRay(CameraSample sample,\n                                      SampledWavelengths &lambda) const;\nPBRT_CPU_GPU\npstd::optional<CameraRayDifferential> GenerateRayDifferential(\n    CameraSample sample, SampledWavelengths &lambda) const;\nstatic OrthographicCamera *Create(const ParameterDictionary &parameters,\n                                  const CameraTransform &cameraTransform,\n                                  Film film, Medium medium,\n                                  const FileLoc *loc, Allocator alloc = {});\n",
+      "source_panels": [
+        "fragbit-222"
+      ]
+    },
+    {
+      "local_code": "PBRT_CPU_GPU\nSampledSpectrum We(const Ray &ray, SampledWavelengths &lambda,\n                   Point2f *pRaster2 = nullptr) const {\n    LOG_FATAL(\"We() unimplemented for OrthographicCamera\");\n    return {};\n}\n",
+      "source_panels": [
+        "fragbit-222"
+      ]
+    },
+    {
+      "local_code": "PBRT_CPU_GPU\nvoid PDF_We(const Ray &ray, Float *pdfPos, Float *pdfDir) const {\n    LOG_FATAL(\"PDF_We() unimplemented for OrthographicCamera\");\n}\n",
+      "source_panels": [
+        "fragbit-222"
+      ]
+    },
+    {
+      "local_code": "PBRT_CPU_GPU\npstd::optional<CameraWiSample> SampleWi(const Interaction &ref, Point2f u,\n                                        SampledWavelengths &lambda) const {\n    LOG_FATAL(\"SampleWi() unimplemented for OrthographicCamera\");\n    return {};\n}\n",
+      "source_panels": [
+        "fragbit-222"
+      ]
+    },
+    {
+      "local_code": "std::string ToString() const;\n",
+      "source_panels": [
+        "fragbit-222",
+        "fragbit-244"
+      ]
+    },
+    {
+      "local_code": "minDirDifferentialX = minDirDifferentialY = Vector3f(0, 0, 0);\nminPosDifferentialX = dxCamera;\nminPosDifferentialY = dyCamera;\n",
+      "source_panels": [
+        "fragbit-224",
+        "fragbit-222",
+        "fragbit-227"
+      ]
+    },
+    {
+      "local_code": "<<Compute raster and camera sample positions>>\nRayDifferential ray(pCamera, Vector3f(0, 0, 1), SampleTime(sample.time), medium);\n<<Modify ray for depth of field>>\n",
+      "source_panels": []
+    },
+    {
+      "local_code": "<<Sample point on lens>>\nFloat ft = focalDistance / ray.d.z;\nPoint3f pFocus = pCamera + dxCamera + (ft * Vector3f(0, 0, 1));\nray.rxOrigin = Point3f(pLens.x, pLens.y, 0);\nray.rxDirection = Normalize(pFocus - ray.rxOrigin);\n\npFocus = pCamera + dyCamera + (ft * Vector3f(0, 0, 1));\nray.ryOrigin = Point3f(pLens.x, pLens.y, 0);\nray.ryDirection = Normalize(pFocus - ray.ryOrigin);\n",
+      "source_panels": []
+    },
+    {
+      "local_code": "PerspectiveCamera() = default;\n",
+      "source_panels": [
+        "fragbit-244"
+      ]
+    },
+    {
+      "local_code": "static PerspectiveCamera *Create(const ParameterDictionary &parameters,\n                                 const CameraTransform &cameraTransform,\n                                 Film film, Medium medium,\n                                 const FileLoc *loc, Allocator alloc = {});\n",
+      "source_panels": [
+        "fragbit-244"
+      ]
+    },
+    {
+      "local_code": "PBRT_CPU_GPU\npstd::optional<CameraRay> GenerateRay(CameraSample sample,\n                                      SampledWavelengths &lambda) const;\n",
+      "source_panels": [
+        "fragbit-222",
+        "fragbit-244"
+      ]
+    },
+    {
+      "local_code": "PBRT_CPU_GPU\npstd::optional<CameraRayDifferential> GenerateRayDifferential(\n    CameraSample sample, SampledWavelengths &lambda) const;\n",
+      "source_panels": [
+        "fragbit-222",
+        "fragbit-244"
+      ]
+    },
+    {
+      "local_code": "PBRT_CPU_GPU\nSampledSpectrum We(const Ray &ray, SampledWavelengths &lambda,\n                   Point2f *pRaster2 = nullptr) const;\nPBRT_CPU_GPU\nvoid PDF_We(const Ray &ray, Float *pdfPos, Float *pdfDir) const;\nPBRT_CPU_GPU\npstd::optional<CameraWiSample> SampleWi(const Interaction &ref, Point2f u,\n                                        SampledWavelengths &lambda) const;\n",
+      "source_panels": [
+        "fragbit-244"
+      ]
+    },
+    {
+      "local_code": "std::string ToString() const;\n",
+      "source_panels": [
+        "fragbit-222",
+        "fragbit-244"
+      ]
+    },
+    {
+      "local_code": "FindMinimumDifferentials(this);\n",
+      "source_panels": [
+        "fragbit-248",
+        "fragbit-244",
+        "fragbit-253"
+      ]
+    },
+    {
+      "local_code": "<<Sample point on lens>>\nVector3f dx = Normalize(Vector3f(pCamera + dxCamera));\nFloat ft = focalDistance / dx.z;\nPoint3f pFocus = Point3f(0, 0, 0) + (ft * dx);\nray.rxOrigin = Point3f(pLens.x, pLens.y, 0);\nray.rxDirection = Normalize(pFocus - ray.rxOrigin);\nVector3f dy = Normalize(Vector3f(pCamera + dyCamera));\nft = focalDistance / dy.z;\npFocus = Point3f(0, 0, 0) + (ft * dy);\nray.ryOrigin = Point3f(pLens.x, pLens.y, 0);\nray.ryDirection = Normalize(pFocus - ray.ryOrigin);\n",
+      "source_panels": []
+    }
+  ]
+}
